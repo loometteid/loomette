@@ -2,14 +2,6 @@
 
 Production PWA for the Indonesian market.
 
-## Team
-
-| Name | Role |
-|---|---|
-| Gevyn | CEO — Business, Engineering, AI, Technical Decisions |
-| Grace | CPO — Product Strategy, Marketing, Engineering |
-| Karina | Product Designer, Marketing |
-
 ## Stack
 
 - **Frontend:** Next.js (App Router), TypeScript, Tailwind CSS, shadcn/ui

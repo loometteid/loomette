@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Next.js
+.next/
+out/
+build/
+next-env.d.ts
+
+# Production
+dist/
+
+# Environment variables (never commit secrets)
+.env
+.env*.local
+!.env.example
+
+# Vercel
+.vercel/
+
+# Supabase CLI local state
+supabase/.branches
+supabase/.temp
+
+# Testing
+coverage/
+
+# Editor / OS
+.DS_Store
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json.example
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# TypeScript
+*.tsbuildinfo

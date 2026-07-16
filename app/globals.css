@@ -7,9 +7,36 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-sans);
+
+  --font-sans: var(--font-jost), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-source-serif), ui-serif, Georgia, serif;
+
+  /* Loomette type scale — see figma/Typography.png. */
+  --text-mega-title: 2.75rem; /* 44px */
+  --text-mega-title--line-height: 1.1;
+  --text-title: 2rem; /* 32px */
+  --text-title--line-height: 1.15;
+  --text-h1: 1rem; /* 16px */
+  --text-h1--line-height: 1.5;
+  --text-subtitle: 0.75rem; /* 12px */
+  --text-subtitle--line-height: 1.5;
+
+  /* Raw Loomette brand palette — see figma/Color.png. Exposed as their
+     own utilities (bg-linen, text-primary-pink, etc.) in addition to
+     the semantic slots below. */
+  --color-white: var(--white);
+  --color-linen: var(--linen);
+  --color-stone: var(--stone);
+  --color-slate: var(--slate);
+  --color-black: var(--black);
+  --color-primary-pink: var(--primary-pink);
+  --color-secondary-pink: var(--secondary-pink);
+  --color-tertiary-pink: var(--tertiary-pink);
+  --color-blue-1: var(--blue-1);
+  --color-blue-2: var(--blue-2);
+  --color-blue-3: var(--blue-3);
+  --color-blue-4: var(--blue-4);
+
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -49,24 +76,40 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  /* Loomette brand palette — exact hex from figma/Color.png. Light
+     mode only; no dark-mode brand palette exists yet (deferred — see
+     the untouched .dark block below). */
+  --white: #fafaf7;
+  --linen: #f2ede5;
+  --stone: #c7c3b8;
+  --slate: #44443f;
+  --black: #14140f;
+  --primary-pink: #d4537e; /* NOT the same as the semantic --primary token below (that's Slate) */
+  --secondary-pink: #e89bb0;
+  --tertiary-pink: #f7d4de;
+  --blue-1: #1e3a5f; /* Figma "Accent 1" — renamed to avoid clashing with the semantic --accent slot */
+  --blue-2: #3d6b9e; /* Figma "Accent 2" */
+  --blue-3: #94b8db; /* Figma "Accent 3" */
+  --blue-4: #dce8f5; /* Figma "Accent 4" */
+
+  --background: var(--white);
+  --foreground: var(--slate);
+  --card: var(--linen);
+  --card-foreground: var(--slate);
+  --popover: var(--white);
+  --popover-foreground: var(--slate);
+  --primary: var(--slate);
+  --primary-foreground: var(--white);
+  --secondary: var(--linen);
+  --secondary-foreground: var(--slate);
+  --muted: var(--linen);
+  --muted-foreground: var(--stone);
+  --accent: var(--tertiary-pink);
+  --accent-foreground: var(--slate);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --border: var(--stone);
+  --input: var(--stone);
+  --ring: var(--primary-pink);
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
@@ -84,6 +127,8 @@
 }
 
 .dark {
+  /* Generic shadcn neutral dark palette — unchanged. No Loomette
+     dark-mode spec exists yet; deferred until one is provided. */
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);

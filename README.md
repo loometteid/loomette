@@ -27,7 +27,7 @@ lib/
 hooks/                  # shared React hooks
 stores/                 # Zustand stores
 types/                  # includes generated database.types.ts
-middleware.ts            # refreshes the Supabase session cookie
+proxy.ts                 # refreshes the Supabase session cookie
 supabase/
 └── migrations/           # schema as code — never edit schema via dashboard directly
 .claude/                  # CLAUDE.md, database.md, features.md — context for Claude Code

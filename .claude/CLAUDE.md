@@ -45,7 +45,8 @@ hooks/                  shared React hooks
 stores/                 Zustand stores
 types/
 └── database.types.ts    generated — see .claude/database.md
-middleware.ts             refreshes the Supabase session cookie every request
+proxy.ts                  refreshes the Supabase session cookie every request
+                          (Next.js 16 renamed "middleware" to "proxy")
 supabase/
 ├── config.toml
 └── migrations/            schema as code

@@ -273,7 +273,7 @@ export type Database = {
           profile_photo?: string | null;
           subscription_tier?:
             Database["public"]["Enums"]["subscription_tier"] | null;
-          user_id?: string;
+          user_id: string;
           username: string;
           weight?: number | null;
         };

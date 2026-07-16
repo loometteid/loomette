@@ -27,9 +27,14 @@ the team/stack summary and docs/adr/ for architecture history.
 
 ```
 app/                 routes only (App Router)
+├── auth/
+│   ├── callback/      OAuth PKCE code exchange
+│   └── confirm/        email OTP verification
+└── auth-test/           minimal test surface for auth (no real UI)
 components/
 ├── ui/               shadcn-generated primitives
-└── features/         feature-specific components, by domain
+└── features/
+    └── auth/            sign-up/sign-in forms, Google button, sign-out
 lib/
 ├── supabase/
 │   ├── client.ts      browser client
@@ -82,20 +87,25 @@ supabase db push                      # apply migrations to the linked project
 supabase gen types typescript --linked > types/database.types.ts   # after any migration
 ```
 
+## Auth
+
+Google OAuth + email/password via Supabase Auth. `public.user` is
+auto-provisioned and kept in sync with `auth.users` via triggers (see
+`.claude/database.md`). RLS is enabled on every table with per-command
+policies. Minimal test surface: `app/auth-test/page.tsx`,
+`app/auth/callback/route.ts` (OAuth), `app/auth/confirm/route.ts`
+(email OTP verification), `components/features/auth/*`. Google OAuth
+credentials live only in the Supabase Dashboard, never in this repo.
+
 ## Known gaps (do not treat these as "the way it's supposed to be")
 
-1. **RLS is off, no policies exist, and every table has `GRANT ALL` to
-   `anon`/`authenticated`/`service_role`.** Any anon key holder can
-   currently read/write all data, including `user.email`. Full detail
-   in `.claude/database.md`. Authoring policies needs product input on
-   who-can-read-what and is explicitly out of scope until that decision
-   is made — do not build or ship any feature that assumes row-level
-   protection exists.
-2. **`public.user` is not linked to `auth.users`.** No trigger or
-   shared ID currently ties a Supabase Auth session to a `user` row.
-   Needs a decision before building sign-up/login flows.
-3. `app/page.tsx` is still `create-next-app` boilerplate — untouched,
+1. `app/page.tsx` is still `create-next-app` boilerplate — untouched,
    waiting on the Figma → component handoff.
-4. No test framework is installed yet.
-5. The Gemini Edge Function does not exist yet; `lib/gemini.ts` is a
+2. No test framework is installed yet.
+3. The Gemini Edge Function does not exist yet; `lib/gemini.ts` is a
    stub caller only — it will fail at runtime until that function ships.
+4. Email confirmation is OFF (founder's explicit call, for faster
+   manual testing pre-launch) — revisit before real users sign up.
+5. No `public.public_profile` view yet — other users' profiles aren't
+   readable at all until a follow/search feature needs it (see
+   `.claude/database.md`).

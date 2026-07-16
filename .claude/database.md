@@ -4,25 +4,62 @@ Source of truth is `supabase/migrations/` — this file is a
 human-readable index, not the schema itself. If they disagree, the
 migration wins; update this doc in the same commit as any migration.
 
-## ⚠️ SECURITY: RLS is currently off
+## RLS and auth linkage (resolved 2026-07-16)
 
-`SET row_security = off`, zero RLS policies, and `GRANT ALL` to `anon`,
-`authenticated`, and `service_role` on every table (see the baseline
-migration, roughly lines 13 and 301–352). Any holder of the public
-anon key can read or write every row in every table right now,
-including `user.email`. This is a pre-existing condition inherited
-from a dashboard-built schema, not a decision made during scaffolding.
-**It is not fixed by this scaffold.** Do not build or ship any feature
-assuming access control exists until RLS policies are written and
-reviewed — that requires product input on who-can-read-what and is
-tracked as a separate, explicit follow-up.
+Both of the gaps that used to be documented here are closed, in
+`supabase/migrations/20260716063354_link_auth_users.sql` and
+`supabase/migrations/20260716063855_enable_rls_policies.sql`.
 
-## ⚠️ `public.user` is not linked to `auth.users`
+**Correction to the historical note**: the baseline migration's `SET
+row_security = off;` (line 13) was a `pg_dump` **session** artifact
+from how that migration was captured, not a persistent property — it
+never disabled RLS on any table. The real (and only) gap was that no
+table had `ALTER TABLE ... ENABLE ROW LEVEL SECURITY`, which is what
+the second migration above fixes.
 
-No column or trigger currently ties a Supabase Auth user to a
-`public.user` row (`user_id` is just a bare `uuid default
-uuid_generate_v4()`). Needs a decision (auth trigger on signup vs.
-shared-ID convention) before building sign-up/login flows.
+**`public.user.user_id`** now has a real FK to `auth.users.id` (`on
+delete cascade`), with its `uuid_generate_v4()` default dropped — the
+table is populated exclusively by the `handle_new_user()` trigger on
+`auth.users` insert (`SECURITY DEFINER`, collision-safe username
+derived from the email local-part, `profile_photo` seeded from Google
+OAuth's `avatar_url` when present). A second trigger
+(`handle_user_email_update`) keeps `public.user.email` in sync if a
+user changes their email via Supabase Auth. Neither trigger ever
+touches `profile_photo` after creation — that stays user-editable
+once an in-app profile-edit feature exists.
+
+**RLS is enabled on all 8 tables**, with per-command policies (not
+blanket `FOR ALL`) using `(select auth.uid())` and explicit `to
+authenticated`/`anon` role scoping (Supabase's documented RLS
+performance practices). Summary — full policy SQL is in the migration:
+
+- `user`: own-row SELECT/UPDATE only (UPDATE excludes `email` at the
+  column-grant level); no INSERT (trigger-only) or DELETE (goes
+  through the Auth Admin API instead, which cascades).
+- `item`: public SELECT (catalog), writes are `service_role`-only.
+- `wardrobe_item`, `outfit`: own-row CRUD, plus SELECT when
+  `is_public = true`.
+- `outfit_item`: ownership transitive via `outfit_id → outfit.user_id`
+  (`EXISTS` subquery); SELECT also honors `outfit.is_public`.
+- `outfit_recommendation`: own-row SELECT/UPDATE only — no
+  INSERT/DELETE for `authenticated`, since this table is expected to
+  be written by the future Gemini Edge Function via `service_role`.
+  Revisit if that design changes.
+- `follow`: two-sided — INSERT as yourself only (+ self-follow guard),
+  SELECT visible to both parties, DELETE by the follower, UPDATE of
+  `is_approved` by the followed party only (column-grant-restricted).
+- `wear_log`: own-row CRUD only.
+
+**Deliberately not built yet**: a `public.public_profile` view for
+cross-user profile visibility (e.g. for a future follow/search
+feature) — the base `user` table stays owner-only until that feature
+exists, since RLS can't restrict columns and a loosened row policy
+would leak `email` along with any "public" fields.
+
+**Known pre-launch follow-up**: email confirmation is currently OFF
+(founder's explicit call, for faster manual testing pre-launch) —
+revisit before real users sign up. Password minimum length is 8, no
+forced character-class complexity.
 
 ## How the baseline migration came to exist
 
@@ -49,7 +86,8 @@ decision 4).
 ### user
 
 One row per app user. `email`/`username` unique. `subscription_tier`
-defaults `free`. No auth linkage — see warning above.
+defaults `free`. `user_id` is FK'd to `auth.users.id` and populated by
+the `handle_new_user()` trigger — see the linkage section above.
 
 ### item
 

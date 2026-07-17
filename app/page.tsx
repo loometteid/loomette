@@ -92,10 +92,10 @@ const faqs = [
 export default function LandingPage() {
   return (
     <div className="flex flex-1 flex-col overflow-x-clip">
-      <header className="flex items-center justify-between px-6 py-6">
+      <header className="sticky top-0 z-50 flex items-center justify-between bg-white/10 px-6 py-6 backdrop-blur-md">
         <Wordmark />
         <nav className="flex items-center gap-2 text-xs font-medium tracking-wide uppercase">
-          <Link href="/welcome">Sign in</Link>
+          <Link href="/sign-in">Sign in</Link>
           <span className="text-border">|</span>
           <Link href="/welcome">Sign up</Link>
         </nav>

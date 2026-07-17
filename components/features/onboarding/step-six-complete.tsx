@@ -1,9 +1,14 @@
+"use client";
+
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Sparkle } from "@/components/ui/sparkle";
 import { Typography } from "@/components/ui/typography";
 
 export function StepSixComplete() {
+  const router = useRouter();
+
   return (
     <main className="flex flex-1 flex-col px-6 py-8">
       <div className="relative h-64 w-full">
@@ -38,7 +43,11 @@ export function StepSixComplete() {
         <Typography variant="subtitle">Your wardrobe is waiting.</Typography>
       </div>
 
-      <Button type="button" disabled className="w-full">
+      <Button
+        type="button"
+        className="w-full"
+        onClick={() => router.push("/onboarding/7")}
+      >
         Continue
       </Button>
     </main>

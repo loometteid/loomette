@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -27,7 +28,10 @@ export function SignUpForm() {
       setError(error.message);
       return;
     }
-    router.refresh();
+    toast.success("Account created", {
+      description: "Sign in to get started.",
+    });
+    router.push("/sign-in");
   }
 
   return (

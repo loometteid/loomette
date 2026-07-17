@@ -6,7 +6,7 @@ export async function GET(request: Request) {
   const { searchParams, origin } = new URL(request.url);
   const token_hash = searchParams.get("token_hash");
   const type = searchParams.get("type") as EmailOtpType | null;
-  const next = searchParams.get("next") ?? "/auth-test";
+  const next = searchParams.get("next") ?? "/onboarding/1";
 
   if (token_hash && type) {
     const supabase = await createClient();
@@ -16,5 +16,5 @@ export async function GET(request: Request) {
     }
   }
 
-  return NextResponse.redirect(`${origin}/auth-test?error=confirmation_error`);
+  return NextResponse.redirect(`${origin}/sign-in?error=confirmation_error`);
 }

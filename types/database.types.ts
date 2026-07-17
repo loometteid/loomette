@@ -250,46 +250,84 @@ export type Database = {
       };
       user: {
         Row: {
+          birthday: string | null;
+          bust_size: number | null;
           created_at: string | null;
+          display_name: string | null;
           email: string;
           gender: Database["public"]["Enums"]["gender_type"] | null;
           height: number | null;
+          high_hip_size: number | null;
+          hip_size: number | null;
           is_private: boolean | null;
           occupation: string | null;
+          outfit_size: Database["public"]["Enums"]["outfit_size_type"] | null;
           profile_photo: string | null;
+          shoe_size: string | null;
+          shoe_size_region:
+            Database["public"]["Enums"]["shoe_size_region_type"] | null;
+          style_tags: Database["public"]["Enums"]["style_tag_type"][] | null;
           subscription_tier:
             Database["public"]["Enums"]["subscription_tier"] | null;
           user_id: string;
           username: string;
+          waist_size: number | null;
           weight: number | null;
+          work_setting: Database["public"]["Enums"]["work_setting_type"] | null;
         };
         Insert: {
+          birthday?: string | null;
+          bust_size?: number | null;
           created_at?: string | null;
+          display_name?: string | null;
           email: string;
           gender?: Database["public"]["Enums"]["gender_type"] | null;
           height?: number | null;
+          high_hip_size?: number | null;
+          hip_size?: number | null;
           is_private?: boolean | null;
           occupation?: string | null;
+          outfit_size?: Database["public"]["Enums"]["outfit_size_type"] | null;
           profile_photo?: string | null;
+          shoe_size?: string | null;
+          shoe_size_region?:
+            Database["public"]["Enums"]["shoe_size_region_type"] | null;
+          style_tags?: Database["public"]["Enums"]["style_tag_type"][] | null;
           subscription_tier?:
             Database["public"]["Enums"]["subscription_tier"] | null;
           user_id: string;
           username: string;
+          waist_size?: number | null;
           weight?: number | null;
+          work_setting?:
+            Database["public"]["Enums"]["work_setting_type"] | null;
         };
         Update: {
+          birthday?: string | null;
+          bust_size?: number | null;
           created_at?: string | null;
+          display_name?: string | null;
           email?: string;
           gender?: Database["public"]["Enums"]["gender_type"] | null;
           height?: number | null;
+          high_hip_size?: number | null;
+          hip_size?: number | null;
           is_private?: boolean | null;
           occupation?: string | null;
+          outfit_size?: Database["public"]["Enums"]["outfit_size_type"] | null;
           profile_photo?: string | null;
+          shoe_size?: string | null;
+          shoe_size_region?:
+            Database["public"]["Enums"]["shoe_size_region_type"] | null;
+          style_tags?: Database["public"]["Enums"]["style_tag_type"][] | null;
           subscription_tier?:
             Database["public"]["Enums"]["subscription_tier"] | null;
           user_id?: string;
           username?: string;
+          waist_size?: number | null;
           weight?: number | null;
+          work_setting?:
+            Database["public"]["Enums"]["work_setting_type"] | null;
         };
         Relationships: [];
       };
@@ -403,10 +441,21 @@ export type Database = {
       [_ in never]: never;
     };
     Enums: {
-      gender_type: "female" | "male" | "prefer_not_to_say";
+      gender_type: "female" | "male" | "prefer_not_to_say" | "non_binary";
       item_source_type: "catalog" | "user_upload" | "affiliate";
+      outfit_size_type: "xs" | "s" | "m" | "l" | "xl" | "it_varies";
+      shoe_size_region_type: "uk" | "us" | "eu";
+      style_tag_type:
+        | "clean_minimal"
+        | "effortlessly_casual"
+        | "office_ready"
+        | "soft_feminine"
+        | "bold_expressive"
+        | "street_inspired"
+        | "still_figuring_it_out";
       subscription_tier: "free" | "premium";
       wardrobe_source: "TikTok" | "Instagram" | "Original";
+      work_setting_type: "in_office" | "remote" | "hybrid" | "on_the_go";
     };
     CompositeTypes: {
       [_ in never]: never;
@@ -537,10 +586,22 @@ export const Constants = {
   },
   public: {
     Enums: {
-      gender_type: ["female", "male", "prefer_not_to_say"],
+      gender_type: ["female", "male", "prefer_not_to_say", "non_binary"],
       item_source_type: ["catalog", "user_upload", "affiliate"],
+      outfit_size_type: ["xs", "s", "m", "l", "xl", "it_varies"],
+      shoe_size_region_type: ["uk", "us", "eu"],
+      style_tag_type: [
+        "clean_minimal",
+        "effortlessly_casual",
+        "office_ready",
+        "soft_feminine",
+        "bold_expressive",
+        "street_inspired",
+        "still_figuring_it_out",
+      ],
       subscription_tier: ["free", "premium"],
       wardrobe_source: ["TikTok", "Instagram", "Original"],
+      work_setting_type: ["in_office", "remote", "hybrid", "on_the_go"],
     },
   },
 } as const;

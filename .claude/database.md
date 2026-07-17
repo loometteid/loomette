@@ -74,12 +74,25 @@ decision 4).
 
 ## Enums
 
-- `gender_type`: `female` / `male` / `prefer_not_to_say`
+- `gender_type`: `female` / `male` / `non_binary` / `prefer_not_to_say`
+  (`non_binary` added 2026-07-17 to back the onboarding "how do you
+  identify" step — see below)
 - `item_source_type`: `catalog` / `user_upload` / `affiliate` — how an
   `item` row entered the catalog
 - `subscription_tier`: `free` / `premium`
 - `wardrobe_source`: `TikTok` / `Instagram` / `Original` — where a
   wardrobe item's inspiration/reference came from
+- `work_setting_type`: `in_office` / `remote` / `hybrid` / `on_the_go`
+  (onboarding step 3)
+- `outfit_size_type`: `xs` / `s` / `m` / `l` / `xl` / `it_varies`
+  (onboarding step 4)
+- `shoe_size_region_type`: `uk` / `us` / `eu` (onboarding step 4 — the
+  region the raw `shoe_size` text was entered in; sizes aren't
+  normalized across regions, see below)
+- `style_tag_type`: `clean_minimal` / `effortlessly_casual` /
+  `office_ready` / `soft_feminine` / `bold_expressive` /
+  `street_inspired` / `still_figuring_it_out` (onboarding step 5,
+  multi-select — stored as `user.style_tags`, an array)
 
 ## Tables
 
@@ -88,6 +101,32 @@ decision 4).
 One row per app user. `email`/`username` unique. `subscription_tier`
 defaults `free`. `user_id` is FK'd to `auth.users.id` and populated by
 the `handle_new_user()` trigger — see the linkage section above.
+
+`display_name` and `birthday` (added 2026-07-17, both nullable) are
+collected during onboarding steps 1-2 (`app/onboarding/1`,
+`app/onboarding/2`) — `display_name` is user-facing and distinct from
+`username`, which stays the trigger-generated, uniqueness-constrained
+handle. `gender` doubles as the "how do you identify" answer from step
+2 (`female`→She/Her, `male`→He/Him, `non_binary`→They/Them,
+`prefer_not_to_say`→Prefer not to say) rather than a separate pronouns
+column — a deliberate simplification, not a claim that gender and
+pronouns are the same thing. Both new columns needed an explicit
+column-grant addition since `authenticated`'s UPDATE grant on this
+table is an allowlist, not table-wide (see
+`20260717022025_add_onboarding_profile_fields.sql`).
+
+Onboarding steps 3-5 (`20260717043135_add_onboarding_lifestyle_and_body_fields.sql`)
+added: `work_setting` (step 3, alongside the pre-existing `occupation`
+for "your profession"); `outfit_size`, `shoe_size` +
+`shoe_size_region`, `bust_size`, `waist_size`, `high_hip_size`,
+`hip_size` (step 4 — all optional; also reuses the pre-existing
+`height`/`weight` columns); `style_tags` (step 5, multi-select, `[]`
+array). `height`/`weight`/`bust_size`/`waist_size`/`high_hip_size`/
+`hip_size` are plain integers with no unit column — cm for lengths, kg
+for weight — the step 4 UI's cm/in and kg/lbs toggles convert
+client-side before saving. `shoe_size` is the one exception: UK/US/EU
+sizing isn't a clean linear conversion, so the raw value and its
+region are both stored as entered rather than normalized.
 
 ### item
 

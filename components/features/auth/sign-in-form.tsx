@@ -30,7 +30,7 @@ export function SignInForm() {
       setError(error.message);
       return;
     }
-    router.refresh();
+    router.push("/onboarding/1");
   }
 
   return (

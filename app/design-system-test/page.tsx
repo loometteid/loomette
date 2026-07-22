@@ -74,7 +74,7 @@ export default function DesignSystemTestPage() {
 
       <section className="flex flex-col gap-3">
         <h2 className="text-sm font-medium">Input</h2>
-        <Input placeholder="e.g. Gonjoi" className="max-w-xs" />
+        <Input placeholder="e.g. Rebecca" className="max-w-xs" />
         <Input
           defaultValue="Grey pashmina"
           endIcon={<Pencil />}

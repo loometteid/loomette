@@ -61,7 +61,7 @@ export function StepOneForm({ email }: { email: string }) {
         </Label>
         <Input
           id="onboarding-name"
-          placeholder="e.g. Gonjoi"
+          placeholder="e.g. Rebecca"
           required
           value={name}
           onChange={(event) => setName(event.target.value)}

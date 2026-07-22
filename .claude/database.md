@@ -93,6 +93,9 @@ decision 4).
   `office_ready` / `soft_feminine` / `bold_expressive` /
   `street_inspired` / `still_figuring_it_out` (onboarding step 5,
   multi-select — stored as `user.style_tags`, an array)
+- `occasion_type`: `everyday` / `work` / `going_out` / `special` /
+  `just_vibing` (v0.2.7.1 approval popup, multi-select — stored as
+  `wardrobe_item.occasions`, an array, same shape as `style_tags`)
 
 ## Tables
 
@@ -132,15 +135,76 @@ region are both stored as entered rather than normalized.
 
 Catalog/reference items — the shared "this garment exists" record
 (`name`, `category`, `subcategory`, `color`, `brand`, `material`,
-`image_url`, `source_type`). Not user-owned.
+`image_url`, `source_type`). Not user-owned in general — but see the
+`created_by_user_id` addition below for the one case where it is.
+
+`name`/`category` are nullable (were `NOT NULL` until
+`20260719043457_add_wardrobe_upload_approval_pipeline.sql`) —
+`source_type = 'user_upload'` rows start with all metadata empty and
+get filled in by the user via the approval popup (`app/wardrobe/
+approval`) for now, and by the future Gemini integration later. Only
+`user_upload` rows have `created_by_user_id` set (nullable, FK → `user`,
+`on delete set null`); it exists specifically so post-creation edits
+(the popup's Save button) can be gated by a real RLS policy
+(`item_update_own_upload`, `created_by_user_id = auth.uid()`) instead
+of an unsound "some wardrobe_item I own points at this item" check —
+`item` is genuinely shared (`user 1—* wardrobe_item *—1 item`), so that
+transitive check doesn't imply exclusive ownership.
+
+There is deliberately no client-facing INSERT policy on `item`.
+Creation goes through `create_wardrobe_upload()` (see below), a
+`SECURITY DEFINER` function that sets `created_by_user_id` itself.
 
 ### wardrobe_item
 
 A user's personal copy/instance of an `item` (FK → `item`, FK →
-`user`). Adds `size`, `price`, `is_public`, `acquired_at`,
-`wear_count`, `is_wishlist`, `source`/`source_url` (see
-`wardrobe_source`), and its own `image_url` — the user's own photo,
-distinct from `item.image_url`, which is the catalog photo.
+`user`). Adds `size` (now the `outfit_size_type` enum, reusing
+onboarding's picker — was free text before v0.2.7.1), `price`,
+`is_public`, `acquired_at`, `wear_count`, `is_wishlist`,
+`source`/`source_url` (see `wardrobe_source` — this is inspiration/
+reference, e.g. "saw it on TikTok", **not** where it was purchased),
+and its own `image_url` — the user's own (original, pre-background-
+removal) photo, distinct from `item.image_url`, which holds the
+background-removed/catalog-style photo for `user_upload` rows.
+
+v0.2.7.1 added `is_approved` (boolean, default `false` — reuses the
+naming already established by `follow.is_approved` rather than a new
+enum) and `purchase_location` (text, the popup's "BUY FROM" field —
+kept distinct from `source`/`source_url` since it's a different
+concept). An uploaded item is **not** visible in the Wardrobe grid
+until `is_approved = true`; the Approval Queue is `is_approved = false`.
+
+### Wardrobe upload/approval RPCs
+
+`create_wardrobe_upload(p_original_url, p_processed_url) returns (item_id,
+wardrobe_item_id)` and `discard_wardrobe_item(p_wardrobe_item_id)` —
+both `SECURITY DEFINER`, mirroring `handle_new_user()`'s hardening
+(`set search_path = ''`). Called from the client via `supabase.rpc(...)`.
+They exist so the client never needs direct INSERT access to `item`
+(which has no owner column) and so create/discard are atomic across
+both tables. Normal edits (approval popup Save, Approve toggling
+`is_approved`) are plain client-side `.update()` calls through existing
+RLS — the RPCs are only for the two-table create/delete operations.
+
+**Storage**: `wardrobe-images` bucket (public — read needs no auth,
+writes are RLS-gated to `{user_id}/...` path prefixes via policies on
+`storage.objects`). Path convention: `{user_id}/{upload_uuid}/
+original.<ext>` and `.../processed.<ext>`, where `upload_uuid` is
+client-generated (`crypto.randomUUID()`) since Storage upload happens
+before any DB row exists.
+
+**Gotcha, found via live-testing the discard flow, not by reading
+docs**: a bucket's `public = true` flag only bypasses RLS for the
+direct CDN-style GET endpoint used to render images
+(`/storage/v1/object/public/...`). The Storage _management_ API
+(delete-by-prefix, list, etc.) still resolves matching objects via a
+normal `SELECT` against `storage.objects` first — with no `SELECT`
+policy, delete-by-prefix calls returned `200` with an empty result,
+silently deleting nothing, no error surfaced anywhere. Fixed in
+`20260719045816_add_wardrobe_images_select_policy.sql`. If a future
+bucket needs delete-by-prefix (or list) to work for `authenticated`,
+it needs an explicit `SELECT` policy — the public flag alone is not
+enough, this doesn't generalize the way it looks like it should.
 
 ### outfit
 
@@ -152,6 +216,16 @@ A user-authored combination of wardrobe items (FK → `user`).
 > for "this outfit references a since-removed item"?). Not documented
 > as fact here until confirmed with the founder — don't assume a
 > meaning when building against it.
+
+**Calendar / outfit diary (`app/(app)/calendar`, 2. Calendar.png)**
+reuses this table as-is rather than adding a new one:
+`cover_image_url` holds the user's daily outfit photo, with no
+`outfit_item` rows yet — AI extraction of individual wardrobe items
+from that photo is future work, and the schema already had the right
+seam for it. Photos live in the `outfit-photos` Storage bucket
+(public, RLS-gated writes to `{user_id}/{upload_uuid}/photo.<ext>`,
+same shape as `wardrobe-images` including the delete-by-prefix select
+policy gotcha noted there).
 
 ### outfit_item
 
@@ -174,7 +248,11 @@ pair), `is_approved` (for private-account follow requests, per
 ### wear_log
 
 Records that a user wore a specific outfit on a date (FK → `user`, FK
-→ `outfit`, `worn_on` date).
+→ `outfit`, `worn_on` date). No uniqueness constraint on
+`(user_id, worn_on)` — multiple outfits can be logged for the same
+day (the Calendar UI shows the most-recently-created one per date,
+via `order by worn_on, created_at desc` and keeping the first row per
+date client-side).
 
 ## Relationships at a glance
 

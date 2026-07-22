@@ -11,6 +11,11 @@ const jost = Jost({
 const sourceSerif = Source_Serif_4({
   variable: "--font-source-serif",
   subsets: ["latin"],
+  // Several screens set font-style: italic on serif text (Calendar's
+  // "outfit", onboarding's "all set", ...) -- without this, next/font
+  // only fetches the normal style, so the browser synthesizes a fake
+  // slanted italic instead of using Source Serif's real italic design.
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {

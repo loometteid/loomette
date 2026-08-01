@@ -25,8 +25,19 @@ derived from the email local-part, `profile_photo` seeded from Google
 OAuth's `avatar_url` when present). A second trigger
 (`handle_user_email_update`) keeps `public.user.email` in sync if a
 user changes their email via Supabase Auth. Neither trigger ever
-touches `profile_photo` after creation — that stays user-editable
-once an in-app profile-edit feature exists.
+touches `profile_photo` after creation — since the Edit Profile
+feature (below), it's user-editable there.
+
+**Storage**: `profile-photos` bucket (added for Profile, 4.1/4.3) —
+same shape as `wardrobe-images`/`outfit-photos`: public read, RLS
+writes scoped to a `{user_id}/...` path prefix, including the SELECT
+policy that delete-by-prefix needs (see the `wardrobe-images` gotcha
+below). Upload UI lives on Edit Profile (`app/profile/edit`,
+`lib/profileStorage.ts`) — tap the avatar's pencil overlay to replace
+`profile_photo`; each upload gets a fresh
+`{user_id}/avatar-{timestamp}.<ext>` path rather than overwriting in
+place, so old avatars are left as harmless orphans (same accepted
+tradeoff as the wardrobe upload pipeline, not swept automatically).
 
 **RLS is enabled on all 8 tables**, with per-command policies (not
 blanket `FOR ALL`) using `(select auth.uid())` and explicit `to
@@ -130,6 +141,20 @@ for weight — the step 4 UI's cm/in and kg/lbs toggles convert
 client-side before saving. `shoe_size` is the one exception: UK/US/EU
 sizing isn't a clean linear conversion, so the raw value and its
 region are both stored as entered rather than normalized.
+
+`body_type` (added 2026-08-01, `20260801123901_add_profile_body_type.sql`,
+nullable text) backs the Edit Profile screen's "Your Body Type" field.
+The Figma only showed the currently-selected value ("Hourglass") in a
+collapsed dropdown, not a full option list, so this isn't a
+schema-level enum like the onboarding fields above — the app renders a
+fixed client-side set of common body-shape labels
+(`lib/profileOptions.ts`'s `BODY_TYPE_OPTIONS`: Hourglass, Pear, Apple,
+Rectangle, Inverted Triangle) and stores whichever label was picked as
+plain text. All of the onboarding-collected fields above, plus
+`display_name`/`body_type`, are editable post-onboarding via Edit
+Profile (`app/profile/edit`) — one form reusing the same columns and
+the same option constants (`lib/profileOptions.ts`) as onboarding
+steps 2-5, rather than a second parallel set of fields.
 
 ### item
 
@@ -252,7 +277,44 @@ Records that a user wore a specific outfit on a date (FK → `user`, FK
 `(user_id, worn_on)` — multiple outfits can be logged for the same
 day (the Calendar UI shows the most-recently-created one per date,
 via `order by worn_on, created_at desc` and keeping the first row per
-date client-side).
+date client-side; Trip's outfit-plan view, below, deliberately does
+*not* dedupe and shows all of them).
+
+### trip
+
+A labeled date range with light travel metadata (FK → `user`): `name`
+(the destination, e.g. "Japan" — the "Trip to ___" wrapper text on the
+edit form is static UI, not part of the stored value), `start_date`,
+`end_date` (both `not null`, `end_date >= start_date` enforced by a
+check constraint), `season` (`season_type` enum: `winter`/`spring`/
+`summer`/`autumn`), `travel_companion` (`travel_companion_type` enum:
+`solo_trip`/`couple`/`family`/`business`). Own-row CRUD RLS, same
+shape as every other user-owned table.
+
+This is the only new table the Trip feature (4.2/4.2.1/4.2.2.1)
+needed. Everything else about "which outfits are planned for which
+day of the trip" deliberately reuses existing tables instead of a
+parallel structure:
+
+- A trip's **days are never stored as rows** — a day is just a date,
+  computed on read by iterating `start_date..end_date`.
+- **"Outfit planned for day N"** reuses `wear_log` exactly as the
+  regular Calendar diary does: planning an outfit for a trip day
+  inserts a `wear_log` row with `worn_on` = that day's date and
+  `outfit_id` = the Mix & Match outfit just saved. `wear_log`'s
+  existing lack of a `(user_id, worn_on)` uniqueness constraint is
+  exactly what lets a day hold multiple planned outfits. This also
+  means a trip-planned outfit is a real Calendar diary entry on that
+  date — not a separate concept that happens to look similar, an
+  actual instance of the same "outfit worn on this date" fact,
+  regardless of whether it was logged from Calendar, Mix & Match, or
+  a trip's "Plan Outfit" button.
+- Mix & Match's canvas (`components/features/mix-and-match/canvas.tsx`)
+  accepts optional `tripId`/`day` URL params; when present, Save
+  attaches the outfit to that day (the `wear_log` insert above) and
+  returns to the trip instead of the normal Result page — the target
+  day is already known, so there's nothing left to confirm. The
+  canvas/save mechanics are otherwise identical either way.
 
 ## Relationships at a glance
 
@@ -262,6 +324,7 @@ user 1—* outfit 1—* outfit_item *—1 wardrobe_item
 user 1—* outfit_recommendation *—1 outfit
 user 1—* follow (self-referential: follower_id / following_id)
 user 1—* wear_log *—1 outfit
+user 1—* trip
 ```
 
 ## Keeping this doc updated

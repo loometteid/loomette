@@ -1,34 +1,92 @@
-import { Sparkle } from "@/components/ui/sparkle";
-import { Typography } from "@/components/ui/typography";
+import { HomeView } from "@/components/features/home/home-view";
+import type { FavoriteItem } from "@/components/features/home/types";
+import type { StyleTag } from "@/lib/styleTags";
 import { createClient } from "@/lib/supabase/server";
 
-// Minimal stub for the redirect target after upload/onboarding. The
-// full Figma homepage (outfit carousel, AI style suggestions, stats)
-// is separate, unscoped future work — this only needs to exist so
-// there's somewhere real to land.
+type WardrobeRow = {
+  id: string;
+  wear_count: number | null;
+  created_at: string;
+  item: {
+    item_id: string;
+    name: string | null;
+    category: string | null;
+    image_url: string | null;
+  } | null;
+};
+
 export default async function HomePage() {
   const supabase = await createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
 
-  let displayName: string | null = null;
-  if (user) {
-    const { data: profile } = await supabase
-      .from("user")
-      .select("display_name")
-      .eq("user_id", user.id)
-      .single();
-    displayName = profile?.display_name ?? null;
+  if (!user) return null;
+
+  const [{ data: profile }, { data: wardrobeRows }, { count: looksCount }] =
+    await Promise.all([
+      supabase
+        .from("user")
+        .select("display_name, profile_photo, style_tags")
+        .eq("user_id", user.id)
+        .single(),
+      supabase
+        .from("wardrobe_item")
+        .select(
+          "id, wear_count, created_at, item:item_id(item_id, name, category, image_url)",
+        )
+        .eq("user_id", user.id)
+        .eq("is_approved", true)
+        .order("wear_count", { ascending: false })
+        .order("created_at", { ascending: false })
+        .returns<WardrobeRow[]>(),
+      supabase
+        .from("outfit")
+        .select("id", { count: "exact", head: true })
+        .eq("user_id", user.id)
+        .eq("is_saved", true),
+    ]);
+
+  const rows = wardrobeRows ?? [];
+
+  // Rows are already ordered wear_count desc, created_at desc, so the
+  // first match per category is "the favorite" -- most-worn, falling
+  // back to most-recently-added when nothing has been worn yet.
+  function favoriteIn(category: string): FavoriteItem | null {
+    const row = rows.find((r) => r.item?.category === category);
+    if (!row?.item) return null;
+    return {
+      id: row.item.item_id,
+      name: row.item.name,
+      category: row.item.category,
+      image_url: row.item.image_url,
+    };
+  }
+
+  const categoryCounts = new Map<string, number>();
+  for (const row of rows) {
+    const category = row.item?.category;
+    if (!category) continue;
+    categoryCounts.set(category, (categoryCounts.get(category) ?? 0) + 1);
+  }
+  let topCategory: string | null = null;
+  let topCategoryCount = 0;
+  for (const [category, count] of categoryCounts) {
+    if (count > topCategoryCount) {
+      topCategory = category;
+      topCategoryCount = count;
+    }
   }
 
   return (
-    <main className="mx-auto flex w-full max-w-sm flex-col gap-2 px-6 py-8">
-      <Sparkle className="size-5 text-foreground" />
-      <Typography variant="title" as="h1">
-        Ready to style in,{" "}
-        <em className="font-bold italic">{displayName ?? "there"}</em>?
-      </Typography>
-    </main>
+    <HomeView
+      displayName={profile?.display_name ?? null}
+      profilePhoto={profile?.profile_photo ?? null}
+      styleTags={(profile?.style_tags ?? []) as StyleTag[]}
+      favoriteTop={favoriteIn("Tops")}
+      favoriteBottom={favoriteIn("Bottoms")}
+      topCategory={topCategory}
+      looksCount={looksCount ?? 0}
+    />
   );
 }

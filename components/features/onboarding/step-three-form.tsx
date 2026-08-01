@@ -5,18 +5,12 @@ import { useRouter } from "next/navigation";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { createClient } from "@/lib/supabase/client";
+import {
+  WORK_SETTING_OPTIONS,
+  type WorkSetting,
+} from "@/lib/profileOptions";
 import { OnboardingShell } from "./onboarding-shell";
 import { PillToggleGroup } from "./pill-toggle-group";
-import type { Database } from "@/types/database.types";
-
-type WorkSetting = Database["public"]["Enums"]["work_setting_type"];
-
-const WORK_SETTING_OPTIONS: { value: WorkSetting; label: string }[] = [
-  { value: "in_office", label: "In-Office" },
-  { value: "remote", label: "Remote" },
-  { value: "hybrid", label: "Hybrid" },
-  { value: "on_the_go", label: "On The Go" },
-];
 
 export function StepThreeForm() {
   const router = useRouter();

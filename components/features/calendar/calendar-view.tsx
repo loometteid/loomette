@@ -13,12 +13,31 @@ import { CalendarGrid } from "./calendar-grid";
 import { MonthPickerDialog } from "./month-picker-dialog";
 import { OutfitEntryDialog } from "./outfit-entry-dialog";
 import {
+  DIARY_ENTRY_SELECT,
+  toDiaryEntries,
+  type RawDiaryRow,
+} from "./diary-query";
+import {
   dateKey,
   formatMonthYear,
   monthRangeISO,
   todayParts,
 } from "./date-utils";
 import type { DiaryEntry } from "./types";
+
+// Rows must already be ordered latest-created-first per date -- this
+// keeps the first occurrence per date, i.e. the most recent entry.
+// `new Map(pairs)` looks equivalent but isn't: the Map constructor
+// keeps the *last* pair for a repeated key, which would silently pick
+// the oldest entry instead whenever two outfits are logged for the
+// same day.
+function dedupeByDate(rows: DiaryEntry[]) {
+  const map = new Map<string, DiaryEntry>();
+  for (const row of rows) {
+    if (!map.has(row.worn_on)) map.set(row.worn_on, row);
+  }
+  return map;
+}
 
 async function fetchMonthEntries(
   userId: string,
@@ -29,21 +48,16 @@ async function fetchMonthEntries(
   const supabase = createClient();
   const { data, error } = await supabase
     .from("wear_log")
-    .select("id, worn_on, outfit:outfit_id(id, cover_image_url)")
+    .select(DIARY_ENTRY_SELECT)
     .eq("user_id", userId)
     .gte("worn_on", start)
     .lte("worn_on", end)
     .order("worn_on", { ascending: true })
     .order("created_at", { ascending: false })
-    .returns<DiaryEntry[]>();
+    .returns<RawDiaryRow[]>();
   if (error) throw error;
 
-  const map = new Map<string, DiaryEntry>();
-  for (const row of data ?? []) {
-    // Ordered latest-created-first per date -- first occurrence wins.
-    if (!map.has(row.worn_on)) map.set(row.worn_on, row);
-  }
-  return map;
+  return dedupeByDate(toDiaryEntries(data ?? []));
 }
 
 export function CalendarView({
@@ -65,7 +79,7 @@ export function CalendarView({
   const [todayKey, setTodayKey] = useState(initialTodayKey);
   const [selectedKey, setSelectedKey] = useState(initialTodayKey);
   const [entriesByDate, setEntriesByDate] = useState<Map<string, DiaryEntry>>(
-    () => new Map(initialEntries.map((entry) => [entry.worn_on, entry])),
+    () => dedupeByDate(initialEntries),
   );
   const [monthPickerOpen, setMonthPickerOpen] = useState(false);
   const [openEntry, setOpenEntry] = useState<DiaryEntry | null>(null);
@@ -103,7 +117,11 @@ export function CalendarView({
     const entry: DiaryEntry = {
       id: saved.wearLogId,
       worn_on: saved.wornOn,
-      outfit: { id: saved.outfitId, cover_image_url: saved.coverImageUrl },
+      // This merge only ever runs for the photo-upload flow (Mix &
+      // Match's "Add to Calendar" arrives via a full navigation, so it
+      // reads its entry straight from the server query instead) --
+      // there's never a composition to attach here.
+      outfit: { id: saved.outfitId, cover_image_url: saved.coverImageUrl, items: [] },
     };
 
     const [yearStr, monthStr] = saved.wornOn.split("-");

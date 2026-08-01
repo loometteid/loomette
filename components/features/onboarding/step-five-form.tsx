@@ -3,21 +3,9 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
+import { STYLE_TAG_OPTIONS, type StyleTag } from "@/lib/styleTags";
 import { OnboardingShell } from "./onboarding-shell";
 import { PillToggleGroup } from "./pill-toggle-group";
-import type { Database } from "@/types/database.types";
-
-type StyleTag = Database["public"]["Enums"]["style_tag_type"];
-
-const STYLE_TAG_OPTIONS: { value: StyleTag; label: string }[] = [
-  { value: "clean_minimal", label: "Clean & Minimal" },
-  { value: "effortlessly_casual", label: "Effortlessly Casual" },
-  { value: "office_ready", label: "Office-Ready" },
-  { value: "soft_feminine", label: "Soft & Feminine" },
-  { value: "bold_expressive", label: "Bold & Expressive" },
-  { value: "street_inspired", label: "Street-Inspired" },
-  { value: "still_figuring_it_out", label: "Still Figuring It Out" },
-];
 
 export function StepFiveForm() {
   const router = useRouter();

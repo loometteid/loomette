@@ -133,6 +133,7 @@ export type Database = {
           is_public: boolean | null
           is_saved: boolean | null
           item_not_available: number | null
+          name: string | null
           occasion: string | null
           user_id: string | null
           wear_count: number | null
@@ -144,6 +145,7 @@ export type Database = {
           is_public?: boolean | null
           is_saved?: boolean | null
           item_not_available?: number | null
+          name?: string | null
           occasion?: string | null
           user_id?: string | null
           wear_count?: number | null
@@ -155,6 +157,7 @@ export type Database = {
           is_public?: boolean | null
           is_saved?: boolean | null
           item_not_available?: number | null
+          name?: string | null
           occasion?: string | null
           user_id?: string | null
           wear_count?: number | null
@@ -175,6 +178,8 @@ export type Database = {
           layer_order: number | null
           notes: string | null
           outfit_id: string | null
+          position_x: number | null
+          position_y: number | null
           wardrobe_item_id: string | null
         }
         Insert: {
@@ -182,6 +187,8 @@ export type Database = {
           layer_order?: number | null
           notes?: string | null
           outfit_id?: string | null
+          position_x?: number | null
+          position_y?: number | null
           wardrobe_item_id?: string | null
         }
         Update: {
@@ -189,6 +196,8 @@ export type Database = {
           layer_order?: number | null
           notes?: string | null
           outfit_id?: string | null
+          position_x?: number | null
+          position_y?: number | null
           wardrobe_item_id?: string | null
         }
         Relationships: [
@@ -259,9 +268,57 @@ export type Database = {
           },
         ]
       }
+      trip: {
+        Row: {
+          created_at: string | null
+          end_date: string
+          id: string
+          name: string | null
+          season: Database["public"]["Enums"]["season_type"] | null
+          start_date: string
+          travel_companion:
+            | Database["public"]["Enums"]["travel_companion_type"]
+            | null
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          end_date: string
+          id?: string
+          name?: string | null
+          season?: Database["public"]["Enums"]["season_type"] | null
+          start_date: string
+          travel_companion?:
+            | Database["public"]["Enums"]["travel_companion_type"]
+            | null
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          end_date?: string
+          id?: string
+          name?: string | null
+          season?: Database["public"]["Enums"]["season_type"] | null
+          start_date?: string
+          travel_companion?:
+            | Database["public"]["Enums"]["travel_companion_type"]
+            | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "trip_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "user"
+            referencedColumns: ["user_id"]
+          },
+        ]
+      }
       user: {
         Row: {
           birthday: string | null
+          body_type: string | null
           bust_size: number | null
           created_at: string | null
           display_name: string | null
@@ -290,6 +347,7 @@ export type Database = {
         }
         Insert: {
           birthday?: string | null
+          body_type?: string | null
           bust_size?: number | null
           created_at?: string | null
           display_name?: string | null
@@ -318,6 +376,7 @@ export type Database = {
         }
         Update: {
           birthday?: string | null
+          body_type?: string | null
           bust_size?: number | null
           created_at?: string | null
           display_name?: string | null
@@ -484,6 +543,7 @@ export type Database = {
         | "special"
         | "just_vibing"
       outfit_size_type: "xs" | "s" | "m" | "l" | "xl" | "it_varies"
+      season_type: "winter" | "spring" | "summer" | "autumn"
       shoe_size_region_type: "uk" | "us" | "eu"
       style_tag_type:
         | "clean_minimal"
@@ -494,6 +554,7 @@ export type Database = {
         | "street_inspired"
         | "still_figuring_it_out"
       subscription_tier: "free" | "premium"
+      travel_companion_type: "solo_trip" | "couple" | "family" | "business"
       wardrobe_source: "TikTok" | "Instagram" | "Original"
       work_setting_type: "in_office" | "remote" | "hybrid" | "on_the_go"
     }
@@ -636,6 +697,7 @@ export const Constants = {
         "just_vibing",
       ],
       outfit_size_type: ["xs", "s", "m", "l", "xl", "it_varies"],
+      season_type: ["winter", "spring", "summer", "autumn"],
       shoe_size_region_type: ["uk", "us", "eu"],
       style_tag_type: [
         "clean_minimal",
@@ -647,6 +709,7 @@ export const Constants = {
         "still_figuring_it_out",
       ],
       subscription_tier: ["free", "premium"],
+      travel_companion_type: ["solo_trip", "couple", "family", "business"],
       wardrobe_source: ["TikTok", "Instagram", "Original"],
       work_setting_type: ["in_office", "remote", "hybrid", "on_the_go"],
     },

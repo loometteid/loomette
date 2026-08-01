@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Dialog, DialogPopup, DialogTitle } from "@/components/ui/dialog";
+import { OutfitComposition } from "@/components/features/outfit/outfit-composition";
 import type { DiaryEntry } from "./types";
 
 function formatEntryDate(worn_on: string) {
@@ -27,15 +28,22 @@ export function OutfitEntryDialog({
         {entry && (
           <>
             <DialogTitle>{formatEntryDate(entry.worn_on)}</DialogTitle>
-            {entry.outfit?.cover_image_url && (
-              <div className="bg-secondary relative aspect-3/4 w-full overflow-hidden rounded-2xl">
-                <Image
-                  src={entry.outfit.cover_image_url}
-                  alt="Outfit worn"
-                  fill
-                  className="object-cover"
-                />
-              </div>
+            {entry.outfit && entry.outfit.items.length > 0 ? (
+              <OutfitComposition
+                items={entry.outfit.items}
+                className="aspect-5/6 w-full"
+              />
+            ) : (
+              entry.outfit?.cover_image_url && (
+                <div className="bg-secondary relative aspect-3/4 w-full overflow-hidden rounded-2xl">
+                  <Image
+                    src={entry.outfit.cover_image_url}
+                    alt="Outfit worn"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              )
             )}
           </>
         )}

@@ -6,112 +6,21 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { createClient } from "@/lib/supabase/client";
+import {
+  EMPTY_MEASUREMENTS,
+  LENGTH_UNITS,
+  MEASUREMENT_FIELDS,
+  OUTFIT_SIZE_OPTIONS,
+  SHOE_REGIONS,
+  WEIGHT_UNITS,
+  toCanonicalMeasurement,
+  type MeasurementKey,
+  type MeasurementState,
+  type OutfitSize,
+  type ShoeRegion,
+} from "@/lib/profileOptions";
 import { OnboardingShell } from "./onboarding-shell";
 import { PillToggleGroup } from "./pill-toggle-group";
-import type { Database } from "@/types/database.types";
-
-type OutfitSize = Database["public"]["Enums"]["outfit_size_type"];
-type ShoeRegion = Database["public"]["Enums"]["shoe_size_region_type"];
-
-const OUTFIT_SIZE_OPTIONS: { value: OutfitSize; label: string }[] = [
-  { value: "xs", label: "XS" },
-  { value: "s", label: "S" },
-  { value: "m", label: "M" },
-  { value: "l", label: "L" },
-  { value: "xl", label: "XL" },
-  { value: "it_varies", label: "It Varies" },
-];
-
-const SHOE_REGIONS: ShoeRegion[] = ["uk", "us", "eu"];
-
-type MeasurementKey =
-  "height" | "weight" | "bust" | "waist" | "highHip" | "hip";
-type MeasurementColumn =
-  | "height"
-  | "weight"
-  | "bust_size"
-  | "waist_size"
-  | "high_hip_size"
-  | "hip_size";
-
-type MeasurementState = { value: string; unit: string };
-
-const LENGTH_UNITS = ["cm", "in"] as const;
-const WEIGHT_UNITS = ["kg", "lbs"] as const;
-
-const MEASUREMENT_FIELDS: {
-  key: MeasurementKey;
-  label: string;
-  placeholder: string;
-  units: readonly string[];
-  column: MeasurementColumn;
-  kind: "length" | "weight";
-}[] = [
-  {
-    key: "height",
-    label: "Height",
-    placeholder: "e.g. 160",
-    units: LENGTH_UNITS,
-    column: "height",
-    kind: "length",
-  },
-  {
-    key: "weight",
-    label: "Weight",
-    placeholder: "e.g. 55",
-    units: WEIGHT_UNITS,
-    column: "weight",
-    kind: "weight",
-  },
-  {
-    key: "bust",
-    label: "Bust Size",
-    placeholder: "e.g. 90",
-    units: LENGTH_UNITS,
-    column: "bust_size",
-    kind: "length",
-  },
-  {
-    key: "waist",
-    label: "Waist Size",
-    placeholder: "e.g. 60",
-    units: LENGTH_UNITS,
-    column: "waist_size",
-    kind: "length",
-  },
-  {
-    key: "highHip",
-    label: "High Hip",
-    placeholder: "e.g. 80",
-    units: LENGTH_UNITS,
-    column: "high_hip_size",
-    kind: "length",
-  },
-  {
-    key: "hip",
-    label: "Hip Size",
-    placeholder: "e.g. 90",
-    units: LENGTH_UNITS,
-    column: "hip_size",
-    kind: "length",
-  },
-];
-
-const EMPTY_MEASUREMENTS: Record<MeasurementKey, MeasurementState> = {
-  height: { value: "", unit: "cm" },
-  weight: { value: "", unit: "kg" },
-  bust: { value: "", unit: "cm" },
-  waist: { value: "", unit: "cm" },
-  highHip: { value: "", unit: "cm" },
-  hip: { value: "", unit: "cm" },
-};
-
-function toCanonical(value: number, unit: string, kind: "length" | "weight") {
-  if (kind === "weight") {
-    return Math.round(unit === "lbs" ? value * 0.453592 : value);
-  }
-  return Math.round(unit === "in" ? value * 2.54 : value);
-}
 
 function UnitSelect({
   value,
@@ -223,7 +132,11 @@ export function StepFourForm() {
       const state = measurements[field.key];
       const parsed = Number(state.value);
       if (state.value.trim() && !Number.isNaN(parsed)) {
-        update[field.column] = toCanonical(parsed, state.unit, field.kind);
+        update[field.column] = toCanonicalMeasurement(
+          parsed,
+          state.unit,
+          field.kind,
+        );
       }
     }
 

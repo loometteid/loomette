@@ -6,18 +6,9 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { createClient } from "@/lib/supabase/client";
+import { GENDER_OPTIONS, type Gender } from "@/lib/profileOptions";
 import { OnboardingShell } from "./onboarding-shell";
 import { PillToggleGroup } from "./pill-toggle-group";
-import type { Database } from "@/types/database.types";
-
-type Gender = Database["public"]["Enums"]["gender_type"];
-
-const IDENTITY_OPTIONS: { value: Gender; label: string }[] = [
-  { value: "female", label: "She / Her" },
-  { value: "male", label: "He / Him" },
-  { value: "non_binary", label: "They / Them" },
-  { value: "prefer_not_to_say", label: "Prefer not to say" },
-];
 
 export function StepTwoForm() {
   const router = useRouter();
@@ -90,7 +81,7 @@ export function StepTwoForm() {
           How do you identify?
         </Label>
         <PillToggleGroup
-          options={IDENTITY_OPTIONS}
+          options={GENDER_OPTIONS}
           isSelected={(value) => identity === value}
           onToggle={(value) => setIdentity(value as Gender)}
         />

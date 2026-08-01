@@ -3,7 +3,11 @@ import {
   dateKey,
   monthRangeISO,
 } from "@/components/features/calendar/date-utils";
-import type { DiaryEntry } from "@/components/features/calendar/types";
+import {
+  DIARY_ENTRY_SELECT,
+  toDiaryEntries,
+  type RawDiaryRow,
+} from "@/components/features/calendar/diary-query";
 import { createClient } from "@/lib/supabase/server";
 
 export default async function CalendarPage() {
@@ -22,13 +26,13 @@ export default async function CalendarPage() {
 
   const { data: rows } = await supabase
     .from("wear_log")
-    .select("id, worn_on, outfit:outfit_id(id, cover_image_url)")
+    .select(DIARY_ENTRY_SELECT)
     .eq("user_id", user.id)
     .gte("worn_on", start)
     .lte("worn_on", end)
     .order("worn_on", { ascending: true })
     .order("created_at", { ascending: false })
-    .returns<DiaryEntry[]>();
+    .returns<RawDiaryRow[]>();
 
   return (
     <CalendarView
@@ -36,7 +40,7 @@ export default async function CalendarPage() {
       initialYear={year}
       initialMonth={month}
       initialTodayKey={todayKey}
-      initialEntries={rows ?? []}
+      initialEntries={toDiaryEntries(rows ?? [])}
     />
   );
 }

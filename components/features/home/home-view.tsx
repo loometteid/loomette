@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { Bell, ChevronLeft, ChevronRight, Sparkles, TrendingUp } from "lucide-react";
 import { toast } from "sonner";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -33,6 +34,7 @@ export function HomeView({
   topCategory: string | null;
   looksCount: number;
 }) {
+  const router = useRouter();
   const [prompt, setPrompt] = useState("");
   const initials = (displayName ?? "?").slice(0, 2).toUpperCase();
   const codedTag = styleTags[0];
@@ -71,6 +73,7 @@ export function HomeView({
         </Avatar>
         <button
           type="button"
+          onClick={() => router.push("/home/notifications")}
           aria-label="Notifications"
           className="bg-secondary flex size-10 items-center justify-center rounded-xl"
         >

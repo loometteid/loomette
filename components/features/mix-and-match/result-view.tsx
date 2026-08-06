@@ -9,8 +9,8 @@ import { Dialog, DialogPopup } from "@/components/ui/dialog";
 import { Sparkle } from "@/components/ui/sparkle";
 import { Typography } from "@/components/ui/typography";
 import { createClient } from "@/lib/supabase/client";
-import { dateKey, todayParts } from "@/components/features/calendar/date-utils";
 import { OutfitComposition } from "@/components/features/outfit/outfit-composition";
+import { CalendarDateDialog } from "./calendar-date-dialog";
 import type { ResultItem } from "./result-types";
 
 export function MixAndMatchResult({
@@ -32,6 +32,7 @@ export function MixAndMatchResult({
   const [addedToCalendar, setAddedToCalendar] = useState(false);
   const [busy, setBusy] = useState<"collection" | "calendar" | null>(null);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [calendarPickerOpen, setCalendarPickerOpen] = useState(false);
 
   async function commitName() {
     setEditingName(false);
@@ -60,8 +61,12 @@ export function MixAndMatchResult({
     setShowSuccess(true);
   }
 
-  async function handleAddToCalendar() {
+  function handleAddToCalendar() {
     if (addedToCalendar) return;
+    setCalendarPickerOpen(true);
+  }
+
+  async function handleConfirmCalendarDate(selectedKey: string) {
     setBusy("calendar");
     const supabase = createClient();
     const {
@@ -72,11 +77,10 @@ export function MixAndMatchResult({
       router.push("/sign-in");
       return;
     }
-    const today = todayParts();
     const { error } = await supabase.from("wear_log").insert({
       user_id: user.id,
       outfit_id: outfitId,
-      worn_on: dateKey(today.year, today.month, today.day),
+      worn_on: selectedKey,
     });
     setBusy(null);
     if (error) {
@@ -84,6 +88,7 @@ export function MixAndMatchResult({
       return;
     }
     setAddedToCalendar(true);
+    setCalendarPickerOpen(false);
     setShowSuccess(true);
   }
 
@@ -182,6 +187,13 @@ export function MixAndMatchResult({
           </div>
         </DialogPopup>
       </Dialog>
+
+      <CalendarDateDialog
+        open={calendarPickerOpen}
+        onOpenChange={setCalendarPickerOpen}
+        onConfirm={handleConfirmCalendarDate}
+        saving={busy === "calendar"}
+      />
     </main>
   );
 }

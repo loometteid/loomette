@@ -136,7 +136,7 @@ export function ApprovalQueue({
                       src={row.item.image_url}
                       alt=""
                       fill
-                      className="object-cover"
+                      className="object-contain p-2"
                     />
                   )}
                 </div>

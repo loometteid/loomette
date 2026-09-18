@@ -11,7 +11,7 @@ function extensionFromMime(mime: string) {
 export async function uploadWardrobeImage(
   userId: string,
   uploadId: string,
-  variant: "original" | "processed",
+  variant: "original" | "processed" | `item-${number}`,
   file: Blob,
 ) {
   const supabase = createClient();
@@ -33,7 +33,7 @@ export async function uploadWardrobeImage(
 export async function deleteWardrobeImages(paths: string[]) {
   if (paths.length === 0) return;
   const supabase = createClient();
-  await supabase.storage.from(BUCKET).remove(paths);
+  await supabase.storage.from(BUCKET).remove([...new Set(paths)]);
 }
 
 /** Recovers the storage path from a public URL previously returned by

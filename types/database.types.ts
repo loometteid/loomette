@@ -521,6 +521,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      create_wardrobe_extraction: {
+        Args: { p_items: Json }
+        Returns: number
+      }
       create_wardrobe_upload: {
         Args: { p_original_url: string; p_processed_url: string }
         Returns: {

@@ -240,7 +240,7 @@ export function WardrobeView({
       )}
 
       <Link
-        href="/onboarding/7"
+        href="/wardrobe/new"
         aria-label="Add item"
         className="bg-foreground text-background fixed right-6 bottom-24 flex size-14 items-center justify-center rounded-2xl shadow-lg"
       >

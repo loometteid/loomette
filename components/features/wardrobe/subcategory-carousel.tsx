@@ -19,6 +19,7 @@ export function SubcategoryCarousel({
   active: string;
   onChange: (value: string) => void;
 }) {
+  const hasMultipleOptions = options.length > 1;
   const containerRef = useRef<HTMLDivElement>(null);
   const itemRefs = useRef<Map<string, HTMLButtonElement>>(new Map());
   const scrollTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -75,12 +76,19 @@ export function SubcategoryCarousel({
     <div
       ref={containerRef}
       onScroll={handleScroll}
-      className="scrollbar-none flex w-full snap-x snap-mandatory gap-10 overflow-x-auto px-[30%]"
+      className={cn(
+        "scrollbar-none flex w-full gap-10",
+        hasMultipleOptions
+          ? "snap-x snap-mandatory overflow-x-auto px-[30%]"
+          : "justify-center overflow-hidden px-0",
+      )}
       style={{
-        maskImage:
-          "linear-gradient(to right, transparent, black 18%, black 82%, transparent)",
-        WebkitMaskImage:
-          "linear-gradient(to right, transparent, black 18%, black 82%, transparent)",
+        maskImage: hasMultipleOptions
+          ? "linear-gradient(to right, transparent, black 18%, black 82%, transparent)"
+          : undefined,
+        WebkitMaskImage: hasMultipleOptions
+          ? "linear-gradient(to right, transparent, black 18%, black 82%, transparent)"
+          : undefined,
       }}
     >
       {options.map((option) => (

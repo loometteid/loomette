@@ -54,7 +54,7 @@ export function GoogleSignInButton({
         onClick={handleClick}
         disabled={loading}
         aria-label={loading ? "Redirecting…" : "Continue with Google"}
-        className="size-16 rounded-2xl"
+        className="size-16 rounded-2xl border-[#C9C3B7]"
       >
         <GoogleGlyph className="size-6" />
       </Button>

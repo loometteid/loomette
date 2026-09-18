@@ -17,7 +17,7 @@ export default async function ApprovalPage() {
     supabase
       .from("wardrobe_item")
       .select(
-        "id, created_at, size, price, purchase_location, occasions, image_url, item:item_id(item_id, name, category, subcategory, brand, color, image_url)",
+        "id, created_at, size, price, purchase_location, occasions, image_url, item:item_id(item_id, name, category, subcategory, brand, color, material, image_url)",
       )
       .eq("user_id", user.id)
       .eq("is_approved", false)

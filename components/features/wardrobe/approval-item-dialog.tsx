@@ -42,6 +42,7 @@ export function ApprovalItemDialog({
 }) {
   const [name, setName] = useState(item.item?.name ?? "");
   const [brand, setBrand] = useState(item.item?.brand ?? "");
+  const [material, setMaterial] = useState(item.item?.material ?? "");
   const [category, setCategory] = useState<string | null>(
     item.item?.category ?? null,
   );
@@ -69,6 +70,7 @@ export function ApprovalItemDialog({
       .update({
         name: name.trim() || null,
         brand: brand.trim() || null,
+        material: material.trim() || null,
         category,
         subcategory,
         color,
@@ -105,7 +107,7 @@ export function ApprovalItemDialog({
               src={item.item.image_url}
               alt=""
               fill
-              className="object-cover"
+              className="object-contain p-2"
             />
           )}
         </div>
@@ -195,6 +197,21 @@ export function ApprovalItemDialog({
               Details
             </AccordionTrigger>
             <AccordionPanel className="flex flex-col gap-4 pt-2">
+              <div className="flex flex-col gap-1.5">
+                <Label
+                  htmlFor="approval-material"
+                  className="text-foreground text-xs tracking-wide uppercase"
+                >
+                  Material
+                </Label>
+                <Input
+                  id="approval-material"
+                  placeholder="e.g. Cotton"
+                  value={material}
+                  onChange={(event) => setMaterial(event.target.value)}
+                />
+              </div>
+
               <div className="flex flex-col gap-2">
                 <Label className="text-muted-foreground text-xs tracking-wide uppercase">
                   Occasion

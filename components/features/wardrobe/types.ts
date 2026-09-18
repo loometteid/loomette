@@ -19,6 +19,7 @@ export type PendingItem = {
     subcategory: string | null;
     brand: string | null;
     color: string | null;
+    material: string | null;
     image_url: string | null;
   } | null;
 };

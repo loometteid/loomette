@@ -15,6 +15,18 @@ export async function invokeGemini<TResponse = unknown>(
     { body },
   );
 
-  if (error) throw error;
+  if (error) {
+    let message = error.message;
+    const context = "context" in error ? error.context : null;
+    if (context instanceof Response) {
+      try {
+        const payload = (await context.clone().json()) as { error?: unknown };
+        if (typeof payload.error === "string") message = payload.error;
+      } catch {
+        // Preserve the SDK error when the function did not return JSON.
+      }
+    }
+    throw new Error(message);
+  }
   return data as TResponse;
 }

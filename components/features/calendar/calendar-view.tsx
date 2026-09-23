@@ -86,6 +86,15 @@ export function CalendarView({
   }, []);
   /* eslint-enable react-hooks/set-state-in-effect, react-hooks/exhaustive-deps */
 
+  function goToToday() {
+    const client = todayParts();
+    const clientKey = dateKey(client.year, client.month, client.day);
+    setTodayKey(clientKey);
+    setViewedYear(client.year);
+    setViewedMonth(client.month);
+    setSelectedKey(clientKey);
+  }
+
   // Consume an entry saved by the /calendar/loading -> /calendar/
   // outfit-approval flow (stores/outfit-diary-upload-store.ts). That
   // flow lives on separate routes/pages, so it can't hand the new entry
@@ -147,14 +156,6 @@ export function CalendarView({
         }
       });
   }, [userId, viewedYear, viewedMonth]);
-
-  function goToToday() {
-    const client = todayParts();
-    const clientKey = dateKey(client.year, client.month, client.day);
-    setViewedYear(client.year);
-    setViewedMonth(client.month);
-    setSelectedKey(clientKey);
-  }
 
   function handleFileSelected(file: File) {
     useOutfitDiaryUploadStore

@@ -1,6 +1,12 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import {
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  useSyncExternalStore,
+} from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ChevronDown, History } from "lucide-react";
@@ -43,6 +49,13 @@ async function fetchMonthEntries(
   return dedupeByDate(entries);
 }
 
+const subscribeNoop = () => () => {};
+
+function getClientTodayKey() {
+  const { year, month, day } = todayParts();
+  return dateKey(year, month, day);
+}
+
 export function CalendarView({
   userId,
   initialYear,
@@ -57,10 +70,29 @@ export function CalendarView({
   initialEntries: DiaryEntry[];
 }) {
   const router = useRouter();
-  const [viewedYear, setViewedYear] = useState(initialYear);
-  const [viewedMonth, setViewedMonth] = useState(initialMonth);
-  const [todayKey, setTodayKey] = useState(initialTodayKey);
-  const [selectedKey, setSelectedKey] = useState(initialTodayKey);
+
+  // Safely sync with browser's clock/timezone across hydration:
+  // useEffect-free hydration resolution
+  const todayKey = useSyncExternalStore(
+    subscribeNoop,
+    getClientTodayKey,
+    () => initialTodayKey,
+  );
+
+  const [todayYear, todayMonth] = useMemo(() => {
+    const [y, m] = todayKey.split("-");
+    return [Number(y), Number(m) - 1];
+  }, [todayKey]);
+
+  const [userViewedYear, setUserViewedYear] = useState<number | null>(null);
+  const [userViewedMonth, setUserViewedMonth] = useState<number | null>(null);
+  const [userSelectedKey, setUserSelectedKey] = useState<string | null>(null);
+
+  // Derived state: defaults to today unless explicitly overridden by user
+  const viewedYear = userViewedYear ?? todayYear;
+  const viewedMonth = userViewedMonth ?? todayMonth;
+  const selectedKey = userSelectedKey ?? todayKey;
+
   const [entriesByDate, setEntriesByDate] = useState<Map<string, DiaryEntry>>(
     () => dedupeByDate(initialEntries),
   );
@@ -68,31 +100,10 @@ export function CalendarView({
   const [openEntry, setOpenEntry] = useState<DiaryEntry | null>(null);
   const fetchToken = useRef(0);
 
-  // The server rendered with its own clock's notion of "today". Correct
-  // for a mismatch (different timezone, or a request that straddled
-  // midnight) after mount instead of reading the client's Date() during
-  // the initial render, which would risk a hydration mismatch. This is
-  // genuinely syncing with an external system (the browser's clock), not
-  // recomputing derived state, so the setState-in-effect rule doesn't apply.
-  /* eslint-disable react-hooks/set-state-in-effect, react-hooks/exhaustive-deps */
-  useEffect(() => {
-    const client = todayParts();
-    const clientKey = dateKey(client.year, client.month, client.day);
-    if (clientKey === initialTodayKey) return;
-    setTodayKey(clientKey);
-    setSelectedKey((prev) => (prev === initialTodayKey ? clientKey : prev));
-    setViewedYear(client.year);
-    setViewedMonth(client.month);
-  }, []);
-  /* eslint-enable react-hooks/set-state-in-effect, react-hooks/exhaustive-deps */
-
   function goToToday() {
-    const client = todayParts();
-    const clientKey = dateKey(client.year, client.month, client.day);
-    setTodayKey(clientKey);
-    setViewedYear(client.year);
-    setViewedMonth(client.month);
-    setSelectedKey(clientKey);
+    setUserViewedYear(null);
+    setUserViewedMonth(null);
+    setUserSelectedKey(null);
   }
 
   // Consume an entry saved by the /calendar/loading -> /calendar/
@@ -122,13 +133,13 @@ export function CalendarView({
     const entryMonth = Number(monthStr) - 1;
 
     if (entryYear !== initialYear || entryMonth !== initialMonth) {
-      setViewedYear(entryYear);
-      setViewedMonth(entryMonth);
+      setUserViewedYear(entryYear);
+      setUserViewedMonth(entryMonth);
       setEntriesByDate(new Map([[entry.worn_on, entry]]));
     } else {
       setEntriesByDate((prev) => new Map(prev).set(entry.worn_on, entry));
     }
-    setSelectedKey(entry.worn_on);
+    setUserSelectedKey(entry.worn_on);
   }, [initialYear, initialMonth, userId]);
   /* eslint-enable react-hooks/set-state-in-effect */
 
@@ -198,7 +209,7 @@ export function CalendarView({
         todayKey={todayKey}
         selectedKey={selectedKey}
         entriesByDate={entriesByDate}
-        onSelectDate={setSelectedKey}
+        onSelectDate={setUserSelectedKey}
         onOpenEntry={setOpenEntry}
       />
 
@@ -239,8 +250,8 @@ export function CalendarView({
         year={viewedYear}
         month={viewedMonth}
         onSelect={(year, month) => {
-          setViewedYear(year);
-          setViewedMonth(month);
+          setUserViewedYear(year);
+          setUserViewedMonth(month);
         }}
       />
 

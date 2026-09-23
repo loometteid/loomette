@@ -71,14 +71,14 @@ export function CalendarFallback() {
                   key={cell.key}
                   className={cn(
                     "flex h-16 flex-col items-center gap-1 rounded-xl p-1 text-center transition-colors",
-                    isToday && "bg-secondary/40",
+                    isToday && "bg-foreground",
                   )}
                 >
                   <span
                     className={cn(
                       "text-xs",
                       isToday
-                        ? "text-foreground font-semibold"
+                        ? "text-background font-medium"
                         : "text-foreground",
                     )}
                   >

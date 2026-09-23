@@ -9,7 +9,6 @@ export default function CalendarTemplate({
   children: React.ReactNode;
 }) {
   // @see https://nextjs.org/docs/app/api-reference/functions/use-router#bfcacheid
-  // @ts-expect-error `bfcacheId` is not typed, but this is a valid property.
   const { bfcacheId } = useRouter();
   return <Fragment key={bfcacheId}>{children}</Fragment>;
 }

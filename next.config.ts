@@ -17,12 +17,6 @@ const nextConfig: NextConfig = {
       ]
       : [],
   },
-  experimental: {
-    instantInsights: {
-      validationLevel: "warning"
-    }
-  },
-  output: "standalone"
 };
 
 export default nextConfig;

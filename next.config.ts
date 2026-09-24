@@ -5,6 +5,7 @@ const supabaseHostname = process.env.NEXT_PUBLIC_SUPABASE_URL
   : undefined;
 
 const nextConfig: NextConfig = {
+  cacheComponents: true,
   images: {
     remotePatterns: supabaseHostname
       ? [
@@ -16,6 +17,12 @@ const nextConfig: NextConfig = {
       ]
       : [],
   },
+  experimental: {
+    instantInsights: {
+      validationLevel: "warning"
+    }
+  },
+  output: "standalone"
 };
 
 export default nextConfig;

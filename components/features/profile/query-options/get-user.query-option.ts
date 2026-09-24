@@ -13,7 +13,6 @@ export const getUserQueryOptions = () =>
         error,
       } = await supabase.auth.getUser();
 
-      console.log({ error, user })
       if (error || !user) {
         throw redirect("/sign-in");
       }

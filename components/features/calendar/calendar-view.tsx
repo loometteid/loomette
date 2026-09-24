@@ -54,11 +54,9 @@ export function CalendarView({ userId }: { userId: string }) {
   const selectedKey = userSelectedKey ?? todayKey;
 
   // TanStack Query with Suspense: loads and caches month data seamlessly
-  console.log('sampai sini')
   const { data: entriesByDate } = useSuspenseQuery(
     getDiaryEntriesQueryOptionsForBrowser(userId, viewedYear, viewedMonth),
   );
-  console.log('habis ini', entriesByDate)
 
   const [monthPickerOpen, setMonthPickerOpen] = useState(false);
   const [openEntry, setOpenEntry] = useState<DiaryEntry | null>(null);

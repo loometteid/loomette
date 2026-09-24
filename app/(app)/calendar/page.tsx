@@ -32,8 +32,6 @@ export default async function CalendarPage() {
 
   const dehydratedQueryClient = dehydrate(queryClient);
 
-  console.log({ dehydratedQueryClient })
-
   return (
     <HydrationBoundary state={dehydratedQueryClient}>
       <Suspense fallback={<CalendarFallback />}>

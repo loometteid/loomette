@@ -1,9 +1,10 @@
 import { WardrobeView } from "@/components/features/wardrobe/wardrobe-view";
-import { createClient } from "@/lib/supabase/server";
+import { createServerSupabaseClient } from "@/lib/supabase/server";
 import type { WardrobeItem } from "@/components/features/wardrobe/types";
 
 export default async function WardrobePage() {
-  const supabase = await createClient();
+  const supabase = await createServerSupabaseClient();
+
   const {
     data: { user },
   } = await supabase.auth.getUser();

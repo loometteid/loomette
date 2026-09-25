@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
-import { createClient } from "@/lib/supabase/client";
+import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 import { deleteWardrobeImages, pathFromPublicUrl } from "@/lib/wardrobeStorage";
 import { PillToggleGroup } from "@/components/features/onboarding/pill-toggle-group";
 import {
@@ -62,7 +62,8 @@ export function EditItemForm({
   async function handleSave() {
     if (!item.item) return;
     setSaving(true);
-    const supabase = createClient();
+    const supabase = createBrowserSupabaseClient();
+
 
     const { error: itemError } = await supabase
       .from("item")
@@ -99,7 +100,8 @@ export function EditItemForm({
 
   async function handleDelete() {
     setDeleting(true);
-    const supabase = createClient();
+    const supabase = createBrowserSupabaseClient();
+
     const { error } = await supabase.rpc("discard_wardrobe_item", {
       p_wardrobe_item_id: item.id,
     });
@@ -115,7 +117,7 @@ export function EditItemForm({
         pathFromPublicUrl(item.image_url),
         pathFromPublicUrl(item.item?.image_url),
       ].filter((p): p is string => !!p),
-    ).catch(() => {});
+    ).catch(() => { });
 
     toast.success("Item deleted");
     router.push("/wardrobe");

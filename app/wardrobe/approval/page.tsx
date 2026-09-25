@@ -1,10 +1,11 @@
 import { redirect } from "next/navigation";
 import { ApprovalQueue } from "@/components/features/wardrobe/approval-queue";
-import { createClient } from "@/lib/supabase/server";
+import { createServerSupabaseClient } from "@/lib/supabase/server";
 import type { PendingItem } from "@/components/features/wardrobe/types";
 
 export default async function ApprovalPage() {
-  const supabase = await createClient();
+  const supabase = await createServerSupabaseClient();
+
   const {
     data: { user },
   } = await supabase.auth.getUser();

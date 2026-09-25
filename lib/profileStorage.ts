@@ -1,4 +1,4 @@
-import { createClient } from "@/lib/supabase/client";
+import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 
 const BUCKET = "profile-photos";
 
@@ -9,7 +9,8 @@ function extensionFromMime(mime: string) {
 }
 
 export async function uploadProfilePhoto(userId: string, file: Blob) {
-  const supabase = createClient();
+  const supabase = createBrowserSupabaseClient();
+
   const contentType = file.type || "image/jpeg";
   const path = `${userId}/avatar-${Date.now()}.${extensionFromMime(contentType)}`;
 

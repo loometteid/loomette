@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { createClient } from "@/lib/supabase/client";
+import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 
 export function SignOutButton() {
   const router = useRouter();
@@ -11,7 +11,8 @@ export function SignOutButton() {
 
   async function handleClick() {
     setLoading(true);
-    const supabase = createClient();
+    const supabase = createBrowserSupabaseClient();
+
     await supabase.auth.signOut();
     setLoading(false);
     router.refresh();

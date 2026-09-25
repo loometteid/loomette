@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { createClient } from "@/lib/supabase/client";
+import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 
 // Standard 4-color Google "G" logomark — no icon package ships brand
 // logos (lucide-react is generic-only), so this is a one-off inline SVG.
@@ -38,7 +38,8 @@ export function GoogleSignInButton({
 
   async function handleClick() {
     setLoading(true);
-    const supabase = createClient();
+    const supabase = createBrowserSupabaseClient();
+
     await supabase.auth.signInWithOAuth({
       provider: "google",
       options: { redirectTo: `${window.location.origin}/auth/callback` },

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { createClient } from "@/lib/supabase/client";
+import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 import {
   WORK_SETTING_OPTIONS,
   type WorkSetting,
@@ -24,7 +24,8 @@ export function StepThreeForm() {
     setLoading(true);
     setError(null);
 
-    const supabase = createClient();
+    const supabase = createBrowserSupabaseClient();
+
     const {
       data: { user },
     } = await supabase.auth.getUser();

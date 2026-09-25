@@ -1,7 +1,7 @@
 import { notFound, redirect } from "next/navigation";
 import { MixAndMatchResult } from "@/components/features/mix-and-match/result-view";
 import type { ResultItem } from "@/components/features/mix-and-match/result-types";
-import { createClient } from "@/lib/supabase/server";
+import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 type OutfitItemRow = {
   layer_order: number | null;
@@ -23,7 +23,8 @@ export default async function MixAndMatchResultPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const supabase = await createClient();
+  const supabase = await createServerSupabaseClient();
+
   const {
     data: { user },
   } = await supabase.auth.getUser();

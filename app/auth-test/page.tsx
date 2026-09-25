@@ -2,10 +2,11 @@ import { GoogleSignInButton } from "@/components/features/auth/google-sign-in-bu
 import { SignInForm } from "@/components/features/auth/sign-in-form";
 import { SignOutButton } from "@/components/features/auth/sign-out-button";
 import { SignUpForm } from "@/components/features/auth/sign-up-form";
-import { createClient } from "@/lib/supabase/server";
+import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 export default async function AuthTestPage() {
-  const supabase = await createClient();
+  const supabase = await createServerSupabaseClient();
+
   const {
     data: { user },
   } = await supabase.auth.getUser();

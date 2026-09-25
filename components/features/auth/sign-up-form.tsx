@@ -6,7 +6,7 @@ import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { createClient } from "@/lib/supabase/client";
+import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 
 export function SignUpForm() {
   const router = useRouter();
@@ -20,7 +20,8 @@ export function SignUpForm() {
     setLoading(true);
     setError(null);
 
-    const supabase = createClient();
+    const supabase = createBrowserSupabaseClient();
+
     const { error } = await supabase.auth.signUp({ email, password });
 
     setLoading(false);

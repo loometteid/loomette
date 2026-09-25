@@ -17,7 +17,7 @@ import {
 } from "@/components/ui/select";
 import { Sparkle } from "@/components/ui/sparkle";
 import { Typography } from "@/components/ui/typography";
-import { createClient } from "@/lib/supabase/client";
+import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 import { uploadProfilePhoto } from "@/lib/profileStorage";
 import { STYLE_TAG_OPTIONS, type StyleTag } from "@/lib/styleTags";
 import {
@@ -176,7 +176,8 @@ export function EditProfileForm({ profile }: { profile: UserProfile }) {
 
   async function handlePhotoSelected(file: File) {
     setUploadingPhoto(true);
-    const supabase = createClient();
+    const supabase = createBrowserSupabaseClient();
+
     const {
       data: { user },
     } = await supabase.auth.getUser();
@@ -197,7 +198,8 @@ export function EditProfileForm({ profile }: { profile: UserProfile }) {
 
   async function handleSave() {
     setSaving(true);
-    const supabase = createClient();
+    const supabase = createBrowserSupabaseClient();
+
     const {
       data: { user },
     } = await supabase.auth.getUser();

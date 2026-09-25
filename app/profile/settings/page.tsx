@@ -1,9 +1,10 @@
 import { redirect } from "next/navigation";
 import { SettingsView } from "@/components/features/profile/settings-view";
-import { createClient } from "@/lib/supabase/server";
+import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 export default async function SettingsPage() {
-  const supabase = await createClient();
+  const supabase = await createServerSupabaseClient();
+
   const {
     data: { user },
   } = await supabase.auth.getUser();

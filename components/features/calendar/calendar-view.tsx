@@ -7,7 +7,7 @@ import { ChevronDown, History } from "lucide-react";
 import { toast } from "sonner";
 import { Sparkle } from "@/components/ui/sparkle";
 import { Typography } from "@/components/ui/typography";
-import { createClient } from "@/lib/supabase/client";
+import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 import { useOutfitDiaryUploadStore } from "@/stores/outfit-diary-upload-store";
 import { CalendarGrid } from "./calendar-grid";
 import { MonthPickerDialog } from "./month-picker-dialog";
@@ -45,7 +45,8 @@ async function fetchMonthEntries(
   month: number,
 ) {
   const { start, end } = monthRangeISO(year, month);
-  const supabase = createClient();
+  const supabase = createBrowserSupabaseClient();
+
   const { data, error } = await supabase
     .from("wear_log")
     .select(DIARY_ENTRY_SELECT)

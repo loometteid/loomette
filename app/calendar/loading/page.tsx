@@ -1,9 +1,10 @@
 import { redirect } from "next/navigation";
 import { OutfitLoading } from "@/components/features/calendar/outfit-loading";
-import { createClient } from "@/lib/supabase/server";
+import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 export default async function CalendarLoadingPage() {
-  const supabase = await createClient();
+  const supabase = await createServerSupabaseClient();
+
   const {
     data: { user },
   } = await supabase.auth.getUser();

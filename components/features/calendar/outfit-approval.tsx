@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogPopup, DialogTitle } from "@/components/ui/dialog";
 import { Sparkle } from "@/components/ui/sparkle";
 import { Typography } from "@/components/ui/typography";
-import { createClient } from "@/lib/supabase/client";
+import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 import { deleteOutfitPhotos } from "@/lib/outfitStorage";
 import { useOutfitDiaryUploadStore } from "@/stores/outfit-diary-upload-store";
 
@@ -41,7 +41,8 @@ export function OutfitApproval() {
     if (!draft || !result) return;
     setSaving(true);
     try {
-      const supabase = createClient();
+      const supabase = createBrowserSupabaseClient();
+
       const { data: outfitRow, error: outfitError } = await supabase
         .from("outfit")
         .insert({

@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Sparkle } from "@/components/ui/sparkle";
 import { Switch } from "@/components/ui/switch";
 import { Typography } from "@/components/ui/typography";
-import { createClient } from "@/lib/supabase/client";
+import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 
 function notImplemented() {
   toast("Coming soon.");
@@ -87,7 +87,8 @@ export function SettingsView({
   async function handlePrivacyToggle(next: boolean) {
     setIsPrivate(next);
     setSavingPrivacy(true);
-    const supabase = createClient();
+    const supabase = createBrowserSupabaseClient();
+
     const {
       data: { user },
     } = await supabase.auth.getUser();
@@ -109,7 +110,8 @@ export function SettingsView({
 
   async function handleLogOut() {
     setLoggingOut(true);
-    const supabase = createClient();
+    const supabase = createBrowserSupabaseClient();
+
     await supabase.auth.signOut();
     router.push("/sign-in");
   }

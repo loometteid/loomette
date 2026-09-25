@@ -1,4 +1,4 @@
-import { createClient } from "@/lib/supabase/client";
+import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 
 /**
  * Client-side entry point for AI features. Never calls the Gemini API
@@ -9,7 +9,8 @@ export async function invokeGemini<TResponse = unknown>(
   functionName: string,
   body: Record<string, unknown>,
 ): Promise<TResponse> {
-  const supabase = createClient();
+  const supabase = createBrowserSupabaseClient();
+
   const { data, error } = await supabase.functions.invoke<TResponse>(
     functionName,
     { body },

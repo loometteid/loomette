@@ -1,7 +1,7 @@
 import { HomeView } from "@/components/features/home/home-view";
 import type { FavoriteItem } from "@/components/features/home/types";
 import type { StyleTag } from "@/lib/styleTags";
-import { createClient } from "@/lib/supabase/server";
+import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 type WardrobeRow = {
   id: string;
@@ -16,7 +16,8 @@ type WardrobeRow = {
 };
 
 export default async function HomePage() {
-  const supabase = await createClient();
+  const supabase = await createServerSupabaseClient();
+
   const {
     data: { user },
   } = await supabase.auth.getUser();

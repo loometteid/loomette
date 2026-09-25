@@ -28,7 +28,9 @@ export default async function CalendarPage() {
 
   // prefetch diary entries
   const { year, month } = todayParts();
-  void queryClient.ensureQueryData(getDiaryEntriesQueryOptionsForServer(user.id, year, month))
+  void queryClient.ensureQueryData(
+    getDiaryEntriesQueryOptionsForServer(user.id, year, month),
+  );
 
   const dehydratedQueryClient = dehydrate(queryClient);
 

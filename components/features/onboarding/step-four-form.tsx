@@ -2,6 +2,9 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { Controller, useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -15,7 +18,6 @@ import {
   SHOE_REGIONS,
   WEIGHT_UNITS,
   toCanonicalMeasurement,
-  type MeasurementKey,
   type MeasurementState,
   type OutfitSize,
   type ShoeRegion,
@@ -90,25 +92,51 @@ function MeasurementField({
   );
 }
 
+const measurementStateSchema = z.object({
+  value: z.string(),
+  unit: z.string(),
+});
+
+const stepFourSchema = z.object({
+  outfitSize: z
+    .enum(["xs", "s", "m", "l", "xl", "it_varies"] as const)
+    .nullable()
+    .optional(),
+  shoeSize: z.string().trim().optional(),
+  shoeRegion: z.enum(["uk", "us", "eu"] as const),
+  measurements: z.object({
+    height: measurementStateSchema,
+    weight: measurementStateSchema,
+    bust: measurementStateSchema,
+    waist: measurementStateSchema,
+    highHip: measurementStateSchema,
+    hip: measurementStateSchema,
+  }),
+});
+
+type StepFourFormValues = z.infer<typeof stepFourSchema>;
+
 export function StepFourForm() {
   const router = useRouter();
-  const [outfitSize, setOutfitSize] = useState<OutfitSize | null>(null);
-  const [shoeSize, setShoeSize] = useState("");
-  const [shoeRegion, setShoeRegion] = useState<ShoeRegion>("uk");
-  const [measurements, setMeasurements] =
-    useState<Record<MeasurementKey, MeasurementState>>(EMPTY_MEASUREMENTS);
-  const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  function updateMeasurement(key: MeasurementKey, next: MeasurementState) {
-    setMeasurements((prev) => ({ ...prev, [key]: next }));
-  }
+  const {
+    register,
+    handleSubmit,
+    control,
+    formState: { isSubmitting },
+  } = useForm<StepFourFormValues>({
+    resolver: zodResolver(stepFourSchema),
+    defaultValues: {
+      outfitSize: null,
+      shoeSize: "",
+      shoeRegion: "uk",
+      measurements: EMPTY_MEASUREMENTS,
+    },
+  });
 
-  async function handleSubmit(event: React.FormEvent) {
-    event.preventDefault();
-    setLoading(true);
+  async function onSubmit(values: StepFourFormValues) {
     setError(null);
-
     const supabase = createBrowserSupabaseClient();
 
     const {
@@ -116,22 +144,21 @@ export function StepFourForm() {
     } = await supabase.auth.getUser();
 
     if (!user) {
-      setLoading(false);
       router.push("/sign-in");
       return;
     }
 
     const update: Database["public"]["Tables"]["user"]["Update"] = {
-      outfit_size: outfitSize,
+      outfit_size: values.outfitSize ?? null,
     };
 
-    if (shoeSize.trim()) {
-      update.shoe_size = shoeSize.trim();
-      update.shoe_size_region = shoeRegion;
+    if (values.shoeSize) {
+      update.shoe_size = values.shoeSize;
+      update.shoe_size_region = values.shoeRegion;
     }
 
     for (const field of MEASUREMENT_FIELDS) {
-      const state = measurements[field.key];
+      const state = values.measurements[field.key];
       const parsed = Number(state.value);
       if (state.value.trim() && !Number.isNaN(parsed)) {
         update[field.column] = toCanonicalMeasurement(
@@ -142,14 +169,13 @@ export function StepFourForm() {
       }
     }
 
-    const { error } = await supabase
+    const { error: updateError } = await supabase
       .from("user")
       .update(update)
       .eq("user_id", user.id);
 
-    setLoading(false);
-    if (error) {
-      setError(error.message);
+    if (updateError) {
+      setError(updateError.message);
       return;
     }
     router.push("/onboarding/5");
@@ -161,9 +187,9 @@ export function StepFourForm() {
       totalSteps={5}
       title="Dress for your body, not the other way."
       subtitle="All optional. Fill in what's useful to you."
-      onSubmit={handleSubmit}
-      continueLabel={loading ? "Saving…" : "Continue"}
-      continueDisabled={loading}
+      onSubmit={handleSubmit(onSubmit)}
+      continueLabel={isSubmitting ? "Saving…" : "Continue"}
+      continueDisabled={isSubmitting}
     >
       <div className="flex flex-col gap-2">
         <div className="flex items-center justify-between">
@@ -172,10 +198,16 @@ export function StepFourForm() {
           </Label>
           <Badge>Optional</Badge>
         </div>
-        <PillToggleGroup
-          options={OUTFIT_SIZE_OPTIONS}
-          isSelected={(value) => outfitSize === value}
-          onToggle={(value) => setOutfitSize(value as OutfitSize)}
+        <Controller
+          name="outfitSize"
+          control={control}
+          render={({ field }) => (
+            <PillToggleGroup
+              options={OUTFIT_SIZE_OPTIONS}
+              isSelected={(value) => field.value === value}
+              onToggle={(value) => field.onChange(value as OutfitSize)}
+            />
+          )}
         />
       </div>
 
@@ -193,66 +225,107 @@ export function StepFourForm() {
           <Input
             id="onboarding-shoe-size"
             placeholder="e.g. 38, 39 — whatever you go by"
-            value={shoeSize}
-            onChange={(event) => setShoeSize(event.target.value)}
+            {...register("shoeSize")}
             className="flex-1"
           />
-          <UnitSelect
-            value={shoeRegion}
-            units={SHOE_REGIONS}
-            onChange={(value) => setShoeRegion(value as ShoeRegion)}
+          <Controller
+            name="shoeRegion"
+            control={control}
+            render={({ field }) => (
+              <UnitSelect
+                value={field.value}
+                units={SHOE_REGIONS}
+                onChange={(value) => field.onChange(value as ShoeRegion)}
+              />
+            )}
           />
         </div>
       </div>
 
       <div className="grid grid-cols-2 gap-3">
-        <MeasurementField
-          label="Height"
-          placeholder="e.g. 160"
-          units={LENGTH_UNITS}
-          state={measurements.height}
-          onChange={(next) => updateMeasurement("height", next)}
+        <Controller
+          name="measurements.height"
+          control={control}
+          render={({ field }) => (
+            <MeasurementField
+              label="Height"
+              placeholder="e.g. 160"
+              units={LENGTH_UNITS}
+              state={field.value}
+              onChange={field.onChange}
+            />
+          )}
         />
-        <MeasurementField
-          label="Weight"
-          placeholder="e.g. 55"
-          units={WEIGHT_UNITS}
-          state={measurements.weight}
-          onChange={(next) => updateMeasurement("weight", next)}
-        />
-      </div>
-
-      <div className="grid grid-cols-2 gap-3">
-        <MeasurementField
-          label="Bust Size"
-          placeholder="e.g. 90"
-          units={LENGTH_UNITS}
-          state={measurements.bust}
-          onChange={(next) => updateMeasurement("bust", next)}
-        />
-        <MeasurementField
-          label="Waist Size"
-          placeholder="e.g. 60"
-          units={LENGTH_UNITS}
-          state={measurements.waist}
-          onChange={(next) => updateMeasurement("waist", next)}
+        <Controller
+          name="measurements.weight"
+          control={control}
+          render={({ field }) => (
+            <MeasurementField
+              label="Weight"
+              placeholder="e.g. 55"
+              units={WEIGHT_UNITS}
+              state={field.value}
+              onChange={field.onChange}
+            />
+          )}
         />
       </div>
 
       <div className="grid grid-cols-2 gap-3">
-        <MeasurementField
-          label="High Hip"
-          placeholder="e.g. 80"
-          units={LENGTH_UNITS}
-          state={measurements.highHip}
-          onChange={(next) => updateMeasurement("highHip", next)}
+        <Controller
+          name="measurements.bust"
+          control={control}
+          render={({ field }) => (
+            <MeasurementField
+              label="Bust Size"
+              placeholder="e.g. 90"
+              units={LENGTH_UNITS}
+              state={field.value}
+              onChange={field.onChange}
+            />
+          )}
         />
-        <MeasurementField
-          label="Hip Size"
-          placeholder="e.g. 90"
-          units={LENGTH_UNITS}
-          state={measurements.hip}
-          onChange={(next) => updateMeasurement("hip", next)}
+        <Controller
+          name="measurements.waist"
+          control={control}
+          render={({ field }) => (
+            <MeasurementField
+              label="Waist Size"
+              placeholder="e.g. 60"
+              units={LENGTH_UNITS}
+              state={field.value}
+              onChange={field.onChange}
+            />
+          )}
+        />
+      </div>
+
+      <div className="grid grid-cols-2 gap-3">
+        <Controller
+          name="measurements.highHip"
+          control={control}
+          render={({ field }) => (
+            <MeasurementField
+              label="High Hip"
+              placeholder="e.g. 80"
+              units={LENGTH_UNITS}
+              state={field.value}
+              onChange={field.onChange}
+            />
+          )}
+        />
+        <Controller
+          name="measurements.hip"
+          control={control}
+          render={({ field }) => (
+            <MeasurementField
+              label="Hip Size"
+              placeholder="e.g. 90"
+              units={LENGTH_UNITS}
+              state={field.value}
+              onChange={field.onChange}
+            />
+          )}
         />
       </div>
 

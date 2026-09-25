@@ -1,6 +1,12 @@
+import { Suspense } from "react";
 import { redirect } from "next/navigation";
+import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import { EditProfileForm } from "@/components/features/profile/edit-profile-form";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
+import { EditProfileFallback } from "@/components/features/profile/edit-profile-fallback";
+import { getServerQueryClient } from "@/lib/tanstack-query/server";
+import { getUserQueryOptions } from "@/components/features/profile/query-options/get-user.query-option";
+import { getProfileQueryOptionsForServer } from "@/components/features/profile/query-options/get-profile.query-option.server";
 
 export default async function EditProfilePage() {
   const supabase = await createServerSupabaseClient();
@@ -13,15 +19,23 @@ export default async function EditProfilePage() {
     redirect("/sign-in");
   }
 
-  const { data: profile } = await supabase
-    .from("user")
-    .select(
-      "username, display_name, profile_photo, birthday, gender, occupation, work_setting, outfit_size, shoe_size, shoe_size_region, height, weight, bust_size, waist_size, high_hip_size, hip_size, body_type, style_tags",
-    )
-    .eq("user_id", user.id)
-    .single();
+  const queryClient = getServerQueryClient();
 
-  if (!profile) return null;
+  // Populate user data
+  queryClient.setQueryData(getUserQueryOptions().queryKey, () => user);
 
-  return <EditProfileForm profile={profile} />;
+  // Prefetch profile data
+  void queryClient.ensureQueryData(
+    getProfileQueryOptionsForServer(user.id),
+  );
+
+  const dehydratedQueryClient = dehydrate(queryClient);
+
+  return (
+    <HydrationBoundary state={dehydratedQueryClient}>
+      <Suspense fallback={<EditProfileFallback />}>
+        <EditProfileForm userId={user.id} />
+      </Suspense>
+    </HydrationBoundary>
+  );
 }

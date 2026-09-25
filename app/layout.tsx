@@ -31,8 +31,6 @@ export const metadata: Metadata = {
   description: "Loomette — fashion, made for Indonesia.",
 };
 
-export const instant = false;
-
 export default function RootLayout({
   children,
 }: Readonly<{

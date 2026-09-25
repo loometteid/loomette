@@ -1,7 +1,12 @@
+import { Suspense } from "react";
 import { redirect } from "next/navigation";
+import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import { ApprovalQueue } from "@/components/features/wardrobe/approval-queue";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
-import type { PendingItem } from "@/components/features/wardrobe/types";
+import { getServerQueryClient } from "@/lib/tanstack-query/server";
+import { getUserQueryOptions } from "@/components/features/profile/query-options/get-user.query-option";
+import { getPendingWardrobeItemsQueryOptionsForServer } from "@/components/features/wardrobe/query-options/get-pending-items.query-option.server";
+import { getUserGenderQueryOptionsForServer } from "@/components/features/wardrobe/query-options/get-user-gender.query-option.server";
 
 export default async function ApprovalPage() {
   const supabase = await createServerSupabaseClient();
@@ -14,18 +19,26 @@ export default async function ApprovalPage() {
     redirect("/sign-in");
   }
 
-  const [{ data: rows }, { data: profile }] = await Promise.all([
-    supabase
-      .from("wardrobe_item")
-      .select(
-        "id, created_at, size, price, purchase_location, occasions, image_url, item:item_id(item_id, name, category, subcategory, brand, color, image_url)",
-      )
-      .eq("user_id", user.id)
-      .eq("is_approved", false)
-      .order("created_at", { ascending: false })
-      .returns<PendingItem[]>(),
-    supabase.from("user").select("gender").eq("user_id", user.id).single(),
-  ]);
+  const queryClient = getServerQueryClient();
 
-  return <ApprovalQueue items={rows ?? []} gender={profile?.gender ?? null} />;
+  // Populate user data
+  queryClient.setQueryData(getUserQueryOptions().queryKey, () => user);
+
+  // Prefetch pending items and gender
+  void queryClient.ensureQueryData(
+    getPendingWardrobeItemsQueryOptionsForServer(user.id),
+  );
+  void queryClient.ensureQueryData(
+    getUserGenderQueryOptionsForServer(user.id),
+  );
+
+  const dehydratedQueryClient = dehydrate(queryClient);
+
+  return (
+    <HydrationBoundary state={dehydratedQueryClient}>
+      <Suspense fallback={null}>
+        <ApprovalQueue userId={user.id} />
+      </Suspense>
+    </HydrationBoundary>
+  );
 }

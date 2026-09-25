@@ -5,31 +5,84 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { ChevronLeft, Trash2 } from "lucide-react";
 import { toast } from "sonner";
+import { useMutation, useQueryClient, useSuspenseQuery } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Sparkle } from "@/components/ui/sparkle";
 import { Typography } from "@/components/ui/typography";
-import { createBrowserSupabaseClient } from "@/lib/supabase/client";
-import { deleteWardrobeImages, pathFromPublicUrl } from "@/lib/wardrobeStorage";
 import { ApprovalItemDialog } from "./approval-item-dialog";
-import type { Gender, PendingItem } from "./types";
+import { getPendingWardrobeItemsQueryOptionsForBrowser } from "./query-options/get-pending-items.query-option.client";
+import { getPendingWardrobeCountQueryOptionsForBrowser } from "./query-options/get-pending-count.query-option.client";
+import { getWardrobeItemsQueryOptionsForBrowser } from "./query-options/get-wardrobe-items.query-option.client";
+import { getUserGenderQueryOptionsForBrowser } from "./query-options/get-user-gender.query-option.client";
+import { approveWardrobeItemsMutationOptions } from "./mutation-options/approve-wardrobe-items.mutation-option.client";
+import { discardWardrobeItemsMutationOptions } from "./mutation-options/discard-wardrobe-items.mutation-option.client";
 
 // Checkboxes are a plain multi-select over the queue: Approve acts on
 // whatever's checked (sets is_approved=true), the trash icon discards
 // whatever's checked. Figma didn't fully spec the trash icon's exact
 // semantics (bulk-clear vs. selection-based) — this is the more
 // standard inbox-style pattern and symmetric with Approve.
-export function ApprovalQueue({
-  items,
-  gender,
-}: {
-  items: PendingItem[];
-  gender: Gender | null;
-}) {
+export function ApprovalQueue({ userId }: { userId: string }) {
   const router = useRouter();
+  const queryClient = useQueryClient();
+
+  const { data: items } = useSuspenseQuery(
+    getPendingWardrobeItemsQueryOptionsForBrowser(userId),
+  );
+  const { data: gender } = useSuspenseQuery(
+    getUserGenderQueryOptionsForBrowser(userId),
+  );
+
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [openId, setOpenId] = useState<string | null>(null);
-  const [busy, setBusy] = useState(false);
+
+  const approveMutation = useMutation({
+    ...approveWardrobeItemsMutationOptions(),
+    onSuccess: (_, variables) => {
+      toast.success(
+        `Added ${variables.itemIds.length} item${variables.itemIds.length > 1 ? "s" : ""} to your wardrobe`,
+      );
+      setSelected(new Set());
+      void queryClient.invalidateQueries({
+        queryKey: getPendingWardrobeItemsQueryOptionsForBrowser(userId).queryKey,
+      });
+      void queryClient.invalidateQueries({
+        queryKey: getPendingWardrobeCountQueryOptionsForBrowser(userId).queryKey,
+      });
+      void queryClient.invalidateQueries({
+        queryKey: getWardrobeItemsQueryOptionsForBrowser(userId).queryKey,
+      });
+    },
+    onError: (err) => {
+      toast.error("Couldn't approve items", {
+        description: err instanceof Error ? err.message : undefined,
+      });
+    },
+  });
+
+  const discardMutation = useMutation({
+    ...discardWardrobeItemsMutationOptions(),
+    onSuccess: () => {
+      setSelected(new Set());
+      void queryClient.invalidateQueries({
+        queryKey: getPendingWardrobeItemsQueryOptionsForBrowser(userId).queryKey,
+      });
+      void queryClient.invalidateQueries({
+        queryKey: getPendingWardrobeCountQueryOptionsForBrowser(userId).queryKey,
+      });
+      void queryClient.invalidateQueries({
+        queryKey: getWardrobeItemsQueryOptionsForBrowser(userId).queryKey,
+      });
+    },
+    onError: (err) => {
+      toast.error("Couldn't discard items", {
+        description: err instanceof Error ? err.message : undefined,
+      });
+    },
+  });
+
+  const busy = approveMutation.isPending || discardMutation.isPending;
 
   function toggleSelected(id: string) {
     setSelected((prev) => {
@@ -40,57 +93,21 @@ export function ApprovalQueue({
     });
   }
 
-  async function handleApprove() {
+  function handleApprove() {
     if (selected.size === 0) return;
-    setBusy(true);
-    const supabase = createBrowserSupabaseClient();
-
-    const { error } = await supabase
-      .from("wardrobe_item")
-      .update({ is_approved: true })
-      .in("id", [...selected]);
-    setBusy(false);
-    if (error) {
-      toast.error("Couldn't approve items", { description: error.message });
-      return;
-    }
-    toast.success(
-      `Added ${selected.size} item${selected.size > 1 ? "s" : ""} to your wardrobe`,
-    );
-    setSelected(new Set());
-    router.refresh();
+    approveMutation.mutate({ itemIds: [...selected] });
   }
 
-  async function handleDiscard() {
+  function handleDiscard() {
     if (selected.size === 0) return;
-    setBusy(true);
-    const supabase = createBrowserSupabaseClient();
+    const toDiscard = items
+      .filter((row) => selected.has(row.id))
+      .map((row) => ({
+        id: row.id,
+        imageUrls: [row.image_url, row.item?.image_url],
+      }));
 
-    const toDiscard = items.filter((row) => selected.has(row.id));
-
-    const results = await Promise.allSettled(
-      toDiscard.map((row) =>
-        supabase.rpc("discard_wardrobe_item", { p_wardrobe_item_id: row.id }),
-      ),
-    );
-
-    // Best-effort — a failed Storage cleanup shouldn't block the user
-    // or get reported as an error; the DB rows are already gone.
-    const paths = toDiscard
-      .flatMap((row) => [
-        pathFromPublicUrl(row.image_url),
-        pathFromPublicUrl(row.item?.image_url),
-      ])
-      .filter((p): p is string => !!p);
-    deleteWardrobeImages(paths).catch(() => { });
-
-    setBusy(false);
-    const failed = results.filter((r) => r.status === "rejected").length;
-    if (failed > 0) {
-      toast.error(`Couldn't discard ${failed} item${failed > 1 ? "s" : ""}`);
-    }
-    setSelected(new Set());
-    router.refresh();
+    discardMutation.mutate({ items: toDiscard });
   }
 
   const openItem = items.find((i) => i.id === openId) ?? null;
@@ -102,72 +119,73 @@ export function ApprovalQueue({
         variant="secondary"
         size="icon"
         className="rounded-xl"
-        onClick={() => router.back()}
+        onClick={() => router.push("/wardrobe")}
         aria-label="Go back"
       >
         <ChevronLeft className="size-4" />
       </Button>
 
-      <div className="mt-8 flex flex-col gap-2">
-        <Sparkle className="size-5 text-foreground" />
-        <Typography variant="title" as="h1">
-          We found these pieces.
-        </Typography>
-        <Typography variant="subtitle">
-          Select what to add to your wardrobe.
-        </Typography>
+      <div className="mt-6 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <Sparkle className="size-5 text-foreground" />
+          <Typography variant="title" as="h1">
+            Approval Queue
+          </Typography>
+        </div>
+        <span className="text-muted-foreground text-xs uppercase">
+          {items.length} item{items.length === 1 ? "" : "s"}
+        </span>
       </div>
 
       {items.length === 0 ? (
-        <Typography variant="subtitle" className="mt-16 text-center">
-          Nothing waiting for review.
-        </Typography>
+        <div className="flex flex-1 items-center justify-center">
+          <Typography variant="subtitle" className="text-center">
+            All caught up. Nothing to review.
+          </Typography>
+        </div>
       ) : (
-        <div className="mt-8 grid grid-cols-2 content-start gap-4">
-          {items.map((row) => (
-            <button
-              key={row.id}
-              type="button"
-              onClick={() => setOpenId(row.id)}
-              className="border-border flex flex-col gap-2 rounded-2xl border p-3 text-left"
-            >
-              <div className="relative">
-                <div className="bg-secondary relative aspect-square w-full overflow-hidden rounded-xl">
-                  {row.item?.image_url && (
-                    <Image
-                      src={row.item.image_url}
-                      alt=""
-                      fill
-                      className="object-cover"
-                    />
-                  )}
-                </div>
-                <div
-                  className="absolute top-2 right-2"
-                  onClick={(event) => event.stopPropagation()}
+        <div className="mt-8 flex flex-col gap-3">
+          {items.map((row) => {
+            const isChecked = selected.has(row.id);
+            return (
+              <div
+                key={row.id}
+                className="border-border bg-card flex items-center gap-3 rounded-2xl border p-3"
+              >
+                <Checkbox
+                  checked={isChecked}
+                  onCheckedChange={() => toggleSelected(row.id)}
+                  aria-label={`Select ${row.item?.name || "item"}`}
+                />
+                <button
+                  type="button"
+                  onClick={() => setOpenId(row.id)}
+                  className="flex flex-1 items-center gap-3 text-left"
                 >
-                  <Checkbox
-                    checked={selected.has(row.id)}
-                    onCheckedChange={() => toggleSelected(row.id)}
-                  />
-                </div>
+                  <div className="bg-secondary relative size-14 shrink-0 overflow-hidden rounded-xl">
+                    {row.item?.image_url && (
+                      <Image
+                        src={row.item.image_url}
+                        alt=""
+                        fill
+                        className="object-cover"
+                      />
+                    )}
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="font-serif text-base">
+                      {row.item?.name || "Untitled"}
+                    </span>
+                    <span className="text-muted-foreground text-xs">
+                      {[row.item?.brand, row.item?.category]
+                        .filter(Boolean)
+                        .join(" • ")}
+                    </span>
+                  </div>
+                </button>
               </div>
-              <div className="flex flex-col">
-                <span className="font-serif text-base">
-                  {row.item?.name || "Untitled"}
-                </span>
-                <span className="text-muted-foreground text-xs">
-                  {new Date(row.created_at).toLocaleString("en-GB", {
-                    day: "2-digit",
-                    month: "2-digit",
-                    year: "2-digit",
-                    hour: "2-digit",
-                    minute: "2-digit",
-                  })}
-                </span>
-              </div>
-            </button>
-          ))}
+            );
+          })}
         </div>
       )}
 
@@ -178,7 +196,7 @@ export function ApprovalQueue({
           disabled={busy || selected.size === 0}
           onClick={handleApprove}
         >
-          Approve
+          {approveMutation.isPending ? "Approving…" : "Approve"}
         </Button>
         <button
           type="button"
@@ -200,7 +218,15 @@ export function ApprovalQueue({
           }}
           onSaved={() => {
             setOpenId(null);
-            router.refresh();
+            void queryClient.invalidateQueries({
+              queryKey: getPendingWardrobeItemsQueryOptionsForBrowser(userId).queryKey,
+            });
+            void queryClient.invalidateQueries({
+              queryKey: getPendingWardrobeCountQueryOptionsForBrowser(userId).queryKey,
+            });
+            void queryClient.invalidateQueries({
+              queryKey: getWardrobeItemsQueryOptionsForBrowser(userId).queryKey,
+            });
           }}
         />
       )}

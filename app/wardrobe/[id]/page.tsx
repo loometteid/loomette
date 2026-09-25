@@ -1,7 +1,13 @@
-import { notFound, redirect } from "next/navigation";
+import { Suspense } from "react";
+import { redirect } from "next/navigation";
+import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import { EditItemForm } from "@/components/features/wardrobe/edit-item-form";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
-import type { PendingItem } from "@/components/features/wardrobe/types";
+import { EditItemFallback } from "@/components/features/wardrobe/edit-item-fallback";
+import { getServerQueryClient } from "@/lib/tanstack-query/server";
+import { getUserQueryOptions } from "@/components/features/profile/query-options/get-user.query-option";
+import { getWardrobeItemByIdQueryOptionsForServer } from "@/components/features/wardrobe/query-options/get-wardrobe-item-by-id.query-option.server";
+import { getUserGenderQueryOptionsForServer } from "@/components/features/wardrobe/query-options/get-user-gender.query-option.server";
 
 export default async function EditItemPage({
   params,
@@ -19,22 +25,27 @@ export default async function EditItemPage({
     redirect("/sign-in");
   }
 
-  const [{ data: row }, { data: profile }] = await Promise.all([
-    supabase
-      .from("wardrobe_item")
-      .select(
-        "id, created_at, size, price, purchase_location, occasions, image_url, item:item_id(item_id, name, category, subcategory, brand, color, image_url)",
-      )
-      .eq("id", id)
-      .eq("user_id", user.id)
-      .single()
-      .returns<PendingItem>(),
-    supabase.from("user").select("gender").eq("user_id", user.id).single(),
-  ]);
+  const queryClient = getServerQueryClient();
 
-  if (!row) {
-    notFound();
-  }
+  // Populate user data
+  queryClient.setQueryData(getUserQueryOptions().queryKey, () => user);
 
-  return <EditItemForm item={row} gender={profile?.gender ?? null} />;
+  // Prefetch item by id and user gender
+  void queryClient.ensureQueryData(
+    getWardrobeItemByIdQueryOptionsForServer(user.id, id),
+  );
+
+  void queryClient.ensureQueryData(
+    getUserGenderQueryOptionsForServer(user.id),
+  );
+
+  const dehydratedQueryClient = dehydrate(queryClient);
+
+  return (
+    <HydrationBoundary state={dehydratedQueryClient}>
+      <Suspense fallback={<EditItemFallback />}>
+        <EditItemForm userId={user.id} id={id} />
+      </Suspense>
+    </HydrationBoundary>
+  );
 }

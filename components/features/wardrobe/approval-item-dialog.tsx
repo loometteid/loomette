@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { toast } from "sonner";
+import { useMutation } from "@tanstack/react-query";
 import {
   Accordion,
   AccordionItem,
@@ -17,6 +18,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 import { PillToggleGroup } from "@/components/features/onboarding/pill-toggle-group";
+import { updateWardrobeItemMutationOptions } from "./mutation-options/update-wardrobe-item.mutation-option.client";
 import {
   CATEGORY_OPTIONS,
   COLOR_OPTIONS,
@@ -55,46 +57,37 @@ export function ApprovalItemDialog({
   const [purchaseLocation, setPurchaseLocation] = useState(
     item.purchase_location ?? "",
   );
-  const [saving, setSaving] = useState(false);
 
   const subcategoryOptions = getSubcategoryOptions(category, gender);
 
-  async function handleSave() {
-    if (!item.item) return;
-    setSaving(true);
-    const supabase = createBrowserSupabaseClient();
-
-
-    const { error: itemError } = await supabase
-      .from("item")
-      .update({
-        name: name.trim() || null,
-        brand: brand.trim() || null,
-        category,
-        subcategory,
-        color,
-      })
-      .eq("item_id", item.item.item_id);
-
-    const parsedPrice = Number(price);
-    const { error: wardrobeError } = await supabase
-      .from("wardrobe_item")
-      .update({
-        size,
-        occasions,
-        price: price.trim() && !Number.isNaN(parsedPrice) ? parsedPrice : null,
-        purchase_location: purchaseLocation.trim() || null,
-      })
-      .eq("id", item.id);
-
-    setSaving(false);
-    if (itemError || wardrobeError) {
+  const updateMutation = useMutation({
+    ...updateWardrobeItemMutationOptions(),
+    onSuccess: () => {
+      onSaved();
+    },
+    onError: (err) => {
       toast.error("Couldn't save changes", {
-        description: itemError?.message ?? wardrobeError?.message,
+        description: err instanceof Error ? err.message : undefined,
       });
-      return;
-    }
-    onSaved();
+    },
+  });
+
+  function handleSave() {
+    if (!item.item) return;
+    const parsedPrice = Number(price);
+    updateMutation.mutate({
+      wardrobeItemId: item.id,
+      itemId: item.item.item_id,
+      name,
+      brand,
+      category,
+      subcategory,
+      color,
+      size,
+      occasions,
+      price: price.trim() && !Number.isNaN(parsedPrice) ? parsedPrice : null,
+      purchaseLocation,
+    });
   }
 
   return (
@@ -257,10 +250,10 @@ export function ApprovalItemDialog({
         <Button
           type="button"
           className="w-full"
-          disabled={saving}
+          disabled={updateMutation.isPending}
           onClick={handleSave}
         >
-          {saving ? "Saving…" : "Save"}
+          {updateMutation.isPending ? "Saving…" : "Save"}
         </Button>
       </DialogPopup>
     </Dialog>

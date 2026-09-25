@@ -7,23 +7,18 @@ import { ChevronDown, History } from "lucide-react";
 import { toast } from "sonner";
 import { Sparkle } from "@/components/ui/sparkle";
 import { Typography } from "@/components/ui/typography";
-import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 import { useOutfitDiaryUploadStore } from "@/stores/outfit-diary-upload-store";
+import getMonthDiaryEntries from "./server-functions/get-month-diary-entries.server-function";
 import { CalendarGrid } from "./calendar-grid";
 import { MonthPickerDialog } from "./month-picker-dialog";
 import { OutfitEntryDialog } from "./outfit-entry-dialog";
 import {
-  DIARY_ENTRY_SELECT,
-  toDiaryEntries,
-  type RawDiaryRow,
-} from "./diary-query";
-import {
   dateKey,
   formatMonthYear,
-  monthRangeISO,
   todayParts,
 } from "./date-utils";
 import type { DiaryEntry } from "./types";
+import revalidateCalendarCache from "./server-functions/revalidate-calendar-cache.server-function";
 
 // Rows must already be ordered latest-created-first per date -- this
 // keeps the first occurrence per date, i.e. the most recent entry.
@@ -44,21 +39,8 @@ async function fetchMonthEntries(
   year: number,
   month: number,
 ) {
-  const { start, end } = monthRangeISO(year, month);
-  const supabase = createBrowserSupabaseClient();
-
-  const { data, error } = await supabase
-    .from("wear_log")
-    .select(DIARY_ENTRY_SELECT)
-    .eq("user_id", userId)
-    .gte("worn_on", start)
-    .lte("worn_on", end)
-    .order("worn_on", { ascending: true })
-    .order("created_at", { ascending: false })
-    .returns<RawDiaryRow[]>();
-  if (error) throw error;
-
-  return dedupeByDate(toDiaryEntries(data ?? []));
+  const entries = await getMonthDiaryEntries(userId, year, month);
+  return dedupeByDate(entries);
 }
 
 export function CalendarView({
@@ -114,6 +96,7 @@ export function CalendarView({
     const saved = useOutfitDiaryUploadStore.getState().savedEntry;
     if (!saved) return;
     useOutfitDiaryUploadStore.getState().clearSavedEntry();
+    void revalidateCalendarCache(userId);
 
     const entry: DiaryEntry = {
       id: saved.wearLogId,
@@ -137,7 +120,7 @@ export function CalendarView({
       setEntriesByDate((prev) => new Map(prev).set(entry.worn_on, entry));
     }
     setSelectedKey(entry.worn_on);
-  }, [initialYear, initialMonth]);
+  }, [initialYear, initialMonth, userId]);
   /* eslint-enable react-hooks/set-state-in-effect */
 
   const isFirstRender = useRef(true);

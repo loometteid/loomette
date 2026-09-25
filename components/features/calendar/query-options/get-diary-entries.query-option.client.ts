@@ -1,5 +1,6 @@
 import { queryOptions } from "@tanstack/react-query";
-import { createClient } from "@/lib/supabase/client";
+import { createBrowserSupabaseClient } from "@/lib/supabase/client";
+
 import { monthRangeISO } from "../date-utils";
 import {
   DIARY_ENTRY_SELECT,

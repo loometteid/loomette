@@ -1,4 +1,5 @@
-import { createClient } from "@/lib/supabase/client";
+import { createBrowserSupabaseClient } from "@/lib/supabase/client";
+
 import { queryOptions } from "@tanstack/react-query";
 import { redirect } from "next/navigation";
 

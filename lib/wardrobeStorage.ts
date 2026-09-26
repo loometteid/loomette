@@ -1,4 +1,4 @@
-import { createClient } from "@/lib/supabase/client";
+import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 
 const BUCKET = "wardrobe-images";
 
@@ -14,7 +14,8 @@ export async function uploadWardrobeImage(
   variant: "original" | "processed",
   file: Blob,
 ) {
-  const supabase = createClient();
+  const supabase = createBrowserSupabaseClient();
+
   const contentType = file.type || "image/jpeg";
   const path = `${userId}/${uploadId}/${variant}.${extensionFromMime(contentType)}`;
 
@@ -32,7 +33,8 @@ export async function uploadWardrobeImage(
 
 export async function deleteWardrobeImages(paths: string[]) {
   if (paths.length === 0) return;
-  const supabase = createClient();
+  const supabase = createBrowserSupabaseClient();
+
   await supabase.storage.from(BUCKET).remove(paths);
 }
 

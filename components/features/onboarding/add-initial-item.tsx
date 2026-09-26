@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Sparkle } from "@/components/ui/sparkle";
 import { Typography } from "@/components/ui/typography";
 import { removeBackground } from "@/lib/backgroundRemoval";
-import { createClient } from "@/lib/supabase/client";
+import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 import {
   deleteWardrobeImages,
   uploadWardrobeImage,
@@ -30,7 +30,8 @@ export function AddInitialItem() {
 
   async function handleFileSelected(file: File) {
     setError(null);
-    const supabase = createClient();
+    const supabase = createBrowserSupabaseClient();
+
     const {
       data: { user },
     } = await supabase.auth.getUser();

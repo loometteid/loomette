@@ -1,9 +1,10 @@
 import { redirect } from "next/navigation";
 import { AddInitialItem } from "@/components/features/onboarding/add-initial-item";
-import { createClient } from "@/lib/supabase/server";
+import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 export default async function OnboardingStepSevenPage() {
-  const supabase = await createClient();
+  const supabase = await createServerSupabaseClient();
+
   const {
     data: { user },
   } = await supabase.auth.getUser();

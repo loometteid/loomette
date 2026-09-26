@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogPopup } from "@/components/ui/dialog";
 import { Sparkle } from "@/components/ui/sparkle";
 import { Typography } from "@/components/ui/typography";
-import { createClient } from "@/lib/supabase/client";
+import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 import { OutfitComposition } from "@/components/features/outfit/outfit-composition";
 import { CalendarDateDialog } from "./calendar-date-dialog";
 import type { ResultItem } from "./result-types";
@@ -39,7 +39,8 @@ export function MixAndMatchResult({
     const trimmed = name.trim() || "My Look";
     setName(trimmed);
     setSavingName(true);
-    const supabase = createClient();
+    const supabase = createBrowserSupabaseClient();
+
     await supabase.from("outfit").update({ name: trimmed }).eq("id", outfitId);
     setSavingName(false);
   }
@@ -47,7 +48,8 @@ export function MixAndMatchResult({
   async function handleAddToCollection() {
     if (addedToCollection) return;
     setBusy("collection");
-    const supabase = createClient();
+    const supabase = createBrowserSupabaseClient();
+
     const { error } = await supabase
       .from("outfit")
       .update({ is_saved: true })
@@ -68,7 +70,8 @@ export function MixAndMatchResult({
 
   async function handleConfirmCalendarDate(selectedKey: string) {
     setBusy("calendar");
-    const supabase = createClient();
+    const supabase = createBrowserSupabaseClient();
+
     const {
       data: { user },
     } = await supabase.auth.getUser();

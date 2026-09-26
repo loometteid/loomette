@@ -7,7 +7,7 @@ import {
 } from "@/components/features/calendar/diary-query";
 import { eachDateInRange } from "@/components/features/trip/trip-dates";
 import type { Trip, TripDayOutfit } from "@/components/features/trip/types";
-import { createClient } from "@/lib/supabase/server";
+import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 export default async function TripPage({
   params,
@@ -15,7 +15,8 @@ export default async function TripPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const supabase = await createClient();
+  const supabase = await createServerSupabaseClient();
+
   const {
     data: { user },
   } = await supabase.auth.getUser();

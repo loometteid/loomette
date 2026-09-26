@@ -1,6 +1,6 @@
 import { notFound, redirect } from "next/navigation";
 import { EditTripForm } from "@/components/features/trip/edit-trip-form";
-import { createClient } from "@/lib/supabase/server";
+import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 export default async function EditTripPage({
   params,
@@ -8,7 +8,8 @@ export default async function EditTripPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const supabase = await createClient();
+  const supabase = await createServerSupabaseClient();
+
   const {
     data: { user },
   } = await supabase.auth.getUser();

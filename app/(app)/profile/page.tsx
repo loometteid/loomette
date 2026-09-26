@@ -4,7 +4,7 @@ import type {
   WishlistEntry,
 } from "@/components/features/profile/types";
 import type { Trip } from "@/components/features/trip/types";
-import { createClient } from "@/lib/supabase/server";
+import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 type WishlistRow = {
   id: string;
@@ -15,7 +15,8 @@ type WishlistRow = {
 };
 
 export default async function ProfilePage() {
-  const supabase = await createClient();
+  const supabase = await createServerSupabaseClient();
+
   const {
     data: { user },
   } = await supabase.auth.getUser();

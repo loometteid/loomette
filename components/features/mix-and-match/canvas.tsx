@@ -15,7 +15,7 @@ import { Button } from "@/components/ui/button";
 import { Sparkle } from "@/components/ui/sparkle";
 import { Typography } from "@/components/ui/typography";
 import { cn } from "@/lib/utils";
-import { createClient } from "@/lib/supabase/client";
+import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 import { generateOutfitName } from "@/lib/outfitNames";
 import { CATEGORY_OPTIONS } from "@/components/features/wardrobe/types";
 import {
@@ -142,10 +142,10 @@ export function MixAndMatchCanvas({
       prev.map((item) =>
         item.wardrobeItemId === drag.wardrobeItemId
           ? {
-              ...item,
-              x: clamp01(drag.startX + dx),
-              y: clamp01(drag.startY + dy),
-            }
+            ...item,
+            x: clamp01(drag.startX + dx),
+            y: clamp01(drag.startY + dy),
+          }
           : item,
       ),
     );
@@ -283,7 +283,8 @@ export function MixAndMatchCanvas({
       return;
     }
     setSaving(true);
-    const supabase = createClient();
+    const supabase = createBrowserSupabaseClient();
+
 
     // outfit_item (inserted below) is the source of truth for every
     // full-composition render (Result page, Calendar's grid thumbnail

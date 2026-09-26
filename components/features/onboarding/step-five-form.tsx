@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { createClient } from "@/lib/supabase/client";
+import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 import { STYLE_TAG_OPTIONS, type StyleTag } from "@/lib/styleTags";
 import { OnboardingShell } from "./onboarding-shell";
 import { PillToggleGroup } from "./pill-toggle-group";
@@ -26,7 +26,8 @@ export function StepFiveForm() {
     setLoading(true);
     setError(null);
 
-    const supabase = createClient();
+    const supabase = createBrowserSupabaseClient();
+
     const {
       data: { user },
     } = await supabase.auth.getUser();

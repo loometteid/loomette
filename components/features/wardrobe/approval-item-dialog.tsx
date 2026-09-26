@@ -15,7 +15,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { createClient } from "@/lib/supabase/client";
+import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 import { PillToggleGroup } from "@/components/features/onboarding/pill-toggle-group";
 import {
   CATEGORY_OPTIONS,
@@ -62,7 +62,8 @@ export function ApprovalItemDialog({
   async function handleSave() {
     if (!item.item) return;
     setSaving(true);
-    const supabase = createClient();
+    const supabase = createBrowserSupabaseClient();
+
 
     const { error: itemError } = await supabase
       .from("item")

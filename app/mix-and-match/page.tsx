@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 import { MixAndMatchCanvas } from "@/components/features/mix-and-match/canvas";
 import type { WardrobeOption } from "@/components/features/mix-and-match/types";
-import { createClient } from "@/lib/supabase/server";
+import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 type WardrobeRow = {
   id: string;
@@ -15,7 +15,8 @@ type WardrobeRow = {
 };
 
 export default async function MixAndMatchPage() {
-  const supabase = await createClient();
+  const supabase = await createServerSupabaseClient();
+
   const {
     data: { user },
   } = await supabase.auth.getUser();

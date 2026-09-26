@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Typography } from "@/components/ui/typography";
-import { createClient } from "@/lib/supabase/client";
+import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 import { SEASON_OPTIONS, TRAVEL_COMPANION_OPTIONS } from "@/lib/tripOptions";
 import { PillToggleGroup } from "@/components/features/onboarding/pill-toggle-group";
 import type { Trip } from "./types";
@@ -39,7 +39,8 @@ export function EditTripForm({ trip }: { trip?: Trip }) {
     }
 
     setSaving(true);
-    const supabase = createClient();
+    const supabase = createBrowserSupabaseClient();
+
     const {
       data: { user },
     } = await supabase.auth.getUser();

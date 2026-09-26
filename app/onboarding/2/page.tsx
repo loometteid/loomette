@@ -1,9 +1,10 @@
 import { redirect } from "next/navigation";
 import { StepTwoForm } from "@/components/features/onboarding/step-two-form";
-import { createClient } from "@/lib/supabase/server";
+import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 export default async function OnboardingStepTwoPage() {
-  const supabase = await createClient();
+  const supabase = await createServerSupabaseClient();
+
   const {
     data: { user },
   } = await supabase.auth.getUser();

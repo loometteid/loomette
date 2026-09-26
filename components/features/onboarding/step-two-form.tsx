@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { createClient } from "@/lib/supabase/client";
+import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 import { GENDER_OPTIONS, type Gender } from "@/lib/profileOptions";
 import { OnboardingShell } from "./onboarding-shell";
 import { PillToggleGroup } from "./pill-toggle-group";
@@ -24,7 +24,8 @@ export function StepTwoForm() {
     setLoading(true);
     setError(null);
 
-    const supabase = createClient();
+    const supabase = createBrowserSupabaseClient();
+
     const {
       data: { user },
     } = await supabase.auth.getUser();

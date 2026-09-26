@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Sparkle } from "@/components/ui/sparkle";
 import { Typography } from "@/components/ui/typography";
-import { createClient } from "@/lib/supabase/client";
+import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 import { deleteWardrobeImages, pathFromPublicUrl } from "@/lib/wardrobeStorage";
 import { ApprovalItemDialog } from "./approval-item-dialog";
 import type { Gender, PendingItem } from "./types";
@@ -43,7 +43,8 @@ export function ApprovalQueue({
   async function handleApprove() {
     if (selected.size === 0) return;
     setBusy(true);
-    const supabase = createClient();
+    const supabase = createBrowserSupabaseClient();
+
     const { error } = await supabase
       .from("wardrobe_item")
       .update({ is_approved: true })
@@ -63,7 +64,8 @@ export function ApprovalQueue({
   async function handleDiscard() {
     if (selected.size === 0) return;
     setBusy(true);
-    const supabase = createClient();
+    const supabase = createBrowserSupabaseClient();
+
     const toDiscard = items.filter((row) => selected.has(row.id));
 
     const results = await Promise.allSettled(
@@ -80,7 +82,7 @@ export function ApprovalQueue({
         pathFromPublicUrl(row.item?.image_url),
       ])
       .filter((p): p is string => !!p);
-    deleteWardrobeImages(paths).catch(() => {});
+    deleteWardrobeImages(paths).catch(() => { });
 
     setBusy(false);
     const failed = results.filter((r) => r.status === "rejected").length;

@@ -1,9 +1,10 @@
 import { redirect } from "next/navigation";
 import { OutfitApproval } from "@/components/features/calendar/outfit-approval";
-import { createClient } from "@/lib/supabase/server";
+import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 export default async function OutfitApprovalPage() {
-  const supabase = await createClient();
+  const supabase = await createServerSupabaseClient();
+
   const {
     data: { user },
   } = await supabase.auth.getUser();

@@ -1,6 +1,6 @@
 import { notFound, redirect } from "next/navigation";
 import { EditItemForm } from "@/components/features/wardrobe/edit-item-form";
-import { createClient } from "@/lib/supabase/server";
+import { createServerSupabaseClient } from "@/lib/supabase/server";
 import type { PendingItem } from "@/components/features/wardrobe/types";
 
 export default async function EditItemPage({
@@ -9,7 +9,8 @@ export default async function EditItemPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const supabase = await createClient();
+  const supabase = await createServerSupabaseClient();
+
   const {
     data: { user },
   } = await supabase.auth.getUser();

@@ -2,27 +2,30 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { notFound, useRouter } from "next/navigation";
 import { ChevronLeft, Trash2 } from "lucide-react";
 import { toast } from "sonner";
+import { useMutation, useQueryClient, useSuspenseQuery } from "@tanstack/react-query";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
-import { createBrowserSupabaseClient } from "@/lib/supabase/client";
-import { deleteWardrobeImages, pathFromPublicUrl } from "@/lib/wardrobeStorage";
 import { PillToggleGroup } from "@/components/features/onboarding/pill-toggle-group";
+import { getWardrobeItemByIdQueryOptionsForBrowser } from "./query-options/get-wardrobe-item-by-id.query-option.client";
+import { getWardrobeItemsQueryOptionsForBrowser } from "./query-options/get-wardrobe-items.query-option.client";
+import { getPendingWardrobeCountQueryOptionsForBrowser } from "./query-options/get-pending-count.query-option.client";
+import { getUserGenderQueryOptionsForBrowser } from "./query-options/get-user-gender.query-option.client";
+import { updateWardrobeItemMutationOptions } from "./mutation-options/update-wardrobe-item.mutation-option.client";
+import { discardWardrobeItemsMutationOptions } from "./mutation-options/discard-wardrobe-items.mutation-option.client";
 import {
   CATEGORY_OPTIONS,
   COLOR_OPTIONS,
   OCCASION_OPTIONS,
   OUTFIT_SIZE_OPTIONS,
   getSubcategoryOptions,
-  type Gender,
   type Occasion,
   type OutfitSize,
-  type PendingItem,
 } from "./types";
 
 // "Last Pairing" / "Might be a perfect match" from the Figma reference
@@ -30,13 +33,26 @@ import {
 // yet (no Gemini, no recommendation logic). This screen only covers
 // editing the item's own metadata and deleting it.
 export function EditItemForm({
-  item,
-  gender,
+  userId,
+  id,
 }: {
-  item: PendingItem;
-  gender: Gender | null;
+  userId: string;
+  id: string;
 }) {
   const router = useRouter();
+  const queryClient = useQueryClient();
+
+  const { data: item } = useSuspenseQuery(
+    getWardrobeItemByIdQueryOptionsForBrowser(userId, id),
+  );
+  const { data: gender } = useSuspenseQuery(
+    getUserGenderQueryOptionsForBrowser(userId),
+  );
+
+  if (!item) {
+    notFound();
+  }
+
   const [showOriginal, setShowOriginal] = useState(false);
   const [name, setName] = useState(item.item?.name ?? "");
   const [brand, setBrand] = useState(item.item?.brand ?? "");
@@ -53,74 +69,78 @@ export function EditItemForm({
   const [purchaseLocation, setPurchaseLocation] = useState(
     item.purchase_location ?? "",
   );
-  const [saving, setSaving] = useState(false);
-  const [deleting, setDeleting] = useState(false);
 
   const subcategoryOptions = getSubcategoryOptions(category, gender);
   const displayedImage = showOriginal ? item.image_url : item.item?.image_url;
 
-  async function handleSave() {
-    if (!item.item) return;
-    setSaving(true);
-    const supabase = createBrowserSupabaseClient();
-
-
-    const { error: itemError } = await supabase
-      .from("item")
-      .update({
-        name: name.trim() || null,
-        brand: brand.trim() || null,
-        category,
-        subcategory,
-        color,
-      })
-      .eq("item_id", item.item.item_id);
-
-    const parsedPrice = Number(price);
-    const { error: wardrobeError } = await supabase
-      .from("wardrobe_item")
-      .update({
-        size,
-        occasions,
-        price: price.trim() && !Number.isNaN(parsedPrice) ? parsedPrice : null,
-        purchase_location: purchaseLocation.trim() || null,
-      })
-      .eq("id", item.id);
-
-    setSaving(false);
-    if (itemError || wardrobeError) {
-      toast.error("Couldn't save changes", {
-        description: itemError?.message ?? wardrobeError?.message,
+  const updateMutation = useMutation({
+    ...updateWardrobeItemMutationOptions(),
+    onSuccess: () => {
+      void queryClient.invalidateQueries({
+        queryKey: getWardrobeItemByIdQueryOptionsForBrowser(userId, id).queryKey,
       });
-      return;
-    }
-    toast.success("Saved");
-    router.push("/wardrobe");
+      void queryClient.invalidateQueries({
+        queryKey: getWardrobeItemsQueryOptionsForBrowser(userId).queryKey,
+      });
+      toast.success("Saved");
+      router.push("/wardrobe");
+    },
+    onError: (err) => {
+      toast.error("Couldn't save changes", {
+        description: err instanceof Error ? err.message : undefined,
+      });
+    },
+  });
+
+  const deleteMutation = useMutation({
+    ...discardWardrobeItemsMutationOptions(),
+    onSuccess: () => {
+      void queryClient.invalidateQueries({
+        queryKey: getWardrobeItemsQueryOptionsForBrowser(userId).queryKey,
+      });
+      void queryClient.invalidateQueries({
+        queryKey: getPendingWardrobeCountQueryOptionsForBrowser(userId).queryKey,
+      });
+      toast.success("Item deleted");
+      router.push("/wardrobe");
+    },
+    onError: (err) => {
+      toast.error("Couldn't delete item", {
+        description: err instanceof Error ? err.message : undefined,
+      });
+    },
+  });
+
+  const isBusy = updateMutation.isPending || deleteMutation.isPending;
+
+  function handleSave() {
+    if (!item?.item) return;
+    const parsedPrice = Number(price);
+    updateMutation.mutate({
+      wardrobeItemId: item.id,
+      itemId: item.item.item_id,
+      name,
+      brand,
+      category,
+      subcategory,
+      color,
+      size,
+      occasions,
+      price: price.trim() && !Number.isNaN(parsedPrice) ? parsedPrice : null,
+      purchaseLocation,
+    });
   }
 
-  async function handleDelete() {
-    setDeleting(true);
-    const supabase = createBrowserSupabaseClient();
-
-    const { error } = await supabase.rpc("discard_wardrobe_item", {
-      p_wardrobe_item_id: item.id,
+  function handleDelete() {
+    if (!item) return;
+    deleteMutation.mutate({
+      items: [
+        {
+          id: item.id,
+          imageUrls: [item.image_url, item.item?.image_url],
+        },
+      ],
     });
-
-    if (error) {
-      setDeleting(false);
-      toast.error("Couldn't delete item", { description: error.message });
-      return;
-    }
-
-    deleteWardrobeImages(
-      [
-        pathFromPublicUrl(item.image_url),
-        pathFromPublicUrl(item.item?.image_url),
-      ].filter((p): p is string => !!p),
-    ).catch(() => { });
-
-    toast.success("Item deleted");
-    router.push("/wardrobe");
   }
 
   return (
@@ -133,6 +153,7 @@ export function EditItemForm({
           className="rounded-xl"
           onClick={() => router.back()}
           aria-label="Go back"
+          disabled={isBusy}
         >
           <ChevronLeft className="size-4" />
         </Button>
@@ -142,7 +163,7 @@ export function EditItemForm({
           size="icon"
           className="rounded-xl"
           onClick={handleDelete}
-          disabled={deleting}
+          disabled={isBusy}
           aria-label="Delete item"
         >
           <Trash2 className="size-4" />
@@ -155,7 +176,7 @@ export function EditItemForm({
         )}
       </div>
 
-      {item.image_url !== item.item?.image_url && (
+      {item.image_url && item.item?.image_url && (
         <button
           type="button"
           onClick={() => setShowOriginal((prev) => !prev)}
@@ -300,10 +321,10 @@ export function EditItemForm({
       <Button
         type="button"
         className="w-full"
-        disabled={saving}
+        disabled={isBusy}
         onClick={handleSave}
       >
-        {saving ? "Saving…" : "Save"}
+        {updateMutation.isPending ? "Saving…" : "Save"}
       </Button>
     </main>
   );

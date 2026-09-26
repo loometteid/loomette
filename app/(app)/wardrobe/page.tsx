@@ -1,6 +1,14 @@
+import { Suspense } from "react";
+import { redirect } from "next/navigation";
+import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import { WardrobeView } from "@/components/features/wardrobe/wardrobe-view";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
-import type { WardrobeItem } from "@/components/features/wardrobe/types";
+import { WardrobeFallback } from "@/components/features/wardrobe/wardrobe-fallback";
+import { getServerQueryClient } from "@/lib/tanstack-query/server";
+import { getUserQueryOptions } from "@/components/features/profile/query-options/get-user.query-option";
+import { getWardrobeItemsQueryOptionsForServer } from "@/components/features/wardrobe/query-options/get-wardrobe-items.query-option.server";
+import { getPendingWardrobeCountQueryOptionsForServer } from "@/components/features/wardrobe/query-options/get-pending-count.query-option.server";
+import { getUserGenderQueryOptionsForServer } from "@/components/features/wardrobe/query-options/get-user-gender.query-option.server";
 
 export default async function WardrobePage() {
   const supabase = await createServerSupabaseClient();
@@ -9,31 +17,27 @@ export default async function WardrobePage() {
     data: { user },
   } = await supabase.auth.getUser();
 
-  if (!user) return null;
+  if (!user) {
+    redirect("/sign-in");
+  }
 
-  const [{ data: rows }, { count: pendingCount }, { data: profile }] =
-    await Promise.all([
-      supabase
-        .from("wardrobe_item")
-        .select(
-          "id, created_at, wear_count, occasions, item:item_id(item_id, name, category, subcategory, brand, color, image_url)",
-        )
-        .eq("user_id", user.id)
-        .eq("is_approved", true)
-        .returns<WardrobeItem[]>(),
-      supabase
-        .from("wardrobe_item")
-        .select("id", { count: "exact", head: true })
-        .eq("user_id", user.id)
-        .eq("is_approved", false),
-      supabase.from("user").select("gender").eq("user_id", user.id).single(),
-    ]);
+  const queryClient = getServerQueryClient();
+
+  // Populate user query cache to prevent premature logout
+  queryClient.setQueryData(getUserQueryOptions().queryKey, () => user);
+
+  // Prefetch wardrobe data in parallel on server
+  void queryClient.ensureQueryData(getWardrobeItemsQueryOptionsForServer(user.id));
+  void queryClient.ensureQueryData(getPendingWardrobeCountQueryOptionsForServer(user.id));
+  void queryClient.ensureQueryData(getUserGenderQueryOptionsForServer(user.id));
+
+  const dehydratedQueryClient = dehydrate(queryClient);
 
   return (
-    <WardrobeView
-      items={rows ?? []}
-      pendingCount={pendingCount ?? 0}
-      gender={profile?.gender ?? null}
-    />
+    <HydrationBoundary state={dehydratedQueryClient}>
+      <Suspense fallback={<WardrobeFallback />}>
+        <WardrobeView userId={user.id} />
+      </Suspense>
+    </HydrationBoundary>
   );
 }

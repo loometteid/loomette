@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ClipboardCheck, Plus, Search, SlidersHorizontal } from "lucide-react";
+import { useSuspenseQuery } from "@tanstack/react-query";
 import { Sparkle } from "@/components/ui/sparkle";
 import { Typography } from "@/components/ui/typography";
 import { cn } from "@/lib/utils";
@@ -13,10 +14,12 @@ import {
   EMPTY_FILTERS,
   hasActiveFilters,
   matchesFilters,
-  type Gender,
   type WardrobeFilters,
   type WardrobeItem,
 } from "./types";
+import { getWardrobeItemsQueryOptionsForBrowser } from "./query-options/get-wardrobe-items.query-option.client";
+import { getPendingWardrobeCountQueryOptionsForBrowser } from "./query-options/get-pending-count.query-option.client";
+import { getUserGenderQueryOptionsForBrowser } from "./query-options/get-user-gender.query-option.client";
 
 const CATEGORY_ORDER = ["Accessories", "Tops", "Bottoms", "Shoes"];
 // Figma's subcategory selector always has something to show; items that
@@ -30,15 +33,16 @@ type CategoryGroup = {
   itemsBySubcategory: Map<string, WardrobeItem[]>;
 };
 
-export function WardrobeView({
-  items,
-  pendingCount,
-  gender,
-}: {
-  items: WardrobeItem[];
-  pendingCount: number;
-  gender: Gender | null;
-}) {
+export function WardrobeView({ userId }: { userId: string }) {
+  const { data: items } = useSuspenseQuery(
+    getWardrobeItemsQueryOptionsForBrowser(userId),
+  );
+  const { data: pendingCount } = useSuspenseQuery(
+    getPendingWardrobeCountQueryOptionsForBrowser(userId),
+  );
+  const { data: gender } = useSuspenseQuery(
+    getUserGenderQueryOptionsForBrowser(userId),
+  );
   const [search, setSearch] = useState("");
   const [filters, setFilters] = useState<WardrobeFilters>(EMPTY_FILTERS);
   const [filterOpen, setFilterOpen] = useState(false);

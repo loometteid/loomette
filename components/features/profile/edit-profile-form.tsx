@@ -1,10 +1,11 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { useRouter } from "next/navigation";
+import { notFound, useRouter } from "next/navigation";
 import Image from "next/image";
 import { ChevronLeft, Pencil, Settings, Users } from "lucide-react";
 import { toast } from "sonner";
+import { useMutation, useQueryClient, useSuspenseQuery } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -19,6 +20,9 @@ import { Sparkle } from "@/components/ui/sparkle";
 import { Typography } from "@/components/ui/typography";
 import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 import { uploadProfilePhoto } from "@/lib/profileStorage";
+import { getProfileQueryOptionsForBrowser } from "./query-options/get-profile.query-option.client";
+import { updateProfileMutationOptions } from "./mutation-options/update-profile.mutation-option.client";
+import { uploadProfilePhotoMutationOptions } from "./mutation-options/upload-profile-photo.mutation-option.client";
 import { STYLE_TAG_OPTIONS, type StyleTag } from "@/lib/styleTags";
 import {
   BODY_TYPE_OPTIONS,
@@ -40,27 +44,6 @@ import {
 import { PillToggleGroup } from "@/components/features/onboarding/pill-toggle-group";
 import type { Database } from "@/types/database.types";
 
-type UserProfile = Pick<
-  Database["public"]["Tables"]["user"]["Row"],
-  | "username"
-  | "display_name"
-  | "profile_photo"
-  | "birthday"
-  | "gender"
-  | "occupation"
-  | "work_setting"
-  | "outfit_size"
-  | "shoe_size"
-  | "shoe_size_region"
-  | "height"
-  | "weight"
-  | "bust_size"
-  | "waist_size"
-  | "high_hip_size"
-  | "hip_size"
-  | "body_type"
-  | "style_tags"
->;
 
 function toMeasurementState(value: number | null, unit: string): MeasurementState {
   return { value: value == null ? "" : String(value), unit };
@@ -128,12 +111,20 @@ function MeasurementField({
   );
 }
 
-export function EditProfileForm({ profile }: { profile: UserProfile }) {
+export function EditProfileForm({ userId }: { userId: string }) {
   const router = useRouter();
+  const queryClient = useQueryClient();
   const fileInputRef = useRef<HTMLInputElement>(null);
 
+  const { data: profile } = useSuspenseQuery(
+    getProfileQueryOptionsForBrowser(userId),
+  );
+
+  if (!profile) {
+    notFound();
+  }
+
   const [photoUrl, setPhotoUrl] = useState(profile.profile_photo);
-  const [uploadingPhoto, setUploadingPhoto] = useState(false);
   const [displayName, setDisplayName] = useState(profile.display_name ?? "");
   const [birthday, setBirthday] = useState(profile.birthday ?? "");
   const [gender, setGender] = useState<Gender | null>(profile.gender);
@@ -162,7 +153,35 @@ export function EditProfileForm({ profile }: { profile: UserProfile }) {
   const [styleTags, setStyleTags] = useState<StyleTag[]>(
     (profile.style_tags as StyleTag[] | null) ?? [],
   );
-  const [saving, setSaving] = useState(false);
+
+  const uploadPhotoMutation = useMutation({
+    ...uploadProfilePhotoMutationOptions(),
+    onSuccess: ({ url }) => {
+      setPhotoUrl(url);
+    },
+    onError: () => {
+      toast.error("Couldn't upload that photo.");
+    },
+  });
+
+  const updateProfileMutation = useMutation({
+    ...updateProfileMutationOptions(),
+    onSuccess: () => {
+      void queryClient.invalidateQueries({
+        queryKey: getProfileQueryOptionsForBrowser(userId).queryKey,
+      });
+      void queryClient.invalidateQueries({
+        queryKey: ["user", "gender", userId],
+      });
+      toast.success("Profile updated");
+      router.push("/profile");
+    },
+    onError: () => {
+      toast.error("Couldn't save your profile.");
+    },
+  });
+
+  const isBusy = uploadPhotoMutation.isPending || updateProfileMutation.isPending;
 
   function updateMeasurement(key: MeasurementKey, next: MeasurementState) {
     setMeasurements((prev) => ({ ...prev, [key]: next }));
@@ -174,41 +193,11 @@ export function EditProfileForm({ profile }: { profile: UserProfile }) {
     );
   }
 
-  async function handlePhotoSelected(file: File) {
-    setUploadingPhoto(true);
-    const supabase = createBrowserSupabaseClient();
-
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
-    if (!user) {
-      setUploadingPhoto(false);
-      router.push("/sign-in");
-      return;
-    }
-    try {
-      const { url } = await uploadProfilePhoto(user.id, file);
-      setPhotoUrl(url);
-    } catch {
-      toast.error("Couldn't upload that photo.");
-    } finally {
-      setUploadingPhoto(false);
-    }
+  function handlePhotoSelected(file: File) {
+    uploadPhotoMutation.mutate({ userId, file });
   }
 
-  async function handleSave() {
-    setSaving(true);
-    const supabase = createBrowserSupabaseClient();
-
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
-    if (!user) {
-      setSaving(false);
-      router.push("/sign-in");
-      return;
-    }
-
+  function handleSave() {
     const update: Database["public"]["Tables"]["user"]["Update"] = {
       display_name: displayName.trim() || null,
       profile_photo: photoUrl,
@@ -237,18 +226,7 @@ export function EditProfileForm({ profile }: { profile: UserProfile }) {
           : null;
     }
 
-    const { error } = await supabase
-      .from("user")
-      .update(update)
-      .eq("user_id", user.id);
-
-    setSaving(false);
-    if (error) {
-      toast.error("Couldn't save your profile.");
-      return;
-    }
-    toast.success("Profile updated");
-    router.push("/profile");
+    updateProfileMutation.mutate({ userId, update });
   }
 
   return (
@@ -304,7 +282,7 @@ export function EditProfileForm({ profile }: { profile: UserProfile }) {
         <button
           type="button"
           onClick={() => fileInputRef.current?.click()}
-          disabled={uploadingPhoto}
+          disabled={uploadPhotoMutation.isPending}
           aria-label="Edit photo"
           className="bg-background absolute -bottom-2 -left-2 flex size-9 items-center justify-center rounded-xl shadow disabled:opacity-50"
         >
@@ -508,10 +486,10 @@ export function EditProfileForm({ profile }: { profile: UserProfile }) {
       <Button
         type="button"
         onClick={handleSave}
-        disabled={saving || uploadingPhoto}
+        disabled={isBusy}
         className="w-full"
       >
-        {saving ? "Saving…" : "Save"}
+        {updateProfileMutation.isPending ? "Saving…" : "Save"}
       </Button>
     </main>
   );

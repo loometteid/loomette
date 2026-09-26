@@ -5,12 +5,15 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Heart, Pencil, Plus, Users } from "lucide-react";
 import { toast } from "sonner";
+import { useSuspenseQuery } from "@tanstack/react-query";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Typography } from "@/components/ui/typography";
 import { cn } from "@/lib/utils";
 import { formatTripMonthYear } from "@/components/features/trip/trip-dates";
-import type { Trip } from "@/components/features/trip/types";
-import type { FavoriteEntry, WishlistEntry } from "./types";
+import { getProfileQueryOptionsForBrowser } from "./query-options/get-profile.query-option.client";
+import { getFavoriteOutfitsQueryOptionsForBrowser } from "./query-options/get-favorite-outfits.query-option.client";
+import { getWishlistQueryOptionsForBrowser } from "./query-options/get-wishlist.query-option.client";
+import { getTripsQueryOptionsForBrowser } from "./query-options/get-trips.query-option.client";
 
 const TABS = ["favorite", "travels", "wishlist"] as const;
 type Tab = (typeof TABS)[number];
@@ -22,28 +25,29 @@ function notImplemented() {
   toast("Coming soon.");
 }
 
-export function ProfileView({
-  username,
-  displayName,
-  profilePhoto,
-  outfitSize,
-  shoeSize,
-  favorites,
-  wishlist,
-  trips,
-}: {
-  username: string;
-  displayName: string | null;
-  profilePhoto: string | null;
-  outfitSize: string | null;
-  shoeSize: string | null;
-  favorites: FavoriteEntry[];
-  wishlist: WishlistEntry[];
-  trips: Trip[];
-}) {
+export function ProfileView({ userId }: { userId: string }) {
   const router = useRouter();
   const [tab, setTab] = useState<Tab>("favorite");
   const [favoriteFilter, setFavoriteFilter] = useState<FavoriteFilter>("all");
+
+  const { data: profile } = useSuspenseQuery(
+    getProfileQueryOptionsForBrowser(userId),
+  );
+  const { data: favorites } = useSuspenseQuery(
+    getFavoriteOutfitsQueryOptionsForBrowser(userId),
+  );
+  const { data: wishlist } = useSuspenseQuery(
+    getWishlistQueryOptionsForBrowser(userId),
+  );
+  const { data: trips } = useSuspenseQuery(
+    getTripsQueryOptionsForBrowser(userId),
+  );
+
+  const username = profile?.username ?? "you";
+  const displayName = profile?.display_name ?? null;
+  const profilePhoto = profile?.profile_photo ?? null;
+  const outfitSize = profile?.outfit_size ?? null;
+  const shoeSize = profile?.shoe_size ?? null;
 
   const initials = (displayName ?? username).slice(0, 2).toUpperCase();
   const sizeLine = [outfitSize?.toUpperCase(), shoeSize].filter(Boolean).join(" · ");

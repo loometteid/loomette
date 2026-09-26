@@ -1,18 +1,15 @@
+import { Suspense } from "react";
+import { redirect } from "next/navigation";
+import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import { ProfileView } from "@/components/features/profile/profile-view";
-import type {
-  FavoriteEntry,
-  WishlistEntry,
-} from "@/components/features/profile/types";
-import type { Trip } from "@/components/features/trip/types";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
-
-type WishlistRow = {
-  id: string;
-  item: {
-    name: string | null;
-    image_url: string | null;
-  } | null;
-};
+import { ProfileFallback } from "@/components/features/profile/profile-fallback";
+import { getServerQueryClient } from "@/lib/tanstack-query/server";
+import { getUserQueryOptions } from "@/components/features/profile/query-options/get-user.query-option";
+import { getProfileQueryOptionsForServer } from "@/components/features/profile/query-options/get-profile.query-option.server";
+import { getFavoriteOutfitsQueryOptionsForServer } from "@/components/features/profile/query-options/get-favorite-outfits.query-option.server";
+import { getWishlistQueryOptionsForServer } from "@/components/features/profile/query-options/get-wishlist.query-option.server";
+import { getTripsQueryOptionsForServer } from "@/components/features/profile/query-options/get-trips.query-option.server";
 
 export default async function ProfilePage() {
   const supabase = await createServerSupabaseClient();
@@ -21,61 +18,36 @@ export default async function ProfilePage() {
     data: { user },
   } = await supabase.auth.getUser();
 
-  if (!user) return null;
+  if (!user) {
+    redirect("/sign-in");
+  }
 
-  const [
-    { data: profile },
-    { data: favoriteOutfits },
-    { data: wishlistRows },
-    { data: trips },
-  ] = await Promise.all([
-    supabase
-      .from("user")
-      .select("username, display_name, profile_photo, outfit_size, shoe_size")
-      .eq("user_id", user.id)
-      .single(),
-    supabase
-      .from("outfit")
-      .select("id, name, cover_image_url")
-      .eq("user_id", user.id)
-      .eq("is_saved", true)
-      .order("added_at", { ascending: false }),
-    supabase
-      .from("wardrobe_item")
-      .select("id, item:item_id(name, image_url)")
-      .eq("user_id", user.id)
-      .eq("is_wishlist", true)
-      .returns<WishlistRow[]>(),
-    supabase
-      .from("trip")
-      .select("id, name, start_date, end_date, season, travel_companion")
-      .eq("user_id", user.id)
-      .order("start_date", { ascending: false })
-      .returns<Trip[]>(),
-  ]);
+  const queryClient = getServerQueryClient();
 
-  const favorites: FavoriteEntry[] = (favoriteOutfits ?? []).map((row) => ({
-    id: row.id,
-    name: row.name,
-    image_url: row.cover_image_url,
-  }));
+  // Populate user data
+  queryClient.setQueryData(getUserQueryOptions().queryKey, () => user);
 
-  const wishlist: WishlistEntry[] = (wishlistRows ?? []).map((row) => ({
-    id: row.id,
-    name: row.item?.name ?? null,
-    image_url: row.item?.image_url ?? null,
-  }));
+  // Prefetch profile data
+  void queryClient.ensureQueryData(
+    getProfileQueryOptionsForServer(user.id),
+  );
+  void queryClient.ensureQueryData(
+    getFavoriteOutfitsQueryOptionsForServer(user.id),
+  );
+  void queryClient.ensureQueryData(
+    getWishlistQueryOptionsForServer(user.id),
+  );
+  void queryClient.ensureQueryData(
+    getTripsQueryOptionsForServer(user.id),
+  );
+
+  const dehydratedQueryClient = dehydrate(queryClient);
 
   return (
-    <ProfileView
-      username={profile?.username ?? user.email?.split("@")[0] ?? "you"}
-      displayName={profile?.display_name ?? null}
-      profilePhoto={profile?.profile_photo ?? null}
-      outfitSize={profile?.outfit_size ?? null}
-      shoeSize={profile?.shoe_size ?? null}
-      favorites={favorites}
-      wishlist={wishlist}
-      trips={trips ?? []}
-    />
+    <HydrationBoundary state={dehydratedQueryClient}>
+      <Suspense fallback={<ProfileFallback />}>
+        <ProfileView userId={user.id} />
+      </Suspense>
+    </HydrationBoundary>
   );
 }

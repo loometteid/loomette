@@ -4,11 +4,14 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
 import { toast } from "sonner";
+import { useMutation, useQueryClient, useSuspenseQuery } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Sparkle } from "@/components/ui/sparkle";
 import { Switch } from "@/components/ui/switch";
 import { Typography } from "@/components/ui/typography";
 import { createBrowserSupabaseClient } from "@/lib/supabase/client";
+import { getProfileQueryOptionsForBrowser } from "./query-options/get-profile.query-option.client";
+import { updatePrivacySettingMutationOptions } from "./mutation-options/update-privacy-setting.mutation-option.client";
 
 function notImplemented() {
   toast("Coming soon.");
@@ -71,41 +74,36 @@ function ToggleRow({
   );
 }
 
-export function SettingsView({
-  initialIsPrivate,
-}: {
-  initialIsPrivate: boolean;
-}) {
+export function SettingsView({ userId }: { userId: string }) {
   const router = useRouter();
-  const [isPrivate, setIsPrivate] = useState(initialIsPrivate);
-  const [savingPrivacy, setSavingPrivacy] = useState(false);
+  const queryClient = useQueryClient();
+
+  const { data: profile } = useSuspenseQuery(
+    getProfileQueryOptionsForBrowser(userId),
+  );
+
+  const [isPrivate, setIsPrivate] = useState(profile?.is_private ?? false);
   const [outfitReminders, setOutfitReminders] = useState(true);
   const [analysisReady, setAnalysisReady] = useState(true);
   const [weeklyRecap, setWeeklyRecap] = useState(false);
   const [loggingOut, setLoggingOut] = useState(false);
 
-  async function handlePrivacyToggle(next: boolean) {
-    setIsPrivate(next);
-    setSavingPrivacy(true);
-    const supabase = createBrowserSupabaseClient();
-
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
-    if (!user) {
-      setSavingPrivacy(false);
-      router.push("/sign-in");
-      return;
-    }
-    const { error } = await supabase
-      .from("user")
-      .update({ is_private: next })
-      .eq("user_id", user.id);
-    setSavingPrivacy(false);
-    if (error) {
-      setIsPrivate(!next);
+  const privacyMutation = useMutation({
+    ...updatePrivacySettingMutationOptions(),
+    onSuccess: () => {
+      void queryClient.invalidateQueries({
+        queryKey: getProfileQueryOptionsForBrowser(userId).queryKey,
+      });
+    },
+    onError: () => {
+      setIsPrivate((prev) => !prev);
       toast.error("Couldn't update that.");
-    }
+    },
+  });
+
+  function handlePrivacyToggle(next: boolean) {
+    setIsPrivate(next);
+    privacyMutation.mutate({ userId, isPrivate: next });
   }
 
   async function handleLogOut() {
@@ -185,7 +183,7 @@ export function SettingsView({
           checked={isPrivate}
           onCheckedChange={handlePrivacyToggle}
         />
-        {savingPrivacy && (
+        {privacyMutation.isPending && (
           <span className="text-muted-foreground -mt-2 text-xs">Saving…</span>
         )}
         <ChevronRow

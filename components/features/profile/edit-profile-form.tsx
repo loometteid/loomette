@@ -1,10 +1,12 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { notFound, useRouter } from "next/navigation";
 import Image from "next/image";
 import { ChevronLeft, Pencil, Settings, Users } from "lucide-react";
 import { toast } from "sonner";
+import { Controller, useForm, useWatch } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation, useQueryClient, useSuspenseQuery } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -18,8 +20,6 @@ import {
 } from "@/components/ui/select";
 import { Sparkle } from "@/components/ui/sparkle";
 import { Typography } from "@/components/ui/typography";
-import { createBrowserSupabaseClient } from "@/lib/supabase/client";
-import { uploadProfilePhoto } from "@/lib/profileStorage";
 import { getProfileQueryOptionsForBrowser } from "./query-options/get-profile.query-option.client";
 import { updateProfileMutationOptions } from "./mutation-options/update-profile.mutation-option.client";
 import { uploadProfilePhotoMutationOptions } from "./mutation-options/upload-profile-photo.mutation-option.client";
@@ -35,15 +35,17 @@ import {
   WORK_SETTING_OPTIONS,
   toCanonicalMeasurement,
   type Gender,
-  type MeasurementKey,
   type MeasurementState,
   type OutfitSize,
   type ShoeRegion,
   type WorkSetting,
 } from "@/lib/profileOptions";
 import { PillToggleGroup } from "@/components/features/onboarding/pill-toggle-group";
+import {
+  editProfileSchema,
+  type EditProfileFormValues,
+} from "./schemas/edit-profile.schema";
 import type { Database } from "@/types/database.types";
-
 
 function toMeasurementState(value: number | null, unit: string): MeasurementState {
   return { value: value == null ? "" : String(value), unit };
@@ -124,40 +126,46 @@ export function EditProfileForm({ userId }: { userId: string }) {
     notFound();
   }
 
-  const [photoUrl, setPhotoUrl] = useState(profile.profile_photo);
-  const [displayName, setDisplayName] = useState(profile.display_name ?? "");
-  const [birthday, setBirthday] = useState(profile.birthday ?? "");
-  const [gender, setGender] = useState<Gender | null>(profile.gender);
-  const [occupation, setOccupation] = useState(profile.occupation ?? "");
-  const [workSetting, setWorkSetting] = useState<WorkSetting | null>(
-    profile.work_setting,
-  );
-  const [outfitSize, setOutfitSize] = useState<OutfitSize | null>(
-    profile.outfit_size,
-  );
-  const [shoeSize, setShoeSize] = useState(profile.shoe_size ?? "");
-  const [shoeRegion, setShoeRegion] = useState<ShoeRegion>(
-    profile.shoe_size_region ?? "uk",
-  );
-  const [measurements, setMeasurements] = useState<
-    Record<MeasurementKey, MeasurementState>
-  >({
-    height: toMeasurementState(profile.height, "cm"),
-    weight: toMeasurementState(profile.weight, "kg"),
-    bust: toMeasurementState(profile.bust_size, "cm"),
-    waist: toMeasurementState(profile.waist_size, "cm"),
-    highHip: toMeasurementState(profile.high_hip_size, "cm"),
-    hip: toMeasurementState(profile.hip_size, "cm"),
+  const {
+    register,
+    handleSubmit,
+    control,
+    setValue,
+    formState: { isSubmitting },
+  } = useForm<EditProfileFormValues>({
+    resolver: zodResolver(editProfileSchema),
+    defaultValues: {
+      profilePhoto: profile.profile_photo,
+      displayName: profile.display_name ?? "",
+      birthday: profile.birthday ?? "",
+      gender: profile.gender,
+      occupation: profile.occupation ?? "",
+      workSetting: profile.work_setting,
+      outfitSize: profile.outfit_size,
+      shoeSize: profile.shoe_size ?? "",
+      shoeRegion: profile.shoe_size_region ?? "uk",
+      measurements: {
+        height: toMeasurementState(profile.height, "cm"),
+        weight: toMeasurementState(profile.weight, "kg"),
+        bust: toMeasurementState(profile.bust_size, "cm"),
+        waist: toMeasurementState(profile.waist_size, "cm"),
+        highHip: toMeasurementState(profile.high_hip_size, "cm"),
+        hip: toMeasurementState(profile.hip_size, "cm"),
+      },
+      bodyType: profile.body_type,
+      styleTags: (profile.style_tags as StyleTag[] | null) ?? [],
+    },
   });
-  const [bodyType, setBodyType] = useState<string | null>(profile.body_type);
-  const [styleTags, setStyleTags] = useState<StyleTag[]>(
-    (profile.style_tags as StyleTag[] | null) ?? [],
-  );
+
+  const photoUrl = useWatch({
+    control,
+    name: "profilePhoto",
+  });
 
   const uploadPhotoMutation = useMutation({
     ...uploadProfilePhotoMutationOptions(),
     onSuccess: ({ url }) => {
-      setPhotoUrl(url);
+      setValue("profilePhoto", url);
     },
     onError: () => {
       toast.error("Couldn't upload that photo.");
@@ -183,42 +191,32 @@ export function EditProfileForm({ userId }: { userId: string }) {
 
   const isBusy = uploadPhotoMutation.isPending || updateProfileMutation.isPending;
 
-  function updateMeasurement(key: MeasurementKey, next: MeasurementState) {
-    setMeasurements((prev) => ({ ...prev, [key]: next }));
-  }
-
-  function toggleStyleTag(tag: StyleTag) {
-    setStyleTags((prev) =>
-      prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag],
-    );
-  }
-
   function handlePhotoSelected(file: File) {
     uploadPhotoMutation.mutate({ userId, file });
   }
 
-  function handleSave() {
+  function onSubmit(values: EditProfileFormValues) {
     const update: Database["public"]["Tables"]["user"]["Update"] = {
-      display_name: displayName.trim() || null,
-      profile_photo: photoUrl,
-      birthday: birthday || null,
-      gender,
-      occupation: occupation.trim() || null,
-      work_setting: workSetting,
-      outfit_size: outfitSize,
-      body_type: bodyType,
-      style_tags: styleTags,
+      display_name: values.displayName?.trim() || null,
+      profile_photo: values.profilePhoto ?? null,
+      birthday: values.birthday || null,
+      gender: values.gender ?? null,
+      occupation: values.occupation?.trim() || null,
+      work_setting: values.workSetting ?? null,
+      outfit_size: values.outfitSize ?? null,
+      body_type: values.bodyType ?? null,
+      style_tags: values.styleTags as StyleTag[],
     };
 
-    if (shoeSize.trim()) {
-      update.shoe_size = shoeSize.trim();
-      update.shoe_size_region = shoeRegion;
+    if (values.shoeSize?.trim()) {
+      update.shoe_size = values.shoeSize.trim();
+      update.shoe_size_region = values.shoeRegion;
     } else {
       update.shoe_size = null;
     }
 
     for (const field of MEASUREMENT_FIELDS) {
-      const state = measurements[field.key];
+      const state = values.measurements[field.key];
       const parsed = Number(state.value);
       update[field.column] =
         state.value.trim() && !Number.isNaN(parsed)
@@ -230,7 +228,10 @@ export function EditProfileForm({ userId }: { userId: string }) {
   }
 
   return (
-    <main className="mx-auto flex w-full max-w-sm flex-1 flex-col gap-6 px-6 py-8">
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="mx-auto flex w-full max-w-sm flex-1 flex-col gap-6 px-6 py-8"
+    >
       <div className="flex items-center justify-between">
         <Button
           type="button"
@@ -310,8 +311,7 @@ export function EditProfileForm({ userId }: { userId: string }) {
         </Label>
         <Input
           id="edit-name"
-          value={displayName}
-          onChange={(event) => setDisplayName(event.target.value)}
+          {...register("displayName")}
           endIcon={<Pencil />}
         />
       </div>
@@ -326,8 +326,7 @@ export function EditProfileForm({ userId }: { userId: string }) {
         <Input
           id="edit-birthday"
           type="date"
-          value={birthday}
-          onChange={(event) => setBirthday(event.target.value)}
+          {...register("birthday")}
           endIcon={<Pencil />}
         />
       </div>
@@ -336,10 +335,18 @@ export function EditProfileForm({ userId }: { userId: string }) {
         <Label className="text-muted-foreground text-xs tracking-wide uppercase">
           How do you identify?
         </Label>
-        <PillToggleGroup
-          options={GENDER_OPTIONS}
-          isSelected={(value) => gender === value}
-          onToggle={(value) => setGender(value as Gender)}
+        <Controller
+          name="gender"
+          control={control}
+          render={({ field }) => (
+            <PillToggleGroup
+              options={GENDER_OPTIONS}
+              isSelected={(value) => field.value === value}
+              onToggle={(value) =>
+                field.onChange(field.value === value ? null : (value as Gender))
+              }
+            />
+          )}
         />
       </div>
 
@@ -352,8 +359,7 @@ export function EditProfileForm({ userId }: { userId: string }) {
         </Label>
         <Input
           id="edit-profession"
-          value={occupation}
-          onChange={(event) => setOccupation(event.target.value)}
+          {...register("occupation")}
           endIcon={<Pencil />}
         />
       </div>
@@ -362,10 +368,20 @@ export function EditProfileForm({ userId }: { userId: string }) {
         <Label className="text-muted-foreground text-xs tracking-wide uppercase">
           Your work setting
         </Label>
-        <PillToggleGroup
-          options={WORK_SETTING_OPTIONS}
-          isSelected={(value) => workSetting === value}
-          onToggle={(value) => setWorkSetting(value as WorkSetting)}
+        <Controller
+          name="workSetting"
+          control={control}
+          render={({ field }) => (
+            <PillToggleGroup
+              options={WORK_SETTING_OPTIONS}
+              isSelected={(value) => field.value === value}
+              onToggle={(value) =>
+                field.onChange(
+                  field.value === value ? null : (value as WorkSetting),
+                )
+              }
+            />
+          )}
         />
       </div>
 
@@ -373,10 +389,20 @@ export function EditProfileForm({ userId }: { userId: string }) {
         <Label className="text-muted-foreground text-xs tracking-wide uppercase">
           Outfit size
         </Label>
-        <PillToggleGroup
-          options={OUTFIT_SIZE_OPTIONS}
-          isSelected={(value) => outfitSize === value}
-          onToggle={(value) => setOutfitSize(value as OutfitSize)}
+        <Controller
+          name="outfitSize"
+          control={control}
+          render={({ field }) => (
+            <PillToggleGroup
+              options={OUTFIT_SIZE_OPTIONS}
+              isSelected={(value) => field.value === value}
+              onToggle={(value) =>
+                field.onChange(
+                  field.value === value ? null : (value as OutfitSize),
+                )
+              }
+            />
+          )}
         />
       </div>
 
@@ -391,66 +417,107 @@ export function EditProfileForm({ userId }: { userId: string }) {
           <Input
             id="edit-shoe-size"
             placeholder="e.g. 38, 39 — whatever you go by"
-            value={shoeSize}
-            onChange={(event) => setShoeSize(event.target.value)}
+            {...register("shoeSize")}
             className="flex-1"
           />
-          <UnitSelect
-            value={shoeRegion}
-            units={SHOE_REGIONS}
-            onChange={(value) => setShoeRegion(value as ShoeRegion)}
+          <Controller
+            name="shoeRegion"
+            control={control}
+            render={({ field }) => (
+              <UnitSelect
+                value={field.value}
+                units={SHOE_REGIONS}
+                onChange={(value) => field.onChange(value as ShoeRegion)}
+              />
+            )}
           />
         </div>
       </div>
 
       <div className="grid grid-cols-2 gap-3">
-        <MeasurementField
-          label="Height"
-          placeholder="e.g. 160"
-          units={LENGTH_UNITS}
-          state={measurements.height}
-          onChange={(next) => updateMeasurement("height", next)}
+        <Controller
+          name="measurements.height"
+          control={control}
+          render={({ field }) => (
+            <MeasurementField
+              label="Height"
+              placeholder="e.g. 160"
+              units={LENGTH_UNITS}
+              state={field.value}
+              onChange={field.onChange}
+            />
+          )}
         />
-        <MeasurementField
-          label="Weight"
-          placeholder="e.g. 55"
-          units={WEIGHT_UNITS}
-          state={measurements.weight}
-          onChange={(next) => updateMeasurement("weight", next)}
-        />
-      </div>
-
-      <div className="grid grid-cols-2 gap-3">
-        <MeasurementField
-          label="Bust Size"
-          placeholder="e.g. 90"
-          units={LENGTH_UNITS}
-          state={measurements.bust}
-          onChange={(next) => updateMeasurement("bust", next)}
-        />
-        <MeasurementField
-          label="Waist Size"
-          placeholder="e.g. 60"
-          units={LENGTH_UNITS}
-          state={measurements.waist}
-          onChange={(next) => updateMeasurement("waist", next)}
+        <Controller
+          name="measurements.weight"
+          control={control}
+          render={({ field }) => (
+            <MeasurementField
+              label="Weight"
+              placeholder="e.g. 55"
+              units={WEIGHT_UNITS}
+              state={field.value}
+              onChange={field.onChange}
+            />
+          )}
         />
       </div>
 
       <div className="grid grid-cols-2 gap-3">
-        <MeasurementField
-          label="High Hip"
-          placeholder="e.g. 80"
-          units={LENGTH_UNITS}
-          state={measurements.highHip}
-          onChange={(next) => updateMeasurement("highHip", next)}
+        <Controller
+          name="measurements.bust"
+          control={control}
+          render={({ field }) => (
+            <MeasurementField
+              label="Bust Size"
+              placeholder="e.g. 90"
+              units={LENGTH_UNITS}
+              state={field.value}
+              onChange={field.onChange}
+            />
+          )}
         />
-        <MeasurementField
-          label="Hip Size"
-          placeholder="e.g. 90"
-          units={LENGTH_UNITS}
-          state={measurements.hip}
-          onChange={(next) => updateMeasurement("hip", next)}
+        <Controller
+          name="measurements.waist"
+          control={control}
+          render={({ field }) => (
+            <MeasurementField
+              label="Waist Size"
+              placeholder="e.g. 60"
+              units={LENGTH_UNITS}
+              state={field.value}
+              onChange={field.onChange}
+            />
+          )}
+        />
+      </div>
+
+      <div className="grid grid-cols-2 gap-3">
+        <Controller
+          name="measurements.highHip"
+          control={control}
+          render={({ field }) => (
+            <MeasurementField
+              label="High Hip"
+              placeholder="e.g. 80"
+              units={LENGTH_UNITS}
+              state={field.value}
+              onChange={field.onChange}
+            />
+          )}
+        />
+        <Controller
+          name="measurements.hip"
+          control={control}
+          render={({ field }) => (
+            <MeasurementField
+              label="Hip Size"
+              placeholder="e.g. 90"
+              units={LENGTH_UNITS}
+              state={field.value}
+              onChange={field.onChange}
+            />
+          )}
         />
       </div>
 
@@ -458,39 +525,60 @@ export function EditProfileForm({ userId }: { userId: string }) {
         <Label className="text-muted-foreground text-xs tracking-wide uppercase">
           Your body type
         </Label>
-        <Select value={bodyType} onValueChange={setBodyType}>
-          <SelectTrigger className="bg-secondary h-8 w-full border-transparent">
-            <SelectValue placeholder="Select" />
-          </SelectTrigger>
-          <SelectContent>
-            {BODY_TYPE_OPTIONS.map((option) => (
-              <SelectItem key={option} value={option}>
-                {option}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
+        <Controller
+          name="bodyType"
+          control={control}
+          render={({ field }) => (
+            <Select
+              value={field.value ?? undefined}
+              onValueChange={field.onChange}
+            >
+              <SelectTrigger className="bg-secondary h-8 w-full border-transparent">
+                <SelectValue placeholder="Select" />
+              </SelectTrigger>
+              <SelectContent>
+                {BODY_TYPE_OPTIONS.map((option) => (
+                  <SelectItem key={option} value={option}>
+                    {option}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          )}
+        />
       </div>
 
       <div className="flex flex-col gap-2">
         <span className="text-muted-foreground text-xs tracking-wide uppercase">
           Your style, in your words
         </span>
-        <PillToggleGroup
-          options={STYLE_TAG_OPTIONS}
-          isSelected={(value) => styleTags.includes(value as StyleTag)}
-          onToggle={(value) => toggleStyleTag(value as StyleTag)}
+        <Controller
+          name="styleTags"
+          control={control}
+          render={({ field }) => (
+            <PillToggleGroup
+              options={STYLE_TAG_OPTIONS}
+              isSelected={(value) => field.value.includes(value as StyleTag)}
+              onToggle={(value) => {
+                const tag = value as StyleTag;
+                const current = field.value;
+                const next = current.includes(tag)
+                  ? current.filter((t) => t !== tag)
+                  : [...current, tag];
+                field.onChange(next);
+              }}
+            />
+          )}
         />
       </div>
 
       <Button
-        type="button"
-        onClick={handleSave}
-        disabled={isBusy}
+        type="submit"
+        disabled={isBusy || isSubmitting}
         className="w-full"
       >
         {updateProfileMutation.isPending ? "Saving…" : "Save"}
       </Button>
-    </main>
+    </form>
   );
 }

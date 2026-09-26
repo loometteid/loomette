@@ -4,6 +4,11 @@ export type OutfitSize = Database["public"]["Enums"]["outfit_size_type"];
 export type Occasion = Database["public"]["Enums"]["occasion_type"];
 export type Gender = Database["public"]["Enums"]["gender_type"];
 
+export {
+  wardrobeItemFormSchema,
+  type WardrobeItemFormValues,
+} from "./schemas/wardrobe-item.schema";
+
 export type PendingItem = {
   id: string;
   created_at: string;

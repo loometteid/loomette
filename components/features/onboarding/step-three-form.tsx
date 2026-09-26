@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { Controller, useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { createBrowserSupabaseClient } from "@/lib/supabase/client";
@@ -11,19 +13,30 @@ import {
 } from "@/lib/profileOptions";
 import { OnboardingShell } from "./onboarding-shell";
 import { PillToggleGroup } from "./pill-toggle-group";
+import {
+  stepThreeSchema,
+  type StepThreeFormValues,
+} from "./schemas/step-three.schema";
 
 export function StepThreeForm() {
   const router = useRouter();
-  const [profession, setProfession] = useState("");
-  const [workSetting, setWorkSetting] = useState<WorkSetting | null>(null);
-  const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  async function handleSubmit(event: React.FormEvent) {
-    event.preventDefault();
-    setLoading(true);
-    setError(null);
+  const {
+    register,
+    handleSubmit,
+    control,
+    formState: { isSubmitting },
+  } = useForm<StepThreeFormValues>({
+    resolver: zodResolver(stepThreeSchema),
+    defaultValues: {
+      profession: "",
+      workSetting: null,
+    },
+  });
 
+  async function onSubmit(values: StepThreeFormValues) {
+    setError(null);
     const supabase = createBrowserSupabaseClient();
 
     const {
@@ -31,22 +44,20 @@ export function StepThreeForm() {
     } = await supabase.auth.getUser();
 
     if (!user) {
-      setLoading(false);
       router.push("/sign-in");
       return;
     }
 
-    const { error } = await supabase
+    const { error: updateError } = await supabase
       .from("user")
       .update({
-        occupation: profession.trim() || null,
-        work_setting: workSetting,
+        occupation: values.profession || null,
+        work_setting: values.workSetting ?? null,
       })
       .eq("user_id", user.id);
 
-    setLoading(false);
-    if (error) {
-      setError(error.message);
+    if (updateError) {
+      setError(updateError.message);
       return;
     }
     router.push("/onboarding/4");
@@ -58,9 +69,9 @@ export function StepThreeForm() {
       totalSteps={5}
       title="What does your day-to-day look like?"
       subtitle="We'll help you dress for where you actually go."
-      onSubmit={handleSubmit}
-      continueLabel={loading ? "Saving…" : "Continue"}
-      continueDisabled={loading}
+      onSubmit={handleSubmit(onSubmit)}
+      continueLabel={isSubmitting ? "Saving…" : "Continue"}
+      continueDisabled={isSubmitting}
     >
       <div className="flex flex-col gap-1.5">
         <Label
@@ -72,8 +83,7 @@ export function StepThreeForm() {
         <Input
           id="onboarding-profession"
           placeholder="e.g. Product manager, teacher, freelancer…"
-          value={profession}
-          onChange={(event) => setProfession(event.target.value)}
+          {...register("profession")}
         />
       </div>
 
@@ -81,13 +91,18 @@ export function StepThreeForm() {
         <Label className="text-muted-foreground text-xs tracking-wide uppercase">
           Your work setting
         </Label>
-        <PillToggleGroup
-          options={WORK_SETTING_OPTIONS}
-          isSelected={(value) => workSetting === value}
-          onToggle={(value) => setWorkSetting(value as WorkSetting)}
+        <Controller
+          name="workSetting"
+          control={control}
+          render={({ field }) => (
+            <PillToggleGroup
+              options={WORK_SETTING_OPTIONS}
+              isSelected={(value) => field.value === value}
+              onToggle={(value) => field.onChange(value as WorkSetting)}
+            />
+          )}
         />
       </div>
-
       {error && <p className="text-destructive text-sm">{error}</p>}
     </OnboardingShell>
   );

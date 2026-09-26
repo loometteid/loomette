@@ -5,6 +5,8 @@ import Image from "next/image";
 import { notFound, useRouter } from "next/navigation";
 import { ChevronLeft, Trash2 } from "lucide-react";
 import { toast } from "sonner";
+import { Controller, useForm, useWatch } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation, useQueryClient, useSuspenseQuery } from "@tanstack/react-query";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -27,6 +29,10 @@ import {
   type Occasion,
   type OutfitSize,
 } from "./types";
+import {
+  wardrobeItemFormSchema,
+  type WardrobeItemFormValues,
+} from "./schemas/wardrobe-item.schema";
 
 // "Last Pairing" / "Might be a perfect match" from the Figma reference
 // are omitted — they need an outfit-matching engine that doesn't exist
@@ -54,23 +60,33 @@ export function EditItemForm({
   }
 
   const [showOriginal, setShowOriginal] = useState(false);
-  const [name, setName] = useState(item.item?.name ?? "");
-  const [brand, setBrand] = useState(item.item?.brand ?? "");
-  const [category, setCategory] = useState<string | null>(
-    item.item?.category ?? null,
-  );
-  const [subcategory, setSubcategory] = useState<string | null>(
-    item.item?.subcategory ?? null,
-  );
-  const [color, setColor] = useState<string | null>(item.item?.color ?? null);
-  const [size, setSize] = useState<OutfitSize | null>(item.size);
-  const [occasions, setOccasions] = useState<Occasion[]>(item.occasions ?? []);
-  const [price, setPrice] = useState(item.price?.toString() ?? "");
-  const [purchaseLocation, setPurchaseLocation] = useState(
-    item.purchase_location ?? "",
-  );
 
-  const subcategoryOptions = getSubcategoryOptions(category, gender);
+  const {
+    register,
+    handleSubmit,
+    control,
+    setValue,
+    formState: { isSubmitting },
+  } = useForm<WardrobeItemFormValues>({
+    resolver: zodResolver(wardrobeItemFormSchema),
+    defaultValues: {
+      name: item.item?.name ?? "",
+      brand: item.item?.brand ?? "",
+      category: item.item?.category ?? null,
+      subcategory: item.item?.subcategory ?? null,
+      color: item.item?.color ?? null,
+      size: item.size,
+      occasions: item.occasions ?? [],
+      price: item.price?.toString() ?? "",
+      purchaseLocation: item.purchase_location ?? "",
+    },
+  });
+
+  const category = useWatch({
+    control,
+    name: "category",
+  });
+  const subcategoryOptions = getSubcategoryOptions(category ?? null, gender);
   const displayedImage = showOriginal ? item.image_url : item.item?.image_url;
 
   const updateMutation = useMutation({
@@ -113,21 +129,21 @@ export function EditItemForm({
 
   const isBusy = updateMutation.isPending || deleteMutation.isPending;
 
-  function handleSave() {
+  function onSubmit(values: WardrobeItemFormValues) {
     if (!item?.item) return;
-    const parsedPrice = Number(price);
+    const parsedPrice = Number(values.price);
     updateMutation.mutate({
       wardrobeItemId: item.id,
       itemId: item.item.item_id,
-      name,
-      brand,
-      category,
-      subcategory,
-      color,
-      size,
-      occasions,
-      price: price.trim() && !Number.isNaN(parsedPrice) ? parsedPrice : null,
-      purchaseLocation,
+      name: values.name,
+      brand: values.brand,
+      category: values.category ?? null,
+      subcategory: values.subcategory ?? null,
+      color: values.color ?? null,
+      size: values.size ?? null,
+      occasions: values.occasions,
+      price: values.price.trim() && !Number.isNaN(parsedPrice) ? parsedPrice : null,
+      purchaseLocation: values.purchaseLocation,
     });
   }
 
@@ -186,146 +202,176 @@ export function EditItemForm({
         </button>
       )}
 
-      <div className="flex flex-col items-center gap-1 text-center">
-        <input
-          value={name}
-          onChange={(event) => setName(event.target.value)}
-          placeholder="Name this piece"
-          className="w-full bg-transparent text-center font-serif text-2xl outline-none placeholder:text-muted-foreground"
-        />
-        <input
-          value={brand}
-          onChange={(event) => setBrand(event.target.value)}
-          placeholder="Brand"
-          className="text-muted-foreground w-full bg-transparent text-center text-xs tracking-wide uppercase outline-none placeholder:text-muted-foreground"
-        />
-      </div>
+      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6">
+        <div className="flex flex-col items-center gap-1 text-center">
+          <input
+            {...register("name")}
+            placeholder="Name this piece"
+            className="w-full bg-transparent text-center font-serif text-2xl outline-none placeholder:text-muted-foreground"
+          />
+          <input
+            {...register("brand")}
+            placeholder="Brand"
+            className="text-muted-foreground w-full bg-transparent text-center text-xs tracking-wide uppercase outline-none placeholder:text-muted-foreground"
+          />
+        </div>
 
-      <div className="flex flex-col gap-2">
-        <Label className="text-muted-foreground text-xs tracking-wide uppercase">
-          Category
-        </Label>
-        <PillToggleGroup
-          options={CATEGORY_OPTIONS}
-          isSelected={(value) => category === value}
-          onToggle={(value) => {
-            setCategory(value);
-            setSubcategory(null);
-          }}
-        />
-      </div>
-
-      {subcategoryOptions.length > 0 && (
         <div className="flex flex-col gap-2">
           <Label className="text-muted-foreground text-xs tracking-wide uppercase">
-            Sub Category
+            Category
           </Label>
-          <PillToggleGroup
-            options={subcategoryOptions}
-            isSelected={(value) => subcategory === value}
-            onToggle={(value) => setSubcategory(value)}
+          <Controller
+            name="category"
+            control={control}
+            render={({ field }) => (
+              <PillToggleGroup
+                options={CATEGORY_OPTIONS}
+                isSelected={(value) => field.value === value}
+                onToggle={(value) => {
+                  field.onChange(value);
+                  setValue("subcategory", null);
+                }}
+              />
+            )}
           />
         </div>
-      )}
 
-      <div className="flex flex-col gap-2">
-        <Label className="text-muted-foreground text-xs tracking-wide uppercase">
-          Color
-        </Label>
-        <div className="flex flex-wrap gap-2">
-          {COLOR_OPTIONS.map((option) => (
-            <button
-              key={option.value}
-              type="button"
-              aria-label={option.label}
-              onClick={() => setColor(option.value)}
-              style={{ backgroundColor: option.swatch }}
-              className={cn(
-                "size-8 rounded-full border-2 transition-colors",
-                color === option.value ? "border-foreground" : "border-border",
+        {subcategoryOptions.length > 0 && (
+          <div className="flex flex-col gap-2">
+            <Label className="text-muted-foreground text-xs tracking-wide uppercase">
+              Sub Category
+            </Label>
+            <Controller
+              name="subcategory"
+              control={control}
+              render={({ field }) => (
+                <PillToggleGroup
+                  options={subcategoryOptions}
+                  isSelected={(value) => field.value === value}
+                  onToggle={(value) => field.onChange(value)}
+                />
               )}
             />
-          ))}
-        </div>
-      </div>
+          </div>
+        )}
 
-      <div className="flex flex-col gap-2">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col gap-2">
           <Label className="text-muted-foreground text-xs tracking-wide uppercase">
-            Outfit Size
+            Color
           </Label>
-          <Badge>Optional</Badge>
-        </div>
-        <PillToggleGroup
-          options={OUTFIT_SIZE_OPTIONS}
-          isSelected={(value) => size === value}
-          onToggle={(value) => setSize(value as OutfitSize)}
-        />
-      </div>
-
-      <div className="flex flex-col gap-2">
-        <Label className="text-muted-foreground text-xs tracking-wide uppercase">
-          Occasion
-        </Label>
-        <PillToggleGroup
-          options={OCCASION_OPTIONS}
-          isSelected={(value) => occasions.includes(value as Occasion)}
-          onToggle={(value) =>
-            setOccasions((prev) =>
-              prev.includes(value as Occasion)
-                ? prev.filter((o) => o !== value)
-                : [...prev, value as Occasion],
-            )
-          }
-        />
-      </div>
-
-      <div className="flex flex-col gap-1.5">
-        <Label
-          htmlFor="edit-item-price"
-          className="text-foreground text-xs tracking-wide uppercase"
-        >
-          Price
-        </Label>
-        <div className="relative">
-          <span className="text-muted-foreground pointer-events-none absolute top-1/2 left-2.5 -translate-y-1/2 text-base">
-            Rp
-          </span>
-          <Input
-            id="edit-item-price"
-            type="number"
-            inputMode="decimal"
-            placeholder="150.000"
-            value={price}
-            onChange={(event) => setPrice(event.target.value)}
-            className="pl-8"
+          <Controller
+            name="color"
+            control={control}
+            render={({ field }) => (
+              <div className="flex flex-wrap gap-2">
+                {COLOR_OPTIONS.map((option) => (
+                  <button
+                    key={option.value}
+                    type="button"
+                    aria-label={option.label}
+                    onClick={() => field.onChange(option.value)}
+                    style={{ backgroundColor: option.swatch }}
+                    className={cn(
+                      "size-8 rounded-full border-2 transition-colors",
+                      field.value === option.value
+                        ? "border-foreground"
+                        : "border-border",
+                    )}
+                  />
+                ))}
+              </div>
+            )}
           />
         </div>
-      </div>
 
-      <div className="flex flex-col gap-1.5">
-        <Label
-          htmlFor="edit-item-buy-from"
-          className="text-foreground text-xs tracking-wide uppercase"
+        <div className="flex flex-col gap-2">
+          <div className="flex items-center justify-between">
+            <Label className="text-muted-foreground text-xs tracking-wide uppercase">
+              Outfit Size
+            </Label>
+            <Badge>Optional</Badge>
+          </div>
+          <Controller
+            name="size"
+            control={control}
+            render={({ field }) => (
+              <PillToggleGroup
+                options={OUTFIT_SIZE_OPTIONS}
+                isSelected={(value) => field.value === value}
+                onToggle={(value) => field.onChange(value as OutfitSize)}
+              />
+            )}
+          />
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <Label className="text-muted-foreground text-xs tracking-wide uppercase">
+            Occasion
+          </Label>
+          <Controller
+            name="occasions"
+            control={control}
+            render={({ field }) => (
+              <PillToggleGroup
+                options={OCCASION_OPTIONS}
+                isSelected={(value) => field.value.includes(value as Occasion)}
+                onToggle={(value) => {
+                  const occ = value as Occasion;
+                  const current = field.value;
+                  const next = current.includes(occ)
+                    ? current.filter((o) => o !== occ)
+                    : [...current, occ];
+                  field.onChange(next);
+                }}
+              />
+            )}
+          />
+        </div>
+
+        <div className="flex flex-col gap-1.5">
+          <Label
+            htmlFor="edit-item-price"
+            className="text-foreground text-xs tracking-wide uppercase"
+          >
+            Price
+          </Label>
+          <div className="relative">
+            <span className="text-muted-foreground pointer-events-none absolute top-1/2 left-2.5 -translate-y-1/2 text-base">
+              Rp
+            </span>
+            <Input
+              id="edit-item-price"
+              type="number"
+              inputMode="decimal"
+              placeholder="150.000"
+              {...register("price")}
+              className="pl-8"
+            />
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-1.5">
+          <Label
+            htmlFor="edit-item-buy-from"
+            className="text-foreground text-xs tracking-wide uppercase"
+          >
+            Buy From
+          </Label>
+          <Input
+            id="edit-item-buy-from"
+            placeholder="e.g. Offline Store"
+            {...register("purchaseLocation")}
+          />
+        </div>
+
+        <Button
+          type="submit"
+          className="w-full"
+          disabled={isBusy || isSubmitting}
         >
-          Buy From
-        </Label>
-        <Input
-          id="edit-item-buy-from"
-          placeholder="e.g. Offline Store"
-          value={purchaseLocation}
-          onChange={(event) => setPurchaseLocation(event.target.value)}
-        />
-      </div>
-
-      <Button
-        type="button"
-        className="w-full"
-        disabled={isBusy}
-        onClick={handleSave}
-      >
-        {updateMutation.isPending ? "Saving…" : "Save"}
-      </Button>
+          {updateMutation.isPending ? "Saving…" : "Save"}
+        </Button>
+      </form>
     </main>
   );
 }

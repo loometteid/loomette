@@ -6,7 +6,6 @@ import Image from "next/image";
 import { ChevronLeft, Pencil } from "lucide-react";
 import { Controller, useForm, useWatch, type FieldErrors } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -20,25 +19,11 @@ import {
   type TravelCompanion,
 } from "@/lib/tripOptions";
 import { PillToggleGroup } from "@/components/features/onboarding/pill-toggle-group";
+import {
+  editTripSchema,
+  type EditTripFormValues,
+} from "./schemas/edit-trip.schema";
 import type { Trip } from "./types";
-
-const editTripSchema = z
-  .object({
-    name: z.string(),
-    startDate: z.string().min(1, "Please pick both a start and end date."),
-    endDate: z.string().min(1, "Please pick both a start and end date."),
-    season: z.string().nullable().optional(),
-    companion: z.string().nullable().optional(),
-  })
-  .refine(
-    (data) => !data.startDate || !data.endDate || data.endDate >= data.startDate,
-    {
-      message: "End date can't be before the start date.",
-      path: ["endDate"],
-    },
-  );
-
-type EditTripFormValues = z.infer<typeof editTripSchema>;
 
 export function EditTripForm({ trip }: { trip?: Trip }) {
   const router = useRouter();

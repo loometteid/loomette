@@ -4,18 +4,14 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { createBrowserSupabaseClient } from "@/lib/supabase/client";
-
-const signInSchema = z.object({
-  email: z.email("Please enter a valid email address"),
-  password: z.string().min(1, "Password is required"),
-});
-
-type SignInFormValues = z.infer<typeof signInSchema>;
+import {
+  signInSchema,
+  type SignInFormValues,
+} from "./schemas/sign-in.schema";
 
 export function SignInForm() {
   const router = useRouter();

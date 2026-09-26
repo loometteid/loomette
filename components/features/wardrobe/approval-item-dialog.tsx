@@ -25,13 +25,15 @@ import {
   OCCASION_OPTIONS,
   OUTFIT_SIZE_OPTIONS,
   getSubcategoryOptions,
-  wardrobeItemFormSchema,
   type Gender,
   type Occasion,
   type OutfitSize,
   type PendingItem,
-  type WardrobeItemFormValues,
 } from "./types";
+import {
+  wardrobeItemFormSchema,
+  type WardrobeItemFormValues,
+} from "./schemas/wardrobe-item.schema";
 
 export function ApprovalItemDialog({
   item,

@@ -4,7 +4,6 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Controller, useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -12,15 +11,10 @@ import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 import { GENDER_OPTIONS, type Gender } from "@/lib/profileOptions";
 import { OnboardingShell } from "./onboarding-shell";
 import { PillToggleGroup } from "./pill-toggle-group";
-
-const stepTwoSchema = z.object({
-  birthday: z.string().optional(),
-  identity: z.enum(["female", "male", "non_binary", "prefer_not_to_say"] as const, {
-    message: "Please select an identity",
-  }),
-});
-
-type StepTwoFormValues = z.infer<typeof stepTwoSchema>;
+import {
+  stepTwoSchema,
+  type StepTwoFormValues,
+} from "./schemas/step-two.schema";
 
 export function StepTwoForm() {
   const router = useRouter();

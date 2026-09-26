@@ -7,7 +7,6 @@ import { ChevronLeft, Pencil, Settings, Users } from "lucide-react";
 import { toast } from "sonner";
 import { Controller, useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 import { useMutation, useQueryClient, useSuspenseQuery } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -42,36 +41,11 @@ import {
   type WorkSetting,
 } from "@/lib/profileOptions";
 import { PillToggleGroup } from "@/components/features/onboarding/pill-toggle-group";
+import {
+  editProfileSchema,
+  type EditProfileFormValues,
+} from "./schemas/edit-profile.schema";
 import type { Database } from "@/types/database.types";
-
-const measurementStateSchema = z.object({
-  value: z.string(),
-  unit: z.string(),
-});
-
-const editProfileSchema = z.object({
-  profilePhoto: z.string().nullable().optional(),
-  displayName: z.string().optional(),
-  birthday: z.string().optional(),
-  gender: z.custom<Gender>().nullable().optional(),
-  occupation: z.string().optional(),
-  workSetting: z.custom<WorkSetting>().nullable().optional(),
-  outfitSize: z.custom<OutfitSize>().nullable().optional(),
-  shoeSize: z.string().optional(),
-  shoeRegion: z.custom<ShoeRegion>(),
-  measurements: z.object({
-    height: measurementStateSchema,
-    weight: measurementStateSchema,
-    bust: measurementStateSchema,
-    waist: measurementStateSchema,
-    highHip: measurementStateSchema,
-    hip: measurementStateSchema,
-  }),
-  bodyType: z.string().nullable().optional(),
-  styleTags: z.array(z.string()),
-});
-
-type EditProfileFormValues = z.infer<typeof editProfileSchema>;
 
 function toMeasurementState(value: number | null, unit: string): MeasurementState {
   return { value: value == null ? "" : String(value), unit };

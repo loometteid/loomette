@@ -26,11 +26,13 @@ import {
   OCCASION_OPTIONS,
   OUTFIT_SIZE_OPTIONS,
   getSubcategoryOptions,
-  wardrobeItemFormSchema,
   type Occasion,
   type OutfitSize,
-  type WardrobeItemFormValues,
 } from "./types";
+import {
+  wardrobeItemFormSchema,
+  type WardrobeItemFormValues,
+} from "./schemas/wardrobe-item.schema";
 
 // "Last Pairing" / "Might be a perfect match" from the Figma reference
 // are omitted — they need an outfit-matching engine that doesn't exist

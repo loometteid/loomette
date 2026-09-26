@@ -4,17 +4,14 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 import { OnboardingShell } from "./onboarding-shell";
-
-const stepOneSchema = z.object({
-  name: z.string().trim().min(1, "Name is required"),
-});
-
-type StepOneFormValues = z.infer<typeof stepOneSchema>;
+import {
+  stepOneSchema,
+  type StepOneFormValues,
+} from "./schemas/step-one.schema";
 
 export function StepOneForm({ email }: { email: string }) {
   const router = useRouter();

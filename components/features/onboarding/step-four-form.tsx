@@ -4,7 +4,10 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
+import {
+  stepFourSchema,
+  type StepFourFormValues,
+} from "./schemas/step-four.schema";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -91,30 +94,6 @@ function MeasurementField({
     </div>
   );
 }
-
-const measurementStateSchema = z.object({
-  value: z.string(),
-  unit: z.string(),
-});
-
-const stepFourSchema = z.object({
-  outfitSize: z
-    .enum(["xs", "s", "m", "l", "xl", "it_varies"] as const)
-    .nullable()
-    .optional(),
-  shoeSize: z.string().trim().optional(),
-  shoeRegion: z.enum(["uk", "us", "eu"] as const),
-  measurements: z.object({
-    height: measurementStateSchema,
-    weight: measurementStateSchema,
-    bust: measurementStateSchema,
-    waist: measurementStateSchema,
-    highHip: measurementStateSchema,
-    hip: measurementStateSchema,
-  }),
-});
-
-type StepFourFormValues = z.infer<typeof stepFourSchema>;
 
 export function StepFourForm() {
   const router = useRouter();

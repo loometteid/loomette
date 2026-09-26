@@ -4,7 +4,6 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { createBrowserSupabaseClient } from "@/lib/supabase/client";
@@ -14,13 +13,10 @@ import {
 } from "@/lib/profileOptions";
 import { OnboardingShell } from "./onboarding-shell";
 import { PillToggleGroup } from "./pill-toggle-group";
-
-const stepThreeSchema = z.object({
-  profession: z.string().trim().optional(),
-  workSetting: z.enum(["in_office", "remote", "hybrid", "on_the_go"] as const).nullable().optional(),
-});
-
-type StepThreeFormValues = z.infer<typeof stepThreeSchema>;
+import {
+  stepThreeSchema,
+  type StepThreeFormValues,
+} from "./schemas/step-three.schema";
 
 export function StepThreeForm() {
   const router = useRouter();

@@ -4,17 +4,14 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 import { STYLE_TAG_OPTIONS, type StyleTag } from "@/lib/styleTags";
 import { OnboardingShell } from "./onboarding-shell";
 import { PillToggleGroup } from "./pill-toggle-group";
-
-const stepFiveSchema = z.object({
-  styleTags: z.array(z.string()),
-});
-
-type StepFiveFormValues = z.infer<typeof stepFiveSchema>;
+import {
+  stepFiveSchema,
+  type StepFiveFormValues,
+} from "./schemas/step-five.schema";
 
 export function StepFiveForm() {
   const router = useRouter();

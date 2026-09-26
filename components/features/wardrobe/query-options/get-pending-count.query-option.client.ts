@@ -1,5 +1,6 @@
 import { queryOptions } from "@tanstack/react-query";
 import { createBrowserSupabaseClient } from "@/lib/supabase/client";
+import { getLogger } from "@/lib/logging";
 
 export const getPendingWardrobeCountQueryOptionsForBrowser = (userId: string) =>
   queryOptions({
@@ -13,9 +14,14 @@ export const getPendingWardrobeCountQueryOptionsForBrowser = (userId: string) =>
         .eq("is_approved", false);
 
       if (error) {
-        console.error(
-          "Error fetching pending wardrobe count in getPendingWardrobeCountQueryOptionsForBrowser:",
-          error,
+        const logger = getLogger(["query", "wardrobe"]);
+        logger.error(
+          "Error fetching pending wardrobe count in getPendingWardrobeCountQueryOptionsForBrowser: {errorMessage}",
+          {
+            errorMessage: error.message,
+            error,
+            userId,
+          },
         );
         return 0;
       }

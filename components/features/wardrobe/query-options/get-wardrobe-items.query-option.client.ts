@@ -1,5 +1,6 @@
 import { queryOptions } from "@tanstack/react-query";
 import { createBrowserSupabaseClient } from "@/lib/supabase/client";
+import { getLogger } from "@/lib/logging";
 import type { WardrobeItem } from "../types";
 
 export const WARDROBE_ITEM_SELECT =
@@ -18,9 +19,14 @@ export const getWardrobeItemsQueryOptionsForBrowser = (userId: string) =>
         .returns<WardrobeItem[]>();
 
       if (error) {
-        console.error(
-          "Error fetching wardrobe items in getWardrobeItemsQueryOptionsForBrowser:",
-          error,
+        const logger = getLogger(["query", "wardrobe"]);
+        logger.error(
+          "Error fetching wardrobe items in getWardrobeItemsQueryOptionsForBrowser: {errorMessage}",
+          {
+            errorMessage: error.message,
+            error,
+            userId,
+          },
         );
         return [];
       }

@@ -2,22 +2,44 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useForm, useWatch } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 import { OnboardingShell } from "./onboarding-shell";
 
+const stepOneSchema = z.object({
+  name: z.string().trim().min(1, "Name is required"),
+});
+
+type StepOneFormValues = z.infer<typeof stepOneSchema>;
+
 export function StepOneForm({ email }: { email: string }) {
   const router = useRouter();
-  const [name, setName] = useState("");
-  const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  async function handleSubmit(event: React.FormEvent) {
-    event.preventDefault();
-    setLoading(true);
-    setError(null);
+  const {
+    register,
+    handleSubmit,
+    control,
+    formState: { errors, isSubmitting },
+  } = useForm<StepOneFormValues>({
+    resolver: zodResolver(stepOneSchema),
+    defaultValues: {
+      name: "",
+    },
+  });
 
+
+  const name = useWatch({
+    control,
+    name: "name"
+  });
+
+  async function onSubmit(values: StepOneFormValues) {
+    setError(null);
     const supabase = createBrowserSupabaseClient();
 
     const {
@@ -25,19 +47,17 @@ export function StepOneForm({ email }: { email: string }) {
     } = await supabase.auth.getUser();
 
     if (!user) {
-      setLoading(false);
       router.push("/sign-in");
       return;
     }
 
-    const { error } = await supabase
+    const { error: updateError } = await supabase
       .from("user")
-      .update({ display_name: name })
+      .update({ display_name: values.name })
       .eq("user_id", user.id);
 
-    setLoading(false);
-    if (error) {
-      setError(error.message);
+    if (updateError) {
+      setError(updateError.message);
       return;
     }
     router.push("/onboarding/2");
@@ -49,9 +69,9 @@ export function StepOneForm({ email }: { email: string }) {
       totalSteps={5}
       title="First, let's make this yours."
       subtitle="No spam. Just your wardrobe, personalized."
-      onSubmit={handleSubmit}
-      continueLabel={loading ? "Saving…" : "Continue"}
-      continueDisabled={loading || name.trim().length === 0}
+      onSubmit={handleSubmit(onSubmit)}
+      continueLabel={isSubmitting ? "Saving…" : "Continue"}
+      continueDisabled={isSubmitting || !name || name.trim().length === 0}
     >
       <div className="flex flex-col gap-1.5">
         <Label
@@ -63,10 +83,11 @@ export function StepOneForm({ email }: { email: string }) {
         <Input
           id="onboarding-name"
           placeholder="e.g. Rebecca"
-          required
-          value={name}
-          onChange={(event) => setName(event.target.value)}
+          {...register("name")}
         />
+        {errors.name && (
+          <p className="text-destructive text-xs">{errors.name.message}</p>
+        )}
       </div>
 
       <div className="flex flex-col gap-1.5">

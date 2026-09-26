@@ -1,5 +1,6 @@
 import { queryOptions } from "@tanstack/react-query";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
+import { getLogger } from "@/lib/logging";
 
 export const getPendingWardrobeCountQueryOptionsForServer = (userId: string) =>
   queryOptions({
@@ -13,9 +14,14 @@ export const getPendingWardrobeCountQueryOptionsForServer = (userId: string) =>
         .eq("is_approved", false);
 
       if (error) {
-        console.error(
-          "Error fetching pending wardrobe count in getPendingWardrobeCountQueryOptionsForServer:",
-          error,
+        const logger = getLogger(["query", "wardrobe"]);
+        logger.error(
+          "Error fetching pending wardrobe count in getPendingWardrobeCountQueryOptionsForServer: {errorMessage}",
+          {
+            errorMessage: error.message,
+            error,
+            userId,
+          },
         );
         return 0;
       }

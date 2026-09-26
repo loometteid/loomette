@@ -1,5 +1,6 @@
 import { queryOptions } from "@tanstack/react-query";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
+import { getLogger } from "@/lib/logging";
 
 export const getLooksCountQueryOptionsForServer = (userId: string) =>
   queryOptions({
@@ -13,9 +14,14 @@ export const getLooksCountQueryOptionsForServer = (userId: string) =>
         .eq("is_saved", true);
 
       if (error) {
-        console.error(
-          "Error fetching looks count in getLooksCountQueryOptionsForServer:",
-          error,
+        const logger = getLogger(["query", "outfits"]);
+        logger.error(
+          "Error fetching looks count in getLooksCountQueryOptionsForServer: {errorMessage}",
+          {
+            errorMessage: error.message,
+            error,
+            userId,
+          },
         );
         return 0;
       }

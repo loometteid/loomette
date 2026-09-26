@@ -1,5 +1,6 @@
 import { queryOptions } from "@tanstack/react-query";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
+import { getLogger } from "@/lib/logging";
 import { PENDING_ITEM_SELECT } from "./get-pending-items.query-option.client";
 import type { PendingItem } from "../types";
 import { notFound } from "next/navigation";
@@ -21,9 +22,15 @@ export const getWardrobeItemByIdQueryOptionsForServer = (
         .returns<PendingItem>();
 
       if (error) {
-        console.error(
-          "Error fetching wardrobe item by id in getWardrobeItemByIdQueryOptionsForServer:",
-          error,
+        const logger = getLogger(["query", "wardrobe"]);
+        logger.error(
+          "Error fetching wardrobe item by id in getWardrobeItemByIdQueryOptionsForServer: {errorMessage}",
+          {
+            errorMessage: error.message,
+            error,
+            userId,
+            id,
+          },
         );
         throw notFound();
       }

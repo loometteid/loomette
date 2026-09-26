@@ -1,5 +1,6 @@
 import { queryOptions } from "@tanstack/react-query";
 import { createBrowserSupabaseClient } from "@/lib/supabase/client";
+import { getLogger } from "@/lib/logging";
 
 import { monthRangeISO } from "../date-utils";
 import {
@@ -18,11 +19,11 @@ function dedupeByDate(rows: DiaryEntry[]): Map<string, DiaryEntry> {
 }
 
 /**
- * 
- * @param userId 
- * @param year 
+ *
+ * @param userId
+ * @param year
  * @param month From 0 to 11
- * @returns 
+ * @returns
  */
 export const getDiaryEntriesQueryOptionsForBrowser = (
   userId: string,
@@ -35,7 +36,6 @@ export const getDiaryEntriesQueryOptionsForBrowser = (
       const { start, end } = monthRangeISO(year, month);
       const supabase = createBrowserSupabaseClient();
 
-
       const { data: rows, error } = await supabase
         .from("wear_log")
         .select(DIARY_ENTRY_SELECT)
@@ -47,7 +47,17 @@ export const getDiaryEntriesQueryOptionsForBrowser = (
         .returns<RawDiaryRow[]>();
 
       if (error) {
-        console.error("Error fetching diary entries in getDiaryEntriesQueryOptionsForBrowser:", error);
+        const logger = getLogger(["query", "diary"]);
+        logger.error(
+          "Error fetching diary entries in getDiaryEntriesQueryOptionsForBrowser: {errorMessage}",
+          {
+            errorMessage: error.message,
+            error,
+            userId,
+            year,
+            month,
+          },
+        );
         return new Map<string, DiaryEntry>();
       }
 

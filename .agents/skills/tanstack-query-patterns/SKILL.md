@@ -24,6 +24,7 @@ Every query option **MUST** be split into two separate files under `components/f
 ```ts
 import { queryOptions } from "@tanstack/react-query";
 import { createBrowserSupabaseClient } from "@/lib/supabase/client";
+import { getLogger } from "@/lib/logging";
 import type { Item } from "../types";
 
 export const getItemsQueryOptionsForBrowser = (userId: string) =>
@@ -37,7 +38,12 @@ export const getItemsQueryOptionsForBrowser = (userId: string) =>
         .eq("user_id", userId);
 
       if (error) {
-        console.error("Error fetching items:", error);
+        const logger = getLogger(["query", "feature"]);
+        logger.error("Error fetching items in getItemsQueryOptionsForBrowser: {errorMessage}", {
+          errorMessage: error.message,
+          error,
+          userId,
+        });
         return [];
       }
       return data ?? [];
@@ -50,6 +56,7 @@ export const getItemsQueryOptionsForBrowser = (userId: string) =>
 ```ts
 import { queryOptions } from "@tanstack/react-query";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
+import { getLogger } from "@/lib/logging";
 import type { Item } from "../types";
 
 export const getItemsQueryOptionsForServer = (userId: string) =>
@@ -63,7 +70,12 @@ export const getItemsQueryOptionsForServer = (userId: string) =>
         .eq("user_id", userId);
 
       if (error) {
-        console.error("Error fetching items on server:", error);
+        const logger = getLogger(["query", "feature"]);
+        logger.error("Error fetching items in getItemsQueryOptionsForServer: {errorMessage}", {
+          errorMessage: error.message,
+          error,
+          userId,
+        });
         return [];
       }
       return data ?? [];

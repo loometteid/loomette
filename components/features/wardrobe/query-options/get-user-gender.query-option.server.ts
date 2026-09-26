@@ -1,5 +1,6 @@
 import { queryOptions } from "@tanstack/react-query";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
+import { getLogger } from "@/lib/logging";
 import type { Gender } from "../types";
 
 export const getUserGenderQueryOptionsForServer = (userId: string) =>
@@ -14,9 +15,14 @@ export const getUserGenderQueryOptionsForServer = (userId: string) =>
         .single();
 
       if (error) {
-        console.error(
-          "Error fetching user gender in getUserGenderQueryOptionsForServer:",
-          error,
+        const logger = getLogger(["query", "user"]);
+        logger.error(
+          "Error fetching user gender in getUserGenderQueryOptionsForServer: {errorMessage}",
+          {
+            errorMessage: error.message,
+            error,
+            userId,
+          },
         );
         return null;
       }

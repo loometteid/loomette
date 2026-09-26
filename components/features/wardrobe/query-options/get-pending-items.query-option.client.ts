@@ -1,5 +1,6 @@
 import { queryOptions } from "@tanstack/react-query";
 import { createBrowserSupabaseClient } from "@/lib/supabase/client";
+import { getLogger } from "@/lib/logging";
 import type { PendingItem } from "../types";
 
 export const PENDING_ITEM_SELECT =
@@ -19,9 +20,14 @@ export const getPendingWardrobeItemsQueryOptionsForBrowser = (userId: string) =>
         .returns<PendingItem[]>();
 
       if (error) {
-        console.error(
-          "Error fetching pending items in getPendingWardrobeItemsQueryOptionsForBrowser:",
-          error,
+        const logger = getLogger(["query", "wardrobe"]);
+        logger.error(
+          "Error fetching pending items in getPendingWardrobeItemsQueryOptionsForBrowser: {errorMessage}",
+          {
+            errorMessage: error.message,
+            error,
+            userId,
+          },
         );
         return [];
       }

@@ -1,5 +1,6 @@
 import { queryOptions } from "@tanstack/react-query";
 import { createBrowserSupabaseClient } from "@/lib/supabase/client";
+import { getLogger } from "@/lib/logging";
 import { PENDING_ITEM_SELECT } from "./get-pending-items.query-option.client";
 import type { PendingItem } from "../types";
 
@@ -20,9 +21,15 @@ export const getWardrobeItemByIdQueryOptionsForBrowser = (
         .returns<PendingItem>();
 
       if (error) {
-        console.error(
-          "Error fetching wardrobe item by id in getWardrobeItemByIdQueryOptionsForBrowser:",
-          error,
+        const logger = getLogger(["query", "wardrobe"]);
+        logger.error(
+          "Error fetching wardrobe item by id in getWardrobeItemByIdQueryOptionsForBrowser: {errorMessage}",
+          {
+            errorMessage: error.message,
+            error,
+            userId,
+            id,
+          },
         );
         return null;
       }

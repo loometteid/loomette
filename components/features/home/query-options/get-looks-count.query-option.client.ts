@@ -1,5 +1,6 @@
 import { queryOptions } from "@tanstack/react-query";
 import { createBrowserSupabaseClient } from "@/lib/supabase/client";
+import { getLogger } from "@/lib/logging";
 
 export const getLooksCountQueryOptionsForBrowser = (userId: string) =>
   queryOptions({
@@ -13,9 +14,14 @@ export const getLooksCountQueryOptionsForBrowser = (userId: string) =>
         .eq("is_saved", true);
 
       if (error) {
-        console.error(
-          "Error fetching looks count in getLooksCountQueryOptionsForBrowser:",
-          error,
+        const logger = getLogger(["query", "outfits"]);
+        logger.error(
+          "Error fetching looks count in getLooksCountQueryOptionsForBrowser: {errorMessage}",
+          {
+            errorMessage: error.message,
+            error,
+            userId,
+          },
         );
         return 0;
       }

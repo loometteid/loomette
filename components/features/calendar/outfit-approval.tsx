@@ -1,87 +1,83 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useEffectEvent, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { ChevronLeft, Loader2 } from "lucide-react";
 import { toast } from "sonner";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogPopup, DialogTitle } from "@/components/ui/dialog";
 import { Sparkle } from "@/components/ui/sparkle";
 import { Typography } from "@/components/ui/typography";
-import { createBrowserSupabaseClient } from "@/lib/supabase/client";
-import { deleteOutfitPhotos } from "@/lib/outfitStorage";
 import { useOutfitDiaryUploadStore } from "@/stores/outfit-diary-upload-store";
+import { saveOutfitDiaryEntryMutationOptions } from "./mutation-options/save-outfit-diary-entry.mutation-option.client";
+import { deleteOutfitPhotoMutationOptions } from "./mutation-options/delete-outfit-photo.mutation-option.client";
+import { getDiaryEntriesQueryOptionsForBrowser } from "./query-options/get-diary-entries.query-option.client";
 
 export function OutfitApproval() {
   const router = useRouter();
+  const queryClient = useQueryClient();
   const draft = useOutfitDiaryUploadStore((state) => state.draft);
   const result = useOutfitDiaryUploadStore((state) => state.result);
   const setSavedEntry = useOutfitDiaryUploadStore(
     (state) => state.setSavedEntry,
   );
   const reset = useOutfitDiaryUploadStore((state) => state.reset);
-  const [saving, setSaving] = useState(false);
   const [showOriginal, setShowOriginal] = useState(false);
 
-  useEffect(() => {
-    if (!draft || !result) {
-      router.replace("/calendar");
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const { mutate: saveOutfit, isPending: isSavingOutfit } = useMutation({
+    ...saveOutfitDiaryEntryMutationOptions(),
+    onSuccess: (savedEntry) => {
+      setSavedEntry(savedEntry);
 
-  async function handleCancel() {
-    if (result) await deleteOutfitPhotos([result.originalPath]);
-    reset();
-    router.push("/calendar");
-  }
+      const [yearStr, monthStr] = savedEntry.wornOn.split("-");
+      const entryYear = Number(yearStr);
+      const entryMonth = Number(monthStr) - 1;
 
-  async function handleSave() {
-    if (!draft || !result) return;
-    setSaving(true);
-    try {
-      const supabase = createBrowserSupabaseClient();
+      if (draft) {
+        void queryClient.invalidateQueries({
+          queryKey: getDiaryEntriesQueryOptionsForBrowser(
+            draft.userId,
+            entryYear,
+            entryMonth,
+          ).queryKey,
+        });
+      }
 
-      const { data: outfitRow, error: outfitError } = await supabase
-        .from("outfit")
-        .insert({
-          user_id: draft.userId,
-          cover_image_url: result.previewUrl,
-          is_saved: true,
-        })
-        .select("id, cover_image_url")
-        .single();
-      if (outfitError) throw outfitError;
-
-      const { data: wearLogRow, error: wearLogError } = await supabase
-        .from("wear_log")
-        .insert({
-          user_id: draft.userId,
-          outfit_id: outfitRow.id,
-          worn_on: draft.wornOn,
-        })
-        .select("id, worn_on")
-        .single();
-      if (wearLogError) throw wearLogError;
-
-      setSavedEntry({
-        wearLogId: wearLogRow.id,
-        outfitId: outfitRow.id,
-        coverImageUrl: outfitRow.cover_image_url ?? result.previewUrl,
-        wornOn: wearLogRow.worn_on,
-      });
       toast.success("Outfit Saved");
       router.push("/calendar");
-    } catch (err) {
+    },
+    onError: (err) => {
       toast.error(
         err instanceof Error ? err.message : "Couldn't save that outfit.",
       );
-      setSaving(false);
+    },
+  });
+
+  const { mutate: deleteOutfit, isPending: isDeletingOUtfit } = useMutation({
+    ...deleteOutfitPhotoMutationOptions(),
+    onSettled: () => {
+      reset();
+      router.push("/calendar");
+    },
+  });
+
+  const firstRedirect = useEffectEvent(() => {
+    if (!draft || !result) {
+      router.replace("/calendar");
     }
+  })
+
+  useEffect(() => {
+    firstRedirect()
+  }, [])
+
+  if (!draft || !result) {
+    return null
   }
 
-  if (!draft || !result) return null;
+  const isBusy = isSavingOutfit || isDeletingOUtfit;
 
   return (
     <main className="mx-auto flex w-full max-w-sm flex-1 flex-col px-6 py-8">
@@ -90,9 +86,11 @@ export function OutfitApproval() {
         variant="secondary"
         size="icon"
         className="rounded-xl"
-        onClick={handleCancel}
+        onClick={() => {
+          deleteOutfit({ paths: [result.originalPath] });
+        }}
         aria-label="Go back"
-        disabled={saving}
+        disabled={isBusy}
       >
         <ChevronLeft className="size-4" />
       </Button>
@@ -126,19 +124,26 @@ export function OutfitApproval() {
       <div className="mt-8 flex gap-3">
         <button
           type="button"
-          onClick={handleCancel}
-          disabled={saving}
-          className="bg-secondary text-secondary-foreground flex-1 rounded-full py-3 text-sm font-medium tracking-wide uppercase disabled:pointer-events-none disabled:opacity-60"
+          onClick={() => {
+            deleteOutfit({ paths: [result.originalPath] });
+          }}
+          disabled={isBusy}
+          className="bg-secondary text-secondary-foreground flex flex-1 items-center justify-center gap-2 rounded-full py-3 text-sm font-medium tracking-wide uppercase disabled:pointer-events-none disabled:opacity-60"
         >
+          {isDeletingOUtfit && <Loader2 className="size-4 animate-spin" />}
           Cancel
         </button>
         <button
           type="button"
-          onClick={handleSave}
-          disabled={saving}
+          onClick={() => saveOutfit({
+            userId: draft.userId,
+            previewUrl: result.previewUrl,
+            wornOn: draft.wornOn,
+          })}
+          disabled={isBusy}
           className="bg-foreground text-background flex flex-1 items-center justify-center gap-2 rounded-full py-3 text-sm font-medium tracking-wide uppercase disabled:pointer-events-none disabled:opacity-60"
         >
-          {saving && <Loader2 className="size-4 animate-spin" />}
+          {isSavingOutfit && <Loader2 className="size-4 animate-spin" />}
           Save
         </button>
       </div>

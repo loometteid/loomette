@@ -1,15 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useEffectEvent, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { ChevronLeft } from "lucide-react";
 import { toast } from "sonner";
+import { useMutation } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Sparkle } from "@/components/ui/sparkle";
 import { Typography } from "@/components/ui/typography";
 import { cn } from "@/lib/utils";
-import { processOutfitPhoto } from "@/lib/outfitDiaryProcessing";
 import { useOutfitDiaryUploadStore } from "@/stores/outfit-diary-upload-store";
+import { processOutfitPhotoMutationOptions } from "./mutation-options/process-outfit-photo.mutation-option.client";
 
 const MIN_DURATION_MS = 3000;
 
@@ -25,52 +26,62 @@ export function OutfitLoading() {
   const reset = useOutfitDiaryUploadStore((state) => state.reset);
   const [percent, setPercent] = useState(0);
 
-  useEffect(() => {
+  const isMountedRef = useRef(true);
+  const startedAtRef = useRef<number>(0);
+  const tickRef = useRef<NodeJS.Timeout | undefined>(undefined);
+
+  const { mutate: processPhoto } = useMutation({
+    ...processOutfitPhotoMutationOptions(),
+    async onSuccess(result) {
+      const elapsed = Date.now() - startedAtRef.current;
+      if (elapsed < MIN_DURATION_MS) {
+        await new Promise((resolve) =>
+          setTimeout(resolve, MIN_DURATION_MS - elapsed),
+        );
+      }
+      if (!isMountedRef.current) return;
+      clearInterval(tickRef.current);
+      setPercent(100);
+      setResult(result);
+      router.push("/calendar/outfit-approval");
+    },
+    onError() {
+      if (!isMountedRef.current) return;
+      clearInterval(tickRef.current);
+      toast.error("Couldn't process that photo.");
+      reset();
+      router.replace("/calendar");
+    },
+  });
+
+  const process = useEffectEvent(() => {
     if (!draft) {
       router.replace("/calendar");
       return;
     }
 
-    let cancelled = false;
-    const startedAt = Date.now();
+    isMountedRef.current = true;
+    startedAtRef.current = Date.now();
 
-    // Drives the visible progress % / checklist on a fixed clock,
-    // independent of the real upload below -- this is exactly the piece
-    // a real AI pipeline replaces later with actual progress events
-    // (upload %, extraction status, ...) instead of a timer. Capped at
-    // 99 so the UI never claims "done" before the real work is.
-    const tick = setInterval(() => {
-      const elapsed = Date.now() - startedAt;
+    tickRef.current = setInterval(() => {
+      const elapsed = Date.now() - startedAtRef.current;
       setPercent(Math.min(99, Math.round((elapsed / MIN_DURATION_MS) * 100)));
     }, 100);
 
-    processOutfitPhoto(draft.userId, draft.file)
-      .then(async (result) => {
-        const elapsed = Date.now() - startedAt;
-        if (elapsed < MIN_DURATION_MS) {
-          await new Promise((resolve) =>
-            setTimeout(resolve, MIN_DURATION_MS - elapsed),
-          );
-        }
-        if (cancelled) return;
-        clearInterval(tick);
-        setPercent(100);
-        setResult(result);
-        router.push("/calendar/outfit-approval");
-      })
-      .catch(() => {
-        if (cancelled) return;
-        clearInterval(tick);
-        toast.error("Couldn't process that photo.");
-        reset();
-        router.replace("/calendar");
-      });
+    processPhoto({
+      userId: draft.userId,
+      file: draft.file,
+    });
+
+  })
+
+  useEffect(() => {
+    process();
 
     return () => {
-      cancelled = true;
-      clearInterval(tick);
+      isMountedRef.current = false;
+      clearInterval(tickRef.current);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -82,6 +93,8 @@ export function OutfitLoading() {
           size="icon"
           className="rounded-xl"
           onClick={() => {
+            isMountedRef.current = false;
+            clearInterval(tickRef.current);
             reset();
             router.push("/calendar");
           }}

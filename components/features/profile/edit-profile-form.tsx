@@ -209,7 +209,7 @@ export function EditProfileForm({ profile }: { profile: UserProfile }) {
       return;
     }
 
-    const update: Record<string, unknown> = {
+    const update: Database["public"]["Tables"]["user"]["Update"] = {
       display_name: displayName.trim() || null,
       profile_photo: photoUrl,
       birthday: birthday || null,

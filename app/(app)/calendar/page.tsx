@@ -1,14 +1,13 @@
-import { CalendarView } from "@/components/features/calendar/calendar-view";
-import {
-  dateKey,
-  monthRangeISO,
-} from "@/components/features/calendar/date-utils";
-import {
-  DIARY_ENTRY_SELECT,
-  toDiaryEntries,
-  type RawDiaryRow,
-} from "@/components/features/calendar/diary-query";
+import { Suspense } from "react";
+import { redirect } from "next/navigation";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
+import { CalendarView } from "@/components/features/calendar/calendar-view";
+import { CalendarFallback } from "@/components/features/calendar/calendar-fallback";
+import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
+import { getServerQueryClient } from "@/lib/tanstack-query/server";
+import { getUserQueryOptions } from "@/components/features/profile/query-options/get-user.query-option";
+import { todayParts } from "@/components/features/calendar/date-utils";
+import { getDiaryEntriesQueryOptionsForServer } from "@/components/features/calendar/query-options/get-diary-entries.query-option.server";
 
 export default async function CalendarPage() {
   const supabase = await createServerSupabaseClient();
@@ -17,31 +16,29 @@ export default async function CalendarPage() {
     data: { user },
   } = await supabase.auth.getUser();
 
-  if (!user) return null;
+  if (!user) {
+    redirect("/sign-in");
+  }
 
-  const now = new Date();
-  const year = now.getFullYear();
-  const month = now.getMonth();
-  const todayKey = dateKey(year, month, now.getDate());
-  const { start, end } = monthRangeISO(year, month);
+  const queryClient = getServerQueryClient();
 
-  const { data: rows } = await supabase
-    .from("wear_log")
-    .select(DIARY_ENTRY_SELECT)
-    .eq("user_id", user.id)
-    .gte("worn_on", start)
-    .lte("worn_on", end)
-    .order("worn_on", { ascending: true })
-    .order("created_at", { ascending: false })
-    .returns<RawDiaryRow[]>();
+  // populate user data so the user is not arbitrarily logged out
+  // which is a very weird behavior
+  queryClient.setQueryData(getUserQueryOptions().queryKey, () => user)
+
+  // prefetch diary entries
+  const { year, month } = todayParts();
+  void queryClient.ensureQueryData(
+    getDiaryEntriesQueryOptionsForServer(user.id, year, month),
+  );
+
+  const dehydratedQueryClient = dehydrate(queryClient);
 
   return (
-    <CalendarView
-      userId={user.id}
-      initialYear={year}
-      initialMonth={month}
-      initialTodayKey={todayKey}
-      initialEntries={toDiaryEntries(rows ?? [])}
-    />
+    <HydrationBoundary state={dehydratedQueryClient}>
+      <Suspense fallback={<CalendarFallback />}>
+        <CalendarView userId={user.id} />
+      </Suspense>
+    </HydrationBoundary>
   );
 }

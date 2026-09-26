@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { createBrowserSupabaseClient } from "@/lib/supabase/client";
+import type { Database } from "@/types/database.types";
 import {
   EMPTY_MEASUREMENTS,
   LENGTH_UNITS,
@@ -120,7 +121,7 @@ export function StepFourForm() {
       return;
     }
 
-    const update: Record<string, unknown> = {
+    const update: Database["public"]["Tables"]["user"]["Update"] = {
       outfit_size: outfitSize,
     };
 

@@ -26,6 +26,8 @@ const sourceSerif = Source_Serif_4({
   style: ["normal", "italic"],
 });
 
+export const instant = false;
+
 export const metadata: Metadata = {
   title: "Loomette",
   description: "Loomette — fashion, made for Indonesia.",

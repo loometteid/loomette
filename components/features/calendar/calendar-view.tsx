@@ -1,177 +1,93 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import {
+  startTransition,
+  useEffect,
+  useMemo,
+  useState,
+  useSyncExternalStore,
+} from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useQueryClient, useSuspenseQuery } from "@tanstack/react-query";
 import { ChevronDown, History } from "lucide-react";
-import { toast } from "sonner";
 import { Sparkle } from "@/components/ui/sparkle";
 import { Typography } from "@/components/ui/typography";
-import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 import { useOutfitDiaryUploadStore } from "@/stores/outfit-diary-upload-store";
 import { CalendarGrid } from "./calendar-grid";
 import { MonthPickerDialog } from "./month-picker-dialog";
 import { OutfitEntryDialog } from "./outfit-entry-dialog";
-import {
-  DIARY_ENTRY_SELECT,
-  toDiaryEntries,
-  type RawDiaryRow,
-} from "./diary-query";
-import {
-  dateKey,
-  formatMonthYear,
-  monthRangeISO,
-  todayParts,
-} from "./date-utils";
+import { dateKey, formatMonthYear, todayParts } from "./date-utils";
 import type { DiaryEntry } from "./types";
+import { getDiaryEntriesQueryOptionsForBrowser } from "./query-options/get-diary-entries.query-option.client";
 
-// Rows must already be ordered latest-created-first per date -- this
-// keeps the first occurrence per date, i.e. the most recent entry.
-// `new Map(pairs)` looks equivalent but isn't: the Map constructor
-// keeps the *last* pair for a repeated key, which would silently pick
-// the oldest entry instead whenever two outfits are logged for the
-// same day.
-function dedupeByDate(rows: DiaryEntry[]) {
-  const map = new Map<string, DiaryEntry>();
-  for (const row of rows) {
-    if (!map.has(row.worn_on)) map.set(row.worn_on, row);
-  }
-  return map;
+const subscribeNoop = () => () => { };
+
+function getClientTodayKey() {
+  const { year, month, day } = todayParts();
+  return dateKey(year, month, day);
 }
 
-async function fetchMonthEntries(
-  userId: string,
-  year: number,
-  month: number,
-) {
-  const { start, end } = monthRangeISO(year, month);
-  const supabase = createBrowserSupabaseClient();
-
-  const { data, error } = await supabase
-    .from("wear_log")
-    .select(DIARY_ENTRY_SELECT)
-    .eq("user_id", userId)
-    .gte("worn_on", start)
-    .lte("worn_on", end)
-    .order("worn_on", { ascending: true })
-    .order("created_at", { ascending: false })
-    .returns<RawDiaryRow[]>();
-  if (error) throw error;
-
-  return dedupeByDate(toDiaryEntries(data ?? []));
-}
-
-export function CalendarView({
-  userId,
-  initialYear,
-  initialMonth,
-  initialTodayKey,
-  initialEntries,
-}: {
-  userId: string;
-  initialYear: number;
-  initialMonth: number;
-  initialTodayKey: string;
-  initialEntries: DiaryEntry[];
-}) {
+export function CalendarView({ userId }: { userId: string }) {
   const router = useRouter();
-  const [viewedYear, setViewedYear] = useState(initialYear);
-  const [viewedMonth, setViewedMonth] = useState(initialMonth);
-  const [todayKey, setTodayKey] = useState(initialTodayKey);
-  const [selectedKey, setSelectedKey] = useState(initialTodayKey);
-  const [entriesByDate, setEntriesByDate] = useState<Map<string, DiaryEntry>>(
-    () => dedupeByDate(initialEntries),
+  const queryClient = useQueryClient();
+
+  // Safely sync with browser's clock/timezone across hydration
+  const todayKey = useSyncExternalStore(
+    subscribeNoop,
+    getClientTodayKey,
+    getClientTodayKey,
   );
+
+  const [todayYear, todayMonth] = useMemo(() => {
+    const [y, m] = todayKey.split("-");
+    return [Number(y), Number(m) - 1];
+  }, [todayKey]);
+
+  const [userViewedYear, setUserViewedYear] = useState<number | null>(null);
+  const [userViewedMonth, setUserViewedMonth] = useState<number | null>(null);
+  const [userSelectedKey, setUserSelectedKey] = useState<string | null>(null);
+
+  // Derived state: defaults to today unless explicitly overridden by user
+  const viewedYear = userViewedYear ?? todayYear;
+  const viewedMonth = userViewedMonth ?? todayMonth;
+  const selectedKey = userSelectedKey ?? todayKey;
+
+  // TanStack Query with Suspense: loads and caches month data seamlessly
+  const { data: entriesByDate } = useSuspenseQuery(
+    getDiaryEntriesQueryOptionsForBrowser(userId, viewedYear, viewedMonth),
+  );
+
   const [monthPickerOpen, setMonthPickerOpen] = useState(false);
   const [openEntry, setOpenEntry] = useState<DiaryEntry | null>(null);
-  const fetchToken = useRef(0);
 
-  // The server rendered with its own clock's notion of "today". Correct
-  // for a mismatch (different timezone, or a request that straddled
-  // midnight) after mount instead of reading the client's Date() during
-  // the initial render, which would risk a hydration mismatch. This is
-  // genuinely syncing with an external system (the browser's clock), not
-  // recomputing derived state, so the setState-in-effect rule doesn't apply.
-  /* eslint-disable react-hooks/set-state-in-effect, react-hooks/exhaustive-deps */
-  useEffect(() => {
-    const client = todayParts();
-    const clientKey = dateKey(client.year, client.month, client.day);
-    if (clientKey === initialTodayKey) return;
-    setTodayKey(clientKey);
-    setSelectedKey((prev) => (prev === initialTodayKey ? clientKey : prev));
-    setViewedYear(client.year);
-    setViewedMonth(client.month);
-  }, []);
-  /* eslint-enable react-hooks/set-state-in-effect, react-hooks/exhaustive-deps */
+  function goToToday() {
+    setUserViewedYear(null);
+    setUserViewedMonth(null);
+    setUserSelectedKey(null);
+  }
 
   // Consume an entry saved by the /calendar/loading -> /calendar/
-  // outfit-approval flow (stores/outfit-diary-upload-store.ts). That
-  // flow lives on separate routes/pages, so it can't hand the new entry
-  // back through React props/state -- it leaves it in the shared store
-  // for the next Calendar mount to pick up and merge in immediately.
+  // outfit-approval flow (stores/outfit-diary-upload-store.ts).
   /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
     const saved = useOutfitDiaryUploadStore.getState().savedEntry;
     if (!saved) return;
     useOutfitDiaryUploadStore.getState().clearSavedEntry();
 
-    const entry: DiaryEntry = {
-      id: saved.wearLogId,
-      worn_on: saved.wornOn,
-      // This merge only ever runs for the photo-upload flow (Mix &
-      // Match's "Add to Calendar" arrives via a full navigation, so it
-      // reads its entry straight from the server query instead) --
-      // there's never a composition to attach here.
-      outfit: { id: saved.outfitId, cover_image_url: saved.coverImageUrl, items: [] },
-    };
-
     const [yearStr, monthStr] = saved.wornOn.split("-");
     const entryYear = Number(yearStr);
     const entryMonth = Number(monthStr) - 1;
 
-    if (entryYear !== initialYear || entryMonth !== initialMonth) {
-      setViewedYear(entryYear);
-      setViewedMonth(entryMonth);
-      setEntriesByDate(new Map([[entry.worn_on, entry]]));
-    } else {
-      setEntriesByDate((prev) => new Map(prev).set(entry.worn_on, entry));
-    }
-    setSelectedKey(entry.worn_on);
-  }, [initialYear, initialMonth]);
+    void queryClient.invalidateQueries({
+      queryKey: getDiaryEntriesQueryOptionsForBrowser(userId, entryYear, entryMonth).queryKey
+    });
+
+    setUserViewedYear(entryYear);
+    setUserViewedMonth(entryMonth);
+    setUserSelectedKey(saved.wornOn);
+  }, [userId, queryClient]);
   /* eslint-enable react-hooks/set-state-in-effect */
-
-  const isFirstRender = useRef(true);
-
-  useEffect(() => {
-    // The very first render already has its data from `initialEntries`
-    // (fetched server-side) -- skip that one fetch. Every subsequent
-    // change re-fetches unconditionally, including a return trip to the
-    // starting month: `entriesByDate` has since been overwritten by
-    // whatever month was viewed in between, so comparing against the
-    // *initial* month here would wrongly skip refetching it.
-    if (isFirstRender.current) {
-      isFirstRender.current = false;
-      return;
-    }
-    const token = ++fetchToken.current;
-    fetchMonthEntries(userId, viewedYear, viewedMonth)
-      .then((map) => {
-        if (fetchToken.current === token) setEntriesByDate(map);
-      })
-      .catch(() => {
-        if (fetchToken.current === token) {
-          toast.error("Couldn't load that month.");
-        }
-      });
-  }, [userId, viewedYear, viewedMonth]);
-
-  function goToToday() {
-    const client = todayParts();
-    const clientKey = dateKey(client.year, client.month, client.day);
-    setViewedYear(client.year);
-    setViewedMonth(client.month);
-    setSelectedKey(clientKey);
-  }
 
   function handleFileSelected(file: File) {
     useOutfitDiaryUploadStore
@@ -214,7 +130,7 @@ export function CalendarView({
         todayKey={todayKey}
         selectedKey={selectedKey}
         entriesByDate={entriesByDate}
-        onSelectDate={setSelectedKey}
+        onSelectDate={setUserSelectedKey}
         onOpenEntry={setOpenEntry}
       />
 
@@ -255,8 +171,10 @@ export function CalendarView({
         year={viewedYear}
         month={viewedMonth}
         onSelect={(year, month) => {
-          setViewedYear(year);
-          setViewedMonth(month);
+          startTransition(() => {
+            setUserViewedYear(year);
+            setUserViewedMonth(month);
+          });
         }}
       />
 

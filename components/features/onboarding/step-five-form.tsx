@@ -23,7 +23,7 @@ export function StepFiveForm() {
   const {
     control,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { isSubmitting },
   } = useForm<StepFiveFormValues>({
     resolver: zodResolver(stepFiveSchema),
     defaultValues: {

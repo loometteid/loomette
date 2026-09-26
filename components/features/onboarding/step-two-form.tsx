@@ -2,6 +2,9 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { Controller, useForm, useWatch } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -10,20 +13,39 @@ import { GENDER_OPTIONS, type Gender } from "@/lib/profileOptions";
 import { OnboardingShell } from "./onboarding-shell";
 import { PillToggleGroup } from "./pill-toggle-group";
 
+const stepTwoSchema = z.object({
+  birthday: z.string().optional(),
+  identity: z.enum(["female", "male", "non_binary", "prefer_not_to_say"] as const, {
+    message: "Please select an identity",
+  }),
+});
+
+type StepTwoFormValues = z.infer<typeof stepTwoSchema>;
+
 export function StepTwoForm() {
   const router = useRouter();
-  const [birthday, setBirthday] = useState("");
-  const [identity, setIdentity] = useState<Gender | null>(null);
-  const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  async function handleSubmit(event: React.FormEvent) {
-    event.preventDefault();
-    if (!identity) return;
+  const {
+    register,
+    handleSubmit,
+    control,
+    formState: { errors, isSubmitting },
+  } = useForm<StepTwoFormValues>({
+    resolver: zodResolver(stepTwoSchema),
+    defaultValues: {
+      birthday: "",
+      identity: undefined,
+    },
+  });
 
-    setLoading(true);
+  const identity = useWatch({
+    control,
+    name: "identity",
+  });
+
+  async function onSubmit(values: StepTwoFormValues) {
     setError(null);
-
     const supabase = createBrowserSupabaseClient();
 
     const {
@@ -31,19 +53,17 @@ export function StepTwoForm() {
     } = await supabase.auth.getUser();
 
     if (!user) {
-      setLoading(false);
       router.push("/sign-in");
       return;
     }
 
-    const { error } = await supabase
+    const { error: updateError } = await supabase
       .from("user")
-      .update({ gender: identity, birthday: birthday || null })
+      .update({ gender: values.identity, birthday: values.birthday || null })
       .eq("user_id", user.id);
 
-    setLoading(false);
-    if (error) {
-      setError(error.message);
+    if (updateError) {
+      setError(updateError.message);
       return;
     }
     router.push("/onboarding/3");
@@ -55,9 +75,9 @@ export function StepTwoForm() {
       totalSteps={5}
       title="A little more about you."
       subtitle="Helps us tailor suggestions that actually fit."
-      onSubmit={handleSubmit}
-      continueLabel={loading ? "Saving…" : "Continue"}
-      continueDisabled={loading || !identity}
+      onSubmit={handleSubmit(onSubmit)}
+      continueLabel={isSubmitting ? "Saving…" : "Continue"}
+      continueDisabled={isSubmitting || !identity}
     >
       <div className="flex flex-col gap-1.5">
         <div className="flex items-center justify-between">
@@ -72,20 +92,31 @@ export function StepTwoForm() {
         <Input
           id="onboarding-birthday"
           type="date"
-          value={birthday}
-          onChange={(event) => setBirthday(event.target.value)}
+          {...register("birthday")}
         />
+        {errors.birthday && (
+          <p className="text-destructive text-xs">{errors.birthday.message}</p>
+        )}
       </div>
 
       <div className="flex flex-col gap-2">
         <Label className="text-muted-foreground text-xs tracking-wide uppercase">
           How do you identify?
         </Label>
-        <PillToggleGroup
-          options={GENDER_OPTIONS}
-          isSelected={(value) => identity === value}
-          onToggle={(value) => setIdentity(value as Gender)}
+        <Controller
+          name="identity"
+          control={control}
+          render={({ field }) => (
+            <PillToggleGroup
+              options={GENDER_OPTIONS}
+              isSelected={(value) => field.value === value}
+              onToggle={(value) => field.onChange(value as Gender)}
+            />
+          )}
         />
+        {errors.identity && (
+          <p className="text-destructive text-xs">{errors.identity.message}</p>
+        )}
       </div>
 
       {error && <p className="text-destructive text-sm">{error}</p>}

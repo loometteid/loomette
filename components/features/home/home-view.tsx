@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Bell, ChevronLeft, ChevronRight, Sparkles, TrendingUp } from "lucide-react";
 import { toast } from "sonner";
+import { useSuspenseQuery } from "@tanstack/react-query";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Sparkle } from "@/components/ui/sparkle";
 import { Typography } from "@/components/ui/typography";
@@ -15,27 +16,77 @@ import {
   OutfitComposition,
   type CompositionItem,
 } from "@/components/features/outfit/outfit-composition";
+import { getProfileQueryOptionsForBrowser } from "@/components/features/profile/query-options/get-profile.query-option.client";
+import { getWardrobeItemsQueryOptionsForBrowser } from "@/components/features/wardrobe/query-options/get-wardrobe-items.query-option.client";
+import { getLooksCountQueryOptionsForBrowser } from "./query-options/get-looks-count.query-option.client";
 import type { FavoriteItem } from "./types";
 
-export function HomeView({
-  displayName,
-  profilePhoto,
-  styleTags,
-  favoriteTop,
-  favoriteBottom,
-  topCategory,
-  looksCount,
-}: {
-  displayName: string | null;
-  profilePhoto: string | null;
-  styleTags: StyleTag[];
-  favoriteTop: FavoriteItem | null;
-  favoriteBottom: FavoriteItem | null;
-  topCategory: string | null;
-  looksCount: number;
-}) {
+export function HomeView({ userId }: { userId: string }) {
   const router = useRouter();
   const [prompt, setPrompt] = useState("");
+
+  const { data: profile } = useSuspenseQuery(
+    getProfileQueryOptionsForBrowser(userId),
+  );
+  const { data: wardrobeItems } = useSuspenseQuery(
+    getWardrobeItemsQueryOptionsForBrowser(userId),
+  );
+  const { data: looksCount } = useSuspenseQuery(
+    getLooksCountQueryOptionsForBrowser(userId),
+  );
+
+  const displayName = profile?.display_name ?? null;
+  const profilePhoto = profile?.profile_photo ?? null;
+  const styleTags = (profile?.style_tags ?? []) as StyleTag[];
+
+  const sortedRows = useMemo(() => {
+    return [...wardrobeItems].sort((a, b) => {
+      const wearDiff = (b.wear_count ?? 0) - (a.wear_count ?? 0);
+      if (wearDiff !== 0) return wearDiff;
+      return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
+    });
+  }, [wardrobeItems]);
+
+  const favoriteTop = useMemo<FavoriteItem | null>(() => {
+    const row = sortedRows.find((r) => r.item?.category === "Tops");
+    if (!row?.item) return null;
+    return {
+      id: row.item.item_id,
+      name: row.item.name,
+      category: row.item.category,
+      image_url: row.item.image_url,
+    };
+  }, [sortedRows]);
+
+  const favoriteBottom = useMemo<FavoriteItem | null>(() => {
+    const row = sortedRows.find((r) => r.item?.category === "Bottoms");
+    if (!row?.item) return null;
+    return {
+      id: row.item.item_id,
+      name: row.item.name,
+      category: row.item.category,
+      image_url: row.item.image_url,
+    };
+  }, [sortedRows]);
+
+  const topCategory = useMemo(() => {
+    const categoryCounts = new Map<string, number>();
+    for (const row of sortedRows) {
+      const category = row.item?.category;
+      if (!category) continue;
+      categoryCounts.set(category, (categoryCounts.get(category) ?? 0) + 1);
+    }
+    let topCat: string | null = null;
+    let topCount = 0;
+    for (const [category, count] of categoryCounts) {
+      if (count > topCount) {
+        topCat = category;
+        topCount = count;
+      }
+    }
+    return topCat;
+  }, [sortedRows]);
+
   const initials = (displayName ?? "?").slice(0, 2).toUpperCase();
   const codedTag = styleTags[0];
 

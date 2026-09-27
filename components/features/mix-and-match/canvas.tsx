@@ -30,6 +30,7 @@ import {
   ITEM_SIZE_RATIO,
 } from "@/components/features/outfit/outfit-composition";
 import type { CanvasItem, WardrobeOption } from "./types";
+import type { Route } from "next";
 
 const DRAG_THRESHOLD_PX = 6;
 
@@ -144,10 +145,10 @@ export function MixAndMatchCanvas({ userId }: { userId: string }) {
       prev.map((item) =>
         item.wardrobeItemId === drag.wardrobeItemId
           ? {
-              ...item,
-              x: clamp01(drag.startX + dx),
-              y: clamp01(drag.startY + dy),
-            }
+            ...item,
+            x: clamp01(drag.startX + dx),
+            y: clamp01(drag.startY + dy),
+          }
           : item,
       ),
     );
@@ -293,7 +294,7 @@ export function MixAndMatchCanvas({ userId }: { userId: string }) {
             .queryKey,
         });
         toast.success("Outfit added to your trip.");
-        router.push(returnTo ?? `/trip/${tripId}`);
+        router.push((returnTo as Route) ?? `/trip/${tripId}`);
         return;
       }
       router.push(`/mix-and-match/result/${data.outfitId}`);

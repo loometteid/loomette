@@ -102,6 +102,8 @@ export function CalendarView({ userId }: { userId: string }) {
 
   return (
     <main className="mx-auto flex w-full max-w-sm flex-col gap-6 px-6 py-8">
+      <Link href="/calendar/loading" prefetch className="hidden" aria-hidden />
+      <Link href="/calendar/outfit-approval" prefetch className="hidden" aria-hidden />
       <div className="flex items-center justify-between gap-2">
         <div className="flex items-center gap-2">
           <Sparkle className="size-5 text-foreground" />

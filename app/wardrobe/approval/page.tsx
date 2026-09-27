@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { redirect } from "next/navigation";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import { ApprovalQueue } from "@/components/features/wardrobe/approval-queue";
+import { ApprovalFallback } from "@/components/features/wardrobe/approval-fallback";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { getServerQueryClient } from "@/lib/tanstack-query/server";
 import { getUserQueryOptions } from "@/components/features/profile/query-options/get-user.query-option";
@@ -36,7 +37,7 @@ export default async function ApprovalPage() {
 
   return (
     <HydrationBoundary state={dehydratedQueryClient}>
-      <Suspense fallback={null}>
+      <Suspense fallback={<ApprovalFallback />}>
         <ApprovalQueue userId={user.id} />
       </Suspense>
     </HydrationBoundary>

@@ -1,6 +1,6 @@
 ---
 name: code-review
-description: Comprehensive code and pull request (PR) diff review skill. Performs static analysis across architecture, project conventions, security, performance, logic correctness, and code hygiene, outputting structured GitHub-style reviews with P0-P3 severity ratings.
+description: Comprehensive code and pull request (PR) diff review skill. Performs static analysis across architecture, project conventions, security, performance, logic correctness, and code hygiene, outputting structured GitHub-style reviews with P0-P3 severity ratings, with automated publishing via GitHub MCP or GitHub CLI.
 ---
 
 # Code & PR Diff Review Skill (`code-review`)
@@ -165,6 +165,9 @@ When running a code review:
    - Provide copy-pasteable diff blocks showing both the problem and the recommended fix.
 5. **Step 5: Output Review**:
    - Format the response using the Structured Review Output Template below.
+6. **Step 6: Publish to GitHub (if MCP or CLI available)**:
+   - Check if GitHub MCP server is available or if GitHub CLI (`gh`) is authenticated.
+   - If a target PR or commit exists, publish the review or comment directly to GitHub following the protocol in Section 8.
 
 ---
 
@@ -238,3 +241,99 @@ Format the final review using the following template:
 ## 🏁 Next Steps
 - Bulleted list of concrete actions needed to unblock merge or finalize the PR.
 ```
+
+---
+
+## 8. Publishing Review Comments to GitHub (MCP & CLI Integration)
+
+When a GitHub PR or commit target is identified, the review can be published directly to GitHub using either the **GitHub MCP Server** or the **GitHub CLI (`gh`)**.
+
+### A. Target Repository & Context Detection
+1. **Repository Identity**:
+   - Extract repository owner and name from git remote:
+     ```powershell
+     git remote get-url origin
+     ```
+     Example: `https://github.com/loometteid/loomette` -> `owner = "loometteid"`, `repo = "loomette"`.
+2. **PR Number Discovery**:
+   - If the user explicitly provided a PR number (e.g. PR #12), use it directly.
+   - If on a feature branch, find matching PR via GitHub MCP tool `search_issues`:
+     Query: `repo:<owner>/<repo> is:pr is:open head:<current-branch>`
+     Or list PRs via MCP `list_pull_requests` with `state: "open"`.
+   - If GitHub CLI is available: `gh pr view --json number,url -q .number`.
+3. **Commit Hash Discovery**:
+   - For standalone commit reviews: `git rev-parse HEAD` (or the specific commit SHA).
+
+---
+
+### B. Route 1: GitHub MCP Server (Primary Route)
+
+If `github-mcp-server` tools are available in the environment, use them directly:
+
+#### 1. Submitting PR Review with Verdict
+Call the MCP tool `pull_request_review_write`:
+- **ServerName**: `"github-mcp-server"`
+- **ToolName**: `"pull_request_review_write"`
+- **Arguments**:
+  ```json
+  {
+    "method": "create",
+    "owner": "<owner>",
+    "repo": "<repo>",
+    "pullNumber": <pr_number>,
+    "event": "APPROVE" | "REQUEST_CHANGES" | "COMMENT",
+    "body": "<formatted_review_markdown>"
+  }
+  ```
+  **Event Mapping**:
+  - Verdict `APPROVE` -> `"event": "APPROVE"`
+  - Verdict `REQUEST CHANGES` -> `"event": "REQUEST_CHANGES"`
+  - Verdict `COMMENT` -> `"event": "COMMENT"`
+
+#### 2. Posting PR Discussion Comment (Fallback)
+If submitting a formal review is not needed or fails, post a general comment on the PR via `add_issue_comment`:
+- **ServerName**: `"github-mcp-server"`
+- **ToolName**: `"add_issue_comment"`
+- **Arguments**:
+  ```json
+  {
+    "owner": "<owner>",
+    "repo": "<repo>",
+    "issue_number": <pr_number>,
+    "body": "<formatted_review_markdown>"
+  }
+  ```
+
+---
+
+### C. Route 2: GitHub CLI (`gh`) (Fallback Route)
+
+If GitHub MCP is not available, verify whether GitHub CLI is installed and authenticated:
+1. Check authentication status:
+   ```powershell
+   gh auth status
+   ```
+2. **Submit PR Review**:
+   ```powershell
+   # If verdict is APPROVE:
+   gh pr review <pr_number> --approve --body "<review_body>"
+
+   # If verdict is REQUEST CHANGES:
+   gh pr review <pr_number> --request-changes --body "<review_body>"
+
+   # If verdict is COMMENT:
+   gh pr review <pr_number> --comment --body "<review_body>"
+   ```
+3. **Submit Commit Comment**:
+   For reviews targeting a specific commit hash:
+   ```powershell
+   gh api repos/<owner>/<repo>/commits/<commit_sha>/comments -f body="<review_body>"
+   ```
+
+---
+
+### D. Publication Confirmation & Linkage
+- Once sent via MCP or CLI, confirm the submission in chat:
+  - Link directly to the PR or commit review: `https://github.com/<owner>/<repo>/pull/<pr_number>`
+  - Report the submitted verdict (`APPROVE`, `REQUEST CHANGES`, or `COMMENT`).
+

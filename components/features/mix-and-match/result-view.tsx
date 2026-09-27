@@ -1,66 +1,116 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { notFound, useRouter } from "next/navigation";
 import { ChevronLeft, Pencil, X } from "lucide-react";
 import { toast } from "sonner";
+import {
+  useMutation,
+  useQueryClient,
+  useSuspenseQuery,
+} from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogPopup } from "@/components/ui/dialog";
 import { Sparkle } from "@/components/ui/sparkle";
 import { Typography } from "@/components/ui/typography";
-import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 import { OutfitComposition } from "@/components/features/outfit/outfit-composition";
 import { CalendarDateDialog } from "./calendar-date-dialog";
-import type { ResultItem } from "./result-types";
+import { getOutfitResultQueryOptionsForBrowser } from "./query-options/get-outfit-result.query-option.client";
+import { updateOutfitNameMutationOptions } from "./mutation-options/update-outfit-name.mutation-option.client";
+import { addOutfitToCollectionMutationOptions } from "./mutation-options/add-outfit-to-collection.mutation-option.client";
+import { addOutfitToCalendarMutationOptions } from "./mutation-options/add-outfit-to-calendar.mutation-option.client";
+import { getLooksCountQueryOptionsForBrowser } from "@/components/features/home/query-options/get-looks-count.query-option.client";
+import { getDiaryEntriesQueryOptionsForBrowser } from "@/components/features/calendar/query-options/get-diary-entries.query-option.client";
 
 export function MixAndMatchResult({
+  userId,
   outfitId,
-  initialName,
-  initialIsSaved,
-  items,
 }: {
+  userId: string;
   outfitId: string;
-  initialName: string | null;
-  initialIsSaved: boolean;
-  items: ResultItem[];
 }) {
   const router = useRouter();
-  const [name, setName] = useState(initialName ?? "My Look");
+  const queryClient = useQueryClient();
+
+  const { data } = useSuspenseQuery(
+    getOutfitResultQueryOptionsForBrowser(userId, outfitId),
+  );
+
+  if (!data) {
+    notFound();
+  }
+
+  const { outfit, items } = data;
+  const [name, setName] = useState(outfit.name ?? "My Look");
   const [editingName, setEditingName] = useState(false);
-  const [savingName, setSavingName] = useState(false);
-  const [addedToCollection, setAddedToCollection] = useState(initialIsSaved);
+  const [addedToCollection, setAddedToCollection] = useState(outfit.isSaved);
   const [addedToCalendar, setAddedToCalendar] = useState(false);
-  const [busy, setBusy] = useState<"collection" | "calendar" | null>(null);
   const [showSuccess, setShowSuccess] = useState(false);
   const [calendarPickerOpen, setCalendarPickerOpen] = useState(false);
 
-  async function commitName() {
+  const updateNameMutation = useMutation({
+    ...updateOutfitNameMutationOptions(),
+    onSuccess: () => {
+      void queryClient.invalidateQueries({
+        queryKey: getOutfitResultQueryOptionsForBrowser(userId, outfitId)
+          .queryKey,
+      });
+    },
+    onError: () => {
+      toast.error("Couldn't update outfit name.");
+    },
+  });
+
+  const addToCollectionMutation = useMutation({
+    ...addOutfitToCollectionMutationOptions(),
+    onSuccess: () => {
+      setAddedToCollection(true);
+      setShowSuccess(true);
+      void queryClient.invalidateQueries({
+        queryKey: getOutfitResultQueryOptionsForBrowser(userId, outfitId)
+          .queryKey,
+      });
+      void queryClient.invalidateQueries({
+        queryKey: getLooksCountQueryOptionsForBrowser(userId).queryKey,
+      });
+    },
+    onError: () => {
+      toast.error("Couldn't add that to your collection.");
+    },
+  });
+
+  const addToCalendarMutation = useMutation({
+    ...addOutfitToCalendarMutationOptions(),
+    onSuccess: (_, variables) => {
+      setAddedToCalendar(true);
+      setCalendarPickerOpen(false);
+      setShowSuccess(true);
+      const [yearStr, monthStr] = variables.wornOn.split("-");
+      const entryYear = Number(yearStr);
+      const entryMonth = Number(monthStr) - 1;
+      void queryClient.invalidateQueries({
+        queryKey: getDiaryEntriesQueryOptionsForBrowser(
+          userId,
+          entryYear,
+          entryMonth,
+        ).queryKey,
+      });
+    },
+    onError: () => {
+      toast.error("Couldn't add that to your calendar.");
+    },
+  });
+
+  function commitName() {
     setEditingName(false);
     const trimmed = name.trim() || "My Look";
     setName(trimmed);
-    setSavingName(true);
-    const supabase = createBrowserSupabaseClient();
-
-    await supabase.from("outfit").update({ name: trimmed }).eq("id", outfitId);
-    setSavingName(false);
+    updateNameMutation.mutate({ outfitId, name: trimmed });
   }
 
-  async function handleAddToCollection() {
+  function handleAddToCollection() {
     if (addedToCollection) return;
-    setBusy("collection");
-    const supabase = createBrowserSupabaseClient();
-
-    const { error } = await supabase
-      .from("outfit")
-      .update({ is_saved: true })
-      .eq("id", outfitId);
-    setBusy(null);
-    if (error) {
-      toast.error("Couldn't add that to your collection.");
-      return;
-    }
-    setAddedToCollection(true);
-    setShowSuccess(true);
+    addToCollectionMutation.mutate({ outfitId });
   }
 
   function handleAddToCalendar() {
@@ -68,32 +118,16 @@ export function MixAndMatchResult({
     setCalendarPickerOpen(true);
   }
 
-  async function handleConfirmCalendarDate(selectedKey: string) {
-    setBusy("calendar");
-    const supabase = createBrowserSupabaseClient();
-
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
-    if (!user) {
-      setBusy(null);
-      router.push("/sign-in");
-      return;
-    }
-    const { error } = await supabase.from("wear_log").insert({
-      user_id: user.id,
-      outfit_id: outfitId,
-      worn_on: selectedKey,
+  function handleConfirmCalendarDate(selectedKey: string) {
+    addToCalendarMutation.mutate({
+      userId,
+      outfitId,
+      wornOn: selectedKey,
     });
-    setBusy(null);
-    if (error) {
-      toast.error("Couldn't add that to your calendar.");
-      return;
-    }
-    setAddedToCalendar(true);
-    setCalendarPickerOpen(false);
-    setShowSuccess(true);
   }
+
+  const isMutating =
+    addToCollectionMutation.isPending || addToCalendarMutation.isPending;
 
   return (
     <main className="mx-auto flex w-full max-w-sm flex-1 flex-col gap-6 px-6 py-8">
@@ -133,7 +167,7 @@ export function MixAndMatchResult({
           <button
             type="button"
             onClick={() => setEditingName(true)}
-            disabled={savingName}
+            disabled={updateNameMutation.isPending}
             className="inline-flex items-center gap-2"
           >
             <Typography variant="title" as="span">
@@ -148,18 +182,26 @@ export function MixAndMatchResult({
         <button
           type="button"
           onClick={handleAddToCollection}
-          disabled={busy !== null}
+          disabled={isMutating}
           className="bg-secondary text-secondary-foreground flex-1 rounded-full py-3 text-sm font-medium tracking-wide uppercase disabled:opacity-60"
         >
-          {addedToCollection ? "Added ✓" : "Add to Collection"}
+          {addToCollectionMutation.isPending
+            ? "Adding…"
+            : addedToCollection
+              ? "Added ✓"
+              : "Add to Collection"}
         </button>
         <button
           type="button"
           onClick={handleAddToCalendar}
-          disabled={busy !== null}
+          disabled={isMutating}
           className="bg-foreground text-background flex-1 rounded-full py-3 text-sm font-medium tracking-wide uppercase disabled:opacity-60"
         >
-          {addedToCalendar ? "Added ✓" : "Add to Calendar"}
+          {addToCalendarMutation.isPending
+            ? "Adding…"
+            : addedToCalendar
+              ? "Added ✓"
+              : "Add to Calendar"}
         </button>
       </div>
 
@@ -195,7 +237,7 @@ export function MixAndMatchResult({
         open={calendarPickerOpen}
         onOpenChange={setCalendarPickerOpen}
         onConfirm={handleConfirmCalendarDate}
-        saving={busy === "calendar"}
+        saving={addToCalendarMutation.isPending}
       />
     </main>
   );

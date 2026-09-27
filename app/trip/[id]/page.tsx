@@ -1,13 +1,12 @@
-import { notFound, redirect } from "next/navigation";
+import { Suspense } from "react";
+import { redirect } from "next/navigation";
+import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import { TripDetailView } from "@/components/features/trip/trip-detail-view";
-import {
-  DIARY_ENTRY_SELECT,
-  toDiaryEntries,
-  type RawDiaryRow,
-} from "@/components/features/calendar/diary-query";
-import { eachDateInRange } from "@/components/features/trip/trip-dates";
-import type { Trip, TripDayOutfit } from "@/components/features/trip/types";
+import { TripDetailFallback } from "@/components/features/trip/trip-detail-fallback";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
+import { getServerQueryClient } from "@/lib/tanstack-query/server";
+import { getUserQueryOptions } from "@/components/features/profile/query-options/get-user.query-option";
+import { getTripDetailQueryOptionsForServer } from "@/components/features/trip/query-options/get-trip-detail.query-option.server";
 
 export default async function TripPage({
   params,
@@ -25,54 +24,23 @@ export default async function TripPage({
     redirect("/sign-in");
   }
 
-  const { data: trip } = await supabase
-    .from("trip")
-    .select("id, name, start_date, end_date, season, travel_companion, user_id")
-    .eq("id", id)
-    .single();
+  const queryClient = getServerQueryClient();
 
-  if (!trip || trip.user_id !== user.id) {
-    notFound();
-  }
+  // Populate user data
+  queryClient.setQueryData(getUserQueryOptions().queryKey, () => user);
 
-  const days = eachDateInRange(trip.start_date, trip.end_date);
+  // Prefetch trip detail
+  void queryClient.ensureQueryData(
+    getTripDetailQueryOptionsForServer(user.id, id),
+  );
 
-  const { data: rows } = await supabase
-    .from("wear_log")
-    .select(DIARY_ENTRY_SELECT)
-    .eq("user_id", user.id)
-    .in("worn_on", days)
-    .order("worn_on", { ascending: true })
-    .order("created_at", { ascending: true })
-    .returns<RawDiaryRow[]>();
-
-  const entries = toDiaryEntries(rows ?? []);
-  const outfitsByDay = new Map<string, TripDayOutfit[]>();
-  for (const entry of entries) {
-    if (!entry.outfit) continue;
-    const list = outfitsByDay.get(entry.worn_on) ?? [];
-    list.push({
-      wearLogId: entry.id,
-      outfitId: entry.outfit.id,
-      items: entry.outfit.items,
-    });
-    outfitsByDay.set(entry.worn_on, list);
-  }
-
-  const tripData: Trip = {
-    id: trip.id,
-    name: trip.name,
-    start_date: trip.start_date,
-    end_date: trip.end_date,
-    season: trip.season,
-    travel_companion: trip.travel_companion,
-  };
+  const dehydratedQueryClient = dehydrate(queryClient);
 
   return (
-    <TripDetailView
-      trip={tripData}
-      days={days}
-      outfitsByDay={Object.fromEntries(outfitsByDay)}
-    />
+    <HydrationBoundary state={dehydratedQueryClient}>
+      <Suspense fallback={<TripDetailFallback />}>
+        <TripDetailView userId={user.id} tripId={id} />
+      </Suspense>
+    </HydrationBoundary>
   );
 }

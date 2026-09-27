@@ -6,6 +6,7 @@ const supabaseHostname = process.env.NEXT_PUBLIC_SUPABASE_URL
 
 const nextConfig: NextConfig = {
   cacheComponents: true,
+  typedRoutes: true,
   images: {
     remotePatterns: supabaseHostname
       ? [

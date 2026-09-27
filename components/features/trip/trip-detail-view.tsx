@@ -1,18 +1,19 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
-import Link from "next/link";
+import { notFound, useRouter } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 import { ChevronLeft, Pencil } from "lucide-react";
 import { toast } from "sonner";
+import { useSuspenseQuery } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Sparkle } from "@/components/ui/sparkle";
 import { Typography } from "@/components/ui/typography";
 import { cn } from "@/lib/utils";
 import { OutfitComposition } from "@/components/features/outfit/outfit-composition";
 import { formatDayDate } from "./trip-dates";
-import type { Trip, TripDayOutfit } from "./types";
+import { getTripDetailQueryOptionsForBrowser } from "./query-options/get-trip-detail.query-option.client";
 
 const TABS = ["outfit-plan", "packing-list"] as const;
 type Tab = (typeof TABS)[number];
@@ -23,16 +24,24 @@ const TAB_LABEL: Record<Tab, string> = {
 };
 
 export function TripDetailView({
-  trip,
-  days,
-  outfitsByDay,
+  userId,
+  tripId,
 }: {
-  trip: Trip;
-  days: string[];
-  outfitsByDay: Record<string, TripDayOutfit[]>;
+  userId: string;
+  tripId: string;
 }) {
   const router = useRouter();
   const [tab, setTab] = useState<Tab>("outfit-plan");
+
+  const { data } = useSuspenseQuery(
+    getTripDetailQueryOptionsForBrowser(userId, tripId),
+  );
+
+  if (!data) {
+    notFound();
+  }
+
+  const { trip, days, outfitsByDay } = data;
 
   return (
     <main className="mx-auto flex w-full max-w-sm flex-1 flex-col gap-6 px-6 py-8">
@@ -48,7 +57,6 @@ export function TripDetailView({
           <ChevronLeft className="size-4" />
         </Button>
         <Button
-          type="button"
           variant="secondary"
           size="icon"
           className="rounded-xl"

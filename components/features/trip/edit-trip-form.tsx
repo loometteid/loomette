@@ -1,17 +1,26 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { notFound, useRouter } from "next/navigation";
 import Image from "next/image";
 import { ChevronLeft, Pencil } from "lucide-react";
-import { Controller, useForm, useWatch, type FieldErrors } from "react-hook-form";
+import {
+  Controller,
+  useForm,
+  useWatch,
+  type FieldErrors,
+} from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
+import {
+  useMutation,
+  useQueryClient,
+  useSuspenseQuery,
+} from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Typography } from "@/components/ui/typography";
-import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 import {
   SEASON_OPTIONS,
   TRAVEL_COMPANION_OPTIONS,
@@ -19,14 +28,51 @@ import {
   type TravelCompanion,
 } from "@/lib/tripOptions";
 import { PillToggleGroup } from "@/components/features/onboarding/pill-toggle-group";
+import { getTripsQueryOptionsForBrowser } from "@/components/features/profile/query-options/get-trips.query-option.client";
+import { getTripByIdQueryOptionsForBrowser } from "./query-options/get-trip-by-id.query-option.client";
+import { getTripDetailQueryOptionsForBrowser } from "./query-options/get-trip-detail.query-option.client";
+import { createTripMutationOptions } from "./mutation-options/create-trip.mutation-option.client";
+import { updateTripMutationOptions } from "./mutation-options/update-trip.mutation-option.client";
 import {
   editTripSchema,
   type EditTripFormValues,
 } from "./schemas/edit-trip.schema";
 import type { Trip } from "./types";
 
-export function EditTripForm({ trip }: { trip?: Trip }) {
+export function EditTripForm({
+  userId,
+  tripId,
+}: {
+  userId: string;
+  tripId?: string;
+}) {
+  if (tripId) {
+    return <EditTripFetcher userId={userId} tripId={tripId} />;
+  }
+  return <TripFormContent userId={userId} />;
+}
+
+function EditTripFetcher({
+  userId,
+  tripId,
+}: {
+  userId: string;
+  tripId: string;
+}) {
+  const { data: trip } = useSuspenseQuery(
+    getTripByIdQueryOptionsForBrowser(userId, tripId),
+  );
+
+  if (!trip) {
+    notFound();
+  }
+
+  return <TripFormContent userId={userId} trip={trip} />;
+}
+
+function TripFormContent({ userId, trip }: { userId: string; trip?: Trip }) {
   const router = useRouter();
+  const queryClient = useQueryClient();
   const isEdit = !!trip;
   const [editingName, setEditingName] = useState(!isEdit);
 
@@ -34,7 +80,7 @@ export function EditTripForm({ trip }: { trip?: Trip }) {
     register,
     handleSubmit,
     control,
-    formState: { errors, isSubmitting },
+    formState: { errors },
   } = useForm<EditTripFormValues>({
     resolver: zodResolver(editTripSchema),
     defaultValues: {
@@ -51,6 +97,41 @@ export function EditTripForm({ trip }: { trip?: Trip }) {
     name: "name",
   });
 
+  const createMutation = useMutation({
+    ...createTripMutationOptions(),
+    onSuccess: (data) => {
+      void queryClient.invalidateQueries({
+        queryKey: getTripsQueryOptionsForBrowser(userId).queryKey,
+      });
+      router.push(`/trip/${data.id}`);
+    },
+    onError: () => {
+      toast.error("Couldn't save that trip.");
+    },
+  });
+
+  const updateMutation = useMutation({
+    ...updateTripMutationOptions(),
+    onSuccess: () => {
+      void queryClient.invalidateQueries({
+        queryKey: getTripsQueryOptionsForBrowser(userId).queryKey,
+      });
+      void queryClient.invalidateQueries({
+        queryKey: getTripByIdQueryOptionsForBrowser(userId, trip!.id).queryKey,
+      });
+      void queryClient.invalidateQueries({
+        queryKey: getTripDetailQueryOptionsForBrowser(userId, trip!.id)
+          .queryKey,
+      });
+      router.push(`/trip/${trip!.id}`);
+    },
+    onError: () => {
+      toast.error("Couldn't save that trip.");
+    },
+  });
+
+  const isPending = createMutation.isPending || updateMutation.isPending;
+
   const onInvalid = (fieldErrors: FieldErrors<EditTripFormValues>) => {
     if (fieldErrors.startDate?.message) {
       toast.error(fieldErrors.startDate.message);
@@ -59,48 +140,27 @@ export function EditTripForm({ trip }: { trip?: Trip }) {
     }
   };
 
-  async function onSubmit(values: EditTripFormValues) {
-    const supabase = createBrowserSupabaseClient();
-
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
-    if (!user) {
-      router.push("/sign-in");
-      return;
+  function onSubmit(values: EditTripFormValues) {
+    if (isEdit && trip) {
+      updateMutation.mutate({
+        id: trip.id,
+        userId,
+        name: values.name,
+        startDate: values.startDate,
+        endDate: values.endDate,
+        season: (values.season as Season) ?? null,
+        companion: (values.companion as TravelCompanion) ?? null,
+      });
+    } else {
+      createMutation.mutate({
+        userId,
+        name: values.name,
+        startDate: values.startDate,
+        endDate: values.endDate,
+        season: (values.season as Season) ?? null,
+        companion: (values.companion as TravelCompanion) ?? null,
+      });
     }
-
-    const payload = {
-      name: values.name.trim() || null,
-      start_date: values.startDate,
-      end_date: values.endDate,
-      season: (values.season as Season) ?? null,
-      travel_companion: (values.companion as TravelCompanion) ?? null,
-    };
-
-    if (isEdit) {
-      const { error } = await supabase
-        .from("trip")
-        .update(payload)
-        .eq("id", trip.id);
-      if (error) {
-        toast.error("Couldn't save that trip.");
-        return;
-      }
-      router.push(`/trip/${trip.id}`);
-      return;
-    }
-
-    const { data, error } = await supabase
-      .from("trip")
-      .insert({ ...payload, user_id: user.id })
-      .select("id")
-      .single();
-    if (error || !data) {
-      toast.error("Couldn't save that trip.");
-      return;
-    }
-    router.push(`/trip/${data.id}`);
   }
 
   return (
@@ -122,7 +182,12 @@ export function EditTripForm({ trip }: { trip?: Trip }) {
       >
         <div className="flex flex-col items-center gap-3 text-center">
           <div className="relative h-40 w-40">
-            <Image src="/profile/koper.png" alt="" fill className="object-contain" />
+            <Image
+              src="/profile/koper.png"
+              alt=""
+              fill
+              className="object-contain"
+            />
           </div>
 
           {editingName ? (
@@ -142,91 +207,74 @@ export function EditTripForm({ trip }: { trip?: Trip }) {
               onClick={() => setEditingName(true)}
               className="inline-flex items-center gap-2"
             >
-              <Typography variant="title" as="span">
-                {name || "Trip to..."}
+              <Typography variant="title" as="h1">
+                {name && name.trim().length > 0 ? name : "Trip to..."}
               </Typography>
               <Pencil className="text-muted-foreground size-4 shrink-0" />
             </button>
           )}
         </div>
 
-        <div className="grid grid-cols-2 gap-4">
-          <div className="flex flex-col gap-1.5">
-            <Label htmlFor="trip-start" className="text-muted-foreground text-xs tracking-wide uppercase">
-              Start
-            </Label>
-            <Input
-              id="trip-start"
-              type="date"
-              {...register("startDate")}
-              className="h-11"
-            />
-            {errors.startDate && (
-              <p className="text-destructive text-xs">{errors.startDate.message}</p>
-            )}
-          </div>
-          <div className="flex flex-col gap-1.5">
-            <Label htmlFor="trip-end" className="text-muted-foreground text-xs tracking-wide uppercase">
-              End
-            </Label>
-            <Input
-              id="trip-end"
-              type="date"
-              {...register("endDate")}
-              
-              className="h-11"
-            />
-            {errors.endDate && (
-              <p className="text-destructive text-xs">{errors.endDate.message}</p>
-            )}
-          </div>
-        </div>
-
-        <div className="flex flex-col gap-2">
-          <span className="text-muted-foreground text-xs tracking-wide uppercase">
-            Season
-          </span>
-          <Controller
-            name="season"
-            control={control}
-            render={({ field }) => (
-              <PillToggleGroup
-                options={SEASON_OPTIONS}
-                isSelected={(value) => value === field.value}
-                onToggle={(value) =>
-                  field.onChange(value === field.value ? null : value)
-                }
+        <div className="flex flex-col gap-6">
+          <div className="grid grid-cols-2 gap-3">
+            <div className="flex flex-col gap-2">
+              <Label htmlFor="trip-start-date">Start date</Label>
+              <Input
+                id="trip-start-date"
+                type="date"
+                aria-invalid={!!errors.startDate}
+                {...register("startDate")}
               />
-            )}
-          />
-        </div>
-
-        <div className="flex flex-col gap-2">
-          <span className="text-muted-foreground text-xs tracking-wide uppercase">
-            Travel Companion
-          </span>
-          <Controller
-            name="companion"
-            control={control}
-            render={({ field }) => (
-              <PillToggleGroup
-                options={TRAVEL_COMPANION_OPTIONS}
-                isSelected={(value) => value === field.value}
-                onToggle={(value) =>
-                  field.onChange(value === field.value ? null : value)
-                }
+            </div>
+            <div className="flex flex-col gap-2">
+              <Label htmlFor="trip-end-date">End date</Label>
+              <Input
+                id="trip-end-date"
+                type="date"
+                aria-invalid={!!errors.endDate}
+                {...register("endDate")}
               />
-            )}
-          />
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <Label>Season</Label>
+            <Controller
+              control={control}
+              name="season"
+              render={({ field }) => (
+                <PillToggleGroup
+                  options={SEASON_OPTIONS}
+                  isSelected={(value) => value === field.value}
+                  onToggle={(value) =>
+                    field.onChange(value === field.value ? null : value)
+                  }
+                />
+              )}
+            />
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <Label>Travel companion</Label>
+            <Controller
+              control={control}
+              name="companion"
+              render={({ field }) => (
+                <PillToggleGroup
+                  options={TRAVEL_COMPANION_OPTIONS}
+                  isSelected={(value) => value === field.value}
+                  onToggle={(value) =>
+                    field.onChange(value === field.value ? null : value)
+                  }
+                />
+              )}
+            />
+          </div>
         </div>
 
-        <button
-          type="submit"
-          disabled={isSubmitting}
-          className="bg-foreground text-background rounded-full py-3 text-sm font-medium tracking-wide uppercase disabled:opacity-60"
-        >
-          {isSubmitting ? "Saving…" : "Save"}
-        </button>
+        <Button type="submit" disabled={isPending} className="w-full">
+          {isPending ? "Saving..." : "Save"}
+        </Button>
       </form>
     </main>
   );

@@ -1,21 +1,12 @@
-import { notFound, redirect } from "next/navigation";
+import { Suspense } from "react";
+import { redirect } from "next/navigation";
+import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import { MixAndMatchResult } from "@/components/features/mix-and-match/result-view";
-import type { ResultItem } from "@/components/features/mix-and-match/result-types";
+import { MixAndMatchResultFallback } from "@/components/features/mix-and-match/result-fallback";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
-
-type OutfitItemRow = {
-  layer_order: number | null;
-  position_x: number | null;
-  position_y: number | null;
-  wardrobe_item: {
-    id: string;
-    item: {
-      item_id: string;
-      name: string | null;
-      image_url: string | null;
-    } | null;
-  } | null;
-};
+import { getServerQueryClient } from "@/lib/tanstack-query/server";
+import { getUserQueryOptions } from "@/components/features/profile/query-options/get-user.query-option";
+import { getOutfitResultQueryOptionsForServer } from "@/components/features/mix-and-match/query-options/get-outfit-result.query-option.server";
 
 export default async function MixAndMatchResultPage({
   params,
@@ -33,41 +24,23 @@ export default async function MixAndMatchResultPage({
     redirect("/sign-in");
   }
 
-  const { data: outfit } = await supabase
-    .from("outfit")
-    .select("id, name, user_id, is_saved")
-    .eq("id", id)
-    .single();
+  const queryClient = getServerQueryClient();
 
-  if (!outfit || outfit.user_id !== user.id) {
-    notFound();
-  }
+  // Populate user data
+  queryClient.setQueryData(getUserQueryOptions().queryKey, () => user);
 
-  const { data: rows } = await supabase
-    .from("outfit_item")
-    .select(
-      "layer_order, position_x, position_y, wardrobe_item:wardrobe_item_id(id, item:item_id(item_id, name, image_url))",
-    )
-    .eq("outfit_id", id)
-    .returns<OutfitItemRow[]>();
+  // Prefetch outfit result data
+  void queryClient.ensureQueryData(
+    getOutfitResultQueryOptionsForServer(user.id, id),
+  );
 
-  const items: ResultItem[] = (rows ?? [])
-    .filter((row) => row.wardrobe_item)
-    .map((row) => ({
-      id: row.wardrobe_item!.id,
-      name: row.wardrobe_item!.item?.name ?? null,
-      image_url: row.wardrobe_item!.item?.image_url ?? null,
-      x: row.position_x ?? 0.5,
-      y: row.position_y ?? 0.5,
-      layerOrder: row.layer_order ?? 0,
-    }));
+  const dehydratedQueryClient = dehydrate(queryClient);
 
   return (
-    <MixAndMatchResult
-      outfitId={outfit.id}
-      initialName={outfit.name}
-      initialIsSaved={outfit.is_saved ?? false}
-      items={items}
-    />
+    <HydrationBoundary state={dehydratedQueryClient}>
+      <Suspense fallback={<MixAndMatchResultFallback />}>
+        <MixAndMatchResult userId={user.id} outfitId={id} />
+      </Suspense>
+    </HydrationBoundary>
   );
 }

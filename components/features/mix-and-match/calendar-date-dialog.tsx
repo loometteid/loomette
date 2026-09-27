@@ -104,12 +104,7 @@ export function CalendarDateDialog({
             {weeks.flatMap((week, weekIndex) =>
               week.map((cell, cellIndex) => {
                 if (!cell) {
-                  return (
-                    <div
-                      key={`${weekIndex}-${cellIndex}`}
-                      aria-hidden
-                    />
-                  );
+                  return <div key={`${weekIndex}-${cellIndex}`} aria-hidden />;
                 }
                 const isSelected = cell.key === selectedKey;
                 return (

@@ -15,3 +15,9 @@ export type TripDayOutfit = {
   outfitId: string;
   items: DiaryOutfitItem[];
 };
+
+export type TripDetail = {
+  trip: Trip;
+  days: string[];
+  outfitsByDay: Record<string, TripDayOutfit[]>;
+};

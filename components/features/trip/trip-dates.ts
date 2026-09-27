@@ -11,7 +11,9 @@ export function eachDateInRange(startISO: string, endISO: string): string[] {
   const dates: string[] = [];
   const cursor = new Date(start);
   while (cursor <= end) {
-    dates.push(dateKey(cursor.getFullYear(), cursor.getMonth(), cursor.getDate()));
+    dates.push(
+      dateKey(cursor.getFullYear(), cursor.getMonth(), cursor.getDate()),
+    );
     cursor.setDate(cursor.getDate() + 1);
   }
   return dates;
@@ -23,8 +25,18 @@ export function formatDayDate(iso: string) {
 }
 
 const MONTH_ABBR = [
-  "JAN", "FEB", "MAR", "APR", "MAY", "JUN",
-  "JUL", "AUG", "SEP", "OCT", "NOV", "DEC",
+  "JAN",
+  "FEB",
+  "MAR",
+  "APR",
+  "MAY",
+  "JUN",
+  "JUL",
+  "AUG",
+  "SEP",
+  "OCT",
+  "NOV",
+  "DEC",
 ];
 
 export function formatTripMonthYear(iso: string) {

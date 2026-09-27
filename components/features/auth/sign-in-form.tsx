@@ -12,8 +12,11 @@ import {
   signInSchema,
   type SignInFormValues,
 } from "./schemas/sign-in.schema";
+import { useQueryClient } from "@tanstack/react-query";
+import { getUserQueryOptions } from "../profile/query-options/get-user.query-option";
 
 export function SignInForm() {
+  const queryClient = useQueryClient();
   const router = useRouter();
   const [error, setError] = useState<string | null>(null);
 
@@ -33,7 +36,7 @@ export function SignInForm() {
     setError(null);
     const supabase = createBrowserSupabaseClient();
 
-    const { error: authError } = await supabase.auth.signInWithPassword({
+    const { error: authError, data } = await supabase.auth.signInWithPassword({
       email: values.email,
       password: values.password,
     });
@@ -42,6 +45,9 @@ export function SignInForm() {
       setError(authError.message);
       return;
     }
+
+    queryClient.setQueryData(getUserQueryOptions().queryKey, () => data.user)
+    router.refresh();
     router.push("/onboarding/1");
   }
 

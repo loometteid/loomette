@@ -1,10 +1,15 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
 import { toast } from "sonner";
-import { useMutation, useQueryClient, useSuspenseQuery } from "@tanstack/react-query";
+import {
+  useMutation,
+  useQueryClient,
+  useSuspenseQuery,
+} from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Sparkle } from "@/components/ui/sparkle";
 import { Switch } from "@/components/ui/switch";
@@ -37,10 +42,27 @@ function SettingsSection({
 function ChevronRow({
   label,
   onClick,
+  href,
 }: {
   label: string;
-  onClick: () => void;
+  onClick?: () => void;
+  href?: string;
 }) {
+  if (href) {
+    return (
+      <Link
+        href={href}
+        prefetch
+        className="flex items-center justify-between text-left"
+      >
+        <span className="text-xs font-medium tracking-wide uppercase">
+          {label}
+        </span>
+        <ChevronRight className="text-muted-foreground size-4" />
+      </Link>
+    );
+  }
+
   return (
     <button
       type="button"
@@ -186,10 +208,7 @@ export function SettingsView({ userId }: { userId: string }) {
         {privacyMutation.isPending && (
           <span className="text-muted-foreground -mt-2 text-xs">Saving…</span>
         )}
-        <ChevronRow
-          label="Privacy & Policy"
-          onClick={() => router.push("/profile/settings/privacy")}
-        />
+        <ChevronRow label="Privacy & Policy" href="/profile/settings/privacy" />
       </SettingsSection>
 
       <SettingsSection title="Account">

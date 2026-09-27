@@ -1,5 +1,7 @@
 import Image from "next/image";
-import { Users } from "lucide-react";
+import Link from "next/link";
+import { Pencil, Users } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export function ProfileFallback() {
   return (
@@ -15,7 +17,17 @@ export function ProfileFallback() {
 
         <div className="absolute inset-0 flex flex-col justify-between p-6">
           <div className="flex items-start justify-between">
-            <div className="bg-background/40 size-18 animate-pulse rounded-2xl backdrop-blur-sm" />
+            <div className="relative">
+              <div className="bg-background/40 size-18 animate-pulse rounded-2xl backdrop-blur-sm" />
+              <Link
+                href="/profile/edit"
+                prefetch
+                aria-label="Edit profile"
+                className="bg-background absolute -bottom-2 -left-2 flex size-7 items-center justify-center rounded-full shadow opacity-60"
+              >
+                <Pencil className="size-3.5" />
+              </Link>
+            </div>
 
             <div
               aria-hidden
@@ -37,11 +49,12 @@ export function ProfileFallback() {
         {["favorite", "travels", "wishlist"].map((value, i) => (
           <span
             key={value}
-            className={`pb-3 text-sm font-medium tracking-wide uppercase ${
+            className={cn(
+              'pb-3 text-sm font-medium tracking-wide uppercase',
               i === 0
                 ? "text-foreground border-foreground border-b-2"
                 : "text-muted-foreground opacity-60"
-            }`}
+            )}
           >
             {value}
           </span>
@@ -53,11 +66,10 @@ export function ProfileFallback() {
           {["all", "wardrobe", "outfit"].map((value, i) => (
             <div
               key={value}
-              className={`rounded-full border px-4 py-2 text-xs font-medium tracking-wide uppercase ${
-                i === 0
-                  ? "border-foreground text-foreground border-2"
-                  : "border-border text-muted-foreground opacity-60"
-              }`}
+              className={`rounded-full border px-4 py-2 text-xs font-medium tracking-wide uppercase ${i === 0
+                ? "border-foreground text-foreground border-2"
+                : "border-border text-muted-foreground opacity-60"
+                }`}
             >
               {value}
             </div>

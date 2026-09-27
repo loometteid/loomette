@@ -1,14 +1,10 @@
-"use client";
-
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Sparkle } from "@/components/ui/sparkle";
 import { Typography } from "@/components/ui/typography";
 
 export function StepSixComplete() {
-  const router = useRouter();
-
   return (
     <main className="flex flex-1 flex-col px-6 py-8">
       <div className="relative h-64 w-full">
@@ -44,9 +40,10 @@ export function StepSixComplete() {
       </div>
 
       <Button
-        type="button"
         className="w-full"
-        onClick={() => router.push("/onboarding/7")}
+        type="button"
+        nativeButton={false}
+        render={<Link href="/onboarding/7" prefetch />}
       >
         Continue
       </Button>

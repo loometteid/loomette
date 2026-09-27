@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ChevronLeft, Settings, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -17,12 +18,18 @@ export function EditProfileFallback() {
         </Button>
         <div className="flex items-center gap-2">
           <Button
-            type="button"
             variant="secondary"
             size="icon"
-            className="rounded-xl"
-            disabled
-            aria-label="Settings"
+            className="rounded-xl opacity-60"
+            nativeButton={false}
+            type="button"
+            render={
+              <Link
+                href="/profile/settings"
+                prefetch
+                aria-label="Settings"
+              />
+            }
           >
             <Settings className="size-4" />
           </Button>
@@ -87,10 +94,7 @@ export function EditProfileFallback() {
           <div className="bg-muted h-3 w-24 animate-pulse rounded" />
           <div className="grid grid-cols-2 gap-3">
             {[1, 2, 3, 4].map((i) => (
-              <div
-                key={i}
-                className="bg-muted h-10 animate-pulse rounded-xl"
-              />
+              <div key={i} className="bg-muted h-10 animate-pulse rounded-xl" />
             ))}
           </div>
         </div>

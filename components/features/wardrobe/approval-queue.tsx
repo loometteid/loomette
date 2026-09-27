@@ -2,10 +2,14 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { ChevronLeft, Trash2 } from "lucide-react";
 import { toast } from "sonner";
-import { useMutation, useQueryClient, useSuspenseQuery } from "@tanstack/react-query";
+import {
+  useMutation,
+  useQueryClient,
+  useSuspenseQuery,
+} from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Sparkle } from "@/components/ui/sparkle";
@@ -24,7 +28,6 @@ import { discardWardrobeItemsMutationOptions } from "./mutation-options/discard-
 // semantics (bulk-clear vs. selection-based) — this is the more
 // standard inbox-style pattern and symmetric with Approve.
 export function ApprovalQueue({ userId }: { userId: string }) {
-  const router = useRouter();
   const queryClient = useQueryClient();
 
   const { data: items } = useSuspenseQuery(
@@ -45,10 +48,12 @@ export function ApprovalQueue({ userId }: { userId: string }) {
       );
       setSelected(new Set());
       void queryClient.invalidateQueries({
-        queryKey: getPendingWardrobeItemsQueryOptionsForBrowser(userId).queryKey,
+        queryKey:
+          getPendingWardrobeItemsQueryOptionsForBrowser(userId).queryKey,
       });
       void queryClient.invalidateQueries({
-        queryKey: getPendingWardrobeCountQueryOptionsForBrowser(userId).queryKey,
+        queryKey:
+          getPendingWardrobeCountQueryOptionsForBrowser(userId).queryKey,
       });
       void queryClient.invalidateQueries({
         queryKey: getWardrobeItemsQueryOptionsForBrowser(userId).queryKey,
@@ -66,10 +71,12 @@ export function ApprovalQueue({ userId }: { userId: string }) {
     onSuccess: () => {
       setSelected(new Set());
       void queryClient.invalidateQueries({
-        queryKey: getPendingWardrobeItemsQueryOptionsForBrowser(userId).queryKey,
+        queryKey:
+          getPendingWardrobeItemsQueryOptionsForBrowser(userId).queryKey,
       });
       void queryClient.invalidateQueries({
-        queryKey: getPendingWardrobeCountQueryOptionsForBrowser(userId).queryKey,
+        queryKey:
+          getPendingWardrobeCountQueryOptionsForBrowser(userId).queryKey,
       });
       void queryClient.invalidateQueries({
         queryKey: getWardrobeItemsQueryOptionsForBrowser(userId).queryKey,
@@ -115,12 +122,11 @@ export function ApprovalQueue({ userId }: { userId: string }) {
   return (
     <main className="mx-auto flex w-full max-w-sm flex-1 flex-col px-6 py-8">
       <Button
-        type="button"
         variant="secondary"
         size="icon"
         className="rounded-xl"
-        onClick={() => router.push("/wardrobe")}
-        aria-label="Go back"
+        nativeButton={false}
+        render={<Link href="/wardrobe" prefetch aria-label="Go back" />}
       >
         <ChevronLeft className="size-4" />
       </Button>
@@ -219,10 +225,12 @@ export function ApprovalQueue({ userId }: { userId: string }) {
           onSaved={() => {
             setOpenId(null);
             void queryClient.invalidateQueries({
-              queryKey: getPendingWardrobeItemsQueryOptionsForBrowser(userId).queryKey,
+              queryKey:
+                getPendingWardrobeItemsQueryOptionsForBrowser(userId).queryKey,
             });
             void queryClient.invalidateQueries({
-              queryKey: getPendingWardrobeCountQueryOptionsForBrowser(userId).queryKey,
+              queryKey:
+                getPendingWardrobeCountQueryOptionsForBrowser(userId).queryKey,
             });
             void queryClient.invalidateQueries({
               queryKey: getWardrobeItemsQueryOptionsForBrowser(userId).queryKey,

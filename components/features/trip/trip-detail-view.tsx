@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import Image from "next/image";
 import { ChevronLeft, Pencil } from "lucide-react";
 import { toast } from "sonner";
@@ -33,12 +34,6 @@ export function TripDetailView({
   const router = useRouter();
   const [tab, setTab] = useState<Tab>("outfit-plan");
 
-  function handlePlanOutfit(day: string) {
-    router.push(
-      `/mix-and-match?tripId=${trip.id}&day=${day}&returnTo=${encodeURIComponent(`/trip/${trip.id}`)}`,
-    );
-  }
-
   return (
     <main className="mx-auto flex w-full max-w-sm flex-1 flex-col gap-6 px-6 py-8">
       <div className="flex items-center justify-between">
@@ -57,8 +52,14 @@ export function TripDetailView({
           variant="secondary"
           size="icon"
           className="rounded-xl"
-          onClick={() => router.push(`/trip/${trip.id}/edit`)}
-          aria-label="Edit trip"
+          nativeButton={false}
+          render={
+            <Link
+              href={`/trip/${trip.id}/edit`}
+              prefetch
+              aria-label="Edit trip"
+            />
+          }
         >
           <Pencil className="size-4" />
         </Button>
@@ -66,7 +67,12 @@ export function TripDetailView({
 
       <div className="flex flex-col items-center gap-2 text-center">
         <div className="relative h-28 w-28">
-          <Image src="/profile/koper.png" alt="" fill className="object-contain" />
+          <Image
+            src="/profile/koper.png"
+            alt=""
+            fill
+            className="object-contain"
+          />
         </div>
         <Typography variant="title" as="h1">
           {trip.name ?? "Untitled trip"}
@@ -81,7 +87,9 @@ export function TripDetailView({
           <button
             key={value}
             type="button"
-            onClick={() => (value === "outfit-plan" ? setTab(value) : toast("Coming soon."))}
+            onClick={() =>
+              value === "outfit-plan" ? setTab(value) : toast("Coming soon.")
+            }
             className={cn(
               "pb-3 text-sm font-medium tracking-wide uppercase transition-colors",
               tab === value
@@ -121,13 +129,13 @@ export function TripDetailView({
                     />
                   ))}
 
-                  <button
-                    type="button"
-                    onClick={() => handlePlanOutfit(day)}
+                  <Link
+                    href={`/mix-and-match?tripId=${trip.id}&day=${day}&returnTo=${encodeURIComponent(`/trip/${trip.id}`)}`}
+                    prefetch
                     className="border-border text-foreground self-start rounded-full border px-5 py-2.5 text-xs font-medium tracking-wide uppercase"
                   >
                     Plan Outfit
-                  </button>
+                  </Link>
                 </div>
               </div>
             );

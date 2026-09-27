@@ -55,8 +55,7 @@ export function WardrobeView({ userId }: { userId: string }) {
 
   const results = useMemo(() => {
     return items.filter((row) => {
-      if (query && !row.item?.name?.toLowerCase().includes(query))
-        return false;
+      if (query && !row.item?.name?.toLowerCase().includes(query)) return false;
       return matchesFilters(row, filters);
     });
   }, [items, query, filters]);
@@ -124,6 +123,7 @@ export function WardrobeView({ userId }: { userId: string }) {
         </button>
         <Link
           href="/wardrobe/approval"
+          prefetch
           className="border-border bg-secondary relative flex size-9 shrink-0 items-center justify-center rounded-lg border"
           aria-label="Approval queue"
         >
@@ -147,6 +147,7 @@ export function WardrobeView({ userId }: { userId: string }) {
               <Link
                 key={row.id}
                 href={`/wardrobe/${row.id}`}
+                prefetch
                 className="border-border flex flex-col gap-2 rounded-2xl border p-3 text-left"
               >
                 <div className="bg-secondary relative aspect-square w-full overflow-hidden rounded-xl">
@@ -225,6 +226,7 @@ export function WardrobeView({ userId }: { userId: string }) {
                   <Link
                     key={row.id}
                     href={`/wardrobe/${row.id}`}
+                    prefetch
                     className="bg-secondary relative aspect-square w-32 shrink-0 overflow-hidden rounded-xl"
                   >
                     {row.item?.image_url && (
@@ -245,6 +247,7 @@ export function WardrobeView({ userId }: { userId: string }) {
 
       <Link
         href="/onboarding/7"
+        prefetch
         aria-label="Add item"
         className="bg-foreground text-background fixed right-6 bottom-24 flex size-14 items-center justify-center rounded-2xl shadow-lg"
       >

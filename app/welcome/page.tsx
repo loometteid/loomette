@@ -63,7 +63,7 @@ export default function WelcomePage() {
 
         <Typography variant="subtitle" className="max-w-xs">
           By registering you agree to our{" "}
-          <Link href="/privacy" className="underline">
+          <Link href="/privacy" prefetch className="underline">
             Privacy &amp; Policy
           </Link>
           .
@@ -80,7 +80,13 @@ export default function WelcomePage() {
             size="icon-lg"
             className="size-16 rounded-2xl"
             nativeButton={false}
-            render={<Link href="/sign-up" aria-label="Continue with email" />}
+            render={
+              <Link
+                href="/sign-up"
+                prefetch
+                aria-label="Continue with email"
+              />
+            }
           >
             <Mail className="size-6" />
           </Button>

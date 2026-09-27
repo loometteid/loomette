@@ -8,6 +8,7 @@ export default function SplashPage() {
           already handles navigation on click/tap natively. */}
       <Link
         href="/welcome"
+        prefetch
         aria-label="Continue to Loomette"
         className="flex flex-1 flex-col items-center justify-between px-6 pt-32 pb-16 text-center"
       >

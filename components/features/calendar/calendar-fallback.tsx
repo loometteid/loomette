@@ -108,6 +108,7 @@ export function CalendarFallback() {
 
         <Link
           href="/mix-and-match"
+          prefetch
           className="bg-secondary text-secondary-foreground flex w-full items-center justify-center rounded-full py-3 text-sm font-medium tracking-wide uppercase"
         >
           Mix &amp; Match

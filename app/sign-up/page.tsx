@@ -22,7 +22,7 @@ export default function SignUpPage() {
 
       <Typography variant="subtitle" className="text-center">
         Already have an account?{" "}
-        <Link href="/sign-in" className="font-bold underline">
+        <Link href="/sign-in" prefetch className="font-bold underline">
           Sign in
         </Link>
       </Typography>

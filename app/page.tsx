@@ -95,9 +95,13 @@ export default function LandingPage() {
       <header className="sticky top-0 z-50 flex items-center justify-between bg-white/10 px-6 py-6 backdrop-blur-md">
         <Wordmark />
         <nav className="flex items-center gap-2 text-xs font-medium tracking-wide uppercase">
-          <Link href="/sign-in">Sign in</Link>
+          <Link href="/sign-in" prefetch>
+            Sign in
+          </Link>
           <span className="text-border">|</span>
-          <Link href="/welcome">Sign up</Link>
+          <Link href="/welcome" prefetch>
+            Sign up
+          </Link>
         </nav>
       </header>
 
@@ -125,7 +129,7 @@ export default function LandingPage() {
             <Button
               variant="default"
               nativeButton={false}
-              render={<Link href="/welcome" />}
+              render={<Link href="/welcome" prefetch />}
             >
               Create Account
             </Button>
@@ -265,13 +269,17 @@ export default function LandingPage() {
           <Button
             variant="default"
             nativeButton={false}
-            render={<Link href="/welcome" />}
+            render={<Link href="/welcome" prefetch />}
           >
             Create Account
           </Button>
           <Typography variant="subtitle" className="text-muted-foreground">
             Already have an account?{" "}
-            <Link href="/welcome" className="font-bold underline">
+            <Link
+              href="/welcome"
+              prefetch
+              className="font-bold underline"
+            >
               Sign in
             </Link>
           </Typography>

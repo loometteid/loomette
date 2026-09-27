@@ -23,6 +23,7 @@ This skill provides a systematic protocol for performing high-signal, constructi
 When activated, identify the changes to review according to this priority:
 
 1. **Target Specified by User**: If the user provides a specific branch, commit range (e.g. `main..feature`), list of files, or pastes a diff, inspect those specified targets directly.
+   - If the user provides a GitHub PR URL or PR number, retrieve the PR details and diff using GitHub MCP (`pull_request_read` with method `get_diff` or `get_files`) or GitHub CLI (`gh pr diff <number>`).
 2. **Current Branch vs. Base (Default PR Mode)**:
    - Determine current branch: `git branch --show-current`
    - Check available base branch: `git rev-parse --verify origin/main` (fallback to `main`)
@@ -206,7 +207,7 @@ Format the final review using the following template:
 *(Omit this section if there are no P0 or P1 issues)*
 
 ### [P0/P1] <Concise Title of the Issue>
-- **File**: [`path/to/file.ts#L25-L35`](file:///e:/Codes/loomette/path/to/file.ts#L25-L35)
+- **File**: [`path/to/file.ts#L25-L35`](file:///<workspace-root>/path/to/file.ts#L25-L35)
 - **Rationale**: Explanation of why this causes a bug, security flaw, or convention breakage.
 - **Suggested Fix**:
 ```diff
@@ -220,7 +221,7 @@ Format the final review using the following template:
 *(Omit this section if there are no P2 or P3 issues)*
 
 ### [P2 / Minor] <Improvement Title>
-- **File**: [`path/to/file.ts#L50`](file:///e:/Codes/loomette/path/to/file.ts#L50)
+- **File**: [`path/to/file.ts#L50`](file:///<workspace-root>/path/to/file.ts#L50)
 - **Details**: Explanation of the improvement.
 - **Suggested Fix**:
 ```tsx
@@ -228,7 +229,7 @@ Format the final review using the following template:
 ```
 
 ### [P3 / Nitpick] <Styling or Naming Polish>
-- **File**: [`path/to/file.ts#L72`](file:///e:/Codes/loomette/path/to/file.ts#L72)
+- **File**: [`path/to/file.ts#L72`](file:///<workspace-root>/path/to/file.ts#L72)
 - **Details**: Optional polish suggestion.
 
 ---

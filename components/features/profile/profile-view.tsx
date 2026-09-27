@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 import { Heart, Pencil, Plus, Users } from "lucide-react";
 import { toast } from "sonner";
 import { useSuspenseQuery } from "@tanstack/react-query";
@@ -26,7 +26,6 @@ function notImplemented() {
 }
 
 export function ProfileView({ userId }: { userId: string }) {
-  const router = useRouter();
   const [tab, setTab] = useState<Tab>("favorite");
   const [favoriteFilter, setFavoriteFilter] = useState<FavoriteFilter>("all");
 
@@ -50,7 +49,9 @@ export function ProfileView({ userId }: { userId: string }) {
   const shoeSize = profile?.shoe_size ?? null;
 
   const initials = (displayName ?? username).slice(0, 2).toUpperCase();
-  const sizeLine = [outfitSize?.toUpperCase(), shoeSize].filter(Boolean).join(" · ");
+  const sizeLine = [outfitSize?.toUpperCase(), shoeSize]
+    .filter(Boolean)
+    .join(" · ");
   // Wardrobe-item-level favoriting doesn't exist yet (no such column) --
   // the "wardrobe" filter is real UI, just always empty for now.
   const visibleFavorites = favoriteFilter === "wardrobe" ? [] : favorites;
@@ -69,18 +70,23 @@ export function ProfileView({ userId }: { userId: string }) {
         <div className="absolute inset-0 flex flex-col justify-between p-6">
           <div className="flex items-start justify-between">
             <div className="relative">
-              <Avatar size="lg" className="border-background size-18 rounded-2xl border-2">
+              <Avatar
+                size="lg"
+                className="border-background size-18 rounded-2xl border-2"
+              >
                 <AvatarImage src={profilePhoto ?? undefined} alt="" />
-                <AvatarFallback className="rounded-2xl">{initials}</AvatarFallback>
+                <AvatarFallback className="rounded-2xl">
+                  {initials}
+                </AvatarFallback>
               </Avatar>
-              <button
-                type="button"
-                onClick={() => router.push("/profile/edit")}
+              <Link
+                href="/profile/edit"
+                prefetch
                 aria-label="Edit profile"
                 className="bg-background absolute -bottom-2 -left-2 flex size-7 items-center justify-center rounded-full shadow"
               >
                 <Pencil className="size-3.5" />
-              </button>
+              </Link>
             </div>
 
             <button
@@ -100,7 +106,9 @@ export function ProfileView({ userId }: { userId: string }) {
             <Typography variant="title" as="p" className="text-white">
               {displayName ?? username}
             </Typography>
-            {sizeLine && <span className="text-xs text-white/90">{sizeLine}</span>}
+            {sizeLine && (
+              <span className="text-xs text-white/90">{sizeLine}</span>
+            )}
           </div>
         </div>
       </div>
@@ -167,7 +175,9 @@ export function ProfileView({ userId }: { userId: string }) {
                       <Typography variant="h1" as="p">
                         {entry.name ?? "Untitled"}
                       </Typography>
-                      <span className="text-muted-foreground text-xs">Outfit</span>
+                      <span className="text-muted-foreground text-xs">
+                        Outfit
+                      </span>
                     </div>
                   </div>
                 ))}
@@ -180,17 +190,22 @@ export function ProfileView({ userId }: { userId: string }) {
           (trips.length === 0 ? (
             <div className="flex flex-1 flex-col items-center justify-center gap-3 py-16 text-center">
               <div className="relative h-28 w-28">
-                <Image src="/profile/koper.png" alt="" fill className="object-contain" />
+                <Image
+                  src="/profile/koper.png"
+                  alt=""
+                  fill
+                  className="object-contain"
+                />
               </div>
               <Typography variant="subtitle">No trips yet.</Typography>
             </div>
           ) : (
             <div className="grid grid-cols-2 gap-6">
               {trips.map((trip) => (
-                <button
+                <Link
                   key={trip.id}
-                  type="button"
-                  onClick={() => router.push(`/trip/${trip.id}`)}
+                  href={`/trip/${trip.id}`}
+                  prefetch
                   className="flex flex-col items-center gap-2 text-center"
                 >
                   <div className="relative aspect-square w-full">
@@ -207,7 +222,7 @@ export function ProfileView({ userId }: { userId: string }) {
                   <span className="text-muted-foreground text-xs tracking-wide uppercase">
                     {formatTripMonthYear(trip.start_date)}
                   </span>
-                </button>
+                </Link>
               ))}
             </div>
           ))}
@@ -240,14 +255,14 @@ export function ProfileView({ userId }: { userId: string }) {
           ))}
 
         {tab === "travels" && (
-          <button
-            type="button"
-            onClick={() => router.push("/trip/new")}
+          <Link
+            href="/trip/new"
+            prefetch
             aria-label="Add trip"
             className="bg-foreground text-background fixed right-6 bottom-24 flex size-14 items-center justify-center rounded-2xl shadow-lg"
           >
             <Plus className="size-6" />
-          </button>
+          </Link>
         )}
       </div>
     </main>

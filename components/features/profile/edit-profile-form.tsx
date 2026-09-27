@@ -3,11 +3,16 @@
 import { useRef } from "react";
 import { notFound, useRouter } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 import { ChevronLeft, Pencil, Settings, Users } from "lucide-react";
 import { toast } from "sonner";
 import { Controller, useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation, useQueryClient, useSuspenseQuery } from "@tanstack/react-query";
+import {
+  useMutation,
+  useQueryClient,
+  useSuspenseQuery,
+} from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -47,7 +52,10 @@ import {
 } from "./schemas/edit-profile.schema";
 import type { Database } from "@/types/database.types";
 
-function toMeasurementState(value: number | null, unit: string): MeasurementState {
+function toMeasurementState(
+  value: number | null,
+  unit: string,
+): MeasurementState {
   return { value: value == null ? "" : String(value), unit };
 }
 
@@ -100,7 +108,9 @@ function MeasurementField({
           inputMode="decimal"
           placeholder={placeholder}
           value={state.value}
-          onChange={(event) => onChange({ ...state, value: event.target.value })}
+          onChange={(event) =>
+            onChange({ ...state, value: event.target.value })
+          }
           className="flex-1"
         />
         <UnitSelect
@@ -189,7 +199,8 @@ export function EditProfileForm({ userId }: { userId: string }) {
     },
   });
 
-  const isBusy = uploadPhotoMutation.isPending || updateProfileMutation.isPending;
+  const isBusy =
+    uploadPhotoMutation.isPending || updateProfileMutation.isPending;
 
   function handlePhotoSelected(file: File) {
     uploadPhotoMutation.mutate({ userId, file });
@@ -255,12 +266,18 @@ export function EditProfileForm({ userId }: { userId: string }) {
             <Users className="size-4" />
           </Button>
           <Button
-            type="button"
             variant="secondary"
             size="icon"
+            type="button"
             className="rounded-xl"
-            onClick={() => router.push("/profile/settings")}
-            aria-label="Settings"
+            nativeButton={false}
+            render={
+              <Link
+                href="/profile/settings"
+                prefetch
+                aria-label="Settings"
+              />
+            }
           >
             <Settings className="size-4" />
           </Button>

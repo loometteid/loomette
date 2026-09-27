@@ -2,8 +2,14 @@
 
 import { useMemo, useState } from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
-import { Bell, ChevronLeft, ChevronRight, Sparkles, TrendingUp } from "lucide-react";
+import Link from "next/link";
+import {
+  Bell,
+  ChevronLeft,
+  ChevronRight,
+  Sparkles,
+  TrendingUp,
+} from "lucide-react";
 import { toast } from "sonner";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -22,7 +28,6 @@ import { getLooksCountQueryOptionsForBrowser } from "./query-options/get-looks-c
 import type { FavoriteItem } from "./types";
 
 export function HomeView({ userId }: { userId: string }) {
-  const router = useRouter();
   const [prompt, setPrompt] = useState("");
 
   const { data: profile } = useSuspenseQuery(
@@ -43,7 +48,9 @@ export function HomeView({ userId }: { userId: string }) {
     return [...wardrobeItems].sort((a, b) => {
       const wearDiff = (b.wear_count ?? 0) - (a.wear_count ?? 0);
       if (wearDiff !== 0) return wearDiff;
-      return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
+      return (
+        new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+      );
     });
   }, [wardrobeItems]);
 
@@ -122,14 +129,14 @@ export function HomeView({ userId }: { userId: string }) {
           <AvatarImage src={profilePhoto ?? undefined} alt="" />
           <AvatarFallback className="rounded-2xl">{initials}</AvatarFallback>
         </Avatar>
-        <button
-          type="button"
-          onClick={() => router.push("/home/notifications")}
+        <Link
+          href="/home/notifications"
+          prefetch
           aria-label="Notifications"
           className="bg-secondary flex size-10 items-center justify-center rounded-xl"
         >
           <Bell className="size-4" />
-        </button>
+        </Link>
       </div>
 
       <div className="flex flex-col gap-2">
@@ -229,7 +236,9 @@ export function HomeView({ userId }: { userId: string }) {
             <Typography variant="h1" as="p" className="text-background">
               You are so{" "}
               <em className="italic underline">
-                {codedTag ? styleTagLabel(codedTag).toLowerCase() : "figuring it out"}
+                {codedTag
+                  ? styleTagLabel(codedTag).toLowerCase()
+                  : "figuring it out"}
               </em>{" "}
               coded
             </Typography>

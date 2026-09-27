@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ClipboardCheck, Plus, Search, SlidersHorizontal } from "lucide-react";
 import { Sparkle } from "@/components/ui/sparkle";
 import { Typography } from "@/components/ui/typography";
@@ -23,12 +24,14 @@ export function WardrobeFallback() {
         >
           <SlidersHorizontal className="size-4" />
         </div>
-        <div
-          aria-hidden
+        <Link
+          href="/wardrobe/approval"
+          prefetch
+          aria-label="Approval queue"
           className="border-border bg-secondary flex size-9 shrink-0 items-center justify-center rounded-lg border opacity-60"
         >
           <ClipboardCheck className="size-4" />
-        </div>
+        </Link>
       </div>
 
       {/* Skeletons for categories */}
@@ -49,12 +52,14 @@ export function WardrobeFallback() {
         ))}
       </div>
 
-      <div
-        aria-hidden
+      <Link
+        href="/onboarding/7"
+        prefetch
+        aria-label="Add item"
         className="bg-foreground text-background fixed right-6 bottom-24 flex size-14 items-center justify-center rounded-2xl shadow-lg opacity-80"
       >
         <Plus className="size-6" />
-      </div>
+      </Link>
     </main>
   );
 }

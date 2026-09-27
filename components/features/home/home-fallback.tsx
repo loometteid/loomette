@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Bell, ChevronLeft, ChevronRight } from "lucide-react";
 import { Sparkle } from "@/components/ui/sparkle";
 
@@ -7,12 +8,14 @@ export function HomeFallback() {
       {/* Top Header */}
       <div className="flex items-center justify-between">
         <div className="bg-muted size-14 animate-pulse rounded-2xl" />
-        <div
-          aria-hidden
+        <Link
+          href="/home/notifications"
+          prefetch
+          aria-label="Notifications"
           className="bg-secondary flex size-10 items-center justify-center rounded-xl opacity-60"
         >
           <Bell className="text-muted-foreground size-4" />
-        </div>
+        </Link>
       </div>
 
       {/* Greeting */}

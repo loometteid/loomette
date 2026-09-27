@@ -22,6 +22,7 @@ export function BottomNav() {
           <Link
             key={href}
             href={href}
+            prefetch
             className={cn(
               "flex flex-1 flex-col items-center gap-1 py-1 text-xs font-medium tracking-wide uppercase",
               isActive ? "text-foreground" : "text-muted-foreground",

@@ -80,7 +80,11 @@ export function CalendarView({ userId }: { userId: string }) {
     const entryMonth = Number(monthStr) - 1;
 
     void queryClient.invalidateQueries({
-      queryKey: getDiaryEntriesQueryOptionsForBrowser(userId, entryYear, entryMonth).queryKey
+      queryKey: getDiaryEntriesQueryOptionsForBrowser(
+        userId,
+        entryYear,
+        entryMonth,
+      ).queryKey,
     });
 
     setUserViewedYear(entryYear);
@@ -159,6 +163,7 @@ export function CalendarView({ userId }: { userId: string }) {
 
         <Link
           href="/mix-and-match"
+          prefetch
           className="bg-secondary text-secondary-foreground flex w-full items-center justify-center rounded-full py-3 text-sm font-medium tracking-wide uppercase"
         >
           Mix &amp; Match

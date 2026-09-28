@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import { redirect } from "next/navigation";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import { MixAndMatchResult } from "@/components/features/mix-and-match/result-view";
-import { MixAndMatchResultFallback } from "@/components/features/mix-and-match/result-fallback";
+import { MixAndMatchResultFallback } from "@/components/features/mix-and-match/mix-and-match-result-fallback";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { getServerQueryClient } from "@/lib/tanstack-query/server";
 import { getUserQueryOptions } from "@/components/features/profile/query-options/get-user.query-option";

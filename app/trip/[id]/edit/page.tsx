@@ -1,6 +1,12 @@
-import { notFound, redirect } from "next/navigation";
+import { Suspense } from "react";
+import { redirect } from "next/navigation";
+import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import { EditTripForm } from "@/components/features/trip/edit-trip-form";
+import { EditTripFallback } from "@/components/features/trip/edit-trip-fallback";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
+import { getServerQueryClient } from "@/lib/tanstack-query/server";
+import { getUserQueryOptions } from "@/components/features/profile/query-options/get-user.query-option";
+import { getTripByIdQueryOptionsForServer } from "@/components/features/trip/query-options/get-trip-by-id.query-option.server";
 
 export default async function EditTripPage({
   params,
@@ -18,26 +24,23 @@ export default async function EditTripPage({
     redirect("/sign-in");
   }
 
-  const { data: trip } = await supabase
-    .from("trip")
-    .select("id, name, start_date, end_date, season, travel_companion, user_id")
-    .eq("id", id)
-    .single();
+  const queryClient = getServerQueryClient();
 
-  if (!trip || trip.user_id !== user.id) {
-    notFound();
-  }
+  // Populate user data
+  queryClient.setQueryData(getUserQueryOptions().queryKey, () => user);
+
+  // Prefetch trip by id
+  void queryClient.ensureQueryData(
+    getTripByIdQueryOptionsForServer(user.id, id),
+  );
+
+  const dehydratedQueryClient = dehydrate(queryClient);
 
   return (
-    <EditTripForm
-      trip={{
-        id: trip.id,
-        name: trip.name,
-        start_date: trip.start_date,
-        end_date: trip.end_date,
-        season: trip.season,
-        travel_companion: trip.travel_companion,
-      }}
-    />
+    <HydrationBoundary state={dehydratedQueryClient}>
+      <Suspense fallback={<EditTripFallback />}>
+        <EditTripForm userId={user.id} tripId={id} />
+      </Suspense>
+    </HydrationBoundary>
   );
 }

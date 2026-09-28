@@ -6,3 +6,13 @@ export type ResultItem = {
   y: number;
   layerOrder: number;
 };
+
+export type OutfitResultData = {
+  outfit: {
+    id: string;
+    name: string | null;
+    userId: string;
+    isSaved: boolean;
+  };
+  items: ResultItem[];
+};

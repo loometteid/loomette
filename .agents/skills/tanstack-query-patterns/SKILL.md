@@ -123,6 +123,7 @@ export default async function FeaturePage() {
   queryClient.setQueryData(getUserQueryOptions().queryKey, () => user);
 
   // 3. Unawaited prefetch (MUST NOT await)
+  // ALL queries used inside `FeatureView` MUST be prefetched here.
   void queryClient.ensureQueryData(getItemsQueryOptionsForServer(user.id));
 
   // 4. Dehydrate & Stream Suspense

@@ -17,6 +17,7 @@ import { Typography } from "@/components/ui/typography";
 import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 import { getProfileQueryOptionsForBrowser } from "./query-options/get-profile.query-option.client";
 import { updatePrivacySettingMutationOptions } from "./mutation-options/update-privacy-setting.mutation-option.client";
+import type { Route } from "next";
 
 function notImplemented() {
   toast("Coming soon.");
@@ -46,7 +47,7 @@ function ChevronRow({
 }: {
   label: string;
   onClick?: () => void;
-  href?: string;
+  href?: Route;
 }) {
   if (href) {
     return (

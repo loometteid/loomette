@@ -1,18 +1,12 @@
+import { Suspense } from "react";
 import { redirect } from "next/navigation";
+import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import { MixAndMatchCanvas } from "@/components/features/mix-and-match/canvas";
-import type { WardrobeOption } from "@/components/features/mix-and-match/types";
+import { MixAndMatchFallback } from "@/components/features/mix-and-match/mix-and-match-fallback";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
-
-type WardrobeRow = {
-  id: string;
-  item: {
-    item_id: string;
-    name: string | null;
-    category: string | null;
-    subcategory: string | null;
-    image_url: string | null;
-  } | null;
-};
+import { getServerQueryClient } from "@/lib/tanstack-query/server";
+import { getUserQueryOptions } from "@/components/features/profile/query-options/get-user.query-option";
+import { getMixAndMatchOptionsQueryOptionsForServer } from "@/components/features/mix-and-match/query-options/get-mix-and-match-options.query-option.server";
 
 export default async function MixAndMatchPage() {
   const supabase = await createServerSupabaseClient();
@@ -25,23 +19,23 @@ export default async function MixAndMatchPage() {
     redirect("/sign-in");
   }
 
-  const { data: rows } = await supabase
-    .from("wardrobe_item")
-    .select("id, item:item_id(item_id, name, category, subcategory, image_url)")
-    .eq("user_id", user.id)
-    .eq("is_approved", true)
-    .returns<WardrobeRow[]>();
+  const queryClient = getServerQueryClient();
 
-  const wardrobeOptions: WardrobeOption[] = (rows ?? [])
-    .filter((row) => row.item?.category && row.item?.subcategory)
-    .map((row) => ({
-      wardrobeItemId: row.id,
-      itemId: row.item!.item_id,
-      name: row.item!.name,
-      category: row.item!.category!,
-      subcategory: row.item!.subcategory!,
-      image_url: row.item!.image_url,
-    }));
+  // Populate user data
+  queryClient.setQueryData(getUserQueryOptions().queryKey, () => user);
 
-  return <MixAndMatchCanvas userId={user.id} wardrobeOptions={wardrobeOptions} />;
+  // Prefetch wardrobe options for canvas
+  void queryClient.ensureQueryData(
+    getMixAndMatchOptionsQueryOptionsForServer(user.id),
+  );
+
+  const dehydratedQueryClient = dehydrate(queryClient);
+
+  return (
+    <HydrationBoundary state={dehydratedQueryClient}>
+      <Suspense fallback={<MixAndMatchFallback />}>
+        <MixAndMatchCanvas userId={user.id} />
+      </Suspense>
+    </HydrationBoundary>
+  );
 }

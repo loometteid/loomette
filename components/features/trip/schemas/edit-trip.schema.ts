@@ -9,7 +9,8 @@ export const editTripSchema = z
     companion: z.string().nullable().optional(),
   })
   .refine(
-    (data) => !data.startDate || !data.endDate || data.endDate >= data.startDate,
+    (data) =>
+      !data.startDate || !data.endDate || data.endDate >= data.startDate,
     {
       message: "End date can't be before the start date.",
       path: ["endDate"],

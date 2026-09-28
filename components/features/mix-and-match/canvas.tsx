@@ -15,14 +15,22 @@ import { Button } from "@/components/ui/button";
 import { Sparkle } from "@/components/ui/sparkle";
 import { Typography } from "@/components/ui/typography";
 import { cn } from "@/lib/utils";
-import { createBrowserSupabaseClient } from "@/lib/supabase/client";
-import { generateOutfitName } from "@/lib/outfitNames";
+import {
+  useMutation,
+  useQueryClient,
+  useSuspenseQuery,
+} from "@tanstack/react-query";
+import { getMixAndMatchOptionsQueryOptionsForBrowser } from "./query-options/get-mix-and-match-options.query-option.client";
+import { saveOutfitMutationOptions } from "./mutation-options/save-outfit.mutation-option.client";
+import { getTripsQueryOptionsForBrowser } from "@/components/features/profile/query-options/get-trips.query-option.client";
+import { getTripDetailQueryOptionsForBrowser } from "@/components/features/trip/query-options/get-trip-detail.query-option.client";
 import { CATEGORY_OPTIONS } from "@/components/features/wardrobe/types";
 import {
   DEFAULT_SLOT_POSITIONS,
   ITEM_SIZE_RATIO,
 } from "@/components/features/outfit/outfit-composition";
 import type { CanvasItem, WardrobeOption } from "./types";
+import type { Route } from "next";
 
 const DRAG_THRESHOLD_PX = 6;
 
@@ -37,15 +45,13 @@ type GhostDrag = {
   dragging: boolean;
 };
 
-export function MixAndMatchCanvas({
-  userId,
-  wardrobeOptions,
-}: {
-  userId: string;
-  wardrobeOptions: WardrobeOption[];
-}) {
+export function MixAndMatchCanvas({ userId }: { userId: string }) {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const queryClient = useQueryClient();
+  const { data: wardrobeOptions } = useSuspenseQuery(
+    getMixAndMatchOptionsQueryOptionsForBrowser(userId),
+  );
   // When arrived at from a Trip day's "Plan Outfit" button (see
   // trip-detail-view.tsx), Save should attach the outfit to that day
   // and return to the trip instead of going through the normal Result
@@ -68,7 +74,6 @@ export function MixAndMatchCanvas({
     return first ? new Set([first]) : new Set();
   });
   const [ghost, setGhost] = useState<GhostDrag | null>(null);
-  const [saving, setSaving] = useState(false);
 
   const dragRef = useRef<{
     wardrobeItemId: string;
@@ -92,9 +97,7 @@ export function MixAndMatchCanvas({
   function addItemToCanvas(option: WardrobeOption, x: number, y: number) {
     setCanvasItems((prev) => {
       const nextLayer =
-        prev.length === 0
-          ? 0
-          : Math.max(...prev.map((i) => i.layerOrder)) + 1;
+        prev.length === 0 ? 0 : Math.max(...prev.map((i) => i.layerOrder)) + 1;
       const withoutExisting = prev.filter(
         (i) => i.wardrobeItemId !== option.wardrobeItemId,
       );
@@ -225,7 +228,9 @@ export function MixAndMatchCanvas({
 
   function handleDeleteSelected() {
     if (!selectedId) return;
-    setCanvasItems((prev) => prev.filter((i) => i.wardrobeItemId !== selectedId));
+    setCanvasItems((prev) =>
+      prev.filter((i) => i.wardrobeItemId !== selectedId),
+    );
     setSelectedId(null);
   }
 
@@ -277,77 +282,40 @@ export function MixAndMatchCanvas({
     setSelectedId(null);
   }
 
-  async function handleSave() {
+  const saveMutation = useMutation({
+    ...saveOutfitMutationOptions(),
+    onSuccess: (data) => {
+      if (tripId && tripDay) {
+        void queryClient.invalidateQueries({
+          queryKey: getTripsQueryOptionsForBrowser(userId).queryKey,
+        });
+        void queryClient.invalidateQueries({
+          queryKey: getTripDetailQueryOptionsForBrowser(userId, tripId)
+            .queryKey,
+        });
+        toast.success("Outfit added to your trip.");
+        router.push((returnTo as Route) ?? `/trip/${tripId}`);
+        return;
+      }
+      router.push(`/mix-and-match/result/${data.outfitId}`);
+    },
+    onError: () => {
+      toast.error("Couldn't save that outfit.");
+    },
+  });
+
+  function handleSave() {
     if (canvasItems.length === 0) {
       toast.error("Add at least one item to your canvas first.");
       return;
     }
-    setSaving(true);
-    const supabase = createBrowserSupabaseClient();
 
-
-    // outfit_item (inserted below) is the source of truth for every
-    // full-composition render (Result page, Calendar's grid thumbnail
-    // and entry dialog) -- see components/features/outfit/outfit-
-    // composition.tsx. cover_image_url is NOT used for any of those;
-    // it only exists as a lightweight single-image summary for
-    // contexts that intentionally don't want a full composition (e.g.
-    // Profile's small Favorite grid cards), so the topmost (highest
-    // layer_order) item stands in as a representative single image.
-    const topItem = [...canvasItems].sort(
-      (a, b) => b.layerOrder - a.layerOrder,
-    )[0];
-
-    const { data: outfitRow, error: outfitError } = await supabase
-      .from("outfit")
-      .insert({
-        user_id: userId,
-        name: generateOutfitName(),
-        is_saved: false,
-        cover_image_url: topItem?.image_url ?? null,
-      })
-      .select("id")
-      .single();
-
-    if (outfitError || !outfitRow) {
-      toast.error("Couldn't save that outfit.");
-      setSaving(false);
-      return;
-    }
-
-    const { error: itemsError } = await supabase.from("outfit_item").insert(
-      canvasItems.map((item) => ({
-        outfit_id: outfitRow.id,
-        wardrobe_item_id: item.wardrobeItemId,
-        layer_order: item.layerOrder,
-        position_x: item.x,
-        position_y: item.y,
-      })),
-    );
-
-    if (itemsError) {
-      toast.error("Couldn't save that outfit.");
-      setSaving(false);
-      return;
-    }
-
-    if (tripId && tripDay) {
-      const { error: wearLogError } = await supabase.from("wear_log").insert({
-        user_id: userId,
-        outfit_id: outfitRow.id,
-        worn_on: tripDay,
-      });
-      if (wearLogError) {
-        toast.error("Couldn't add that outfit to your trip.");
-        setSaving(false);
-        return;
-      }
-      toast.success("Outfit added to your trip.");
-      router.push(returnTo ?? `/trip/${tripId}`);
-      return;
-    }
-
-    router.push(`/mix-and-match/result/${outfitRow.id}`);
+    saveMutation.mutate({
+      userId,
+      items: canvasItems,
+      tripId,
+      tripDay,
+    });
   }
 
   const sortedCanvasItems = [...canvasItems].sort(
@@ -476,10 +444,10 @@ export function MixAndMatchCanvas({
         <button
           type="button"
           onClick={handleSave}
-          disabled={saving}
+          disabled={saveMutation.isPending}
           className="bg-foreground text-background absolute right-3 bottom-3 rounded-full px-6 py-2.5 text-sm font-medium tracking-wide uppercase shadow-lg disabled:opacity-60"
         >
-          {saving ? "Saving…" : "Save"}
+          {saveMutation.isPending ? "Saving…" : "Save"}
         </button>
       </div>
 
@@ -567,7 +535,12 @@ export function MixAndMatchCanvas({
 
       {ghost && ghost.dragging && (
         <div
-          style={{ left: ghost.clientX, top: ghost.clientY, width: 72, height: 72 }}
+          style={{
+            left: ghost.clientX,
+            top: ghost.clientY,
+            width: 72,
+            height: 72,
+          }}
           className="pointer-events-none fixed z-50 -translate-x-1/2 -translate-y-1/2 opacity-80"
         >
           {ghost.option.image_url && (

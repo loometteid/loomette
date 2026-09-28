@@ -12,6 +12,7 @@ import {
   stepOneSchema,
   type StepOneFormValues,
 } from "./schemas/step-one.schema";
+import Link from "next/link";
 
 export function StepOneForm({ email }: { email: string }) {
   const router = useRouter();
@@ -70,6 +71,12 @@ export function StepOneForm({ email }: { email: string }) {
       continueLabel={isSubmitting ? "Saving…" : "Continue"}
       continueDisabled={isSubmitting || !name || name.trim().length === 0}
     >
+      <Link href="/onboarding/2" prefetch className="hidden" aria-hidden />
+      <Link href="/onboarding/3" prefetch className="hidden" aria-hidden />
+      <Link href="/onboarding/4" prefetch className="hidden" aria-hidden />
+      <Link href="/onboarding/5" prefetch className="hidden" aria-hidden />
+      <Link href="/onboarding/6" prefetch className="hidden" aria-hidden />
+      <Link href="/onboarding/7" prefetch className="hidden" aria-hidden />
       <div className="flex flex-col gap-1.5">
         <Label
           htmlFor="onboarding-name"

@@ -1,3 +1,5 @@
+'use client'
+
 import Link from "next/link";
 import { ChevronDown, History } from "lucide-react";
 import { Sparkle } from "@/components/ui/sparkle";

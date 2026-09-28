@@ -35,10 +35,7 @@ export function SettingsFallback() {
             <div className="bg-muted h-4 w-28 animate-pulse rounded" />
             <div className="flex flex-col gap-4">
               {[1, 2].map((rowIdx) => (
-                <div
-                  key={rowIdx}
-                  className="flex items-center justify-between"
-                >
+                <div key={rowIdx} className="flex items-center justify-between">
                   <div className="bg-muted h-3.5 w-32 animate-pulse rounded" />
                   <div className="bg-muted h-5 w-9 animate-pulse rounded-full" />
                 </div>

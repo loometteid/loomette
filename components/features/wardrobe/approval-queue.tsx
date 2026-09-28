@@ -120,12 +120,17 @@ export function ApprovalQueue({ userId }: { userId: string }) {
   const openItem = items.find((i) => i.id === openId) ?? null;
 
   return (
-    <main className="mx-auto flex w-full max-w-sm flex-1 flex-col px-6 py-8">
+    <main
+      className="mx-auto flex w-full max-w-sm flex-1 flex-col px-6 py-8"
+      data-testid="approval-queue"
+      data-entity-id={userId}
+    >
       <Button
         variant="secondary"
         size="icon"
         className="rounded-xl"
         nativeButton={false}
+        data-testid="approval-queue__back-button"
         render={<Link href="/wardrobe" prefetch aria-label="Go back" />}
       >
         <ChevronLeft className="size-4" />
@@ -134,39 +139,58 @@ export function ApprovalQueue({ userId }: { userId: string }) {
       <div className="mt-6 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <Sparkle className="size-5 text-foreground" />
-          <Typography variant="title" as="h1">
+          <Typography
+            variant="title"
+            as="h1"
+            data-testid="approval-queue__title"
+          >
             Approval Queue
           </Typography>
         </div>
-        <span className="text-muted-foreground text-xs uppercase">
+        <span
+          className="text-muted-foreground text-xs uppercase"
+          data-testid="approval-queue__count"
+        >
           {items.length} item{items.length === 1 ? "" : "s"}
         </span>
       </div>
 
       {items.length === 0 ? (
-        <div className="flex flex-1 items-center justify-center">
+        <div
+          className="flex flex-1 items-center justify-center"
+          data-testid="approval-queue__empty-state"
+        >
           <Typography variant="subtitle" className="text-center">
             All caught up. Nothing to review.
           </Typography>
         </div>
       ) : (
-        <div className="mt-8 flex flex-col gap-3">
+        <div
+          className="mt-8 flex flex-col gap-3"
+          data-testid="approval-queue__list"
+        >
           {items.map((row) => {
             const isChecked = selected.has(row.id);
             return (
               <div
                 key={row.id}
                 className="border-border bg-card flex items-center gap-3 rounded-2xl border p-3"
+                data-testid="approval-queue__item"
+                data-entity-id={row.id}
               >
                 <Checkbox
                   checked={isChecked}
                   onCheckedChange={() => toggleSelected(row.id)}
                   aria-label={`Select ${row.item?.name || "item"}`}
+                  data-testid="approval-queue__item-checkbox"
+                  data-entity-id={row.id}
                 />
                 <button
                   type="button"
                   onClick={() => setOpenId(row.id)}
                   className="flex flex-1 items-center gap-3 text-left"
+                  data-testid="approval-queue__item-preview"
+                  data-entity-id={row.id}
                 >
                   <div className="bg-secondary relative size-14 shrink-0 overflow-hidden rounded-xl">
                     {row.item?.image_url && (
@@ -201,6 +225,7 @@ export function ApprovalQueue({ userId }: { userId: string }) {
           className="flex-1"
           disabled={busy || selected.size === 0}
           onClick={handleApprove}
+          data-testid="approval-queue__approve-button"
         >
           {approveMutation.isPending ? "Approving…" : "Approve"}
         </Button>
@@ -210,6 +235,7 @@ export function ApprovalQueue({ userId }: { userId: string }) {
           disabled={busy || selected.size === 0}
           aria-label="Discard selected"
           className="bg-secondary flex size-11 shrink-0 items-center justify-center rounded-xl disabled:opacity-50"
+          data-testid="approval-queue__discard-button"
         >
           <Trash2 className="size-4" />
         </button>

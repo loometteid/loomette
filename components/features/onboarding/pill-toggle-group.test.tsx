@@ -10,22 +10,28 @@ describe("PillToggleGroup component", () => {
     { value: "party", label: "Party" },
   ] as const;
 
-  it("renders all options as buttons", () => {
+  it("renders all options with data-testid and data-entity-id attributes", () => {
     render(
       <PillToggleGroup
         options={options}
         isSelected={(val) => val === "casual"}
         onToggle={() => {}}
+        data-testid="onboarding__style-pills"
       />,
     );
 
-    expect(screen.getByRole("button", { name: "Casual" })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: "Formal" })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: "Party" })).toBeInTheDocument();
+    const group = screen.getByTestId("onboarding__style-pills");
+    expect(group).toBeInTheDocument();
+
+    const pills = screen.getAllByTestId("pill-toggle-group__option");
+    expect(pills).toHaveLength(3);
+    expect(pills[0]).toHaveAttribute("data-entity-id", "casual");
+    expect(pills[1]).toHaveAttribute("data-entity-id", "formal");
+    expect(pills[2]).toHaveAttribute("data-entity-id", "party");
   });
 
   it("applies active styles to selected pill", () => {
-    render(
+    const { container } = render(
       <PillToggleGroup
         options={options}
         isSelected={(val) => val === "formal"}
@@ -33,8 +39,12 @@ describe("PillToggleGroup component", () => {
       />,
     );
 
-    const formalButton = screen.getByRole("button", { name: "Formal" });
-    const casualButton = screen.getByRole("button", { name: "Casual" });
+    const formalButton = container.querySelector(
+      '[data-testid="pill-toggle-group__option"][data-entity-id="formal"]',
+    );
+    const casualButton = container.querySelector(
+      '[data-testid="pill-toggle-group__option"][data-entity-id="casual"]',
+    );
 
     expect(formalButton).toHaveClass("border-foreground", "text-foreground");
     expect(casualButton).toHaveClass("text-muted-foreground");
@@ -44,7 +54,7 @@ describe("PillToggleGroup component", () => {
     const user = userEvent.setup();
     const handleToggle = vi.fn();
 
-    render(
+    const { container } = render(
       <PillToggleGroup
         options={options}
         isSelected={(val) => val === "casual"}
@@ -52,8 +62,11 @@ describe("PillToggleGroup component", () => {
       />,
     );
 
-    const partyButton = screen.getByRole("button", { name: "Party" });
-    await user.click(partyButton);
+    const partyButton = container.querySelector(
+      '[data-testid="pill-toggle-group__option"][data-entity-id="party"]',
+    );
+    expect(partyButton).not.toBeNull();
+    await user.click(partyButton!);
 
     expect(handleToggle).toHaveBeenCalledTimes(1);
     expect(handleToggle).toHaveBeenCalledWith("party");

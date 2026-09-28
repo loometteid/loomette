@@ -17,13 +17,15 @@ describe("ApprovalQueue (Wardrobe Approval Feature)", () => {
 
     expect(screen.getByText("Loading approval queue...")).toBeInTheDocument();
 
-    const heading = await screen.findByRole("heading", {
-      name: "Approval Queue",
-    });
-    expect(heading).toBeInTheDocument();
-    expect(screen.getByText("0 items")).toBeInTheDocument();
+    const mainContainer = await screen.findByTestId("approval-queue");
+    expect(mainContainer).toHaveAttribute("data-entity-id", "user-123");
+
+    expect(screen.getByTestId("approval-queue__title")).toBeInTheDocument();
+    expect(screen.getByTestId("approval-queue__count")).toHaveTextContent(
+      "0 items",
+    );
     expect(
-      screen.getByText("All caught up. Nothing to review."),
+      screen.getByTestId("approval-queue__empty-state"),
     ).toBeInTheDocument();
   });
 
@@ -61,13 +63,21 @@ describe("ApprovalQueue (Wardrobe Approval Feature)", () => {
       </Suspense>,
     );
 
-    await screen.findByRole("heading", { name: "Approval Queue" });
+    await screen.findByTestId("approval-queue__title");
 
-    expect(screen.getByText("1 item")).toBeInTheDocument();
-    expect(screen.getByText("Linen Shirt")).toBeInTheDocument();
-    expect(screen.getByText(/Zara/i)).toBeInTheDocument();
+    expect(screen.getByTestId("approval-queue__count")).toHaveTextContent(
+      "1 item",
+    );
+
+    const items = screen.getAllByTestId("approval-queue__item");
+    expect(items).toHaveLength(1);
+    expect(items[0]).toHaveAttribute("data-entity-id", "pending-1");
+
+    const checkbox = screen.getByTestId("approval-queue__item-checkbox");
+    expect(checkbox).toHaveAttribute("data-entity-id", "pending-1");
+
     expect(
-      screen.getByRole("button", { name: /approve/i }),
+      screen.getByTestId("approval-queue__approve-button"),
     ).toBeInTheDocument();
   });
 });

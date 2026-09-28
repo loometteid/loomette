@@ -9,22 +9,23 @@ import { EditTripForm } from "./edit-trip-form";
 vi.spyOn(toast, "error");
 
 describe("EditTripForm integration", () => {
-  it("renders the empty form in create mode", () => {
+  it("renders the empty form in create mode with data-testid selectors", () => {
     renderWithQueryClient(<EditTripForm userId="user-123" />);
 
+    expect(screen.getByTestId("trip-form")).toBeInTheDocument();
+    expect(screen.getByTestId("trip-form__back-button")).toBeInTheDocument();
     expect(
-      screen.getByRole("button", { name: /go back/i }),
+      screen.getByTestId("trip-form__start-date-input"),
     ).toBeInTheDocument();
-    expect(screen.getByLabelText(/start date/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/end date/i)).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /save/i })).toBeInTheDocument();
+    expect(screen.getByTestId("trip-form__end-date-input")).toBeInTheDocument();
+    expect(screen.getByTestId("trip-form__submit-button")).toBeInTheDocument();
   });
 
   it("navigates back when clicking the back button", async () => {
     const user = userEvent.setup();
     renderWithQueryClient(<EditTripForm userId="user-123" />);
 
-    const backButton = screen.getByRole("button", { name: /go back/i });
+    const backButton = screen.getByTestId("trip-form__back-button");
     await user.click(backButton);
 
     expect(mockRouter.back).toHaveBeenCalledTimes(1);
@@ -34,7 +35,7 @@ describe("EditTripForm integration", () => {
     const user = userEvent.setup();
     renderWithQueryClient(<EditTripForm userId="user-123" />);
 
-    const saveButton = screen.getByRole("button", { name: /save/i });
+    const saveButton = screen.getByTestId("trip-form__submit-button");
     await user.click(saveButton);
 
     await waitFor(() => {
@@ -49,9 +50,9 @@ describe("EditTripForm integration", () => {
     const user = userEvent.setup();
     renderWithQueryClient(<EditTripForm userId="user-123" />);
 
-    const startDateInput = screen.getByLabelText(/start date/i);
-    const endDateInput = screen.getByLabelText(/end date/i);
-    const saveButton = screen.getByRole("button", { name: /save/i });
+    const startDateInput = screen.getByTestId("trip-form__start-date-input");
+    const endDateInput = screen.getByTestId("trip-form__end-date-input");
+    const saveButton = screen.getByTestId("trip-form__submit-button");
 
     // Fill in valid dates
     await user.type(startDateInput, "2026-10-01");

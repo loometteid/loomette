@@ -172,6 +172,7 @@ function TripFormContent({ userId, trip }: { userId: string; trip?: Trip }) {
         className="rounded-xl"
         onClick={() => router.back()}
         aria-label="Go back"
+        data-testid="trip-form__back-button"
       >
         <ChevronLeft className="size-4" />
       </Button>
@@ -179,6 +180,8 @@ function TripFormContent({ userId, trip }: { userId: string; trip?: Trip }) {
       <form
         onSubmit={handleSubmit(onSubmit, onInvalid)}
         className="flex flex-col gap-6"
+        data-testid="trip-form"
+        data-entity-id={trip?.id}
       >
         <div className="flex flex-col items-center gap-3 text-center">
           <div className="relative h-40 w-40">
@@ -200,12 +203,14 @@ function TripFormContent({ userId, trip }: { userId: string; trip?: Trip }) {
               }}
               placeholder="Trip to..."
               className="font-serif text-title border-border w-full border-b bg-transparent text-center outline-none"
+              data-testid="trip-form__name-input"
             />
           ) : (
             <button
               type="button"
               onClick={() => setEditingName(true)}
               className="inline-flex items-center gap-2"
+              data-testid="trip-form__name-display"
             >
               <Typography variant="title" as="h1">
                 {name && name.trim().length > 0 ? name : "Trip to..."}
@@ -223,6 +228,7 @@ function TripFormContent({ userId, trip }: { userId: string; trip?: Trip }) {
                 id="trip-start-date"
                 type="date"
                 aria-invalid={!!errors.startDate}
+                data-testid="trip-form__start-date-input"
                 {...register("startDate")}
               />
             </div>
@@ -232,6 +238,7 @@ function TripFormContent({ userId, trip }: { userId: string; trip?: Trip }) {
                 id="trip-end-date"
                 type="date"
                 aria-invalid={!!errors.endDate}
+                data-testid="trip-form__end-date-input"
                 {...register("endDate")}
               />
             </div>
@@ -249,6 +256,7 @@ function TripFormContent({ userId, trip }: { userId: string; trip?: Trip }) {
                   onToggle={(value) =>
                     field.onChange(value === field.value ? null : value)
                   }
+                  data-testid="trip-form__season-toggle"
                 />
               )}
             />
@@ -266,13 +274,19 @@ function TripFormContent({ userId, trip }: { userId: string; trip?: Trip }) {
                   onToggle={(value) =>
                     field.onChange(value === field.value ? null : value)
                   }
+                  data-testid="trip-form__companion-toggle"
                 />
               )}
             />
           </div>
         </div>
 
-        <Button type="submit" disabled={isPending} className="w-full">
+        <Button
+          type="submit"
+          disabled={isPending}
+          className="w-full"
+          data-testid="trip-form__submit-button"
+        >
           {isPending ? "Saving..." : "Save"}
         </Button>
       </form>

@@ -44,7 +44,11 @@ export function TripDetailView({
   const { trip, days, outfitsByDay } = data;
 
   return (
-    <main className="mx-auto flex w-full max-w-sm flex-1 flex-col gap-6 px-6 py-8">
+    <main
+      className="mx-auto flex w-full max-w-sm flex-1 flex-col gap-6 px-6 py-8"
+      data-testid="trip-detail"
+      data-entity-id={trip.id}
+    >
       <div className="flex items-center justify-between">
         <Button
           type="button"
@@ -53,6 +57,7 @@ export function TripDetailView({
           className="rounded-xl"
           onClick={() => router.back()}
           aria-label="Go back"
+          data-testid="trip-detail__back-button"
         >
           <ChevronLeft className="size-4" />
         </Button>
@@ -62,6 +67,7 @@ export function TripDetailView({
           size="icon"
           className="rounded-xl"
           nativeButton={false}
+          data-testid="trip-detail__edit-button"
           render={
             <Link
               href={`/trip/${trip.id}/edit`}
@@ -83,10 +89,10 @@ export function TripDetailView({
             className="object-contain"
           />
         </div>
-        <Typography variant="title" as="h1">
+        <Typography variant="title" as="h1" data-testid="trip-detail__title">
           {trip.name ?? "Untitled trip"}
         </Typography>
-        <Typography variant="subtitle">
+        <Typography variant="subtitle" data-testid="trip-detail__days-count">
           {days.length} {days.length === 1 ? "Day" : "Days"}
         </Typography>
       </div>
@@ -96,6 +102,8 @@ export function TripDetailView({
           <button
             key={value}
             type="button"
+            data-testid="trip-detail__tab"
+            data-entity-id={value}
             onClick={() =>
               value === "outfit-plan" ? setTab(value) : toast("Coming soon.")
             }
@@ -112,12 +120,17 @@ export function TripDetailView({
       </div>
 
       {tab === "outfit-plan" && (
-        <div className="flex flex-col">
+        <div className="flex flex-col" data-testid="trip-detail__outfit-plan">
           {days.map((day, index) => {
             const outfits = outfitsByDay[day] ?? [];
             const isLast = index === days.length - 1;
             return (
-              <div key={day} className="relative flex gap-4 pb-8">
+              <div
+                key={day}
+                className="relative flex gap-4 pb-8"
+                data-testid="trip-detail__day-item"
+                data-entity-id={day}
+              >
                 {!isLast && (
                   <span
                     aria-hidden
@@ -126,7 +139,11 @@ export function TripDetailView({
                 )}
                 <Sparkle className="text-foreground mt-1 size-5 shrink-0" />
                 <div className="flex flex-1 flex-col gap-4">
-                  <Typography variant="h1" as="h2">
+                  <Typography
+                    variant="h1"
+                    as="h2"
+                    data-testid="trip-detail__day-title"
+                  >
                     Day {index + 1} - {formatDayDate(day)}
                   </Typography>
 
@@ -142,6 +159,7 @@ export function TripDetailView({
                     href={`/mix-and-match?tripId=${trip.id}&day=${day}&returnTo=${encodeURIComponent(`/trip/${trip.id}`)}`}
                     prefetch
                     className="border-border text-foreground self-start rounded-full border px-5 py-2.5 text-xs font-medium tracking-wide uppercase"
+                    data-testid="trip-detail__plan-outfit-button"
                   >
                     Plan Outfit
                   </Link>

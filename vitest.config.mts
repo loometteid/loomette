@@ -12,5 +12,11 @@ export default defineConfig({
     setupFiles: ["./test/setup.ts"],
     include: ["**/*.{test,spec}.{ts,tsx}"],
     exclude: ["node_modules", ".next", "dist"],
+    coverage: {
+      provider: "v8",
+      reporter: ["text", "json", "html"],
+      include: ["components/**", "lib/**", "stores/**"],
+      exclude: ["**/*.test.*", "**/*.spec.*", "**/types/**", "**/types.ts"],
+    },
   },
 });

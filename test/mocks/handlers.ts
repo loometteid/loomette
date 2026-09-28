@@ -34,6 +34,26 @@ export const handlers = [
     return HttpResponse.json([]);
   }),
 
+  // Default mock handler for user table (e.g. gender profile)
+  http.get(`${MOCK_SUPABASE_URL}/rest/v1/user`, ({ request }) => {
+    const acceptHeader = request.headers.get("accept") ?? "";
+    const isSingle = acceptHeader.includes("vnd.pgrst.object+json");
+    const mockUser = {
+      user_id: "user-123",
+      gender: "female",
+    };
+
+    if (isSingle) {
+      return HttpResponse.json(mockUser);
+    }
+    return HttpResponse.json([mockUser]);
+  }),
+
+  // Default mock handler for wardrobe_item table queries
+  http.get(`${MOCK_SUPABASE_URL}/rest/v1/wardrobe_item`, () => {
+    return HttpResponse.json([]);
+  }),
+
   // Default mock handler for creating a trip (insert)
   http.post(`${MOCK_SUPABASE_URL}/rest/v1/trip`, async ({ request }) => {
     const url = new URL(request.url);

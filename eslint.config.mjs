@@ -13,6 +13,7 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    "coverage/**",
   ]),
   // Must be last — disables ESLint style rules that conflict with Prettier.
   prettierConfig,

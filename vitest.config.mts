@@ -12,9 +12,13 @@ export default defineConfig({
     setupFiles: ["./test/setup.ts"],
     include: ["**/*.{test,spec}.{ts,tsx}"],
     exclude: ["node_modules", ".next", "dist"],
+    reporters: process.env.GITHUB_ACTIONS
+      ? ["default", "github-actions"]
+      : ["default"],
     coverage: {
       provider: "v8",
-      reporter: ["text", "json", "html"],
+      reporter: ["text", "json", "html", "json-summary"],
+      reportOnFailure: true,
       include: ["components/**", "lib/**", "stores/**"],
       exclude: ["**/*.test.*", "**/*.spec.*", "**/types/**", "**/types.ts"],
     },

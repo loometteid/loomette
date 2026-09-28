@@ -8,10 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { createBrowserSupabaseClient } from "@/lib/supabase/client";
-import {
-  signInSchema,
-  type SignInFormValues,
-} from "./schemas/sign-in.schema";
+import { signInSchema, type SignInFormValues } from "./schemas/sign-in.schema";
 import { useQueryClient } from "@tanstack/react-query";
 import { getUserQueryOptions } from "../profile/query-options/get-user.query-option";
 
@@ -46,7 +43,7 @@ export function SignInForm() {
       return;
     }
 
-    queryClient.setQueryData(getUserQueryOptions().queryKey, () => data.user)
+    queryClient.setQueryData(getUserQueryOptions().queryKey, () => data.user);
     router.refresh();
     router.push("/onboarding/1");
   }
@@ -55,22 +52,14 @@ export function SignInForm() {
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-3">
       <div className="flex flex-col gap-1.5">
         <Label htmlFor="signin-email">Email</Label>
-        <Input
-          id="signin-email"
-          type="email"
-          {...register("email")}
-        />
+        <Input id="signin-email" type="email" {...register("email")} />
         {errors.email && (
           <p className="text-destructive text-xs">{errors.email.message}</p>
         )}
       </div>
       <div className="flex flex-col gap-1.5">
         <Label htmlFor="signin-password">Password</Label>
-        <Input
-          id="signin-password"
-          type="password"
-          {...register("password")}
-        />
+        <Input id="signin-password" type="password" {...register("password")} />
         {errors.password && (
           <p className="text-destructive text-xs">{errors.password.message}</p>
         )}

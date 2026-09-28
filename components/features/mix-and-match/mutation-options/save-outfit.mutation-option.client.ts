@@ -52,6 +52,8 @@ export const saveOutfitMutationOptions = () =>
       }
 
       if (tripId && tripDay) {
+        // NOTE: sequential insert is non-atomic; if wear_log insert fails, the outfit row
+        // is created but unlinked to the trip. Consider a transactional DB RPC function in the future.
         const { error: wearLogError } = await supabase.from("wear_log").insert({
           user_id: userId,
           outfit_id: outfitRow.id,

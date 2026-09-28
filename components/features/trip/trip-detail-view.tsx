@@ -57,6 +57,7 @@ export function TripDetailView({
           <ChevronLeft className="size-4" />
         </Button>
         <Button
+          type="button"
           variant="secondary"
           size="icon"
           className="rounded-xl"

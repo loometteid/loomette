@@ -1,4 +1,4 @@
-import { EditProfileFallback } from "@/components/features/profile/edit-profile-fallback";
+import { EditProfileFallback } from "@/domains/profile/edit-profile-loading";
 
 export default function EditProfileLoading() {
   return <EditProfileFallback />;

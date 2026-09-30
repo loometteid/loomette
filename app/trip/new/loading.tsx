@@ -1,4 +1,4 @@
-import { EditTripFallback } from "@/components/features/trip/edit-trip-fallback";
+import { EditTripFallback } from "@/domains/trip/edit-trip-loading";
 
 export default function NewTripLoading() {
   return <EditTripFallback />;

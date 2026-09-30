@@ -1,12 +1,12 @@
 import { Suspense } from "react";
 import { redirect } from "next/navigation";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
-import { MixAndMatchResult } from "@/components/features/mix-and-match/result-view";
-import { MixAndMatchResultFallback } from "@/components/features/mix-and-match/mix-and-match-result-fallback";
+import { MixAndMatchResult } from "@/domains/mix-and-match/mix-and-match-result-page";
+import { MixAndMatchResultFallback } from "@/domains/mix-and-match/mix-and-match-result-loading";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { getServerQueryClient } from "@/lib/tanstack-query/server";
-import { getUserQueryOptions } from "@/components/features/profile/query-options/get-user.query-option";
-import { getOutfitResultQueryOptionsForServer } from "@/components/features/mix-and-match/query-options/get-outfit-result.query-option.server";
+import { getUserQueryOptions } from "@/domains/profile/query-options/get-user.query-option";
+import { getOutfitResultQueryOptionsForServer } from "@/domains/mix-and-match/query-options/get-outfit-result.query-option.server";
 
 export default async function MixAndMatchResultPage({
   params,

@@ -1,12 +1,12 @@
 import { Suspense } from "react";
 import { redirect } from "next/navigation";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
-import { TripDetailView } from "@/components/features/trip/trip-detail-view";
-import { TripDetailFallback } from "@/components/features/trip/trip-detail-fallback";
+import { TripDetailView } from "@/domains/trip/trip-detail-page";
+import { TripDetailFallback } from "@/domains/trip/trip-detail-loading";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { getServerQueryClient } from "@/lib/tanstack-query/server";
-import { getUserQueryOptions } from "@/components/features/profile/query-options/get-user.query-option";
-import { getTripDetailQueryOptionsForServer } from "@/components/features/trip/query-options/get-trip-detail.query-option.server";
+import { getUserQueryOptions } from "@/domains/profile/query-options/get-user.query-option";
+import { getTripDetailQueryOptionsForServer } from "@/domains/trip/query-options/get-trip-detail.query-option.server";
 
 export default async function TripPage({
   params,

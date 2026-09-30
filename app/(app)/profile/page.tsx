@@ -1,15 +1,15 @@
 import { Suspense } from "react";
 import { redirect } from "next/navigation";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
-import { ProfileView } from "@/components/features/profile/profile-view";
+import { ProfileView } from "@/domains/profile/profile-page";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
-import { ProfileFallback } from "@/components/features/profile/profile-fallback";
+import { ProfileFallback } from "@/domains/profile/profile-loading";
 import { getServerQueryClient } from "@/lib/tanstack-query/server";
-import { getUserQueryOptions } from "@/components/features/profile/query-options/get-user.query-option";
-import { getProfileQueryOptionsForServer } from "@/components/features/profile/query-options/get-profile.query-option.server";
-import { getFavoriteOutfitsQueryOptionsForServer } from "@/components/features/profile/query-options/get-favorite-outfits.query-option.server";
-import { getWishlistQueryOptionsForServer } from "@/components/features/profile/query-options/get-wishlist.query-option.server";
-import { getTripsQueryOptionsForServer } from "@/components/features/profile/query-options/get-trips.query-option.server";
+import { getUserQueryOptions } from "@/domains/profile/query-options/get-user.query-option";
+import { getProfileQueryOptionsForServer } from "@/domains/profile/query-options/get-profile.query-option.server";
+import { getFavoriteOutfitsQueryOptionsForServer } from "@/domains/profile/query-options/get-favorite-outfits.query-option.server";
+import { getWishlistQueryOptionsForServer } from "@/domains/profile/query-options/get-wishlist.query-option.server";
+import { getTripsQueryOptionsForServer } from "@/domains/profile/query-options/get-trips.query-option.server";
 
 export default async function ProfilePage() {
   const supabase = await createServerSupabaseClient();

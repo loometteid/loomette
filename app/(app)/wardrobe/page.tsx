@@ -1,14 +1,14 @@
 import { Suspense } from "react";
 import { redirect } from "next/navigation";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
-import { WardrobeView } from "@/components/features/wardrobe/wardrobe-view";
+import { WardrobeView } from "@/domains/wardrobe/wardrobe-page";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
-import { WardrobeFallback } from "@/components/features/wardrobe/wardrobe-fallback";
+import { WardrobeFallback } from "@/domains/wardrobe/wardrobe-loading";
 import { getServerQueryClient } from "@/lib/tanstack-query/server";
-import { getUserQueryOptions } from "@/components/features/profile/query-options/get-user.query-option";
-import { getWardrobeItemsQueryOptionsForServer } from "@/components/features/wardrobe/query-options/get-wardrobe-items.query-option.server";
-import { getPendingWardrobeCountQueryOptionsForServer } from "@/components/features/wardrobe/query-options/get-pending-count.query-option.server";
-import { getUserGenderQueryOptionsForServer } from "@/components/features/wardrobe/query-options/get-user-gender.query-option.server";
+import { getUserQueryOptions } from "@/domains/profile/query-options/get-user.query-option";
+import { getWardrobeItemsQueryOptionsForServer } from "@/domains/wardrobe/query-options/get-wardrobe-items.query-option.server";
+import { getPendingWardrobeCountQueryOptionsForServer } from "@/domains/wardrobe/query-options/get-pending-count.query-option.server";
+import { getUserGenderQueryOptionsForServer } from "@/domains/wardrobe/query-options/get-user-gender.query-option.server";
 
 export default async function WardrobePage() {
   const supabase = await createServerSupabaseClient();

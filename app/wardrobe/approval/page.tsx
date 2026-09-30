@@ -1,13 +1,13 @@
 import { Suspense } from "react";
 import { redirect } from "next/navigation";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
-import { ApprovalQueue } from "@/components/features/wardrobe/approval-queue";
-import { ApprovalFallback } from "@/components/features/wardrobe/approval-fallback";
+import { ApprovalQueue } from "@/domains/wardrobe/wardrobe-approval-page";
+import { ApprovalFallback } from "@/domains/wardrobe/wardrobe-approval-loading";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { getServerQueryClient } from "@/lib/tanstack-query/server";
-import { getUserQueryOptions } from "@/components/features/profile/query-options/get-user.query-option";
-import { getPendingWardrobeItemsQueryOptionsForServer } from "@/components/features/wardrobe/query-options/get-pending-items.query-option.server";
-import { getUserGenderQueryOptionsForServer } from "@/components/features/wardrobe/query-options/get-user-gender.query-option.server";
+import { getUserQueryOptions } from "@/domains/profile/query-options/get-user.query-option";
+import { getPendingWardrobeItemsQueryOptionsForServer } from "@/domains/wardrobe/query-options/get-pending-items.query-option.server";
+import { getUserGenderQueryOptionsForServer } from "@/domains/wardrobe/query-options/get-user-gender.query-option.server";
 
 export default async function ApprovalPage() {
   const supabase = await createServerSupabaseClient();

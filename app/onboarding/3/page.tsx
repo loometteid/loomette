@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
-import { StepThreeForm } from "@/components/features/onboarding/step-three-form";
+import { StepThreeForm } from "@/domains/onboarding/step-three-page";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 export default async function OnboardingStepThreePage() {

@@ -1,7 +1,7 @@
 import { create } from "zustand";
 
 // Carries an in-progress outfit-diary upload across the Calendar ->
-// loading -> approval -> Calendar route sequence (components/features/
+// loading -> approval -> Calendar route sequence (domains/
 // calendar/*). Each stage is a separate route/page component, so this
 // can't just be React state -- see stores/README.md, this is exactly
 // the "draft state that must survive navigation" case it describes.

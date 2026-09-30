@@ -1,9 +1,9 @@
 import { redirect } from "next/navigation";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
-import { OutfitLoading } from "@/components/features/calendar/outfit-loading";
+import { OutfitLoading } from "@/domains/calendar/outfit-approval-loading";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { getServerQueryClient } from "@/lib/tanstack-query/server";
-import { getUserQueryOptions } from "@/components/features/profile/query-options/get-user.query-option";
+import { getUserQueryOptions } from "@/domains/profile/query-options/get-user.query-option";
 
 export default async function CalendarLoadingPage() {
   const supabase = await createServerSupabaseClient();

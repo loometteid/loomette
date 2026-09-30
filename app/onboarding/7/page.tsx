@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
-import { AddInitialItem } from "@/components/features/onboarding/add-initial-item";
+import { AddInitialItem } from "@/domains/onboarding/step-seven-page";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 export default async function OnboardingStepSevenPage() {

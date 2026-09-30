@@ -1,14 +1,14 @@
 import { Suspense } from "react";
 import { redirect } from "next/navigation";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
-import { HomeView } from "@/components/features/home/home-view";
-import { HomeFallback } from "@/components/features/home/home-fallback";
+import { HomeView } from "@/domains/home/home-page";
+import { HomeFallback } from "@/domains/home/home-loading";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { getServerQueryClient } from "@/lib/tanstack-query/server";
-import { getUserQueryOptions } from "@/components/features/profile/query-options/get-user.query-option";
-import { getProfileQueryOptionsForServer } from "@/components/features/profile/query-options/get-profile.query-option.server";
-import { getWardrobeItemsQueryOptionsForServer } from "@/components/features/wardrobe/query-options/get-wardrobe-items.query-option.server";
-import { getLooksCountQueryOptionsForServer } from "@/components/features/home/query-options/get-looks-count.query-option.server";
+import { getUserQueryOptions } from "@/domains/profile/query-options/get-user.query-option";
+import { getProfileQueryOptionsForServer } from "@/domains/profile/query-options/get-profile.query-option.server";
+import { getWardrobeItemsQueryOptionsForServer } from "@/domains/wardrobe/query-options/get-wardrobe-items.query-option.server";
+import { getLooksCountQueryOptionsForServer } from "@/domains/home/query-options/get-looks-count.query-option.server";
 
 export default async function HomePage() {
   const supabase = await createServerSupabaseClient();

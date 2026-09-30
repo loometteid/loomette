@@ -1,9 +1,9 @@
 import { redirect } from "next/navigation";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
-import { OutfitApproval } from "@/components/features/calendar/outfit-approval";
+import { OutfitApproval } from "@/domains/calendar/outfit-approval-page";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { getServerQueryClient } from "@/lib/tanstack-query/server";
-import { getUserQueryOptions } from "@/components/features/profile/query-options/get-user.query-option";
+import { getUserQueryOptions } from "@/domains/profile/query-options/get-user.query-option";
 
 export default async function OutfitApprovalPage() {
   const supabase = await createServerSupabaseClient();

@@ -1,12 +1,12 @@
 import { Suspense } from "react";
 import { redirect } from "next/navigation";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
-import { MixAndMatchCanvas } from "@/components/features/mix-and-match/canvas";
-import { MixAndMatchFallback } from "@/components/features/mix-and-match/mix-and-match-fallback";
+import { MixAndMatchCanvas } from "@/domains/mix-and-match/mix-and-match-page";
+import { MixAndMatchFallback } from "@/domains/mix-and-match/mix-and-match-loading";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { getServerQueryClient } from "@/lib/tanstack-query/server";
-import { getUserQueryOptions } from "@/components/features/profile/query-options/get-user.query-option";
-import { getMixAndMatchOptionsQueryOptionsForServer } from "@/components/features/mix-and-match/query-options/get-mix-and-match-options.query-option.server";
+import { getUserQueryOptions } from "@/domains/profile/query-options/get-user.query-option";
+import { getMixAndMatchOptionsQueryOptionsForServer } from "@/domains/mix-and-match/query-options/get-mix-and-match-options.query-option.server";
 
 export default async function MixAndMatchPage() {
   const supabase = await createServerSupabaseClient();

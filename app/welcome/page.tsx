@@ -4,93 +4,127 @@ import { Mail } from "lucide-react";
 import { GoogleSignInButton } from "@/domains/auth/components/google-sign-in-button";
 import { Button } from "@/components/ui/button";
 import { Sparkle } from "@/components/ui/sparkle";
-import { Typography } from "@/components/ui/typography";
 
 export default function WelcomePage() {
   return (
-    <main className="flex flex-1 flex-col overflow-x-clip">
-      {/* Hero — sky.png already has its organic blob shape and the
-          silver corner asterisk baked in. Only the headline is
-          overlaid here; the two extra black asterisks below are the
-          same public/brand/asterisk-black.png used on the Landing
-          Page, not new art. */}
-      <div className="relative w-full">
-        <Image
-          src="/brand/sky.png"
-          alt=""
-          width={402}
-          height={511}
-          priority
-          className="h-auto w-full"
-        />
+    <main className="flex flex-1 flex-col items-center justify-center bg-background min-h-screen">
+      <div className="w-full max-w-[1440px] min-h-screen lg:h-[1024px] flex flex-col lg:flex-row overflow-hidden shadow-sm">
+        {/* Left Visual Panel (width ~825px on 1440px) */}
+        <section
+          aria-label="Welcome Visual"
+          className="relative w-full lg:w-[57.3%] min-h-[460px] lg:min-h-full overflow-hidden bg-slate flex flex-col justify-between p-8 sm:p-12 lg:p-20 text-white"
+        >
+          {/* Cloud sky background */}
+          <Image
+            src="/brand/sky.png"
+            alt=""
+            fill
+            priority
+            sizes="(max-width: 1024px) 100vw, 58vw"
+            className="pointer-events-none object-cover object-center"
+          />
 
-        <div className="absolute top-[44%] right-0 left-0 flex flex-col gap-3 px-6">
-          <Typography variant="mega-title" className="text-white">
-            Your <em className="font-bold underline">wardrobe</em>.
-            <br />
-            Finally, <em className="font-bold">organized</em>.
-          </Typography>
-          <Typography variant="subtitle" className="text-white/90">
-            Addresses the pain, promises the fix.
-          </Typography>
-        </div>
+          {/* Top-right silver asterisk ornament */}
+          <Image
+            src="/brand/asterisk-silver.png"
+            alt=""
+            width={205}
+            height={309}
+            className="pointer-events-none absolute top-6 right-6 lg:top-12 lg:right-12 w-28 sm:w-40 lg:w-[220px] h-auto drop-shadow-md z-10"
+          />
 
-        <Image
-          src="/brand/asterisk-black.png"
-          alt=""
-          width={218}
-          height={270}
-          className="pointer-events-none absolute bottom-6 left-0 w-14 -translate-x-1/3"
-        />
-        <Image
-          src="/brand/asterisk-black.png"
-          alt=""
-          width={218}
-          height={270}
-          className="pointer-events-none absolute -bottom-14 right-8 w-24"
-        />
-      </div>
+          {/* Bottom-left black asterisk ornament */}
+          <Image
+            src="/brand/asterisk-black.png"
+            alt=""
+            width={218}
+            height={270}
+            className="pointer-events-none absolute -bottom-6 -left-6 lg:bottom-4 lg:left-6 w-36 sm:w-48 lg:w-[260px] h-auto drop-shadow-md z-10"
+          />
 
-      <div className="flex flex-col items-center gap-6 px-6 pt-20 pb-12 text-center">
-        <div className="flex flex-col items-center gap-1">
-          <Sparkle className="size-5 text-foreground" />
-          <Typography variant="title">
-            <em className="font-bold italic">Register</em> or
-            <br />
-            <em className="font-bold italic">Sign in</em> now
-          </Typography>
-        </div>
+          {/* Headline in top-left */}
+          <div className="relative z-20 max-w-lg pt-4 lg:pt-8">
+            <h1 className="font-serif text-3xl sm:text-5xl lg:text-[60px] font-bold leading-[1.08] tracking-tight text-white">
+              Your{" "}
+              <span className="underline decoration-white/80 underline-offset-8">
+                wardrobe
+              </span>
+              .
+              <br />
+              Finally, <span className="font-bold">organized</span>.
+            </h1>
+            <p className="mt-4 text-white/90 text-sm sm:text-base lg:text-xl font-normal tracking-wide">
+              Addresses the pain, promises the fix.
+            </p>
+          </div>
+        </section>
 
-        <Typography variant="subtitle" className="max-w-xs">
-          By registering you agree to our{" "}
-          <Link href="/privacy" prefetch className="underline">
-            Privacy &amp; Policy
-          </Link>
-          .
-        </Typography>
+        {/* Right Authentication Panel (width ~615px on 1440px) */}
+        <section
+          aria-label="Sign in or Register"
+          className="w-full lg:w-[42.7%] flex flex-col justify-center px-8 sm:px-14 lg:px-20 py-12 lg:py-0 bg-background z-20"
+        >
+          <div className="w-full max-w-md mx-auto lg:mx-0 flex flex-col items-center lg:items-start text-center lg:text-left gap-7">
+            {/* Title with Sparkle star icon */}
+            <div className="flex items-center gap-4 lg:gap-5">
+              <Sparkle className="size-12 lg:size-16 text-slate shrink-0" />
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-[42px] font-normal leading-[1.12] text-slate">
+                <em className="font-bold italic">Register</em> or
+                <br />
+                <em className="font-bold italic">Sign in</em> now
+              </h2>
+            </div>
 
-        {/* Founder scope: "login only can email and gmail" — Facebook
-            and X dropped entirely, Google kept as real OAuth, email
-            added as a founder-directed deviation (no email icon
-            exists in the Figma reference). */}
-        <div className="flex items-center gap-4">
-          <GoogleSignInButton iconOnly />
-          <Button
-            variant="outline"
-            size="icon-lg"
-            className="size-16 rounded-2xl"
-            nativeButton={false}
-            render={
+            {/* Privacy policy agreement notice */}
+            <p className="text-slate text-sm sm:text-base leading-relaxed max-w-sm">
+              By registering you agree to our{" "}
               <Link
-                href="/sign-up"
+                href="/privacy"
                 prefetch
-                aria-label="Continue with email"
+                className="underline underline-offset-4 font-medium text-slate hover:text-black"
+              >
+                Privacy &amp; Policy
+              </Link>
+              .
+            </p>
+
+            {/* Social / Email login buttons (80x80px / rounded-2xl) */}
+            <div className="flex items-center gap-5 pt-2">
+              <GoogleSignInButton
+                iconOnly
+                className="size-20 rounded-2xl border-stone/50 hover:border-slate/60 hover:bg-stone/10 transition-colors shadow-xs"
+                iconClassName="size-8"
               />
-            }
-          >
-            <Mail className="size-6" />
-          </Button>
-        </div>
+              <Button
+                variant="outline"
+                size="icon-lg"
+                className="size-20 rounded-2xl border-stone/50 hover:border-slate/60 hover:bg-stone/10 transition-colors shadow-xs"
+                nativeButton={false}
+                render={
+                  <Link
+                    href="/sign-up"
+                    prefetch
+                    aria-label="Continue with email"
+                  />
+                }
+              >
+                <Mail className="size-8 text-slate" />
+              </Button>
+            </div>
+
+            {/* Direct helper links */}
+            <div className="text-xs text-muted-foreground pt-4 flex items-center gap-4">
+              <span>Already registered?</span>
+              <Link
+                href="/sign-in"
+                prefetch
+                className="font-bold underline text-slate hover:text-black"
+              >
+                Sign in directly
+              </Link>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
   );

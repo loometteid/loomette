@@ -11,16 +11,19 @@ This skill provides rules, patterns, and boilerplate for implementing data fetch
 
 ## 1. Strict Server/Browser Query Split
 
-Every query option **MUST** be split into two separate files under `components/features/<feature>/query-options/`:
+Every query option **MUST** be split into two separate files under `domains/<domain>/query-options/`:
+
 1. `*.query-option.client.ts`: Uses `createBrowserSupabaseClient()` from `@/lib/supabase/client`.
 2. `*.query-option.server.ts`: Uses `createServerSupabaseClient()` from `@/lib/supabase/server`.
 
 ### Rules
+
 - **Query Keys**: Always suffix query keys with `as const` (e.g., `["feature", "items", userId] as const`).
 - **Stale Time**: Default to 5 minutes (`staleTime: 1000 * 60 * 5`).
 - Keys must match identically between `.client.ts` and `.server.ts`.
 
 ### Client Example (`get-items.query-option.client.ts`)
+
 ```ts
 import { queryOptions } from "@tanstack/react-query";
 import { createBrowserSupabaseClient } from "@/lib/supabase/client";
@@ -39,11 +42,14 @@ export const getItemsQueryOptionsForBrowser = (userId: string) =>
 
       if (error) {
         const logger = getLogger(["query", "feature"]);
-        logger.error("Error fetching items in getItemsQueryOptionsForBrowser: {errorMessage}", {
-          errorMessage: error.message,
-          error,
-          userId,
-        });
+        logger.error(
+          "Error fetching items in getItemsQueryOptionsForBrowser: {errorMessage}",
+          {
+            errorMessage: error.message,
+            error,
+            userId,
+          },
+        );
         return [];
       }
       return data ?? [];
@@ -53,6 +59,7 @@ export const getItemsQueryOptionsForBrowser = (userId: string) =>
 ```
 
 ### Server Example (`get-items.query-option.server.ts`)
+
 ```ts
 import { queryOptions } from "@tanstack/react-query";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
@@ -71,11 +78,14 @@ export const getItemsQueryOptionsForServer = (userId: string) =>
 
       if (error) {
         const logger = getLogger(["query", "feature"]);
-        logger.error("Error fetching items in getItemsQueryOptionsForServer: {errorMessage}", {
-          errorMessage: error.message,
-          error,
-          userId,
-        });
+        logger.error(
+          "Error fetching items in getItemsQueryOptionsForServer: {errorMessage}",
+          {
+            errorMessage: error.message,
+            error,
+            userId,
+          },
+        );
         return [];
       }
       return data ?? [];
@@ -99,12 +109,12 @@ Every data-driven page (`app/(app)/<feature>/page.tsx`) must implement all four 
 import { Suspense } from "react";
 import { redirect } from "next/navigation";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
-import { FeatureView } from "@/components/features/<feature>/feature-view";
-import { FeatureFallback } from "@/components/features/<feature>/feature-fallback";
+import { FeaturePageContent } from "@/domains/<domain>/<domain>-page";
+import { FeatureLoading } from "@/domains/<domain>/<domain>-loading";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { getServerQueryClient } from "@/lib/tanstack-query/server";
-import { getUserQueryOptions } from "@/components/features/profile/query-options/get-user.query-option";
-import { getItemsQueryOptionsForServer } from "@/components/features/<feature>/query-options/get-items.query-option.server";
+import { getUserQueryOptions } from "@/domains/profile/query-options/get-user.query-option";
+import { getItemsQueryOptionsForServer } from "@/domains/<domain>/query-options/get-items.query-option.server";
 
 export default async function FeaturePage() {
   // 1. Session check
@@ -170,7 +180,7 @@ import { getItemsQueryOptionsForBrowser } from "./query-options/get-items.query-
 
 export function FeatureView({ userId }: { userId: string }) {
   const { data: items } = useSuspenseQuery(
-    getItemsQueryOptionsForBrowser(userId)
+    getItemsQueryOptionsForBrowser(userId),
   );
 
   return (
@@ -187,12 +197,12 @@ export function FeatureView({ userId }: { userId: string }) {
 
 ## 5. Mutation & Cache Invalidation Pattern (Option A)
 
-- Define mutations under `components/features/<feature>/mutation-options/`.
+- Define mutations under `domains/<domain>/mutation-options/`.
 - Invalidation logic **lives directly in the mutation hook definition or caller** (`onSuccess`).
 - Target explicit query keys using existing query option instances.
 
 ```ts
-// components/features/<feature>/mutation-options/update-item.mutation-option.client.ts
+// domains/<domain>/mutation-options/update-item.mutation-option.client.ts
 import { mutationOptions } from "@tanstack/react-query";
 import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 
@@ -211,6 +221,7 @@ export const updateItemMutationOptions = () =>
 ```
 
 ### Invalidation in Component
+
 ```tsx
 const queryClient = useQueryClient();
 

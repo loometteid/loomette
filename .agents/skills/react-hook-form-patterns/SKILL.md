@@ -11,23 +11,26 @@ This skill defines the architectural rules, directory conventions, and implement
 
 ## 1. Schema Organization (`schemas/*.schema.ts`)
 
-Every form schema **MUST** be placed in a dedicated `schemas/` folder within its corresponding feature directory:
+Every form schema **MUST** be placed in a dedicated `schemas/` folder within its corresponding domain directory:
 
 ```
-components/features/<feature>/
+domains/<domain>/
 ├── schemas/
 │   └── <name>.schema.ts      <-- Zod schema and inferred type
-├── <feature>-form.tsx        <-- Form component
+├── components/
+│   └── <name>-form.tsx       <-- Form component
 └── ...
 ```
 
 ### Rules
+
 - **Naming**: File name must follow `<name>.schema.ts` (e.g., `edit-profile.schema.ts`, `wardrobe-item.schema.ts`).
 - **Exporting**: Always export both the Zod schema and the inferred TypeScript type (`z.infer<typeof schema>`).
 - **Zod 4 Syntax**: Use `{ message: "..." }` for error messages (do not use legacy `{ errorMap: ... }`).
 - **Optional vs Nullable**: Explicitly declare `.nullable()` and `.optional()` to match database types (e.g., Supabase columns).
 
-### Example (`components/features/trip/schemas/edit-trip.schema.ts`)
+### Example (`domains/trip/schemas/edit-trip.schema.ts`)
+
 ```ts
 import { z } from "zod";
 import type { Season, TravelCompanion } from "@/lib/tripOptions";
@@ -41,7 +44,8 @@ export const editTripSchema = z
     companion: z.custom<TravelCompanion>().nullable().optional(),
   })
   .refine(
-    (data) => !data.startDate || !data.endDate || data.endDate >= data.startDate,
+    (data) =>
+      !data.startDate || !data.endDate || data.endDate >= data.startDate,
     {
       message: "End date can't be before the start date.",
       path: ["endDate"],
@@ -58,11 +62,13 @@ export type EditTripFormValues = z.infer<typeof editTripSchema>;
 Always provide explicit `defaultValues` matching every key in the Zod schema shape.
 
 ### Rules
+
 - **No Missing Keys**: Every registered or controlled field must have a defined default value (e.g. `""`, `null`, `[]`, or a preset).
 - **Initial Data**: When prefilling data from props or `useSuspenseQuery`, pass data directly into `defaultValues`. Because queries resolve before component render under Suspense, `defaultValues` will be reliably populated.
 - **Type Safety**: Pass the inferred schema type to `useForm<FormValues>({ resolver: zodResolver(schema), defaultValues: { ... } })`.
 
 ### Example
+
 ```tsx
 const {
   register,
@@ -86,17 +92,15 @@ const {
 ## 3. Field Wiring: Uncontrolled vs Controlled
 
 ### Native / Text Inputs: `register`
+
 Use `register("fieldName")` directly on native inputs (`<input>`, `<textarea>`) and custom input components that forward ref and accept HTML input props (like `@/components/ui/input`).
 
 ```tsx
-<Input
-  id="trip-start"
-  type="date"
-  {...register("startDate")}
-/>
+<Input id="trip-start" type="date" {...register("startDate")} />
 ```
 
 ### Custom UI Components: `Controller`
+
 Use `Controller` from `react-hook-form` for custom UI controls, toggle pill groups (`PillToggleGroup`), custom dropdowns (`Select`), and segmented buttons:
 
 ```tsx
@@ -107,9 +111,7 @@ Use `Controller` from `react-hook-form` for custom UI controls, toggle pill grou
     <PillToggleGroup
       options={SEASON_OPTIONS}
       isSelected={(value) => value === field.value}
-      onToggle={(value) =>
-        field.onChange(value === field.value ? null : value)
-      }
+      onToggle={(value) => field.onChange(value === field.value ? null : value)}
     />
   )}
 />
@@ -121,10 +123,11 @@ Use `Controller` from `react-hook-form` for custom UI controls, toggle pill grou
 
 > [!CAUTION]
 > **NEVER use `watch(...)` destructured from `useForm()`.**
-> 
+>
 > Destructuring and invoking `const value = watch("fieldName")` at the component level causes top-level re-renders and triggers React Compiler de-optimization warnings (`Compilation Skipped: Use of incompatible library - react-hooks/incompatible-library`).
 
 ### Rule
+
 Always import and use `useWatch({ control, name: "fieldName" })` when you need to read form state reactively (for disabling submit buttons, showing dynamic titles, or rendering conditional inputs):
 
 ```tsx
@@ -147,21 +150,20 @@ Field validation errors must be rendered inline directly below the associated in
 
 ```tsx
 <div className="flex flex-col gap-1.5">
-  <Label htmlFor="trip-start" className="text-muted-foreground text-xs uppercase">
+  <Label
+    htmlFor="trip-start"
+    className="text-muted-foreground text-xs uppercase"
+  >
     Start Date
   </Label>
-  <Input
-    id="trip-start"
-    type="date"
-    {...register("startDate")}
-  />
+  <Input id="trip-start" type="date" {...register("startDate")} />
   {errors.startDate && (
     <p className="text-destructive text-xs">{errors.startDate.message}</p>
   )}
 </div>
 ```
 
-*Note: General network, API, or Supabase mutation errors belong to the mutation error handling layer (e.g. `toast.error(...)` inside `useMutation({ onError })`), not inline form validation.*
+_Note: General network, API, or Supabase mutation errors belong to the mutation error handling layer (e.g. `toast.error(...)` inside `useMutation({ onError })`), not inline form validation._
 
 ---
 
@@ -172,10 +174,7 @@ Follow these strict synchronization rules when wiring forms to `@tanstack/react-
 1. **Direct Mutation Trigger**: Call `mutation.mutate(values)` inside `onSubmit(values)`.
 2. **Submit Button State**: Combine both `mutation.isPending` and `formState.isSubmitting`:
    ```tsx
-   <Button
-     type="submit"
-     disabled={mutation.isPending || isSubmitting}
-   >
+   <Button type="submit" disabled={mutation.isPending || isSubmitting}>
      {mutation.isPending ? "Saving…" : "Save"}
    </Button>
    ```
@@ -202,7 +201,11 @@ import {
 } from "./schemas/example.schema";
 import { updateExampleMutationOptions } from "./mutation-options/update-example.mutation-option.client";
 
-export function ExampleForm({ initialData }: { initialData?: ExampleFormValues }) {
+export function ExampleForm({
+  initialData,
+}: {
+  initialData?: ExampleFormValues;
+}) {
   const {
     register,
     handleSubmit,
@@ -221,7 +224,9 @@ export function ExampleForm({ initialData }: { initialData?: ExampleFormValues }
   const mutation = useMutation({
     ...updateExampleMutationOptions(),
     onSuccess: (_data, _variables, _onMutateResult, context) => {
-      void context.client.invalidateQueries({ queryKey: exampleQueryOptions().queryKey });
+      void context.client.invalidateQueries({
+        queryKey: exampleQueryOptions().queryKey,
+      });
     },
   });
 
@@ -250,7 +255,9 @@ export function ExampleForm({ initialData }: { initialData?: ExampleFormValues }
             <PillToggleGroup
               options={[{ value: "a", label: "Option A" }]}
               isSelected={(val) => val === field.value}
-              onToggle={(val) => field.onChange(val === field.value ? null : val)}
+              onToggle={(val) =>
+                field.onChange(val === field.value ? null : val)
+              }
             />
           )}
         />
@@ -276,7 +283,8 @@ export function ExampleForm({ initialData }: { initialData?: ExampleFormValues }
 ## 8. Audit Checklist
 
 When building or reviewing forms, verify:
-- [ ] Schema is in a dedicated `components/features/<feature>/schemas/<name>.schema.ts` file.
+
+- [ ] Schema is in a dedicated `domains/<domain>/schemas/<name>.schema.ts` file.
 - [ ] Schema and inferred type `z.infer<typeof schema>` are exported.
 - [ ] `useForm` has explicit `defaultValues` for every field in the schema.
 - [ ] Native inputs use `register(...)`.

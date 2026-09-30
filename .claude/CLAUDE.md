@@ -14,12 +14,11 @@ the team/stack summary and docs/adr/ for architecture history.
 - React 19.2.4, TypeScript ^5 (strict)
 - Tailwind CSS ^4, shadcn/ui — style `base-nova`, built on **Base UI,
   not Radix** (non-default; matters when adding new shadcn components)
-- Zustand ^5 (client state), TanStack Query ^5 (server state — see
-  `app/providers.tsx`)
+- Zustand ^5 (client state), TanStack Query ^5 (server state)
 - react-hook-form + @hookform/resolvers + zod ^4 (forms/validation)
 - Supabase (`@supabase/ssr` + `@supabase/supabase-js`) — DB, Auth, Storage
-- Vitest ^5 + @testing-library/react ^16 + happy-dom (unit & component tests)
-- MSW ^2 (`msw/node`) for Supabase and TanStack Query integration testing
+- Vitest ^5 + @testing-library/react ^16 + happy-dom (unit & component tests — ADR 0002)
+- MSW ^2 (`msw/node`) for Supabase and TanStack Query integration testing (ADR 0003)
 - @vitest/coverage-v8 for coverage reporting
 - Gemini (future) — never called directly from the app; `lib/gemini.ts`
   only invokes a Supabase Edge Function (does not exist yet)
@@ -30,50 +29,50 @@ the team/stack summary and docs/adr/ for architecture history.
 
 ```
 app/                 routes only (App Router)
-├── auth/
-│   ├── callback/      OAuth PKCE code exchange
-│   └── confirm/        email OTP verification
-└── auth-test/           minimal test surface for auth (no real UI)
+domains/             business domains (flat layout, max 2 levels deep — see ADR 0005)
+├── <domain>/
+│   ├── models/        Zod domain entity schemas & branded types
+│   ├── dto/           Zod request & response DTOs
+│   ├── query-options/ client & server split (*.query-option.client.ts / *.server.ts)
+│   ├── mutation-options/ TanStack Query mutations (*.mutation-option.client.ts)
+│   ├── schemas/       React Hook Form validation schemas (*.schema.ts)
+│   ├── components/    internal widgets, forms, dialogs, cards
+│   ├── hooks/         domain-level custom hooks (flat)
+│   ├── *-page.tsx     route client body (for app/**/page.tsx)
+│   ├── *-loading.tsx  streaming skeleton (for app/**/loading.tsx)
+│   └── *-error.tsx    error boundary fallback (for app/**/error.tsx)
 components/
-├── ui/               shadcn-generated primitives (Base UI)
-└── features/
-    ├── auth/            sign-up/sign-in forms, Google button, sign-out
-    ├── calendar/        OOTD diary entries & calendar view
-    ├── mix-and-match/   canvas & outfit generation
-    ├── onboarding/      multi-step onboarding flow
-    ├── profile/         profile view, edit forms, wishlist
-    ├── trip/            trip planner, detail views, forms
-    └── wardrobe/        wardrobe items & approval queue
-lib/
-├── supabase/
-│   ├── client.ts      browser client
-│   └── server.ts      SSR client, cookie-aware
-├── logging/           Logtape client & server logger
-├── gemini.ts           client entry point → Supabase Edge Function
-└── utils.ts             cn() helper with custom typography scale
-stores/                 Zustand stores
-test/                   test setup, test-utils, and MSW mocks
+└── ui/              shadcn-generated primitives (Base UI)
+lib/                 cross-cutting infrastructure ONLY
+├── supabase/        client.ts (browser), server.ts (SSR cookie-aware)
+├── tanstack-query/  client.ts & server.ts query clients
+├── logging/         logtape tracer & loggers
+├── ai/              gemini & background removal adapters
+└── utils.ts         cn() helper
+hooks/               global utility hooks
+stores/              Zustand stores
+test/                test setup, test-utils, and MSW mocks
 ├── mocks/
-│   ├── handlers.ts    MSW Supabase PostgREST handlers
-│   └── server.ts      MSW node server instance
-├── setup.ts            Vitest global setup & router mocks
-└── test-utils.tsx      renderWithQueryClient helper
+│   ├── handlers.ts  MSW Supabase PostgREST handlers
+│   └── server.ts    MSW node server instance
+├── setup.ts         Vitest global setup & router mocks
+└── test-utils.tsx   renderWithQueryClient helper
 types/
-└── database.types.ts    generated — see .claude/database.md
-proxy.ts                  refreshes the Supabase session cookie every request
-                          (Next.js 16 renamed "middleware" to "proxy")
+└── database.types.ts generated — see .claude/database.md
+proxy.ts             refreshes the Supabase session cookie every request
+                     (Next.js 16 renamed "middleware" to "proxy")
 supabase/
 ├── config.toml
-└── migrations/            schema as code
+└── migrations/       schema as code
 docs/
-└── adr/                    architecture decision records
-.agents/skills/            architectural skills for agents
-.claude/                    this file, database.md, features.md
+└── adr/             architecture decision records
+.agents/skills/      architectural skills for agents
+.claude/             this file, database.md, features.md
 ```
 
 ## Path aliases
 
-`@/*` → repo root. Concretely (per `components.json` and `tsconfig.json`): `@/components`,
+`@/*` → repo root. Concretely (per `components.json` and `tsconfig.json`): `@/domains`,
 `@/components/ui`, `@/lib`, `@/lib/utils`, `@/stores`, `@/hooks`, `@/test`.
 
 ## House rules
@@ -129,7 +128,7 @@ auto-provisioned and kept in sync with `auth.users` via triggers (see
 `.claude/database.md`). RLS is enabled on every table with per-command
 policies. Minimal test surface: `app/auth-test/page.tsx`,
 `app/auth/callback/route.ts` (OAuth), `app/auth/confirm/route.ts`
-(email OTP verification), `components/features/auth/*`. Google OAuth
+(email OTP verification), `domains/auth/*`. Google OAuth
 credentials live only in the Supabase Dashboard, never in this repo.
 
 ## Known gaps (do not treat these as "the way it's supposed to be")

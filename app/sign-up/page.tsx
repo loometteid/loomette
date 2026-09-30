@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { GoogleSignInButton } from "@/components/features/auth/google-sign-in-button";
-import { SignUpForm } from "@/components/features/auth/sign-up-form";
+import { GoogleSignInButton } from "@/domains/auth/components/google-sign-in-button";
+import { SignUpForm } from "@/domains/auth/sign-up-page";
 import { Typography } from "@/components/ui/typography";
 
 export default function SignUpPage() {

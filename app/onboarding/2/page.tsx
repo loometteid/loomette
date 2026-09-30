@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
-import { StepTwoForm } from "@/components/features/onboarding/step-two-form";
+import { StepTwoForm } from "@/domains/onboarding/step-two-page";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 export default async function OnboardingStepTwoPage() {

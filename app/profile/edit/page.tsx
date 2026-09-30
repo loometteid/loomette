@@ -1,12 +1,12 @@
 import { Suspense } from "react";
 import { redirect } from "next/navigation";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
-import { EditProfileForm } from "@/components/features/profile/edit-profile-form";
+import { EditProfileForm } from "@/domains/profile/edit-profile-page";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
-import { EditProfileFallback } from "@/components/features/profile/edit-profile-fallback";
+import { EditProfileFallback } from "@/domains/profile/edit-profile-loading";
 import { getServerQueryClient } from "@/lib/tanstack-query/server";
-import { getUserQueryOptions } from "@/components/features/profile/query-options/get-user.query-option";
-import { getProfileQueryOptionsForServer } from "@/components/features/profile/query-options/get-profile.query-option.server";
+import { getUserQueryOptions } from "@/domains/profile/query-options/get-user.query-option";
+import { getProfileQueryOptionsForServer } from "@/domains/profile/query-options/get-profile.query-option.server";
 
 export default async function EditProfilePage() {
   const supabase = await createServerSupabaseClient();

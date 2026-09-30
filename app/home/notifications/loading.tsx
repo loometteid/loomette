@@ -1,4 +1,4 @@
-import { NotificationsFallback } from "@/components/features/home/notifications-fallback";
+import { NotificationsFallback } from "@/domains/home/notifications-loading";
 
 export default function NotificationsLoading() {
   return <NotificationsFallback />;

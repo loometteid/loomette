@@ -1,12 +1,12 @@
 import { Suspense } from "react";
 import { redirect } from "next/navigation";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
-import { EditTripForm } from "@/components/features/trip/edit-trip-form";
-import { EditTripFallback } from "@/components/features/trip/edit-trip-fallback";
+import { EditTripForm } from "@/domains/trip/edit-trip-page";
+import { EditTripFallback } from "@/domains/trip/edit-trip-loading";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { getServerQueryClient } from "@/lib/tanstack-query/server";
-import { getUserQueryOptions } from "@/components/features/profile/query-options/get-user.query-option";
-import { getTripByIdQueryOptionsForServer } from "@/components/features/trip/query-options/get-trip-by-id.query-option.server";
+import { getUserQueryOptions } from "@/domains/profile/query-options/get-user.query-option";
+import { getTripByIdQueryOptionsForServer } from "@/domains/trip/query-options/get-trip-by-id.query-option.server";
 
 export default async function EditTripPage({
   params,

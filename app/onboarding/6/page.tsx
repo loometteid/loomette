@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
-import { StepSixComplete } from "@/components/features/onboarding/step-six-complete";
+import { StepSixComplete } from "@/domains/onboarding/step-six-page";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 export default async function OnboardingStepSixPage() {

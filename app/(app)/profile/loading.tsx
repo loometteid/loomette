@@ -1,4 +1,4 @@
-import { ProfileFallback } from "@/components/features/profile/profile-fallback";
+import { ProfileFallback } from "@/domains/profile/profile-loading";
 
 export default function ProfileLoading() {
   return <ProfileFallback />;

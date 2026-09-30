@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Mail } from "lucide-react";
-import { GoogleSignInButton } from "@/components/features/auth/google-sign-in-button";
+import { GoogleSignInButton } from "@/domains/auth/components/google-sign-in-button";
 import { Button } from "@/components/ui/button";
 import { Sparkle } from "@/components/ui/sparkle";
 import { Typography } from "@/components/ui/typography";

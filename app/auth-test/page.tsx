@@ -1,7 +1,7 @@
-import { GoogleSignInButton } from "@/components/features/auth/google-sign-in-button";
-import { SignInForm } from "@/components/features/auth/sign-in-form";
-import { SignOutButton } from "@/components/features/auth/sign-out-button";
-import { SignUpForm } from "@/components/features/auth/sign-up-form";
+import { GoogleSignInButton } from "@/domains/auth/components/google-sign-in-button";
+import { SignInForm } from "@/domains/auth/sign-in-page";
+import { SignOutButton } from "@/domains/auth/components/sign-out-button";
+import { SignUpForm } from "@/domains/auth/sign-up-page";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 export default async function AuthTestPage() {

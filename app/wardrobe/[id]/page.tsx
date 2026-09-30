@@ -1,13 +1,13 @@
 import { Suspense } from "react";
 import { redirect } from "next/navigation";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
-import { EditItemForm } from "@/components/features/wardrobe/edit-item-form";
+import { EditItemForm } from "@/domains/wardrobe/edit-wardrobe-item-page";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
-import { EditItemFallback } from "@/components/features/wardrobe/edit-item-fallback";
+import { EditItemFallback } from "@/domains/wardrobe/edit-wardrobe-item-loading";
 import { getServerQueryClient } from "@/lib/tanstack-query/server";
-import { getUserQueryOptions } from "@/components/features/profile/query-options/get-user.query-option";
-import { getWardrobeItemByIdQueryOptionsForServer } from "@/components/features/wardrobe/query-options/get-wardrobe-item-by-id.query-option.server";
-import { getUserGenderQueryOptionsForServer } from "@/components/features/wardrobe/query-options/get-user-gender.query-option.server";
+import { getUserQueryOptions } from "@/domains/profile/query-options/get-user.query-option";
+import { getWardrobeItemByIdQueryOptionsForServer } from "@/domains/wardrobe/query-options/get-wardrobe-item-by-id.query-option.server";
+import { getUserGenderQueryOptionsForServer } from "@/domains/wardrobe/query-options/get-user-gender.query-option.server";
 
 export default async function EditItemPage({
   params,

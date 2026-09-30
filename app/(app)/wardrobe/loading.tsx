@@ -1,4 +1,4 @@
-import { WardrobeFallback } from "@/components/features/wardrobe/wardrobe-fallback";
+import { WardrobeFallback } from "@/domains/wardrobe/wardrobe-loading";
 
 export default function WardrobeLoading() {
   return <WardrobeFallback />;

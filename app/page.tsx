@@ -166,7 +166,7 @@ export default function LandingPage() {
               priority
               data-testid="landing-page__mascot"
               data-entity-id="mascot-43"
-              className="pointer-events-none absolute -top-4 sm:-top-6 md:top-0 lg:top-2 -left-10 sm:-left-8 md:-left-12 lg:-left-14 w-52 sm:w-64 md:w-80 lg:w-[28vw] max-w-115 h-auto z-10 select-none"
+              className="pointer-events-none absolute top-4 sm:-top-6 md:top-0 lg:top-2 -left-10 sm:-left-8 md:-left-12 lg:-left-14 w-52 sm:w-64 md:w-80 lg:w-[28vw] max-w-115 h-auto z-10 select-none"
             />
 
             {/* Mascot 2 (image 45): White fluffy sprite with cartoon eyes (Top-Right) */}
@@ -202,7 +202,7 @@ export default function LandingPage() {
               priority
               data-testid="landing-page__mascot"
               data-entity-id="mascot-42"
-              className="pointer-events-none absolute -bottom-6 sm:-bottom-8 md:bottom-0 lg:bottom-2 -right-10 sm:-right-8 md:-right-12 lg:-right-14 w-48 sm:w-60 md:w-90 lg:w-[32vw] max-w-130 h-auto z-10 select-none"
+              className="pointer-events-none absolute bottom-6 sm:-bottom-8 md:bottom-0 lg:bottom-2 -right-10 sm:-right-8 md:-right-12 lg:-right-14 w-48 sm:w-60 md:w-90 lg:w-[32vw] max-w-130 h-auto z-10 select-none"
             />
           </div>
 

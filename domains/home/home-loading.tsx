@@ -39,7 +39,7 @@ export function HomeFallback() {
           <ChevronLeft className="size-5" />
         </div>
 
-        <div className="bg-secondary/60 relative h-[420px] w-[180px] animate-pulse rounded-2xl" />
+        <div className="bg-secondary/60 relative h-105 w-45 animate-pulse rounded-2xl" />
 
         <div
           aria-hidden

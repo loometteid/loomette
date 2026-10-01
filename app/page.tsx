@@ -146,7 +146,7 @@ export default function LandingPage() {
               width={1536}
               height={1024}
               priority
-              className="pointer-events-none absolute -top-4 sm:-top-6 md:top-0 lg:top-2 -left-10 sm:-left-8 md:-left-12 lg:-left-14 w-52 sm:w-64 md:w-80 lg:w-[28vw] max-w-[460px] h-auto z-10 select-none"
+              className="pointer-events-none absolute -top-4 sm:-top-6 md:top-0 lg:top-2 -left-10 sm:-left-8 md:-left-12 lg:-left-14 w-52 sm:w-64 md:w-80 lg:w-[28vw] max-w-115 h-auto z-10 select-none"
             />
 
             {/* Mascot 2 (image 45): White fluffy sprite with cartoon eyes (Top-Right) */}
@@ -156,7 +156,7 @@ export default function LandingPage() {
               width={1278}
               height={1230}
               priority
-              className="pointer-events-none absolute top-16 sm:top-20 md:top-10 lg:top-12 right-4 sm:right-8 md:right-[16%] lg:right-[20%] w-14 sm:w-16 md:w-20 lg:w-[6.5vw] max-w-[100px] h-auto z-10 select-none"
+              className="pointer-events-none absolute top-16 sm:top-20 md:top-10 lg:top-12 right-4 sm:right-8 md:right-[16%] lg:right-[20%] w-14 sm:w-16 md:w-20 lg:w-[6.5vw] max-w-25 h-auto z-10 select-none"
             />
 
             {/* Mascot 3 (image 44): Black fluffy soot sprite with cartoon eyes (Mid-Left) */}
@@ -166,7 +166,7 @@ export default function LandingPage() {
               width={1271}
               height={1237}
               priority
-              className="pointer-events-none absolute bottom-12 sm:bottom-16 md:bottom-20 lg:bottom-24 left-4 sm:left-8 md:left-[14%] lg:left-[18%] w-16 sm:w-20 md:w-24 lg:w-[8vw] max-w-[125px] h-auto z-10 select-none"
+              className="pointer-events-none absolute bottom-12 sm:bottom-16 md:bottom-20 lg:bottom-24 left-4 sm:left-8 md:left-[14%] lg:left-[18%] w-16 sm:w-20 md:w-24 lg:w-[8vw] max-w-31.25 h-auto z-10 select-none"
             />
 
             {/* Mascot 4 (image 42): Chrome/silver clothes hanger with cartoon eyes (Mid-Right) */}
@@ -176,7 +176,7 @@ export default function LandingPage() {
               width={1536}
               height={1024}
               priority
-              className="pointer-events-none absolute -bottom-6 sm:-bottom-8 md:bottom-0 lg:bottom-2 -right-10 sm:-right-8 md:-right-12 lg:-right-14 w-48 sm:w-60 md:w-[360px] lg:w-[32vw] max-w-[520px] h-auto z-10 select-none"
+              className="pointer-events-none absolute -bottom-6 sm:-bottom-8 md:bottom-0 lg:bottom-2 -right-10 sm:-right-8 md:-right-12 lg:-right-14 w-48 sm:w-60 md:w-90 lg:w-[32vw] max-w-130 h-auto z-10 select-none"
             />
           </div>
 
@@ -194,7 +194,7 @@ export default function LandingPage() {
             </h1>
 
             {/* Supporting Subtitle */}
-            <p className="max-w-[580px] text-xs sm:text-sm md:text-base tracking-[0.12em] uppercase text-slate/90 leading-relaxed font-sans px-4">
+            <p className="max-w-145 text-xs sm:text-sm md:text-base tracking-[0.12em] uppercase text-slate/90 leading-relaxed font-sans px-4">
               Log what you wear, track what you own, and stop asking yourself
               &quot;what do I have?&quot;
             </p>
@@ -204,7 +204,7 @@ export default function LandingPage() {
               <Button
                 variant="default"
                 nativeButton={false}
-                className="w-full min-w-[260px] max-w-[320px] h-14 md:h-16 rounded-2xl text-base md:text-xl font-medium tracking-[0.15em] uppercase shadow-md bg-[#333333] text-white hover:bg-black transition-colors"
+                className="w-full min-w-65 max-w-80 h-14 md:h-16 rounded-2xl text-base md:text-xl font-medium tracking-[0.15em] uppercase shadow-md bg-[#333333] text-white hover:bg-black transition-colors"
                 render={<Link href="/sign-up" prefetch />}
               >
                 Create Account
@@ -225,30 +225,30 @@ export default function LandingPage() {
               alt=""
               width={72}
               height={48}
-              className="w-[72px] h-auto object-contain select-none"
+              className="w-18 h-auto object-contain select-none"
             />
           </div>
           <div className="hidden md:block">
-            <Sparkle className="size-[50px] text-slate" />
+            <Sparkle className="size-12.5 text-slate" />
           </div>
 
           <h2 className="font-serif text-3xl sm:text-5xl md:text-[64px] lg:text-[72px] font-normal leading-tight text-slate whitespace-normal md:whitespace-nowrap">
             Everything in <em className="font-bold italic">one place</em>.
           </h2>
-          <p className="max-w-[720px] text-slate text-xs sm:text-sm md:text-base tracking-wider uppercase leading-relaxed">
+          <p className="max-w-180 text-slate text-xs sm:text-sm md:text-base tracking-wider uppercase leading-relaxed">
             Upload once. We&apos;ll identify the pieces, organize them, and help
             you make sense of what you own.
           </p>
-          <div className="w-full max-w-[1100px] xl:max-w-[1200px] aspect-[2/1] max-h-[55vh] rounded-[20px] bg-[#D9D9D9] border border-stone/20 shadow-inner flex items-center justify-center text-stone/80 font-medium text-sm md:text-base mt-2" />
+          <div className="w-full max-w-275 xl:max-w-300 aspect-[2/1] max-h-[55vh] rounded-[20px] bg-[#D9D9D9] border border-stone/20 shadow-inner flex items-center justify-center text-stone/80 font-medium text-sm md:text-base mt-2" />
         </section>
 
         {/* Section 3: Three steps — Fullscreen Viewport */}
         <section className="relative flex w-full min-h-screen flex-col items-center justify-center gap-6 px-6 py-12 md:py-16 text-center">
-          <Sparkle className="size-8 md:size-[50px] text-slate" />
+          <Sparkle className="size-8 md:size-12.5 text-slate" />
           <h2 className="font-serif text-3xl sm:text-5xl md:text-[64px] lg:text-[72px] font-normal leading-tight text-slate whitespace-normal md:whitespace-nowrap">
             <em className="font-bold italic">Three steps.</em> That&apos;s it.
           </h2>
-          <p className="max-w-[720px] text-slate text-xs sm:text-sm md:text-base tracking-wider uppercase">
+          <p className="max-w-180 text-slate text-xs sm:text-sm md:text-base tracking-wider uppercase">
             No manual tagging. No spreadsheets. Just your wardrobe, organized.
           </p>
 
@@ -298,11 +298,11 @@ export default function LandingPage() {
           </div>
 
           {/* Desktop: Alternating text and real phone mockup per Figma #643:966 */}
-          <div className="hidden md:flex w-full max-w-[1200px] flex-col gap-16 lg:gap-24 pt-10">
+          <div className="hidden md:flex w-full max-w-300 flex-col gap-16 lg:gap-24 pt-10">
             {/* Step 1: Text left / Phone right */}
             <div className="flex items-center justify-between gap-12 lg:gap-16">
               <div className="flex items-start gap-8 lg:gap-10 max-w-xl text-left">
-                <div className="size-20 lg:size-[100px] shrink-0 rounded-full border border-stone/60 flex items-center justify-center font-serif text-3xl lg:text-4xl text-slate font-normal">
+                <div className="size-20 lg:size-25 shrink-0 rounded-full border border-stone/60 flex items-center justify-center font-serif text-3xl lg:text-4xl text-slate font-normal">
                   01
                 </div>
                 <div className="flex flex-col gap-3">
@@ -322,7 +322,7 @@ export default function LandingPage() {
                   alt="Loomette outfit capture screen"
                   width={294}
                   height={533}
-                  className="w-[260px] lg:w-[294px] h-auto drop-shadow-md select-none"
+                  className="w-65 lg:w-73.5 h-auto drop-shadow-md select-none"
                 />
               </div>
             </div>
@@ -335,11 +335,11 @@ export default function LandingPage() {
                   alt="Loomette piece recognition screen"
                   width={294}
                   height={533}
-                  className="w-[260px] lg:w-[294px] h-auto drop-shadow-md select-none"
+                  className="w-65 lg:w-73.5 h-auto drop-shadow-md select-none"
                 />
               </div>
               <div className="flex items-start gap-8 lg:gap-10 max-w-xl text-left">
-                <div className="size-20 lg:size-[100px] shrink-0 rounded-full border border-stone/60 flex items-center justify-center font-serif text-3xl lg:text-4xl text-slate font-normal">
+                <div className="size-20 lg:size-25 shrink-0 rounded-full border border-stone/60 flex items-center justify-center font-serif text-3xl lg:text-4xl text-slate font-normal">
                   02
                 </div>
                 <div className="flex flex-col gap-3">
@@ -358,7 +358,7 @@ export default function LandingPage() {
             {/* Step 3: Text left / Phone right */}
             <div className="flex items-center justify-between gap-12 lg:gap-16">
               <div className="flex items-start gap-8 lg:gap-10 max-w-xl text-left">
-                <div className="size-20 lg:size-[100px] shrink-0 rounded-full border border-stone/60 flex items-center justify-center font-serif text-3xl lg:text-4xl text-slate font-normal">
+                <div className="size-20 lg:size-25 shrink-0 rounded-full border border-stone/60 flex items-center justify-center font-serif text-3xl lg:text-4xl text-slate font-normal">
                   03
                 </div>
                 <div className="flex flex-col gap-3">
@@ -378,7 +378,7 @@ export default function LandingPage() {
                   alt="Loomette wardrobe styling screen"
                   width={294}
                   height={533}
-                  className="w-[260px] lg:w-[294px] h-auto drop-shadow-md select-none"
+                  className="w-65 lg:w-73.5 h-auto drop-shadow-md select-none"
                 />
               </div>
             </div>
@@ -390,7 +390,7 @@ export default function LandingPage() {
           <p className="text-slate text-xs md:text-sm font-medium uppercase tracking-[0.2em]">
             By the numbers
           </p>
-          <div className="grid w-full max-w-[1200px] grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center pt-2">
+          <div className="grid w-full max-w-300 grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center pt-2">
             {stats.map((stat) => (
               <div
                 key={stat.label}
@@ -409,15 +409,15 @@ export default function LandingPage() {
 
         {/* Section 5: Honest Review — Fullscreen Viewport */}
         <section className="relative flex w-full min-h-screen flex-col items-center justify-center gap-6 px-6 py-12 md:py-16 text-center">
-          <Sparkle className="size-8 md:size-[50px] text-slate" />
+          <Sparkle className="size-8 md:size-12.5 text-slate" />
           <h2 className="font-serif text-3xl sm:text-5xl md:text-[64px] lg:text-[72px] font-normal leading-tight text-slate">
             <em className="font-bold italic">Honest Review</em> from real users.
           </h2>
-          <div className="grid w-full max-w-[1200px] grid-cols-1 md:grid-cols-3 gap-6 pt-6 text-left">
+          <div className="grid w-full max-w-300 grid-cols-1 md:grid-cols-3 gap-6 pt-6 text-left">
             {testimonials.map((t, i) => (
               <Card
                 key={i}
-                className="min-h-[180px] md:h-[228px] rounded-[20px] border border-stone/40 bg-white/70 backdrop-blur-xs p-6 md:p-7 flex flex-col justify-between shadow-xs"
+                className="min-h-45 md:h-57 rounded-[20px] border border-stone/40 bg-white/70 backdrop-blur-xs p-6 md:p-7 flex flex-col justify-between shadow-xs"
               >
                 <p className="text-sm md:text-base text-slate leading-relaxed">
                   &quot;{t.quote}&quot;
@@ -438,13 +438,13 @@ export default function LandingPage() {
 
         {/* Section 6: FAQ — Fullscreen Viewport */}
         <section className="relative flex w-full min-h-screen flex-col items-center justify-center gap-6 px-6 py-12 md:py-16 text-center">
-          <Sparkle className="size-8 md:size-[50px] text-slate" />
+          <Sparkle className="size-8 md:size-12.5 text-slate" />
           <h2 className="font-serif text-3xl sm:text-5xl md:text-[64px] lg:text-[72px] font-normal text-slate">
             <em className="font-bold italic">FAQ</em>
           </h2>
           <Accordion
             defaultValue={[]}
-            className="w-full max-w-[1200px] text-left divide-y divide-stone/40 border-y border-stone/40 mt-4"
+            className="w-full max-w-300 text-left divide-y divide-stone/40 border-y border-stone/40 mt-4"
           >
             {faqs.map((faq, i) => (
               <AccordionItem key={i} value={i} className="py-2 border-none">
@@ -462,7 +462,7 @@ export default function LandingPage() {
         {/* Section 7: Final CTA & Footer — Fullscreen Viewport together */}
         <section className="relative flex w-full min-h-screen flex-col justify-between items-center text-center overflow-hidden">
           <div className="flex flex-1 flex-col items-center justify-center gap-6 px-6 py-12">
-            <Sparkle className="size-8 md:size-[50px] text-slate" />
+            <Sparkle className="size-8 md:size-12.5 text-slate" />
             <h2 className="font-serif text-3xl sm:text-5xl md:text-[64px] lg:text-[72px] font-normal leading-tight text-slate">
               <em className="font-bold italic">Your wardrobe is</em>
               <br />
@@ -475,7 +475,7 @@ export default function LandingPage() {
               <Button
                 variant="default"
                 nativeButton={false}
-                className="w-full min-w-[260px] max-w-[320px] h-14 md:h-16 rounded-2xl text-base md:text-xl font-medium tracking-[0.15em] uppercase shadow-md bg-[#333333] text-white hover:bg-black transition-colors"
+                className="w-full min-w-65 max-w-80 h-14 md:h-16 rounded-2xl text-base md:text-xl font-medium tracking-[0.15em] uppercase shadow-md bg-[#333333] text-white hover:bg-black transition-colors"
                 render={<Link href="/sign-up" prefetch />}
               >
                 Create Account
@@ -494,7 +494,7 @@ export default function LandingPage() {
           </div>
 
           {/* Footer — Docked at the bottom of the final fullscreen screen */}
-          <footer className="relative flex w-full flex-col justify-between overflow-hidden px-6 md:px-12 lg:px-16 py-8 md:py-12 min-h-[160px] md:h-[260px] bg-slate/5">
+          <footer className="relative flex w-full flex-col justify-between overflow-hidden px-6 md:px-12 lg:px-16 py-8 md:py-12 min-h-40 md:h-65 bg-slate/5">
             <Image
               src="/brand/sky.png"
               alt=""
@@ -507,7 +507,7 @@ export default function LandingPage() {
               alt=""
               width={344}
               height={344}
-              className="pointer-events-none absolute -top-8 -right-8 md:-top-16 md:-right-16 w-36 sm:w-44 md:w-[300px] h-auto opacity-80 select-none"
+              className="pointer-events-none absolute -top-8 -right-8 md:-top-16 md:-right-16 w-36 sm:w-44 md:w-75 h-auto opacity-80 select-none"
             />
 
             <div className="relative z-10 flex items-center">

@@ -134,7 +134,7 @@ export function TripDetailView({
                 {!isLast && (
                   <span
                     aria-hidden
-                    className="border-border absolute top-6 bottom-0 left-[9px] border-l border-dashed"
+                    className="border-border absolute top-6 bottom-0 left-2.25 border-l border-dashed"
                   />
                 )}
                 <Sparkle className="text-foreground mt-1 size-5 shrink-0" />

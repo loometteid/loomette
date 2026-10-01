@@ -8,11 +8,11 @@ import { Sparkle } from "@/components/ui/sparkle";
 export default function WelcomePage() {
   return (
     <main className="flex flex-1 flex-col items-center justify-center bg-background min-h-screen">
-      <div className="w-full max-w-[1440px] min-h-screen lg:h-[1024px] flex flex-col lg:flex-row overflow-hidden shadow-sm">
+      <div className="w-full max-w-360 min-h-screen lg:h-256 flex flex-col lg:flex-row overflow-hidden shadow-sm">
         {/* Left Visual Panel (width ~825px on 1440px) */}
         <section
           aria-label="Welcome Visual"
-          className="relative w-full lg:w-[57.3%] min-h-[460px] lg:min-h-full overflow-hidden bg-slate flex flex-col justify-between p-8 sm:p-12 lg:p-20 text-white"
+          className="relative w-full lg:w-[57.3%] min-h-115 lg:min-h-full overflow-hidden bg-slate flex flex-col justify-between p-8 sm:p-12 lg:p-20 text-white"
         >
           {/* Cloud sky background */}
           <Image
@@ -30,7 +30,7 @@ export default function WelcomePage() {
             alt=""
             width={205}
             height={309}
-            className="pointer-events-none absolute top-6 right-6 lg:top-12 lg:right-12 w-28 sm:w-40 lg:w-[220px] h-auto drop-shadow-md z-10"
+            className="pointer-events-none absolute top-6 right-6 lg:top-12 lg:right-12 w-28 sm:w-40 lg:w-55 h-auto drop-shadow-md z-10"
           />
 
           {/* Bottom-left black asterisk ornament */}
@@ -39,7 +39,7 @@ export default function WelcomePage() {
             alt=""
             width={218}
             height={270}
-            className="pointer-events-none absolute -bottom-6 -left-6 lg:bottom-4 lg:left-6 w-36 sm:w-48 lg:w-[260px] h-auto drop-shadow-md z-10"
+            className="pointer-events-none absolute -bottom-6 -left-6 lg:bottom-4 lg:left-6 w-36 sm:w-48 lg:w-65 h-auto drop-shadow-md z-10"
           />
 
           {/* Headline in top-left */}

@@ -8,7 +8,7 @@ import { Sparkle } from "@/components/ui/sparkle";
 export default function WelcomePage() {
   return (
     <main className="flex flex-1 flex-col items-center justify-center bg-background min-h-screen">
-      <div className="w-full max-w-360 min-h-screen lg:h-256 flex flex-col lg:flex-row overflow-hidden shadow-sm">
+      <div className="w-full min-h-screen lg:h-256 flex flex-col lg:flex-row overflow-hidden shadow-sm">
         {/* Left Visual Panel (width ~825px on 1440px) */}
         <section
           aria-label="Welcome Visual"

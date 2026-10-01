@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
@@ -60,7 +59,8 @@ const testimonials = [
 const faqs = [
   {
     question: "Does it work for any style of clothing?",
-    answer: "Content coming soon.",
+    answer:
+      "Yes! Loomette works across all styles, aesthetics, and silhouettes — from casual streetwear to formal tailoring. Our AI recognizes a wide range of cuts, fabrics, and accessories.",
   },
   {
     question: "How accurate is the AI detection?",
@@ -69,23 +69,24 @@ const faqs = [
   },
   {
     question: "Is my data private? Can other people see my wardrobe?",
-    answer: "Content coming soon.",
+    answer:
+      "Your wardrobe is completely private to you. We never share or sell your photos, personal style logs, or wardrobe data to third parties.",
   },
 ];
 
 export default function LandingPage() {
   return (
-    <div className="flex flex-1 flex-col overflow-x-clip bg-background">
-      {/* Header — 120px desktop height with center main navigation & right auth links */}
-      <header className="sticky top-0 z-50 flex h-20 md:h-[120px] items-center justify-between bg-white/10 px-6 md:px-16 backdrop-blur-md">
+    <div className="flex flex-1 flex-col overflow-x-clip bg-background text-slate">
+      {/* Header — 100px desktop height, 64px mobile height with glassmorphism */}
+      <header className="sticky top-0 z-50 flex h-16 md:h-24 lg:h-28 items-center justify-between bg-[#fafaf7]/85 px-6 md:px-12 lg:px-16 backdrop-blur-md">
         <Link href="/" prefetch aria-label="Loomette home">
           <Wordmark />
         </Link>
 
-        {/* Center Main Nav */}
+        {/* Center Main Nav (Desktop) */}
         <nav
           aria-label="Main Navigation"
-          className="hidden md:flex items-center gap-10 text-sm font-medium tracking-widest uppercase text-slate"
+          className="hidden md:flex items-center gap-8 lg:gap-12 text-sm font-medium tracking-[0.2em] uppercase text-slate"
         >
           <Link
             href="/home"
@@ -113,7 +114,7 @@ export default function LandingPage() {
         {/* Right Authentication Navigation */}
         <nav
           aria-label="Account Navigation"
-          className="flex items-center gap-3 text-xs md:text-sm font-medium tracking-wide uppercase text-slate"
+          className="flex items-center gap-2 md:gap-3 text-xs md:text-sm font-medium tracking-[0.15em] uppercase text-slate"
         >
           <Link
             href="/sign-in"
@@ -122,7 +123,7 @@ export default function LandingPage() {
           >
             Sign in
           </Link>
-          <span className="text-border">|</span>
+          <span className="text-stone/60">|</span>
           <Link
             href="/sign-up"
             prefetch
@@ -133,136 +134,220 @@ export default function LandingPage() {
         </nav>
       </header>
 
-      <main className="flex flex-col items-center">
-        {/* Hero Section */}
-        <section className="relative flex w-full flex-col items-center px-6 pt-12 pb-20 md:pb-36 text-center overflow-hidden">
-          {/* Black Asterisk Ornament */}
-          <Image
-            src="/brand/asterisk-black.png"
-            alt=""
-            width={529}
-            height={529}
-            priority
-            className="pointer-events-none absolute top-0 left-0 -z-10 w-44 md:w-[480px] lg:w-[529px] h-auto -translate-x-1/4 -translate-y-1/4 opacity-90"
-          />
+      <main className="flex flex-col items-center w-full">
+        {/* Section 1: Hero — Fullscreen Viewport (100vh with header) */}
+        <section className="relative flex w-full min-h-[calc(100dvh-4rem)] md:min-h-[calc(100dvh-6rem)] lg:min-h-[calc(100dvh-7rem)] flex-col items-center justify-center px-6 py-8 md:py-12 text-center overflow-hidden">
+          {/* Viewport-scaled Mascots anchored to full screen boundaries */}
+          <div className="pointer-events-none absolute inset-0 w-full h-full overflow-hidden">
+            {/* Mascot 1 (image 43): Black clothes hanger with cartoon eyes (Top-Left) */}
+            <Image
+              src="/brand/mascot-image-43.png"
+              alt=""
+              width={1536}
+              height={1024}
+              priority
+              className="pointer-events-none absolute -top-4 sm:-top-6 md:top-0 lg:top-2 -left-10 sm:-left-8 md:-left-12 lg:-left-14 w-52 sm:w-64 md:w-80 lg:w-[28vw] max-w-[460px] h-auto z-10 select-none"
+            />
 
-          {/* Silver Asterisk Ornament */}
-          <Image
-            src="/brand/asterisk-silver.png"
-            alt=""
-            width={543}
-            height={543}
-            priority
-            className="pointer-events-none absolute top-10 right-0 -z-10 w-40 md:w-[490px] lg:w-[543px] h-auto translate-x-1/4 -translate-y-1/4 opacity-90"
-          />
+            {/* Mascot 2 (image 45): White fluffy sprite with cartoon eyes (Top-Right) */}
+            <Image
+              src="/brand/mascot-image-45.png"
+              alt=""
+              width={1278}
+              height={1230}
+              priority
+              className="pointer-events-none absolute top-16 sm:top-20 md:top-10 lg:top-12 right-4 sm:right-8 md:right-[16%] lg:right-[20%] w-14 sm:w-16 md:w-20 lg:w-[6.5vw] max-w-[100px] h-auto z-10 select-none"
+            />
 
-          <div className="relative z-10 flex flex-col items-center gap-6 pt-12 md:pt-20">
+            {/* Mascot 3 (image 44): Black fluffy soot sprite with cartoon eyes (Mid-Left) */}
+            <Image
+              src="/brand/mascot-image-44.png"
+              alt=""
+              width={1271}
+              height={1237}
+              priority
+              className="pointer-events-none absolute bottom-12 sm:bottom-16 md:bottom-20 lg:bottom-24 left-4 sm:left-8 md:left-[14%] lg:left-[18%] w-16 sm:w-20 md:w-24 lg:w-[8vw] max-w-[125px] h-auto z-10 select-none"
+            />
+
+            {/* Mascot 4 (image 42): Chrome/silver clothes hanger with cartoon eyes (Mid-Right) */}
+            <Image
+              src="/brand/mascot-image-42.png"
+              alt=""
+              width={1536}
+              height={1024}
+              priority
+              className="pointer-events-none absolute -bottom-6 sm:-bottom-8 md:bottom-0 lg:bottom-2 -right-10 sm:-right-8 md:-right-12 lg:-right-14 w-48 sm:w-60 md:w-[360px] lg:w-[32vw] max-w-[520px] h-auto z-10 select-none"
+            />
+          </div>
+
+          <div className="relative z-10 flex flex-col items-center gap-6">
             {/* Availability Pill Badge */}
-            <div className="inline-flex items-center justify-center rounded-full bg-[#f7d4de]/80 px-4 py-1.5 text-xs md:text-sm font-medium tracking-wider text-slate uppercase">
+            <div className="inline-flex items-center justify-center rounded-full bg-[#ede8e1] px-4 py-1.5 text-xs md:text-sm font-medium tracking-[0.15em] text-slate uppercase">
               Now available ㆍ free to start
             </div>
 
-            {/* Main Headline */}
-            <h1 className="font-serif text-4xl sm:text-6xl md:text-[88px] font-normal leading-[1.05] tracking-tight text-slate max-w-4xl">
+            {/* Main Headline — Only 'Wardrobe' is bold italic */}
+            <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-[88px] font-normal leading-[1.05] tracking-tight text-slate max-w-4xl">
               Your <em className="font-bold italic">Wardrobe</em>,
               <br />
               Finally Organized.
             </h1>
 
             {/* Supporting Subtitle */}
-            <p className="max-w-[568px] text-xs sm:text-sm md:text-base tracking-wider uppercase text-slate/90 leading-relaxed font-sans">
+            <p className="max-w-[580px] text-xs sm:text-sm md:text-base tracking-[0.12em] uppercase text-slate/90 leading-relaxed font-sans px-4">
               Log what you wear, track what you own, and stop asking yourself
               &quot;what do I have?&quot;
             </p>
 
             {/* Hero CTA Button & Notice */}
-            <div className="flex flex-col items-center gap-3 pt-3">
+            <div className="flex flex-col items-center gap-3 pt-2">
               <Button
                 variant="default"
                 nativeButton={false}
-                className="w-full max-w-[320px] h-16 rounded-2xl text-lg md:text-xl font-medium tracking-wider uppercase shadow-md bg-slate text-white hover:bg-slate/90"
+                className="w-full min-w-[260px] max-w-[320px] h-14 md:h-16 rounded-2xl text-base md:text-xl font-medium tracking-[0.15em] uppercase shadow-md bg-[#333333] text-white hover:bg-black transition-colors"
                 render={<Link href="/sign-up" prefetch />}
               >
                 Create Account
               </Button>
-              <p className="text-sm md:text-base text-stone font-medium">
+              <p className="text-xs sm:text-sm md:text-base text-stone font-medium">
                 No credit card required. Free forever.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Section: Everything in one place */}
-        <section className="relative flex w-full flex-col items-center gap-6 px-6 py-20 md:py-28 text-center">
-          <Sparkle className="size-8 md:size-[50px] text-slate" />
-          <h2 className="font-serif text-3xl sm:text-5xl md:text-[64px] font-normal leading-tight text-slate whitespace-normal md:whitespace-nowrap">
+        {/* Section 2: Everything in one place — Fullscreen Viewport */}
+        <section className="relative flex w-full min-h-screen flex-col items-center justify-center gap-6 px-6 py-12 md:py-16 text-center">
+          {/* Mobile uses image 43 hanger mascot above headline; Desktop uses Sparkle icon */}
+          <div className="block md:hidden">
+            <Image
+              src="/brand/mascot-image-43.png"
+              alt=""
+              width={72}
+              height={48}
+              className="w-[72px] h-auto object-contain select-none"
+            />
+          </div>
+          <div className="hidden md:block">
+            <Sparkle className="size-[50px] text-slate" />
+          </div>
+
+          <h2 className="font-serif text-3xl sm:text-5xl md:text-[64px] lg:text-[72px] font-normal leading-tight text-slate whitespace-normal md:whitespace-nowrap">
             Everything in <em className="font-bold italic">one place</em>.
           </h2>
-          <p className="max-w-[720px] text-slate text-sm sm:text-base md:text-lg leading-relaxed">
+          <p className="max-w-[720px] text-slate text-xs sm:text-sm md:text-base tracking-wider uppercase leading-relaxed">
             Upload once. We&apos;ll identify the pieces, organize them, and help
             you make sense of what you own.
           </p>
-          <div className="w-full max-w-[1200px] aspect-[2/1] rounded-[20px] bg-[#D9D9D9] border border-stone/20 shadow-inner flex items-center justify-center text-stone font-medium text-sm md:text-base mt-2" />
+          <div className="w-full max-w-[1100px] xl:max-w-[1200px] aspect-[2/1] max-h-[55vh] rounded-[20px] bg-[#D9D9D9] border border-stone/20 shadow-inner flex items-center justify-center text-stone/80 font-medium text-sm md:text-base mt-2" />
         </section>
 
-        {/* Section: Three steps */}
-        <section className="flex w-full flex-col items-center gap-6 px-6 py-20 md:py-28 text-center">
+        {/* Section 3: Three steps — Fullscreen Viewport */}
+        <section className="relative flex w-full min-h-screen flex-col items-center justify-center gap-6 px-6 py-12 md:py-16 text-center">
           <Sparkle className="size-8 md:size-[50px] text-slate" />
-          <h2 className="font-serif text-3xl sm:text-5xl md:text-[64px] font-normal leading-tight text-slate whitespace-normal md:whitespace-nowrap">
+          <h2 className="font-serif text-3xl sm:text-5xl md:text-[64px] lg:text-[72px] font-normal leading-tight text-slate whitespace-normal md:whitespace-nowrap">
             <em className="font-bold italic">Three steps.</em> That&apos;s it.
           </h2>
-          <p className="max-w-[720px] text-slate text-sm sm:text-base md:text-lg">
+          <p className="max-w-[720px] text-slate text-xs sm:text-sm md:text-base tracking-wider uppercase">
             No manual tagging. No spreadsheets. Just your wardrobe, organized.
           </p>
 
-          <div className="w-full max-w-[1200px] flex flex-col gap-16 md:gap-24 pt-10">
+          {/* Mobile: 3 clean vertical numbered steps without bulky mockups per Figma #773:512 */}
+          <div className="flex md:hidden flex-col gap-8 w-full max-w-sm pt-4 text-left">
+            <div className="flex items-start gap-4">
+              <div className="size-8 shrink-0 rounded-full border border-stone/60 flex items-center justify-center font-serif text-xs text-slate">
+                01
+              </div>
+              <div className="flex flex-col gap-1">
+                <h3 className="font-serif text-base text-slate font-normal">
+                  <em className="font-bold italic">Upload a photo</em> of your outfit
+                </h3>
+                <p className="text-[11px] uppercase tracking-wider text-slate/75 leading-relaxed">
+                  Snap it fresh or pull from your gallery. Full outfit works best.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <div className="size-8 shrink-0 rounded-full border border-stone/60 flex items-center justify-center font-serif text-xs text-slate">
+                02
+              </div>
+              <div className="flex flex-col gap-1">
+                <h3 className="font-serif text-base text-slate font-normal">
+                  <em className="font-bold italic">Review &amp; approve</em> the pieces
+                </h3>
+                <p className="text-[11px] uppercase tracking-wider text-slate/75 leading-relaxed">
+                  We identify tops, bottoms, and accessories so you can verify each item.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <div className="size-8 shrink-0 rounded-full border border-stone/60 flex items-center justify-center font-serif text-xs text-slate">
+                03
+              </div>
+              <div className="flex flex-col gap-1">
+                <h3 className="font-serif text-base text-slate font-normal">
+                  <em className="font-bold italic">Track &amp; style</em> everyday
+                </h3>
+                <p className="text-[11px] uppercase tracking-wider text-slate/75 leading-relaxed">
+                  Build your lookbook, see wear stats, and mix &amp; match effortlessly.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Desktop: Alternating text and real phone mockup per Figma #643:966 */}
+          <div className="hidden md:flex w-full max-w-[1200px] flex-col gap-16 lg:gap-24 pt-10">
             {/* Step 1: Text left / Phone right */}
-            <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16">
-              <div className="flex items-start gap-6 md:gap-10 max-w-xl text-left">
-                <div className="size-16 md:size-[100px] shrink-0 rounded-full border border-stone/60 flex items-center justify-center font-serif text-2xl md:text-4xl text-slate font-normal">
+            <div className="flex items-center justify-between gap-12 lg:gap-16">
+              <div className="flex items-start gap-8 lg:gap-10 max-w-xl text-left">
+                <div className="size-20 lg:size-[100px] shrink-0 rounded-full border border-stone/60 flex items-center justify-center font-serif text-3xl lg:text-4xl text-slate font-normal">
                   01
                 </div>
                 <div className="flex flex-col gap-3">
-                  <h3 className="font-serif text-2xl md:text-4xl text-slate font-normal">
+                  <h3 className="font-serif text-3xl lg:text-4xl text-slate font-normal">
                     <em className="font-bold italic">Upload a photo</em> of your
                     outfit
                   </h3>
-                  <p className="text-slate/80 text-sm md:text-lg leading-relaxed">
+                  <p className="text-slate/80 text-base lg:text-xl leading-relaxed">
                     Snap it fresh or pull from your gallery. Full outfit works
                     best.
                   </p>
                 </div>
               </div>
-              <div className="w-full max-w-[294px] h-[460px] md:h-[533px] rounded-[36px] border-[6px] border-slate/10 bg-[#f5f2ed] shadow-lg flex flex-col items-center justify-center p-6 text-center text-stone">
-                <div className="size-16 rounded-full bg-slate/10 flex items-center justify-center mb-4">
-                  <Sparkle className="size-8 text-slate/50" />
-                </div>
-                <span className="text-xs uppercase tracking-wider text-slate/60 font-medium">
-                  Outfit Camera / Upload
-                </span>
+              <div className="shrink-0 flex items-center justify-center">
+                <Image
+                  src="/brand/phone-mockup.png"
+                  alt="Loomette outfit capture screen"
+                  width={294}
+                  height={533}
+                  className="w-[260px] lg:w-[294px] h-auto drop-shadow-md select-none"
+                />
               </div>
             </div>
 
             {/* Step 2: Phone left / Text right */}
-            <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-8 md:gap-16">
-              <div className="w-full max-w-[294px] h-[460px] md:h-[533px] rounded-[36px] border-[6px] border-slate/10 bg-[#f5f2ed] shadow-lg flex flex-col items-center justify-center p-6 text-center text-stone">
-                <div className="size-16 rounded-full bg-slate/10 flex items-center justify-center mb-4">
-                  <Sparkle className="size-8 text-slate/50" />
-                </div>
-                <span className="text-xs uppercase tracking-wider text-slate/60 font-medium">
-                  Item Recognition
-                </span>
+            <div className="flex items-center justify-between gap-12 lg:gap-16">
+              <div className="shrink-0 flex items-center justify-center">
+                <Image
+                  src="/brand/phone-mockup.png"
+                  alt="Loomette piece recognition screen"
+                  width={294}
+                  height={533}
+                  className="w-[260px] lg:w-[294px] h-auto drop-shadow-md select-none"
+                />
               </div>
-              <div className="flex items-start gap-6 md:gap-10 max-w-xl text-left">
-                <div className="size-16 md:size-[100px] shrink-0 rounded-full border border-stone/60 flex items-center justify-center font-serif text-2xl md:text-4xl text-slate font-normal">
+              <div className="flex items-start gap-8 lg:gap-10 max-w-xl text-left">
+                <div className="size-20 lg:size-[100px] shrink-0 rounded-full border border-stone/60 flex items-center justify-center font-serif text-3xl lg:text-4xl text-slate font-normal">
                   02
                 </div>
                 <div className="flex flex-col gap-3">
-                  <h3 className="font-serif text-2xl md:text-4xl text-slate font-normal">
+                  <h3 className="font-serif text-3xl lg:text-4xl text-slate font-normal">
                     <em className="font-bold italic">Review &amp; approve</em> the
                     pieces
                   </h3>
-                  <p className="text-slate/80 text-sm md:text-lg leading-relaxed">
+                  <p className="text-slate/80 text-base lg:text-xl leading-relaxed">
                     We identify tops, bottoms, and accessories so you can verify
                     each item.
                   </p>
@@ -271,37 +356,38 @@ export default function LandingPage() {
             </div>
 
             {/* Step 3: Text left / Phone right */}
-            <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16">
-              <div className="flex items-start gap-6 md:gap-10 max-w-xl text-left">
-                <div className="size-16 md:size-[100px] shrink-0 rounded-full border border-stone/60 flex items-center justify-center font-serif text-2xl md:text-4xl text-slate font-normal">
+            <div className="flex items-center justify-between gap-12 lg:gap-16">
+              <div className="flex items-start gap-8 lg:gap-10 max-w-xl text-left">
+                <div className="size-20 lg:size-[100px] shrink-0 rounded-full border border-stone/60 flex items-center justify-center font-serif text-3xl lg:text-4xl text-slate font-normal">
                   03
                 </div>
                 <div className="flex flex-col gap-3">
-                  <h3 className="font-serif text-2xl md:text-4xl text-slate font-normal">
+                  <h3 className="font-serif text-3xl lg:text-4xl text-slate font-normal">
                     <em className="font-bold italic">Track &amp; style</em>{" "}
                     everyday
                   </h3>
-                  <p className="text-slate/80 text-sm md:text-lg leading-relaxed">
+                  <p className="text-slate/80 text-base lg:text-xl leading-relaxed">
                     Build your lookbook, see wear stats, and mix &amp; match
                     effortlessly.
                   </p>
                 </div>
               </div>
-              <div className="w-full max-w-[294px] h-[460px] md:h-[533px] rounded-[36px] border-[6px] border-slate/10 bg-[#f5f2ed] shadow-lg flex flex-col items-center justify-center p-6 text-center text-stone">
-                <div className="size-16 rounded-full bg-slate/10 flex items-center justify-center mb-4">
-                  <Sparkle className="size-8 text-slate/50" />
-                </div>
-                <span className="text-xs uppercase tracking-wider text-slate/60 font-medium">
-                  Mix &amp; Match Styling
-                </span>
+              <div className="shrink-0 flex items-center justify-center">
+                <Image
+                  src="/brand/phone-mockup.png"
+                  alt="Loomette wardrobe styling screen"
+                  width={294}
+                  height={533}
+                  className="w-[260px] lg:w-[294px] h-auto drop-shadow-md select-none"
+                />
               </div>
             </div>
           </div>
         </section>
 
-        {/* Section: By the numbers (Stats) */}
-        <section className="flex w-full flex-col items-center gap-8 px-6 py-20 md:py-28 bg-[#fafaf7]/50">
-          <p className="text-slate text-sm md:text-lg font-medium uppercase tracking-wider">
+        {/* Section 4: By the numbers — Fullscreen Viewport */}
+        <section className="relative flex w-full min-h-screen flex-col items-center justify-center gap-8 px-6 py-12 md:py-16 text-center">
+          <p className="text-slate text-xs md:text-sm font-medium uppercase tracking-[0.2em]">
             By the numbers
           </p>
           <div className="grid w-full max-w-[1200px] grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center pt-2">
@@ -310,10 +396,10 @@ export default function LandingPage() {
                 key={stat.label}
                 className="flex flex-col items-center gap-2"
               >
-                <span className="font-serif text-4xl sm:text-6xl md:text-[80px] font-bold italic text-slate leading-none">
+                <span className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-bold italic text-slate leading-none">
                   {stat.value}
                 </span>
-                <span className="text-xs sm:text-sm md:text-lg text-slate/80 font-normal">
+                <span className="text-xs sm:text-sm md:text-base uppercase tracking-wider text-slate/80 font-normal">
                   {stat.label}
                 </span>
               </div>
@@ -321,27 +407,23 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* Section: Honest Review */}
-        <section className="flex w-full flex-col items-center gap-6 px-6 py-20 md:py-28 text-center">
+        {/* Section 5: Honest Review — Fullscreen Viewport */}
+        <section className="relative flex w-full min-h-screen flex-col items-center justify-center gap-6 px-6 py-12 md:py-16 text-center">
           <Sparkle className="size-8 md:size-[50px] text-slate" />
-          <h2 className="font-serif text-3xl sm:text-5xl md:text-[64px] font-normal leading-tight text-slate">
+          <h2 className="font-serif text-3xl sm:text-5xl md:text-[64px] lg:text-[72px] font-normal leading-tight text-slate">
             <em className="font-bold italic">Honest Review</em> from real users.
           </h2>
           <div className="grid w-full max-w-[1200px] grid-cols-1 md:grid-cols-3 gap-6 pt-6 text-left">
             {testimonials.map((t, i) => (
               <Card
                 key={i}
-                className="h-auto md:h-[228px] rounded-2xl border border-stone/40 bg-white/70 backdrop-blur-xs p-6 flex flex-col justify-between shadow-xs"
+                className="min-h-[180px] md:h-[228px] rounded-[20px] border border-stone/40 bg-white/70 backdrop-blur-xs p-6 md:p-7 flex flex-col justify-between shadow-xs"
               >
                 <p className="text-sm md:text-base text-slate leading-relaxed">
                   &quot;{t.quote}&quot;
                 </p>
                 <div className="flex items-center gap-3 pt-4">
-                  <Avatar className="size-11 border border-stone/30 bg-[#e5e0d8]">
-                    <AvatarFallback className="bg-stone/30 text-slate text-xs font-semibold">
-                      {t.name.slice(0, 2).toUpperCase()}
-                    </AvatarFallback>
-                  </Avatar>
+                  <div className="size-11 md:size-12 rounded-full bg-[#D9D9D9] shrink-0" />
                   <div className="flex flex-col">
                     <span className="text-sm font-semibold text-slate">
                       {t.name}
@@ -354,14 +436,14 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* Section: FAQ */}
-        <section className="flex w-full flex-col items-center gap-6 px-6 py-20 md:py-28 text-center">
+        {/* Section 6: FAQ — Fullscreen Viewport */}
+        <section className="relative flex w-full min-h-screen flex-col items-center justify-center gap-6 px-6 py-12 md:py-16 text-center">
           <Sparkle className="size-8 md:size-[50px] text-slate" />
-          <h2 className="font-serif text-3xl sm:text-5xl md:text-[64px] font-normal text-slate">
+          <h2 className="font-serif text-3xl sm:text-5xl md:text-[64px] lg:text-[72px] font-normal text-slate">
             <em className="font-bold italic">FAQ</em>
           </h2>
           <Accordion
-            defaultValue={[1]}
+            defaultValue={[]}
             className="w-full max-w-[1200px] text-left divide-y divide-stone/40 border-y border-stone/40 mt-4"
           >
             {faqs.map((faq, i) => (
@@ -377,73 +459,75 @@ export default function LandingPage() {
           </Accordion>
         </section>
 
-        {/* Section: Final CTA */}
-        <section className="flex w-full flex-col items-center gap-6 px-6 py-20 md:py-28 text-center">
-          <Sparkle className="size-8 md:size-[50px] text-slate" />
-          <h2 className="font-serif text-3xl sm:text-5xl md:text-[64px] font-normal leading-tight text-slate">
-            <em className="font-bold italic">Your wardrobe is</em>
-            <br />
-            <em className="font-bold italic">waiting.</em>
-          </h2>
-          <p className="text-slate text-sm sm:text-base md:text-lg">
-            Start for free. No credit card. No setup.
-          </p>
-          <div className="flex flex-col items-center gap-3 pt-2">
-            <Button
-              variant="default"
-              nativeButton={false}
-              className="w-full max-w-[320px] h-16 rounded-2xl text-lg md:text-xl font-medium tracking-wider uppercase shadow-md bg-slate text-white hover:bg-slate/90"
-              render={<Link href="/sign-up" prefetch />}
-            >
-              Create Account
-            </Button>
-            <p className="text-sm md:text-base text-stone font-normal">
-              Already have an account?{" "}
-              <Link
-                href="/sign-in"
-                prefetch
-                className="font-bold underline text-slate hover:text-black ml-1"
-              >
-                Sign in
-              </Link>
+        {/* Section 7: Final CTA & Footer — Fullscreen Viewport together */}
+        <section className="relative flex w-full min-h-screen flex-col justify-between items-center text-center overflow-hidden">
+          <div className="flex flex-1 flex-col items-center justify-center gap-6 px-6 py-12">
+            <Sparkle className="size-8 md:size-[50px] text-slate" />
+            <h2 className="font-serif text-3xl sm:text-5xl md:text-[64px] lg:text-[72px] font-normal leading-tight text-slate">
+              <em className="font-bold italic">Your wardrobe is</em>
+              <br />
+              <em className="font-bold italic">waiting.</em>
+            </h2>
+            <p className="text-slate text-xs sm:text-sm md:text-base tracking-[0.15em] uppercase">
+              Start for free. No credit card. No setup.
             </p>
+            <div className="flex flex-col items-center gap-3 pt-2">
+              <Button
+                variant="default"
+                nativeButton={false}
+                className="w-full min-w-[260px] max-w-[320px] h-14 md:h-16 rounded-2xl text-base md:text-xl font-medium tracking-[0.15em] uppercase shadow-md bg-[#333333] text-white hover:bg-black transition-colors"
+                render={<Link href="/sign-up" prefetch />}
+              >
+                Create Account
+              </Button>
+              <p className="text-xs sm:text-sm md:text-base text-stone font-normal">
+                Already have an account?{" "}
+                <Link
+                  href="/sign-in"
+                  prefetch
+                  className="font-bold underline text-slate hover:text-black ml-1"
+                >
+                  Sign in
+                </Link>
+              </p>
+            </div>
           </div>
+
+          {/* Footer — Docked at the bottom of the final fullscreen screen */}
+          <footer className="relative flex w-full flex-col justify-between overflow-hidden px-6 md:px-12 lg:px-16 py-8 md:py-12 min-h-[160px] md:h-[260px] bg-slate/5">
+            <Image
+              src="/brand/sky.png"
+              alt=""
+              fill
+              sizes="100vw"
+              className="pointer-events-none object-cover object-bottom -z-10 opacity-75"
+            />
+            <Image
+              src="/brand/asterisk-silver.png"
+              alt=""
+              width={344}
+              height={344}
+              className="pointer-events-none absolute -top-8 -right-8 md:-top-16 md:-right-16 w-36 sm:w-44 md:w-[300px] h-auto opacity-80 select-none"
+            />
+
+            <div className="relative z-10 flex items-center">
+              <Wordmark
+                className="text-slate text-2xl md:text-3xl"
+                iconClassName="size-8 md:size-9"
+              />
+            </div>
+
+            <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pt-6 md:pt-8">
+              <span className="text-xs md:text-sm text-slate tracking-wide uppercase">
+                © 2026 LOOMETTE. ALL RIGHTS RESERVED.
+              </span>
+              <span className="text-xs md:text-lg font-normal text-slate tracking-[0.2em] uppercase">
+                Made with love.
+              </span>
+            </div>
+          </footer>
         </section>
       </main>
-
-      {/* Footer — 303px desktop height with sky background & silver asterisk */}
-      <footer className="relative flex w-full flex-col justify-between overflow-hidden px-6 md:px-16 py-10 md:py-14 min-h-[220px] md:h-[303px] bg-slate/5">
-        <Image
-          src="/brand/sky.png"
-          alt=""
-          fill
-          sizes="100vw"
-          className="pointer-events-none object-cover object-bottom -z-10 opacity-75"
-        />
-        <Image
-          src="/brand/asterisk-silver.png"
-          alt=""
-          width={344}
-          height={344}
-          className="pointer-events-none absolute -top-10 -right-10 md:-top-20 md:-right-16 w-48 md:w-[344px] h-auto opacity-80"
-        />
-
-        <div className="relative z-10 flex items-center">
-          <Wordmark
-            className="text-slate text-2xl md:text-3xl"
-            iconClassName="size-8 md:size-9"
-          />
-        </div>
-
-        <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pt-8">
-          <span className="text-xs md:text-sm text-slate tracking-wide">
-            © 2026 Closet. All rights reserved.
-          </span>
-          <span className="text-sm md:text-xl font-normal text-slate tracking-widest uppercase">
-            Made with love.
-          </span>
-        </div>
-      </footer>
     </div>
   );
 }

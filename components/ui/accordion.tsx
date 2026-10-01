@@ -33,7 +33,7 @@ function AccordionTrigger({
       <AccordionPrimitive.Trigger
         data-slot="accordion-trigger"
         className={cn(
-          "group/accordion-trigger flex w-full items-center justify-between gap-4 py-4 text-left text-sm font-medium outline-none",
+          "group/accordion-trigger flex w-full items-center justify-between gap-4 py-4 text-left text-sm font-medium outline-none transition-colors",
           className,
         )}
         {...props}
@@ -48,14 +48,19 @@ function AccordionTrigger({
 
 function AccordionPanel({
   className,
+  children,
   ...props
 }: AccordionPrimitive.Panel.Props) {
   return (
     <AccordionPrimitive.Panel
       data-slot="accordion-panel"
-      className={cn("pb-4 text-sm text-muted-foreground", className)}
+      className="h-[var(--accordion-panel-height)] overflow-hidden transition-[height] duration-250 ease-out data-[ending-style]:h-0 data-[starting-style]:h-0"
       {...props}
-    />
+    >
+      <div className={cn("pb-4 text-sm text-muted-foreground", className)}>
+        {children}
+      </div>
+    </AccordionPrimitive.Panel>
   );
 }
 

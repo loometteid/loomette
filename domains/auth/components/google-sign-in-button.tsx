@@ -34,10 +34,12 @@ export function GoogleSignInButton({
   iconOnly = false,
   className,
   iconClassName,
+  "data-testid": dataTestId,
 }: {
   iconOnly?: boolean;
   className?: string;
   iconClassName?: string;
+  "data-testid"?: string;
 }) {
   const [loading, setLoading] = useState(false);
 
@@ -60,6 +62,7 @@ export function GoogleSignInButton({
         onClick={handleClick}
         disabled={loading}
         aria-label={loading ? "Redirecting…" : "Continue with Google"}
+        data-testid={dataTestId}
         className={cn("size-16 rounded-2xl", className)}
       >
         <GoogleGlyph className={cn("size-6", iconClassName)} />
@@ -73,6 +76,7 @@ export function GoogleSignInButton({
       variant="outline"
       onClick={handleClick}
       disabled={loading}
+      data-testid={dataTestId}
     >
       {loading ? "Redirecting…" : "Continue with Google"}
     </Button>

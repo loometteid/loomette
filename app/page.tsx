@@ -130,7 +130,7 @@ export default function LandingPage() {
           className="flex items-center gap-2 md:gap-3 text-xs md:text-sm font-medium tracking-[0.15em] uppercase text-slate"
         >
           <Link
-            href="/sign-in"
+            href="/welcome"
             prefetch
             data-testid="landing-page__sign-in-link"
             className="hover:text-black transition-colors"
@@ -139,7 +139,7 @@ export default function LandingPage() {
           </Link>
           <span className="text-stone/60">|</span>
           <Link
-            href="/sign-up"
+            href="/welcome"
             prefetch
             data-testid="landing-page__sign-up-link"
             className="hover:text-black transition-colors"
@@ -235,7 +235,7 @@ export default function LandingPage() {
                 nativeButton={false}
                 data-testid="landing-page__hero-cta"
                 className="w-full min-w-65 max-w-80 h-14 md:h-16 rounded-2xl text-base md:text-xl font-medium tracking-[0.15em] uppercase shadow-md bg-[#333333] text-white hover:bg-black transition-colors"
-                render={<Link href="/sign-up" prefetch />}
+                render={<Link href="/welcome" prefetch />}
               >
                 Create Account
               </Button>
@@ -587,14 +587,14 @@ export default function LandingPage() {
                 nativeButton={false}
                 data-testid="landing-page__final-cta-button"
                 className="w-full min-w-65 max-w-80 h-14 md:h-16 rounded-2xl text-base md:text-xl font-medium tracking-[0.15em] uppercase shadow-md bg-[#333333] text-white hover:bg-black transition-colors"
-                render={<Link href="/sign-up" prefetch />}
+                render={<Link href="/welcome" prefetch />}
               >
                 Create Account
               </Button>
               <p className="text-xs sm:text-sm md:text-base text-stone font-normal">
                 Already have an account?{" "}
                 <Link
-                  href="/sign-in"
+                  href="/welcome"
                   prefetch
                   className="font-bold underline text-slate hover:text-black ml-1"
                 >

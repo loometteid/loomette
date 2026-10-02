@@ -14,11 +14,11 @@ describe("LandingPage (Page Integration & Component Tier)", () => {
     expect(screen.getByTestId("landing-page__wordmark")).toBeInTheDocument();
     expect(screen.getByTestId("landing-page__sign-in-link")).toHaveAttribute(
       "href",
-      "/sign-in",
+      "/welcome",
     );
     expect(screen.getByTestId("landing-page__sign-up-link")).toHaveAttribute(
       "href",
-      "/sign-up",
+      "/welcome",
     );
 
     // Assert: Hero section and all 4 mascots
@@ -83,15 +83,15 @@ describe("LandingPage (Page Integration & Component Tier)", () => {
     ).toBeInTheDocument();
   });
 
-  it("provides functional navigation links to sign-up for both hero and final CTAs", () => {
+  it("provides functional navigation links to welcome for both hero and final CTAs", () => {
     // Arrange & Act
     render(<LandingPage />);
 
-    // Assert: Both CTAs link to /sign-up
+    // Assert: Both CTAs link to /welcome
     const heroCta = screen.getByTestId("landing-page__hero-cta");
-    expect(heroCta.closest("a") || heroCta).toHaveAttribute("href", "/sign-up");
+    expect(heroCta.closest("a") || heroCta).toHaveAttribute("href", "/welcome");
 
     const finalCta = screen.getByTestId("landing-page__final-cta-button");
-    expect(finalCta.closest("a") || finalCta).toHaveAttribute("href", "/sign-up");
+    expect(finalCta.closest("a") || finalCta).toHaveAttribute("href", "/welcome");
   });
 });

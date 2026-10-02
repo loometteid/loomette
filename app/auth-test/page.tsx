@@ -1,7 +1,5 @@
 import { GoogleSignInButton } from "@/domains/auth/components/google-sign-in-button";
-import { SignInForm } from "@/domains/auth/sign-in-page";
 import { SignOutButton } from "@/domains/auth/components/sign-out-button";
-import { SignUpForm } from "@/domains/auth/sign-up-page";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 export default async function AuthTestPage() {
@@ -17,17 +15,7 @@ export default async function AuthTestPage() {
         <h1 className="text-lg font-medium">Auth test</h1>
 
         <section className="flex flex-col gap-3">
-          <h2 className="text-sm font-medium">Sign up</h2>
-          <SignUpForm />
-        </section>
-
-        <section className="flex flex-col gap-3">
-          <h2 className="text-sm font-medium">Sign in</h2>
-          <SignInForm />
-        </section>
-
-        <section className="flex flex-col gap-3">
-          <h2 className="text-sm font-medium">Or</h2>
+          <h2 className="text-sm font-medium">Google Sign In</h2>
           <GoogleSignInButton />
         </section>
       </main>

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 
 // Standard 4-color Google "G" logomark — no icon package ships brand
@@ -31,8 +32,14 @@ function GoogleGlyph({ className }: { className?: string }) {
 
 export function GoogleSignInButton({
   iconOnly = false,
+  className,
+  iconClassName,
+  "data-testid": dataTestId,
 }: {
   iconOnly?: boolean;
+  className?: string;
+  iconClassName?: string;
+  "data-testid"?: string;
 }) {
   const [loading, setLoading] = useState(false);
 
@@ -55,9 +62,10 @@ export function GoogleSignInButton({
         onClick={handleClick}
         disabled={loading}
         aria-label={loading ? "Redirecting…" : "Continue with Google"}
-        className="size-16 rounded-2xl"
+        data-testid={dataTestId}
+        className={cn("size-16 rounded-2xl", className)}
       >
-        <GoogleGlyph className="size-6" />
+        <GoogleGlyph className={cn("size-6", iconClassName)} />
       </Button>
     );
   }
@@ -68,6 +76,7 @@ export function GoogleSignInButton({
       variant="outline"
       onClick={handleClick}
       disabled={loading}
+      data-testid={dataTestId}
     >
       {loading ? "Redirecting…" : "Continue with Google"}
     </Button>

@@ -17,11 +17,16 @@ export const mockRouter = {
   prefetch: vi.fn(),
 };
 
+export const mockRedirect = vi.fn();
+export const mockPermanentRedirect = vi.fn();
+
 vi.mock("next/navigation", () => ({
   useRouter: () => mockRouter,
   usePathname: () => "/",
   useSearchParams: () => new URLSearchParams(),
   notFound: vi.fn(),
+  redirect: (...args: unknown[]) => mockRedirect(...args),
+  permanentRedirect: (...args: unknown[]) => mockPermanentRedirect(...args),
 }));
 
 // Start MSW mock server before all tests

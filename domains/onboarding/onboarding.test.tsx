@@ -10,7 +10,10 @@ import { StepFourForm } from "./step-four-page";
 import { isProfileOnboarded } from "./utils";
 import { useOnboardingGuard } from "./hooks/use-onboarding-guard";
 import { useAlreadyOnboardedGuard } from "./hooks/use-already-onboarded-guard";
-import { getOnboardingProfileQueryOptionsForBrowser } from "./query-options/get-onboarding-profile.query-option.client";
+import {
+  getOnboardingProfileQueryOptionsForBrowser,
+  type OnboardingUserProfile,
+} from "./query-options/get-onboarding-profile.query-option.client";
 
 describe("Onboarding Flow (Steps 1 to 4)", () => {
   describe("Step 1: Name and Email", () => {
@@ -95,6 +98,11 @@ describe("Onboarding Flow (Steps 1 to 4)", () => {
           display_name: "Rebecca",
           gender: "female",
           birthday: "1998-05-15",
+          email: "test@example.com",
+          username: "rebecca",
+          created_at: "2026-10-01T00:00:00Z",
+          is_private: false,
+          subscription_tier: "free",
           occupation: null,
           work_setting: null,
           outfit_size: null,
@@ -104,9 +112,12 @@ describe("Onboarding Flow (Steps 1 to 4)", () => {
           waist_size: null,
           high_hip_size: null,
           hip_size: null,
+          height: null,
+          weight: null,
+          profile_photo: null,
           style_tags: [],
           body_type: null,
-        },
+        } as OnboardingUserProfile,
       );
 
       expect(() => {

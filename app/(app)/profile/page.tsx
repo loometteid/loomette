@@ -4,7 +4,7 @@ import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import { ProfileView } from "@/domains/profile/profile-page";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { ProfileFallback } from "@/domains/profile/profile-loading";
-import { getServerQueryClient } from "@/lib/tanstack-query/server";
+import { getQueryClient } from "@/lib/tanstack-query";
 import { getUserQueryOptions } from "@/domains/profile/query-options/get-user.query-option";
 import { getProfileQueryOptionsForServer } from "@/domains/profile/query-options/get-profile.query-option.server";
 import { getFavoriteOutfitsQueryOptionsForServer } from "@/domains/profile/query-options/get-favorite-outfits.query-option.server";
@@ -22,7 +22,7 @@ export default async function ProfilePage() {
     redirect("/sign-in");
   }
 
-  const queryClient = getServerQueryClient();
+  const queryClient = getQueryClient();
 
   // Populate user data
   queryClient.setQueryData(getUserQueryOptions().queryKey, () => user);

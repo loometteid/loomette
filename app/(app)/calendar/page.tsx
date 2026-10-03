@@ -4,10 +4,11 @@ import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { CalendarView } from "@/domains/calendar/calendar-page";
 import { CalendarFallback } from "@/domains/calendar/calendar-loading";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
-import { getServerQueryClient } from "@/lib/tanstack-query/server";
+import { getQueryClient } from "@/lib/tanstack-query";
 import { getUserQueryOptions } from "@/domains/profile/query-options/get-user.query-option";
 import { todayParts } from "@/domains/calendar/date-utils";
 import { getDiaryEntriesQueryOptionsForServer } from "@/domains/calendar/query-options/get-diary-entries.query-option.server";
+import { getProfileQueryOptionsForServer } from "@/domains/profile/query-options/get-profile.query-option.server";
 
 export default async function CalendarPage() {
   const supabase = await createServerSupabaseClient();
@@ -20,11 +21,16 @@ export default async function CalendarPage() {
     redirect("/sign-in");
   }
 
-  const queryClient = getServerQueryClient();
+  const queryClient = getQueryClient();
 
   // populate user data so the user is not arbitrarily logged out
   // which is a very weird behavior
   queryClient.setQueryData(getUserQueryOptions().queryKey, () => user)
+
+  // prefetch profile for onboarding check
+  void queryClient.ensureQueryData(
+    getProfileQueryOptionsForServer(user.id),
+  );
 
   // prefetch diary entries
   const { year, month } = todayParts();

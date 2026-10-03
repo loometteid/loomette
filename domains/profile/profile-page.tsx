@@ -10,6 +10,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Typography } from "@/components/ui/typography";
 import { cn } from "@/lib/utils";
 import { formatTripMonthYear } from "@/domains/trip/trip-dates";
+import { useOnboardingGuard } from "@/domains/onboarding/hooks/use-onboarding-guard";
 import { getProfileQueryOptionsForBrowser } from "./query-options/get-profile.query-option.client";
 import { getFavoriteOutfitsQueryOptionsForBrowser } from "./query-options/get-favorite-outfits.query-option.client";
 import { getWishlistQueryOptionsForBrowser } from "./query-options/get-wishlist.query-option.client";
@@ -26,12 +27,12 @@ function notImplemented() {
 }
 
 export function ProfileView({ userId }: { userId: string }) {
-  const [tab, setTab] = useState<Tab>("favorite");
-  const [favoriteFilter, setFavoriteFilter] = useState<FavoriteFilter>("all");
-
   const { data: profile } = useSuspenseQuery(
     getProfileQueryOptionsForBrowser(userId),
   );
+  useOnboardingGuard(profile);
+  const [tab, setTab] = useState<Tab>("favorite");
+  const [favoriteFilter, setFavoriteFilter] = useState<FavoriteFilter>("all");
   const { data: favorites } = useSuspenseQuery(
     getFavoriteOutfitsQueryOptionsForBrowser(userId),
   );

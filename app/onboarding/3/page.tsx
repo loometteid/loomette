@@ -4,7 +4,7 @@ import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import { StepThreeForm } from "@/domains/onboarding/step-three-page";
 import { OnboardingFallback } from "@/domains/onboarding/onboarding-loading";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
-import { getServerQueryClient } from "@/lib/tanstack-query/server";
+import { getQueryClient } from "@/lib/tanstack-query";
 import { getUserQueryOptions } from "@/domains/profile/query-options/get-user.query-option";
 import { getOnboardingProfileQueryOptionsForServer } from "@/domains/onboarding/query-options/get-onboarding-profile.query-option.server";
 
@@ -19,7 +19,7 @@ export default async function OnboardingStepThreePage() {
     redirect("/welcome");
   }
 
-  const queryClient = getServerQueryClient();
+  const queryClient = getQueryClient();
 
   // Seed user data
   queryClient.setQueryData(getUserQueryOptions().queryKey, () => user);

@@ -4,7 +4,7 @@ import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import { StepOneForm } from "@/domains/onboarding/step-one-page";
 import { OnboardingFallback } from "@/domains/onboarding/onboarding-loading";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
-import { getServerQueryClient } from "@/lib/tanstack-query/server";
+import { getQueryClient } from "@/lib/tanstack-query";
 import { getUserQueryOptions } from "@/domains/profile/query-options/get-user.query-option";
 import { getOnboardingProfileQueryOptionsForServer } from "@/domains/onboarding/query-options/get-onboarding-profile.query-option.server";
 import Link from "next/link";
@@ -20,19 +20,15 @@ export default async function OnboardingStepOnePage() {
     redirect("/welcome");
   }
 
-  const queryClient = getServerQueryClient();
+  const queryClient = getQueryClient();
 
   // Seed authenticated user data into query cache
   queryClient.setQueryData(getUserQueryOptions().queryKey, () => user);
 
-  // Use query options to verify whether user is already onboarded
-  const profile = await queryClient.fetchQuery(
+  // Unawaited prefetch (tanstack-query-patterns rule 3)
+  void queryClient.ensureQueryData(
     getOnboardingProfileQueryOptionsForServer(user.id),
   );
-
-  if (profile?.display_name && profile?.gender) {
-    redirect("/onboarding/7");
-  }
 
   const dehydratedQueryClient = dehydrate(queryClient);
 

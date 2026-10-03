@@ -1,12 +1,16 @@
 import { describe, expect, it } from "vitest";
 import { screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { mockRouter } from "@/test/setup";
-import { renderWithQueryClient } from "@/test/test-utils";
+import { mockRedirect, mockRouter } from "@/test/setup";
+import { createTestQueryClient, renderWithQueryClient } from "@/test/test-utils";
 import { StepOneForm } from "./step-one-page";
 import { StepTwoForm } from "./step-two-page";
 import { StepThreeForm } from "./step-three-page";
 import { StepFourForm } from "./step-four-page";
+import { isProfileOnboarded } from "./utils";
+import { useOnboardingGuard } from "./hooks/use-onboarding-guard";
+import { useAlreadyOnboardedGuard } from "./hooks/use-already-onboarded-guard";
+import { getOnboardingProfileQueryOptionsForBrowser } from "./query-options/get-onboarding-profile.query-option.client";
 
 describe("Onboarding Flow (Steps 1 to 4)", () => {
   describe("Step 1: Name and Email", () => {
@@ -77,6 +81,44 @@ describe("Onboarding Flow (Steps 1 to 4)", () => {
       ).not.toBeInTheDocument();
       expect(
         screen.queryByTestId("onboarding-shell__back-button--desktop"),
+      ).not.toBeInTheDocument();
+    });
+
+    it("redirects onboarded user to /onboarding/7 and does not render step 1 form", async () => {
+      mockRedirect.mockClear();
+      const queryClient = createTestQueryClient();
+
+      queryClient.setQueryData(
+        getOnboardingProfileQueryOptionsForBrowser("user-onboarded").queryKey,
+        {
+          user_id: "user-onboarded",
+          display_name: "Rebecca",
+          gender: "female",
+          birthday: "1998-05-15",
+          occupation: null,
+          work_setting: null,
+          outfit_size: null,
+          shoe_size: null,
+          shoe_size_region: null,
+          bust_size: null,
+          waist_size: null,
+          high_hip_size: null,
+          hip_size: null,
+          style_tags: [],
+          body_type: null,
+        },
+      );
+
+      expect(() => {
+        renderWithQueryClient(
+          <StepOneForm email="test@example.com" userId="user-onboarded" />,
+          { queryClient },
+        );
+      }).toThrow();
+
+      expect(mockRedirect).toHaveBeenCalledWith("/onboarding/7");
+      expect(
+        screen.queryByTestId("onboarding-step-one"),
       ).not.toBeInTheDocument();
     });
   });
@@ -282,4 +324,95 @@ describe("Onboarding Flow (Steps 1 to 4)", () => {
       expect(mockRouter.push).toHaveBeenCalledWith("/onboarding/3");
     });
   });
+
+  describe("Onboarding Guard and Completion Checks", () => {
+    it("evaluates onboarding completion status correctly via isProfileOnboarded", () => {
+      // Missing or empty profile
+      expect(isProfileOnboarded(null)).toBe(false);
+      expect(isProfileOnboarded(undefined)).toBe(false);
+      expect(isProfileOnboarded({ display_name: null, gender: null, birthday: null })).toBe(false);
+      expect(isProfileOnboarded({ display_name: "", gender: "female", birthday: null })).toBe(false);
+      expect(isProfileOnboarded({ display_name: "   ", gender: "female", birthday: null })).toBe(false);
+
+      // Incomplete step 2 (has display_name but neither gender nor birthday)
+      expect(isProfileOnboarded({ display_name: "Gonjoi", gender: null, birthday: null })).toBe(false);
+      expect(isProfileOnboarded({ display_name: "Gonjoi", gender: "", birthday: "" })).toBe(false);
+
+      // Completed step 1 and step 2 via gender
+      expect(isProfileOnboarded({ display_name: "Gonjoi", gender: "female", birthday: null })).toBe(true);
+
+      // Completed step 1 and step 2 via birthday
+      expect(isProfileOnboarded({ display_name: "Gonjoi", gender: null, birthday: "1998-05-15" })).toBe(true);
+
+      // Completed step 1 and step 2 with both gender and birthday
+      expect(isProfileOnboarded({ display_name: "Gonjoi", gender: "male", birthday: "1998-05-15" })).toBe(true);
+    });
+
+    it("redirects to /onboarding/1 when profile is not onboarded", () => {
+      function GuardTestComponent({ profile }: { profile: Parameters<typeof useOnboardingGuard>[0] }) {
+        useOnboardingGuard(profile);
+        return <div data-testid="protected-content">Content</div>;
+      }
+
+      expect(() => {
+        renderWithQueryClient(
+          <GuardTestComponent profile={{ display_name: null, gender: null }} />,
+        );
+      }).toThrow();
+
+      expect(mockRedirect).toHaveBeenCalledWith("/onboarding/1");
+
+      mockRedirect.mockClear();
+
+      renderWithQueryClient(
+        <GuardTestComponent
+          profile={{ display_name: "Rebecca", gender: "female", birthday: null }}
+        />,
+      );
+
+      expect(mockRedirect).not.toHaveBeenCalled();
+      expect(screen.getByTestId("protected-content")).toBeInTheDocument();
+    });
+
+    it("redirects to /onboarding/7 when profile is already onboarded via useAlreadyOnboardedGuard", () => {
+      function AlreadyOnboardedGuardTestComponent({
+        profile,
+      }: {
+        profile: Parameters<typeof useAlreadyOnboardedGuard>[0];
+      }) {
+        useAlreadyOnboardedGuard(profile);
+        return <div data-testid="onboarding-step-one-content">Step 1 Form</div>;
+      }
+
+      mockRedirect.mockClear();
+
+      expect(() => {
+        renderWithQueryClient(
+          <AlreadyOnboardedGuardTestComponent
+            profile={{
+              display_name: "Hokki",
+              gender: "male",
+              birthday: "2002-04-20",
+            }}
+          />,
+        );
+      }).toThrow();
+
+      expect(mockRedirect).toHaveBeenCalledWith("/onboarding/7");
+
+      mockRedirect.mockClear();
+
+      renderWithQueryClient(
+        <AlreadyOnboardedGuardTestComponent
+          profile={{ display_name: null, gender: null, birthday: null }}
+        />,
+      );
+
+      expect(mockRedirect).not.toHaveBeenCalled();
+      expect(
+        screen.getByTestId("onboarding-step-one-content"),
+      ).toBeInTheDocument();
+    });
+  });
 });
+

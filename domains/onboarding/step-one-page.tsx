@@ -16,6 +16,7 @@ import {
 } from "./schemas/step-one.schema";
 import { updateOnboardingProfileMutationOptions } from "./mutation-options/update-onboarding-profile.mutation-option.client";
 import { getOnboardingProfileQueryOptionsForBrowser } from "./query-options/get-onboarding-profile.query-option.client";
+import { useAlreadyOnboardedGuard } from "./hooks/use-already-onboarded-guard";
 
 export interface StepOneFormProps {
   userId: string;
@@ -35,6 +36,7 @@ export function StepOneForm({
   const { data: profile } = useSuspenseQuery(
     getOnboardingProfileQueryOptionsForBrowser(userId),
   );
+  useAlreadyOnboardedGuard(profile);
   const {
     register,
     handleSubmit,

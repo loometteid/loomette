@@ -4,7 +4,7 @@ import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import { TripDetailView } from "@/domains/trip/trip-detail-page";
 import { TripDetailFallback } from "@/domains/trip/trip-detail-loading";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
-import { getServerQueryClient } from "@/lib/tanstack-query/server";
+import { getQueryClient } from "@/lib/tanstack-query";
 import { getUserQueryOptions } from "@/domains/profile/query-options/get-user.query-option";
 import { getTripDetailQueryOptionsForServer } from "@/domains/trip/query-options/get-trip-detail.query-option.server";
 
@@ -24,7 +24,7 @@ export default async function TripPage({
     redirect("/sign-in");
   }
 
-  const queryClient = getServerQueryClient();
+  const queryClient = getQueryClient();
 
   // Populate user data
   queryClient.setQueryData(getUserQueryOptions().queryKey, () => user);

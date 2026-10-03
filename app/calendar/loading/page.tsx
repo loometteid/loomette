@@ -2,7 +2,7 @@ import { redirect } from "next/navigation";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import { OutfitLoading } from "@/domains/calendar/outfit-approval-loading";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
-import { getServerQueryClient } from "@/lib/tanstack-query/server";
+import { getQueryClient } from "@/lib/tanstack-query";
 import { getUserQueryOptions } from "@/domains/profile/query-options/get-user.query-option";
 
 export default async function CalendarLoadingPage() {
@@ -16,7 +16,7 @@ export default async function CalendarLoadingPage() {
     redirect("/sign-in");
   }
 
-  const queryClient = getServerQueryClient();
+  const queryClient = getQueryClient();
   queryClient.setQueryData(getUserQueryOptions().queryKey, () => user);
   const dehydratedQueryClient = dehydrate(queryClient);
 

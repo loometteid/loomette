@@ -5,7 +5,7 @@ import {
 } from "@tanstack/react-query";
 import { getLogger } from "@/lib/logging";
 
-export function getServerQueryClient() {
+export function getQueryClient() {
   return new QueryClient({
     queryCache: new QueryCache({
       onError: (error, query) => {

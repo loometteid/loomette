@@ -20,6 +20,8 @@ import { OutfitEntryDialog } from "./components/outfit-entry-dialog";
 import { dateKey, formatMonthYear, todayParts } from "./date-utils";
 import type { DiaryEntry } from "./types";
 import { getDiaryEntriesQueryOptionsForBrowser } from "./query-options/get-diary-entries.query-option.client";
+import { getProfileQueryOptionsForBrowser } from "@/domains/profile/query-options/get-profile.query-option.client";
+import { useOnboardingGuard } from "@/domains/onboarding/hooks/use-onboarding-guard";
 
 const subscribeNoop = () => () => { };
 
@@ -31,6 +33,11 @@ function getClientTodayKey() {
 export function CalendarView({ userId }: { userId: string }) {
   const router = useRouter();
   const queryClient = useQueryClient();
+
+  const { data: profile } = useSuspenseQuery(
+    getProfileQueryOptionsForBrowser(userId),
+  );
+  useOnboardingGuard(profile);
 
   // Safely sync with browser's clock/timezone across hydration
   const todayKey = useSyncExternalStore(

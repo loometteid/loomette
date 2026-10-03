@@ -83,6 +83,11 @@ export const handlers = [
     return HttpResponse.json([]);
   }),
 
+  // Default mock handler for outfit table queries (e.g. looks count)
+  http.get(`${MOCK_SUPABASE_URL}/rest/v1/outfit`, () => {
+    return HttpResponse.json([]);
+  }),
+
   // Default mock handler for creating a trip (insert)
   http.post(`${MOCK_SUPABASE_URL}/rest/v1/trip`, async ({ request }) => {
     const url = new URL(request.url);

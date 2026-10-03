@@ -17,7 +17,9 @@ export const mockRouter = {
   prefetch: vi.fn(),
 };
 
-export const mockRedirect = vi.fn();
+export const mockRedirect = vi.fn(
+  (url?: unknown) => new Error(`NEXT_REDIRECT: ${String(url)}`),
+);
 export const mockPermanentRedirect = vi.fn();
 
 vi.mock("next/navigation", () => ({

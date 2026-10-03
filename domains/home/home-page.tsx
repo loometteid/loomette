@@ -24,6 +24,7 @@ import {
 } from "@/domains/outfit/components/outfit-composition";
 import { getProfileQueryOptionsForBrowser } from "@/domains/profile/query-options/get-profile.query-option.client";
 import { getWardrobeItemsQueryOptionsForBrowser } from "@/domains/wardrobe/query-options/get-wardrobe-items.query-option.client";
+import { useOnboardingGuard } from "@/domains/onboarding/hooks/use-onboarding-guard";
 import { getLooksCountQueryOptionsForBrowser } from "./query-options/get-looks-count.query-option.client";
 import type { FavoriteItem } from "./types";
 
@@ -33,6 +34,8 @@ export function HomeView({ userId }: { userId: string }) {
   const { data: profile } = useSuspenseQuery(
     getProfileQueryOptionsForBrowser(userId),
   );
+  useOnboardingGuard(profile);
+
   const { data: wardrobeItems } = useSuspenseQuery(
     getWardrobeItemsQueryOptionsForBrowser(userId),
   );

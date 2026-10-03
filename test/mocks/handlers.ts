@@ -34,13 +34,36 @@ export const handlers = [
     return HttpResponse.json([]);
   }),
 
-  // Default mock handler for user table (e.g. gender profile)
+  // Default mock handler for user table (e.g. gender profile or full onboarding profile)
   http.get(`${MOCK_SUPABASE_URL}/rest/v1/user`, ({ request }) => {
+    const url = new URL(request.url);
+    const select = url.searchParams.get("select");
     const acceptHeader = request.headers.get("accept") ?? "";
     const isSingle = acceptHeader.includes("vnd.pgrst.object+json");
+
+    if (select === "gender") {
+      const mockGender = { gender: "female" };
+      return isSingle
+        ? HttpResponse.json(mockGender)
+        : HttpResponse.json([mockGender]);
+    }
+
     const mockUser = {
       user_id: "user-123",
-      gender: "female",
+      display_name: null,
+      gender: null,
+      birthday: null,
+      occupation: null,
+      work_setting: null,
+      outfit_size: null,
+      shoe_size: null,
+      shoe_size_region: null,
+      height: null,
+      weight: null,
+      bust_size: null,
+      waist_size: null,
+      high_hip_size: null,
+      hip_size: null,
     };
 
     if (isSingle) {
@@ -49,8 +72,19 @@ export const handlers = [
     return HttpResponse.json([mockUser]);
   }),
 
+  // Default mock handler for user table updates (patch)
+  http.patch(`${MOCK_SUPABASE_URL}/rest/v1/user`, async ({ request }) => {
+    const body = await request.json();
+    return HttpResponse.json(body);
+  }),
+
   // Default mock handler for wardrobe_item table queries
   http.get(`${MOCK_SUPABASE_URL}/rest/v1/wardrobe_item`, () => {
+    return HttpResponse.json([]);
+  }),
+
+  // Default mock handler for outfit table queries (e.g. looks count)
+  http.get(`${MOCK_SUPABASE_URL}/rest/v1/outfit`, () => {
     return HttpResponse.json([]);
   }),
 

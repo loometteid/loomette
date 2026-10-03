@@ -11,7 +11,7 @@ The unified entry point at `/welcome` where user identity verification occurs vi
 _Avoid_: Login screen, sign-up page, registration form
 
 **Onboarding**:
-The six-step personalization wizard where a newly authenticated user configures their profile (name, gender, sizing, profession).
+The five-step personalization wizard (steps 1–5) followed by a completion confirmation (step 6), where a newly authenticated user configures their profile (name, identity, profession, sizing, style tags).
 _Avoid_: Account setup flow, sign-up wizard
 
 **Initial Wardrobe Seed**:

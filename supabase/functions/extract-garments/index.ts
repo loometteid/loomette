@@ -135,11 +135,11 @@ Extract attributes: name, brand, category (Tops, Bottoms, Shoes, Accessories), s
 
     if (geminiApiKey) {
       log.info("Calling Gemini Vision API for garment decomposition", {
-        model: "gemini-2.5-flash",
+        model: "gemini-3.6-flash",
       });
       const ai = new GoogleGenAI({ apiKey: geminiApiKey });
       const response = await ai.models.generateContent({
-        model: "gemini-2.5-flash",
+        model: "gemini-3.6-flash",
         contents: [
           prompt,
           {
@@ -188,10 +188,10 @@ Extract attributes: name, brand, category (Tops, Bottoms, Shoes, Accessories), s
       const rawText = response.text || "{}";
       const usage = response.usageMetadata
         ? {
-            promptTokens: response.usageMetadata.promptTokenCount,
-            candidatesTokens: response.usageMetadata.candidatesTokenCount,
-            totalTokens: response.usageMetadata.totalTokenCount,
-          }
+          promptTokens: response.usageMetadata.promptTokenCount,
+          candidatesTokens: response.usageMetadata.candidatesTokenCount,
+          totalTokens: response.usageMetadata.totalTokenCount,
+        }
         : undefined;
 
       phase3Timer.done("Gemini Vision decomposition completed", {

@@ -13,7 +13,7 @@ function getQueryCache(environment: 'Client' | 'Server') {
       const logger = getLogger(["query", feature]);
       logger.error("{environment} query failed: {queryKey}", {
         queryKey,
-        errorMessage: error instanceof Error ? error.message : String(error),
+        errorMessage: 'message' in error && typeof error.message === "string" ? error.message : JSON.stringify(error),
         errorStack: error instanceof Error ? error.stack : undefined,
         environment
       });

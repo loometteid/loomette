@@ -15,7 +15,7 @@ export function BottomNav() {
   const pathname = usePathname();
 
   return (
-    <nav className="fixed inset-x-0 bottom-0 z-50 flex w-full items-stretch justify-around bg-white/10 px-2 py-3 backdrop-blur-md">
+    <nav className="fixed inset-x-0 bottom-0 z-50 flex w-full items-stretch justify-around bg-white/10 px-2 py-3 backdrop-blur-md lg:hidden">
       {TABS.map(({ href, label }) => {
         const isActive = pathname === href || pathname.startsWith(`${href}/`);
         return (

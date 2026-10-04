@@ -72,3 +72,16 @@ export function monthRangeISO(year: number, month: number) {
 export function formatMonthYear(year: number, month: number) {
   return `${MONTH_LABELS[month].toUpperCase()} ${year}`;
 }
+
+export function addMonths(
+  year: number,
+  month: number,
+  count: number,
+): { year: number; month: number } {
+  const target = new Date(year, month + count, 1);
+  return {
+    year: target.getFullYear(),
+    month: target.getMonth(),
+  };
+}
+

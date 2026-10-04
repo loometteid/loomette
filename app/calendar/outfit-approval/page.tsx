@@ -4,6 +4,7 @@ import { OutfitApproval } from "@/domains/calendar/outfit-approval-page";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { getQueryClient } from "@/lib/tanstack-query";
 import { getUserQueryOptions } from "@/domains/profile/query-options/get-user.query-option";
+import { getProfileQueryOptionsForServer } from "@/domains/profile/query-options/get-profile.query-option.server";
 
 export default async function OutfitApprovalPage() {
   const supabase = await createServerSupabaseClient();
@@ -18,11 +19,12 @@ export default async function OutfitApprovalPage() {
 
   const queryClient = getQueryClient();
   queryClient.setQueryData(getUserQueryOptions().queryKey, () => user);
+  void queryClient.ensureQueryData(getProfileQueryOptionsForServer(user.id));
   const dehydratedQueryClient = dehydrate(queryClient);
 
   return (
     <HydrationBoundary state={dehydratedQueryClient}>
-      <OutfitApproval />
+      <OutfitApproval userId={user.id} />
     </HydrationBoundary>
   );
 }

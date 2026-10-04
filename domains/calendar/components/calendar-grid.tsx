@@ -31,21 +31,26 @@ export function CalendarGrid({
         {WEEKDAY_LABELS.map((label) => (
           <span
             key={label}
-            className="text-muted-foreground text-center text-[0.65rem] font-medium tracking-wide"
+            className={cn(
+              "text-center text-[0.65rem] lg:text-xs font-semibold tracking-wider",
+              label === "SUN" || label === "SAT"
+                ? "text-[#E07A7A]"
+                : "text-muted-foreground",
+            )}
           >
             {label}
           </span>
         ))}
       </div>
 
-      <div className="grid grid-cols-7 gap-y-1">
+      <div className="grid grid-cols-7 gap-y-1 lg:gap-y-2">
         {weeks.flatMap((week, weekIndex) =>
           week.map((cell, cellIndex) => {
             if (!cell) {
               return (
                 <div
                   key={`${weekIndex}-${cellIndex}`}
-                  className="h-16"
+                  className="h-16 lg:h-24"
                   aria-hidden
                 />
               );
@@ -70,21 +75,21 @@ export function CalendarGrid({
                   }
                 }}
                 className={cn(
-                  "flex h-16 cursor-pointer flex-col items-center gap-1 rounded-xl p-1 text-center transition-colors",
-                  isSelected && !hasPhoto && "bg-foreground",
+                  "flex h-16 lg:h-24 cursor-pointer flex-col items-center gap-1 rounded-xl p-1 text-center transition-colors",
+                  isSelected && !hasPhoto && "bg-[#393735] text-white",
                 )}
               >
                 <span
                   className={cn(
-                    "text-xs",
+                    "text-xs lg:text-sm",
                     isSelected && !hasPhoto
-                      ? "text-background font-medium"
+                      ? "text-white font-medium"
                       : isToday
                         ? "text-foreground font-semibold"
                         : "text-foreground",
                   )}
                 >
-                  {cell.day}
+                  {String(cell.day).padStart(2, "0")}
                 </span>
                 {hasPhoto && entry && (
                   <button

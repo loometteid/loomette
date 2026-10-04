@@ -4,7 +4,7 @@ import { getLogger } from "@/lib/logging";
 import type { PendingItem } from "../types";
 
 export const PENDING_ITEM_SELECT =
-  "id, created_at, size, price, purchase_location, occasions, image_url, item:item_id(item_id, name, category, subcategory, brand, color, image_url)";
+  "id, created_at, size, price, purchase_location, occasions, image_url, is_duplicate, item:item_id(item_id, name, category, subcategory, brand, color, image_url)";
 
 export const getPendingWardrobeItemsQueryOptionsForBrowser = (userId: string) =>
   queryOptions({

@@ -122,3 +122,21 @@ To test the function locally before deploying:
 ```bash
 npx supabase functions serve extract-garments --env-file ./supabase/.temp.env
 ```
+
+---
+
+## 4. Generating Database TypeScript Types
+
+To regenerate TypeScript definitions from your remote Supabase database:
+
+```bash
+# Generate types from linked remote database
+npx supabase gen types typescript --linked > types/database.types.ts
+```
+
+Or for a local development database:
+
+```bash
+npx supabase gen types typescript --local > types/database.types.ts
+```
+

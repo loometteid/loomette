@@ -206,7 +206,7 @@ export function ApprovalItemDialog({
                   <Label className="text-muted-foreground text-xs font-medium tracking-wider uppercase">
                     Outfit Size
                   </Label>
-                  <Badge variant="outline" className="text-[0.65rem] uppercase tracking-wider">
+                  <Badge className="text-[0.65rem] uppercase tracking-wider">
                     Optional
                   </Badge>
                 </div>

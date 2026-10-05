@@ -25,6 +25,19 @@ interface RequestPayload {
   userId: string;
 }
 
+function bufferToBase64(buffer: ArrayBuffer): string {
+  if (typeof Buffer !== "undefined") {
+    return Buffer.from(buffer).toString("base64");
+  }
+  const bytes = new Uint8Array(buffer);
+  let binary = "";
+  const chunkSize = 8192;
+  for (let i = 0; i < bytes.length; i += chunkSize) {
+    binary += String.fromCharCode(...bytes.subarray(i, i + chunkSize));
+  }
+  return btoa(binary);
+}
+
 const rootLogger = createLogger({}, "extract-garments");
 
 serve(async (req) => {
@@ -115,9 +128,7 @@ serve(async (req) => {
       );
     }
     const imageBuffer = await imageRes.arrayBuffer();
-    const base64Image = btoa(
-      String.fromCharCode(...new Uint8Array(imageBuffer))
-    );
+    const base64Image = bufferToBase64(imageBuffer);
     const contentType = imageRes.headers.get("content-type") || "image/jpeg";
     const sizeKb = Math.round(imageBuffer.byteLength / 1024);
     phase2Timer.done("Image downloaded successfully", {
@@ -135,11 +146,11 @@ Extract attributes: name, brand, category (Tops, Bottoms, Shoes, Accessories), s
 
     if (geminiApiKey) {
       log.info("Calling Gemini Vision API for garment decomposition", {
-        model: "gemini-3.6-flash",
+        model: "gemini-3.8-flash",
       });
       const ai = new GoogleGenAI({ apiKey: geminiApiKey });
       const response = await ai.models.generateContent({
-        model: "gemini-3.6-flash",
+        model: "gemini-3.8-flash",
         contents: [
           prompt,
           {

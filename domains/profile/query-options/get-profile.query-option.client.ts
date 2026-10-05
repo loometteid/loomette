@@ -1,11 +1,10 @@
 import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 import { queryOptions } from "@tanstack/react-query";
-import type { UserProfile } from "../types";
 
 export const getProfileQueryOptionsForBrowser = (userId: string) =>
   queryOptions({
     queryKey: ["user", "profile", userId] as const,
-    queryFn: async (): Promise<UserProfile | null> => {
+    queryFn: async () => {
       const supabase = createBrowserSupabaseClient();
       const { data, error } = await supabase
         .from("user")
@@ -15,6 +14,10 @@ export const getProfileQueryOptionsForBrowser = (userId: string) =>
 
       if (error) {
         throw error;
+      }
+
+      if (!data) {
+        throw new Error("User profile not found");
       }
 
       return data;

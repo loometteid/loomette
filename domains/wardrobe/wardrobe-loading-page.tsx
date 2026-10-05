@@ -81,8 +81,7 @@ export function WardrobeLoadingView({ userId }: { userId: string }) {
       className="flex min-h-screen flex-col bg-background"
       data-testid="wardrobe-loading-page"
     >
-      <DesktopNav username={profile?.username} />
-
+      <DesktopNav userId={userId} />
       {/* Mobile top bar */}
       <div className="flex items-center px-6 pt-8 lg:hidden">
         <button

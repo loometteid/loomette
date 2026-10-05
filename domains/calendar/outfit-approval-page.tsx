@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { ChevronLeft, Loader2 } from "lucide-react";
 import { toast } from "sonner";
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQueryClient, useSuspenseQuery } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogPopup, DialogTitle } from "@/components/ui/dialog";
 import { Sparkle } from "@/components/ui/sparkle";
@@ -28,7 +28,7 @@ export function OutfitApproval({ userId }: { userId: string }) {
   const reset = useOutfitDiaryUploadStore((state) => state.reset);
   const [showOriginal, setShowOriginal] = useState(false);
 
-  const { data: profile } = useQuery(
+  const { data: profile } = useSuspenseQuery(
     getProfileQueryOptionsForBrowser(userId),
   );
 
@@ -87,8 +87,7 @@ export function OutfitApproval({ userId }: { userId: string }) {
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
-      <DesktopNav username={profile?.username} />
-
+      <DesktopNav userId={userId} />
       <main className="mx-auto flex w-full max-w-sm lg:max-w-5xl flex-1 flex-col px-6 lg:px-12 py-8 lg:py-16">
         {/* Mobile Back Button */}
         <div className="flex items-center lg:hidden">

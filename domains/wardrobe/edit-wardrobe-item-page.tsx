@@ -7,7 +7,7 @@ import { ChevronLeft, Pencil, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 import { Controller, useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation, useQuery, useQueryClient, useSuspenseQuery } from "@tanstack/react-query";
+import { useMutation, useQueryClient, useSuspenseQuery } from "@tanstack/react-query";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -50,7 +50,7 @@ export function EditItemForm({
   const router = useRouter();
   const queryClient = useQueryClient();
 
-  const { data: profile } = useQuery(
+  const { data: profile } = useSuspenseQuery(
     getProfileQueryOptionsForBrowser(userId),
   );
   const { data: item } = useSuspenseQuery(
@@ -166,8 +166,7 @@ export function EditItemForm({
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
-      <DesktopNav username={profile?.username} />
-
+      <DesktopNav userId={userId} />
       <main className="mx-auto flex w-full max-w-sm lg:max-w-6xl flex-1 flex-col gap-6 lg:gap-10 px-6 lg:px-12 py-8 pb-32">
         <div className="flex items-center justify-between">
           <Button

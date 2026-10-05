@@ -45,10 +45,6 @@ function formatCardDate(isoDateString?: string | null) {
 
 export function ApprovalQueue({ userId }: { userId: string }) {
   const queryClient = useQueryClient();
-
-  const { data: profile } = useQuery(
-    getProfileQueryOptionsForBrowser(userId),
-  );
   const { data: items } = useSuspenseQuery(
     getPendingWardrobeItemsQueryOptionsForBrowser(userId),
   );
@@ -171,8 +167,7 @@ export function ApprovalQueue({ userId }: { userId: string }) {
       data-testid="approval-queue"
       data-entity-id={userId}
     >
-      <DesktopNav username={profile?.username} />
-
+      <DesktopNav userId={userId} />
       <main className="mx-auto flex w-full max-w-sm lg:max-w-6xl flex-1 flex-col px-6 py-8">
         {/* Mobile Back Button */}
         <div className="flex items-center lg:hidden">

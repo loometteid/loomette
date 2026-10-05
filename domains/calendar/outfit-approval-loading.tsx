@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { ChevronLeft } from "lucide-react";
 import { toast } from "sonner";
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useMutation, useSuspenseQuery } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Sparkle } from "@/components/ui/sparkle";
 import { Typography } from "@/components/ui/typography";
@@ -32,7 +32,7 @@ export function OutfitLoading({ userId }: { userId: string }) {
   const reset = useOutfitDiaryUploadStore((state) => state.reset);
   const [percent, setPercent] = useState(0);
 
-  const { data: profile } = useQuery(
+  const { data: profile } = useSuspenseQuery(
     getProfileQueryOptionsForBrowser(userId),
   );
 
@@ -96,7 +96,7 @@ export function OutfitLoading({ userId }: { userId: string }) {
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
-      <DesktopNav username={profile?.username} />
+      <DesktopNav userId={userId} />
 
       {/* Mobile top bar */}
       <div className="flex items-center px-6 pt-8 lg:hidden">

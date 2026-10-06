@@ -7,6 +7,15 @@ import { server } from "./mocks/server";
 process.env.NEXT_PUBLIC_SUPABASE_URL = "https://mock.supabase.co";
 process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY = "mock-anon-key";
 
+if (typeof window !== "undefined") {
+  if (!window.URL.createObjectURL) {
+    window.URL.createObjectURL = () => "blob:mock-url";
+  }
+  if (!window.URL.revokeObjectURL) {
+    window.URL.revokeObjectURL = () => {};
+  }
+}
+
 // Global mock for Next.js App Router navigation
 export const mockRouter = {
   push: vi.fn(),

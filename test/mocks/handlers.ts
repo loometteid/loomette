@@ -64,6 +64,7 @@ export const handlers = [
       waist_size: null,
       high_hip_size: null,
       hip_size: null,
+      style_tags: null,
     };
 
     if (isSingle) {
@@ -81,6 +82,71 @@ export const handlers = [
   // Default mock handler for wardrobe_item table queries
   http.get(`${MOCK_SUPABASE_URL}/rest/v1/wardrobe_item`, () => {
     return HttpResponse.json([]);
+  }),
+
+  // Mock handler for wardrobe_item insert
+  http.post(`${MOCK_SUPABASE_URL}/rest/v1/wardrobe_item`, async ({ request }) => {
+    const body = (await request.json()) as
+      | Record<string, unknown>
+      | Record<string, unknown>[];
+
+    if (Array.isArray(body)) {
+      return HttpResponse.json(
+        body.map((item, index) => ({
+          id: `mock-wardrobe-item-${index + 1}`,
+          ...item,
+        })),
+        { status: 201 },
+      );
+    }
+
+    return HttpResponse.json({
+      id: "mock-wardrobe-item-123",
+      ...body,
+    });
+  }),
+
+  // Mock handler for item table insert
+  http.post(`${MOCK_SUPABASE_URL}/rest/v1/item`, async ({ request }) => {
+    const url = new URL(request.url);
+    const body = (await request.json()) as
+      | Record<string, unknown>
+      | Record<string, unknown>[];
+    const acceptHeader = request.headers.get("accept") ?? "";
+
+    if (Array.isArray(body)) {
+      const items = body.map((item, index) => ({
+        item_id: `mock-item-${index + 1}`,
+        ...item,
+      }));
+      return HttpResponse.json(items, { status: 201 });
+    }
+
+    const res = { item_id: "mock-item-123", ...body };
+    if (
+      acceptHeader.includes("vnd.pgrst.object+json") ||
+      url.searchParams.get("select") === "item_id"
+    ) {
+      return HttpResponse.json(res);
+    }
+    return HttpResponse.json([res]);
+  }),
+
+  // Mock handler for wardrobe upload RPC
+  http.post(`${MOCK_SUPABASE_URL}/rest/v1/rpc/create_wardrobe_upload`, () => {
+    return HttpResponse.json({
+      wardrobe_item_id: "mock-wardrobe-item-123",
+    });
+  }),
+
+  // Mock handler for Supabase storage upload
+  http.post(`${MOCK_SUPABASE_URL}/storage/v1/object/wardrobe-images/*`, () => {
+    return HttpResponse.json({ Key: "mock-key" });
+  }),
+
+  // Mock handler for Supabase storage remove
+  http.delete(`${MOCK_SUPABASE_URL}/storage/v1/object/wardrobe-images`, () => {
+    return HttpResponse.json([{ name: "mock-file" }]);
   }),
 
   // Default mock handler for outfit table queries (e.g. looks count)

@@ -1,6 +1,12 @@
+import { Suspense } from "react";
 import { redirect } from "next/navigation";
+import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import { AddInitialItem } from "@/domains/onboarding/step-seven-page";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
+import { getQueryClient } from "@/lib/tanstack-query";
+import { getUserQueryOptions } from "@/domains/profile/query-options/get-user.query-option";
+import { getOnboardingProfileQueryOptionsForServer } from "@/domains/onboarding/query-options/get-onboarding-profile.query-option.server";
+import { getWardrobeItemsQueryOptionsForServer } from "@/domains/wardrobe/query-options/get-wardrobe-items.query-option.server";
 
 export default async function OnboardingStepSevenPage() {
   const supabase = await createServerSupabaseClient();
@@ -10,7 +16,7 @@ export default async function OnboardingStepSevenPage() {
   } = await supabase.auth.getUser();
 
   if (!user) {
-    redirect("/sign-in");
+    redirect("/welcome");
   }
 
   // A returning user who already has a wardrobe item has effectively
@@ -30,5 +36,26 @@ export default async function OnboardingStepSevenPage() {
     redirect("/home");
   }
 
-  return <AddInitialItem />;
+  const queryClient = getQueryClient();
+
+  // Seed authenticated user data into query cache
+  queryClient.setQueryData(getUserQueryOptions().queryKey, () => user);
+
+  // Unawaited prefetch (tanstack-query-patterns rule 3)
+  void queryClient.ensureQueryData(
+    getOnboardingProfileQueryOptionsForServer(user.id),
+  );
+  void queryClient.ensureQueryData(
+    getWardrobeItemsQueryOptionsForServer(user.id),
+  );
+
+  const dehydratedQueryClient = dehydrate(queryClient);
+
+  return (
+    <HydrationBoundary state={dehydratedQueryClient}>
+      <Suspense fallback={null}>
+        <AddInitialItem userId={user.id} />
+      </Suspense>
+    </HydrationBoundary>
+  );
 }

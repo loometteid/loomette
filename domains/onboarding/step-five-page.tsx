@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { createBrowserSupabaseClient } from "@/lib/supabase/client";
+import { useMutation, useQueryClient, useSuspenseQuery } from "@tanstack/react-query";
 import { STYLE_TAG_OPTIONS, type StyleTag } from "@/lib/styleTags";
 import { OnboardingShell } from "./components/onboarding-shell";
 import { PillToggleGroup } from "@/components/ui/pill-toggle-group";
@@ -12,59 +12,66 @@ import {
   stepFiveSchema,
   type StepFiveFormValues,
 } from "./schemas/step-five.schema";
+import { updateOnboardingProfileMutationOptions } from "./mutation-options/update-onboarding-profile.mutation-option.client";
+import { getOnboardingProfileQueryOptionsForBrowser } from "./query-options/get-onboarding-profile.query-option.client";
 
-export function StepFiveForm() {
+export interface StepFiveFormProps {
+  userId: string;
+  initialStyleTags?: StyleTag[];
+}
+
+export function StepFiveForm({ userId, initialStyleTags }: StepFiveFormProps) {
   const router = useRouter();
-  const [error, setError] = useState<string | null>(null);
+  const queryClient = useQueryClient();
+
+  const { data: profile } = useSuspenseQuery(
+    getOnboardingProfileQueryOptionsForBrowser(userId),
+  );
+
+  const { mutate, isPending, error } = useMutation({
+    ...updateOnboardingProfileMutationOptions(),
+    onSuccess: () => {
+      void queryClient.invalidateQueries({
+        queryKey: getOnboardingProfileQueryOptionsForBrowser(userId).queryKey,
+      });
+      router.push("/onboarding/6");
+    },
+  });
 
   const {
     control,
     handleSubmit,
-    formState: { isSubmitting },
   } = useForm<StepFiveFormValues>({
     resolver: zodResolver(stepFiveSchema),
     defaultValues: {
-      styleTags: [],
+      styleTags:
+        initialStyleTags ?? (profile?.style_tags as StyleTag[]) ?? [],
     },
   });
 
   async function onSubmit(values: StepFiveFormValues) {
-    setError(null);
-    const supabase = createBrowserSupabaseClient();
-
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
-
-    if (!user) {
-      router.push("/sign-in");
-      return;
-    }
-
-    const { error: updateError } = await supabase
-      .from("user")
-      .update({ style_tags: values.styleTags as StyleTag[] })
-      .eq("user_id", user.id);
-
-    if (updateError) {
-      setError(updateError.message);
-      return;
-    }
-    router.push("/onboarding/6");
+    await mutate({
+      userId,
+      update: {
+        style_tags: values.styleTags as StyleTag[],
+      },
+    });
   }
 
   return (
     <OnboardingShell
+      data-testid="onboarding-step-five"
       step={5}
       totalSteps={5}
       title="Now the fun part."
       subtitle="Pick what resonates. You can always change this later."
       onSubmit={handleSubmit(onSubmit)}
-      continueLabel={isSubmitting ? "Saving…" : "Continue"}
-      continueDisabled={isSubmitting}
+      continueLabel={isPending ? "Saving…" : "Continue"}
+      continueDisabled={isPending}
+      backHref="/onboarding/4"
     >
       <div className="flex flex-col gap-2">
-        <span className="text-muted-foreground text-xs tracking-wide uppercase">
+        <span className="text-muted-foreground text-xs tracking-wide uppercase font-semibold">
           Your style, in your words
         </span>
         <Controller
@@ -92,7 +99,7 @@ export function StepFiveForm() {
         />
       </div>
 
-      {error && <p className="text-destructive text-sm">{error}</p>}
+      {error && <p className="text-destructive text-sm">{error.message}</p>}
     </OnboardingShell>
   );
 }

@@ -7,6 +7,9 @@ import { StepOneForm } from "./step-one-page";
 import { StepTwoForm } from "./step-two-page";
 import { StepThreeForm } from "./step-three-page";
 import { StepFourForm } from "./step-four-page";
+import { StepFiveForm } from "./step-five-page";
+import { StepSixComplete } from "./step-six-page";
+import { AddInitialItem } from "./step-seven-page";
 import { isProfileOnboarded } from "./utils";
 import { useOnboardingGuard } from "./hooks/use-onboarding-guard";
 import { useAlreadyOnboardedGuard } from "./hooks/use-already-onboarded-guard";
@@ -15,7 +18,7 @@ import {
   type OnboardingUserProfile,
 } from "./query-options/get-onboarding-profile.query-option.client";
 
-describe("Onboarding Flow (Steps 1 to 4)", () => {
+describe("Onboarding Flow (Steps 1 to 7)", () => {
   describe("Step 1: Name and Email", () => {
     it("renders with disabled email and empty name when no initial value", async () => {
       renderWithQueryClient(
@@ -333,6 +336,196 @@ describe("Onboarding Flow (Steps 1 to 4)", () => {
       await user.click(backButton);
 
       expect(mockRouter.push).toHaveBeenCalledWith("/onboarding/3");
+    });
+  });
+
+  describe("Step 5: Style Tags", () => {
+    it("renders with style tag options and allows toggling tags", async () => {
+      const user = userEvent.setup();
+      renderWithQueryClient(<StepFiveForm userId="user-123" />);
+
+      expect(
+        await screen.findByTestId("onboarding-step-five"),
+      ).toBeInTheDocument();
+      expect(
+        screen.getByRole("heading", { name: "Now the fun part." }),
+      ).toBeInTheDocument();
+
+      // Verify pills rendered
+      const minimalPill = screen.getByRole("button", {
+        name: /Clean & Minimal/i,
+      });
+      expect(minimalPill).toBeInTheDocument();
+
+      await user.click(minimalPill);
+
+      const submitButton = screen.getByTestId(
+        "onboarding-shell__submit-button",
+      );
+      await user.click(submitButton);
+
+      await waitFor(() => {
+        expect(mockRouter.push).toHaveBeenCalledWith("/onboarding/6");
+      });
+    });
+
+    it("hydrates pre-selected style tags from profile data", async () => {
+      const queryClient = createTestQueryClient();
+      queryClient.setQueryData(
+        getOnboardingProfileQueryOptionsForBrowser("user-with-tags").queryKey,
+        {
+          user_id: "user-with-tags",
+          style_tags: ["clean_minimal", "office_ready"],
+        } as unknown as OnboardingUserProfile,
+      );
+
+      renderWithQueryClient(
+        <StepFiveForm userId="user-with-tags" />,
+        { queryClient },
+      );
+
+      await screen.findByTestId("onboarding-step-five");
+
+      const minimalPill = screen.getByRole("button", {
+        name: /Clean & Minimal/i,
+      });
+      expect(minimalPill).toHaveClass("border-foreground", "text-foreground");
+    });
+
+    it("navigates back to /onboarding/4 when clicking back button", async () => {
+      const user = userEvent.setup();
+      renderWithQueryClient(<StepFiveForm userId="user-123" />);
+
+      const backButton = await screen.findByTestId(
+        "onboarding-shell__back-button",
+      );
+      await user.click(backButton);
+
+      expect(mockRouter.push).toHaveBeenCalledWith("/onboarding/4");
+    });
+  });
+
+  describe("Step 6: Completion Milestone", () => {
+    it("renders celebratory screen with mascots and routes to /onboarding/7", async () => {
+      renderWithQueryClient(<StepSixComplete />);
+
+      expect(screen.getByTestId("onboarding-step-six")).toBeInTheDocument();
+      expect(screen.getByTestId("onboarding-step-six__title")).toHaveTextContent(
+        /all set/i,
+      );
+
+      const continueLink = screen.getByTestId(
+        "onboarding-step-six__continue-button",
+      );
+      expect(continueLink).toHaveAttribute("href", "/onboarding/7");
+    });
+  });
+
+  describe("Step 7: Wardrobe Seeding (AddInitialItem)", () => {
+    it("renders initial upload screen and navigates back to /onboarding/6", async () => {
+      const user = userEvent.setup();
+      renderWithQueryClient(<AddInitialItem userId="user-123" />);
+
+      expect(screen.getByTestId("onboarding-step-seven")).toBeInTheDocument();
+      expect(
+        screen.getByTestId("onboarding-step-seven__title"),
+      ).toHaveTextContent("Now, let's fill your wardrobe.");
+
+      const backButton = screen.getByTestId(
+        "onboarding-step-seven__back-button",
+      );
+      await user.click(backButton);
+
+      expect(mockRouter.push).toHaveBeenCalledWith("/onboarding/6");
+    });
+
+    it("transitions to uploaded preview state on file selection and back to initial", async () => {
+      const user = userEvent.setup();
+      renderWithQueryClient(<AddInitialItem userId="user-123" />);
+
+      const fileInput = screen.getByTestId(
+        "onboarding-step-seven__file-input",
+      );
+      const testFile = new File(["dummy content"], "test-garment.jpg", {
+        type: "image/jpeg",
+      });
+
+      await user.upload(fileInput, testFile);
+
+      expect(
+        await screen.findByTestId("onboarding-step-seven__preview-grid"),
+      ).toBeInTheDocument();
+      expect(
+        screen.getByTestId("onboarding-step-seven__save-button"),
+      ).toBeInTheDocument();
+
+      // Click back to return to initial
+      const backButton = screen.getByTestId(
+        "onboarding-step-seven__back-button",
+      );
+      await user.click(backButton);
+
+      expect(
+        screen.queryByTestId("onboarding-step-seven__preview-grid"),
+      ).not.toBeInTheDocument();
+    });
+
+    it("uploads photo, triggers upload job mutation, and routes to /wardrobe/loading", async () => {
+      const user = userEvent.setup();
+      renderWithQueryClient(<AddInitialItem userId="user-123" />);
+
+      const fileInput = screen.getByTestId(
+        "onboarding-step-seven__file-input",
+      );
+      const testFile = new File(["dummy content"], "test-garment.jpg", {
+        type: "image/jpeg",
+      });
+
+      await user.upload(fileInput, testFile);
+
+      const saveButton = await screen.findByTestId(
+        "onboarding-step-seven__save-button",
+      );
+      await user.click(saveButton);
+
+      await waitFor(() => {
+        expect(mockRouter.push).toHaveBeenCalledWith(
+          expect.stringContaining("/wardrobe/loading?jobId="),
+        );
+      });
+    });
+
+    it("navigates to library state when clicking generate basics and allows selecting all and saving", async () => {
+      const user = userEvent.setup();
+      renderWithQueryClient(<AddInitialItem userId="user-123" />);
+
+      const generateBasicsBtn = screen.getByTestId(
+        "onboarding-step-seven__generate-basics-button",
+      );
+      await user.click(generateBasicsBtn);
+
+      expect(
+        await screen.findByTestId("onboarding-step-seven__library-grid"),
+      ).toBeInTheDocument();
+      expect(
+        screen.getByTestId("onboarding-step-seven__title"),
+      ).toHaveTextContent("Pick from library");
+
+      // Toggle select all
+      const selectAllBtn = screen.getByTestId(
+        "onboarding-step-seven__select-all-button",
+      );
+      await user.click(selectAllBtn);
+
+      // Save library selection
+      const saveBtn = screen.getByTestId(
+        "onboarding-step-seven__save-library-button",
+      );
+      await user.click(saveBtn);
+
+      await waitFor(() => {
+        expect(mockRouter.push).toHaveBeenCalledWith("/home");
+      });
     });
   });
 

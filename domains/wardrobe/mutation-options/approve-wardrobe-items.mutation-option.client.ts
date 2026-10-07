@@ -7,7 +7,9 @@ export type ApproveWardrobeItemsVariables = {
 
 export const approveWardrobeItemsMutationOptions = () =>
   mutationOptions({
-    mutationFn: async ({ itemIds }: ApproveWardrobeItemsVariables): Promise<void> => {
+    mutationFn: async ({
+      itemIds,
+    }: ApproveWardrobeItemsVariables): Promise<void> => {
       if (itemIds.length === 0) return;
       const supabase = createBrowserSupabaseClient();
       const { error } = await supabase

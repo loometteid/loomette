@@ -7,7 +7,9 @@ export type DeleteOutfitPhotoVariables = {
 
 export const deleteOutfitPhotoMutationOptions = () =>
   mutationOptions({
-    mutationFn: async ({ paths }: DeleteOutfitPhotoVariables): Promise<void> => {
+    mutationFn: async ({
+      paths,
+    }: DeleteOutfitPhotoVariables): Promise<void> => {
       await deleteOutfitPhotos(paths);
     },
   });

@@ -18,14 +18,11 @@ export const getLatestUploadJobQueryOptionsForBrowser = (userId: string) =>
 
       if (error) {
         const logger = getLogger(["query", "wardrobe"]);
-        logger.error(
-          "Error fetching latest upload job: {errorMessage}",
-          {
-            errorMessage: error.message,
-            error,
-            userId,
-          },
-        );
+        logger.error("Error fetching latest upload job: {errorMessage}", {
+          errorMessage: error.message,
+          error,
+          userId,
+        });
         return null;
       }
 

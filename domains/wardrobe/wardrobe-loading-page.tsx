@@ -82,19 +82,6 @@ export function WardrobeLoadingView({ userId }: { userId: string }) {
       data-testid="wardrobe-loading-page"
     >
       <DesktopNav userId={userId} />
-      {/* Mobile top bar */}
-      <div className="flex items-center px-6 pt-8 lg:hidden">
-        <button
-          type="button"
-          onClick={() => router.back()}
-          aria-label="Go back"
-          data-testid="wardrobe-loading-page__back-button"
-          className="bg-secondary flex size-9 items-center justify-center rounded-xl transition-colors hover:bg-secondary/80"
-        >
-          <ChevronLeft className="size-4" />
-        </button>
-      </div>
-
       {/* Desktop Header Banner with Mascots */}
       <div className="relative hidden w-full overflow-hidden border-b border-border/20 lg:block h-64">
         <Image
@@ -124,8 +111,8 @@ export function WardrobeLoadingView({ userId }: { userId: string }) {
         </div>
       </div>
 
-      {/* Mobile Cloud / Star visual */}
-      <div className="relative mx-auto mt-4 flex h-60 w-full max-w-sm items-center justify-center overflow-hidden rounded-3xl lg:hidden">
+      {/* Mobile Cloud Banner with back button overlay */}
+      <div className="relative w-full h-72 overflow-hidden lg:hidden">
         <Image
           src={skyImage}
           alt=""
@@ -133,7 +120,18 @@ export function WardrobeLoadingView({ userId }: { userId: string }) {
           priority
           className="object-cover brightness-95"
         />
-        <div className="relative z-10 flex size-36 items-center justify-center">
+        <div className="absolute top-8 left-6 z-20">
+          <button
+            type="button"
+            onClick={() => router.back()}
+            aria-label="Go back"
+            data-testid="wardrobe-loading-page__back-button"
+            className="bg-white/80 backdrop-blur-sm text-foreground flex size-9 items-center justify-center rounded-xl shadow-sm transition-colors hover:bg-white"
+          >
+            <ChevronLeft className="size-4" />
+          </button>
+        </div>
+        <div className="relative z-10 flex h-full w-full items-center justify-center">
           <Sparkle className="size-28 text-white/90 drop-shadow-md animate-pulse" />
         </div>
       </div>
@@ -182,10 +180,12 @@ export function WardrobeLoadingView({ userId }: { userId: string }) {
                 className="text-3xl font-serif"
                 data-testid="wardrobe-loading-page__title"
               >
-                We&apos;re <em className="italic underline">working</em> on your look.
+                We&apos;re <em className="italic underline">working</em> on your
+                look.
               </Typography>
               <p className="text-muted-foreground max-w-xs text-[0.68rem] font-medium uppercase tracking-wider leading-relaxed">
-                This can take a few minutes. No need to wait. We&apos;ll notify you once it&apos;s ready.
+                This can take a few minutes. No need to wait. We&apos;ll notify
+                you once it&apos;s ready.
               </p>
             </div>
 
@@ -228,7 +228,8 @@ export function WardrobeLoadingView({ userId }: { userId: string }) {
                 data-testid="wardrobe-loading-page__got-it-button"
                 className="bg-[#393735] hover:bg-[#2b2a27] text-white flex w-full items-center justify-center rounded-2xl py-4 text-xs font-semibold uppercase tracking-wider shadow-lg transition-transform active:scale-95"
               >
-                Got It
+                <span className="hidden lg:inline">Back to Home</span>
+                <span className="lg:hidden">Got It</span>
               </button>
             </div>
           </div>

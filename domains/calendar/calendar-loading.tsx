@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Link from "next/link";
 import { ChevronDown, ChevronLeft, ChevronRight, History } from "lucide-react";
@@ -65,9 +65,7 @@ function FallbackCalendarGrid({
                 <span
                   className={cn(
                     "text-xs lg:text-sm",
-                    isToday
-                      ? "text-background font-medium"
-                      : "text-foreground",
+                    isToday ? "text-background font-medium" : "text-foreground",
                   )}
                 >
                   {cell.day}

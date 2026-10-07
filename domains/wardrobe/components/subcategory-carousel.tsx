@@ -1,14 +1,13 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect } from "react";
+import useEmblaCarousel from "embla-carousel-react";
 import { cn } from "@/lib/utils";
 
 /**
- * Horizontally scrollable, center-snapped subcategory selector — not
- * tabs. The active subcategory sits centered at full size/opacity;
- * neighbors are partially visible at the edges and fade out via a
- * mask gradient, hinting there's more to scroll. Matches
- * figma/wardrobe/3. Wardrobe.png, not a segmented control.
+ * Horizontally scrollable, center-snapped subcategory selector powered by Embla Carousel.
+ * The active subcategory sits centered at full size/opacity; neighbors fade out
+ * via a mask gradient. Matches figma/wardrobe/3. Wardrobe.png.
  */
 export function SubcategoryCarousel({
   options,
@@ -19,63 +18,44 @@ export function SubcategoryCarousel({
   active: string;
   onChange: (value: string) => void;
 }) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const itemRefs = useRef<Map<string, HTMLButtonElement>>(new Map());
-  const scrollTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const suppressScrollSync = useRef(false);
+  const activeIndex = Math.max(0, options.indexOf(active));
+
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    align: "center",
+    containScroll: false,
+    startIndex: activeIndex,
+  });
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    const selected = emblaApi.selectedScrollSnap();
+    if (options[selected] && options[selected] !== active) {
+      onChange(options[selected]);
+    }
+  }, [emblaApi, options, active, onChange]);
 
   useEffect(() => {
-    const el = itemRefs.current.get(active);
-    if (!el) return;
-    suppressScrollSync.current = true;
-    el.scrollIntoView({
-      behavior: "instant" as ScrollBehavior,
-      inline: "center",
-      block: "nearest",
-    });
-    // Let the instant scroll settle before re-enabling scroll-driven sync.
-    setTimeout(() => {
-      suppressScrollSync.current = false;
-    }, 50);
-    // Only re-run when the set of options changes identity (new category
-    // data) — `active` changes are driven by the scroll handler itself
-    // for user-initiated scrolls, and by the click handler below for taps.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [options]);
+    if (!emblaApi) return;
+    emblaApi.on("select", onSelect);
+    emblaApi.on("reInit", onSelect);
+    return () => {
+      emblaApi.off("select", onSelect);
+      emblaApi.off("reInit", onSelect);
+    };
+  }, [emblaApi, onSelect]);
 
-  function syncActiveFromScroll() {
-    const container = containerRef.current;
-    if (!container || suppressScrollSync.current) return;
-    const containerCenter = container.scrollLeft + container.clientWidth / 2;
-    let closest: string | null = null;
-    let closestDistance = Infinity;
-    for (const [value, el] of itemRefs.current) {
-      const itemCenter = el.offsetLeft + el.offsetWidth / 2;
-      const distance = Math.abs(itemCenter - containerCenter);
-      if (distance < closestDistance) {
-        closestDistance = distance;
-        closest = value;
-      }
+  useEffect(() => {
+    if (!emblaApi) return;
+    const current = emblaApi.selectedScrollSnap();
+    if (current !== activeIndex) {
+      emblaApi.scrollTo(activeIndex);
     }
-    if (closest && closest !== active) onChange(closest);
-  }
-
-  function handleScroll() {
-    if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
-    scrollTimeout.current = setTimeout(syncActiveFromScroll, 120);
-  }
-
-  function handleClick(value: string) {
-    const el = itemRefs.current.get(value);
-    el?.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
-    onChange(value);
-  }
+  }, [emblaApi, activeIndex]);
 
   return (
     <div
-      ref={containerRef}
-      onScroll={handleScroll}
-      className="scrollbar-none flex w-full snap-x snap-mandatory gap-10 overflow-x-auto px-[30%]"
+      ref={emblaRef}
+      className="w-full overflow-hidden"
       style={{
         maskImage:
           "linear-gradient(to right, transparent, black 18%, black 82%, transparent)",
@@ -83,23 +63,27 @@ export function SubcategoryCarousel({
           "linear-gradient(to right, transparent, black 18%, black 82%, transparent)",
       }}
     >
-      {options.map((option) => (
-        <button
-          key={option}
-          ref={(el) => {
-            if (el) itemRefs.current.set(option, el);
-            else itemRefs.current.delete(option);
-          }}
-          type="button"
-          onClick={() => handleClick(option)}
-          className={cn(
-            "shrink-0 snap-center font-serif text-2xl whitespace-nowrap transition-colors",
-            option === active ? "text-foreground" : "text-muted-foreground",
-          )}
-        >
-          {option}
-        </button>
-      ))}
+      <div className="flex touch-pan-y">
+        {options.map((option, index) => (
+          <div key={option} className="flex-none px-5">
+            <button
+              type="button"
+              onClick={() => {
+                emblaApi?.scrollTo(index);
+                onChange(option);
+              }}
+              className={cn(
+                "font-serif text-2xl lg:text-3xl whitespace-nowrap transition-all duration-200",
+                option === active
+                  ? "text-foreground font-semibold scale-105"
+                  : "text-[#8C887B]/40 hover:text-foreground/70",
+              )}
+            >
+              {option}
+            </button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

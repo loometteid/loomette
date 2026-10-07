@@ -32,7 +32,7 @@ export function WebcamModal({
     let isMounted = true;
     setIsInitializing(true);
     setError(null);
-  /* eslint-enable react-hooks/set-state-in-effect */
+    /* eslint-enable react-hooks/set-state-in-effect */
 
     async function startCamera() {
       try {
@@ -40,7 +40,11 @@ export function WebcamModal({
           throw new Error("Webcam access is not supported by your browser");
         }
         const stream = await navigator.mediaDevices.getUserMedia({
-          video: { facingMode: "user", width: { ideal: 1280 }, height: { ideal: 720 } },
+          video: {
+            facingMode: "user",
+            width: { ideal: 1280 },
+            height: { ideal: 720 },
+          },
           audio: false,
         });
 

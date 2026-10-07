@@ -21,29 +21,28 @@ export function DeleteConfirmDialog({
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogPopup
-        className="max-w-xs p-6 rounded-3xl bg-[#faf7f2] border-none text-center shadow-2xl"
+        showClose={false}
+        className="fixed inset-0 m-auto h-fit max-w-[320px] w-[calc(100%-3rem)] p-6 lg:p-8 rounded-[24px] bg-[#FAFAF7] border-none text-center shadow-2xl relative"
         data-testid="delete-confirm-dialog"
       >
-        <div className="flex justify-end">
-          <button
-            type="button"
-            onClick={() => onOpenChange(false)}
-            aria-label="Close"
-            className="rounded-full bg-[#eae4dc] p-1.5 text-foreground hover:opacity-80 transition-opacity"
-            data-testid="delete-confirm-dialog__close-button"
-          >
-            <X className="size-4" />
-          </button>
-        </div>
+        <button
+          type="button"
+          onClick={() => onOpenChange(false)}
+          aria-label="Close"
+          className="absolute top-4 right-4 size-10 rounded-xl bg-[#F2EDE5] hover:bg-[#EAE4DC] text-[#444440] flex items-center justify-center transition-colors"
+          data-testid="delete-confirm-dialog__close-button"
+        >
+          <X className="size-4" />
+        </button>
 
         <div className="mt-4 flex flex-col items-center gap-2">
           <DialogTitle
             data-testid="delete-confirm-dialog__title"
-            className="font-serif text-2xl text-foreground"
+            className="font-serif text-2xl text-[#444440]"
           >
             {isMultiple ? "Delete items?" : "Delete item?"}
           </DialogTitle>
-          <p className="text-[0.68rem] font-medium uppercase tracking-widest text-muted-foreground max-w-[200px] leading-relaxed">
+          <p className="text-[0.68rem] font-medium uppercase tracking-widest text-[#78746D] max-w-[200px] leading-relaxed">
             You will need to upload it again if you change your mind.
           </p>
         </div>
@@ -54,7 +53,7 @@ export function DeleteConfirmDialog({
             disabled={isDeleting}
             onClick={onConfirm}
             data-testid="delete-confirm-dialog__confirm-button"
-            className="bg-[#eae4dc] hover:bg-[#ded6cb] text-foreground flex w-full items-center justify-center rounded-2xl py-3.5 text-xs font-semibold uppercase tracking-wider transition-colors disabled:opacity-50"
+            className="bg-[#F2EDE5] hover:bg-[#EAE4DC] text-[#444440] flex w-full items-center justify-center rounded-2xl py-3.5 text-xs font-semibold uppercase tracking-wider transition-colors disabled:opacity-50"
           >
             {isDeleting ? (
               <Loader2 className="mr-2 size-4 animate-spin" />
@@ -67,7 +66,7 @@ export function DeleteConfirmDialog({
             disabled={isDeleting}
             onClick={() => onOpenChange(false)}
             data-testid="delete-confirm-dialog__cancel-button"
-            className="bg-[#393735] hover:bg-[#2b2a27] text-white flex w-full items-center justify-center rounded-2xl py-3.5 text-xs font-semibold uppercase tracking-wider transition-colors disabled:opacity-50"
+            className="bg-[#444440] hover:bg-[#333330] text-white flex w-full items-center justify-center rounded-2xl py-3.5 text-xs font-semibold uppercase tracking-wider transition-colors disabled:opacity-50"
           >
             {isMultiple ? "Keep Items" : "Keep Item"}
           </button>

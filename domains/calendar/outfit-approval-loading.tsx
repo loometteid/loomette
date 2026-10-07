@@ -21,8 +21,8 @@ import sootSpriteImage from "@/domains/auth/assets/soot-sprite.png";
 const MIN_DURATION_MS = 3000;
 
 const STEPS = [
-  { key: "uploaded", label: "Photo uploaded", atPercent: 35 },
-  { key: "identified", label: "Outfit pieces identified", atPercent: 100 },
+  { key: "uploaded", label: "PHOTO UPLOADED", atPercent: 35 },
+  { key: "identified", label: "OUTFIT PIECES IDENTIFIED", atPercent: 100 },
 ] as const;
 
 export function OutfitLoading({ userId }: { userId: string }) {
@@ -82,8 +82,7 @@ export function OutfitLoading({ userId }: { userId: string }) {
       userId: draft.userId,
       file: draft.file,
     });
-
-  })
+  });
 
   useEffect(() => {
     process();
@@ -97,25 +96,6 @@ export function OutfitLoading({ userId }: { userId: string }) {
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <DesktopNav userId={userId} />
-
-      {/* Mobile top bar */}
-      <div className="flex items-center px-6 pt-8 lg:hidden">
-        <Button
-          type="button"
-          variant="secondary"
-          size="icon"
-          className="rounded-xl"
-          onClick={() => {
-            isMountedRef.current = false;
-            clearInterval(tickRef.current);
-            reset();
-            router.push("/calendar");
-          }}
-          aria-label="Cancel"
-        >
-          <ChevronLeft className="size-4" />
-        </Button>
-      </div>
 
       {/* Desktop Mascot Banner (D.2.1.1) */}
       <div className="relative hidden w-full overflow-hidden border-b border-border/20 lg:block h-64">
@@ -147,17 +127,55 @@ export function OutfitLoading({ userId }: { userId: string }) {
         </div>
       </div>
 
-      {/* Mobile placeholder banner */}
-      <div className="bg-muted mt-6 flex h-64 items-center justify-center lg:hidden">
-        <Sparkle className="text-foreground/30 size-40" />
+      {/* Mobile Sky Banner with Mascot (2.1.1) */}
+      <div className="relative w-full h-72 overflow-hidden lg:hidden">
+        <Image
+          src={skyImage}
+          alt=""
+          fill
+          priority
+          className="object-cover brightness-95"
+        />
+        <div className="absolute top-8 left-6 z-20">
+          <button
+            type="button"
+            onClick={() => {
+              isMountedRef.current = false;
+              clearInterval(tickRef.current);
+              reset();
+              router.push("/calendar");
+            }}
+            aria-label="Cancel"
+            className="bg-white/80 backdrop-blur-sm text-foreground flex size-9 items-center justify-center rounded-xl shadow-sm transition-colors hover:bg-white"
+          >
+            <ChevronLeft className="size-4" />
+          </button>
+        </div>
+        <div className="relative z-10 flex h-full w-full items-center justify-center">
+          <div className="relative h-44 w-44">
+            <Image
+              src={silverHangerImage}
+              alt=""
+              fill
+              className="object-contain drop-shadow-md"
+            />
+          </div>
+        </div>
       </div>
 
       <main className="mx-auto flex w-full max-w-sm lg:max-w-xl flex-1 flex-col items-center gap-6 px-6 py-10 lg:py-12 text-center">
-        <Typography variant="title" as="h1" className="text-3xl lg:text-4xl font-serif">
+        <Typography
+          variant="title"
+          as="h1"
+          className="text-3xl lg:text-4xl font-serif"
+        >
           <em className="italic">Generating</em> your gorgeous look.
         </Typography>
 
-        <Typography variant="subtitle" className="max-w-xs text-xs lg:text-sm uppercase tracking-wider text-muted-foreground">
+        <Typography
+          variant="subtitle"
+          className="max-w-xs text-xs lg:text-sm uppercase tracking-wider text-muted-foreground"
+        >
           Hang on while we create this for your calendar.
         </Typography>
 

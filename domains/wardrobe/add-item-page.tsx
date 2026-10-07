@@ -74,7 +74,7 @@ export function AddItemView({ userId }: { userId: string }) {
           aria-label="Go back"
           disabled={isBusy}
           data-testid="add-item-page__back-button"
-          className="bg-secondary flex size-9 items-center justify-center rounded-xl transition-colors hover:bg-secondary/80 disabled:opacity-50"
+          className="bg-[#F2EDE5] hover:bg-[#EAE4DC] text-foreground flex size-9 items-center justify-center rounded-xl transition-colors disabled:opacity-50"
         >
           <ChevronLeft className="size-4" />
         </button>
@@ -92,22 +92,20 @@ export function AddItemView({ userId }: { userId: string }) {
           >
             Add a new item.
           </Typography>
-          <p className="text-muted-foreground text-xs uppercase tracking-widest">
+          <p className="text-[#8C887B] text-xs uppercase tracking-widest font-medium">
             Snap it fresh or pull from your gallery.
           </p>
         </div>
 
-        <div className="mt-20 flex w-full flex-col gap-3">
+        <div className="mt-16 flex w-full flex-col gap-3">
           <button
             type="button"
             disabled={isBusy}
             onClick={handleTakePhotoClick}
             data-testid="add-item-page__take-photo-button"
-            className="border-border hover:bg-secondary/60 flex w-full items-center justify-center rounded-2xl border py-4 text-xs font-semibold uppercase tracking-wider transition-colors disabled:opacity-50"
+            className="border border-[#EAE4DC] bg-[#FAF8F5] hover:bg-[#F2EDE5] text-foreground flex w-full items-center justify-center rounded-2xl py-4 text-xs font-semibold uppercase tracking-wider shadow-sm transition-all active:scale-95 disabled:opacity-50"
           >
-            {isBusy ? (
-              <Loader2 className="mr-2 size-4 animate-spin" />
-            ) : null}
+            {isBusy ? <Loader2 className="mr-2 size-4 animate-spin" /> : null}
             Take a Photo
           </button>
 
@@ -116,11 +114,9 @@ export function AddItemView({ userId }: { userId: string }) {
             disabled={isBusy}
             onClick={() => galleryInputRef.current?.click()}
             data-testid="add-item-page__upload-photo-button"
-            className="border-border hover:bg-secondary/60 flex w-full items-center justify-center rounded-2xl border py-4 text-xs font-semibold uppercase tracking-wider transition-colors disabled:opacity-50"
+            className="border border-[#EAE4DC] bg-[#FAF8F5] hover:bg-[#F2EDE5] text-foreground flex w-full items-center justify-center rounded-2xl py-4 text-xs font-semibold uppercase tracking-wider shadow-sm transition-all active:scale-95 disabled:opacity-50"
           >
-            {isBusy ? (
-              <Loader2 className="mr-2 size-4 animate-spin" />
-            ) : null}
+            {isBusy ? <Loader2 className="mr-2 size-4 animate-spin" /> : null}
             Upload a Photo
           </button>
         </div>

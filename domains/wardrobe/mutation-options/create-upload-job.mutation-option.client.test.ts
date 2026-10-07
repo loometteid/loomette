@@ -56,15 +56,12 @@ describe("createUploadJobMutationOptions", () => {
 
   it("handles Edge Function invocation failure gracefully without throwing from mutationFn", async () => {
     server.use(
-      http.post(
-        `${MOCK_SUPABASE_URL}/functions/v1/extract-garments`,
-        () => {
-          return HttpResponse.json(
-            { error: "Internal Server Error" },
-            { status: 500 },
-          );
-        },
-      ),
+      http.post(`${MOCK_SUPABASE_URL}/functions/v1/extract-garments`, () => {
+        return HttpResponse.json(
+          { error: "Internal Server Error" },
+          { status: 500 },
+        );
+      }),
     );
 
     const testFile = new File(["fake-image-bytes"], "test.jpg", {
@@ -86,15 +83,12 @@ describe("createUploadJobMutationOptions", () => {
 
   it("throws error when database insert of upload_job fails", async () => {
     server.use(
-      http.post(
-        `${MOCK_SUPABASE_URL}/rest/v1/upload_job`,
-        () => {
-          return HttpResponse.json(
-            { message: "DB Error", code: "500" },
-            { status: 500 },
-          );
-        },
-      ),
+      http.post(`${MOCK_SUPABASE_URL}/rest/v1/upload_job`, () => {
+        return HttpResponse.json(
+          { message: "DB Error", code: "500" },
+          { status: 500 },
+        );
+      }),
     );
 
     const testFile = new File(["fake-image-bytes"], "test.jpg", {

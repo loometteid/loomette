@@ -3,7 +3,14 @@
 import { useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { AlertCircle, AlertTriangle, ChevronLeft, Loader2, RefreshCw, Trash2 } from "lucide-react";
+import {
+  AlertCircle,
+  AlertTriangle,
+  ChevronLeft,
+  Loader2,
+  RefreshCw,
+  Trash2,
+} from "lucide-react";
 import { toast } from "sonner";
 import {
   useMutation,
@@ -208,7 +215,8 @@ export function ApprovalQueue({ userId }: { userId: string }) {
           >
             <Loader2 className="size-4 animate-spin text-foreground shrink-0" />
             <span className="text-xs font-medium text-foreground">
-              Analyzing your photo in the background… Extracted pieces will appear below automatically.
+              Analyzing your photo in the background… Extracted pieces will
+              appear below automatically.
             </span>
           </div>
         )}
@@ -222,7 +230,8 @@ export function ApprovalQueue({ userId }: { userId: string }) {
             <div className="flex items-center gap-2">
               <AlertCircle className="size-4 text-destructive shrink-0" />
               <span className="text-xs font-medium text-destructive">
-                {latestJob.error_message || "Could not detect garments in last upload."}
+                {latestJob.error_message ||
+                  "Could not detect garments in last upload."}
               </span>
             </div>
             <Link
@@ -271,9 +280,12 @@ export function ApprovalQueue({ userId }: { userId: string }) {
                   data-testid="approval-queue__item"
                   data-entity-id={row.id}
                   className={cn(
-                    "group relative flex flex-col justify-between rounded-3xl border bg-white/40 p-3 text-left transition-all cursor-pointer hover:bg-white/70 hover:shadow-sm",
-                    isChecked ? "border-foreground" : "border-border/60",
-                    isInvalidSelected && "ring-2 ring-destructive border-destructive bg-destructive/5",
+                    "group relative flex flex-col justify-between rounded-3xl border bg-[#FAF8F5]/60 hover:bg-[#FAF8F5] p-3 text-center transition-all cursor-pointer hover:shadow-sm",
+                    isChecked
+                      ? "border-foreground ring-1 ring-foreground"
+                      : "border-[#EAE4DC]",
+                    isInvalidSelected &&
+                      "ring-2 ring-destructive border-destructive bg-destructive/5",
                   )}
                 >
                   {/* Top bar with Selection Checkbox */}
@@ -301,34 +313,37 @@ export function ApprovalQueue({ userId }: { userId: string }) {
                         aria-label={`Select ${row.item?.name || "item"}`}
                         data-testid="approval-queue__item-checkbox"
                         data-entity-id={row.id}
-                        className="rounded-md border-border/80 data-[state=checked]:bg-foreground data-[state=checked]:border-foreground"
+                        className="size-5 lg:size-7 rounded-md lg:rounded-lg border-[#C9C3B7] data-[checked]:bg-[#444440] data-[checked]:border-[#444440] text-white"
                       />
                     </div>
                   </div>
 
-                  {/* Garment Image Preview */}
-                  <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-secondary/20 my-2 flex items-center justify-center">
-                    {row.item?.image_url && (
-                      <Image
-                        src={row.item.image_url}
-                        alt={row.item.name || "Garment"}
-                        fill
-                        sizes="(max-width: 768px) 50vw, 25vw"
-                        className="object-contain p-2 transition-transform duration-200 group-hover:scale-105"
-                      />
-                    )}
+                  {/* Garment Floating Image Preview */}
+                  <div className="relative aspect-square w-full my-2 flex flex-col items-center justify-center">
+                    <div className="relative h-full w-full flex items-center justify-center">
+                      {row.item?.image_url && (
+                        <Image
+                          src={row.item.image_url}
+                          alt={row.item.name || "Garment"}
+                          fill
+                          sizes="(max-width: 768px) 50vw, 25vw"
+                          className="object-contain p-2 drop-shadow-sm transition-transform duration-200 group-hover:scale-105"
+                        />
+                      )}
+                    </div>
+                    <div className="h-1.5 w-14 rounded-full bg-black/10 blur-[2px] transition-transform duration-200 group-hover:scale-110" />
                   </div>
 
                   {/* Text Details & Validation Warnings */}
-                  <div className="mt-1 flex flex-col gap-1">
+                  <div className="mt-1 flex flex-col items-center gap-0.5 w-full text-center">
                     <span
-                      className="font-serif text-base text-foreground truncate"
+                      className="font-serif text-base text-foreground font-medium truncate w-full"
                       data-testid="approval-queue__item-name"
                     >
                       {row.item?.name || "Untitled"}
                     </span>
                     <span
-                      className="text-muted-foreground text-[0.68rem] tracking-wider"
+                      className="text-[#8C887B] text-[0.68rem] tracking-wider"
                       data-testid="approval-queue__item-date"
                     >
                       {formatCardDate(row.created_at)}
@@ -337,11 +352,13 @@ export function ApprovalQueue({ userId }: { userId: string }) {
                     {/* Story 2.11 Missing field message */}
                     {!approvalStatus.canApprove && (
                       <div
-                        className="mt-1 flex items-center gap-1 text-[0.65rem] text-destructive font-medium"
+                        className="mt-1 flex items-center justify-center gap-1 text-[0.65rem] text-destructive font-medium"
                         data-testid="approval-queue__validation-warning"
                       >
                         <AlertTriangle className="size-3 shrink-0" />
-                        <span>Needs {approvalStatus.missingFields.join(" & ")}</span>
+                        <span>
+                          Needs {approvalStatus.missingFields.join(" & ")}
+                        </span>
                       </div>
                     )}
                   </div>
@@ -362,8 +379,10 @@ export function ApprovalQueue({ userId }: { userId: string }) {
                 onClick={handleApprove}
                 data-testid="approval-queue__approve-button"
                 className={cn(
-                  "bg-[#393735] text-white flex-1 flex items-center justify-center rounded-2xl py-4 text-xs font-semibold uppercase tracking-wider shadow-lg transition-transform active:scale-95 disabled:opacity-40",
-                  !canApprove && selected.size > 0 && "opacity-60 cursor-not-allowed",
+                  "bg-[#444440] hover:bg-[#333330] text-white flex-1 flex items-center justify-center rounded-2xl h-14 text-xs font-semibold uppercase tracking-wider shadow-lg transition-transform active:scale-95 disabled:opacity-40",
+                  !canApprove &&
+                    selected.size > 0 &&
+                    "opacity-60 cursor-not-allowed",
                 )}
               >
                 {approveMutation.isPending ? "Approving…" : "Approve"}
@@ -375,9 +394,9 @@ export function ApprovalQueue({ userId }: { userId: string }) {
                 disabled={busy || selected.size === 0}
                 aria-label="Discard selected"
                 data-testid="approval-queue__discard-button"
-                className="bg-[#eae4dc] text-foreground flex size-12 shrink-0 items-center justify-center rounded-2xl transition-colors hover:bg-[#ded6cb] disabled:opacity-40"
+                className="bg-[#F2EDE5] hover:bg-[#EAE4DC] text-[#444440] flex size-14 shrink-0 items-center justify-center rounded-2xl transition-colors disabled:opacity-40"
               >
-                <Trash2 className="size-4" />
+                <Trash2 className="size-5" />
               </button>
             </div>
 
@@ -389,8 +408,10 @@ export function ApprovalQueue({ userId }: { userId: string }) {
                 onClick={handleApprove}
                 data-testid="approval-queue__approve-button-desktop"
                 className={cn(
-                  "bg-[#393735] hover:bg-[#2b2a27] text-white px-10 py-3.5 rounded-2xl text-xs font-semibold uppercase tracking-wider shadow-md transition-colors disabled:opacity-40",
-                  !canApprove && selected.size > 0 && "opacity-60 cursor-not-allowed",
+                  "bg-[#444440] hover:bg-[#333330] text-white px-12 h-14 rounded-2xl text-xs font-semibold uppercase tracking-wider shadow-md transition-colors disabled:opacity-40",
+                  !canApprove &&
+                    selected.size > 0 &&
+                    "opacity-60 cursor-not-allowed",
                 )}
               >
                 {approveMutation.isPending ? "Approving…" : "Approve"}
@@ -401,7 +422,7 @@ export function ApprovalQueue({ userId }: { userId: string }) {
                 disabled={busy || selected.size === 0}
                 onClick={() => setDeleteConfirmOpen(true)}
                 data-testid="approval-queue__discard-button-desktop"
-                className="bg-[#eae4dc] hover:bg-[#ded6cb] text-foreground px-10 py-3.5 rounded-2xl text-xs font-semibold uppercase tracking-wider transition-colors disabled:opacity-40"
+                className="bg-[#F2EDE5] hover:bg-[#EAE4DC] text-[#444440] px-12 h-14 rounded-2xl text-xs font-semibold uppercase tracking-wider transition-colors disabled:opacity-40"
               >
                 Delete
               </button>
@@ -421,14 +442,17 @@ export function ApprovalQueue({ userId }: { userId: string }) {
               setOpenId(null);
               void queryClient.invalidateQueries({
                 queryKey:
-                  getPendingWardrobeItemsQueryOptionsForBrowser(userId).queryKey,
+                  getPendingWardrobeItemsQueryOptionsForBrowser(userId)
+                    .queryKey,
               });
               void queryClient.invalidateQueries({
                 queryKey:
-                  getPendingWardrobeCountQueryOptionsForBrowser(userId).queryKey,
+                  getPendingWardrobeCountQueryOptionsForBrowser(userId)
+                    .queryKey,
               });
               void queryClient.invalidateQueries({
-                queryKey: getWardrobeItemsQueryOptionsForBrowser(userId).queryKey,
+                queryKey:
+                  getWardrobeItemsQueryOptionsForBrowser(userId).queryKey,
               });
             }}
           />

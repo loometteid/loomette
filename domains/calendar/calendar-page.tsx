@@ -9,7 +9,11 @@ import {
 } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useQuery, useQueryClient, useSuspenseQuery } from "@tanstack/react-query";
+import {
+  useQuery,
+  useQueryClient,
+  useSuspenseQuery,
+} from "@tanstack/react-query";
 import { ChevronDown, ChevronLeft, ChevronRight, History } from "lucide-react";
 import { Sparkle } from "@/components/ui/sparkle";
 import { Typography } from "@/components/ui/typography";
@@ -23,7 +27,7 @@ import { getDiaryEntriesQueryOptionsForBrowser } from "./query-options/get-diary
 import { getProfileQueryOptionsForBrowser } from "@/domains/profile/query-options/get-profile.query-option.client";
 import { useOnboardingGuard } from "@/domains/onboarding/hooks/use-onboarding-guard";
 
-const subscribeNoop = () => () => { };
+const subscribeNoop = () => () => {};
 
 function getClientTodayKey() {
   const { year, month, day } = todayParts();
@@ -140,7 +144,12 @@ export function CalendarView({ userId }: { userId: string }) {
   return (
     <main className="mx-auto flex w-full max-w-sm lg:max-w-6xl xl:max-w-7xl flex-col gap-6 lg:gap-8 px-6 lg:px-12 py-8 lg:py-10">
       <Link href="/calendar/loading" prefetch className="hidden" aria-hidden />
-      <Link href="/calendar/outfit-approval" prefetch className="hidden" aria-hidden />
+      <Link
+        href="/calendar/outfit-approval"
+        prefetch
+        className="hidden"
+        aria-hidden
+      />
 
       {/* Mobile Title */}
       <div className="flex items-center justify-between gap-2 lg:hidden">
@@ -257,13 +266,13 @@ export function CalendarView({ userId }: { userId: string }) {
       </div>
 
       {/* Mobile Ingestion Card */}
-      <div className="border-border flex flex-col gap-4 rounded-3xl border p-6 lg:hidden">
+      <div className="border border-[#EAE4DC] bg-[#FAF8F5]/60 flex flex-col gap-4 rounded-3xl p-6 lg:hidden">
         <Typography variant="h1" as="h2">
           Capture your looks
         </Typography>
 
-        <label className="bg-foreground text-background flex w-full cursor-pointer items-center justify-center gap-2 rounded-full py-3 text-sm font-medium tracking-wide uppercase">
-          Upload Outfit
+        <label className="bg-[#393735] hover:bg-[#2b2a27] text-white flex w-full cursor-pointer items-center justify-center gap-2 rounded-2xl py-4 text-xs font-semibold tracking-wider uppercase shadow-md transition-transform active:scale-95">
+          Upload Photo
           <input
             type="file"
             accept="image/*"
@@ -276,14 +285,14 @@ export function CalendarView({ userId }: { userId: string }) {
           />
         </label>
 
-        <span className="text-muted-foreground self-center text-xs tracking-wide uppercase">
+        <span className="text-[#8C887B] self-center text-xs tracking-wider uppercase font-medium">
           or
         </span>
 
         <Link
           href="/mix-and-match"
           prefetch
-          className="bg-secondary text-secondary-foreground flex w-full items-center justify-center rounded-full py-3 text-sm font-medium tracking-wide uppercase"
+          className="bg-[#EAE4DC] hover:bg-[#ded6cb] text-foreground flex w-full items-center justify-center rounded-2xl py-4 text-xs font-semibold tracking-wider uppercase shadow-sm transition-colors"
         >
           Mix &amp; Match
         </Link>

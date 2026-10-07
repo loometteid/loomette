@@ -12,6 +12,7 @@ export type DiaryEntry = {
   worn_on: string;
   outfit: {
     id: string;
+    name?: string | null;
     cover_image_url: string | null;
     items: DiaryOutfitItem[];
   } | null;

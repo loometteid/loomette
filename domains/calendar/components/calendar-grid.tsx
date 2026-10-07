@@ -115,7 +115,7 @@ export function CalendarGrid({
                         alt=""
                         fill
                         sizes="60px"
-                        className="object-cover"
+                        className="object-contain"
                       />
                     )}
                   </button>

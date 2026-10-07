@@ -158,6 +158,7 @@ export type WardrobeItem = {
   id: string;
   created_at: string;
   wear_count: number;
+  price?: number | null;
   occasions: Occasion[] | null;
   item: {
     item_id: string;

@@ -3,9 +3,13 @@
 import { useEffect, useEffectEvent, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { ChevronLeft, Loader2 } from "lucide-react";
+import { ChevronLeft, Loader2, Pencil, X } from "lucide-react";
 import { toast } from "sonner";
-import { useMutation, useQueryClient, useSuspenseQuery } from "@tanstack/react-query";
+import {
+  useMutation,
+  useQueryClient,
+  useSuspenseQuery,
+} from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogPopup, DialogTitle } from "@/components/ui/dialog";
 import { Sparkle } from "@/components/ui/sparkle";
@@ -73,14 +77,14 @@ export function OutfitApproval({ userId }: { userId: string }) {
     if (!draft || !result) {
       router.replace("/calendar");
     }
-  })
+  });
 
   useEffect(() => {
-    firstRedirect()
-  }, [])
+    firstRedirect();
+  }, []);
 
   if (!draft || !result) {
-    return null
+    return null;
   }
 
   const isBusy = isSavingOutfit || isDeletingOUtfit;
@@ -112,13 +116,18 @@ export function OutfitApproval({ userId }: { userId: string }) {
           <div className="flex flex-col gap-4 lg:gap-6">
             <div className="flex items-center gap-3">
               <Sparkle className="size-6 lg:size-8 text-foreground" />
-              <Typography variant="title" as="h1" className="text-3xl lg:text-4xl font-serif">
+              <Typography
+                variant="title"
+                as="h1"
+                className="text-3xl lg:text-4xl font-serif"
+              >
                 <em className="italic">Looking</em> Good?
               </Typography>
             </div>
 
             <p className="text-muted-foreground text-xs lg:text-sm uppercase tracking-widest max-w-sm leading-relaxed">
-              Here&apos;s what we pulled from your look. Add the ones that are right.
+              Here&apos;s what we pulled from your look. Add the ones that are
+              right.
             </p>
 
             {/* Desktop Action Buttons (D.2.1.2) */}
@@ -129,9 +138,11 @@ export function OutfitApproval({ userId }: { userId: string }) {
                   deleteOutfit({ paths: [result.originalPath] });
                 }}
                 disabled={isBusy}
-                className="bg-[#EAE4DC] hover:bg-[#dcd4c8] text-foreground flex-1 py-3.5 rounded-2xl text-xs font-semibold tracking-wider uppercase transition-all active:scale-95 disabled:opacity-60"
+                className="bg-[#F2EDE5] hover:bg-[#EAE4DC] text-[#444440] px-10 py-3.5 rounded-2xl text-xs font-semibold tracking-wider uppercase transition-all active:scale-95 disabled:opacity-60"
               >
-                {isDeletingOUtfit && <Loader2 className="size-4 animate-spin inline mr-2" />}
+                {isDeletingOUtfit && (
+                  <Loader2 className="size-4 animate-spin inline mr-2" />
+                )}
                 Cancel
               </button>
               <button
@@ -144,9 +155,11 @@ export function OutfitApproval({ userId }: { userId: string }) {
                   })
                 }
                 disabled={isBusy}
-                className="bg-[#393735] hover:bg-[#2b2a27] text-white flex-1 py-3.5 rounded-2xl text-xs font-semibold tracking-wider uppercase transition-all active:scale-95 disabled:opacity-60 shadow-md"
+                className="bg-[#444440] hover:bg-[#333330] text-white px-10 py-3.5 rounded-2xl text-xs font-semibold tracking-wider uppercase transition-all active:scale-95 disabled:opacity-60 shadow-md"
               >
-                {isSavingOutfit && <Loader2 className="size-4 animate-spin inline mr-2" />}
+                {isSavingOutfit && (
+                  <Loader2 className="size-4 animate-spin inline mr-2" />
+                )}
                 Save
               </button>
             </div>
@@ -154,26 +167,35 @@ export function OutfitApproval({ userId }: { userId: string }) {
 
           {/* Right Column: Preview Image & See Original Photo */}
           <div className="flex flex-col items-center gap-4">
-            <div className="bg-secondary relative aspect-3/4 w-full max-w-64 lg:max-w-xs overflow-hidden rounded-2xl shadow-sm">
-              <Image
-                src={result.previewUrl}
-                alt="Outfit preview"
-                fill
-                className="object-cover"
-              />
+            <div className="relative flex flex-col items-center justify-center w-full max-w-64 lg:max-w-xs aspect-3/4">
+              <div className="relative h-full w-full flex items-center justify-center">
+                <Image
+                  src={result.previewUrl}
+                  alt="Outfit preview"
+                  fill
+                  className="object-contain drop-shadow-md"
+                />
+              </div>
+              <div className="h-2 w-32 rounded-full bg-black/10 blur-[3px]" />
             </div>
 
             <button
               type="button"
               onClick={() => setShowOriginal(true)}
-              className="border-border rounded-full border px-5 py-2.5 text-xs font-medium tracking-wide uppercase transition-colors hover:bg-secondary"
+              className="border-[#C9C3B7] bg-transparent rounded-full border px-6 py-2 text-xs font-medium tracking-wide uppercase transition-colors hover:bg-[#F2EDE5] text-[#444440]"
             >
               See Original Photo
             </button>
+
+            {/* Title with inline pencil (Figma 2.1.2) */}
+            <div className="flex items-center gap-1.5 mt-1 lg:hidden">
+              <span className="font-serif text-2xl text-[#444440]">Chic Kinda Day</span>
+              <Pencil className="size-3.5 text-[#444440]" />
+            </div>
           </div>
         </div>
 
-        {/* Mobile Action Buttons */}
+        {/* Mobile Action Buttons (Figma 2.1.2) */}
         <div className="mt-8 flex gap-3 lg:hidden">
           <button
             type="button"
@@ -181,7 +203,7 @@ export function OutfitApproval({ userId }: { userId: string }) {
               deleteOutfit({ paths: [result.originalPath] });
             }}
             disabled={isBusy}
-            className="bg-secondary text-secondary-foreground flex flex-1 items-center justify-center gap-2 rounded-full py-3 text-sm font-medium tracking-wide uppercase disabled:pointer-events-none disabled:opacity-60"
+            className="bg-[#F2EDE5] hover:bg-[#EAE4DC] text-[#444440] flex flex-1 items-center justify-center gap-2 rounded-2xl py-4 text-xs font-semibold tracking-wider uppercase transition-colors disabled:pointer-events-none disabled:opacity-60"
           >
             {isDeletingOUtfit && <Loader2 className="size-4 animate-spin" />}
             Cancel
@@ -196,7 +218,7 @@ export function OutfitApproval({ userId }: { userId: string }) {
               })
             }
             disabled={isBusy}
-            className="bg-foreground text-background flex flex-1 items-center justify-center gap-2 rounded-full py-3 text-sm font-medium tracking-wide uppercase disabled:pointer-events-none disabled:opacity-60"
+            className="bg-[#444440] hover:bg-[#333330] text-white flex flex-1 items-center justify-center gap-2 rounded-2xl py-4 text-xs font-semibold tracking-wider uppercase transition-colors shadow-md disabled:pointer-events-none disabled:opacity-60"
           >
             {isSavingOutfit && <Loader2 className="size-4 animate-spin" />}
             Save
@@ -204,15 +226,40 @@ export function OutfitApproval({ userId }: { userId: string }) {
         </div>
 
         <Dialog open={showOriginal} onOpenChange={setShowOriginal}>
-          <DialogPopup>
-            <DialogTitle>Original photo</DialogTitle>
-            <div className="bg-secondary relative aspect-3/4 w-full overflow-hidden rounded-2xl">
-              <Image
-                src={result.originalUrl}
-                alt="Original outfit photo"
-                fill
-                className="object-cover"
-              />
+          <DialogPopup
+            showClose={false}
+            className="fixed inset-0 m-auto h-fit max-w-[340px] lg:max-w-md w-[calc(100%-3rem)] p-6 lg:p-8 rounded-[24px] bg-[#FAFAF7] border-none text-center shadow-2xl relative"
+          >
+            <button
+              type="button"
+              onClick={() => setShowOriginal(false)}
+              aria-label="Close"
+              className="absolute top-4 right-4 size-10 rounded-xl bg-[#F2EDE5] hover:bg-[#EAE4DC] text-[#444440] flex items-center justify-center transition-colors"
+            >
+              <X className="size-4" />
+            </button>
+            <div className="flex flex-col items-center gap-4 mt-2">
+              <div className="flex items-center gap-2">
+                <Sparkle className="size-5 text-[#444440]" />
+                <DialogTitle className="font-serif text-2xl lg:text-3xl text-[#444440]">
+                  Source Preview
+                </DialogTitle>
+              </div>
+              <div className="bg-[#ECE7DF] relative aspect-3/4 w-full max-w-[260px] overflow-hidden rounded-2xl">
+                <Image
+                  src={result.originalUrl}
+                  alt="Original outfit photo"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <button
+                type="button"
+                onClick={() => setShowOriginal(false)}
+                className="w-full bg-[#444440] hover:bg-[#333330] text-white py-3.5 rounded-2xl text-xs font-semibold uppercase tracking-wider transition-colors mt-2"
+              >
+                Okay
+              </button>
             </div>
           </DialogPopup>
         </Dialog>

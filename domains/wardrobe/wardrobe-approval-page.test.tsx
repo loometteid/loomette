@@ -190,9 +190,9 @@ describe("ApprovalQueue (Wardrobe Approval Feature)", () => {
 
     // Confirmation dialog opens
     expect(screen.getByTestId("delete-confirm-dialog")).toBeInTheDocument();
-    expect(screen.getByTestId("delete-confirm-dialog__title")).toHaveTextContent(
-      "Delete item?",
-    );
+    expect(
+      screen.getByTestId("delete-confirm-dialog__title"),
+    ).toHaveTextContent("Delete item?");
     expect(
       screen.getByTestId("delete-confirm-dialog__confirm-button"),
     ).toBeInTheDocument();

@@ -13,7 +13,9 @@ export type DiscardWardrobeItemsVariables = {
 
 export const discardWardrobeItemsMutationOptions = () =>
   mutationOptions({
-    mutationFn: async ({ items }: DiscardWardrobeItemsVariables): Promise<void> => {
+    mutationFn: async ({
+      items,
+    }: DiscardWardrobeItemsVariables): Promise<void> => {
       if (items.length === 0) return;
       const supabase = createBrowserSupabaseClient();
       const errors: string[] = [];
@@ -37,7 +39,7 @@ export const discardWardrobeItemsMutationOptions = () =>
         .filter((p): p is string => !!p);
 
       if (paths.length > 0) {
-        deleteWardrobeImages(paths).catch(() => { });
+        deleteWardrobeImages(paths).catch(() => {});
       }
     },
   });

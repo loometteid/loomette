@@ -38,16 +38,20 @@ describe("WardrobeLoadingView (Screen 3.2.3 / D.3.2.3)", () => {
     expect(
       await screen.findByTestId("wardrobe-loading-page"),
     ).toBeInTheDocument();
-    expect(screen.getByTestId("wardrobe-loading-page__title")).toHaveTextContent(
-      "We're working on your look.",
-    );
-    expect(screen.getByTestId("wardrobe-loading-page__steps")).toBeInTheDocument();
+    expect(
+      screen.getByTestId("wardrobe-loading-page__title"),
+    ).toHaveTextContent("We're working on your look.");
+    expect(
+      screen.getByTestId("wardrobe-loading-page__steps"),
+    ).toBeInTheDocument();
     expect(
       screen.getByTestId("wardrobe-loading-page__got-it-button"),
     ).toBeInTheDocument();
 
     const user = userEvent.setup();
-    await user.click(screen.getByTestId("wardrobe-loading-page__got-it-button"));
+    await user.click(
+      screen.getByTestId("wardrobe-loading-page__got-it-button"),
+    );
     expect(mockPush).toHaveBeenCalledWith("/wardrobe/approval");
   });
 

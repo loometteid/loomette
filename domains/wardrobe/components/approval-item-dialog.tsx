@@ -1,23 +1,18 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { toast } from "sonner";
-import { Pencil, X } from "lucide-react";
+import { ChevronDown, Pencil, X } from "lucide-react";
 import { Controller, useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
-import {
-  Accordion,
-  AccordionItem,
-  AccordionPanel,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogPopup, DialogTitle } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { PillToggleGroup } from "@/components/ui/pill-toggle-group";
+import { cn } from "@/lib/utils";
 import { updateWardrobeItemMutationOptions } from "../mutation-options/update-wardrobe-item.mutation-option.client";
 import {
   CATEGORY_OPTIONS,
@@ -45,6 +40,8 @@ export function ApprovalItemDialog({
   onOpenChange: (open: boolean) => void;
   onSaved: () => void;
 }) {
+  const [detailsOpen, setDetailsOpen] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -98,7 +95,8 @@ export function ApprovalItemDialog({
       color: values.color ?? null,
       size: values.size ?? null,
       occasions: values.occasions,
-      price: values.price.trim() && !Number.isNaN(parsedPrice) ? parsedPrice : null,
+      price:
+        values.price.trim() && !Number.isNaN(parsedPrice) ? parsedPrice : null,
       purchaseLocation: values.purchaseLocation,
     });
   }
@@ -108,60 +106,64 @@ export function ApprovalItemDialog({
   return (
     <Dialog open onOpenChange={onOpenChange}>
       <DialogPopup
-        className="max-w-md lg:max-w-2xl p-6 rounded-3xl bg-[#faf7f2] border-none shadow-2xl overflow-y-auto max-h-[90vh]"
+        showClose={false}
+        className="fixed inset-0 m-auto h-fit max-w-[340px] lg:max-w-[820px] w-[calc(100%-3rem)] max-h-[90vh] p-6 lg:p-10 rounded-[24px] bg-[#FAFAF7] border-none shadow-2xl overflow-y-auto"
         data-testid="approval-item-dialog"
       >
-        <div className="flex justify-end mb-2">
-          <button
-            type="button"
-            onClick={() => onOpenChange(false)}
-            aria-label="Close"
-            className="rounded-full bg-[#eae4dc] p-1.5 text-foreground hover:opacity-80 transition-opacity"
-            data-testid="approval-item-dialog__close-button"
-          >
-            <X className="size-4" />
-          </button>
-        </div>
+        <DialogTitle className="sr-only">Edit piece details</DialogTitle>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6">
-          {/* Responsive Split Container: single column on mobile, 2 columns on lg */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
-            {/* Left Column: Image & Taxonomy */}
-            <div className="flex flex-col gap-4">
-              <div className="bg-white/60 relative mx-auto aspect-square w-48 overflow-hidden rounded-2xl border border-border/40 p-2 shadow-sm flex items-center justify-center">
-                {item.item?.image_url && (
-                  <Image
-                    src={item.item.image_url}
-                    alt=""
-                    fill
-                    className="object-contain p-2"
-                  />
-                )}
+        {/* Close button (Figma 3.1.1 / D.3.1.1: rounded square in #F2EDE5) */}
+        <button
+          type="button"
+          onClick={() => onOpenChange(false)}
+          aria-label="Close"
+          className="absolute top-5 right-5 lg:top-7 lg:right-7 size-10 lg:size-12 rounded-xl bg-[#F2EDE5] hover:bg-[#EAE4DC] flex items-center justify-center text-[#444440] transition-colors z-20"
+          data-testid="approval-item-dialog__close-button"
+        >
+          <X className="size-4 lg:size-5" />
+        </button>
+
+        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col">
+          {/* Top Section: Garment Image & Title/Brand (Single responsive structure) */}
+          <div className="flex flex-col items-center lg:flex-row lg:items-center lg:gap-8 mb-6 lg:mb-8 pr-12 lg:pr-16">
+            <div className="relative size-36 lg:size-44 shrink-0 flex items-center justify-center">
+              {item.item?.image_url && (
+                <Image
+                  src={item.item.image_url}
+                  alt=""
+                  fill
+                  className="object-contain p-1 drop-shadow-sm"
+                />
+              )}
+            </div>
+
+            <div className="flex flex-col items-center lg:items-start gap-1 w-full mt-3 lg:mt-0">
+              <div className="flex items-center justify-center lg:justify-start gap-2 w-full">
+                <input
+                  {...register("name")}
+                  placeholder="Name this piece"
+                  className="bg-transparent font-serif text-2xl lg:text-3xl text-[#444440] text-center lg:text-left outline-none placeholder:text-[#9E9A90] w-auto max-w-[280px] lg:max-w-md"
+                />
+                <Pencil className="size-4 text-[#444440] shrink-0" />
               </div>
-
-              {/* Title & Brand on Mobile */}
-              <div className="flex flex-col items-center gap-1 text-center lg:hidden">
-                <div className="flex items-center justify-center gap-1.5 w-full">
-                  <input
-                    {...register("name")}
-                    placeholder="Name this piece"
-                    className="bg-transparent text-center font-serif text-2xl outline-none placeholder:text-muted-foreground w-auto max-w-[220px]"
-                  />
-                  <Pencil className="size-3.5 text-muted-foreground" />
-                </div>
-                <div className="flex items-center justify-center gap-1 w-full">
-                  <input
-                    {...register("brand")}
-                    placeholder="BRAND"
-                    className="text-muted-foreground bg-transparent text-center text-xs tracking-wider uppercase outline-none placeholder:text-muted-foreground w-auto max-w-[150px]"
-                  />
-                  <Pencil className="size-3 text-muted-foreground" />
-                </div>
+              <div className="flex items-center justify-center lg:justify-start gap-1.5 w-full">
+                <input
+                  {...register("brand")}
+                  placeholder="BRAND"
+                  className="text-[#9E9A90] bg-transparent text-xs tracking-widest uppercase text-center lg:text-left outline-none placeholder:text-[#9E9A90] w-auto max-w-[180px] lg:max-w-xs"
+                />
+                <Pencil className="size-3 text-[#9E9A90] shrink-0" />
               </div>
+            </div>
+          </div>
 
+          {/* Form Fields: Two Columns on Desktop (D.3.1.1) / Stack + Accordion on Mobile (3.1.1) */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-8 items-start">
+            {/* Left Column (Desktop) / Primary Fields (Mobile) */}
+            <div className="flex flex-col gap-4 lg:gap-5">
               {/* Category */}
               <div className="flex flex-col gap-2">
-                <Label className="text-muted-foreground text-xs font-medium tracking-wider uppercase">
+                <Label className="text-xs uppercase font-medium tracking-wider text-[#444440]">
                   Category
                 </Label>
                 <Controller
@@ -183,7 +185,7 @@ export function ApprovalItemDialog({
               {/* Sub Category */}
               {subcategoryOptions.length > 0 && (
                 <div className="flex flex-col gap-2">
-                  <Label className="text-muted-foreground text-xs font-medium tracking-wider uppercase">
+                  <Label className="text-xs uppercase font-medium tracking-wider text-[#444440]">
                     Sub Category
                   </Label>
                   <Controller
@@ -203,12 +205,12 @@ export function ApprovalItemDialog({
               {/* Outfit Size */}
               <div className="flex flex-col gap-2">
                 <div className="flex items-center justify-between">
-                  <Label className="text-muted-foreground text-xs font-medium tracking-wider uppercase">
+                  <Label className="text-xs uppercase font-medium tracking-wider text-[#444440]">
                     Outfit Size
                   </Label>
-                  <Badge className="text-[0.65rem] uppercase tracking-wider">
+                  <span className="bg-[#F2EDE5] text-[#78746D] px-2.5 py-0.5 rounded-full text-[10px] uppercase tracking-wider font-normal">
                     Optional
-                  </Badge>
+                  </span>
                 </div>
                 <Controller
                   name="size"
@@ -224,33 +226,33 @@ export function ApprovalItemDialog({
               </div>
             </div>
 
-            {/* Right Column (Desktop: Direct Fields / Mobile: Accordion for Details) */}
-            <div className="flex flex-col gap-5">
-              {/* Title & Brand on Desktop */}
-              <div className="hidden lg:flex flex-col gap-1">
-                <DialogTitle className="sr-only">Edit piece details</DialogTitle>
-                <div className="flex items-center gap-2">
-                  <input
-                    {...register("name")}
-                    placeholder="Name this piece"
-                    className="bg-transparent font-serif text-2xl outline-none placeholder:text-muted-foreground w-full"
-                  />
-                  <Pencil className="size-4 text-muted-foreground shrink-0" />
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <input
-                    {...register("brand")}
-                    placeholder="BRAND"
-                    className="text-muted-foreground bg-transparent text-xs tracking-wider uppercase outline-none placeholder:text-muted-foreground w-full"
-                  />
-                  <Pencil className="size-3 text-muted-foreground shrink-0" />
-                </div>
-              </div>
+            {/* Right Column (Desktop: Always Visible) / Collapsible Details (Mobile: 3.1.1) */}
+            <div className="flex flex-col gap-4 lg:gap-5">
+              {/* Mobile Details Toggle */}
+              <button
+                type="button"
+                onClick={() => setDetailsOpen((prev) => !prev)}
+                className="flex lg:hidden w-full items-center justify-between text-xs font-medium uppercase tracking-wider text-[#444440] py-2 cursor-pointer border-t border-[#EAE4DC]/60 pt-3"
+              >
+                <span>Details</span>
+                <ChevronDown
+                  className={cn(
+                    "size-4 text-[#444440] transition-transform duration-200",
+                    detailsOpen && "rotate-180",
+                  )}
+                />
+              </button>
 
-              {/* Desktop Details (Always Visible) */}
-              <div className="hidden lg:flex flex-col gap-4">
+              {/* Details Content Container (Hidden on mobile if not open, always flex on desktop) */}
+              <div
+                className={cn(
+                  "flex flex-col gap-4 lg:gap-5",
+                  !detailsOpen && "hidden lg:flex",
+                )}
+              >
+                {/* Occasion */}
                 <div className="flex flex-col gap-2">
-                  <Label className="text-muted-foreground text-xs font-medium tracking-wider uppercase">
+                  <Label className="text-xs uppercase font-medium tracking-wider text-[#444440]">
                     Occasion
                   </Label>
                   <Controller
@@ -259,7 +261,9 @@ export function ApprovalItemDialog({
                     render={({ field }) => (
                       <PillToggleGroup
                         options={OCCASION_OPTIONS}
-                        isSelected={(value) => field.value.includes(value as Occasion)}
+                        isSelected={(value) =>
+                          field.value.includes(value as Occasion)
+                        }
                         onToggle={(value) => {
                           const occ = value as Occasion;
                           const current = field.value;
@@ -273,119 +277,65 @@ export function ApprovalItemDialog({
                   />
                 </div>
 
+                {/* Price */}
                 <div className="flex flex-col gap-1.5">
                   <Label
-                    htmlFor="desktop-approval-price"
-                    className="text-muted-foreground text-xs font-medium tracking-wider uppercase"
+                    htmlFor="approval-price"
+                    className="text-xs uppercase font-medium tracking-wider text-[#444440]"
                   >
                     Price
                   </Label>
                   <Input
-                    id="desktop-approval-price"
+                    id="approval-price"
                     type="number"
                     inputMode="decimal"
                     placeholder="e.g. $100"
                     {...register("price")}
-                    className="bg-[#eae4dc]/60 border-none rounded-xl"
+                    className="bg-[#F2EDE5] border-none rounded-2xl h-12 px-4 text-sm text-[#444440] placeholder:text-[#9E9A90] focus-visible:ring-1 focus-visible:ring-[#444440]"
                   />
                 </div>
 
+                {/* Buy From */}
                 <div className="flex flex-col gap-1.5">
                   <Label
-                    htmlFor="desktop-approval-buy-from"
-                    className="text-muted-foreground text-xs font-medium tracking-wider uppercase"
+                    htmlFor="approval-buy-from"
+                    className="text-xs uppercase font-medium tracking-wider text-[#444440]"
                   >
                     Buy From
                   </Label>
                   <Input
-                    id="desktop-approval-buy-from"
+                    id="approval-buy-from"
                     placeholder="e.g. Offline Store"
                     {...register("purchaseLocation")}
-                    className="bg-[#eae4dc]/60 border-none rounded-xl"
+                    className="bg-[#F2EDE5] border-none rounded-2xl h-12 px-4 text-sm text-[#444440] placeholder:text-[#9E9A90] focus-visible:ring-1 focus-visible:ring-[#444440]"
                   />
                 </div>
               </div>
 
-              {/* Mobile Accordion for Details */}
-              <div className="lg:hidden">
-                <Accordion defaultValue={[]}>
-                  <AccordionItem value="details">
-                    <AccordionTrigger className="text-muted-foreground text-xs tracking-wider uppercase">
-                      Details
-                    </AccordionTrigger>
-                    <AccordionPanel className="flex flex-col gap-4 pt-2">
-                      <div className="flex flex-col gap-2">
-                        <Label className="text-muted-foreground text-xs font-medium tracking-wider uppercase">
-                          Occasion
-                        </Label>
-                        <Controller
-                          name="occasions"
-                          control={control}
-                          render={({ field }) => (
-                            <PillToggleGroup
-                              options={OCCASION_OPTIONS}
-                              isSelected={(value) => field.value.includes(value as Occasion)}
-                              onToggle={(value) => {
-                                const occ = value as Occasion;
-                                const current = field.value;
-                                const next = current.includes(occ)
-                                  ? current.filter((o) => o !== occ)
-                                  : [...current, occ];
-                                field.onChange(next);
-                              }}
-                            />
-                          )}
-                        />
-                      </div>
-
-                      <div className="flex flex-col gap-1.5">
-                        <Label
-                          htmlFor="mobile-approval-price"
-                          className="text-muted-foreground text-xs font-medium tracking-wider uppercase"
-                        >
-                          Price
-                        </Label>
-                        <Input
-                          id="mobile-approval-price"
-                          type="number"
-                          inputMode="decimal"
-                          placeholder="e.g. $100"
-                          {...register("price")}
-                          className="bg-[#eae4dc]/60 border-none rounded-xl"
-                        />
-                      </div>
-
-                      <div className="flex flex-col gap-1.5">
-                        <Label
-                          htmlFor="mobile-approval-buy-from"
-                          className="text-muted-foreground text-xs font-medium tracking-wider uppercase"
-                        >
-                          Buy From
-                        </Label>
-                        <Input
-                          id="mobile-approval-buy-from"
-                          placeholder="e.g. Offline Store"
-                          {...register("purchaseLocation")}
-                          className="bg-[#eae4dc]/60 border-none rounded-xl"
-                        />
-                      </div>
-                    </AccordionPanel>
-                  </AccordionItem>
-                </Accordion>
-              </div>
-
-              {/* Save Button */}
-              <div className="mt-4 flex justify-end">
+              {/* Desktop Save Button (Aligned bottom right per D.3.1.1) */}
+              <div className="hidden lg:flex justify-end mt-4">
                 <Button
                   type="submit"
                   disabled={isSaving}
-                  className="bg-[#393735] hover:bg-[#2b2a27] text-white rounded-2xl px-10 py-3.5 text-xs font-semibold uppercase tracking-wider w-full lg:w-auto"
+                  className="bg-[#444440] hover:bg-[#333330] text-white px-12 py-3.5 rounded-2xl text-xs font-semibold uppercase tracking-wider transition-colors shadow-md"
                   data-testid="approval-item-dialog__save-button"
                 >
                   {isSaving ? "Saving…" : "Save"}
                 </Button>
               </div>
             </div>
+          </div>
+
+          {/* Mobile Save Button (Full width at bottom per 3.1.1) */}
+          <div className="lg:hidden mt-4 pt-2">
+            <Button
+              type="submit"
+              disabled={isSaving}
+              className="w-full bg-[#444440] hover:bg-[#333330] text-white py-3.5 rounded-2xl text-xs font-semibold uppercase tracking-wider transition-colors shadow-md"
+              data-testid="approval-item-dialog__save-button"
+            >
+              {isSaving ? "Saving…" : "Save"}
+            </Button>
           </div>
         </form>
       </DialogPopup>

@@ -73,10 +73,13 @@ export function WardrobeFilterDialog({
     >
       <DialogPopup
         showClose={false}
-        className="max-w-md lg:max-w-3xl p-6 lg:p-8 rounded-3xl bg-[#faf7f2] border-none shadow-2xl overflow-y-auto max-h-[90vh]"
+        className="fixed inset-0 m-auto h-fit max-w-[340px] lg:max-w-3xl w-[calc(100%-2rem)] p-6 lg:p-8 rounded-[24px] bg-[#FAFAF7] border-none shadow-2xl overflow-y-auto max-h-[90vh]"
       >
         <div className="flex items-center gap-3">
-          <DialogClose aria-label="Close" className="rounded-full bg-[#eae4dc] p-1.5 text-foreground hover:opacity-80 transition-opacity">
+          <DialogClose
+            aria-label="Close"
+            className="size-10 rounded-xl bg-[#F2EDE5] hover:bg-[#EAE4DC] text-[#444440] flex items-center justify-center transition-colors"
+          >
             <X className="size-4" />
           </DialogClose>
           <DialogTitle className="flex flex-1 items-center justify-center gap-2 text-2xl font-serif">
@@ -153,7 +156,9 @@ export function WardrobeFilterDialog({
               </Label>
               <PillToggleGroup
                 options={OCCASION_OPTIONS}
-                isSelected={(value) => draft.occasions.includes(value as Occasion)}
+                isSelected={(value) =>
+                  draft.occasions.includes(value as Occasion)
+                }
                 onToggle={(value) => toggleOccasion(value as Occasion)}
               />
             </div>
@@ -209,7 +214,7 @@ export function WardrobeFilterDialog({
               </Button>
               <Button
                 type="button"
-                className="bg-[#393735] text-white hover:bg-[#2b2a27] px-8 rounded-xl font-medium tracking-wider uppercase text-xs shadow-md"
+                className="bg-[#444440] hover:bg-[#333330] text-white rounded-2xl py-3.5 px-10 text-xs font-semibold uppercase tracking-wider transition-colors shadow-md"
                 onClick={() => {
                   onApply(draft);
                   onOpenChange(false);
@@ -226,14 +231,14 @@ export function WardrobeFilterDialog({
           <Button
             type="button"
             variant="secondary"
-            className="flex-1 rounded-xl"
+            className="flex-1 rounded-2xl py-3.5 text-xs font-semibold uppercase tracking-wider"
             onClick={() => setDraft(EMPTY_FILTERS)}
           >
             Reset
           </Button>
           <Button
             type="button"
-            className="flex-1 bg-[#393735] text-white hover:bg-[#2b2a27] rounded-xl font-medium tracking-wider uppercase text-xs"
+            className="flex-1 bg-[#444440] hover:bg-[#333330] text-white rounded-2xl py-3.5 text-xs font-semibold uppercase tracking-wider transition-colors shadow-md"
             onClick={() => {
               onApply(draft);
               onOpenChange(false);

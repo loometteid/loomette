@@ -2,6 +2,7 @@ import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { GoogleGenAI, Type } from "npm:@google/genai";
 import { createLogger } from "./logger.ts";
+import { createFetch } from "./fetch.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -9,13 +10,16 @@ const corsHeaders = {
     "authorization, x-client-info, apikey, content-type",
 };
 
+export type Occasion =
+  "everyday" | "work" | "going_out" | "special" | "just_vibing";
+
 interface ExtractedGarment {
   name: string;
   brand?: string;
   category: "Tops" | "Bottoms" | "Shoes" | "Accessories";
   subcategory: string;
   color?: string;
-  occasions?: string[];
+  occasions?: Occasion[];
   box_2d?: [number, number, number, number]; // [ymin, xmin, ymax, xmax] (0 - 1000)
 }
 
@@ -54,7 +58,7 @@ serve(async (req) => {
 
   if (!supabaseUrl || !supabaseServiceKey) {
     rootLogger.error(
-      "Missing critical Supabase configuration: SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY is not set"
+      "Missing critical Supabase configuration: SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY is not set",
     );
   }
 
@@ -90,7 +94,7 @@ serve(async (req) => {
       {
         status: 400,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
-      }
+      },
     );
   }
 
@@ -124,7 +128,7 @@ serve(async (req) => {
         durationMs: phase2Timer.elapsedMs(),
       });
       throw new Error(
-        `Failed to fetch image (${imageRes.status}): ${imageRes.statusText}`
+        `Failed to fetch image (${imageRes.status}): ${imageRes.statusText}`,
       );
     }
     const imageBuffer = await imageRes.arrayBuffer();
@@ -140,72 +144,144 @@ serve(async (req) => {
     const phase3Timer = log.startTimer("phase3_gemini_vision");
     const prompt = `You are a fashion catalog expert for Loomette. Analyze this outfit or garment photo.
 Identify each distinct garment, pair of shoes, or fashion accessory worn or shown.
-Extract attributes: name, brand, category (Tops, Bottoms, Shoes, Accessories), subcategory, color, occasions, and box_2d.`;
+Extract attributes: name, brand, category (Tops, Bottoms, Shoes, Accessories), subcategory, color, occasions (only choose from: everyday, work, going_out, special, just_vibing), and box_2d.`;
 
     let items: ExtractedGarment[] = [];
 
     if (geminiApiKey) {
+      const modelName = "gemini-3.6-flash";
       log.info("Calling Gemini Vision API for garment decomposition", {
-        model: "gemini-3.8-flash",
+        model: modelName,
       });
-      const ai = new GoogleGenAI({ apiKey: geminiApiKey });
-      const response = await ai.models.generateContent({
-        model: "gemini-3.8-flash",
-        contents: [
-          prompt,
-          {
-            inlineData: {
-              data: base64Image,
-              mimeType: contentType,
-            },
-          },
-        ],
-        config: {
-          responseMimeType: "application/json",
-          responseSchema: {
-            type: Type.OBJECT,
-            properties: {
-              items: {
-                type: Type.ARRAY,
-                items: {
-                  type: Type.OBJECT,
-                  properties: {
-                    name: { type: Type.STRING },
-                    brand: { type: Type.STRING },
-                    category: {
-                      type: Type.STRING,
-                      enum: ["Tops", "Bottoms", "Shoes", "Accessories"],
-                    },
-                    subcategory: { type: Type.STRING },
-                    color: { type: Type.STRING },
-                    occasions: {
-                      type: Type.ARRAY,
-                      items: { type: Type.STRING },
-                    },
-                    box_2d: {
-                      type: Type.ARRAY,
-                      items: { type: Type.INTEGER },
-                    },
-                  },
-                  required: ["name", "category", "subcategory"],
-                },
-              },
-            },
-            required: ["items"],
+
+      const { fetch: loggedFetch, getAttempt } = createFetch(log, modelName);
+      const ai = new GoogleGenAI({
+        apiKey: geminiApiKey,
+        httpOptions: {
+          fetch: loggedFetch,
+          timeout: 20_000, // 20s timeout per attempt to prevent indefinite socket hangs
+          retryOptions: {
+            attempts: 3, // 1 initial request + up to 2 retries
+            initialDelay: 1.0, // 1.0s initial delay
+            maxDelay: 4.0, // 4.0s max delay
+            expBase: 2.0, // exponential backoff multiplier
+            jitter: 1.0, // randomized jitter
+            httpStatusCodes: [408, 429, 500, 502, 503, 504],
           },
         },
       });
 
+      let response;
+      try {
+        response = await ai.models.generateContent({
+          model: "gemini-3.6-flash",
+          contents: [
+            prompt,
+            {
+              inlineData: {
+                data: base64Image,
+                mimeType: contentType,
+              },
+            },
+          ],
+          config: {
+            responseMimeType: "application/json",
+            responseSchema: {
+              type: Type.OBJECT,
+              description:
+                "List of clothing items and fashion accessories extracted from the image",
+              properties: {
+                items: {
+                  type: Type.ARRAY,
+                  description:
+                    "Extracted clothing items, footwear, and fashion accessories detected in the image",
+                  items: {
+                    type: Type.OBJECT,
+                    description:
+                      "An individual garment or accessory detected in the photo",
+                    properties: {
+                      name: {
+                        type: Type.STRING,
+                        description:
+                          "Descriptive item name (e.g., 'Dark Wash Straight Leg Jeans', 'White Cotton T-Shirt')",
+                      },
+                      brand: {
+                        type: Type.STRING,
+                        description:
+                          "Brand or fashion designer name if visibly identifiable, otherwise an empty string",
+                      },
+                      category: {
+                        type: Type.STRING,
+                        enum: ["Tops", "Bottoms", "Shoes", "Accessories"],
+                        description:
+                          "Broad garment category classification (Tops, Bottoms, Shoes, or Accessories)",
+                      },
+                      subcategory: {
+                        type: Type.STRING,
+                        description:
+                          "Specific item subcategory (e.g., Shirt, Blouse, Polo, Jeans, Pants, Skirt, Sneakers, Heels, Sandals, Bag, Scarf, Hijab)",
+                      },
+                      color: {
+                        type: Type.STRING,
+                        description:
+                          "Primary visual color of the garment (e.g., White, Black, Navy, Light Blue, Red)",
+                      },
+                      occasions: {
+                        type: Type.ARRAY,
+                        description:
+                          "List of suitable wearing occasions matching the application taxonomy",
+                        items: {
+                          type: Type.STRING,
+                          enum: [
+                            "everyday",
+                            "work",
+                            "going_out",
+                            "special",
+                            "just_vibing",
+                          ],
+                          description:
+                            "Allowed occasion: everyday (casual/daily), work (office/business), going_out (evening/party), special (formal/events), or just_vibing (relaxed/lounge)",
+                        },
+                      },
+                      box_2d: {
+                        type: Type.ARRAY,
+                        description:
+                          "Bounding box coordinates of the detected item on the image normalized to 0-1000 in [ymin, xmin, ymax, xmax] format",
+                        items: { type: Type.INTEGER },
+                      },
+                    },
+                    required: ["name", "category", "subcategory"],
+                  },
+                },
+              },
+              required: ["items"],
+            },
+          },
+        });
+      } catch (geminiError) {
+        log.error(
+          "Gemini Vision API garment decomposition failed after all attempts",
+          {
+            model: "gemini-3.6-flash",
+            totalAttempts: getAttempt(),
+            durationMs: phase3Timer.elapsedMs(),
+            error: geminiError,
+          },
+        );
+        throw geminiError;
+      }
+
       const rawText = response.text || "{}";
       const usage = response.usageMetadata
         ? {
-          promptTokens: response.usageMetadata.promptTokenCount,
-          candidatesTokens: response.usageMetadata.candidatesTokenCount,
-          totalTokens: response.usageMetadata.totalTokenCount,
-        }
+            promptTokens: response.usageMetadata.promptTokenCount,
+            candidatesTokens: response.usageMetadata.candidatesTokenCount,
+            totalTokens: response.usageMetadata.totalTokenCount,
+          }
         : undefined;
 
       phase3Timer.done("Gemini Vision decomposition completed", {
+        model: "gemini-3.6-flash",
         usage,
         rawTextLength: rawText.length,
       });
@@ -231,7 +307,7 @@ Extract attributes: name, brand, category (Tops, Bottoms, Shoes, Accessories), s
       });
     } else {
       log.warn(
-        "GEMINI_API_KEY is not configured. Falling back to mock garment extraction stub."
+        "GEMINI_API_KEY is not configured. Falling back to mock garment extraction stub.",
       );
       items = [
         {
@@ -264,14 +340,14 @@ Extract attributes: name, brand, category (Tops, Bottoms, Shoes, Accessories), s
         {
           status: 200,
           headers: { ...corsHeaders, "Content-Type": "application/json" },
-        }
+        },
       );
     }
 
     // 4. Query user's existing approved wardrobe items for advisory duplicate detection
     const phase4Timer = log.startTimer("phase4_duplicate_detection");
     log.info(
-      "Querying user's existing approved wardrobe items for duplicate comparison"
+      "Querying user's existing approved wardrobe items for duplicate comparison",
     );
     const { data: existingWardrobe, error: existingErr } = await supabase
       .from("wardrobe_item")
@@ -282,7 +358,7 @@ Extract attributes: name, brand, category (Tops, Bottoms, Shoes, Accessories), s
     if (existingErr) {
       log.warn(
         "Failed to query existing wardrobe items for duplicate check. Continuing without duplicate flags.",
-        { error: existingErr }
+        { error: existingErr },
       );
     }
 
@@ -330,7 +406,7 @@ Extract attributes: name, brand, category (Tops, Bottoms, Shoes, Accessories), s
             name: g.name,
             category: g.category,
             subcategory: g.subcategory,
-          }
+          },
         );
       }
 
@@ -356,7 +432,7 @@ Extract attributes: name, brand, category (Tops, Bottoms, Shoes, Accessories), s
           {
             error: itemErr,
             garment: g,
-          }
+          },
         );
         throw itemErr;
       }
@@ -367,6 +443,7 @@ Extract attributes: name, brand, category (Tops, Bottoms, Shoes, Accessories), s
         .insert({
           item_id: insertedItem.item_id,
           user_id: userId,
+          upload_job_id: uploadJobId,
           image_url: imageUrl,
           is_approved: false,
           is_duplicate: isDuplicate,
@@ -379,7 +456,7 @@ Extract attributes: name, brand, category (Tops, Bottoms, Shoes, Accessories), s
           {
             error: wardrobeErr,
             itemId: insertedItem.item_id,
-          }
+          },
         );
         throw wardrobeErr;
       }
@@ -425,7 +502,7 @@ Extract attributes: name, brand, category (Tops, Bottoms, Shoes, Accessories), s
       {
         status: 200,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
-      }
+      },
     );
   } catch (err: unknown) {
     const message =

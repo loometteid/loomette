@@ -32,6 +32,7 @@ export type PendingItem = {
   occasions: Occasion[] | null;
   image_url: string | null;
   is_duplicate?: boolean;
+  upload_job_id?: string | null;
   item: {
     item_id: string;
     name: string | null;

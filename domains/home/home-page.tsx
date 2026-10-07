@@ -163,7 +163,7 @@ export function HomeView({ userId }: { userId: string }) {
           <ChevronLeft className="size-5" />
         </button>
 
-        <div className="relative h-[420px] w-[180px]">
+        <div className="relative h-105 w-45">
           {heroItems.length > 0 ? (
             <OutfitComposition
               items={heroItems}

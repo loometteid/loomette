@@ -112,7 +112,7 @@ import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import { FeaturePageContent } from "@/domains/<domain>/<domain>-page";
 import { FeatureLoading } from "@/domains/<domain>/<domain>-loading";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
-import { getServerQueryClient } from "@/lib/tanstack-query/server";
+import { getQueryClient } from "@/lib/tanstack-query";
 import { getUserQueryOptions } from "@/domains/profile/query-options/get-user.query-option";
 import { getItemsQueryOptionsForServer } from "@/domains/<domain>/query-options/get-items.query-option.server";
 
@@ -127,7 +127,7 @@ export default async function FeaturePage() {
     redirect("/sign-in");
   }
 
-  const queryClient = getServerQueryClient();
+  const queryClient = getQueryClient();
 
   // 2. User seed
   queryClient.setQueryData(getUserQueryOptions().queryKey, () => user);

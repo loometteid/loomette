@@ -4,11 +4,12 @@ import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import { WardrobeView } from "@/domains/wardrobe/wardrobe-page";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { WardrobeFallback } from "@/domains/wardrobe/wardrobe-loading";
-import { getServerQueryClient } from "@/lib/tanstack-query/server";
+import { getQueryClient } from "@/lib/tanstack-query";
 import { getUserQueryOptions } from "@/domains/profile/query-options/get-user.query-option";
 import { getWardrobeItemsQueryOptionsForServer } from "@/domains/wardrobe/query-options/get-wardrobe-items.query-option.server";
 import { getPendingWardrobeCountQueryOptionsForServer } from "@/domains/wardrobe/query-options/get-pending-count.query-option.server";
 import { getUserGenderQueryOptionsForServer } from "@/domains/wardrobe/query-options/get-user-gender.query-option.server";
+import { getProfileQueryOptionsForServer } from "@/domains/profile/query-options/get-profile.query-option.server";
 
 export default async function WardrobePage() {
   const supabase = await createServerSupabaseClient();
@@ -21,12 +22,13 @@ export default async function WardrobePage() {
     redirect("/sign-in");
   }
 
-  const queryClient = getServerQueryClient();
+  const queryClient = getQueryClient();
 
   // Populate user query cache to prevent premature logout
   queryClient.setQueryData(getUserQueryOptions().queryKey, () => user);
 
   // Prefetch wardrobe data in parallel on server
+  void queryClient.ensureQueryData(getProfileQueryOptionsForServer(user.id));
   void queryClient.ensureQueryData(getWardrobeItemsQueryOptionsForServer(user.id));
   void queryClient.ensureQueryData(getPendingWardrobeCountQueryOptionsForServer(user.id));
   void queryClient.ensureQueryData(getUserGenderQueryOptionsForServer(user.id));

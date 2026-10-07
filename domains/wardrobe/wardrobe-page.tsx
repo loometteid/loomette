@@ -20,6 +20,8 @@ import {
 import { getWardrobeItemsQueryOptionsForBrowser } from "./query-options/get-wardrobe-items.query-option.client";
 import { getPendingWardrobeCountQueryOptionsForBrowser } from "./query-options/get-pending-count.query-option.client";
 import { getUserGenderQueryOptionsForBrowser } from "./query-options/get-user-gender.query-option.client";
+import { getProfileQueryOptionsForBrowser } from "@/domains/profile/query-options/get-profile.query-option.client";
+import { useOnboardingGuard } from "@/domains/onboarding/hooks/use-onboarding-guard";
 
 const CATEGORY_ORDER = ["Accessories", "Tops", "Bottoms", "Shoes"];
 // Figma's subcategory selector always has something to show; items that
@@ -34,6 +36,11 @@ type CategoryGroup = {
 };
 
 export function WardrobeView({ userId }: { userId: string }) {
+  const { data: profile } = useSuspenseQuery(
+    getProfileQueryOptionsForBrowser(userId),
+  );
+  useOnboardingGuard(profile);
+
   const { data: items } = useSuspenseQuery(
     getWardrobeItemsQueryOptionsForBrowser(userId),
   );
@@ -43,6 +50,7 @@ export function WardrobeView({ userId }: { userId: string }) {
   const { data: gender } = useSuspenseQuery(
     getUserGenderQueryOptionsForBrowser(userId),
   );
+
   const [search, setSearch] = useState("");
   const [filters, setFilters] = useState<WardrobeFilters>(EMPTY_FILTERS);
   const [filterOpen, setFilterOpen] = useState(false);

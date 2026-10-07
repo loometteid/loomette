@@ -4,7 +4,7 @@ import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import { MixAndMatchResult } from "@/domains/mix-and-match/mix-and-match-result-page";
 import { MixAndMatchResultFallback } from "@/domains/mix-and-match/mix-and-match-result-loading";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
-import { getServerQueryClient } from "@/lib/tanstack-query/server";
+import { getQueryClient } from "@/lib/tanstack-query";
 import { getUserQueryOptions } from "@/domains/profile/query-options/get-user.query-option";
 import { getOutfitResultQueryOptionsForServer } from "@/domains/mix-and-match/query-options/get-outfit-result.query-option.server";
 
@@ -24,7 +24,7 @@ export default async function MixAndMatchResultPage({
     redirect("/sign-in");
   }
 
-  const queryClient = getServerQueryClient();
+  const queryClient = getQueryClient();
 
   // Populate user data
   queryClient.setQueryData(getUserQueryOptions().queryKey, () => user);

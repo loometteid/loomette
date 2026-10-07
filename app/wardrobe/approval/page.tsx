@@ -4,7 +4,7 @@ import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import { ApprovalQueue } from "@/domains/wardrobe/wardrobe-approval-page";
 import { ApprovalFallback } from "@/domains/wardrobe/wardrobe-approval-loading";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
-import { getServerQueryClient } from "@/lib/tanstack-query/server";
+import { getQueryClient } from "@/lib/tanstack-query";
 import { getUserQueryOptions } from "@/domains/profile/query-options/get-user.query-option";
 import { getPendingWardrobeItemsQueryOptionsForServer } from "@/domains/wardrobe/query-options/get-pending-items.query-option.server";
 import { getUserGenderQueryOptionsForServer } from "@/domains/wardrobe/query-options/get-user-gender.query-option.server";
@@ -20,7 +20,7 @@ export default async function ApprovalPage() {
     redirect("/sign-in");
   }
 
-  const queryClient = getServerQueryClient();
+  const queryClient = getQueryClient();
 
   // Populate user data
   queryClient.setQueryData(getUserQueryOptions().queryKey, () => user);

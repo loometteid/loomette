@@ -213,6 +213,50 @@
   }
 }
 
+@keyframes landing-word {
+  from {
+    opacity: 0;
+    transform: translateY(0.45em) rotate(2deg);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+}
+
+@keyframes landing-sweep {
+  0% {
+    transform: translateX(-120%);
+  }
+  40%,
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+@keyframes landing-pulse {
+  0% {
+    outline: 2px solid rgba(51, 51, 51, 0.35);
+    outline-offset: 0;
+  }
+  70%,
+  100% {
+    outline: 2px solid rgba(51, 51, 51, 0);
+    outline-offset: 14px;
+  }
+}
+
+@keyframes landing-drift {
+  from {
+    transform: scale(1.08) translateX(-2%);
+  }
+  to {
+    transform: scale(1.08) translateX(2%);
+  }
+}
+
 @keyframes landing-spin {
   to {
     transform: rotate(360deg);
@@ -243,11 +287,84 @@
       var(--float-delay, 0s) infinite;
   }
 
-  /* Pointer parallax driven by --mx/--my from <HeroParallax> */
+  /* Pointer + scroll parallax driven by --mx/--my/--sy from
+     <HeroParallax>; a bigger --depth moves further */
   .landing-parallax {
     translate: calc(var(--mx, 0) * var(--depth, 10) * 1px)
-      calc(var(--my, 0) * var(--depth, 10) * 1px);
-    transition: translate 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+      calc(
+        var(--my, 0) * var(--depth, 10) * 1px + var(--sy, 0) *
+          var(--depth, 10) * -6px
+      );
+    transition:
+      translate 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+      rotate 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+      scale 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  /* Mascots perk up when you hover them */
+  .landing-mascot:hover {
+    rotate: 8deg;
+    scale: 1.08;
+  }
+
+  /* Hero copy eases up and fades a touch as the hero scrolls away */
+  .landing-hero-copy {
+    translate: 0 calc(var(--sy, 0) * 70px);
+    opacity: calc(1 - var(--sy, 0) * 0.7);
+  }
+
+  /* Headline words rise one after another */
+  .landing-word {
+    display: inline-block;
+    animation: landing-word 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  /* Light sweep across the "Now available" pill */
+  .landing-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+  .landing-shimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      100deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.75) 50%,
+      transparent 70%
+    );
+    transform: translateX(-120%);
+    animation: landing-sweep 4.5s ease-in-out 1.4s infinite;
+  }
+
+  /* Review cards tilt toward the pointer (<TiltCard>) */
+  .landing-tilt {
+    transform: perspective(900px) rotateX(var(--tilt-x, 0deg))
+      rotateY(var(--tilt-y, 0deg));
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* Final CTA: a soft ring breathes out from the button */
+  .landing-pulse {
+    animation: landing-pulse 2.8s ease-out 1s infinite;
+  }
+  .landing-pulse:hover {
+    animation: none;
+  }
+
+  /* Footer sky drifts slowly */
+  .landing-drift {
+    animation: landing-drift 30s ease-in-out infinite alternate;
+  }
+
+  /* FAQ answers fade up as their panel opens */
+  .landing-faq [data-slot="accordion-panel"][data-open] > div {
+    animation: landing-rise 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  /* Overview preview checkmarks pop in after their row */
+  [data-reveal][data-revealed="true"] .landing-check {
+    animation: landing-pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
   }
 
   .landing-spin-slow {
@@ -281,6 +398,15 @@
   }
   [data-reveal][data-reveal-from="right"]:not([data-revealed="true"]) {
     transform: translateX(40px);
+  }
+
+  /* Section headings wipe up into view */
+  [data-reveal] h2 {
+    clip-path: inset(-0.2em -0.2em -0.3em -0.2em);
+    transition: clip-path 1s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;
+  }
+  [data-reveal]:not([data-revealed="true"]) h2 {
+    clip-path: inset(100% -0.2em -0.3em -0.2em);
   }
 
   /* Overview preview: rows tick in once the frame is on screen */

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Sparkle } from "@/components/ui/sparkle";
 import { cn } from "@/lib/utils";
+import { CountUp } from "./count-up";
 
 // Fills the "Everything in one place" frame with a small, static peek
 // at the real flow — upload, review the detected pieces, see the
@@ -112,7 +113,10 @@ export function OverviewPreview({ className }: { className?: string }) {
               <span className="hidden lg:inline rounded-full bg-linen px-2 py-0.5 text-[10px] uppercase tracking-wider text-slate/80">
                 {piece.category}
               </span>
-              <span className="flex size-3 md:size-4 shrink-0 items-center justify-center rounded-sm bg-slate text-[7px] md:text-[9px] leading-none text-white">
+              <span
+                className="landing-check flex size-3 md:size-4 shrink-0 items-center justify-center rounded-sm bg-slate text-[7px] md:text-[9px] leading-none text-white"
+                style={{ animationDelay: `${550 + i * 250}ms` }}
+              >
                 ✓
               </span>
             </li>
@@ -135,9 +139,11 @@ export function OverviewPreview({ className }: { className?: string }) {
               key={item.label}
               className="rounded-xl bg-white/10 px-3 py-2 lg:py-2.5"
             >
-              <p className="font-serif text-xl lg:text-3xl font-bold italic leading-none">
-                {item.count}
-              </p>
+              <CountUp
+                value={String(item.count)}
+                duration={1100}
+                className="block font-serif text-xl lg:text-3xl font-bold italic leading-none tabular-nums"
+              />
               <p className="pt-1 text-[10px] lg:text-xs uppercase tracking-wider text-white/70">
                 {item.label}
               </p>

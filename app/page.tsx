@@ -15,6 +15,8 @@ import { HeroParallax } from "@/domains/landing/components/hero-parallax";
 import { LandingHeader } from "@/domains/landing/components/landing-header";
 import { OverviewPreview } from "@/domains/landing/components/overview-preview";
 import { Reveal } from "@/domains/landing/components/reveal";
+import { ScrollProgress } from "@/domains/landing/components/scroll-progress";
+import { TiltCard } from "@/domains/landing/components/tilt-card";
 
 function Wordmark({
   className,
@@ -181,6 +183,7 @@ export default function LandingPage() {
             Sign up
           </Link>
         </nav>
+        <ScrollProgress />
       </LandingHeader>
 
       <main className="flex flex-col items-center w-full">
@@ -200,7 +203,7 @@ export default function LandingPage() {
               priority
               data-testid="landing-page__mascot"
               data-entity-id="mascot-43"
-              className="landing-mascot landing-parallax pointer-events-none absolute top-4 sm:-top-6 md:top-0 lg:top-2 -left-10 sm:-left-8 md:-left-12 lg:-left-14 w-52 sm:w-64 md:w-80 lg:w-[28vw] max-w-115 h-auto z-10 select-none"
+              className="landing-mascot landing-parallax pointer-events-auto absolute top-4 sm:-top-6 md:top-0 lg:top-2 -left-10 sm:-left-8 md:-left-12 lg:-left-14 w-52 sm:w-64 md:w-80 lg:w-[28vw] max-w-115 h-auto z-10 select-none"
               style={mascotMotion(18, 0.1, 6.5)}
             />
 
@@ -213,7 +216,7 @@ export default function LandingPage() {
               priority
               data-testid="landing-page__mascot"
               data-entity-id="mascot-45"
-              className="landing-mascot landing-parallax pointer-events-none absolute top-16 sm:top-20 md:top-10 lg:top-12 right-4 sm:right-8 md:right-[16%] lg:right-[20%] w-14 sm:w-16 md:w-20 lg:w-[6.5vw] max-w-25 h-auto z-10 select-none"
+              className="landing-mascot landing-parallax pointer-events-auto absolute top-16 sm:top-20 md:top-10 lg:top-12 right-4 sm:right-8 md:right-[16%] lg:right-[20%] w-14 sm:w-16 md:w-20 lg:w-[6.5vw] max-w-25 h-auto z-10 select-none"
               style={mascotMotion(-30, 0.3, 4.5)}
             />
 
@@ -226,7 +229,7 @@ export default function LandingPage() {
               priority
               data-testid="landing-page__mascot"
               data-entity-id="mascot-44"
-              className="landing-mascot landing-parallax pointer-events-none absolute bottom-12 sm:bottom-16 md:bottom-20 lg:bottom-24 left-4 sm:left-8 md:left-[14%] lg:left-[18%] w-16 sm:w-20 md:w-24 lg:w-[8vw] max-w-31.25 h-auto z-10 select-none"
+              className="landing-mascot landing-parallax pointer-events-auto absolute bottom-12 sm:bottom-16 md:bottom-20 lg:bottom-24 left-4 sm:left-8 md:left-[14%] lg:left-[18%] w-16 sm:w-20 md:w-24 lg:w-[8vw] max-w-31.25 h-auto z-10 select-none"
               style={mascotMotion(26, 0.55, 5.5)}
             />
 
@@ -239,35 +242,43 @@ export default function LandingPage() {
               priority
               data-testid="landing-page__mascot"
               data-entity-id="mascot-42"
-              className="landing-mascot landing-parallax pointer-events-none absolute bottom-6 sm:-bottom-8 md:bottom-0 lg:bottom-2 -right-10 sm:-right-8 md:-right-12 lg:-right-14 w-48 sm:w-60 md:w-90 lg:w-[32vw] max-w-130 h-auto z-10 select-none"
+              className="landing-mascot landing-parallax pointer-events-auto absolute bottom-6 sm:-bottom-8 md:bottom-0 lg:bottom-2 -right-10 sm:-right-8 md:-right-12 lg:-right-14 w-48 sm:w-60 md:w-90 lg:w-[32vw] max-w-130 h-auto z-10 select-none"
               style={mascotMotion(-22, 0.45, 7.5)}
             />
           </HeroParallax>
 
-          <div className="relative z-10 flex flex-col items-center gap-6">
+          <div className="landing-hero-copy relative z-10 flex flex-col items-center gap-6">
             {/* Availability Pill Badge */}
-            <div className="landing-enter inline-flex items-center justify-center rounded-full bg-[#ede8e1] px-4 py-1.5 text-xs md:text-sm font-medium tracking-[0.15em] text-slate uppercase">
+            <div className="landing-enter landing-shimmer inline-flex items-center justify-center rounded-full bg-[#ede8e1] px-4 py-1.5 text-xs md:text-sm font-medium tracking-[0.15em] text-slate uppercase">
               Now available ㆍ free to start
             </div>
 
             {/* Main Headline — Only 'Wardrobe' is bold italic */}
             <h1
-              className="landing-enter [animation-delay:120ms] font-serif text-4xl sm:text-6xl md:text-7xl lg:text-[88px] font-normal leading-[1.05] tracking-tight text-slate max-w-4xl"
+              className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-[88px] font-normal leading-[1.05] tracking-tight text-slate max-w-4xl"
               data-testid="landing-page__hero-title"
             >
-              Your <em className="font-bold italic">Wardrobe</em>,
+              <span className="landing-word [animation-delay:120ms]">Your</span>{" "}
+              <span className="landing-word [animation-delay:220ms]">
+                <em className="font-bold italic">Wardrobe</em>,
+              </span>
               <br />
-              Finally Organized.
+              <span className="landing-word [animation-delay:340ms]">
+                Finally
+              </span>{" "}
+              <span className="landing-word [animation-delay:440ms]">
+                Organized.
+              </span>
             </h1>
 
             {/* Supporting Subtitle */}
-            <p className="landing-enter [animation-delay:260ms] max-w-145 text-xs sm:text-sm md:text-base tracking-[0.12em] uppercase text-slate/90 leading-relaxed font-sans px-4">
+            <p className="landing-enter [animation-delay:560ms] max-w-145 text-xs sm:text-sm md:text-base tracking-[0.12em] uppercase text-slate/90 leading-relaxed font-sans px-4">
               Log what you wear, track what you own, and stop asking yourself
               &quot;what do I have?&quot;
             </p>
 
             {/* Hero CTA Button & Notice */}
-            <div className="landing-enter [animation-delay:400ms] flex flex-col items-center gap-3 pt-2">
+            <div className="landing-enter [animation-delay:700ms] flex flex-col items-center gap-3 pt-2">
               <Button
                 variant="default"
                 nativeButton={false}
@@ -448,7 +459,7 @@ export default function LandingPage() {
                   alt="Loomette outfit capture screen"
                   width={294}
                   height={533}
-                  className="w-65 lg:w-73.5 h-auto drop-shadow-md select-none transition-transform duration-700 ease-out group-hover/step:-translate-y-2 group-hover/step:rotate-[-1.5deg]"
+                  className="landing-float w-65 lg:w-73.5 h-auto drop-shadow-md select-none transition-transform duration-700 ease-out group-hover/step:-translate-y-2 group-hover/step:rotate-[-1.5deg]"
                 />
               </Reveal>
             </div>
@@ -469,7 +480,7 @@ export default function LandingPage() {
                   alt="Loomette piece recognition screen"
                   width={294}
                   height={533}
-                  className="w-65 lg:w-73.5 h-auto drop-shadow-md select-none transition-transform duration-700 ease-out group-hover/step:-translate-y-2 group-hover/step:rotate-[-1.5deg]"
+                  className="landing-float w-65 lg:w-73.5 h-auto drop-shadow-md select-none transition-transform duration-700 ease-out group-hover/step:-translate-y-2 group-hover/step:rotate-[-1.5deg]"
                 />
               </Reveal>
               <Reveal
@@ -528,7 +539,7 @@ export default function LandingPage() {
                   alt="Loomette wardrobe styling screen"
                   width={294}
                   height={533}
-                  className="w-65 lg:w-73.5 h-auto drop-shadow-md select-none transition-transform duration-700 ease-out group-hover/step:-translate-y-2 group-hover/step:rotate-[-1.5deg]"
+                  className="landing-float w-65 lg:w-73.5 h-auto drop-shadow-md select-none transition-transform duration-700 ease-out group-hover/step:-translate-y-2 group-hover/step:rotate-[-1.5deg]"
                 />
               </Reveal>
             </div>
@@ -586,32 +597,34 @@ export default function LandingPage() {
           <div className="grid w-full max-w-300 grid-cols-1 md:grid-cols-3 gap-6 pt-6 text-left">
             {testimonials.map((t, i) => (
               <Reveal key={i} delay={i * 120}>
-                <Card
-                  data-testid="landing-page__review-card"
-                  data-entity-id={t.name}
-                  className="min-h-45 md:h-57 rounded-[20px] border border-stone/40 bg-white/70 backdrop-blur-xs p-6 md:p-7 flex flex-col justify-between shadow-xs transition-[transform,box-shadow,border-color] duration-500 ease-out hover:-translate-y-1.5 hover:shadow-lg hover:border-stone/70"
-                >
-                  <p className="text-sm md:text-base text-slate leading-relaxed">
-                    &quot;{t.quote}&quot;
-                  </p>
-                  <div className="flex items-center gap-3 pt-4">
-                    <div
-                      aria-hidden
-                      className={cn(
-                        "size-11 md:size-12 rounded-full shrink-0 flex items-center justify-center font-serif text-lg md:text-xl italic text-slate",
-                        t.avatarClassName,
-                      )}
-                    >
-                      {t.name.charAt(0)}
+                <TiltCard>
+                  <Card
+                    data-testid="landing-page__review-card"
+                    data-entity-id={t.name}
+                    className="min-h-45 md:h-57 rounded-[20px] border border-stone/40 bg-white/70 backdrop-blur-xs p-6 md:p-7 flex flex-col justify-between shadow-xs transition-[transform,box-shadow,border-color] duration-500 ease-out hover:-translate-y-1.5 hover:shadow-lg hover:border-stone/70"
+                  >
+                    <p className="text-sm md:text-base text-slate leading-relaxed">
+                      &quot;{t.quote}&quot;
+                    </p>
+                    <div className="flex items-center gap-3 pt-4">
+                      <div
+                        aria-hidden
+                        className={cn(
+                          "size-11 md:size-12 rounded-full shrink-0 flex items-center justify-center font-serif text-lg md:text-xl italic text-slate",
+                          t.avatarClassName,
+                        )}
+                      >
+                        {t.name.charAt(0)}
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-sm font-semibold text-slate">
+                          {t.name}
+                        </span>
+                        <span className="text-xs text-stone">{t.role}</span>
+                      </div>
                     </div>
-                    <div className="flex flex-col">
-                      <span className="text-sm font-semibold text-slate">
-                        {t.name}
-                      </span>
-                      <span className="text-xs text-stone">{t.role}</span>
-                    </div>
-                  </div>
-                </Card>
+                  </Card>
+                </TiltCard>
               </Reveal>
             ))}
           </div>
@@ -632,7 +645,7 @@ export default function LandingPage() {
             <Accordion
               defaultValue={[]}
               data-testid="landing-page__faq-accordion"
-              className="w-full text-left divide-y divide-stone/40 border-y border-stone/40 mt-4"
+              className="landing-faq w-full text-left divide-y divide-stone/40 border-y border-stone/40 mt-4"
             >
               {faqs.map((faq, i) => (
                 <AccordionItem
@@ -683,7 +696,7 @@ export default function LandingPage() {
                 variant="default"
                 nativeButton={false}
                 data-testid="landing-page__final-cta-button"
-                className="w-full min-w-65 max-w-80 h-14 md:h-16 rounded-2xl text-base md:text-xl font-medium tracking-[0.15em] uppercase shadow-md bg-[#333333] text-white hover:bg-black hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0 active:scale-[0.98] transition-[background-color,transform,box-shadow] duration-300"
+                className="landing-pulse w-full min-w-65 max-w-80 h-14 md:h-16 rounded-2xl text-base md:text-xl font-medium tracking-[0.15em] uppercase shadow-md bg-[#333333] text-white hover:bg-black hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0 active:scale-[0.98] transition-[background-color,transform,box-shadow] duration-300"
                 render={<Link href="/welcome" prefetch />}
               >
                 Create Account
@@ -711,7 +724,7 @@ export default function LandingPage() {
               alt=""
               fill
               sizes="100vw"
-              className="pointer-events-none object-cover object-bottom -z-10 opacity-75"
+              className="landing-drift pointer-events-none object-cover object-bottom -z-10 opacity-75"
             />
             <Image
               src="/brand/asterisk-silver.png"

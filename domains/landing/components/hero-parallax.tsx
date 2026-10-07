@@ -3,9 +3,10 @@
 import { useEffect, useRef, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-// Tracks the pointer across the hero and exposes it as --mx / --my
-// (-1 to 1). Children opt in with the `landing-parallax` class and a
-// `--depth` custom property; the drift itself is pure CSS.
+// Tracks the pointer across the hero as --mx / --my (-1 to 1) and how
+// far the hero has scrolled away as --sy (0 to 1), set on the hero
+// section so the mascots and the hero copy can both respond. The
+// motion itself is pure CSS (`landing-parallax`, `landing-hero-copy`).
 export function HeroParallax({
   className,
   children,
@@ -16,34 +17,52 @@ export function HeroParallax({
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const node = ref.current;
-    const hero = node?.parentElement;
-    if (!node || !hero) return;
+    const hero = ref.current?.parentElement;
+    if (!hero) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    if (!window.matchMedia("(pointer: fine)").matches) return;
 
-    let frame = 0;
+    let pointerFrame = 0;
+    let scrollFrame = 0;
+
     const onMove = (event: PointerEvent) => {
-      cancelAnimationFrame(frame);
-      frame = requestAnimationFrame(() => {
+      cancelAnimationFrame(pointerFrame);
+      pointerFrame = requestAnimationFrame(() => {
         const rect = hero.getBoundingClientRect();
         const x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
         const y = ((event.clientY - rect.top) / rect.height) * 2 - 1;
-        node.style.setProperty("--mx", x.toFixed(3));
-        node.style.setProperty("--my", y.toFixed(3));
+        hero.style.setProperty("--mx", x.toFixed(3));
+        hero.style.setProperty("--my", y.toFixed(3));
       });
     };
     const onLeave = () => {
-      node.style.setProperty("--mx", "0");
-      node.style.setProperty("--my", "0");
+      hero.style.setProperty("--mx", "0");
+      hero.style.setProperty("--my", "0");
+    };
+    const onScroll = () => {
+      cancelAnimationFrame(scrollFrame);
+      scrollFrame = requestAnimationFrame(() => {
+        const progress = Math.min(
+          Math.max(window.scrollY / hero.offsetHeight, 0),
+          1,
+        );
+        hero.style.setProperty("--sy", progress.toFixed(3));
+      });
     };
 
-    hero.addEventListener("pointermove", onMove);
-    hero.addEventListener("pointerleave", onLeave);
+    const finePointer = window.matchMedia("(pointer: fine)").matches;
+    if (finePointer) {
+      hero.addEventListener("pointermove", onMove);
+      hero.addEventListener("pointerleave", onLeave);
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
     return () => {
-      cancelAnimationFrame(frame);
+      cancelAnimationFrame(pointerFrame);
+      cancelAnimationFrame(scrollFrame);
       hero.removeEventListener("pointermove", onMove);
       hero.removeEventListener("pointerleave", onLeave);
+      window.removeEventListener("scroll", onScroll);
     };
   }, []);
 

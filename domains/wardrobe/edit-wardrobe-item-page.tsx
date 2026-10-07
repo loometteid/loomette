@@ -396,13 +396,13 @@ export function EditItemForm({ userId, id }: { userId: string; id: string }) {
                       htmlFor="edit-item-price"
                       className="text-[#8C887B] text-xs font-semibold tracking-widest uppercase"
                     >
-                      Price
+                      Price (Rp)
                     </Label>
                     <Input
                       id="edit-item-price"
                       type="number"
                       inputMode="decimal"
-                      placeholder="e.g. $100"
+                      placeholder="e.g. 150000"
                       {...register("price")}
                       className="bg-[#F2EDE5] border-none rounded-xl text-foreground placeholder:text-[#8C887B] px-4 py-3 h-11"
                     />

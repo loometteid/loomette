@@ -173,3 +173,142 @@
     @apply font-sans;
   }
 }
+
+/* ------------------------------------------------------------------
+   Landing page motion (app/page.tsx + domains/landing/components).
+   Everything here is decoration on top of the static design: with JS
+   off or prefers-reduced-motion on, the page renders exactly as the
+   Figma frames, with nothing hidden.
+   ------------------------------------------------------------------ */
+
+@keyframes landing-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes landing-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes landing-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-2deg);
+  }
+}
+
+@keyframes landing-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Hero: staggered entrance on load */
+  .landing-enter {
+    animation: landing-rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .landing-enter-pop {
+    animation: landing-pop 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  /* Hero mascots pop in, then settle into an idle bob */
+  .landing-mascot {
+    animation:
+      landing-pop 0.9s cubic-bezier(0.22, 1, 0.36, 1) var(--enter-delay, 0s)
+        both,
+      landing-float var(--float-duration, 6s) ease-in-out
+        calc(var(--enter-delay, 0s) + 0.9s) infinite;
+  }
+
+  /* Gentle idle bob; each element sets its own duration/delay */
+  .landing-float {
+    animation: landing-float var(--float-duration, 6s) ease-in-out
+      var(--float-delay, 0s) infinite;
+  }
+
+  /* Pointer parallax driven by --mx/--my from <HeroParallax> */
+  .landing-parallax {
+    translate: calc(var(--mx, 0) * var(--depth, 10) * 1px)
+      calc(var(--my, 0) * var(--depth, 10) * 1px);
+    transition: translate 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .landing-spin-slow {
+    animation: landing-spin 24s linear infinite;
+  }
+
+  /* Section dividers turn a little when their block arrives */
+  [data-reveal] .landing-sparkle {
+    transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  [data-reveal]:not([data-revealed="true"]) .landing-sparkle {
+    transform: rotate(-90deg) scale(0.6);
+  }
+  .landing-sparkle:hover {
+    transform: rotate(45deg);
+  }
+}
+
+@media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
+  [data-reveal] {
+    transition:
+      opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  [data-reveal]:not([data-revealed="true"]) {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  [data-reveal][data-reveal-from="left"]:not([data-revealed="true"]) {
+    transform: translateX(-40px);
+  }
+  [data-reveal][data-reveal-from="right"]:not([data-revealed="true"]) {
+    transform: translateX(40px);
+  }
+
+  /* Overview preview: rows tick in once the frame is on screen */
+  [data-reveal] .landing-preview-step {
+    opacity: 0;
+  }
+  [data-reveal][data-revealed="true"] .landing-preview-step {
+    animation: landing-rise 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+
+/* Nav links: underline draws in from the left on hover/focus */
+.landing-link {
+  position: relative;
+}
+.landing-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.landing-link:hover::after,
+.landing-link:focus-visible::after {
+  transform: scaleX(1);
+}

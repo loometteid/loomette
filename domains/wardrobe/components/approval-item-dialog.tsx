@@ -283,13 +283,13 @@ export function ApprovalItemDialog({
                     htmlFor="approval-price"
                     className="text-xs uppercase font-medium tracking-wider text-[#444440]"
                   >
-                    Price
+                    Price (Rp)
                   </Label>
                   <Input
                     id="approval-price"
                     type="number"
                     inputMode="decimal"
-                    placeholder="e.g. $100"
+                    placeholder="e.g. 150000"
                     {...register("price")}
                     className="bg-[#F2EDE5] border-none rounded-2xl h-12 px-4 text-sm text-[#444440] placeholder:text-[#9E9A90] focus-visible:ring-1 focus-visible:ring-[#444440]"
                   />

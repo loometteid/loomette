@@ -72,7 +72,7 @@ describe("LandingPage (Page Integration & Component Tier)", () => {
     render(<LandingPage />);
 
     const triggers = screen.getAllByTestId("landing-page__faq-trigger");
-    expect(triggers).toHaveLength(3);
+    expect(triggers).toHaveLength(5);
 
     // Act: Click first FAQ question
     await user.click(triggers[0]);

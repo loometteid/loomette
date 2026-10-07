@@ -19,6 +19,7 @@ interface ExtractedGarment {
   category: "Tops" | "Bottoms" | "Shoes" | "Accessories";
   subcategory: string;
   color?: string;
+  material?: string;
   occasions?: Occasion[];
   box_2d?: [number, number, number, number]; // [ymin, xmin, ymax, xmax] (0 - 1000)
 }
@@ -144,7 +145,7 @@ serve(async (req) => {
     const phase3Timer = log.startTimer("phase3_gemini_vision");
     const prompt = `You are a fashion catalog expert for Loomette. Analyze this outfit or garment photo.
 Identify each distinct garment, pair of shoes, or fashion accessory worn or shown.
-Extract attributes: name, brand, category (Tops, Bottoms, Shoes, Accessories), subcategory, color, occasions (only choose from: everyday, work, going_out, special, just_vibing), and box_2d.`;
+Extract attributes: name, brand, category (Tops, Bottoms, Shoes, Accessories), subcategory, color, material, occasions (only choose from: everyday, work, going_out, special, just_vibing), and box_2d.`;
 
     let items: ExtractedGarment[] = [];
 
@@ -226,6 +227,11 @@ Extract attributes: name, brand, category (Tops, Bottoms, Shoes, Accessories), s
                         description:
                           "Primary visual color of the garment (e.g., White, Black, Navy, Light Blue, Red)",
                       },
+                      material: {
+                        type: Type.STRING,
+                        description:
+                          "Fabric, texture, or material of the garment if recognizable from visual appearance (e.g., Denim, Cotton, Leather, Wool, Silk, Linen, Knit, Corduroy, Polyester, Nylon), otherwise an empty string",
+                      },
                       occasions: {
                         type: Type.ARRAY,
                         description:
@@ -303,6 +309,7 @@ Extract attributes: name, brand, category (Tops, Bottoms, Shoes, Accessories), s
           name: i.name,
           category: i.category,
           subcategory: i.subcategory,
+          material: i.material,
         })),
       });
     } else {
@@ -316,6 +323,7 @@ Extract attributes: name, brand, category (Tops, Bottoms, Shoes, Accessories), s
           category: "Tops",
           subcategory: "Shirt",
           color: "Blue",
+          material: "Cotton",
           occasions: ["everyday", "work"],
           box_2d: [100, 100, 500, 500],
         },
@@ -419,6 +427,7 @@ Extract attributes: name, brand, category (Tops, Bottoms, Shoes, Accessories), s
           category: g.category || null,
           subcategory: g.subcategory || null,
           color: g.color || null,
+          material: g.material || null,
           source_type: "user_upload",
           image_url: imageUrl,
           created_by_user_id: userId,
@@ -467,6 +476,7 @@ Extract attributes: name, brand, category (Tops, Bottoms, Shoes, Accessories), s
         name: g.name,
         category: g.category,
         subcategory: g.subcategory,
+        material: g.material,
         isDuplicate,
       });
     }

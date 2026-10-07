@@ -8,6 +8,7 @@ import { getQueryClient } from "@/lib/tanstack-query";
 import { getUserQueryOptions } from "@/domains/profile/query-options/get-user.query-option";
 import { getWardrobeItemByIdQueryOptionsForServer } from "@/domains/wardrobe/query-options/get-wardrobe-item-by-id.query-option.server";
 import { getUserGenderQueryOptionsForServer } from "@/domains/wardrobe/query-options/get-user-gender.query-option.server";
+import { getProfileQueryOptionsForServer } from "@/domains/profile/query-options/get-profile.query-option.server";
 
 export default async function EditItemPage({
   params,
@@ -37,6 +38,9 @@ export default async function EditItemPage({
 
   void queryClient.ensureQueryData(
     getUserGenderQueryOptionsForServer(user.id),
+  );
+  void queryClient.ensureQueryData(
+    getProfileQueryOptionsForServer(user.id),
   );
 
   const dehydratedQueryClient = dehydrate(queryClient);

@@ -8,6 +8,7 @@ import { getQueryClient } from "@/lib/tanstack-query";
 import { getUserQueryOptions } from "@/domains/profile/query-options/get-user.query-option";
 import { getPendingWardrobeItemsQueryOptionsForServer } from "@/domains/wardrobe/query-options/get-pending-items.query-option.server";
 import { getUserGenderQueryOptionsForServer } from "@/domains/wardrobe/query-options/get-user-gender.query-option.server";
+import { getProfileQueryOptionsForServer } from "@/domains/profile/query-options/get-profile.query-option.server";
 
 export default async function ApprovalPage() {
   const supabase = await createServerSupabaseClient();
@@ -31,6 +32,9 @@ export default async function ApprovalPage() {
   );
   void queryClient.ensureQueryData(
     getUserGenderQueryOptionsForServer(user.id),
+  );
+  void queryClient.ensureQueryData(
+    getProfileQueryOptionsForServer(user.id),
   );
 
   const dehydratedQueryClient = dehydrate(queryClient);

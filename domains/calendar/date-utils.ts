@@ -17,7 +17,7 @@ export const MONTH_LABELS = [
 
 /** `worn_on` is a plain date column ("YYYY-MM-DD") -- build keys from
  * local calendar parts directly rather than via `toISOString()`, which
- * would shift the date across a UTC day boundary. 
+ * would shift the date across a UTC day boundary.
  */
 export function dateKey(year: number, month: number, day: number) {
   return `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
@@ -56,10 +56,10 @@ export function getMonthWeeks(year: number, month: number): CalendarCell[][] {
 }
 
 /**
- * 
- * @param year 
+ *
+ * @param year
  * @param month From 0 to 11
- * @returns 
+ * @returns
  */
 export function monthRangeISO(year: number, month: number) {
   const daysInMonth = new Date(year, month + 1, 0).getDate();
@@ -71,4 +71,16 @@ export function monthRangeISO(year: number, month: number) {
 
 export function formatMonthYear(year: number, month: number) {
   return `${MONTH_LABELS[month].toUpperCase()} ${year}`;
+}
+
+export function addMonths(
+  year: number,
+  month: number,
+  count: number,
+): { year: number; month: number } {
+  const target = new Date(year, month + count, 1);
+  return {
+    year: target.getFullYear(),
+    month: target.getMonth(),
+  };
 }

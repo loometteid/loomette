@@ -4,7 +4,7 @@ import { getLogger } from "@/lib/logging";
 import type { WardrobeItem } from "../types";
 
 export const WARDROBE_ITEM_SELECT =
-  "id, created_at, wear_count, occasions, item:item_id(item_id, name, category, subcategory, brand, color, image_url)";
+  "id, created_at, wear_count, price, occasions, item:item_id(item_id, name, category, subcategory, brand, color, material, image_url)";
 
 export const getWardrobeItemsQueryOptionsForBrowser = (userId: string) =>
   queryOptions({

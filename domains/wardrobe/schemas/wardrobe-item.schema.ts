@@ -14,3 +14,22 @@ export const wardrobeItemFormSchema = z.object({
 });
 
 export type WardrobeItemFormValues = z.infer<typeof wardrobeItemFormSchema>;
+
+export function getItemApprovalStatus(item: {
+  item?: { category?: string | null; subcategory?: string | null } | null;
+}): {
+  canApprove: boolean;
+  missingFields: string[];
+} {
+  const missing: string[] = [];
+  if (!item.item?.category?.trim()) {
+    missing.push("Category");
+  }
+  if (!item.item?.subcategory?.trim()) {
+    missing.push("Subcategory");
+  }
+  return {
+    canApprove: missing.length === 0,
+    missingFields: missing,
+  };
+}

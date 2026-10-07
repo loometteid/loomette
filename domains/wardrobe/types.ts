@@ -9,6 +9,20 @@ export {
   type WardrobeItemFormValues,
 } from "./schemas/wardrobe-item.schema";
 
+export type UploadJobStatus = "pending" | "analyzing" | "completed" | "failed";
+
+export type UploadJob = {
+  id: string;
+  user_id: string;
+  source_type: "wardrobe" | "calendar";
+  original_image_url: string;
+  status: UploadJobStatus;
+  item_count: number;
+  error_message: string | null;
+  created_at: string;
+  updated_at: string;
+};
+
 export type PendingItem = {
   id: string;
   created_at: string;
@@ -17,6 +31,8 @@ export type PendingItem = {
   purchase_location: string | null;
   occasions: Occasion[] | null;
   image_url: string | null;
+  is_duplicate?: boolean;
+  upload_job_id?: string | null;
   item: {
     item_id: string;
     name: string | null;
@@ -24,6 +40,7 @@ export type PendingItem = {
     subcategory: string | null;
     brand: string | null;
     color: string | null;
+    material?: string | null;
     image_url: string | null;
   } | null;
 };
@@ -141,6 +158,7 @@ export type WardrobeItem = {
   id: string;
   created_at: string;
   wear_count: number;
+  price?: number | null;
   occasions: Occasion[] | null;
   item: {
     item_id: string;
@@ -149,6 +167,7 @@ export type WardrobeItem = {
     subcategory: string | null;
     brand: string | null;
     color: string | null;
+    material?: string | null;
     image_url: string | null;
   } | null;
 };

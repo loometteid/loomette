@@ -23,7 +23,6 @@ export const saveOutfitDiaryEntryMutationOptions = () =>
     }: SaveOutfitDiaryEntryVariables): Promise<SaveOutfitDiaryEntryResult> => {
       const supabase = createBrowserSupabaseClient();
 
-
       const { data: outfitRow, error: outfitError } = await supabase
         .from("outfit")
         .insert({

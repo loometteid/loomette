@@ -29,7 +29,9 @@ stores/                 # Zustand stores
 types/                  # includes generated database.types.ts
 proxy.ts                 # refreshes the Supabase session cookie
 supabase/
-└── migrations/           # schema as code — never edit schema via dashboard directly
+├── migrations/           # schema as code — never edit schema via dashboard directly
+├── functions/            # Edge Functions (extract-garments)
+└── README.md             # Guide for migrations, secrets, and Edge Function deployment
 .claude/                  # CLAUDE.md, database.md, features.md — context for Claude Code
 docs/
 └── adr/                   # architecture decision records

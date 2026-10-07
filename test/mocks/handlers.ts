@@ -108,4 +108,50 @@ export const handlers = [
       },
     ]);
   }),
+
+  // Default mock handlers for upload_job table
+  http.get(`${MOCK_SUPABASE_URL}/rest/v1/upload_job`, ({ request }) => {
+    const acceptHeader = request.headers.get("accept") ?? "";
+    const isSingle = acceptHeader.includes("vnd.pgrst.object+json");
+    const mockJob = {
+      id: "mock-job-123",
+      user_id: "user-123",
+      source_type: "wardrobe",
+      original_image_url: "https://mock.supabase.co/storage/v1/object/public/wardrobe-images/original.jpg",
+      status: "completed",
+      item_count: 2,
+      error_message: null,
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+    };
+    if (isSingle) return HttpResponse.json(mockJob);
+    return HttpResponse.json([mockJob]);
+  }),
+
+  http.post(`${MOCK_SUPABASE_URL}/rest/v1/upload_job`, async ({ request }) => {
+    const body = (await request.json()) as Record<string, unknown>;
+    const mockJob = {
+      id: "mock-job-123",
+      user_id: "user-123",
+      source_type: "wardrobe",
+      original_image_url: "https://mock.supabase.co/storage/v1/object/public/wardrobe-images/original.jpg",
+      status: "pending",
+      item_count: 0,
+      error_message: null,
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+      ...body,
+    };
+    return HttpResponse.json(mockJob);
+  }),
+
+  // Default mock handler for extract-garments Edge Function
+  http.post(`${MOCK_SUPABASE_URL}/functions/v1/extract-garments`, () => {
+    return HttpResponse.json({ success: true, count: 2 });
+  }),
+
+  // Default mock handler for wardrobe-images storage upload
+  http.post(`${MOCK_SUPABASE_URL}/storage/v1/object/wardrobe-images/*`, () => {
+    return HttpResponse.json({ Key: "wardrobe-images/mock-path" });
+  }),
 ];

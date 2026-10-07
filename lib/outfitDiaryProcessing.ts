@@ -1,15 +1,12 @@
 import { uploadOutfitPhoto } from "@/lib/outfitStorage";
+import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 import type { OutfitProcessingResult } from "@/stores/outfit-diary-upload-store";
 
 /**
- * The one function to replace when real AI outfit extraction ships.
- * The upload is real today and stays real; everything after it is a
- * stand-in for a future Edge Function call (extract the outfit, remove
- * the wearer, generate a clean composite preview, eventually per-item
- * wardrobe extraction) that will return `previewUrl` distinct from
- * `originalUrl` instead of reusing it untouched. Callers (the loading
- * screen) only depend on this signature, not on how the result is
- * produced -- swapping the body is enough, no UI flow changes needed.
+ * Dual Action Calendar Ingestion:
+ * Saves the outfit photo for the calendar diary entry and simultaneously
+ * triggers the background Edge Function garment extraction pipeline into
+ * the wardrobe approval queue.
  */
 export async function processOutfitPhoto(
   userId: string,
@@ -17,6 +14,38 @@ export async function processOutfitPhoto(
 ): Promise<OutfitProcessingResult> {
   const uploadId = crypto.randomUUID();
   const original = await uploadOutfitPhoto(userId, uploadId, file);
+
+  // Dual Action: initiate wardrobe garment extraction in background
+  try {
+    const supabase = createBrowserSupabaseClient();
+    const { data: job } = await supabase
+      .from("upload_job")
+      .insert({
+        user_id: userId,
+        source_type: "calendar",
+        original_image_url: original.url,
+        status: "pending",
+      })
+      .select("id")
+      .single();
+
+    if (job?.id) {
+      void supabase.functions
+        .invoke("extract-garments", {
+          body: {
+            uploadJobId: job.id,
+            imageUrl: original.url,
+            userId,
+          },
+        })
+        .catch((err) => {
+          console.error("Background garment extraction invocation failed:", err);
+        });
+    }
+  } catch (err) {
+    // Non-blocking: diary flow continues even if extraction initiation fails
+    console.error("Error staging wardrobe upload job from calendar:", err);
+  }
 
   return {
     originalUrl: original.url,

@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ClipboardCheck, Plus, Search, SlidersHorizontal } from "lucide-react";
+import { CheckCheck, Plus, Search, SlidersHorizontal, X } from "lucide-react";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { Sparkle } from "@/components/ui/sparkle";
 import { Typography } from "@/components/ui/typography";
@@ -12,6 +12,7 @@ import { SubcategoryCarousel } from "./components/subcategory-carousel";
 import { WardrobeFilterDialog } from "./components/wardrobe-filter-dialog";
 import {
   EMPTY_FILTERS,
+  getSubcategoryOptions,
   hasActiveFilters,
   matchesFilters,
   type WardrobeFilters,
@@ -54,6 +55,7 @@ export function WardrobeView({ userId }: { userId: string }) {
   const [search, setSearch] = useState("");
   const [filters, setFilters] = useState<WardrobeFilters>(EMPTY_FILTERS);
   const [filterOpen, setFilterOpen] = useState(false);
+  const [addMenuOpen, setAddMenuOpen] = useState(false);
   const [activeSubcategory, setActiveSubcategory] = useState<
     Record<string, string>
   >({});
@@ -94,50 +96,64 @@ export function WardrobeView({ userId }: { userId: string }) {
           row,
         ]);
       }
+
+      const standardSubcategories = getSubcategoryOptions(category, gender).map(
+        (opt) => opt.value,
+      );
+      const itemSubcategories = [...itemsBySubcategory.keys()];
+      const subcategories = Array.from(
+        new Set([
+          ...(standardSubcategories.length > 0
+            ? standardSubcategories
+            : itemSubcategories),
+          ...itemSubcategories,
+        ]),
+      );
+
       return {
         category,
-        subcategories: [...itemsBySubcategory.keys()],
+        subcategories,
         itemsBySubcategory,
       };
     });
-  }, [items]);
+  }, [items, gender]);
 
   return (
-    <main className="mx-auto flex w-full max-w-sm flex-col gap-6 px-6 py-8">
-      <div className="flex items-center justify-center gap-2">
+    <main className="mx-auto flex w-full max-w-sm lg:max-w-6xl xl:max-w-7xl flex-col gap-6 lg:gap-10 px-6 lg:px-12 py-8 lg:py-10">
+      <div className="flex items-center justify-center gap-2 lg:hidden">
         <Sparkle className="size-5 text-foreground" />
         <Typography variant="title" as="h1">
           Wardrobe
         </Typography>
       </div>
 
-      <div className="flex items-center gap-2">
-        <div className="border-border bg-secondary flex flex-1 items-center gap-2 rounded-lg border px-3 py-2">
+      <div className="mx-auto flex w-full max-w-2xl lg:max-w-3xl items-center gap-2 lg:gap-3">
+        <div className="bg-[#F2EDE5] flex flex-1 items-center gap-2 rounded-xl px-4 py-2.5 lg:py-3">
           <input
             value={search}
             onChange={(event) => setSearch(event.target.value)}
-            placeholder="Search"
-            className="text-foreground placeholder:text-muted-foreground w-full bg-transparent text-sm outline-none"
+            placeholder="Looking for your pairs?"
+            className="text-foreground placeholder:text-[#8C887B] w-full bg-transparent text-sm lg:text-base outline-none"
           />
-          <Search className="text-muted-foreground size-4 shrink-0" />
+          <Search className="text-[#8C887B] size-4 lg:size-5 shrink-0" />
         </div>
         <button
           type="button"
           onClick={() => setFilterOpen(true)}
-          className="border-border bg-secondary flex size-9 shrink-0 items-center justify-center rounded-lg border"
+          className="bg-[#F2EDE5] hover:bg-[#EAE4DC] flex size-10 lg:size-11 shrink-0 items-center justify-center rounded-xl transition-colors text-foreground"
           aria-label="Filter"
         >
-          <SlidersHorizontal className="size-4" />
+          <SlidersHorizontal className="size-4 lg:size-5" />
         </button>
         <Link
           href="/wardrobe/approval"
           prefetch
-          className="border-border bg-secondary relative flex size-9 shrink-0 items-center justify-center rounded-lg border"
+          className="bg-[#F2EDE5] hover:bg-[#EAE4DC] relative flex size-10 lg:size-11 shrink-0 items-center justify-center rounded-xl transition-colors text-foreground"
           aria-label="Approval queue"
         >
-          <ClipboardCheck className="size-4" />
+          <CheckCheck className="size-4 lg:size-5" />
           {!!pendingCount && (
-            <span className="bg-foreground text-background absolute -top-1.5 -right-1.5 flex size-4 items-center justify-center rounded-full text-[0.6rem]">
+            <span className="bg-[#444440] text-white absolute -top-1.5 -right-1.5 flex size-4 lg:size-5 items-center justify-center rounded-full text-[0.6rem] lg:text-xs font-semibold">
               {pendingCount}
             </span>
           )}
@@ -150,30 +166,31 @@ export function WardrobeView({ userId }: { userId: string }) {
             Nothing matches.
           </Typography>
         ) : (
-          <div className="grid grid-cols-2 content-start gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 content-start gap-4 lg:gap-6">
             {results.map((row) => (
               <Link
                 key={row.id}
                 href={`/wardrobe/${row.id}`}
                 prefetch
-                className="border-border flex flex-col gap-2 rounded-2xl border p-3 text-left"
+                className="group border border-[#EAE4DC] bg-[#FAF8F5]/50 hover:bg-[#FAF8F5] flex flex-col items-center justify-between rounded-2xl p-4 text-center transition-all hover:border-foreground/30 hover:shadow-sm"
               >
-                <div className="bg-secondary relative aspect-square w-full overflow-hidden rounded-xl">
+                <div className="relative aspect-square w-full flex items-center justify-center overflow-hidden">
                   {row.item?.image_url && (
                     <Image
                       src={row.item.image_url}
-                      alt=""
+                      alt={row.item?.name ?? ""}
                       fill
-                      className="object-cover"
+                      sizes="(min-width: 1024px) 25vw, 50vw"
+                      className="object-contain drop-shadow-sm transition-transform duration-200 group-hover:scale-105"
                     />
                   )}
                 </div>
-                <div className="flex flex-col">
-                  <span className="font-serif text-base">
+                <div className="mt-3 flex flex-col items-center gap-0.5">
+                  <span className="font-serif text-base lg:text-lg text-foreground font-medium">
                     {row.item?.name || "Untitled"}
                   </span>
                   {row.item?.brand && (
-                    <span className="text-muted-foreground text-xs tracking-wide uppercase">
+                    <span className="text-[#8C887B] text-xs tracking-wider uppercase font-medium">
                       {row.item.brand}
                     </span>
                   )}
@@ -190,18 +207,21 @@ export function WardrobeView({ userId }: { userId: string }) {
         </div>
       ) : (
         groups.map(({ category, subcategories, itemsBySubcategory }) => {
-          const active =
-            activeSubcategory[category] ??
+          const defaultSubcategory =
+            subcategories.find(
+              (s) => (itemsBySubcategory.get(s)?.length ?? 0) > 0,
+            ) ??
             subcategories[0] ??
             FALLBACK_SUBCATEGORY;
+          const active = activeSubcategory[category] ?? defaultSubcategory;
           const activeItems = itemsBySubcategory.get(active) ?? [];
 
           return (
             <div
               key={category}
-              className="flex flex-col items-center gap-4 text-center"
+              className="flex flex-col items-center gap-4 lg:gap-6 text-center"
             >
-              <span className="text-foreground text-xs font-medium tracking-wide uppercase">
+              <span className="text-foreground text-xs lg:text-sm font-medium tracking-wide uppercase">
                 {category}
               </span>
               <SubcategoryCarousel
@@ -216,51 +236,91 @@ export function WardrobeView({ userId }: { userId: string }) {
               />
               <div
                 className={cn(
-                  "scrollbar-none flex gap-3",
-                  // At w-32 items + gap-3 inside this max-w-sm page, 2
-                  // items fit without overflowing -- center those runs
-                  // so they sit under the (centered) active subcategory
-                  // instead of stranded at the left edge. 3+ items need
-                  // to scroll, so they keep the Figma-matching edge-to-
-                  // edge bleed instead (centering a genuinely-
-                  // overflowing flex row makes part of it unreachable
-                  // by scroll in some browsers).
+                  "scrollbar-none flex items-end gap-4 lg:gap-8 min-h-[140px] lg:min-h-[180px]",
                   activeItems.length > 2
-                    ? "-mx-6 w-full overflow-x-auto"
+                    ? "-mx-6 w-full overflow-x-auto px-6 lg:mx-0 lg:flex-wrap lg:justify-center"
                     : "w-full justify-center",
                 )}
               >
-                {activeItems.map((row) => (
-                  <Link
-                    key={row.id}
-                    href={`/wardrobe/${row.id}`}
-                    prefetch
-                    className="bg-secondary relative aspect-square w-32 shrink-0 overflow-hidden rounded-xl"
-                  >
-                    {row.item?.image_url && (
-                      <Image
-                        src={row.item.image_url}
-                        alt={row.item.name ?? ""}
-                        fill
-                        className="object-cover"
-                      />
-                    )}
-                  </Link>
-                ))}
+                {activeItems.length === 0 ? (
+                  <div className="py-6 text-xs lg:text-sm text-muted-foreground/60 italic">
+                    No items in {active} yet
+                  </div>
+                ) : (
+                  activeItems.map((row) => (
+                    <Link
+                      key={row.id}
+                      href={`/wardrobe/${row.id}`}
+                      prefetch
+                      className="group relative flex flex-col items-center justify-end w-32 lg:w-44 h-36 lg:h-48 shrink-0 transition-transform duration-200 hover:scale-105"
+                    >
+                      <div className="relative h-28 lg:h-38 w-full">
+                        {row.item?.image_url && (
+                          <Image
+                            src={row.item.image_url}
+                            alt={row.item?.name ?? ""}
+                            fill
+                            sizes="(min-width: 1024px) 176px, 128px"
+                            className="object-contain drop-shadow-sm transition-transform duration-200 group-hover:scale-105"
+                          />
+                        )}
+                      </div>
+                      <div className="h-2 w-16 lg:w-20 rounded-full bg-black/10 blur-[3px] transition-transform duration-200 group-hover:scale-110" />
+                    </Link>
+                  ))
+                )}
               </div>
             </div>
           );
         })
       )}
 
-      <Link
-        href="/onboarding/7"
-        prefetch
-        aria-label="Add item"
-        className="bg-foreground text-background fixed right-6 bottom-24 flex size-14 items-center justify-center rounded-2xl shadow-lg"
-      >
-        <Plus className="size-6" />
-      </Link>
+      {addMenuOpen && (
+        <div
+          data-testid="wardrobe__add-menu-backdrop"
+          className="fixed inset-0 z-40 bg-black/20 backdrop-blur-[2px]"
+          onClick={() => setAddMenuOpen(false)}
+        />
+      )}
+
+      <div className="fixed right-6 bottom-24 lg:right-10 lg:bottom-10 z-50 flex flex-col items-end gap-3">
+        {addMenuOpen && (
+          <div className="flex flex-col items-end gap-2 animate-in fade-in slide-in-from-bottom-2 duration-150">
+            <Link
+              href="/wardrobe/add"
+              prefetch
+              data-testid="wardrobe__add-items-button"
+              className="bg-[#393735] text-white hover:bg-[#2b2a27] px-5 py-3 rounded-xl lg:rounded-2xl text-xs font-semibold tracking-wider uppercase shadow-lg transition-transform active:scale-95"
+              onClick={() => setAddMenuOpen(false)}
+            >
+              ADD ITEMS
+            </Link>
+            <Link
+              href="/mix-and-match"
+              prefetch
+              data-testid="wardrobe__mix-match-button"
+              className="bg-[#393735] text-white hover:bg-[#2b2a27] px-5 py-3 rounded-xl lg:rounded-2xl text-xs font-semibold tracking-wider uppercase shadow-lg transition-transform active:scale-95"
+              onClick={() => setAddMenuOpen(false)}
+            >
+              MIX &amp; MATCH
+            </Link>
+          </div>
+        )}
+        <button
+          type="button"
+          onClick={() => setAddMenuOpen(!addMenuOpen)}
+          aria-label={addMenuOpen ? "Close menu" : "Add item"}
+          data-testid="wardrobe__add-button"
+          className={cn(
+            "flex size-14 items-center justify-center rounded-2xl shadow-lg transition-all",
+            addMenuOpen
+              ? "bg-[#FAFAF7] text-foreground border border-[#EAE4DC]"
+              : "bg-[#393735] text-white hover:bg-[#2b2a27]",
+          )}
+        >
+          {addMenuOpen ? <X className="size-6" /> : <Plus className="size-6" />}
+        </button>
+      </div>
 
       <WardrobeFilterDialog
         open={filterOpen}

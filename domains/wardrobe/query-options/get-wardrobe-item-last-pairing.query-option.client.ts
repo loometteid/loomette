@@ -30,19 +30,24 @@ export const getWardrobeItemLastPairingQueryOptionsForBrowser = (
         .limit(1);
 
       if (error || !data || data.length === 0) return null;
-      const outfit = (data[0] as any)?.outfit;
+      const outfit = data[0]?.outfit;
       if (!outfit) return null;
 
-      const items = (outfit.outfit_item ?? [])
-        .filter((oi: any) => oi.wardrobe_item?.item)
-        .map((oi: any) => ({
-          id: oi.wardrobe_item.id,
-          image_url: oi.wardrobe_item.item.image_url,
-          name: oi.wardrobe_item.item.name,
-          x: oi.position_x ?? 0.5,
-          y: oi.position_y ?? 0.5,
-          layerOrder: oi.layer_order ?? 0,
-        }));
+      const items = outfit.outfit_item.flatMap((oi) => {
+        const wItem = oi.wardrobe_item;
+        if (!wItem || !wItem.item) return [];
+
+        return [
+          {
+            id: wItem.id,
+            image_url: wItem.item.image_url,
+            name: wItem.item.name,
+            x: oi.position_x ?? 0.5,
+            y: oi.position_y ?? 0.5,
+            layerOrder: oi.layer_order ?? 0,
+          },
+        ];
+      });
 
       return {
         id: outfit.id,

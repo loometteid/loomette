@@ -6,13 +6,15 @@ import type { DiaryEntry } from "./types";
 // cover_image_url, but every outfit_item (position + layer_order) so
 // the full saved composition can be redrawn, not a single garment.
 export const DIARY_ENTRY_SELECT =
-  "id, worn_on, outfit:outfit_id(id, cover_image_url, outfit_item(layer_order, position_x, position_y, wardrobe_item:wardrobe_item_id(id, item:item_id(item_id, name, image_url))))";
+  "id, worn_on, outfit:outfit_id(id, name, is_saved, cover_image_url, outfit_item(layer_order, position_x, position_y, wardrobe_item:wardrobe_item_id(id, item:item_id(item_id, name, image_url))))";
 
 export type RawDiaryRow = {
   id: string;
   worn_on: string;
   outfit: {
     id: string;
+    name?: string | null;
+    is_saved?: boolean | null;
     cover_image_url: string | null;
     outfit_item:
       | {
@@ -44,6 +46,8 @@ export function toDiaryEntries(rows: RawDiaryRow[]): DiaryEntry[] {
     worn_on: row.worn_on,
     outfit: row.outfit && {
       id: row.outfit.id,
+      name: row.outfit.name,
+      isSaved: row.outfit.is_saved,
       cover_image_url: row.outfit.cover_image_url,
       items: (row.outfit.outfit_item ?? [])
         .filter((outfitItem) => outfitItem.wardrobe_item?.item)

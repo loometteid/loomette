@@ -56,7 +56,7 @@ export function OutfitApproval({ userId }: { userId: string }) {
       }
 
       toast.success("Outfit Saved");
-      router.push("/calendar");
+      router.push(`/calendar/outfits/${savedEntry.wornOn}`);
     },
     onError: (err) => {
       toast.error(
@@ -199,14 +199,11 @@ export function OutfitApproval({ userId }: { userId: string }) {
         <div className="mt-8 flex gap-3 lg:hidden">
           <button
             type="button"
-            onClick={() => {
-              deleteOutfit({ paths: [result.originalPath] });
-            }}
+            onClick={() => router.push("/calendar/share")}
             disabled={isBusy}
             className="bg-[#F2EDE5] hover:bg-[#EAE4DC] text-[#444440] flex flex-1 items-center justify-center gap-2 rounded-2xl py-4 text-xs font-semibold tracking-wider uppercase transition-colors disabled:pointer-events-none disabled:opacity-60"
           >
-            {isDeletingOUtfit && <Loader2 className="size-4 animate-spin" />}
-            Cancel
+            Share
           </button>
           <button
             type="button"
@@ -228,7 +225,7 @@ export function OutfitApproval({ userId }: { userId: string }) {
         <Dialog open={showOriginal} onOpenChange={setShowOriginal}>
           <DialogPopup
             showClose={false}
-            className="fixed inset-0 m-auto h-fit max-w-[340px] lg:max-w-md w-[calc(100%-3rem)] p-6 lg:p-8 rounded-[24px] bg-[#FAFAF7] border-none text-center shadow-2xl relative"
+            className="h-fit max-w-[340px] lg:max-w-md w-[calc(100%-3rem)] p-6 lg:p-8 rounded-[24px] bg-[#FAFAF7] border-none text-center shadow-2xl"
           >
             <button
               type="button"

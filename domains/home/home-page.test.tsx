@@ -7,6 +7,8 @@ import { getProfileQueryOptionsForBrowser } from "@/domains/profile/query-option
 import { getWardrobeItemsQueryOptionsForBrowser } from "@/domains/wardrobe/query-options/get-wardrobe-items.query-option.client";
 import type { UserProfile } from "@/domains/profile/types";
 import { getLooksCountQueryOptionsForBrowser } from "./query-options/get-looks-count.query-option.client";
+import { getNotificationsQueryOptionsForBrowser } from "./query-options/get-notifications.query-option.client";
+import { getUnreadNotificationsCountQueryOptionsForBrowser } from "./query-options/get-unread-notifications-count.query-option.client";
 import { HomeView } from "./home-page";
 
 describe("HomeView (Route Lifecycle & Onboarding Guard)", () => {
@@ -72,6 +74,14 @@ describe("HomeView (Route Lifecycle & Onboarding Guard)", () => {
       getLooksCountQueryOptionsForBrowser("user-456").queryKey,
       3,
     );
+    queryClient.setQueryData(
+      getNotificationsQueryOptionsForBrowser("user-456").queryKey,
+      [],
+    );
+    queryClient.setQueryData(
+      getUnreadNotificationsCountQueryOptionsForBrowser("user-456").queryKey,
+      0,
+    );
 
     renderWithQueryClient(
       <Suspense fallback={<div>Loading...</div>}>
@@ -84,7 +94,7 @@ describe("HomeView (Route Lifecycle & Onboarding Guard)", () => {
     expect(mockRedirect).not.toHaveBeenCalled();
 
     // Should render personalized headline with display_name
-    expect(await screen.findByText(/Rebecca\?/i)).toBeInTheDocument();
-    expect(screen.getByText(/Your preferences/i)).toBeInTheDocument();
+    expect(await screen.findAllByText(/Rebecca\?/i)).toHaveLength(2);
+    expect(screen.getAllByText(/Your preferences/i)).toHaveLength(2);
   });
 });

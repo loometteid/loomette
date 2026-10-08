@@ -90,12 +90,6 @@ export function CalendarView({ userId }: { userId: string }) {
   const [monthPickerOpen, setMonthPickerOpen] = useState(false);
   const [openEntry, setOpenEntry] = useState<DiaryEntry | null>(null);
 
-  function goToToday() {
-    setUserViewedYear(null);
-    setUserViewedMonth(null);
-    setUserSelectedKey(null);
-  }
-
   function handlePrevMonth() {
     const prev = addMonths(viewedYear, viewedMonth, -1);
     setUserViewedYear(prev.year);
@@ -159,17 +153,17 @@ export function CalendarView({ userId }: { userId: string }) {
             Your <em className="italic underline">outfit</em> diary
           </Typography>
         </div>
-        <button
-          type="button"
-          onClick={goToToday}
-          aria-label="Jump to today"
+        <Link
+          href="/calendar/history"
+          prefetch
+          aria-label="All outfit history"
           className="bg-secondary flex size-9 shrink-0 items-center justify-center rounded-xl"
         >
           <History className="size-4" />
-        </button>
+        </Link>
       </div>
 
-      {/* Desktop Title & Today Action */}
+      {/* Desktop Title */}
       <div className="hidden lg:flex items-center justify-between">
         <div className="flex items-center gap-3">
           <Sparkle className="size-7 text-foreground" />
@@ -177,15 +171,6 @@ export function CalendarView({ userId }: { userId: string }) {
             Your <em className="italic underline">outfit</em> diary
           </Typography>
         </div>
-        <button
-          type="button"
-          onClick={goToToday}
-          aria-label="Jump to today"
-          className="bg-secondary hover:bg-secondary/80 flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold uppercase tracking-wider transition-colors shadow-sm"
-        >
-          <History className="size-4" />
-          Today
-        </button>
       </div>
 
       {/* Mobile Month Selector & Grid */}

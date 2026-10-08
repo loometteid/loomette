@@ -125,6 +125,41 @@ export type Database = {
           },
         ];
       };
+      notification: {
+        Row: {
+          created_at: string;
+          description: string;
+          id: string;
+          is_read: boolean;
+          title: string;
+          user_id: string;
+        };
+        Insert: {
+          created_at?: string;
+          description: string;
+          id?: string;
+          is_read?: boolean;
+          title: string;
+          user_id: string;
+        };
+        Update: {
+          created_at?: string;
+          description?: string;
+          id?: string;
+          is_read?: boolean;
+          title?: string;
+          user_id?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "notification_user_id_fkey";
+            columns: ["user_id"];
+            isOneToOne: false;
+            referencedRelation: "user";
+            referencedColumns: ["user_id"];
+          },
+        ];
+      };
       outfit: {
         Row: {
           added_at: string | null;

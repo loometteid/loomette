@@ -17,6 +17,7 @@ export type RecommendationPiece = {
   x: number;
   y: number;
   layerOrder: number;
+  sizeRatio?: number;
 };
 
 export type OutfitRecommendation = {
@@ -24,6 +25,16 @@ export type OutfitRecommendation = {
   title: string;
   pieces: RecommendationPiece[];
   compositionItems: CompositionItem[];
+};
+
+export const RECOMMENDATION_SLOT_CONFIG: Record<
+  "Tops" | "Bottoms" | "Shoes" | "Accessories",
+  { x: number; y: number; sizeRatio: number }
+> = {
+  Accessories: { x: 0.30, y: 0.18, sizeRatio: 0.46 },
+  Tops: { x: 0.50, y: 0.28, sizeRatio: 0.72 },
+  Bottoms: { x: 0.50, y: 0.58, sizeRatio: 0.76 },
+  Shoes: { x: 0.58, y: 0.86, sizeRatio: 0.40 },
 };
 
 const FALLBACK_PIECES: Record<string, Omit<RecommendationPiece, "x" | "y" | "layerOrder">> = {
@@ -73,11 +84,12 @@ export function generateRandomRecommendations(
   const accessories = wardrobeItems.filter((i) => i.item?.category === "Accessories" && i.item?.image_url);
 
   function pickItem(list: WardrobeItem[], cat: "Tops" | "Bottoms" | "Shoes" | "Accessories"): RecommendationPiece {
+    const slot = RECOMMENDATION_SLOT_CONFIG[cat];
+    const layerOrder = cat === "Bottoms" ? 0 : cat === "Tops" ? 1 : cat === "Shoes" ? 2 : 3;
+
     if (list.length > 0) {
       const idx = Math.abs((seedOffset * 7 + 3)) % list.length;
       const picked = list[idx];
-      const slot = DEFAULT_SLOT_POSITIONS[cat] ?? { x: 0.5, y: 0.5 };
-      const layerOrder = cat === "Bottoms" ? 0 : cat === "Tops" ? 1 : cat === "Shoes" ? 2 : 3;
       return {
         id: picked.id,
         name: picked.item?.name || cat,
@@ -89,17 +101,17 @@ export function generateRandomRecommendations(
         x: slot.x,
         y: slot.y,
         layerOrder,
+        sizeRatio: slot.sizeRatio,
       };
     }
 
     const fallback = FALLBACK_PIECES[cat];
-    const slot = DEFAULT_SLOT_POSITIONS[cat] ?? { x: 0.5, y: 0.5 };
-    const layerOrder = cat === "Bottoms" ? 0 : cat === "Tops" ? 1 : cat === "Shoes" ? 2 : 3;
     return {
       ...fallback,
       x: slot.x,
       y: slot.y,
       layerOrder,
+      sizeRatio: slot.sizeRatio,
     };
   }
 
@@ -117,6 +129,7 @@ export function generateRandomRecommendations(
     x: p.x,
     y: p.y,
     layerOrder: p.layerOrder,
+    sizeRatio: p.sizeRatio,
   }));
 
   return {

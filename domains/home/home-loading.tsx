@@ -16,7 +16,7 @@ export function HomeFallback() {
           </div>
 
           <div className="relative flex items-center justify-center py-6">
-            <div className="bg-secondary/60 h-[480px] w-72 rounded-2xl" />
+            <div className="bg-secondary/60 h-[480px] w-80 max-w-full rounded-2xl" />
           </div>
         </div>
 
@@ -65,7 +65,7 @@ export function HomeFallback() {
         </div>
 
         {/* Hero */}
-        <div className="mx-auto h-[400px] w-64 rounded-2xl bg-secondary/60" />
+        <div className="mx-auto h-[400px] w-72 max-w-full rounded-2xl bg-secondary/60" />
 
         {/* Prompt Card */}
         <div className="border border-border/80 flex flex-col gap-4 rounded-3xl p-5">

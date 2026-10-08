@@ -133,7 +133,7 @@ export function RecommendationPageView({ userId }: { userId: string }) {
       </div>
 
       {/* Hero Outfit */}
-      <div className="relative mx-auto h-96 w-64 flex items-center justify-center my-2">
+      <div className="relative mx-auto h-[380px] w-64 max-w-full flex items-center justify-center my-2 overflow-hidden rounded-2xl">
         <OutfitComposition
           items={recommendation.compositionItems}
           className="h-full w-full"
@@ -170,7 +170,7 @@ export function RecommendationPageView({ userId }: { userId: string }) {
           {recommendation.pieces.slice(0, 3).map((piece) => (
             <div
               key={piece.id}
-              className="relative flex flex-col items-center justify-between rounded-2xl border border-border bg-white/70 p-4 text-center aspect-square"
+              className="relative flex flex-col items-center justify-between rounded-2xl border border-border bg-white/70 p-3.5 text-center min-h-[180px] h-full"
             >
               {piece.badgeText.includes("#1") && (
                 <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 rounded-full bg-[#F2EDE5] px-2.5 py-0.5 text-[0.55rem] font-semibold tracking-wider text-[#3B3A36] uppercase whitespace-nowrap">
@@ -178,7 +178,7 @@ export function RecommendationPageView({ userId }: { userId: string }) {
                 </span>
               )}
 
-              <div className="relative size-20 aspect-square my-auto">
+              <div className="relative size-16 aspect-square my-auto shrink-0">
                 <Image
                   src={piece.imageUrl}
                   alt={piece.name}
@@ -187,7 +187,7 @@ export function RecommendationPageView({ userId }: { userId: string }) {
                 />
               </div>
 
-              <div className="flex flex-col gap-0.5 w-full">
+              <div className="flex flex-col gap-0.5 w-full min-w-0">
                 <Typography variant="title" as="p" className="text-sm font-serif truncate">
                   {piece.name}
                 </Typography>

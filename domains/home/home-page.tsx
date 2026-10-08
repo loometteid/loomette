@@ -153,7 +153,7 @@ export function HomeView({ userId }: { userId: string }) {
               type="button"
               onClick={() => setSeedOffset((prev) => prev - 1)}
               aria-label="Previous look"
-              className="text-muted-foreground hover:text-foreground absolute left-0 flex size-10 items-center justify-center rounded-xl bg-secondary/60 hover:bg-secondary transition-colors"
+              className="text-muted-foreground hover:text-foreground absolute left-0 z-10 flex size-10 items-center justify-center rounded-xl bg-secondary/60 hover:bg-secondary transition-colors"
             >
               <ChevronLeft className="size-6" />
             </button>
@@ -163,11 +163,10 @@ export function HomeView({ userId }: { userId: string }) {
               type="button"
               onClick={() => setRecommendationDialogOpen(true)}
               aria-label="View outfit recommendation detail"
-              className="group relative h-[480px] w-72 flex items-center justify-center cursor-pointer hover:scale-[1.02] transition-transform"
+              className="group relative h-[480px] w-80 max-w-full flex items-center justify-center cursor-pointer hover:scale-[1.02] transition-transform overflow-hidden rounded-2xl"
             >
               <OutfitComposition
                 items={recommendation.compositionItems}
-                itemSizeRatio={0.75}
                 className="h-full w-full"
               />
             </button>
@@ -176,7 +175,7 @@ export function HomeView({ userId }: { userId: string }) {
               type="button"
               onClick={() => setSeedOffset((prev) => prev + 1)}
               aria-label="Next look"
-              className="text-muted-foreground hover:text-foreground absolute right-0 flex size-10 items-center justify-center rounded-xl bg-secondary/60 hover:bg-secondary transition-colors"
+              className="text-muted-foreground hover:text-foreground absolute right-0 z-10 flex size-10 items-center justify-center rounded-xl bg-secondary/60 hover:bg-secondary transition-colors"
             >
               <ChevronRight className="size-6" />
             </button>
@@ -375,11 +374,10 @@ export function HomeView({ userId }: { userId: string }) {
           href="/home/recommendation"
           prefetch
           aria-label="Outfit recommendation detail"
-          className="relative mx-auto h-[400px] w-64 flex items-center justify-center"
+          className="relative mx-auto h-[400px] w-72 max-w-full flex items-center justify-center overflow-hidden rounded-2xl"
         >
           <OutfitComposition
             items={recommendation.compositionItems}
-            itemSizeRatio={0.78}
             className="h-full w-full"
           />
         </Link>

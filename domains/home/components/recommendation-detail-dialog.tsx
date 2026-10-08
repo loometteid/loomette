@@ -118,7 +118,7 @@ export function RecommendationDetailDialog({
       <Dialog open={open} onOpenChange={onOpenChange}>
         <DialogPopup
           showClose={false}
-          className="max-w-4xl w-[calc(100%-4rem)] rounded-3xl bg-[#FAFAF7] p-8 lg:p-12 shadow-2xl border-none"
+          className="max-w-4xl w-[calc(100%-2rem)] sm:w-[calc(100%-4rem)] rounded-3xl bg-[#FAFAF7] p-6 sm:p-8 lg:p-10 shadow-2xl border-none max-h-[90vh] overflow-y-auto"
         >
           <button
             type="button"
@@ -140,7 +140,7 @@ export function RecommendationDetailDialog({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
             {/* Left: Outfit Hero & Buttons */}
             <div className="flex flex-col items-center justify-between gap-8">
-              <div className="relative h-96 w-64 flex items-center justify-center">
+              <div className="relative h-[380px] w-64 max-w-full flex items-center justify-center overflow-hidden rounded-xl">
                 <OutfitComposition
                   items={recommendation.compositionItems}
                   className="h-full w-full"
@@ -194,8 +194,8 @@ export function RecommendationDetailDialog({
                       />
                     </div>
 
-                    <div className="flex flex-col gap-0.5">
-                      <Typography variant="title" as="p" className="text-base font-serif">
+                    <div className="flex flex-col gap-0.5 min-w-0 flex-1">
+                      <Typography variant="title" as="p" className="text-base font-serif truncate">
                         {piece.name}
                       </Typography>
                       {piece.discountPrice ? (

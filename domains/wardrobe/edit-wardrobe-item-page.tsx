@@ -551,7 +551,7 @@ export function EditItemForm({ userId, id }: { userId: string; id: string }) {
         <Dialog open={sourcePreviewOpen} onOpenChange={setSourcePreviewOpen}>
           <DialogPopup
             showClose={false}
-            className="fixed inset-0 m-auto h-fit max-w-[340px] lg:max-w-md w-[calc(100%-3rem)] p-6 lg:p-8 rounded-[24px] bg-[#FAFAF7] border-none text-center shadow-2xl relative"
+            className="h-fit max-w-[340px] lg:max-w-md w-[calc(100%-3rem)] p-6 lg:p-8 rounded-[24px] bg-[#FAFAF7] border-none text-center shadow-2xl"
           >
             <button
               type="button"

@@ -9,6 +9,7 @@ export type CompositionItem = {
   x: number;
   y: number;
   layerOrder: number;
+  sizeRatio?: number;
 };
 
 // Matches Mix & Match's canvas (140px item in a ~336px-wide canvas).
@@ -41,7 +42,7 @@ export function OutfitComposition({
   const sorted = [...items].sort((a, b) => a.layerOrder - b.layerOrder);
 
   return (
-    <div className={cn("relative", className)}>
+    <div className={cn("relative overflow-hidden", className)}>
       {sorted.map((item) => (
         <div
           key={item.id}
@@ -49,7 +50,7 @@ export function OutfitComposition({
             left: `${item.x * 100}%`,
             top: `${item.y * 100}%`,
             zIndex: item.layerOrder,
-            width: `${itemSizeRatio * 100}%`,
+            width: `${(item.sizeRatio ?? itemSizeRatio) * 100}%`,
           }}
           className="absolute aspect-square -translate-x-1/2 -translate-y-1/2"
         >

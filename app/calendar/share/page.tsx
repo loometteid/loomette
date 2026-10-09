@@ -1,26 +1,28 @@
 import { Suspense } from "react";
 import { redirect } from "next/navigation";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
-import { NotificationsView } from "@/domains/home/notifications-page";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { getQueryClient } from "@/lib/tanstack-query";
 import { getUserQueryOptions } from "@/domains/profile/query-options/get-user.query-option";
-import { getNotificationsQueryOptionsForServer } from "@/domains/home/query-options/get-notifications.query-option.server";
+import { getAllOutfitsQueryOptionsForServer } from "@/domains/calendar/query-options/get-all-outfits.query-option.server";
+import { ShareOotdView } from "@/domains/calendar/share-ootd-page";
 
-export default async function NotificationsPage() {
+export default async function ShareOotdPage() {
   const supabase = await createServerSupabaseClient();
 
   const {
     data: { user },
   } = await supabase.auth.getUser();
 
-  if (!user) redirect("/sign-in");
+  if (!user) {
+    redirect("/sign-in");
+  }
 
   const queryClient = getQueryClient();
   queryClient.setQueryData(getUserQueryOptions().queryKey, () => user);
 
   void queryClient.ensureQueryData(
-    getNotificationsQueryOptionsForServer(user.id),
+    getAllOutfitsQueryOptionsForServer(user.id),
   );
 
   const dehydratedQueryClient = dehydrate(queryClient);
@@ -28,7 +30,7 @@ export default async function NotificationsPage() {
   return (
     <HydrationBoundary state={dehydratedQueryClient}>
       <Suspense fallback={<div className="min-h-screen bg-background" />}>
-        <NotificationsView userId={user.id} />
+        <ShareOotdView userId={user.id} />
       </Suspense>
     </HydrationBoundary>
   );

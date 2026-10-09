@@ -1,111 +1,87 @@
-import Link from "next/link";
-import { Bell, ChevronLeft, ChevronRight } from "lucide-react";
 import { Sparkle } from "@/components/ui/sparkle";
 
 export function HomeFallback() {
   return (
-    <main className="mx-auto flex w-full max-w-sm flex-col gap-8 px-6 py-8">
-      {/* Top Header */}
-      <div className="flex items-center justify-between">
-        <div className="bg-muted size-14 animate-pulse rounded-2xl" />
-        <Link
-          href="/home/notifications"
-          prefetch
-          aria-label="Notifications"
-          className="bg-secondary flex size-10 items-center justify-center rounded-xl opacity-60"
-        >
-          <Bell className="text-muted-foreground size-4" />
-        </Link>
-      </div>
-
-      {/* Greeting */}
-      <div className="flex flex-col gap-2">
-        <div className="flex items-start gap-2">
-          <Sparkle className="text-foreground mt-2 size-5 shrink-0" />
+    <main className="w-full">
+      {/* Desktop Skeleton */}
+      <div className="hidden lg:grid max-w-7xl mx-auto px-12 py-8 grid-cols-2 gap-12 items-start animate-pulse">
+        {/* Left Column */}
+        <div className="flex flex-col gap-6">
           <div className="flex flex-col gap-2">
-            <div className="bg-muted h-7 w-44 animate-pulse rounded-md" />
-            <div className="bg-muted h-7 w-32 animate-pulse rounded-md" />
+            <div className="flex items-center gap-3">
+              <Sparkle className="size-7 text-muted-foreground/40" />
+              <div className="bg-muted h-9 w-64 rounded-md" />
+            </div>
+            <div className="bg-muted/60 h-4 w-48 rounded ml-10" />
+          </div>
+
+          <div className="relative flex items-center justify-center py-6">
+            <div className="bg-secondary/60 h-[480px] w-80 max-w-full rounded-2xl" />
           </div>
         </div>
-        <div className="bg-muted/70 h-4 w-48 animate-pulse rounded" />
+
+        {/* Right Column */}
+        <div className="flex flex-col gap-8">
+          <div className="flex justify-end">
+            <div className="size-10 rounded-xl bg-secondary" />
+          </div>
+
+          <div className="flex flex-col gap-4">
+            <div className="bg-muted h-7 w-40 rounded-md" />
+            <div className="grid grid-cols-2 gap-3.5">
+              <div className="bg-secondary row-span-2 h-56 rounded-3xl" />
+              <div className="bg-secondary h-26 rounded-3xl" />
+              <div className="bg-secondary h-26 rounded-3xl" />
+              <div className="bg-secondary h-26 rounded-3xl" />
+              <div className="bg-secondary h-26 rounded-3xl" />
+            </div>
+          </div>
+
+          <div className="border border-border/80 flex flex-col gap-4 rounded-3xl p-6">
+            <div className="bg-muted h-6 w-36 rounded-md" />
+            <div className="bg-secondary h-12 w-full rounded-2xl" />
+          </div>
+        </div>
       </div>
 
-      {/* Hero Look Carousel */}
-      <div className="relative flex items-center justify-center">
-        <div
-          aria-hidden
-          className="text-muted-foreground/40 absolute left-0 flex size-8 shrink-0 items-center justify-center"
-        >
-          <ChevronLeft className="size-5" />
+      {/* Mobile Skeleton */}
+      <div className="flex lg:hidden mx-auto w-full max-w-sm flex-col gap-6 px-6 py-6 animate-pulse">
+        {/* Header */}
+        <div className="flex items-center justify-between">
+          <div className="bg-muted size-14 rounded-2xl" />
+          <div className="bg-secondary size-11 rounded-2xl" />
         </div>
 
-        <div className="bg-secondary/60 relative h-105 w-45 animate-pulse rounded-2xl" />
-
-        <div
-          aria-hidden
-          className="text-muted-foreground/40 absolute right-0 flex size-8 shrink-0 items-center justify-center"
-        >
-          <ChevronRight className="size-5" />
-        </div>
-      </div>
-
-      {/* Prompt Card */}
-      <div className="border-border flex flex-col gap-4 rounded-3xl border p-6">
-        <div className="bg-muted h-6 w-36 animate-pulse rounded-md" />
-
-        <div className="flex flex-wrap gap-2">
-          <div className="border-border bg-secondary/50 h-8 w-24 animate-pulse rounded-full border" />
-          <div className="border-border bg-secondary/50 h-8 w-20 animate-pulse rounded-full border" />
-        </div>
-
-        <div className="bg-secondary h-11 w-full animate-pulse rounded-full" />
-      </div>
-
-      {/* Preferences Section */}
-      <div className="flex flex-col gap-4">
-        <div className="bg-muted h-6 w-36 animate-pulse rounded-md" />
-
-        <div className="grid grid-cols-2 gap-3">
-          {/* Coded card (tall) */}
-          <div className="bg-secondary/80 row-span-2 flex flex-col justify-between overflow-hidden rounded-3xl p-5">
+        {/* Title */}
+        <div className="flex flex-col gap-2">
+          <div className="flex items-start gap-2.5">
+            <Sparkle className="text-muted-foreground/40 size-6" />
             <div className="flex flex-col gap-2">
-              <div className="bg-muted h-5 w-24 animate-pulse rounded" />
-              <div className="bg-muted h-5 w-16 animate-pulse rounded" />
-            </div>
-            <Sparkle className="text-muted/40 size-20 self-end" />
-          </div>
-
-          {/* Top card */}
-          <div className="bg-secondary relative flex h-28 flex-col justify-between overflow-hidden rounded-3xl p-5 animate-pulse">
-            <div className="bg-muted h-3 w-16 rounded" />
-            <div className="bg-muted h-5 w-20 rounded" />
-          </div>
-
-          {/* Bottom card */}
-          <div className="bg-secondary relative flex h-28 flex-col justify-between overflow-hidden rounded-3xl p-5 animate-pulse">
-            <div className="bg-muted h-3 w-16 rounded" />
-            <div className="bg-muted h-5 w-20 rounded" />
-          </div>
-
-          {/* Wardrobe count card */}
-          <div className="border-border flex flex-col justify-between gap-6 rounded-3xl border p-5">
-            <div className="flex gap-1">
-              <Sparkle className="text-muted-foreground size-4" />
-              <Sparkle className="text-muted-foreground size-4" />
-            </div>
-            <div className="flex flex-col gap-1.5">
-              <div className="bg-muted h-2.5 w-24 animate-pulse rounded" />
-              <div className="bg-muted h-6 w-16 animate-pulse rounded" />
+              <div className="bg-muted h-7 w-44 rounded-md" />
+              <div className="bg-muted h-7 w-32 rounded-md" />
             </div>
           </div>
+          <div className="bg-muted/70 h-3.5 w-48 rounded ml-8.5" />
+        </div>
 
-          {/* Looks count card */}
-          <div className="bg-secondary relative flex flex-col justify-between overflow-hidden rounded-3xl p-5">
-            <div className="flex flex-col gap-1.5">
-              <div className="bg-muted h-2.5 w-20 animate-pulse rounded" />
-              <div className="bg-muted h-6 w-12 animate-pulse rounded" />
-            </div>
-            <Sparkle className="text-muted/40 absolute -right-2 -bottom-2 size-16" />
+        {/* Hero */}
+        <div className="mx-auto h-[400px] w-72 max-w-full rounded-2xl bg-secondary/60" />
+
+        {/* Prompt Card */}
+        <div className="border border-border/80 flex flex-col gap-4 rounded-3xl p-5">
+          <div className="bg-muted h-5 w-36 rounded-md" />
+          <div className="bg-secondary h-10 w-full rounded-2xl" />
+        </div>
+
+        {/* Preferences */}
+        <div className="flex flex-col gap-4 pt-2">
+          <div className="bg-muted h-6 w-36 rounded-md" />
+          <div className="grid grid-cols-2 gap-3">
+            <div className="bg-secondary row-span-2 h-48 rounded-3xl" />
+            <div className="bg-secondary h-22 rounded-3xl" />
+            <div className="bg-secondary h-22 rounded-3xl" />
+            <div className="bg-secondary h-22 rounded-3xl" />
+            <div className="bg-secondary h-22 rounded-3xl" />
           </div>
         </div>
       </div>

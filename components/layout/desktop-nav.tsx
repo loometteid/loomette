@@ -33,7 +33,7 @@ export function DesktopNavFallback() {
   return (
     <header
       data-testid="desktop-nav"
-      className="hidden lg:flex w-full items-center justify-between border-b border-border/40 px-12 py-5 bg-background"
+      className="sticky top-0 z-40 hidden lg:flex w-full items-center justify-between border-b border-border/40 px-12 py-5 bg-background/95 backdrop-blur-sm"
     >
       {/* Left container with flex-1 */}
       <div className="flex flex-1 items-center justify-start">
@@ -99,7 +99,7 @@ export function DesktopNav({
   return (
     <header
       data-testid="desktop-nav"
-      className="hidden lg:flex w-full items-center justify-between border-b border-border/40 px-12 py-5 bg-background"
+      className="sticky top-0 z-40 hidden lg:flex w-full items-center justify-between border-b border-border/40 px-12 py-5 bg-background/95 backdrop-blur-sm"
     >
       {/* Left container with flex-1 */}
       <div className="flex flex-1 items-center justify-start">

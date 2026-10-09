@@ -13,6 +13,7 @@ export type DiaryEntry = {
   outfit: {
     id: string;
     name?: string | null;
+    isSaved?: boolean | null;
     cover_image_url: string | null;
     items: DiaryOutfitItem[];
   } | null;

@@ -17,6 +17,7 @@ import { OverviewPreview } from "@/domains/landing/components/overview-preview";
 import { Reveal } from "@/domains/landing/components/reveal";
 import { ScrollProgress } from "@/domains/landing/components/scroll-progress";
 import { TiltCard } from "@/domains/landing/components/tilt-card";
+import { Activity } from "react";
 
 function Wordmark({
   className,
@@ -130,57 +131,19 @@ export default function LandingPage() {
           <Wordmark />
         </Link>
 
-        {/* Center Main Nav (Desktop) */}
+        {/* Right Waitlist Navigation */}
         <nav
-          aria-label="Main Navigation"
-          data-testid="landing-page__nav-desktop"
-          className="hidden md:flex items-center gap-8 lg:gap-12 text-sm font-medium tracking-[0.2em] uppercase text-slate"
+          aria-label="Waitlist Navigation"
+          data-testid="landing-page__nav-waitlist"
+          className="flex items-center text-xs md:text-sm font-medium tracking-[0.15em] uppercase text-slate"
         >
           <Link
-            href="/home"
+            href="/waitlist"
             prefetch
-            className="landing-link hover:text-black transition-colors"
+            data-testid="landing-page__waitlist-link"
+            className="landing-link hover:text-black transition-colors font-semibold"
           >
-            Home
-          </Link>
-          <Link
-            href="/calendar"
-            prefetch
-            className="landing-link hover:text-black transition-colors"
-          >
-            Calendar
-          </Link>
-          <Link
-            href="/wardrobe"
-            prefetch
-            className="landing-link hover:text-black transition-colors"
-          >
-            Wardrobe
-          </Link>
-        </nav>
-
-        {/* Right Authentication Navigation */}
-        <nav
-          aria-label="Account Navigation"
-          data-testid="landing-page__nav-auth"
-          className="flex items-center gap-2 md:gap-3 text-xs md:text-sm font-medium tracking-[0.15em] uppercase text-slate"
-        >
-          <Link
-            href="/welcome"
-            prefetch
-            data-testid="landing-page__sign-in-link"
-            className="landing-link hover:text-black transition-colors"
-          >
-            Sign in
-          </Link>
-          <span className="text-stone/60">|</span>
-          <Link
-            href="/welcome"
-            prefetch
-            data-testid="landing-page__sign-up-link"
-            className="landing-link hover:text-black transition-colors"
-          >
-            Sign up
+            Join Waitlist
           </Link>
         </nav>
         <ScrollProgress />
@@ -250,7 +213,7 @@ export default function LandingPage() {
           <div className="landing-hero-copy relative z-10 flex flex-col items-center gap-6">
             {/* Availability Pill Badge */}
             <div className="landing-enter landing-shimmer inline-flex items-center justify-center rounded-full bg-[#ede8e1] px-4 py-1.5 text-xs md:text-sm font-medium tracking-[0.15em] text-slate uppercase">
-              Now available ㆍ free to start
+              Early Access
             </div>
 
             {/* Main Headline — Only 'Wardrobe' is bold italic */}
@@ -284,13 +247,10 @@ export default function LandingPage() {
                 nativeButton={false}
                 data-testid="landing-page__hero-cta"
                 className="w-full min-w-65 max-w-80 h-14 md:h-16 rounded-2xl text-base md:text-xl font-medium tracking-[0.15em] uppercase shadow-md bg-[#333333] text-white hover:bg-black hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0 active:scale-[0.98] transition-[background-color,transform,box-shadow] duration-300"
-                render={<Link href="/welcome" prefetch />}
+                render={<Link href="/waitlist" prefetch />}
               >
-                Create Account
+                Join Waitlist
               </Button>
-              <p className="text-xs sm:text-sm md:text-base text-stone font-medium">
-                No credit card required. Free forever.
-              </p>
             </div>
           </div>
         </section>
@@ -547,88 +507,92 @@ export default function LandingPage() {
         </section>
 
         {/* Section 4: By the numbers — Fullscreen Viewport */}
-        <section
-          className="relative flex w-full min-h-screen flex-col items-center justify-center gap-8 px-6 py-12 md:py-16 text-center"
-          data-testid="landing-page__stats"
-        >
-          <Reveal
-            as="p"
-            className="text-slate text-xs md:text-sm font-medium uppercase tracking-[0.2em]"
+        <Activity mode="hidden">
+          <section
+            className="relative flex w-full min-h-screen flex-col items-center justify-center gap-8 px-6 py-12 md:py-16 text-center"
+            data-testid="landing-page__stats"
           >
-            By the numbers
-          </Reveal>
-          <div className="grid w-full max-w-300 grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center pt-2">
-            {stats.map((stat, i) => (
-              <Reveal
-                key={stat.label}
-                delay={i * 120}
-                className="flex flex-col items-center gap-2"
-                data-testid="landing-page__stat-item"
-                data-entity-id={stat.label}
-              >
-                <CountUp
-                  value={stat.value}
-                  className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-bold italic text-slate leading-none tabular-nums"
-                  data-testid="landing-page__stat-value"
-                />
-                <span
-                  className="text-xs sm:text-sm md:text-base uppercase tracking-wider text-slate/80 font-normal"
-                  data-testid="landing-page__stat-label"
+            <Reveal
+              as="p"
+              className="text-slate text-xs md:text-sm font-medium uppercase tracking-[0.2em]"
+            >
+              By the numbers
+            </Reveal>
+            <div className="grid w-full max-w-300 grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center pt-2">
+              {stats.map((stat, i) => (
+                <Reveal
+                  key={stat.label}
+                  delay={i * 120}
+                  className="flex flex-col items-center gap-2"
+                  data-testid="landing-page__stat-item"
+                  data-entity-id={stat.label}
                 >
-                  {stat.label}
-                </span>
-              </Reveal>
-            ))}
-          </div>
-        </section>
+                  <CountUp
+                    value={stat.value}
+                    className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-bold italic text-slate leading-none tabular-nums"
+                    data-testid="landing-page__stat-value"
+                  />
+                  <span
+                    className="text-xs sm:text-sm md:text-base uppercase tracking-wider text-slate/80 font-normal"
+                    data-testid="landing-page__stat-label"
+                  >
+                    {stat.label}
+                  </span>
+                </Reveal>
+              ))}
+            </div>
+          </section>
+        </Activity>
 
         {/* Section 5: Honest Review — Fullscreen Viewport */}
-        <section
-          className="relative flex w-full min-h-screen flex-col items-center justify-center gap-6 px-6 py-12 md:py-16 text-center"
-          data-testid="landing-page__reviews"
-        >
-          <Reveal className="flex flex-col items-center gap-6">
-            <Sparkle className="landing-sparkle size-8 md:size-12.5 text-slate" />
-            <h2 className="font-serif text-3xl sm:text-5xl md:text-[64px] lg:text-[72px] font-normal leading-tight text-slate">
-              <em className="font-bold italic">Honest Review</em> from real
-              users.
-            </h2>
-          </Reveal>
-          <div className="grid w-full max-w-300 grid-cols-1 md:grid-cols-3 gap-6 pt-6 text-left">
-            {testimonials.map((t, i) => (
-              <Reveal key={i} delay={i * 120}>
-                <TiltCard>
-                  <Card
-                    data-testid="landing-page__review-card"
-                    data-entity-id={t.name}
-                    className="min-h-45 md:h-57 rounded-[20px] border border-stone/40 bg-white/70 backdrop-blur-xs p-6 md:p-7 flex flex-col justify-between shadow-xs transition-[transform,box-shadow,border-color] duration-500 ease-out hover:-translate-y-1.5 hover:shadow-lg hover:border-stone/70"
-                  >
-                    <p className="text-sm md:text-base text-slate leading-relaxed">
-                      &quot;{t.quote}&quot;
-                    </p>
-                    <div className="flex items-center gap-3 pt-4">
-                      <div
-                        aria-hidden
-                        className={cn(
-                          "size-11 md:size-12 rounded-full shrink-0 flex items-center justify-center font-serif text-lg md:text-xl italic text-slate",
-                          t.avatarClassName,
-                        )}
-                      >
-                        {t.name.charAt(0)}
+        <Activity mode="hidden">
+          <section
+            className="relative flex w-full min-h-screen flex-col items-center justify-center gap-6 px-6 py-12 md:py-16 text-center"
+            data-testid="landing-page__reviews"
+          >
+            <Reveal className="flex flex-col items-center gap-6">
+              <Sparkle className="landing-sparkle size-8 md:size-12.5 text-slate" />
+              <h2 className="font-serif text-3xl sm:text-5xl md:text-[64px] lg:text-[72px] font-normal leading-tight text-slate">
+                <em className="font-bold italic">Honest Review</em> from real
+                users.
+              </h2>
+            </Reveal>
+            <div className="grid w-full max-w-300 grid-cols-1 md:grid-cols-3 gap-6 pt-6 text-left">
+              {testimonials.map((t, i) => (
+                <Reveal key={i} delay={i * 120}>
+                  <TiltCard>
+                    <Card
+                      data-testid="landing-page__review-card"
+                      data-entity-id={t.name}
+                      className="min-h-45 md:h-57 rounded-[20px] border border-stone/40 bg-white/70 backdrop-blur-xs p-6 md:p-7 flex flex-col justify-between shadow-xs transition-[transform,box-shadow,border-color] duration-500 ease-out hover:-translate-y-1.5 hover:shadow-lg hover:border-stone/70"
+                    >
+                      <p className="text-sm md:text-base text-slate leading-relaxed">
+                        &quot;{t.quote}&quot;
+                      </p>
+                      <div className="flex items-center gap-3 pt-4">
+                        <div
+                          aria-hidden
+                          className={cn(
+                            "size-11 md:size-12 rounded-full shrink-0 flex items-center justify-center font-serif text-lg md:text-xl italic text-slate",
+                            t.avatarClassName,
+                          )}
+                        >
+                          {t.name.charAt(0)}
+                        </div>
+                        <div className="flex flex-col">
+                          <span className="text-sm font-semibold text-slate">
+                            {t.name}
+                          </span>
+                          <span className="text-xs text-stone">{t.role}</span>
+                        </div>
                       </div>
-                      <div className="flex flex-col">
-                        <span className="text-sm font-semibold text-slate">
-                          {t.name}
-                        </span>
-                        <span className="text-xs text-stone">{t.role}</span>
-                      </div>
-                    </div>
-                  </Card>
-                </TiltCard>
-              </Reveal>
-            ))}
-          </div>
-        </section>
+                    </Card>
+                  </TiltCard>
+                </Reveal>
+              ))}
+            </div>
+          </section>
+        </Activity>
 
         {/* Section 6: FAQ — Fullscreen Viewport */}
         <section
@@ -697,20 +661,10 @@ export default function LandingPage() {
                 nativeButton={false}
                 data-testid="landing-page__final-cta-button"
                 className="landing-pulse w-full min-w-65 max-w-80 h-14 md:h-16 rounded-2xl text-base md:text-xl font-medium tracking-[0.15em] uppercase shadow-md bg-[#333333] text-white hover:bg-black hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0 active:scale-[0.98] transition-[background-color,transform,box-shadow] duration-300"
-                render={<Link href="/welcome" prefetch />}
+                render={<Link href="/waitlist" prefetch />}
               >
-                Create Account
+                Join Waitlist
               </Button>
-              <p className="text-xs sm:text-sm md:text-base text-stone font-normal">
-                Already have an account?{" "}
-                <Link
-                  href="/welcome"
-                  prefetch
-                  className="font-bold underline text-slate hover:text-black ml-1"
-                >
-                  Sign in
-                </Link>
-              </p>
             </div>
           </Reveal>
 

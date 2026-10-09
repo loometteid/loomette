@@ -16,7 +16,7 @@ export default async function OnboardingStepSevenPage() {
   } = await supabase.auth.getUser();
 
   if (!user) {
-    redirect("/welcome");
+    redirect("/waitlist");
   }
 
   // A returning user who already has a wardrobe item has effectively

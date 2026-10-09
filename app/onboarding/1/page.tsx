@@ -17,7 +17,7 @@ export default async function OnboardingStepOnePage() {
   } = await supabase.auth.getUser();
 
   if (!user) {
-    redirect("/welcome");
+    redirect("/waitlist");
   }
 
   const queryClient = getQueryClient();

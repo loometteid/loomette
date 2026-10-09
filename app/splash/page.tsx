@@ -7,7 +7,7 @@ export default function SplashPage() {
       {/* The whole screen is the tap target — no client JS needed, Link
           already handles navigation on click/tap natively. */}
       <Link
-        href="/welcome"
+        href="/waitlist"
         prefetch
         aria-label="Continue to Loomette"
         className="flex flex-1 flex-col items-center justify-between px-6 pt-32 pb-16 text-center"

@@ -13,7 +13,7 @@ export default async function OnboardingStepSixPage() {
   } = await supabase.auth.getUser();
 
   if (!user) {
-    redirect("/welcome");
+    redirect("/waitlist");
   }
 
   const queryClient = getQueryClient();

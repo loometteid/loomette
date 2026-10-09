@@ -78,7 +78,7 @@ export function StepTwoForm({
       } = await supabase.auth.getUser();
 
       if (!user) {
-        router.push("/welcome");
+        router.push("/waitlist");
         return;
       }
       resolvedUserId = user.id;

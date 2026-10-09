@@ -70,21 +70,21 @@ test.describe("Landing Page E2E Suite", () => {
     await expect(firstPanel).not.toBeVisible();
   });
 
-  test("navigates to /sign-up when clicking Hero Create Account CTA", async ({
+  test("navigates to /waitlist when clicking Hero Join Waitlist CTA", async ({
     page,
   }) => {
     // Arrange: Ensure hero CTA is visible
     const heroCta = page.getByTestId("landing-page__hero-cta");
     await expect(heroCta).toBeVisible();
 
-    // Act: Click create account button
+    // Act: Click waitlist button
     await heroCta.click();
 
-    // Assert: Client-side routing to sign-up page
-    await expect(page).toHaveURL(/\/sign-up/);
+    // Assert: Client-side routing to waitlist page
+    await expect(page).toHaveURL(/\/waitlist/);
   });
 
-  test("navigates to /sign-up when clicking Final CTA Create Account button", async ({
+  test("navigates to /waitlist when clicking Final CTA Join Waitlist button", async ({
     page,
   }) => {
     // Arrange: Scroll to final CTA section
@@ -95,21 +95,21 @@ test.describe("Landing Page E2E Suite", () => {
     // Act: Click final CTA button
     await finalCtaButton.click();
 
-    // Assert: Client-side routing to sign-up page
-    await expect(page).toHaveURL(/\/sign-up/);
+    // Assert: Client-side routing to waitlist page
+    await expect(page).toHaveURL(/\/waitlist/);
   });
 
-  test("navigates to /sign-in and /sign-up from header navigation links", async ({
+  test("navigates to /waitlist from header navigation link", async ({
     page,
   }) => {
-    // Arrange: Locate header auth links
-    const signInLink = page.getByTestId("landing-page__sign-in-link");
-    await expect(signInLink).toBeVisible();
+    // Arrange: Locate header waitlist link
+    const waitlistLink = page.getByTestId("landing-page__waitlist-link");
+    await expect(waitlistLink).toBeVisible();
 
-    // Act: Click sign in link
-    await signInLink.click();
+    // Act: Click waitlist link
+    await waitlistLink.click();
 
-    // Assert: Navigated to sign-in page
-    await expect(page).toHaveURL(/\/sign-in/);
+    // Assert: Navigated to waitlist page
+    await expect(page).toHaveURL(/\/waitlist/);
   });
 });

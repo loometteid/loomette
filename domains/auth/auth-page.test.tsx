@@ -49,15 +49,15 @@ describe("AuthPage (Component & Integration Tier)", () => {
     });
   });
 
-  it("permanently redirects /sign-in and /sign-up to /welcome per ADR 0006", () => {
+  it("permanently redirects /sign-in and /sign-up to /waitlist", () => {
     mockPermanentRedirect.mockClear();
 
     SignInPage();
-    expect(mockPermanentRedirect).toHaveBeenCalledWith("/welcome");
+    expect(mockPermanentRedirect).toHaveBeenCalledWith("/waitlist");
 
     mockPermanentRedirect.mockClear();
 
     SignUpPage();
-    expect(mockPermanentRedirect).toHaveBeenCalledWith("/welcome");
+    expect(mockPermanentRedirect).toHaveBeenCalledWith("/waitlist");
   });
 });

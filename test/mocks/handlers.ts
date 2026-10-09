@@ -220,4 +220,15 @@ export const handlers = [
   http.post(`${MOCK_SUPABASE_URL}/storage/v1/object/wardrobe-images/*`, () => {
     return HttpResponse.json({ Key: "wardrobe-images/mock-path" });
   }),
+
+  // Default mock handler for waitlist table queries/upsert
+  http.post(`${MOCK_SUPABASE_URL}/rest/v1/waitlist`, async ({ request }) => {
+    const body = (await request.json()) as Record<string, unknown>;
+    const mockWaitlistEntry = {
+      id: "waitlist-mock-123",
+      created_at: new Date().toISOString(),
+      ...body,
+    };
+    return HttpResponse.json(mockWaitlistEntry, { status: 201 });
+  }),
 ];

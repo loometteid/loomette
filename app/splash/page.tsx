@@ -14,7 +14,7 @@ export default function SplashPage() {
       >
         <div className="flex flex-col items-center gap-4">
           <Sparkle className="size-20 text-foreground" />
-          <span className="font-serif text-2xl text-foreground">TBC.</span>
+          <span className="font-serif text-2xl text-foreground">loomette</span>
         </div>
 
         <p className="font-sans text-xs tracking-wide text-muted-foreground uppercase">

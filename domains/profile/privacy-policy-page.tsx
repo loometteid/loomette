@@ -175,9 +175,10 @@ export function PrivacyPolicyView() {
 
       <Section number="07" title="Under 13">
         <p>
-          TBD is not intended for users under the age of 13. We
+          Loomette is not intended for users under the age of 13. We
           don&apos;t knowingly collect data from children. If you believe we
-          have,
+          have, email us at hi@loomette.id and we&apos;ll delete it
+          promptly.
         </p>
       </Section>
 
@@ -188,7 +189,7 @@ export function PrivacyPolicyView() {
           able to read the current version here.
         </p>
         <p>
-          Continuing to use Closet. after a change means you&apos;ve
+          Continuing to use Loomette after a change means you&apos;ve
           accepted the update. If you don&apos;t agree, you can delete your
           account before it takes effect.
         </p>
@@ -199,10 +200,10 @@ export function PrivacyPolicyView() {
           Questions?
         </span>
         <span className="text-muted-foreground text-xs">
-          Reach us at hello@tbd.app — we actually read these.
+          Reach us at hi@loomette.id — we actually read these.
         </span>
         <span className="text-muted-foreground/70 mt-4 text-[0.65rem] tracking-wide uppercase">
-          TBD · Privacy & Policy · Version 0.0.1
+          Loomette · Privacy & Policy · Version 0.0.1
         </span>
       </div>
     </main>

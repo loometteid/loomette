@@ -118,7 +118,7 @@ export function AuthPage() {
 
           {/* Privacy Policy disclaimer */}
           <p className="text-[11px] sm:text-xs lg:text-sm tracking-wider uppercase text-slate/75 leading-relaxed text-center lg:text-left max-w-xs sm:max-w-sm">
-            By registering you are agree to our{" "}
+            By registering you agree to our{" "}
             <Link
               href="/privacy"
               prefetch

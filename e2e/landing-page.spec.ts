@@ -46,7 +46,7 @@ test.describe("Landing Page E2E Suite", () => {
     await faqSection.scrollIntoViewIfNeeded();
 
     const faqItems = page.getByTestId("landing-page__faq-item");
-    await expect(faqItems).toHaveCount(3);
+    await expect(faqItems).toHaveCount(5);
 
     const firstTrigger = page
       .locator('[data-testid="landing-page__faq-item"][data-entity-id="0"]')

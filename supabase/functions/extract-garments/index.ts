@@ -230,9 +230,9 @@ async function generateGarmentCutout(
   const promptParts = [
     `Isolated commercial product catalog photograph of a single ${garment.color ? garment.color + " " : ""}${garment.material ? garment.material + " " : ""}${garment.name} (${garment.subcategory}, ${garment.category}).`,
     garment.visual_details ? `Visual design details: ${garment.visual_details}.` : "",
-    `Cleanly cut out with a completely transparent background (alpha channel PNG).`,
-    `Centered flat-lay or ghost mannequin display, crisp clean edges, studio commercial lighting.`,
-    `Strictly single garment only, no humans, no model face or body parts, no hanger, no drop shadow, no backdrop, no floor, perfectly transparent alpha background.`
+    `Pure transparent background with zero opacity alpha channel (PNG).`,
+    `Centered flat-lay or invisible ghost mannequin display, crisp sharp cutout edges, bright studio commercial lighting.`,
+    `Strictly single garment only: no human body or limbs, no mannequin parts, no hanger, no drop shadow, no gray or white solid backdrop, perfectly isolated transparent PNG.`
   ].filter(Boolean).join(" ");
 
   try {
@@ -254,9 +254,18 @@ async function generateGarmentCutout(
       },
     });
 
-    const firstImage = res?.data?.[0];
-    if (firstImage?.b64Json) {
-      return base64ToUint8Array(firstImage.b64Json);
+    const firstImage = res?.data?.[0] as
+      | { b64Json?: string; b64_json?: string; url?: string }
+      | undefined;
+    const b64 = firstImage?.b64Json || firstImage?.b64_json;
+    if (b64) {
+      return base64ToUint8Array(b64);
+    }
+    if (firstImage?.url) {
+      const fetched = await fetch(firstImage.url);
+      if (fetched.ok) {
+        return new Uint8Array(await fetched.arrayBuffer());
+      }
     }
     return null;
   } catch (imgErr) {
@@ -278,9 +287,18 @@ async function generateGarmentCutout(
         },
       });
 
-      const firstImage = res?.data?.[0];
-      if (firstImage?.b64Json) {
-        return base64ToUint8Array(firstImage.b64Json);
+      const firstImage = res?.data?.[0] as
+        | { b64Json?: string; b64_json?: string; url?: string }
+        | undefined;
+      const b64 = firstImage?.b64Json || firstImage?.b64_json;
+      if (b64) {
+        return base64ToUint8Array(b64);
+      }
+      if (firstImage?.url) {
+        const fetched = await fetch(firstImage.url);
+        if (fetched.ok) {
+          return new Uint8Array(await fetched.arrayBuffer());
+        }
       }
     } catch (retryErr) {
       log.warn(
@@ -311,7 +329,7 @@ serve(async (req) => {
   const visionModel =
     Deno.env.get("OPENROUTER_VISION_MODEL") || "google/gemini-3.8-flash";
   const imageModel =
-    Deno.env.get("OPENROUTER_IMAGE_MODEL") || "openai/gpt-5-image-mini";
+    Deno.env.get("OPENROUTER_IMAGE_MODEL") || "openai/gpt-image-2.5-flare";
 
   if (!supabaseUrl || !supabaseServiceKey) {
     rootLogger.error(
@@ -380,6 +398,29 @@ serve(async (req) => {
   const openRouter = new OpenRouter({
     apiKey: openrouterApiKey,
   });
+
+  // Safety timeout guard: before the HTTP gateway hard-terminates the worker,
+  // mark the job as failed in PostgreSQL so it never stays stuck in analyzing.
+  const timeoutGuard = setTimeout(async () => {
+    log.error(
+      "Execution approaching platform timeout limit (45s), marking upload_job as failed",
+      { uploadJobId },
+    );
+    try {
+      await supabase
+        .from("upload_job")
+        .update({
+          status: "failed",
+          error_message:
+            "Outfit processing timed out. Please try again with a clearer photo.",
+        })
+        .eq("id", uploadJobId);
+    } catch (e) {
+      log.error("Failed to mark upload_job as timed out in database", {
+        error: e,
+      });
+    }
+  }, 45000);
 
   try {
     // 1. Mark job as analyzing
@@ -571,9 +612,7 @@ Extract attributes with extreme precision:
       totalCount: items.length,
     });
 
-    for (let i = 0; i < items.length; i++) {
-      const g = items[i];
-
+    const stagePromises = items.map(async (g, i) => {
       // Check for duplicate flag: same category and matching subcategory
       const isDuplicate = existingItems.some((ew) => {
         const ewItem = ew.item;
@@ -709,11 +748,45 @@ Extract attributes with extreme precision:
         isDuplicate,
         processedImageUrl,
       });
-    }
 
-    phase5Timer.done("All extracted garments and cutouts successfully staged", {
-      count: items.length,
+      return insertedItem.item_id;
     });
+
+    const settledResults = await Promise.allSettled(stagePromises);
+    const successfulCount = settledResults.filter(
+      (r) => r.status === "fulfilled",
+    ).length;
+
+    phase5Timer.done("Extracted garments and cutouts staging completed", {
+      total: items.length,
+      successfulCount,
+    });
+
+    if (successfulCount === 0) {
+      log.error("Failed to stage any garments into database", {
+        errors: settledResults
+          .filter((r) => r.status === "rejected")
+          .map((r) => (r as PromiseRejectedResult).reason),
+      });
+      await supabase
+        .from("upload_job")
+        .update({
+          status: "failed",
+          error_message: "Failed to stage extracted garments into wardrobe.",
+        })
+        .eq("id", uploadJobId);
+
+      return new Response(
+        JSON.stringify({
+          success: false,
+          error: "Failed to stage extracted garments",
+        }),
+        {
+          status: 500,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        },
+      );
+    }
 
     // 6. Complete the upload job
     const phase6Timer = log.startTimer("phase6_complete_job");
@@ -721,7 +794,7 @@ Extract attributes with extreme precision:
       .from("upload_job")
       .update({
         status: "completed",
-        item_count: items.length,
+        item_count: successfulCount,
       })
       .eq("id", uploadJobId);
 
@@ -770,5 +843,7 @@ Extract attributes with extreme precision:
       status: 500,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
+  } finally {
+    clearTimeout(timeoutGuard);
   }
 });

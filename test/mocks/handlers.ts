@@ -221,9 +221,24 @@ export const handlers = [
     return HttpResponse.json({ Key: "wardrobe-images/mock-path" });
   }),
 
-  // Default mock handler for waitlist table queries/upsert
+  // Default mock handler for waitlist table queries/insert
   http.post(`${MOCK_SUPABASE_URL}/rest/v1/waitlist`, async ({ request }) => {
     const body = (await request.json()) as Record<string, unknown>;
+    if (
+      body.email === "existing@example.com" ||
+      body.email === "duplicate@example.com"
+    ) {
+      return HttpResponse.json(
+        {
+          code: "23505",
+          details: `Key (email)=(${body.email}) already exists.`,
+          message:
+            'duplicate key value violates unique constraint "waitlist_email_key"',
+        },
+        { status: 409 },
+      );
+    }
+
     const mockWaitlistEntry = {
       id: "waitlist-mock-123",
       created_at: new Date().toISOString(),

@@ -80,7 +80,8 @@ Before deploying `extract-garments`, configure your Gemini API key:
 
 ```bash
 # Set Gemini API key secret in remote project
-npx supabase secrets set GEMINI_API_KEY=<your-google-gemini-api-key>
+npx supabase secrets set RESEND_API_KEY=...
+npx supabase secrets set EMAIL_FROM=...
 
 # List configured secrets to verify
 npx supabase secrets list

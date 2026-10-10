@@ -12,7 +12,10 @@ import {
   waitlistSchema,
   type WaitlistFormValues,
 } from "../schemas/waitlist.schema";
-import { joinWaitlistMutationOptions } from "../mutation-options/join-waitlist.mutation-option.client";
+import {
+  joinWaitlistMutationOptions,
+  WAITLIST_DUPLICATE_EMAIL_ERROR,
+} from "../mutation-options/join-waitlist.mutation-option.client";
 
 export interface WaitlistFormProps {
   onSuccess: (submittedValues: WaitlistFormValues) => void;
@@ -29,6 +32,7 @@ export function WaitlistForm({
     register,
     handleSubmit,
     control,
+    setError,
     formState: { errors, isSubmitting },
   } = useForm<WaitlistFormValues>({
     resolver: zodResolver(waitlistSchema),
@@ -61,7 +65,14 @@ export function WaitlistForm({
     } catch (err: unknown) {
       const message =
         err instanceof Error ? err.message : "Failed to join waitlist";
-      setServerError(message);
+      if (message === WAITLIST_DUPLICATE_EMAIL_ERROR) {
+        setError("email", {
+          type: "manual",
+          message: WAITLIST_DUPLICATE_EMAIL_ERROR,
+        });
+      } else {
+        setServerError(message);
+      }
     }
   }
 

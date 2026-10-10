@@ -1,7 +1,10 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { http, HttpResponse } from "msw";
 import { renderWithQueryClient } from "@/test/test-utils";
+import { server } from "@/test/mocks/server";
+import { MOCK_SUPABASE_URL } from "@/test/mocks/handlers";
 import { WaitlistPage } from "./waitlist-page";
 import { waitlistSchema } from "./schemas/waitlist.schema";
 
@@ -75,6 +78,17 @@ describe("Waitlist Domain Suite", () => {
 
     it("submits the form and displays the inline celebration confirmation view", async () => {
       // Arrange
+      const emailSendSpy = vi.fn();
+      server.use(
+        http.post(
+          `${MOCK_SUPABASE_URL}/functions/v1/send-waitlist-email`,
+          () => {
+            emailSendSpy();
+            return HttpResponse.json({ success: true });
+          },
+        ),
+      );
+
       const user = userEvent.setup();
       renderWithQueryClient(<WaitlistPage />);
 
@@ -94,7 +108,7 @@ describe("Waitlist Domain Suite", () => {
       // Act: Submit form
       await user.click(submitButton);
 
-      // Assert: Form is replaced with success view
+      // Assert: Form is replaced with success view and email is dispatched
       await waitFor(() => {
         expect(screen.getByTestId("waitlist-success")).toBeInTheDocument();
       });
@@ -105,6 +119,79 @@ describe("Waitlist Domain Suite", () => {
       const homeButton = screen.getByTestId("waitlist-success__home-button");
       expect(homeButton).toBeInTheDocument();
       expect(homeButton).toHaveAttribute("href", "/");
+      expect(emailSendSpy).toHaveBeenCalledTimes(1);
+    });
+
+    it("blocks submission, displays inline error, and does not dispatch confirmation email if email has already joined the waitlist", async () => {
+      // Arrange
+      const emailSendSpy = vi.fn();
+      server.use(
+        http.post(
+          `${MOCK_SUPABASE_URL}/functions/v1/send-waitlist-email`,
+          () => {
+            emailSendSpy();
+            return HttpResponse.json({ success: true });
+          },
+        ),
+      );
+
+      const user = userEvent.setup();
+      renderWithQueryClient(<WaitlistPage />);
+
+      const nameInput = screen.getByTestId("waitlist-form__name-input");
+      const emailInput = screen.getByTestId("waitlist-form__email-input");
+      const hurdlesInput = screen.getByTestId("waitlist-form__hurdles-input");
+      const submitButton = screen.getByTestId("waitlist-form__submit-button");
+
+      // Act: Submit with an email that is already registered
+      await user.type(nameInput, "Taylor");
+      await user.type(emailInput, "existing@example.com");
+      await user.type(hurdlesInput, "Indecisive about daily outfits");
+      await user.click(submitButton);
+
+      // Assert: Form displays inline error under email input and blocks success navigation
+      await waitFor(() => {
+        expect(screen.getByTestId("waitlist-form__email-error")).toHaveTextContent(
+          "This email is already on the waitlist.",
+        );
+      });
+
+      expect(screen.queryByTestId("waitlist-success")).not.toBeInTheDocument();
+      expect(screen.getByTestId("waitlist-form")).toBeInTheDocument();
+      expect(emailSendSpy).not.toHaveBeenCalled();
+    });
+
+    it("displays general server error message when an unexpected database error occurs", async () => {
+      // Arrange
+      server.use(
+        http.post(`${MOCK_SUPABASE_URL}/rest/v1/waitlist`, () => {
+          return HttpResponse.json(
+            { message: "Internal server error" },
+            { status: 500 },
+          );
+        }),
+      );
+
+      const user = userEvent.setup();
+      renderWithQueryClient(<WaitlistPage />);
+
+      const nameInput = screen.getByTestId("waitlist-form__name-input");
+      const emailInput = screen.getByTestId("waitlist-form__email-input");
+      const hurdlesInput = screen.getByTestId("waitlist-form__hurdles-input");
+      const submitButton = screen.getByTestId("waitlist-form__submit-button");
+
+      // Act: Submit form with general error simulated
+      await user.type(nameInput, "Sam");
+      await user.type(emailInput, "sam@example.com");
+      await user.type(hurdlesInput, "Wardrobe organization issues");
+      await user.click(submitButton);
+
+      // Assert: Form renders general server error message
+      await waitFor(() => {
+        expect(screen.getByTestId("waitlist-form__error")).toBeInTheDocument();
+      });
+      expect(screen.queryByTestId("waitlist-success")).not.toBeInTheDocument();
     });
   });
 });
+

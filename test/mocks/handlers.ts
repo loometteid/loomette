@@ -144,14 +144,89 @@ export const handlers = [
     return HttpResponse.json({ Key: "mock-key" });
   }),
 
+  // Mock handler for outfit-photos storage upload
+  http.post(`${MOCK_SUPABASE_URL}/storage/v1/object/outfit-photos/*`, () => {
+    return HttpResponse.json({ Key: "mock-outfit-key" });
+  }),
+
   // Mock handler for Supabase storage remove
   http.delete(`${MOCK_SUPABASE_URL}/storage/v1/object/wardrobe-images`, () => {
     return HttpResponse.json([{ name: "mock-file" }]);
   }),
 
+  // Mock handler for outfit-photos storage remove
+  http.delete(`${MOCK_SUPABASE_URL}/storage/v1/object/outfit-photos`, () => {
+    return HttpResponse.json([{ name: "mock-outfit-file" }]);
+  }),
+
   // Default mock handler for outfit table queries (e.g. looks count)
   http.get(`${MOCK_SUPABASE_URL}/rest/v1/outfit`, () => {
     return HttpResponse.json([]);
+  }),
+
+  // Mock handler for outfit table insert
+  http.post(`${MOCK_SUPABASE_URL}/rest/v1/outfit`, async ({ request }) => {
+    const url = new URL(request.url);
+    const body = (await request.json()) as Record<string, unknown>;
+    const mockOutfit = {
+      id: "mock-outfit-123",
+      cover_image_url: body.cover_image_url ?? null,
+      name: body.name ?? null,
+      is_saved: true,
+      user_id: body.user_id ?? "user-123",
+      ...body,
+    };
+
+    if (
+      url.searchParams.has("select") ||
+      request.headers.get("accept")?.includes("vnd.pgrst.object+json")
+    ) {
+      return HttpResponse.json(mockOutfit);
+    }
+    return HttpResponse.json([mockOutfit]);
+  }),
+
+  // Mock handler for outfit_item table insert
+  http.post(`${MOCK_SUPABASE_URL}/rest/v1/outfit_item`, async ({ request }) => {
+    const body = (await request.json()) as
+      | Record<string, unknown>
+      | Record<string, unknown>[];
+
+    if (Array.isArray(body)) {
+      return HttpResponse.json(
+        body.map((item, index) => ({
+          id: `mock-outfit-item-${index + 1}`,
+          ...item,
+        })),
+        { status: 201 },
+      );
+    }
+
+    return HttpResponse.json({
+      id: "mock-outfit-item-1",
+      ...body,
+    });
+  }),
+
+  // Mock handler for wear_log table insert
+  http.post(`${MOCK_SUPABASE_URL}/rest/v1/wear_log`, async ({ request }) => {
+    const url = new URL(request.url);
+    const body = (await request.json()) as Record<string, unknown>;
+    const mockWearLog = {
+      id: "mock-wear-log-123",
+      user_id: body.user_id ?? "user-123",
+      outfit_id: body.outfit_id ?? "mock-outfit-123",
+      worn_on: body.worn_on ?? "2026-10-09",
+      ...body,
+    };
+
+    if (
+      url.searchParams.has("select") ||
+      request.headers.get("accept")?.includes("vnd.pgrst.object+json")
+    ) {
+      return HttpResponse.json(mockWearLog);
+    }
+    return HttpResponse.json([mockWearLog]);
   }),
 
   // Default mock handler for creating a trip (insert)

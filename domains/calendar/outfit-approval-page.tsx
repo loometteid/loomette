@@ -15,11 +15,20 @@ import { Dialog, DialogPopup, DialogTitle } from "@/components/ui/dialog";
 import { Sparkle } from "@/components/ui/sparkle";
 import { Typography } from "@/components/ui/typography";
 import { DesktopNav } from "@/components/layout/desktop-nav";
+import { OutfitComposition } from "@/domains/outfit/components/outfit-composition";
 import { getProfileQueryOptionsForBrowser } from "@/domains/profile/query-options/get-profile.query-option.client";
 import { useOutfitDiaryUploadStore } from "@/stores/outfit-diary-upload-store";
+import { generateOutfitName } from "@/lib/outfitNames";
 import { saveOutfitDiaryEntryMutationOptions } from "./mutation-options/save-outfit-diary-entry.mutation-option.client";
 import { deleteOutfitPhotoMutationOptions } from "./mutation-options/delete-outfit-photo.mutation-option.client";
 import { getDiaryEntriesQueryOptionsForBrowser } from "./query-options/get-diary-entries.query-option.client";
+import { getOutfitsByDateQueryOptionsForBrowser } from "./query-options/get-outfits-by-date.query-option.client";
+import { getAllOutfitsQueryOptionsForBrowser } from "./query-options/get-all-outfits.query-option.client";
+import { getLooksCountQueryOptionsForBrowser } from "@/domains/home/query-options/get-looks-count.query-option.client";
+import { getFavoriteOutfitsQueryOptionsForBrowser } from "@/domains/profile/query-options/get-favorite-outfits.query-option.client";
+import { getPendingWardrobeCountQueryOptionsForBrowser } from "@/domains/wardrobe/query-options/get-pending-count.query-option.client";
+import { getPendingWardrobeItemsQueryOptionsForBrowser } from "@/domains/wardrobe/query-options/get-pending-items.query-option.client";
+import { getWardrobeItemsQueryOptionsForBrowser } from "@/domains/wardrobe/query-options/get-wardrobe-items.query-option.client";
 
 export function OutfitApproval({ userId }: { userId: string }) {
   const router = useRouter();
@@ -31,6 +40,8 @@ export function OutfitApproval({ userId }: { userId: string }) {
   );
   const reset = useOutfitDiaryUploadStore((state) => state.reset);
   const [showOriginal, setShowOriginal] = useState(false);
+  const [outfitName, setOutfitName] = useState(() => generateOutfitName());
+  const [isEditingName, setIsEditingName] = useState(false);
 
   const { data: profile } = useSuspenseQuery(
     getProfileQueryOptionsForBrowser(userId),
@@ -53,7 +64,42 @@ export function OutfitApproval({ userId }: { userId: string }) {
             entryMonth,
           ).queryKey,
         });
+        void queryClient.invalidateQueries({
+          queryKey: getOutfitsByDateQueryOptionsForBrowser(
+            draft.userId,
+            savedEntry.wornOn,
+          ).queryKey,
+        });
+        void queryClient.invalidateQueries({
+          queryKey: getAllOutfitsQueryOptionsForBrowser(draft.userId).queryKey,
+        });
+        void queryClient.invalidateQueries({
+          queryKey: getLooksCountQueryOptionsForBrowser(draft.userId).queryKey,
+        });
+        void queryClient.invalidateQueries({
+          queryKey: getFavoriteOutfitsQueryOptionsForBrowser(draft.userId).queryKey,
+        });
+        void queryClient.invalidateQueries({
+          queryKey: getPendingWardrobeCountQueryOptionsForBrowser(draft.userId).queryKey,
+        });
+        void queryClient.invalidateQueries({
+          queryKey: getPendingWardrobeItemsQueryOptionsForBrowser(draft.userId).queryKey,
+        });
+        void queryClient.invalidateQueries({
+          queryKey: getWardrobeItemsQueryOptionsForBrowser(draft.userId).queryKey,
+        });
       }
+
+      // Root scope invalidations for maximum freshness
+      void queryClient.invalidateQueries({
+        queryKey: ["calendar"],
+      });
+      void queryClient.invalidateQueries({
+        queryKey: ["outfits"],
+      });
+      void queryClient.invalidateQueries({
+        queryKey: ["wardrobe"],
+      });
 
       toast.success("Outfit Saved");
       router.push(`/calendar/outfits/${savedEntry.wornOn}`);
@@ -152,6 +198,8 @@ export function OutfitApproval({ userId }: { userId: string }) {
                     userId: draft.userId,
                     previewUrl: result.previewUrl,
                     wornOn: draft.wornOn,
+                    name: outfitName.trim() || undefined,
+                    items: result.items,
                   })
                 }
                 disabled={isBusy}
@@ -167,14 +215,21 @@ export function OutfitApproval({ userId }: { userId: string }) {
 
           {/* Right Column: Preview Image & See Original Photo */}
           <div className="flex flex-col items-center gap-4">
-            <div className="relative flex flex-col items-center justify-center w-full max-w-64 lg:max-w-xs aspect-3/4">
+            <div className="relative flex flex-col items-center justify-center w-full max-w-64 lg:max-w-xs aspect-5/6">
               <div className="relative h-full w-full flex items-center justify-center">
-                <Image
-                  src={result.previewUrl}
-                  alt="Outfit preview"
-                  fill
-                  className="object-contain drop-shadow-md"
-                />
+                {result.items && result.items.length > 0 ? (
+                  <OutfitComposition
+                    items={result.items}
+                    className="h-full w-full drop-shadow-md"
+                  />
+                ) : (
+                  <Image
+                    src={result.previewUrl}
+                    alt="Outfit preview"
+                    fill
+                    className="object-contain drop-shadow-md"
+                  />
+                )}
               </div>
               <div className="h-2 w-32 rounded-full bg-black/10 blur-[3px]" />
             </div>
@@ -187,10 +242,40 @@ export function OutfitApproval({ userId }: { userId: string }) {
               See Original Photo
             </button>
 
-            {/* Title with inline pencil (Figma 2.1.2) */}
-            <div className="flex items-center gap-1.5 mt-1 lg:hidden">
-              <span className="font-serif text-2xl text-[#444440]">Chic Kinda Day</span>
-              <Pencil className="size-3.5 text-[#444440]" />
+            {/* Editable Title with inline pencil (Figma 2.1.2) */}
+            <div className="flex items-center justify-center gap-1.5 mt-1 min-h-[2.5rem]">
+              {isEditingName ? (
+                <input
+                  autoFocus
+                  value={outfitName}
+                  onChange={(e) => setOutfitName(e.target.value)}
+                  onBlur={() => {
+                    if (!outfitName.trim()) {
+                      setOutfitName(generateOutfitName());
+                    }
+                    setIsEditingName(false);
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      e.currentTarget.blur();
+                    }
+                  }}
+                  className="font-serif text-2xl text-[#444440] border-b border-[#444440]/30 bg-transparent text-center outline-none max-w-xs"
+                  aria-label="Outfit name"
+                />
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => setIsEditingName(true)}
+                  className="group flex items-center gap-1.5 hover:opacity-80 transition-opacity"
+                  aria-label="Edit outfit name"
+                >
+                  <span className="font-serif text-2xl text-[#444440]">
+                    {outfitName}
+                  </span>
+                  <Pencil className="size-3.5 text-[#444440]/70 group-hover:text-[#444440]" />
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -212,6 +297,8 @@ export function OutfitApproval({ userId }: { userId: string }) {
                 userId: draft.userId,
                 previewUrl: result.previewUrl,
                 wornOn: draft.wornOn,
+                name: outfitName.trim() || undefined,
+                items: result.items,
               })
             }
             disabled={isBusy}

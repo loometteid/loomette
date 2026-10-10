@@ -4,16 +4,21 @@ import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { ChevronLeft, Loader2 } from "lucide-react";
 import { toast } from "sonner";
-import { useMutation, useSuspenseQuery } from "@tanstack/react-query";
+import { useMutation, useQueryClient, useSuspenseQuery } from "@tanstack/react-query";
 import { Sparkle } from "@/components/ui/sparkle";
 import { Typography } from "@/components/ui/typography";
 import { DesktopNav } from "@/components/layout/desktop-nav";
 import { getProfileQueryOptionsForBrowser } from "@/domains/profile/query-options/get-profile.query-option.client";
 import { createUploadJobMutationOptions } from "./mutation-options/create-upload-job.mutation-option.client";
+import { getLatestUploadJobQueryOptionsForBrowser } from "./query-options/get-latest-upload-job.query-option.client";
+import { getUploadJobQueryOptionsForBrowser } from "./query-options/get-upload-job.query-option.client";
+import { getPendingWardrobeCountQueryOptionsForBrowser } from "./query-options/get-pending-count.query-option.client";
+import { getPendingWardrobeItemsQueryOptionsForBrowser } from "./query-options/get-pending-items.query-option.client";
 import { WebcamModal } from "./components/webcam-modal";
 
 export function AddItemView({ userId }: { userId: string }) {
   const router = useRouter();
+  const queryClient = useQueryClient();
   const { data: profile } = useSuspenseQuery(
     getProfileQueryOptionsForBrowser(userId),
   );
@@ -25,6 +30,21 @@ export function AddItemView({ userId }: { userId: string }) {
   const uploadMutation = useMutation({
     ...createUploadJobMutationOptions(),
     onSuccess: (job) => {
+      void queryClient.invalidateQueries({
+        queryKey: getLatestUploadJobQueryOptionsForBrowser(userId).queryKey,
+      });
+      void queryClient.invalidateQueries({
+        queryKey: getUploadJobQueryOptionsForBrowser(job.id).queryKey,
+      });
+      void queryClient.invalidateQueries({
+        queryKey: getPendingWardrobeCountQueryOptionsForBrowser(userId).queryKey,
+      });
+      void queryClient.invalidateQueries({
+        queryKey: getPendingWardrobeItemsQueryOptionsForBrowser(userId).queryKey,
+      });
+      void queryClient.invalidateQueries({
+        queryKey: ["wardrobe"],
+      });
       router.push(`/wardrobe/loading?jobId=${job.id}`);
     },
     onError: (err) => {

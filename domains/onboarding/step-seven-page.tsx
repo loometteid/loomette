@@ -10,6 +10,10 @@ import { Button } from "@/components/ui/button";
 import { Sparkle } from "@/components/ui/sparkle";
 import { Typography } from "@/components/ui/typography";
 import { getWardrobeItemsQueryOptionsForBrowser } from "@/domains/wardrobe/query-options/get-wardrobe-items.query-option.client";
+import { getLatestUploadJobQueryOptionsForBrowser } from "@/domains/wardrobe/query-options/get-latest-upload-job.query-option.client";
+import { getUploadJobQueryOptionsForBrowser } from "@/domains/wardrobe/query-options/get-upload-job.query-option.client";
+import { getPendingWardrobeCountQueryOptionsForBrowser } from "@/domains/wardrobe/query-options/get-pending-count.query-option.client";
+import { getPendingWardrobeItemsQueryOptionsForBrowser } from "@/domains/wardrobe/query-options/get-pending-items.query-option.client";
 import { createUploadJobMutationOptions } from "@/domains/wardrobe/mutation-options/create-upload-job.mutation-option.client";
 import { seedLibraryItemsMutationOptions } from "./mutation-options/seed-library-items.mutation-option.client";
 import { LIBRARY_BASICS, type LibraryBasicItem } from "./data/library-basics";
@@ -44,10 +48,25 @@ export function AddInitialItem({ userId }: { userId: string }) {
   const { mutateAsync: createUploadJob, isPending: isUploadingJob } =
     useMutation({
       ...createUploadJobMutationOptions(),
-      onSuccess: () => {
+      onSuccess: (job) => {
         if (userId) {
           void queryClient.invalidateQueries({
+            queryKey: getLatestUploadJobQueryOptionsForBrowser(userId).queryKey,
+          });
+          void queryClient.invalidateQueries({
+            queryKey: getUploadJobQueryOptionsForBrowser(job.id).queryKey,
+          });
+          void queryClient.invalidateQueries({
+            queryKey: getPendingWardrobeCountQueryOptionsForBrowser(userId).queryKey,
+          });
+          void queryClient.invalidateQueries({
+            queryKey: getPendingWardrobeItemsQueryOptionsForBrowser(userId).queryKey,
+          });
+          void queryClient.invalidateQueries({
             queryKey: getWardrobeItemsQueryOptionsForBrowser(userId).queryKey,
+          });
+          void queryClient.invalidateQueries({
+            queryKey: ["wardrobe"],
           });
         }
       },

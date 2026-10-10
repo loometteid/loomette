@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import type { CompositionItem } from "@/domains/outfit/components/outfit-composition";
 
 // Carries an in-progress outfit-diary upload across the Calendar ->
 // loading -> approval -> Calendar route sequence (domains/
@@ -18,11 +19,18 @@ export type OutfitProcessingResult = {
   originalUrl: string;
   originalPath: string;
   /**
-   * What the approval screen shows as "the outfit". Today this is just
-   * `originalUrl` (no AI yet). Once outfit extraction exists, this
-   * becomes the generated wearer-removed composite instead.
+   * What the approval screen shows as "the outfit".
+   * This is the primary processed cutout image URL, or fallback to originalUrl.
    */
   previewUrl: string;
+  /**
+   * The upload job ID tracking the extraction pipeline.
+   */
+  uploadJobId?: string;
+  /**
+   * The processed garments extracted from the photo, arranged for composition.
+   */
+  items?: CompositionItem[];
 };
 
 export type SavedOutfitEntry = {

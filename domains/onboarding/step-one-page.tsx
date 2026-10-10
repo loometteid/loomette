@@ -118,7 +118,7 @@ export function StepOneForm({
         <Input
           id="onboarding-name"
           data-testid="onboarding-step-one__name-input"
-          placeholder="e.g. Gonjoi"
+          placeholder="e.g. Kevin"
           className="h-11 rounded-xl bg-secondary px-3.5 text-sm"
           {...register("name")}
         />

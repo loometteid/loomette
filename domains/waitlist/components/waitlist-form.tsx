@@ -82,7 +82,7 @@ export function WaitlistForm({
         <Input
           id="waitlist-name"
           data-testid="waitlist-form__name-input"
-          placeholder="e.g. Gonjoi"
+          placeholder="e.g. Kevin"
           disabled={isBusy}
           className="h-11 rounded-xl bg-secondary px-3.5 text-sm"
           {...register("name")}

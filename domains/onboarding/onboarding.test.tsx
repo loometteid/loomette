@@ -539,17 +539,17 @@ describe("Onboarding Flow (Steps 1 to 7)", () => {
       expect(isProfileOnboarded({ display_name: "   ", gender: "female", birthday: null })).toBe(false);
 
       // Incomplete step 2 (has display_name but neither gender nor birthday)
-      expect(isProfileOnboarded({ display_name: "Gonjoi", gender: null, birthday: null })).toBe(false);
-      expect(isProfileOnboarded({ display_name: "Gonjoi", gender: "", birthday: "" })).toBe(false);
+      expect(isProfileOnboarded({ display_name: "Kevin", gender: null, birthday: null })).toBe(false);
+      expect(isProfileOnboarded({ display_name: "Kevin", gender: "", birthday: "" })).toBe(false);
 
       // Completed step 1 and step 2 via gender
-      expect(isProfileOnboarded({ display_name: "Gonjoi", gender: "female", birthday: null })).toBe(true);
+      expect(isProfileOnboarded({ display_name: "Kevin", gender: "female", birthday: null })).toBe(true);
 
       // Completed step 1 and step 2 via birthday
-      expect(isProfileOnboarded({ display_name: "Gonjoi", gender: null, birthday: "1998-05-15" })).toBe(true);
+      expect(isProfileOnboarded({ display_name: "Kevin", gender: null, birthday: "1998-05-15" })).toBe(true);
 
       // Completed step 1 and step 2 with both gender and birthday
-      expect(isProfileOnboarded({ display_name: "Gonjoi", gender: "male", birthday: "1998-05-15" })).toBe(true);
+      expect(isProfileOnboarded({ display_name: "Kevin", gender: "male", birthday: "1998-05-15" })).toBe(true);
     });
 
     it("redirects to /onboarding/1 when profile is not onboarded", () => {

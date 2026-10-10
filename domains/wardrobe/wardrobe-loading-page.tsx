@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import { AlertCircle, ChevronLeft, RefreshCw } from "lucide-react";
-import { useQuery, useSuspenseQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient, useSuspenseQuery } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Sparkle } from "@/components/ui/sparkle";
 import { Typography } from "@/components/ui/typography";
@@ -13,12 +13,16 @@ import { cn } from "@/lib/utils";
 import { getProfileQueryOptionsForBrowser } from "@/domains/profile/query-options/get-profile.query-option.client";
 import { getUploadJobQueryOptionsForBrowser } from "./query-options/get-upload-job.query-option.client";
 import { getLatestUploadJobQueryOptionsForBrowser } from "./query-options/get-latest-upload-job.query-option.client";
+import { getPendingWardrobeCountQueryOptionsForBrowser } from "./query-options/get-pending-count.query-option.client";
+import { getPendingWardrobeItemsQueryOptionsForBrowser } from "./query-options/get-pending-items.query-option.client";
+import { getWardrobeItemsQueryOptionsForBrowser } from "./query-options/get-wardrobe-items.query-option.client";
 import skyImage from "@/domains/auth/assets/sky.png";
 import silverHangerImage from "@/domains/auth/assets/silver-hanger.png";
 import sootSpriteImage from "@/domains/auth/assets/soot-sprite.png";
 
 export function WardrobeLoadingView({ userId }: { userId: string }) {
   const router = useRouter();
+  const queryClient = useQueryClient();
   const searchParams = useSearchParams();
   const jobId = searchParams.get("jobId");
 
@@ -40,12 +44,34 @@ export function WardrobeLoadingView({ userId }: { userId: string }) {
   useEffect(() => {
     if (job?.status === "completed" && !redirectedRef.current) {
       redirectedRef.current = true;
+
+      void queryClient.invalidateQueries({
+        queryKey: getPendingWardrobeItemsQueryOptionsForBrowser(userId).queryKey,
+      });
+      void queryClient.invalidateQueries({
+        queryKey: getPendingWardrobeCountQueryOptionsForBrowser(userId).queryKey,
+      });
+      void queryClient.invalidateQueries({
+        queryKey: getLatestUploadJobQueryOptionsForBrowser(userId).queryKey,
+      });
+      void queryClient.invalidateQueries({
+        queryKey: getWardrobeItemsQueryOptionsForBrowser(userId).queryKey,
+      });
+      if (jobId) {
+        void queryClient.invalidateQueries({
+          queryKey: getUploadJobQueryOptionsForBrowser(jobId).queryKey,
+        });
+      }
+      void queryClient.invalidateQueries({
+        queryKey: ["wardrobe"],
+      });
+
       const timer = setTimeout(() => {
         router.push("/wardrobe/approval");
       }, 1000);
       return () => clearTimeout(timer);
     }
-  }, [job?.status, router]);
+  }, [job?.status]);
 
   const isFailed = job?.status === "failed";
   const isAnalyzing = !isFailed && job?.status !== "completed";

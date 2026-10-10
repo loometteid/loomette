@@ -8,7 +8,7 @@ Production PWA for the Indonesian market.
 - **State / data:** Zustand (client state), TanStack Query (server state)
 - **Forms:** React Hook Form + Zod
 - **Backend / DB / Auth / Storage:** Supabase (PostgreSQL, Supabase Auth, Supabase Storage)
-- **AI:** Gemini, called only from Supabase Edge Functions (API keys stay server-side)
+- **AI:** OpenRouter (Gemini 3.8 Flash & Image Generation), called only from Supabase Edge Functions (API keys stay server-side)
 - **Deployment:** Vercel
 - **Package manager:** pnpm
 
@@ -22,8 +22,7 @@ components/
 ├── ui/               # shadcn-generated
 └── features/          # feature-specific components, by domain
 lib/
-├── supabase/           # client.ts (browser), server.ts (SSR)
-└── gemini.ts             # calls a Supabase Edge Function — never the Gemini API directly
+└── supabase/           # client.ts (browser), server.ts (SSR)
 hooks/                  # shared React hooks
 stores/                 # Zustand stores
 types/                  # includes generated database.types.ts

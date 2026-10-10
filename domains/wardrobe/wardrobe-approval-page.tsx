@@ -84,6 +84,15 @@ export function ApprovalQueue({ userId }: { userId: string }) {
       void queryClient.invalidateQueries({
         queryKey: getWardrobeItemsQueryOptionsForBrowser(userId).queryKey,
       });
+      void queryClient.invalidateQueries({
+        queryKey: ["wardrobe"],
+      });
+      void queryClient.invalidateQueries({
+        queryKey: ["mix-and-match"],
+      });
+      void queryClient.invalidateQueries({
+        queryKey: ["outfits"],
+      });
     },
     onError: (err) => {
       toast.error("Couldn't approve items", {
@@ -108,6 +117,12 @@ export function ApprovalQueue({ userId }: { userId: string }) {
       });
       void queryClient.invalidateQueries({
         queryKey: getWardrobeItemsQueryOptionsForBrowser(userId).queryKey,
+      });
+      void queryClient.invalidateQueries({
+        queryKey: ["wardrobe"],
+      });
+      void queryClient.invalidateQueries({
+        queryKey: ["mix-and-match"],
       });
     },
     onError: (err) => {

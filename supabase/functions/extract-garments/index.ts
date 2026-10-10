@@ -1,8 +1,8 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
-import { GoogleGenAI, Type } from "npm:@google/genai";
-import { createLogger } from "./logger.ts";
-import { createFetch } from "./fetch.ts";
+import { OpenRouter } from "npm:@openrouter/sdk";
+import { z } from "npm:zod";
+import { createLogger, Logger } from "./logger.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -10,19 +10,165 @@ const corsHeaders = {
     "authorization, x-client-info, apikey, content-type",
 };
 
-export type Occasion =
-  "everyday" | "work" | "going_out" | "special" | "just_vibing";
+export const OccasionSchema = z.enum([
+  "everyday",
+  "work",
+  "going_out",
+  "special",
+  "just_vibing",
+]);
+export type Occasion = z.infer<typeof OccasionSchema>;
 
-interface ExtractedGarment {
-  name: string;
-  brand?: string;
-  category: "Tops" | "Bottoms" | "Shoes" | "Accessories";
-  subcategory: string;
-  color?: string;
-  material?: string;
-  occasions?: Occasion[];
-  box_2d?: [number, number, number, number]; // [ymin, xmin, ymax, xmax] (0 - 1000)
-}
+export const ExtractedGarmentSchema = z.object({
+  name: z
+    .string()
+    .describe(
+      "Descriptive, polished fashion item name (e.g. 'Dark Wash Straight Leg Jeans', 'White Cotton T-Shirt')",
+    ),
+  brand: z
+    .string()
+    .optional()
+    .default("")
+    .describe(
+      "Brand or fashion designer name if visibly identifiable, otherwise an empty string",
+    ),
+  category: z
+    .enum(["Tops", "Bottoms", "Shoes", "Accessories"])
+    .describe(
+      "Broad garment category classification (Tops, Bottoms, Shoes, or Accessories)",
+    ),
+  subcategory: z
+    .string()
+    .describe(
+      "Specific item subcategory (e.g., Shirt, Blouse, Polo, Jeans, Pants, Skirt, Sneakers, Heels, Sandals, Bag, Scarf, Hijab)",
+    ),
+  color: z
+    .string()
+    .optional()
+    .default("")
+    .describe(
+      "Primary visual color and precise shade of the garment (e.g., White, Black, Navy, Light Blue, Red)",
+    ),
+  material: z
+    .string()
+    .optional()
+    .default("")
+    .describe(
+      "Fabric, texture, or material of the garment if recognizable from visual appearance",
+    ),
+  visual_details: z
+    .string()
+    .optional()
+    .default("")
+    .describe(
+      "Granular physical description of the garment's design (neckline, sleeve length, buttons, zippers, pockets, distressing, silhouette, pattern, stitching, collar style)",
+    ),
+  occasions: z
+    .array(OccasionSchema)
+    .optional()
+    .default([])
+    .describe(
+      "List of suitable wearing occasions matching the application taxonomy",
+    ),
+  box_2d: z
+    .tuple([z.number(), z.number(), z.number(), z.number()])
+    .optional()
+    .describe(
+      "Bounding box coordinates of the detected item on the image normalized to 0-1000 in [ymin, xmin, ymax, xmax] format",
+    ),
+});
+
+export const GarmentExtractionResponseSchema = z.object({
+  items: z
+    .array(ExtractedGarmentSchema)
+    .describe(
+      "Extracted clothing items, footwear, and fashion accessories detected in the image",
+    ),
+});
+
+export type ExtractedGarment = z.infer<typeof ExtractedGarmentSchema>;
+
+const garmentResponseJsonSchema = {
+  type: "object",
+  description:
+    "List of clothing items and fashion accessories extracted from the image",
+  properties: {
+    items: {
+      type: "array",
+      description:
+        "Extracted clothing items, footwear, and fashion accessories detected in the image",
+      items: {
+        type: "object",
+        description: "An individual garment or accessory detected in the photo",
+        properties: {
+          name: {
+            type: "string",
+            description:
+              "Descriptive item name (e.g., 'Dark Wash Straight Leg Jeans', 'White Cotton T-Shirt')",
+          },
+          brand: {
+            type: "string",
+            description:
+              "Brand or fashion designer name if visibly identifiable, otherwise an empty string",
+          },
+          category: {
+            type: "string",
+            enum: ["Tops", "Bottoms", "Shoes", "Accessories"],
+            description:
+              "Broad garment category classification (Tops, Bottoms, Shoes, or Accessories)",
+          },
+          subcategory: {
+            type: "string",
+            description:
+              "Specific item subcategory (e.g., Shirt, Blouse, Polo, Jeans, Pants, Skirt, Sneakers, Heels, Sandals, Bag, Scarf, Hijab)",
+          },
+          color: {
+            type: "string",
+            description:
+              "Primary visual color of the garment (e.g., White, Black, Navy, Light Blue, Red)",
+          },
+          material: {
+            type: "string",
+            description:
+              "Fabric, texture, or material of the garment if recognizable from visual appearance (e.g., Denim, Cotton, Leather, Wool, Silk, Linen, Knit, Corduroy, Polyester, Nylon), otherwise an empty string",
+          },
+          visual_details: {
+            type: "string",
+            description:
+              "Granular physical description of the garment's design (neckline, sleeve length, buttons, zippers, pockets, distressing, silhouette, pattern, stitching, collar style)",
+          },
+          occasions: {
+            type: "array",
+            description:
+              "List of suitable wearing occasions matching the application taxonomy",
+            items: {
+              type: "string",
+              enum: [
+                "everyday",
+                "work",
+                "going_out",
+                "special",
+                "just_vibing",
+              ],
+              description:
+                "Allowed occasion: everyday, work, going_out, special, or just_vibing",
+            },
+          },
+          box_2d: {
+            type: "array",
+            description:
+              "Bounding box coordinates of the detected item on the image normalized to 0-1000 in [ymin, xmin, ymax, xmax] format",
+            items: { type: "integer" },
+          },
+        },
+        required: ["name", "category", "subcategory"],
+        additionalProperties: false,
+      },
+    },
+  },
+  required: ["items"],
+  additionalProperties: false,
+};
 
 interface RequestPayload {
   uploadJobId: string;
@@ -43,6 +189,112 @@ function bufferToBase64(buffer: ArrayBuffer): string {
   return btoa(binary);
 }
 
+function base64ToUint8Array(base64: string): Uint8Array {
+  const cleanBase64 = base64.includes(",") ? base64.split(",")[1] : base64;
+  if (typeof Buffer !== "undefined") {
+    return new Uint8Array(Buffer.from(cleanBase64, "base64"));
+  }
+  const binaryString = atob(cleanBase64);
+  const bytes = new Uint8Array(binaryString.length);
+  for (let i = 0; i < binaryString.length; i++) {
+    bytes[i] = binaryString.charCodeAt(i);
+  }
+  return bytes;
+}
+
+function extractJson(text: string): { items?: ExtractedGarment[] } {
+  const trimmed = text.trim();
+  const cleaned = trimmed
+    .replace(/^```json\s*/i, "")
+    .replace(/^```\s*/, "")
+    .replace(/```\s*$/, "")
+    .trim();
+  try {
+    return JSON.parse(cleaned);
+  } catch {
+    const match = cleaned.match(/\{[\s\S]*\}/);
+    if (match) {
+      return JSON.parse(match[0]);
+    }
+    throw new Error("Unable to parse JSON from model output");
+  }
+}
+
+async function generateGarmentCutout(
+  openRouter: OpenRouter,
+  garment: ExtractedGarment,
+  sourceImageUrl: string,
+  modelName: string,
+  log: Logger,
+): Promise<Uint8Array | null> {
+  const promptParts = [
+    `Isolated commercial product catalog photograph of a single ${garment.color ? garment.color + " " : ""}${garment.material ? garment.material + " " : ""}${garment.name} (${garment.subcategory}, ${garment.category}).`,
+    garment.visual_details ? `Visual design details: ${garment.visual_details}.` : "",
+    `Cleanly cut out with a completely transparent background (alpha channel PNG).`,
+    `Centered flat-lay or ghost mannequin display, crisp clean edges, studio commercial lighting.`,
+    `Strictly single garment only, no humans, no model face or body parts, no hanger, no drop shadow, no backdrop, no floor, perfectly transparent alpha background.`
+  ].filter(Boolean).join(" ");
+
+  try {
+    const res = await openRouter.images.generate({
+      imageGenerationRequest: {
+        model: modelName,
+        prompt: promptParts,
+        background: "transparent",
+        outputFormat: "png",
+        aspectRatio: "1:1",
+        inputReferences: [
+          {
+            type: "image_url",
+            imageUrl: {
+              url: sourceImageUrl,
+            },
+          },
+        ],
+      },
+    });
+
+    const firstImage = res?.data?.[0];
+    if (firstImage?.b64Json) {
+      return base64ToUint8Array(firstImage.b64Json);
+    }
+    return null;
+  } catch (imgErr) {
+    log.warn(
+      "Image generation failed with inputReferences, retrying without reference...",
+      {
+        error: imgErr instanceof Error ? imgErr.message : String(imgErr),
+        garment: garment.name,
+      },
+    );
+    try {
+      const res = await openRouter.images.generate({
+        imageGenerationRequest: {
+          model: modelName,
+          prompt: promptParts,
+          background: "transparent",
+          outputFormat: "png",
+          aspectRatio: "1:1",
+        },
+      });
+
+      const firstImage = res?.data?.[0];
+      if (firstImage?.b64Json) {
+        return base64ToUint8Array(firstImage.b64Json);
+      }
+    } catch (retryErr) {
+      log.warn(
+        "Image generation retry also failed, falling back to original image",
+        {
+          error: retryErr instanceof Error ? retryErr.message : String(retryErr),
+          garment: garment.name,
+        },
+      );
+    }
+    return null;
+  }
+}
+
 const rootLogger = createLogger({}, "extract-garments");
 
 serve(async (req) => {
@@ -55,7 +307,11 @@ serve(async (req) => {
 
   const supabaseUrl = Deno.env.get("SUPABASE_URL") ?? "";
   const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "";
-  const geminiApiKey = Deno.env.get("GEMINI_API_KEY") ?? "";
+  const openrouterApiKey = Deno.env.get("OPENROUTER_API_KEY") ?? "";
+  const visionModel =
+    Deno.env.get("OPENROUTER_VISION_MODEL") || "google/gemini-3.8-flash";
+  const imageModel =
+    Deno.env.get("OPENROUTER_IMAGE_MODEL") || "openai/gpt-5-image-mini";
 
   if (!supabaseUrl || !supabaseServiceKey) {
     rootLogger.error(
@@ -102,6 +358,29 @@ serve(async (req) => {
   const log = rootLogger.child({ jobId: uploadJobId, userId });
   log.info("Garment extraction job accepted", { imageUrl });
 
+  if (!openrouterApiKey) {
+    log.error("OPENROUTER_API_KEY is not configured");
+    await supabase
+      .from("upload_job")
+      .update({
+        status: "failed",
+        error_message: "AI service configuration error: OPENROUTER_API_KEY is missing.",
+      })
+      .eq("id", uploadJobId);
+
+    return new Response(
+      JSON.stringify({ error: "Missing OPENROUTER_API_KEY configuration" }),
+      {
+        status: 500,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      },
+    );
+  }
+
+  const openRouter = new OpenRouter({
+    apiKey: openrouterApiKey,
+  });
+
   try {
     // 1. Mark job as analyzing
     const phase1Timer = log.startTimer("phase1_mark_analyzing");
@@ -141,195 +420,95 @@ serve(async (req) => {
       contentType,
     });
 
-    // 3. Call Gemini Vision API using the official @google/genai SDK
-    const phase3Timer = log.startTimer("phase3_gemini_vision");
+    // 3. Call OpenRouter Vision API for garment decomposition using Gemini 3.8 Flash
+    const phase3Timer = log.startTimer("phase3_vision_decomposition");
     const prompt = `You are a fashion catalog expert for Loomette. Analyze this outfit or garment photo.
 Identify each distinct garment, pair of shoes, or fashion accessory worn or shown.
-Extract attributes: name, brand, category (Tops, Bottoms, Shoes, Accessories), subcategory, color, material, occasions (only choose from: everyday, work, going_out, special, just_vibing), and box_2d.`;
+Extract attributes with extreme precision:
+- name: Descriptive, polished fashion item name (e.g. 'Washed Vintage Straight-Leg Denim Jeans', 'Chunky Cable-Knit Cream Wool Sweater')
+- brand: Brand or fashion designer name if visibly identifiable, otherwise empty string
+- category: Broad garment classification. Must be exactly one of: 'Tops', 'Bottoms', 'Shoes', 'Accessories'
+- subcategory: Specific item subcategory (e.g. Shirt, Blouse, Polo, T-Shirt, Jeans, Pants, Skirt, Shorts, Dress, Jacket, Coat, Blazer, Hoodie, Sweater, Cardigan, Sneakers, Boots, Loafers, Heels, Sandals, Bag, Belt, Hat, Scarf, Sunglasses, Jewelry)
+- color: Primary visual color and precise shade (e.g. 'Washed Vintage Indigo', 'Ivory Ecru', 'Charcoal Heather')
+- material: Fabric, texture, or weave if recognizable (e.g. 'Heavyweight Cotton Denim', 'Fine Ribbed Knit', 'Supple Matte Leather', '100% Linen')
+- visual_details: Granular physical description of the garment's design (neckline, sleeve length, buttons, zippers, pockets, distressing, silhouette, pattern, stitching, collar style)
+- occasions: List of suitable wearing occasions matching the taxonomy: everyday (casual/daily), work (office/business), going_out (evening/party), special (formal/events), just_vibing (relaxed/lounge)
+- box_2d: Bounding box coordinates of the detected item on the image normalized to 0-1000 in [ymin, xmin, ymax, xmax] format`;
 
     let items: ExtractedGarment[] = [];
 
-    if (geminiApiKey) {
-      const modelName = "gemini-3.6-flash";
-      log.info("Calling Gemini Vision API for garment decomposition", {
-        model: modelName,
-      });
+    log.info("Calling OpenRouter Vision API for garment decomposition", {
+      model: visionModel,
+    });
 
-      const { fetch: loggedFetch, getAttempt } = createFetch(log, modelName);
-      const ai = new GoogleGenAI({
-        apiKey: geminiApiKey,
-        httpOptions: {
-          fetch: loggedFetch,
-          timeout: 20_000, // 20s timeout per attempt to prevent indefinite socket hangs
-          retryOptions: {
-            attempts: 3, // 1 initial request + up to 2 retries
-            initialDelay: 1.0, // 1.0s initial delay
-            maxDelay: 4.0, // 4.0s max delay
-            expBase: 2.0, // exponential backoff multiplier
-            jitter: 1.0, // randomized jitter
-            httpStatusCodes: [408, 429, 500, 502, 503, 504],
-          },
-        },
-      });
-
-      let response;
-      try {
-        response = await ai.models.generateContent({
-          model: "gemini-3.6-flash",
-          contents: [
-            prompt,
+    let response;
+    try {
+      response = await openRouter.chat.send({
+        chatRequest: {
+          model: visionModel,
+          messages: [
             {
-              inlineData: {
-                data: base64Image,
-                mimeType: contentType,
-              },
-            },
-          ],
-          config: {
-            responseMimeType: "application/json",
-            responseSchema: {
-              type: Type.OBJECT,
-              description:
-                "List of clothing items and fashion accessories extracted from the image",
-              properties: {
-                items: {
-                  type: Type.ARRAY,
-                  description:
-                    "Extracted clothing items, footwear, and fashion accessories detected in the image",
-                  items: {
-                    type: Type.OBJECT,
-                    description:
-                      "An individual garment or accessory detected in the photo",
-                    properties: {
-                      name: {
-                        type: Type.STRING,
-                        description:
-                          "Descriptive item name (e.g., 'Dark Wash Straight Leg Jeans', 'White Cotton T-Shirt')",
-                      },
-                      brand: {
-                        type: Type.STRING,
-                        description:
-                          "Brand or fashion designer name if visibly identifiable, otherwise an empty string",
-                      },
-                      category: {
-                        type: Type.STRING,
-                        enum: ["Tops", "Bottoms", "Shoes", "Accessories"],
-                        description:
-                          "Broad garment category classification (Tops, Bottoms, Shoes, or Accessories)",
-                      },
-                      subcategory: {
-                        type: Type.STRING,
-                        description:
-                          "Specific item subcategory (e.g., Shirt, Blouse, Polo, Jeans, Pants, Skirt, Sneakers, Heels, Sandals, Bag, Scarf, Hijab)",
-                      },
-                      color: {
-                        type: Type.STRING,
-                        description:
-                          "Primary visual color of the garment (e.g., White, Black, Navy, Light Blue, Red)",
-                      },
-                      material: {
-                        type: Type.STRING,
-                        description:
-                          "Fabric, texture, or material of the garment if recognizable from visual appearance (e.g., Denim, Cotton, Leather, Wool, Silk, Linen, Knit, Corduroy, Polyester, Nylon), otherwise an empty string",
-                      },
-                      occasions: {
-                        type: Type.ARRAY,
-                        description:
-                          "List of suitable wearing occasions matching the application taxonomy",
-                        items: {
-                          type: Type.STRING,
-                          enum: [
-                            "everyday",
-                            "work",
-                            "going_out",
-                            "special",
-                            "just_vibing",
-                          ],
-                          description:
-                            "Allowed occasion: everyday (casual/daily), work (office/business), going_out (evening/party), special (formal/events), or just_vibing (relaxed/lounge)",
-                        },
-                      },
-                      box_2d: {
-                        type: Type.ARRAY,
-                        description:
-                          "Bounding box coordinates of the detected item on the image normalized to 0-1000 in [ymin, xmin, ymax, xmax] format",
-                        items: { type: Type.INTEGER },
-                      },
-                    },
-                    required: ["name", "category", "subcategory"],
+              role: "user",
+              content: [
+                { type: "text", text: prompt },
+                {
+                  type: "image_url",
+                  imageUrl: {
+                    url: `data:${contentType};base64,${base64Image}`,
                   },
                 },
-              },
-              required: ["items"],
+              ],
+            },
+          ],
+          responseFormat: {
+            type: "json_schema",
+            jsonSchema: {
+              name: "garment_extraction_response",
+              strict: true,
+              schema: garmentResponseJsonSchema,
             },
           },
-        });
-      } catch (geminiError) {
-        log.error(
-          "Gemini Vision API garment decomposition failed after all attempts",
-          {
-            model: "gemini-3.6-flash",
-            totalAttempts: getAttempt(),
-            durationMs: phase3Timer.elapsedMs(),
-            error: geminiError,
-          },
-        );
-        throw geminiError;
-      }
-
-      const rawText = response.text || "{}";
-      const usage = response.usageMetadata
-        ? {
-            promptTokens: response.usageMetadata.promptTokenCount,
-            candidatesTokens: response.usageMetadata.candidatesTokenCount,
-            totalTokens: response.usageMetadata.totalTokenCount,
-          }
-        : undefined;
-
-      phase3Timer.done("Gemini Vision decomposition completed", {
-        model: "gemini-3.6-flash",
-        usage,
-        rawTextLength: rawText.length,
-      });
-
-      try {
-        const parsed = JSON.parse(rawText);
-        items = Array.isArray(parsed.items) ? parsed.items : [];
-      } catch (parseErr) {
-        log.error("Failed to parse Gemini output as JSON", {
-          rawText,
-          error: parseErr,
-        });
-        throw new Error("Invalid JSON response from Gemini model");
-      }
-
-      log.info("Extracted garments parsed from Gemini response", {
-        detectedCount: items.length,
-        garments: items.map((i) => ({
-          name: i.name,
-          category: i.category,
-          subcategory: i.subcategory,
-          material: i.material,
-        })),
-      });
-    } else {
-      log.warn(
-        "GEMINI_API_KEY is not configured. Falling back to mock garment extraction stub.",
-      );
-      items = [
-        {
-          name: "Blue shirt",
-          brand: "",
-          category: "Tops",
-          subcategory: "Shirt",
-          color: "Blue",
-          material: "Cotton",
-          occasions: ["everyday", "work"],
-          box_2d: [100, 100, 500, 500],
         },
-      ];
-      phase3Timer.done("Mock garment extraction completed (no API key)");
+      });
+    } catch (openrouterErr) {
+      log.error(
+        "OpenRouter Vision API garment decomposition failed",
+        {
+          model: visionModel,
+          durationMs: phase3Timer.elapsedMs(),
+          error: openrouterErr,
+        },
+      );
+      throw openrouterErr;
     }
+
+    const rawText = response.choices?.[0]?.message?.content || "{}";
+    phase3Timer.done("OpenRouter Vision decomposition completed", {
+      model: visionModel,
+      rawTextLength: rawText.length,
+    });
+
+    try {
+      const parsed = extractJson(rawText);
+      const validated = GarmentExtractionResponseSchema.parse(parsed);
+      items = validated.items;
+    } catch (parseErr) {
+      log.error("Failed to parse and validate OpenRouter vision output with Zod schema", {
+        rawText,
+        error: parseErr,
+      });
+      throw new Error("Invalid schema response from vision model");
+    }
+
+    log.info("Extracted garments parsed and validated from OpenRouter response", {
+      detectedCount: items.length,
+      garments: items.map((i) => ({
+        name: i.name,
+        category: i.category,
+        subcategory: i.subcategory,
+        material: i.material,
+      })),
+    });
 
     if (items.length === 0) {
       log.warn("No garments could be detected in this photo", {
@@ -386,9 +565,9 @@ Extract attributes: name, brand, category (Tops, Bottoms, Shoes, Accessories), s
       existingApprovedCount: existingItems.length,
     });
 
-    // 5. Stage each extracted garment into item and wardrobe_item
-    const phase5Timer = log.startTimer("phase5_stage_garments");
-    log.info("Staging extracted garments into catalog and approval queue", {
+    // 5. Stage each extracted garment into item and wardrobe_item (with Image Generation)
+    const phase5Timer = log.startTimer("phase5_stage_garments_and_image_gen");
+    log.info("Generating cutout images and staging extracted garments", {
       totalCount: items.length,
     });
 
@@ -418,7 +597,57 @@ Extract attributes: name, brand, category (Tops, Bottoms, Shoes, Accessories), s
         );
       }
 
-      // Insert catalog item
+      // Generate isolated transparent catalog cutout image for the garment
+      let processedImageUrl = imageUrl;
+      const genTimer = log.startTimer(`image_gen_item_${i + 1}`);
+      log.info(
+        `Generating transparent cutout image for item ${i + 1}/${items.length}: "${g.name}"`,
+        { model: imageModel, garment: g.name },
+      );
+
+      const cutoutBytes = await generateGarmentCutout(
+        openRouter,
+        g,
+        imageUrl,
+        imageModel,
+        log,
+      );
+
+      if (cutoutBytes) {
+        const fileName = `processed-${i + 1}-${crypto.randomUUID().slice(0, 8)}.png`;
+        const storagePath = `${userId}/${uploadJobId}/${fileName}`;
+        const { error: uploadError } = await supabase.storage
+          .from("wardrobe-images")
+          .upload(storagePath, cutoutBytes, {
+            contentType: "image/png",
+            upsert: true,
+          });
+
+        if (!uploadError) {
+          const { data: publicData } = supabase.storage
+            .from("wardrobe-images")
+            .getPublicUrl(storagePath);
+          processedImageUrl = publicData.publicUrl;
+          genTimer.done(
+            `Image generation and storage upload completed for item ${i + 1}`,
+            {
+              storagePath,
+              publicUrl: processedImageUrl,
+            },
+          );
+        } else {
+          log.warn("Failed to upload generated cutout image to storage", {
+            error: uploadError,
+            storagePath,
+          });
+        }
+      } else {
+        log.warn(
+          `Image generation returned no image bytes for item ${i + 1}, using original photo as fallback`,
+        );
+      }
+
+      // Insert catalog item (stores the transparent cutout processed image)
       const { data: insertedItem, error: itemErr } = await supabase
         .from("item")
         .insert({
@@ -429,7 +658,7 @@ Extract attributes: name, brand, category (Tops, Bottoms, Shoes, Accessories), s
           color: g.color || null,
           material: g.material || null,
           source_type: "user_upload",
-          image_url: imageUrl,
+          image_url: processedImageUrl,
           created_by_user_id: userId,
         })
         .select("item_id")
@@ -446,7 +675,7 @@ Extract attributes: name, brand, category (Tops, Bottoms, Shoes, Accessories), s
         throw itemErr;
       }
 
-      // Insert unapproved wardrobe item
+      // Insert unapproved wardrobe item (stores original photo for Source Preview)
       const { error: wardrobeErr } = await supabase
         .from("wardrobe_item")
         .insert({
@@ -478,10 +707,11 @@ Extract attributes: name, brand, category (Tops, Bottoms, Shoes, Accessories), s
         subcategory: g.subcategory,
         material: g.material,
         isDuplicate,
+        processedImageUrl,
       });
     }
 
-    phase5Timer.done("All extracted garments successfully staged", {
+    phase5Timer.done("All extracted garments and cutouts successfully staged", {
       count: items.length,
     });
 

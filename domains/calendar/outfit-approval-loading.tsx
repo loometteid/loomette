@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { ChevronLeft } from "lucide-react";
 import { toast } from "sonner";
-import { useMutation, useSuspenseQuery } from "@tanstack/react-query";
+import { useMutation, useQueryClient, useSuspenseQuery } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Sparkle } from "@/components/ui/sparkle";
 import { Typography } from "@/components/ui/typography";
@@ -14,11 +14,13 @@ import { cn } from "@/lib/utils";
 import { getProfileQueryOptionsForBrowser } from "@/domains/profile/query-options/get-profile.query-option.client";
 import { useOutfitDiaryUploadStore } from "@/stores/outfit-diary-upload-store";
 import { processOutfitPhotoMutationOptions } from "./mutation-options/process-outfit-photo.mutation-option.client";
+import { getPendingWardrobeCountQueryOptionsForBrowser } from "@/domains/wardrobe/query-options/get-pending-count.query-option.client";
+import { getPendingWardrobeItemsQueryOptionsForBrowser } from "@/domains/wardrobe/query-options/get-pending-items.query-option.client";
+import { getLatestUploadJobQueryOptionsForBrowser } from "@/domains/wardrobe/query-options/get-latest-upload-job.query-option.client";
+import { getUploadJobQueryOptionsForBrowser } from "@/domains/wardrobe/query-options/get-upload-job.query-option.client";
 import skyImage from "@/domains/auth/assets/sky.png";
 import silverHangerImage from "@/domains/auth/assets/silver-hanger.png";
 import sootSpriteImage from "@/domains/auth/assets/soot-sprite.png";
-
-const MIN_DURATION_MS = 3000;
 
 const STEPS = [
   { key: "uploaded", label: "PHOTO UPLOADED", atPercent: 35 },
@@ -27,38 +29,56 @@ const STEPS = [
 
 export function OutfitLoading({ userId }: { userId: string }) {
   const router = useRouter();
+  const queryClient = useQueryClient();
   const draft = useOutfitDiaryUploadStore((state) => state.draft);
   const setResult = useOutfitDiaryUploadStore((state) => state.setResult);
   const reset = useOutfitDiaryUploadStore((state) => state.reset);
-  const [percent, setPercent] = useState(0);
+  const [percent, setPercent] = useState(10);
 
   const { data: profile } = useSuspenseQuery(
     getProfileQueryOptionsForBrowser(userId),
   );
 
   const isMountedRef = useRef(true);
-  const startedAtRef = useRef<number>(0);
-  const tickRef = useRef<NodeJS.Timeout | undefined>(undefined);
+  const crawlTimerRef = useRef<NodeJS.Timeout | undefined>(undefined);
 
   const { mutate: processPhoto } = useMutation({
     ...processOutfitPhotoMutationOptions(),
     async onSuccess(result) {
-      const elapsed = Date.now() - startedAtRef.current;
-      if (elapsed < MIN_DURATION_MS) {
-        await new Promise((resolve) =>
-          setTimeout(resolve, MIN_DURATION_MS - elapsed),
-        );
-      }
       if (!isMountedRef.current) return;
-      clearInterval(tickRef.current);
+      clearInterval(crawlTimerRef.current);
       setPercent(100);
       setResult(result);
+
+      // Invalidate queries after extract-garments finishes staging items
+      void queryClient.invalidateQueries({
+        queryKey: getPendingWardrobeCountQueryOptionsForBrowser(userId).queryKey,
+      });
+      void queryClient.invalidateQueries({
+        queryKey: getPendingWardrobeItemsQueryOptionsForBrowser(userId).queryKey,
+      });
+      void queryClient.invalidateQueries({
+        queryKey: getLatestUploadJobQueryOptionsForBrowser(userId).queryKey,
+      });
+      if (result.uploadJobId) {
+        void queryClient.invalidateQueries({
+          queryKey: getUploadJobQueryOptionsForBrowser(result.uploadJobId).queryKey,
+        });
+      }
+      void queryClient.invalidateQueries({
+        queryKey: ["wardrobe"],
+      });
+
+      await new Promise((resolve) => setTimeout(resolve, 600));
+      if (!isMountedRef.current) return;
       router.push("/calendar/outfit-approval");
     },
-    onError() {
+    onError(err) {
       if (!isMountedRef.current) return;
-      clearInterval(tickRef.current);
-      toast.error("Couldn't process that photo.");
+      clearInterval(crawlTimerRef.current);
+      toast.error(
+        err instanceof Error ? err.message : "Couldn't process that photo.",
+      );
       reset();
       router.replace("/calendar");
     },
@@ -71,16 +91,25 @@ export function OutfitLoading({ userId }: { userId: string }) {
     }
 
     isMountedRef.current = true;
-    startedAtRef.current = Date.now();
-
-    tickRef.current = setInterval(() => {
-      const elapsed = Date.now() - startedAtRef.current;
-      setPercent(Math.min(99, Math.round((elapsed / MIN_DURATION_MS) * 100)));
-    }, 100);
+    setPercent(15);
 
     processPhoto({
       userId: draft.userId,
       file: draft.file,
+      onStepChange: (step) => {
+        if (!isMountedRef.current) return;
+        if (step === "extracting") {
+          // Photo uploaded to storage - check off step 1
+          setPercent(50);
+          clearInterval(crawlTimerRef.current);
+          crawlTimerRef.current = setInterval(() => {
+            setPercent((prev) => (prev < 92 ? prev + 3 : prev));
+          }, 1200);
+        } else if (step === "completed") {
+          clearInterval(crawlTimerRef.current);
+          setPercent(100);
+        }
+      },
     });
   });
 
@@ -89,7 +118,7 @@ export function OutfitLoading({ userId }: { userId: string }) {
 
     return () => {
       isMountedRef.current = false;
-      clearInterval(tickRef.current);
+      clearInterval(crawlTimerRef.current);
     };
   }, []);
 
@@ -141,7 +170,7 @@ export function OutfitLoading({ userId }: { userId: string }) {
             type="button"
             onClick={() => {
               isMountedRef.current = false;
-              clearInterval(tickRef.current);
+              clearInterval(crawlTimerRef.current);
               reset();
               router.push("/calendar");
             }}

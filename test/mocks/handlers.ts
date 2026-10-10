@@ -231,4 +231,9 @@ export const handlers = [
     };
     return HttpResponse.json(mockWaitlistEntry, { status: 201 });
   }),
+
+  // Default mock handler for send-waitlist-email Edge Function
+  http.post(`${MOCK_SUPABASE_URL}/functions/v1/send-waitlist-email`, () => {
+    return HttpResponse.json({ success: true });
+  }),
 ];

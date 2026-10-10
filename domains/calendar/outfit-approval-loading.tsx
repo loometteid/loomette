@@ -18,6 +18,7 @@ import { getPendingWardrobeCountQueryOptionsForBrowser } from "@/domains/wardrob
 import { getPendingWardrobeItemsQueryOptionsForBrowser } from "@/domains/wardrobe/query-options/get-pending-items.query-option.client";
 import { getLatestUploadJobQueryOptionsForBrowser } from "@/domains/wardrobe/query-options/get-latest-upload-job.query-option.client";
 import { getUploadJobQueryOptionsForBrowser } from "@/domains/wardrobe/query-options/get-upload-job.query-option.client";
+import { sanitizeErrorMessage } from "@/lib/errorSanitizer";
 import skyImage from "@/domains/auth/assets/sky.png";
 import silverHangerImage from "@/domains/auth/assets/silver-hanger.png";
 import sootSpriteImage from "@/domains/auth/assets/soot-sprite.png";
@@ -73,12 +74,13 @@ export function OutfitLoading({ userId }: { userId: string }) {
       if (!isMountedRef.current) return;
       router.push("/calendar/outfit-approval");
     },
-    onError(err) {
+    async onError(err) {
       if (!isMountedRef.current) return;
       clearInterval(crawlTimerRef.current);
-      toast.error(
-        err instanceof Error ? err.message : "Couldn't process that photo.",
-      );
+      const friendlyMessage = await sanitizeErrorMessage(err);
+      toast.error("Couldn't process outfit", {
+        description: friendlyMessage,
+      });
       reset();
       router.replace("/calendar");
     },

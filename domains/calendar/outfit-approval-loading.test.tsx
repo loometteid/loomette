@@ -83,4 +83,33 @@ describe("OutfitLoading", () => {
       }),
     );
   });
+
+  it("handles edge function error, surfaces friendly toast, and redirects to calendar", async () => {
+    server.use(
+      http.post(`${MOCK_SUPABASE_URL}/functions/v1/extract-garments`, () => {
+        return HttpResponse.json(
+          { error: "Gateway Timeout" },
+          { status: 504 },
+        );
+      }),
+    );
+
+    useOutfitDiaryUploadStore.setState({
+      draft: {
+        userId: "user-123",
+        file: new File(["image data"], "look.jpg", { type: "image/jpeg" }),
+        wornOn: "2026-10-09",
+      },
+    });
+
+    renderWithQueryClient(
+      <Suspense fallback={<div>Loading...</div>}>
+        <OutfitLoading userId="user-123" />
+      </Suspense>,
+    );
+
+    await waitFor(() => {
+      expect(mockRouter.replace).toHaveBeenCalledWith("/calendar");
+    });
+  });
 });

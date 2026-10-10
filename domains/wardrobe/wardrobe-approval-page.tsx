@@ -30,7 +30,7 @@ import { getPendingWardrobeItemsQueryOptionsForBrowser } from "./query-options/g
 import { getPendingWardrobeCountQueryOptionsForBrowser } from "./query-options/get-pending-count.query-option.client";
 import { getWardrobeItemsQueryOptionsForBrowser } from "./query-options/get-wardrobe-items.query-option.client";
 import { getUserGenderQueryOptionsForBrowser } from "./query-options/get-user-gender.query-option.client";
-import { getLatestUploadJobQueryOptionsForBrowser } from "./query-options/get-latest-upload-job.query-option.client";
+import { useUploadJobsWatcher } from "./hooks/use-upload-jobs-watcher";
 import { approveWardrobeItemsMutationOptions } from "./mutation-options/approve-wardrobe-items.mutation-option.client";
 import { discardWardrobeItemsMutationOptions } from "./mutation-options/discard-wardrobe-items.mutation-option.client";
 import { getItemApprovalStatus } from "./schemas/wardrobe-item.schema";
@@ -58,9 +58,8 @@ export function ApprovalQueue({ userId }: { userId: string }) {
   const { data: gender } = useSuspenseQuery(
     getUserGenderQueryOptionsForBrowser(userId),
   );
-  const { data: latestJob } = useQuery(
-    getLatestUploadJobQueryOptionsForBrowser(userId),
-  );
+  const { activeJobs, hasActiveJobs, latestFailedJob } =
+    useUploadJobsWatcher(userId);
 
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [openId, setOpenId] = useState<string | null>(null);
@@ -178,10 +177,8 @@ export function ApprovalQueue({ userId }: { userId: string }) {
 
   const openItem = items.find((i) => i.id === openId) ?? null;
 
-  const isJobRunning =
-    latestJob &&
-    (latestJob.status === "pending" || latestJob.status === "analyzing");
-  const isJobFailed = latestJob && latestJob.status === "failed";
+  const isJobRunning = hasActiveJobs;
+  const isJobFailed = !hasActiveJobs && !!latestFailedJob;
 
   return (
     <div
@@ -230,8 +227,7 @@ export function ApprovalQueue({ userId }: { userId: string }) {
           >
             <Loader2 className="size-4 animate-spin text-foreground shrink-0" />
             <span className="text-xs font-medium text-foreground">
-              Analyzing your photo in the background… Extracted pieces will
-              appear below automatically.
+              Analyzing {activeJobs.length > 1 ? `${activeJobs.length} photos` : "your photo"} in the background… Extracted pieces will appear below automatically.
             </span>
           </div>
         )}
@@ -245,7 +241,7 @@ export function ApprovalQueue({ userId }: { userId: string }) {
             <div className="flex items-center gap-2">
               <AlertCircle className="size-4 text-destructive shrink-0" />
               <span className="text-xs font-medium text-destructive">
-                {latestJob.error_message ||
+                {latestFailedJob?.error_message ||
                   "Could not detect garments in last upload."}
               </span>
             </div>

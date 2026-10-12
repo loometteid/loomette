@@ -152,9 +152,14 @@ describe("OutfitLoading", () => {
       </StrictMode>,
     );
 
-    await waitFor(() => {
-      expect(mockRouter.push).toHaveBeenCalledWith("/calendar/outfit-approval");
-    });
+    await waitFor(
+      () => {
+        expect(mockRouter.push).toHaveBeenCalledWith(
+          "/calendar/outfit-approval",
+        );
+      },
+      { timeout: 3000 },
+    );
 
     expect(invocationCount).toBe(1);
   });

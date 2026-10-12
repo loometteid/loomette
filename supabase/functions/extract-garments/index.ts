@@ -1,7 +1,7 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
-import { OpenRouter } from "npm:@openrouter/sdk";
-import { z } from "npm:zod";
+import { OpenRouter } from "npm:@openrouter/sdk@1.4.25";
+import { z } from "npm:zod@4.4.3";
 import { createLogger, Logger } from "./logger.ts";
 
 const corsHeaders = {

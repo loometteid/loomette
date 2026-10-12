@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { StrictMode, Suspense } from "react";
 import { describe, expect, it, vi, beforeEach } from "vitest";
 import { screen, waitFor } from "@testing-library/react";
 import { http, HttpResponse } from "msw";
@@ -111,5 +111,51 @@ describe("OutfitLoading", () => {
     await waitFor(() => {
       expect(mockRouter.replace).toHaveBeenCalledWith("/calendar");
     });
+  });
+
+  it("only invokes extract-garments once even under React StrictMode double mount", async () => {
+    let invocationCount = 0;
+    server.use(
+      http.post(`${MOCK_SUPABASE_URL}/functions/v1/extract-garments`, () => {
+        invocationCount++;
+        return HttpResponse.json({ success: true, count: 1 });
+      }),
+      http.get(`${MOCK_SUPABASE_URL}/rest/v1/wardrobe_item`, () => {
+        return HttpResponse.json([
+          {
+            id: "w-item-1",
+            item: {
+              item_id: "i-item-1",
+              name: "Denim Jacket",
+              image_url: "https://mock.supabase.co/storage/jacket.png",
+              category: "Tops",
+              subcategory: "Jacket",
+            },
+          },
+        ]);
+      }),
+    );
+
+    useOutfitDiaryUploadStore.setState({
+      draft: {
+        userId: "user-123",
+        file: new File(["image data"], "look.jpg", { type: "image/jpeg" }),
+        wornOn: "2026-10-09",
+      },
+    });
+
+    renderWithQueryClient(
+      <StrictMode>
+        <Suspense fallback={<div>Loading...</div>}>
+          <OutfitLoading userId="user-123" />
+        </Suspense>
+      </StrictMode>,
+    );
+
+    await waitFor(() => {
+      expect(mockRouter.push).toHaveBeenCalledWith("/calendar/outfit-approval");
+    });
+
+    expect(invocationCount).toBe(1);
   });
 });

@@ -40,6 +40,7 @@ export function OutfitLoading({ userId }: { userId: string }) {
     getProfileQueryOptionsForBrowser(userId),
   );
 
+  const hasStartedRef = useRef(false);
   const isMountedRef = useRef(true);
   const crawlTimerRef = useRef<NodeJS.Timeout | undefined>(undefined);
 
@@ -115,7 +116,11 @@ export function OutfitLoading({ userId }: { userId: string }) {
   });
 
   useEffect(() => {
-    process();
+    isMountedRef.current = true;
+    if (!hasStartedRef.current) {
+      hasStartedRef.current = true;
+      process();
+    }
 
     return () => {
       isMountedRef.current = false;

@@ -57,7 +57,7 @@ export function ApprovalQueue({ userId }: { userId: string }) {
     getUserGenderQueryOptionsForBrowser(userId),
   );
   const { activeJobs, hasActiveJobs, latestFailedJob } =
-    useUploadJobsWatcher(userId);
+    useUploadJobsWatcher(userId, { showToast: false });
 
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [openId, setOpenId] = useState<string | null>(null);

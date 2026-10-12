@@ -60,12 +60,37 @@ export const createUploadJobMutationOptions = () =>
             userId,
           },
         })
+        .then(({ error: invokeErr }) => {
+          if (invokeErr) {
+            const logger = getLogger(["mutation", "wardrobe"]);
+            logger.error("Edge function invocation returned error: {errorMessage}", {
+              errorMessage: invokeErr.message,
+              jobId: job.id,
+            });
+            void supabase
+              .from("upload_job")
+              .update({
+                status: "failed",
+                error_message:
+                  "Outfit processing timed out or failed. Please try again with a clearer photo.",
+              })
+              .eq("id", job.id);
+          }
+        })
         .catch((err) => {
           const logger = getLogger(["mutation", "wardrobe"]);
           logger.error("Edge function invocation error: {errorMessage}", {
             errorMessage: err instanceof Error ? err.message : String(err),
             jobId: job.id,
           });
+          void supabase
+            .from("upload_job")
+            .update({
+              status: "failed",
+              error_message:
+                "Outfit processing timed out or failed. Please try again with a clearer photo.",
+            })
+            .eq("id", job.id);
         });
 
       return job as UploadJob;

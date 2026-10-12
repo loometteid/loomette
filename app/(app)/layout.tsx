@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import { BottomNav } from "@/components/layout/bottom-nav";
 import { DesktopNav, DesktopNavFallback } from "@/components/layout/desktop-nav";
+import { UploadJobsNotifier } from "@/components/layout/upload-jobs-notifier";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { getQueryClient } from "@/lib/tanstack-query";
 import { getUserQueryOptions } from "@/domains/profile/query-options/get-user.query-option";
@@ -30,6 +31,7 @@ export default async function AppLayout({
 
   return (
     <HydrationBoundary state={dehydratedQueryClient}>
+      <UploadJobsNotifier userId={user.id} />
       <Suspense fallback={<DesktopNavFallback />}>
         <DesktopNav userId={user.id} />
       </Suspense>

@@ -76,10 +76,11 @@ Edge Functions live under [`supabase/functions/`](./functions).
 
 ### Set Required Secrets
 
-Before deploying `extract-garments`, configure your Gemini API key:
+Before deploying `extract-garments`, configure your OpenRouter API key:
 
 ```bash
-# Set Gemini API key secret in remote project
+# Set OpenRouter API key secret in remote project
+npx supabase secrets set OPENROUTER_API_KEY=<your-openrouter-api-key>
 npx supabase secrets set RESEND_API_KEY=...
 npx supabase secrets set EMAIL_FROM=...
 
@@ -155,7 +156,7 @@ Continuous Deployment is configured in [`.github/workflows/deploy-supabase.yml`]
 1. Authenticates non-interactively using your Supabase Access Token.
 2. Links to the remote Supabase project.
 3. Automatically runs pending migrations (`supabase db push`).
-4. Keeps the `GEMINI_API_KEY` secret synced on the remote project.
+4. Keeps the `OPENROUTER_API_KEY` secret synced on the remote project.
 5. Deploys the `extract-garments` Edge Function (`supabase functions deploy extract-garments --no-verify-jwt`).
 
 ### Required GitHub Secrets
@@ -166,5 +167,5 @@ In your GitHub repository (**Settings $\rightarrow$ Secrets and variables $\righ
 | `SUPABASE_ACCESS_TOKEN` | Personal Access Token | [Supabase Account Tokens](https://supabase.com/dashboard/account/tokens) |
 | `SUPABASE_PROJECT_ID` | Remote project reference | Found in Dashboard URL: `/project/<project-ref>` |
 | `SUPABASE_DB_PASSWORD` | PostgreSQL Database password | Set during project creation (or reset in Project Settings > Database) |
-| `GEMINI_API_KEY` | Google Gemini API Key | [Google AI Studio](https://aistudio.google.com/) |
+| `OPENROUTER_API_KEY` | OpenRouter API Key | [OpenRouter Keys](https://openrouter.ai/keys) |
 

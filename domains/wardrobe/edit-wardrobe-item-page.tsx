@@ -49,7 +49,7 @@ export function EditItemForm({ userId, id }: { userId: string; id: string }) {
   const router = useRouter();
   const queryClient = useQueryClient();
 
-  const { data: profile } = useSuspenseQuery(
+  useSuspenseQuery(
     getProfileQueryOptionsForBrowser(userId),
   );
   const { data: item } = useSuspenseQuery(

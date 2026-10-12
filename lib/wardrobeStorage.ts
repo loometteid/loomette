@@ -1,4 +1,5 @@
 import { createBrowserSupabaseClient } from "@/lib/supabase/client";
+import { normalizeImageForUpload } from "@/lib/imageNormalization";
 
 const BUCKET = "wardrobe-images";
 
@@ -16,12 +17,13 @@ export async function uploadWardrobeImage(
 ) {
   const supabase = createBrowserSupabaseClient();
 
-  const contentType = file.type || "image/jpeg";
+  const normalized = await normalizeImageForUpload(file);
+  const contentType = normalized.type || "image/jpeg";
   const path = `${userId}/${uploadId}/${variant}.${extensionFromMime(contentType)}`;
 
   const { error } = await supabase.storage
     .from(BUCKET)
-    .upload(path, file, { contentType });
+    .upload(path, normalized, { contentType });
   if (error) throw error;
 
   const {

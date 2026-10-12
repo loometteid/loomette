@@ -43,8 +43,11 @@ describe("AddItemView (Screen 3.2.2 / D.3.2.2)", () => {
     expect(await screen.findByTestId("webcam-modal")).toBeInTheDocument();
   });
 
-  it("triggers upload mutation when a file is selected from gallery input", async () => {
-    renderWithQueryClient(<AddItemView userId="user-123" />);
+  it("triggers upload mutation when a file is selected from gallery input and invalidates wardrobe queries", async () => {
+    const { queryClient } = renderWithQueryClient(
+      <AddItemView userId="user-123" />,
+    );
+    const invalidateSpy = vi.spyOn(queryClient, "invalidateQueries");
 
     await screen.findByTestId("add-item-page");
     const galleryInput = screen.getByTestId(
@@ -63,5 +66,9 @@ describe("AddItemView (Screen 3.2.2 / D.3.2.2)", () => {
         expect.stringContaining("/wardrobe/loading?jobId="),
       );
     });
+
+    expect(invalidateSpy).toHaveBeenCalledWith(
+      expect.objectContaining({ queryKey: ["wardrobe"] }),
+    );
   });
 });

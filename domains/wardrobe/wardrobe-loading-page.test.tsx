@@ -85,7 +85,7 @@ describe("WardrobeLoadingView (Screen 3.2.3 / D.3.2.3)", () => {
     expect(mockPush).toHaveBeenCalledWith("/wardrobe/add");
   });
 
-  it("automatically redirects to /wardrobe/approval when upload_job completes", async () => {
+  it("automatically redirects to /wardrobe/approval and invalidates queries when upload_job completes", async () => {
     server.use(
       http.get(`${MOCK_SUPABASE_URL}/rest/v1/upload_job`, () => {
         return HttpResponse.json({
@@ -98,13 +98,20 @@ describe("WardrobeLoadingView (Screen 3.2.3 / D.3.2.3)", () => {
       }),
     );
 
-    renderWithQueryClient(<WardrobeLoadingView userId="user-123" />);
+    const { queryClient } = renderWithQueryClient(
+      <WardrobeLoadingView userId="user-123" />,
+    );
+    const invalidateSpy = vi.spyOn(queryClient, "invalidateQueries");
 
     await waitFor(
       () => {
         expect(mockPush).toHaveBeenCalledWith("/wardrobe/approval");
       },
       { timeout: 2000 },
+    );
+
+    expect(invalidateSpy).toHaveBeenCalledWith(
+      expect.objectContaining({ queryKey: ["wardrobe"] }),
     );
   });
 });

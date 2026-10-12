@@ -28,7 +28,33 @@ export const getUploadJobQueryOptionsForBrowser = (jobId: string | null) =>
         return null;
       }
 
-      return (data as UploadJob) ?? null;
+      const job = (data as UploadJob) ?? null;
+      if (!job) return null;
+
+      const now = Date.now();
+      const STALE_JOB_THRESHOLD_MS = 60 * 1000; // 60 seconds
+      if (
+        (job.status === "pending" || job.status === "analyzing") &&
+        now - new Date(job.created_at).getTime() > STALE_JOB_THRESHOLD_MS
+      ) {
+        void supabase
+          .from("upload_job")
+          .update({
+            status: "failed",
+            error_message:
+              "Outfit processing timed out. Please try again with a clearer photo.",
+          })
+          .eq("id", job.id);
+
+        return {
+          ...job,
+          status: "failed",
+          error_message:
+            "Outfit processing timed out. Please try again with a clearer photo.",
+        };
+      }
+
+      return job;
     },
     enabled: !!jobId,
     refetchInterval: (query) => {

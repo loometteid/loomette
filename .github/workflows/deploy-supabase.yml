@@ -41,11 +41,11 @@ jobs:
           supabase db push
 
       - name: Set Edge Function Secrets
-        if: ${{ env.GEMINI_API_KEY != '' }}
         env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        if: ${{ env.OPENROUTER_API_KEY != '' }}
         run: |
-          supabase secrets set GEMINI_API_KEY="$GEMINI_API_KEY"
+          supabase secrets set OPENROUTER_API_KEY="$OPENROUTER_API_KEY"
 
       - name: Deploy Edge Functions
         run: |

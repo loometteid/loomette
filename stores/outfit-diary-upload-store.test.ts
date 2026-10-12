@@ -40,11 +40,22 @@ describe("useOutfitDiaryUploadStore", () => {
     expect(state.result).toBeNull();
   });
 
-  it("sets processing result", () => {
+  it("sets processing result with processed items and uploadJobId", () => {
     const mockResult: OutfitProcessingResult = {
       originalUrl: "https://example.com/original.jpg",
       originalPath: "uploads/user-123/original.jpg",
-      previewUrl: "https://example.com/preview.jpg",
+      previewUrl: "https://example.com/processed-jacket.png",
+      uploadJobId: "job-abc-123",
+      items: [
+        {
+          id: "w-item-1",
+          image_url: "https://example.com/processed-jacket.png",
+          name: "Dinner Jacket",
+          x: 0.5,
+          y: 0.3,
+          layerOrder: 25,
+        },
+      ],
     };
 
     useOutfitDiaryUploadStore.getState().setResult(mockResult);

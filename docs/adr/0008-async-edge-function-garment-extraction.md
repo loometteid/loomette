@@ -10,12 +10,12 @@ Loomette's item ingestion flow enables users to upload full-body outfit-of-the-d
 Three architectural alternatives were evaluated for executing the ML extraction:
 1. **Client-side pipeline**: Client crops bounding boxes with canvas and runs in-browser `@mediapipe/tasks-vision`. However, client processing forces the user to keep the browser tab active, incompatible with the UX requirement where users can tap "Got It" and leave while analysis runs in the background.
 2. **Next.js Route Handlers**: Node.js/Edge server routes handling image manipulation and Gemini calls. This tightly couples heavy multi-garment image segmentation to the Next.js web application server and complicates long-running background tasks.
-3. **Supabase Edge Functions with Async Job Tracking**: An autonomous backend pipeline hosted on Supabase Edge Functions orchestrating Google Gemini vision and image segmentation, decoupling execution from the web client.
+3. **Supabase Edge Functions with Async Job Tracking**: An autonomous backend pipeline hosted on Supabase Edge Functions orchestrating OpenRouter (Google Gemini 3.8 Flash vision and Image Generation for transparent PNG catalog cutouts), decoupling execution from the web client.
 
 ## Decisions
 
 1. **Supabase Edge Function Execution**:
-   All ML and AI operations (garment detection, attribute extraction, cropping, and background segmentation) run on Supabase Edge Functions, keeping Gemini API credentials secured on the backend.
+   All ML and AI operations (garment detection, attribute extraction, visual detail extraction, and transparent cutout image generation) run on Supabase Edge Functions via OpenRouter, keeping API credentials secured on the backend.
 
 2. **Asynchronous Ingestion Job Model**:
    Uploads initiate an asynchronous ingestion record (`upload_job`) tracking pipeline phases (`pending`, `analyzing`, `completed`, `failed`). The client can remain on the loading screen to observe progress or navigate away immediately ("Got It") without interrupting processing.

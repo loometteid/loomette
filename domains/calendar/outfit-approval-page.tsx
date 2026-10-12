@@ -43,7 +43,7 @@ export function OutfitApproval({ userId }: { userId: string }) {
   const [outfitName, setOutfitName] = useState(() => generateOutfitName());
   const [isEditingName, setIsEditingName] = useState(false);
 
-  const { data: profile } = useSuspenseQuery(
+  useSuspenseQuery(
     getProfileQueryOptionsForBrowser(userId),
   );
 

@@ -34,9 +34,9 @@ export function OutfitLoading({ userId }: { userId: string }) {
   const draft = useOutfitDiaryUploadStore((state) => state.draft);
   const setResult = useOutfitDiaryUploadStore((state) => state.setResult);
   const reset = useOutfitDiaryUploadStore((state) => state.reset);
-  const [percent, setPercent] = useState(10);
+  const [percent, setPercent] = useState(15);
 
-  const { data: profile } = useSuspenseQuery(
+  useSuspenseQuery(
     getProfileQueryOptionsForBrowser(userId),
   );
 
@@ -93,7 +93,6 @@ export function OutfitLoading({ userId }: { userId: string }) {
     }
 
     isMountedRef.current = true;
-    setPercent(15);
 
     processPhoto({
       userId: draft.userId,

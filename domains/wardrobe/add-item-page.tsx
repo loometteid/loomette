@@ -19,7 +19,7 @@ import { WebcamModal } from "./components/webcam-modal";
 export function AddItemView({ userId }: { userId: string }) {
   const router = useRouter();
   const queryClient = useQueryClient();
-  const { data: profile } = useSuspenseQuery(
+  useSuspenseQuery(
     getProfileQueryOptionsForBrowser(userId),
   );
 

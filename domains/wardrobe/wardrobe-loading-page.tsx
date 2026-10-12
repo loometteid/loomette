@@ -1,16 +1,15 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useEffectEvent, useRef } from "react";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import { AlertCircle, ChevronLeft, RefreshCw } from "lucide-react";
-import { useQuery, useQueryClient, useSuspenseQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Sparkle } from "@/components/ui/sparkle";
 import { Typography } from "@/components/ui/typography";
 import { DesktopNav } from "@/components/layout/desktop-nav";
 import { cn } from "@/lib/utils";
-import { getProfileQueryOptionsForBrowser } from "@/domains/profile/query-options/get-profile.query-option.client";
 import { getUploadJobQueryOptionsForBrowser } from "./query-options/get-upload-job.query-option.client";
 import { getLatestUploadJobQueryOptionsForBrowser } from "./query-options/get-latest-upload-job.query-option.client";
 import { getPendingWardrobeCountQueryOptionsForBrowser } from "./query-options/get-pending-count.query-option.client";
@@ -26,9 +25,6 @@ export function WardrobeLoadingView({ userId }: { userId: string }) {
   const searchParams = useSearchParams();
   const jobId = searchParams.get("jobId");
 
-  const { data: profile } = useSuspenseQuery(
-    getProfileQueryOptionsForBrowser(userId),
-  );
 
   const { data: specificJob } = useQuery(
     getUploadJobQueryOptionsForBrowser(jobId),
@@ -40,36 +36,42 @@ export function WardrobeLoadingView({ userId }: { userId: string }) {
   const job = specificJob ?? (jobId ? null : latestJob);
   const redirectedRef = useRef(false);
 
+  const redirectToApprovalAfterDelay = useEffectEvent(() => {
+    void queryClient.invalidateQueries({
+      queryKey: getPendingWardrobeItemsQueryOptionsForBrowser(userId).queryKey,
+    });
+    void queryClient.invalidateQueries({
+      queryKey: getPendingWardrobeCountQueryOptionsForBrowser(userId).queryKey,
+    });
+    void queryClient.invalidateQueries({
+      queryKey: getLatestUploadJobQueryOptionsForBrowser(userId).queryKey,
+    });
+    void queryClient.invalidateQueries({
+      queryKey: getWardrobeItemsQueryOptionsForBrowser(userId).queryKey,
+    });
+    if (jobId) {
+      void queryClient.invalidateQueries({
+        queryKey: getUploadJobQueryOptionsForBrowser(jobId).queryKey,
+      });
+    }
+    void queryClient.invalidateQueries({
+      queryKey: ["wardrobe"],
+    });
+
+    const timer = setTimeout(() => {
+      router.push("/wardrobe/approval");
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  })
   // Auto-redirect to approval queue when completed
   useEffect(() => {
     if (job?.status === "completed" && !redirectedRef.current) {
       redirectedRef.current = true;
 
-      void queryClient.invalidateQueries({
-        queryKey: getPendingWardrobeItemsQueryOptionsForBrowser(userId).queryKey,
-      });
-      void queryClient.invalidateQueries({
-        queryKey: getPendingWardrobeCountQueryOptionsForBrowser(userId).queryKey,
-      });
-      void queryClient.invalidateQueries({
-        queryKey: getLatestUploadJobQueryOptionsForBrowser(userId).queryKey,
-      });
-      void queryClient.invalidateQueries({
-        queryKey: getWardrobeItemsQueryOptionsForBrowser(userId).queryKey,
-      });
-      if (jobId) {
-        void queryClient.invalidateQueries({
-          queryKey: getUploadJobQueryOptionsForBrowser(jobId).queryKey,
-        });
-      }
-      void queryClient.invalidateQueries({
-        queryKey: ["wardrobe"],
-      });
+      const cleanup = redirectToApprovalAfterDelay()
 
-      const timer = setTimeout(() => {
-        router.push("/wardrobe/approval");
-      }, 1000);
-      return () => clearTimeout(timer);
+      return cleanup;
     }
   }, [job?.status]);
 

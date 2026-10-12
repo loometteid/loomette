@@ -1,5 +1,4 @@
 import {
-  DEFAULT_SLOT_POSITIONS,
   type CompositionItem,
 } from "@/domains/outfit/components/outfit-composition";
 import type { WardrobeItem } from "@/domains/wardrobe/types";

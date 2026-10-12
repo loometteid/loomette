@@ -14,7 +14,6 @@ import {
 import { toast } from "sonner";
 import {
   useMutation,
-  useQuery,
   useQueryClient,
   useSuspenseQuery,
 } from "@tanstack/react-query";
@@ -23,7 +22,6 @@ import { Sparkle } from "@/components/ui/sparkle";
 import { Typography } from "@/components/ui/typography";
 import { DesktopNav } from "@/components/layout/desktop-nav";
 import { cn } from "@/lib/utils";
-import { getProfileQueryOptionsForBrowser } from "@/domains/profile/query-options/get-profile.query-option.client";
 import { ApprovalItemDialog } from "./components/approval-item-dialog";
 import { DeleteConfirmDialog } from "./components/delete-confirm-dialog";
 import { getPendingWardrobeItemsQueryOptionsForBrowser } from "./query-options/get-pending-items.query-option.client";

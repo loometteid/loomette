@@ -15,3 +15,4 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - **Data Fetching**: TanStack Query strict server/client split under `domains/<domain>/query-options/`. See [tanstack-query-patterns](.agents/skills/tanstack-query-patterns/SKILL.md).
 - **Forms & Validation**: React Hook Form + Zod schemas under `domains/<domain>/schemas/`. See [react-hook-form-patterns](.agents/skills/react-hook-form-patterns/SKILL.md).
 - **Testing**: Vitest + MSW with BEM `data-testid` and `data-entity-id`. See [ADR 0004](docs/adr/0004-data-testid-and-selector-convention.md).
+- **Package Manager**: pnpm v12

@@ -269,46 +269,10 @@ async function generateGarmentCutout(
     }
     return null;
   } catch (imgErr) {
-    log.warn(
-      "Image generation failed with inputReferences, retrying without reference...",
-      {
-        error: imgErr instanceof Error ? imgErr.message : String(imgErr),
-        garment: garment.name,
-      },
-    );
-    try {
-      const res = await openRouter.images.generate({
-        imageGenerationRequest: {
-          model: modelName,
-          prompt: promptParts,
-          background: "transparent",
-          outputFormat: "png",
-          aspectRatio: "1:1",
-        },
-      });
-
-      const firstImage = res?.data?.[0] as
-        | { b64Json?: string; b64_json?: string; url?: string }
-        | undefined;
-      const b64 = firstImage?.b64Json || firstImage?.b64_json;
-      if (b64) {
-        return base64ToUint8Array(b64);
-      }
-      if (firstImage?.url) {
-        const fetched = await fetch(firstImage.url);
-        if (fetched.ok) {
-          return new Uint8Array(await fetched.arrayBuffer());
-        }
-      }
-    } catch (retryErr) {
-      log.warn(
-        "Image generation retry also failed, falling back to original image",
-        {
-          error: retryErr instanceof Error ? retryErr.message : String(retryErr),
-          garment: garment.name,
-        },
-      );
-    }
+    log.warn("Image generation failed, falling back to original photo", {
+      error: imgErr instanceof Error ? imgErr.message : String(imgErr),
+      garment: garment.name,
+    });
     return null;
   }
 }

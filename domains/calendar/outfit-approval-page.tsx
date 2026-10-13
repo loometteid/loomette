@@ -49,10 +49,8 @@ export function OutfitApproval({ userId }: { userId: string }) {
 
   const { mutate: saveOutfit, isPending: isSavingOutfit } = useMutation({
     ...saveOutfitDiaryEntryMutationOptions(),
-    onSettled() {
-      reset();
-    },
     onSuccess: (savedEntry) => {
+      reset();
       setSavedEntry(savedEntry);
 
       const [yearStr, monthStr] = savedEntry.wornOn.split("-");

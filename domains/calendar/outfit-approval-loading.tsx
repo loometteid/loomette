@@ -36,11 +36,13 @@ export function OutfitLoading({ userId }: { userId: string }) {
   const [percent, setPercent] = useState(15);
 
   const hasStartedRef = useRef(false);
+  const isCancelledRef = useRef(false);
   const crawlTimerRef = useRef<NodeJS.Timeout | undefined>(undefined);
 
   const { mutate: processPhoto } = useMutation({
     ...processOutfitPhotoMutationOptions(),
     async onSuccess(result) {
+      if (isCancelledRef.current) return;
       clearInterval(crawlTimerRef.current);
       setPercent(100);
       setResult(result);
@@ -65,9 +67,11 @@ export function OutfitLoading({ userId }: { userId: string }) {
       });
 
       await new Promise((resolve) => setTimeout(resolve, 600));
+      if (isCancelledRef.current) return;
       router.push("/calendar/outfit-approval");
     },
     async onError(err) {
+      if (isCancelledRef.current) return;
       clearInterval(crawlTimerRef.current);
       const friendlyMessage = await sanitizeErrorMessage(err);
       toast.error("Couldn't process outfit", {
@@ -89,6 +93,7 @@ export function OutfitLoading({ userId }: { userId: string }) {
       userId: draft.userId,
       file: draft.file,
       onStepChange: (step) => {
+        if (isCancelledRef.current) return;
         if (step === "extracting") {
           // Photo uploaded to storage - check off step 1
           setPercent(50);
@@ -162,6 +167,7 @@ export function OutfitLoading({ userId }: { userId: string }) {
           <button
             type="button"
             onClick={() => {
+              isCancelledRef.current = true;
               clearInterval(crawlTimerRef.current);
               reset();
               router.push("/calendar");
@@ -230,7 +236,12 @@ export function OutfitLoading({ userId }: { userId: string }) {
           <Button
             type="button"
             className="bg-[#393735] text-white hover:bg-[#2b2a27] rounded-xl px-8 py-3 text-xs font-semibold uppercase tracking-wider shadow-md"
-            onClick={() => router.push("/home")}
+            onClick={() => {
+              isCancelledRef.current = true;
+              clearInterval(crawlTimerRef.current);
+              reset();
+              router.push("/home");
+            }}
           >
             Back to Home
           </Button>

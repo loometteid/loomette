@@ -150,4 +150,56 @@ describe("OutfitApproval", () => {
     // Should navigate to outfits details page
     expect(mockRouter.push).toHaveBeenCalledWith("/calendar/outfits/2026-10-09");
   });
+
+  it("preserves draft and result state when saving fails, allowing retry", async () => {
+    const user = userEvent.setup();
+
+    server.use(
+      http.post(`${MOCK_SUPABASE_URL}/rest/v1/outfit_item`, () => {
+        return HttpResponse.json(
+          { error: "Internal Server Error" },
+          { status: 500 },
+        );
+      }),
+    );
+
+    useOutfitDiaryUploadStore.setState({
+      draft: {
+        userId: "user-123",
+        file: new File(["dummy"], "ootd.jpg", { type: "image/jpeg" }),
+        wornOn: "2026-10-09",
+      },
+      result: {
+        originalUrl: "https://mock.supabase.co/storage/original-camera.jpg",
+        originalPath: "user-123/original.jpg",
+        previewUrl: "https://mock.supabase.co/storage/jacket-cutout.png",
+        items: [
+          {
+            id: "w-jacket",
+            name: "Dinner Jacket",
+            image_url: "https://mock.supabase.co/storage/jacket-cutout.png",
+            x: 0.5,
+            y: 0.3,
+            layerOrder: 25,
+          },
+        ],
+      },
+    });
+
+    renderWithQueryClient(
+      <Suspense fallback={<div>Loading...</div>}>
+        <OutfitApproval userId="user-123" />
+      </Suspense>,
+    );
+
+    const saveButtons = await screen.findAllByRole("button", {
+      name: /^save$/i,
+    });
+    await user.click(saveButtons[0]);
+
+    // Store state must remain intact to allow the user to retry
+    expect(useOutfitDiaryUploadStore.getState().draft).not.toBeNull();
+    expect(useOutfitDiaryUploadStore.getState().result).not.toBeNull();
+    expect(mockRouter.replace).not.toHaveBeenCalledWith("/calendar");
+  });
 });

@@ -121,9 +121,11 @@ describe("useUploadJobsWatcher", () => {
     rerender();
 
     await waitFor(() => {
+      expect(toastSuccessSpy).toHaveBeenCalledTimes(1);
       expect(toastSuccessSpy).toHaveBeenCalledWith(
         "Outfit analyzed!",
         expect.objectContaining({
+          id: "upload-job-job-1",
           description: "2 items added to your approval queue.",
         }),
       );
@@ -132,5 +134,76 @@ describe("useUploadJobsWatcher", () => {
     expect(invalidateSpy).toHaveBeenCalledWith(
       expect.objectContaining({ queryKey: ["wardrobe"] }),
     );
+
+    // Subsequent refetch/rerender should NOT fire another toast
+    await queryClient.refetchQueries();
+    rerender();
+    expect(toastSuccessSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it("does not show toast when showToast is false", async () => {
+    const toastSuccessSpy = vi.spyOn(toast, "success");
+
+    let status = "analyzing";
+    server.use(
+      http.get(`${MOCK_SUPABASE_URL}/rest/v1/upload_job`, () => {
+        return HttpResponse.json([
+          {
+            id: "job-no-toast",
+            user_id: "user-123",
+            source_type: "wardrobe",
+            original_image_url: "https://example.com/photo.jpg",
+            status,
+            item_count: 1,
+            error_message: null,
+            created_at: new Date().toISOString(),
+            updated_at: new Date().toISOString(),
+          },
+        ]);
+      }),
+    );
+
+    const { rerender } = renderHook(
+      () => useUploadJobsWatcher("user-123", { showToast: false }),
+      { wrapper },
+    );
+
+    status = "completed";
+    await queryClient.refetchQueries();
+    rerender();
+
+    expect(toastSuccessSpy).not.toHaveBeenCalled();
+  });
+
+  it("does not toast for pre-existing completed jobs on mount", async () => {
+    const toastSuccessSpy = vi.spyOn(toast, "success");
+
+    server.use(
+      http.get(`${MOCK_SUPABASE_URL}/rest/v1/upload_job`, () => {
+        return HttpResponse.json([
+          {
+            id: "job-already-done",
+            user_id: "user-123",
+            source_type: "wardrobe",
+            original_image_url: "https://example.com/photo.jpg",
+            status: "completed",
+            item_count: 2,
+            error_message: null,
+            created_at: new Date().toISOString(),
+            updated_at: new Date().toISOString(),
+          },
+        ]);
+      }),
+    );
+
+    const { rerender } = renderHook(
+      () => useUploadJobsWatcher("user-123"),
+      { wrapper },
+    );
+
+    await queryClient.refetchQueries();
+    rerender();
+
+    expect(toastSuccessSpy).not.toHaveBeenCalled();
   });
 });

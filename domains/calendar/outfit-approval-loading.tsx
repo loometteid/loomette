@@ -5,13 +5,12 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { ChevronLeft } from "lucide-react";
 import { toast } from "sonner";
-import { useMutation, useQueryClient, useSuspenseQuery } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Sparkle } from "@/components/ui/sparkle";
 import { Typography } from "@/components/ui/typography";
 import { DesktopNav } from "@/components/layout/desktop-nav";
 import { cn } from "@/lib/utils";
-import { getProfileQueryOptionsForBrowser } from "@/domains/profile/query-options/get-profile.query-option.client";
 import { useOutfitDiaryUploadStore } from "@/stores/outfit-diary-upload-store";
 import { processOutfitPhotoMutationOptions } from "./mutation-options/process-outfit-photo.mutation-option.client";
 import { getPendingWardrobeCountQueryOptionsForBrowser } from "@/domains/wardrobe/query-options/get-pending-count.query-option.client";
@@ -36,18 +35,14 @@ export function OutfitLoading({ userId }: { userId: string }) {
   const reset = useOutfitDiaryUploadStore((state) => state.reset);
   const [percent, setPercent] = useState(15);
 
-  useSuspenseQuery(
-    getProfileQueryOptionsForBrowser(userId),
-  );
-
   const hasStartedRef = useRef(false);
-  const isMountedRef = useRef(true);
+  const isCancelledRef = useRef(false);
   const crawlTimerRef = useRef<NodeJS.Timeout | undefined>(undefined);
 
   const { mutate: processPhoto } = useMutation({
     ...processOutfitPhotoMutationOptions(),
     async onSuccess(result) {
-      if (!isMountedRef.current) return;
+      if (isCancelledRef.current) return;
       clearInterval(crawlTimerRef.current);
       setPercent(100);
       setResult(result);
@@ -72,11 +67,11 @@ export function OutfitLoading({ userId }: { userId: string }) {
       });
 
       await new Promise((resolve) => setTimeout(resolve, 600));
-      if (!isMountedRef.current) return;
+      if (isCancelledRef.current) return;
       router.push("/calendar/outfit-approval");
     },
     async onError(err) {
-      if (!isMountedRef.current) return;
+      if (isCancelledRef.current) return;
       clearInterval(crawlTimerRef.current);
       const friendlyMessage = await sanitizeErrorMessage(err);
       toast.error("Couldn't process outfit", {
@@ -89,17 +84,16 @@ export function OutfitLoading({ userId }: { userId: string }) {
 
   const process = useEffectEvent(() => {
     if (!draft) {
+      reset();
       router.replace("/calendar");
       return;
     }
-
-    isMountedRef.current = true;
 
     processPhoto({
       userId: draft.userId,
       file: draft.file,
       onStepChange: (step) => {
-        if (!isMountedRef.current) return;
+        if (isCancelledRef.current) return;
         if (step === "extracting") {
           // Photo uploaded to storage - check off step 1
           setPercent(50);
@@ -116,14 +110,12 @@ export function OutfitLoading({ userId }: { userId: string }) {
   });
 
   useEffect(() => {
-    isMountedRef.current = true;
     if (!hasStartedRef.current) {
       hasStartedRef.current = true;
       process();
     }
 
     return () => {
-      isMountedRef.current = false;
       clearInterval(crawlTimerRef.current);
     };
   }, []);
@@ -175,7 +167,7 @@ export function OutfitLoading({ userId }: { userId: string }) {
           <button
             type="button"
             onClick={() => {
-              isMountedRef.current = false;
+              isCancelledRef.current = true;
               clearInterval(crawlTimerRef.current);
               reset();
               router.push("/calendar");
@@ -244,7 +236,12 @@ export function OutfitLoading({ userId }: { userId: string }) {
           <Button
             type="button"
             className="bg-[#393735] text-white hover:bg-[#2b2a27] rounded-xl px-8 py-3 text-xs font-semibold uppercase tracking-wider shadow-md"
-            onClick={() => router.push("/home")}
+            onClick={() => {
+              isCancelledRef.current = true;
+              clearInterval(crawlTimerRef.current);
+              reset();
+              router.push("/home");
+            }}
           >
             Back to Home
           </Button>

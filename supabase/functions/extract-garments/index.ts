@@ -243,6 +243,7 @@ async function generateGarmentCutout(
         background: "transparent",
         outputFormat: "png",
         aspectRatio: "1:1",
+        quality: "medium",
         inputReferences: [
           {
             type: "image_url",

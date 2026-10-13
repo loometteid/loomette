@@ -1,6 +1,7 @@
 import { StrictMode, Suspense } from "react";
 import { describe, expect, it, vi, beforeEach } from "vitest";
-import { screen, waitFor } from "@testing-library/react";
+import { act, screen, waitFor } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { http, HttpResponse } from "msw";
 import { server } from "@/test/mocks/server";
 import { MOCK_SUPABASE_URL } from "@/test/mocks/handlers";
@@ -162,5 +163,57 @@ describe("OutfitLoading", () => {
     );
 
     expect(invocationCount).toBe(1);
+  });
+
+  it("does not navigate to outfit-approval if user cancels while processing is in flight", async () => {
+    let resolveExtraction: (value: unknown) => void = () => {};
+    const extractionPromise = new Promise((resolve) => {
+      resolveExtraction = resolve;
+    });
+
+    server.use(
+      http.post(
+        `${MOCK_SUPABASE_URL}/functions/v1/extract-garments`,
+        async () => {
+          await extractionPromise;
+          return HttpResponse.json({ success: true, count: 1 });
+        },
+      ),
+      http.get(`${MOCK_SUPABASE_URL}/rest/v1/wardrobe_item`, () => {
+        return HttpResponse.json([]);
+      }),
+    );
+
+    useOutfitDiaryUploadStore.setState({
+      draft: {
+        userId: "user-123",
+        file: new File(["image data"], "look.jpg", { type: "image/jpeg" }),
+        wornOn: "2026-10-09",
+      },
+    });
+
+    const user = userEvent.setup();
+
+    renderWithQueryClient(
+      <Suspense fallback={<div>Loading...</div>}>
+        <OutfitLoading userId="user-123" />
+      </Suspense>,
+    );
+
+    const cancelBtn = await screen.findByRole("button", { name: /cancel/i });
+    await user.click(cancelBtn);
+
+    expect(mockRouter.push).toHaveBeenCalledWith("/calendar");
+    mockRouter.push.mockClear();
+
+    // Now resolve the background extraction
+    await act(async () => {
+      resolveExtraction({ success: true, count: 1 });
+      await new Promise((resolve) => setTimeout(resolve, 800));
+    });
+
+    expect(mockRouter.push).not.toHaveBeenCalledWith(
+      "/calendar/outfit-approval",
+    );
   });
 });

@@ -50,6 +50,7 @@ export function OutfitApproval({ userId }: { userId: string }) {
   const { mutate: saveOutfit, isPending: isSavingOutfit } = useMutation({
     ...saveOutfitDiaryEntryMutationOptions(),
     onSuccess: (savedEntry) => {
+      reset();
       setSavedEntry(savedEntry);
 
       const [yearStr, monthStr] = savedEntry.wornOn.split("-");
@@ -121,6 +122,7 @@ export function OutfitApproval({ userId }: { userId: string }) {
 
   const firstRedirect = useEffectEvent(() => {
     if (!draft || !result) {
+      reset();
       router.replace("/calendar");
     }
   });

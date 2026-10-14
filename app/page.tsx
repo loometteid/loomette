@@ -18,6 +18,9 @@ import { Reveal } from "@/domains/landing/components/reveal";
 import { ScrollProgress } from "@/domains/landing/components/scroll-progress";
 import { TiltCard } from "@/domains/landing/components/tilt-card";
 import { Activity } from "react";
+import phoneMockup1 from "@/figma/landing/desktop/phone-mockup-1@2x.png";
+import phoneMockup2 from "@/figma/landing/desktop/phone-mockup-2@2x.png";
+import phoneMockup3 from "@/figma/landing/desktop/phone-mockup-3@2x.png";
 
 function Wordmark({
   className,
@@ -415,10 +418,8 @@ export default function LandingPage() {
                 className="shrink-0 flex items-center justify-center"
               >
                 <Image
-                  src="/brand/phone-mockup.png"
+                  src={phoneMockup1}
                   alt="Loomette outfit capture screen"
-                  width={294}
-                  height={533}
                   className="landing-float w-65 lg:w-73.5 h-auto drop-shadow-md select-none transition-transform duration-700 ease-out group-hover/step:-translate-y-2 group-hover/step:rotate-[-1.5deg]"
                 />
               </Reveal>
@@ -436,10 +437,8 @@ export default function LandingPage() {
                 className="shrink-0 flex items-center justify-center"
               >
                 <Image
-                  src="/brand/phone-mockup.png"
-                  alt="Loomette piece recognition screen"
-                  width={294}
-                  height={533}
+                  src={phoneMockup2}
+                  alt="Loomette outfit diary calendar screen"
                   className="landing-float w-65 lg:w-73.5 h-auto drop-shadow-md select-none transition-transform duration-700 ease-out group-hover/step:-translate-y-2 group-hover/step:rotate-[-1.5deg]"
                 />
               </Reveal>
@@ -495,10 +494,8 @@ export default function LandingPage() {
                 className="shrink-0 flex items-center justify-center"
               >
                 <Image
-                  src="/brand/phone-mockup.png"
+                  src={phoneMockup3}
                   alt="Loomette wardrobe styling screen"
-                  width={294}
-                  height={533}
                   className="landing-float w-65 lg:w-73.5 h-auto drop-shadow-md select-none transition-transform duration-700 ease-out group-hover/step:-translate-y-2 group-hover/step:rotate-[-1.5deg]"
                 />
               </Reveal>

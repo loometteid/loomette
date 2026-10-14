@@ -2,6 +2,8 @@ import Image from "next/image";
 import { Sparkle } from "@/components/ui/sparkle";
 import { cn } from "@/lib/utils";
 import { CountUp } from "./count-up";
+import skyImage from "@/figma/onboarding/sky.png";
+import hanguImage from "@/figma/onboarding/hangu.png";
 
 // Fills the "Everything in one place" frame with a small, static peek
 // at the real flow — upload, review the detected pieces, see the
@@ -49,14 +51,14 @@ export function OverviewPreview({ className }: { className?: string }) {
       <div className="landing-preview-panel relative flex min-h-0 flex-col overflow-hidden rounded-xl md:rounded-2xl bg-white shadow-xs">
         <div className="relative min-h-0 flex-1 overflow-hidden bg-[#b9b9b6]">
           <Image
-            src="/brand/sky.png"
+            src={skyImage}
             alt=""
             fill
             sizes="(min-width: 768px) 33vw, 50vw"
             className="object-cover object-[50%_30%] opacity-90"
           />
           <Image
-            src="/brand/mascot-image-42.png"
+            src={hanguImage}
             alt=""
             width={1536}
             height={1024}

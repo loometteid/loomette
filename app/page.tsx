@@ -18,6 +18,15 @@ import { Reveal } from "@/domains/landing/components/reveal";
 import { ScrollProgress } from "@/domains/landing/components/scroll-progress";
 import { TiltCard } from "@/domains/landing/components/tilt-card";
 import { Activity } from "react";
+import phoneMockup1 from "@/figma/landing/desktop/phone-mockup-1@2x.png";
+import phoneMockup2 from "@/figma/landing/desktop/phone-mockup-2@2x.png";
+import phoneMockup3 from "@/figma/landing/desktop/phone-mockup-3@2x.png";
+import hanguImage from "@/figma/onboarding/hangu.png";
+import hanglyImage from "@/figma/onboarding/hangly.png";
+import dotoImage from "@/figma/onboarding/doto.png";
+import doteeImage from "@/figma/onboarding/dotee.png";
+import skyImage from "@/figma/onboarding/sky.png";
+import asteriskSilverImage from "@/figma/onboarding/asterisk-silver.png";
 
 function Wordmark({
   className,
@@ -157,9 +166,9 @@ export default function LandingPage() {
         >
           {/* Viewport-scaled Mascots anchored to full screen boundaries */}
           <HeroParallax className="pointer-events-none absolute inset-0 w-full h-full overflow-hidden">
-            {/* Mascot 1 (image 43): Black clothes hanger with cartoon eyes (Top-Left) */}
+            {/* Mascot 1 (image 43 - hangly): Black clothes hanger with cartoon eyes (Top-Left) */}
             <Image
-              src="/brand/mascot-image-43.png"
+              src={hanglyImage}
               alt=""
               width={1536}
               height={1024}
@@ -170,9 +179,9 @@ export default function LandingPage() {
               style={mascotMotion(18, 0.1, 6.5)}
             />
 
-            {/* Mascot 2 (image 45): White fluffy sprite with cartoon eyes (Top-Right) */}
+            {/* Mascot 2 (image 45 - dotee): White fluffy sprite with cartoon eyes (Top-Right) */}
             <Image
-              src="/brand/mascot-image-45.png"
+              src={doteeImage}
               alt=""
               width={1278}
               height={1230}
@@ -183,9 +192,9 @@ export default function LandingPage() {
               style={mascotMotion(-30, 0.3, 4.5)}
             />
 
-            {/* Mascot 3 (image 44): Black fluffy soot sprite with cartoon eyes (Mid-Left) */}
+            {/* Mascot 3 (image 44 - doto): Black fluffy soot sprite with cartoon eyes (Mid-Left) */}
             <Image
-              src="/brand/mascot-image-44.png"
+              src={dotoImage}
               alt=""
               width={1271}
               height={1237}
@@ -196,9 +205,9 @@ export default function LandingPage() {
               style={mascotMotion(26, 0.55, 5.5)}
             />
 
-            {/* Mascot 4 (image 42): Chrome/silver clothes hanger with cartoon eyes (Mid-Right) */}
+            {/* Mascot 4 (image 42 - hangu): Chrome/silver clothes hanger with cartoon eyes (Mid-Right) */}
             <Image
-              src="/brand/mascot-image-42.png"
+              src={hanguImage}
               alt=""
               width={1536}
               height={1024}
@@ -261,10 +270,10 @@ export default function LandingPage() {
           data-testid="landing-page__overview"
         >
           <Reveal className="flex flex-col items-center gap-6">
-            {/* Mobile uses image 43 hanger mascot above headline; Desktop uses Sparkle icon */}
+            {/* Mobile uses hangly (image 43) hanger mascot above headline; Desktop uses Sparkle icon */}
             <div className="block md:hidden landing-float [--float-duration:5s]">
               <Image
-                src="/brand/mascot-image-43.png"
+                src={hanglyImage}
                 alt=""
                 width={72}
                 height={48}
@@ -415,7 +424,7 @@ export default function LandingPage() {
                 className="shrink-0 flex items-center justify-center"
               >
                 <Image
-                  src="/brand/phone-mockup.png"
+                  src={phoneMockup1}
                   alt="Loomette outfit capture screen"
                   width={294}
                   height={533}
@@ -436,10 +445,10 @@ export default function LandingPage() {
                 className="shrink-0 flex items-center justify-center"
               >
                 <Image
-                  src="/brand/phone-mockup.png"
-                  alt="Loomette piece recognition screen"
-                  width={294}
-                  height={533}
+                  src={phoneMockup2}
+                  alt="Loomette outfit diary calendar screen"
+                  width={298}
+                  height={562}
                   className="landing-float w-65 lg:w-73.5 h-auto drop-shadow-md select-none transition-transform duration-700 ease-out group-hover/step:-translate-y-2 group-hover/step:rotate-[-1.5deg]"
                 />
               </Reveal>
@@ -495,10 +504,10 @@ export default function LandingPage() {
                 className="shrink-0 flex items-center justify-center"
               >
                 <Image
-                  src="/brand/phone-mockup.png"
+                  src={phoneMockup3}
                   alt="Loomette wardrobe styling screen"
                   width={294}
-                  height={533}
+                  height={551}
                   className="landing-float w-65 lg:w-73.5 h-auto drop-shadow-md select-none transition-transform duration-700 ease-out group-hover/step:-translate-y-2 group-hover/step:rotate-[-1.5deg]"
                 />
               </Reveal>
@@ -674,14 +683,14 @@ export default function LandingPage() {
             data-testid="landing-page__footer"
           >
             <Image
-              src="/brand/sky.png"
+              src={skyImage}
               alt=""
               fill
               sizes="100vw"
               className="landing-drift pointer-events-none object-cover object-bottom -z-10 opacity-75"
             />
             <Image
-              src="/brand/asterisk-silver.png"
+              src={asteriskSilverImage}
               alt=""
               width={344}
               height={344}

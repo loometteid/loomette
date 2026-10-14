@@ -412,7 +412,7 @@ export default function LandingPage() {
                     <em className="font-bold italic">Upload a photo</em> of your
                     outfit
                   </h3>
-                  <p className="text-slate/80 text-base lg:text-xl leading-relaxed">
+                  <p className="text-slate/80 uppercase text-base lg:text-xl leading-relaxed">
                     Snap it fresh or pull from your gallery. Full outfit works
                     best.
                   </p>
@@ -465,7 +465,7 @@ export default function LandingPage() {
                     <em className="font-bold italic">Review &amp; approve</em>{" "}
                     the pieces
                   </h3>
-                  <p className="text-slate/80 text-base lg:text-xl leading-relaxed">
+                  <p className="text-slate/80 uppercase text-base lg:text-xl leading-relaxed">
                     We identify tops, bottoms, and accessories so you can verify
                     each item.
                   </p>
@@ -492,7 +492,7 @@ export default function LandingPage() {
                     <em className="font-bold italic">Track &amp; style</em>{" "}
                     everyday
                   </h3>
-                  <p className="text-slate/80 text-base lg:text-xl leading-relaxed">
+                  <p className="text-slate/80 uppercase text-base lg:text-xl leading-relaxed">
                     Build your lookbook, see wear stats, and mix &amp; match
                     effortlessly.
                   </p>

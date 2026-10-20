@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Sparkle } from "@/components/ui/sparkle";
 import { Typography } from "@/components/ui/typography";
 
+import { ProfileBreadcrumb } from "./components/profile-breadcrumb";
+
 function Section({
   number,
   title,
@@ -17,13 +19,13 @@ function Section({
 }) {
   return (
     <div className="flex flex-col gap-3">
-      <span className="text-muted-foreground text-xs tracking-wide">
+      <span className="font-sans text-[11px] font-normal text-muted-foreground">
         {number}
       </span>
-      <Typography variant="h1" as="h2">
+      <Typography variant="h1" as="h2" className="font-serif text-lg md:text-xl font-normal text-foreground">
         {title}
       </Typography>
-      <div className="flex flex-col gap-3 text-sm leading-relaxed">
+      <div className="flex flex-col gap-3 font-sans text-xs md:text-sm font-normal text-foreground/90 leading-relaxed">
         {children}
       </div>
     </div>
@@ -34,26 +36,39 @@ export function PrivacyPolicyView() {
   const router = useRouter();
 
   return (
-    <main className="mx-auto flex w-full max-w-sm flex-1 flex-col gap-8 px-6 py-8">
-      <Button
-        type="button"
-        variant="secondary"
-        size="icon"
-        className="rounded-xl"
-        onClick={() => router.back()}
-        aria-label="Go back"
-      >
-        <ChevronLeft className="size-4" />
-      </Button>
+    <main className="mx-auto flex w-full max-w-sm lg:max-w-4xl flex-1 flex-col gap-8 px-6 lg:px-12 py-8 lg:py-12">
+      {/* Breadcrumb (desktop) */}
+      <ProfileBreadcrumb
+        items={[
+          { label: "PROFILE", href: "/profile" },
+          { label: "SETTINGS", href: "/profile/settings" },
+          { label: "PRIVACY & POLICY" },
+        ]}
+      />
+
+      <div className="flex items-center justify-between lg:hidden">
+        <Button
+          type="button"
+          variant="secondary"
+          size="icon"
+          className="rounded-xl"
+          onClick={() => router.back()}
+          aria-label="Go back"
+        >
+          <ChevronLeft className="size-4" />
+        </Button>
+      </div>
 
       <div className="flex flex-col gap-1">
         <div className="flex items-center gap-2">
-          <Sparkle className="size-5 text-foreground" />
-          <Typography variant="title" as="h1">
+          <Sparkle className="size-6 text-foreground" />
+          <Typography variant="title" as="h1" className="font-serif text-[32px] md:text-[44px] font-normal leading-tight text-foreground">
             Privacy & Policy
           </Typography>
         </div>
-        <Typography variant="subtitle">Last updated: June 2026</Typography>
+        <Typography variant="subtitle" className="font-sans text-xs font-normal uppercase tracking-wider text-muted-foreground">
+          Last update: June 2026
+        </Typography>
       </div>
 
       <Section number="01" title="What we collect">

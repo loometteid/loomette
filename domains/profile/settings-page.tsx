@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
@@ -14,28 +14,46 @@ import { Button } from "@/components/ui/button";
 import { Sparkle } from "@/components/ui/sparkle";
 import { Switch } from "@/components/ui/switch";
 import { Typography } from "@/components/ui/typography";
+import { cn } from "@/lib/utils";
 import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 import { getProfileQueryOptionsForBrowser } from "./query-options/get-profile.query-option.client";
 import { updatePrivacySettingMutationOptions } from "./mutation-options/update-privacy-setting.mutation-option.client";
+import { ProfileBreadcrumb } from "./components/profile-breadcrumb";
+import { LogoutDialog } from "./components/logout-dialog";
+import { DeleteAccountDialog } from "./components/delete-account-dialog";
+import { deleteAccountAction } from "./actions/delete-account.action";
+import { useNotificationSettings } from "./hooks/use-notification-settings";
 import type { Route } from "next";
+
+const SECTIONS = [
+  { id: "pricing", label: "Pricing" },
+  { id: "notification", label: "Notification" },
+  { id: "appearance", label: "Appearance" },
+  { id: "privacy-data", label: "Privacy & Data" },
+  { id: "account", label: "Account" },
+] as const;
+
+type SectionId = (typeof SECTIONS)[number]["id"];
 
 function notImplemented() {
   toast("Coming soon.");
 }
 
 function SettingsSection({
+  id,
   title,
   children,
 }: {
+  id?: string;
   title: string;
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex flex-col gap-3">
-      <Typography variant="h1" as="h2">
+    <div id={id} className="flex flex-col gap-4 scroll-mt-24">
+      <Typography variant="h1" as="h2" className="font-serif text-lg md:text-xl font-normal text-foreground">
         {title}
       </Typography>
-      <div className="flex flex-col gap-4">{children}</div>
+      <div className="flex flex-col gap-5">{children}</div>
     </div>
   );
 }
@@ -54,9 +72,9 @@ function ChevronRow({
       <Link
         href={href}
         prefetch
-        className="flex items-center justify-between text-left"
+        className="flex items-center justify-between text-left hover:opacity-80 transition-opacity"
       >
-        <span className="text-xs font-medium tracking-wide uppercase">
+        <span className="font-sans text-xs font-normal tracking-wider uppercase text-foreground">
           {label}
         </span>
         <ChevronRight className="text-muted-foreground size-4" />
@@ -68,9 +86,9 @@ function ChevronRow({
     <button
       type="button"
       onClick={onClick}
-      className="flex items-center justify-between text-left"
+      className="flex items-center justify-between text-left hover:opacity-80 transition-opacity w-full"
     >
-      <span className="text-xs font-medium tracking-wide uppercase">
+      <span className="font-sans text-xs font-normal tracking-wider uppercase text-foreground">
         {label}
       </span>
       <ChevronRight className="text-muted-foreground size-4" />
@@ -82,17 +100,23 @@ function ToggleRow({
   label,
   checked,
   onCheckedChange,
+  testId,
 }: {
   label: string;
   checked: boolean;
   onCheckedChange: (checked: boolean) => void;
+  testId?: string;
 }) {
   return (
     <div className="flex items-center justify-between">
-      <span className="text-xs font-medium tracking-wide uppercase">
+      <span className="font-sans text-xs font-normal tracking-wider uppercase text-foreground">
         {label}
       </span>
-      <Switch checked={checked} onCheckedChange={onCheckedChange} />
+      <Switch
+        data-testid={testId}
+        checked={checked}
+        onCheckedChange={onCheckedChange}
+      />
     </div>
   );
 }
@@ -105,11 +129,20 @@ export function SettingsView({ userId }: { userId: string }) {
     getProfileQueryOptionsForBrowser(userId),
   );
 
+  const [activeSection, setActiveSection] = useState<SectionId>("pricing");
   const [isPrivate, setIsPrivate] = useState(profile?.is_private ?? false);
-  const [outfitReminders, setOutfitReminders] = useState(true);
-  const [analysisReady, setAnalysisReady] = useState(true);
-  const [weeklyRecap, setWeeklyRecap] = useState(false);
+  const {
+    outfitReminders,
+    analysisReady,
+    weeklyRecap,
+    setOutfitReminders,
+    setAnalysisReady,
+    setWeeklyRecap,
+  } = useNotificationSettings();
+  const [logoutDialogOpen, setLogoutDialogOpen] = useState(false);
+  const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
   const [loggingOut, setLoggingOut] = useState(false);
+  const [isDeleting, setIsDeleting] = useState(false);
 
   const privacyMutation = useMutation({
     ...updatePrivacySettingMutationOptions(),
@@ -130,103 +163,225 @@ export function SettingsView({ userId }: { userId: string }) {
   }
 
   async function handleLogOut() {
-    setLoggingOut(true);
-    const supabase = createBrowserSupabaseClient();
-
-    await supabase.auth.signOut();
-    router.push("/sign-in");
+    try {
+      setLoggingOut(true);
+      const supabase = createBrowserSupabaseClient();
+      await supabase.auth.signOut();
+      router.push("/sign-in");
+    } catch {
+      toast.error("Failed to log out");
+      setLoggingOut(false);
+    }
   }
 
-  return (
-    <main className="mx-auto flex w-full max-w-sm flex-1 flex-col gap-8 px-6 py-8">
-      <Button
-        type="button"
-        variant="secondary"
-        size="icon"
-        className="rounded-xl"
-        onClick={() => router.back()}
-        aria-label="Go back"
-      >
-        <ChevronLeft className="size-4" />
-      </Button>
+  async function handleConfirmDelete() {
+    try {
+      setIsDeleting(true);
+      await deleteAccountAction();
+      toast.success("Account deleted");
+      router.push("/sign-in");
+    } catch {
+      toast.error("Couldn't delete account. Please try again.");
+      setIsDeleting(false);
+    }
+  }
 
-      <div className="flex flex-col gap-1">
+  function scrollToSection(id: SectionId) {
+    setActiveSection(id);
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+
+  // Scrollspy effect on desktop to update active navigation tab
+  useEffect(() => {
+    function handleScroll() {
+      const scrollY = window.scrollY;
+      for (const section of SECTIONS) {
+        const el = document.getElementById(section.id);
+        if (el) {
+          const top = el.offsetTop - 160;
+          const height = el.offsetHeight;
+          if (scrollY >= top && scrollY < top + height) {
+            setActiveSection(section.id);
+            break;
+          }
+        }
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <main className="mx-auto flex w-full max-w-sm lg:max-w-6xl xl:max-w-7xl flex-1 flex-col gap-8 px-6 lg:px-12 py-8 lg:py-12">
+      {/* Breadcrumb (desktop) */}
+      <ProfileBreadcrumb
+        items={[
+          { label: "PROFILE", href: "/profile" },
+          { label: "SETTINGS" },
+        ]}
+      />
+
+      {/* Mobile back button */}
+      <div className="flex items-center justify-between lg:hidden">
+        <Button
+          type="button"
+          variant="secondary"
+          size="icon"
+          className="rounded-xl"
+          onClick={() => router.back()}
+          aria-label="Go back"
+        >
+          <ChevronLeft className="size-4" />
+        </Button>
+      </div>
+
+      {/* Header title */}
+      <div className="flex flex-col gap-1.5">
         <div className="flex items-center gap-2">
-          <Sparkle className="size-5 text-foreground" />
-          <Typography variant="title" as="h1">
+          <Sparkle className="size-6 text-foreground" />
+          <Typography variant="title" as="h1" className="font-serif text-[32px] md:text-4xl font-normal text-foreground leading-tight">
             Settings
           </Typography>
         </div>
-        <Typography variant="subtitle">
+        <Typography variant="subtitle" className="font-sans text-xs font-normal uppercase tracking-wider text-muted-foreground">
           Manage how the app works for you.
         </Typography>
       </div>
 
-      <SettingsSection title="Pricing">
-        <ChevronRow label="Your plan" onClick={notImplemented} />
-      </SettingsSection>
-
-      <SettingsSection title="Notification">
-        <ToggleRow
-          label="Outfit reminders"
-          checked={outfitReminders}
-          onCheckedChange={setOutfitReminders}
-        />
-        <ToggleRow
-          label="Analysis ready"
-          checked={analysisReady}
-          onCheckedChange={setAnalysisReady}
-        />
-        <ToggleRow
-          label="Weekly recap"
-          checked={weeklyRecap}
-          onCheckedChange={setWeeklyRecap}
-        />
-      </SettingsSection>
-
-      <SettingsSection title="Appearance">
-        <button
-          type="button"
-          onClick={notImplemented}
-          className="flex items-center justify-between text-left"
+      {/* Main Responsive Grid Layout */}
+      <div className="flex flex-col lg:flex-row lg:gap-16 pt-2">
+        {/* Left Sticky Navigation (desktop only) */}
+        <nav
+          aria-label="Settings sections"
+          className="hidden lg:flex flex-col gap-2 w-64 shrink-0 sticky top-28 h-fit"
         >
-          <span className="text-xs font-medium tracking-wide uppercase">
-            Language
-          </span>
-          <span className="border-border text-muted-foreground flex items-center gap-1 rounded-full border px-3 py-1 text-xs uppercase">
-            EN
-            <ChevronDown className="size-3.5" />
-          </span>
-        </button>
-      </SettingsSection>
+          {SECTIONS.map(({ id, label }) => {
+            const isActive = activeSection === id;
+            return (
+              <button
+                key={id}
+                type="button"
+                onClick={() => scrollToSection(id)}
+                className={cn(
+                  "text-left px-5 py-3 rounded-2xl font-sans text-xs lg:text-sm font-normal tracking-wide uppercase transition-colors",
+                  isActive
+                    ? "bg-[#F2EDE5] text-[#383733]"
+                    : "text-muted-foreground hover:text-foreground hover:bg-[#F2EDE5]/40",
+                )}
+              >
+                {label}
+              </button>
+            );
+          })}
+        </nav>
 
-      <SettingsSection title="Privacy & Data">
-        <ToggleRow
-          label="Private account"
-          checked={isPrivate}
-          onCheckedChange={handlePrivacyToggle}
-        />
-        {privacyMutation.isPending && (
-          <span className="text-muted-foreground -mt-2 text-xs">Saving…</span>
-        )}
-        <ChevronRow label="Privacy & Policy" href="/profile/settings/privacy" />
-      </SettingsSection>
+        {/* Vertical divider on desktop */}
+        <div className="hidden lg:block w-px bg-border/60 self-stretch" />
 
-      <SettingsSection title="Account">
-        <ChevronRow label="Connected account" onClick={notImplemented} />
-        <ChevronRow
-          label={loggingOut ? "Logging out…" : "Log out"}
-          onClick={handleLogOut}
-        />
-        <ChevronRow label="Delete account" onClick={notImplemented} />
-      </SettingsSection>
+        {/* Right Content Sections */}
+        <div className="flex flex-1 flex-col gap-12 max-w-2xl">
+          <SettingsSection id="pricing" title="Pricing">
+            <ChevronRow
+              label="Your plan"
+              href={"/profile/settings/pricing" as Route}
+            />
+          </SettingsSection>
 
-      <Typography
-        variant="subtitle"
-        className="pb-4 text-center text-xs tracking-wide"
-      >
-        loomette · version 0.0.1
-      </Typography>
+          <SettingsSection id="notification" title="Notification">
+            <ToggleRow
+              label="Outfit reminders"
+              checked={outfitReminders}
+              onCheckedChange={setOutfitReminders}
+              testId="settings__outfit-reminders-toggle"
+            />
+            <ToggleRow
+              label="Analysis ready"
+              checked={analysisReady}
+              onCheckedChange={setAnalysisReady}
+              testId="settings__analysis-ready-toggle"
+            />
+            <ToggleRow
+              label="Weekly recap"
+              checked={weeklyRecap}
+              onCheckedChange={setWeeklyRecap}
+              testId="settings__weekly-recap-toggle"
+            />
+          </SettingsSection>
+
+          <SettingsSection id="appearance" title="Appearance">
+            <button
+              type="button"
+              onClick={notImplemented}
+              className="flex items-center justify-between text-left hover:opacity-80 transition-opacity w-full"
+            >
+              <span className="font-sans text-xs font-normal tracking-wider uppercase text-foreground">
+                Language
+              </span>
+              <span className="border-border text-muted-foreground flex items-center gap-1 rounded-full border px-3 py-1 font-sans text-xs font-normal uppercase">
+                EN
+                <ChevronDown className="size-3.5" />
+              </span>
+            </button>
+          </SettingsSection>
+
+          <SettingsSection id="privacy-data" title="Privacy & Data">
+            <ToggleRow
+              label="Private account"
+              checked={isPrivate}
+              onCheckedChange={handlePrivacyToggle}
+            />
+            {privacyMutation.isPending && (
+              <span className="text-muted-foreground -mt-2 text-xs">Saving…</span>
+            )}
+            <ChevronRow
+              label="Privacy & Policy"
+              href={"/profile/settings/privacy" as Route}
+            />
+          </SettingsSection>
+
+          <SettingsSection id="account" title="Account">
+            <ChevronRow
+              label="Connected account"
+              href={"/profile/settings/connected-accounts" as Route}
+            />
+            <ChevronRow
+              label={loggingOut ? "Logging out…" : "Log out"}
+              onClick={() => setLogoutDialogOpen(true)}
+            />
+            <ChevronRow
+              label="Delete account"
+              onClick={() => setDeleteDialogOpen(true)}
+            />
+          </SettingsSection>
+
+          <Typography
+            variant="subtitle"
+            className="pt-6 pb-4 text-center font-sans text-[10px] font-normal uppercase tracking-wider text-muted-foreground/80"
+          >
+            loomette · version 0.0.1
+          </Typography>
+        </div>
+      </div>
+
+      {/* Logout Confirmation Dialog */}
+      <LogoutDialog
+        open={logoutDialogOpen}
+        onOpenChange={setLogoutDialogOpen}
+        onConfirmLogout={handleLogOut}
+        isLoggingOut={loggingOut}
+      />
+
+      {/* Delete Account 3-Step Dialog */}
+      <DeleteAccountDialog
+        open={deleteDialogOpen}
+        onOpenChange={setDeleteDialogOpen}
+        onConfirmDelete={handleConfirmDelete}
+        isDeleting={isDeleting}
+      />
     </main>
   );
 }

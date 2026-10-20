@@ -1,0 +1,273 @@
+NAME: "Loomette.id"
+
+GLOBAL_VARS:
+White:
+  - '#FAFAF7'
+Primary Pink:
+  - '#444440'
+layout_a111c4b6:
+  mode: none
+  sizing:
+    horizontal: fixed
+    vertical: fixed
+  dimensions:
+    width: 24
+    height: 24
+layout_177c5efc:
+  mode: none
+  sizing:
+    horizontal: hug
+    vertical: hug
+style_cd87c1af:
+  fontFamily: Avenir Next
+  fontStyle: Regular
+  fontWeight: 400
+  fontSize: 24
+  textCase: SMALL_CAPS_FORCED
+  textAlignHorizontal: LEFT
+  textAlignVertical: TOP
+Linen:
+  - '#F2EDE5'
+Slate:
+  - '#444440'
+fill_a233a3f2:
+  - type: IMAGE
+    imageRef: 3065b6e54af07277b4f5afb1d93f2210fb8e8b30
+    scaleMode: STRETCH
+    objectFit: fill
+    isBackground: false
+    imageDownloadArguments:
+      needsCropping: true
+      requiresImageDimensions: false
+      cropTransform:
+        - - 0.7799999713897705
+          - 0
+          - 0.11999999731779099
+        - - 0
+          - 0.5299999713897705
+          - 0.23999999463558197
+      filenameSuffix: 1c9267
+fill_c0545372:
+  - type: IMAGE
+    imageRef: 178406f88b315152b95287f3aeb79ee56c5d2443
+    scaleMode: STRETCH
+    objectFit: fill
+    isBackground: false
+    imageDownloadArguments:
+      needsCropping: true
+      requiresImageDimensions: false
+      cropTransform:
+        - - 1
+          - 0
+          - 0
+        - - 0
+          - 0.720081090927124
+          - 0.12576064467430115
+      filenameSuffix: cb9c9c
+style_359478a5:
+  fontFamily: Avenir Next
+  fontStyle: Regular
+  fontWeight: 400
+  fontSize: 20
+  textCase: SMALL_CAPS_FORCED
+  textAlignHorizontal: LEFT
+  textAlignVertical: TOP
+Stone:
+  - '#C9C3B7'
+style_cd03fa65:
+  fontFamily: Source Serif Pro
+  fontStyle: Regular
+  fontWeight: 400
+  fontSize: 24
+  textAlignHorizontal: LEFT
+  textAlignVertical: TOP
+style_f3b6b27e:
+  fontFamily: Figtree
+  fontStyle: Regular
+  fontWeight: 400
+  fontSize: 16
+  textCase: UPPER
+  textAlignHorizontal: LEFT
+  textAlignVertical: TOP
+
+ELEMENTS:
+EL-b05afa4e:
+  type: GROUP
+  layout:
+    mode: none
+    sizing:
+      horizontal: fixed
+      vertical: fixed
+    dimensions:
+      width: 269
+      height: 332.96
+  borderRadius: 0px 0px 0px 0px
+EL-55373d16:
+  type: RECTANGLE
+  layout:
+    mode: none
+    sizing: {}
+    locationRelativeToParent:
+      x: 0
+      y: 0
+    dimensions:
+      width: 269
+      height: 332.96
+  strokes: Stone
+  strokeWeight: 0.5px
+  borderRadius: 12px
+EL-f3ec1cb5:
+  type: RECTANGLE
+  layout:
+    mode: none
+    sizing: {}
+    locationRelativeToParent:
+      x: 50
+      y: 64
+    dimensions:
+      width: 169
+      height: 160
+  fills:
+    - type: IMAGE
+      imageRef: 837079d7a4263daef60e6c2261fde3a6852552dd
+      scaleMode: STRETCH
+      objectFit: fill
+      isBackground: false
+      imageDownloadArguments:
+        needsCropping: true
+        requiresImageDimensions: false
+        cropTransform:
+          - - 1
+            - 0
+            - 0
+          - - 0
+            - 0.7313451170921326
+            - 0.13030901551246643
+        filenameSuffix: 29872a
+EL-711c2d12:
+  type: IMAGE-SVG
+  layout:
+    mode: none
+    sizing: {}
+    locationRelativeToParent:
+      x: 213
+      y: 24
+    dimensions:
+      width: 32
+      height: 31
+  fills:
+    - '#E5487E'
+
+COMPONENTS:
+745:531:
+  id: 745:531
+  key: f80629444df63879b5a6020a28a3395598bab6e7
+  name: size=24
+  componentSetId: 745:530
+375:710:
+  id: 375:710
+  key: b7f839c991731dd336b642c89f5325ecfefbcbbc
+  name: size=24
+  componentSetId: 375:709
+966:223:
+  id: 966:223
+  key: 02cbd5d1012e73f0ef815397b624b3fa0cf986ff
+  name: size=24
+  componentSetId: 966:222
+14:298:
+  id: 14:298
+  key: d70c40990cd5f976b447b006a9ce8dbfbf93cdd7
+  name: size=24
+  componentSetId: 14:297
+
+COMPONENT_SETS:
+745:530:
+  id: 745:530
+  key: 1e88a1b35f4d93d5843c4befef224f3c4b0b5d93
+  name: 2users
+  description: ''
+375:709:
+  id: 375:709
+  key: 0650d3644bab8dc0ef01ffbc204c066fc297c2a8
+  name: gear-settings
+  description: ''
+966:222:
+  id: 966:222
+  key: 4c247d74d576d9f7b69753906846db96a2cdc6d0
+  name: user
+  description: ''
+14:297:
+  id: 14:297
+  key: 10d96c4b132672670d482b611d938e0810073175
+  name: edit
+  description: ''
+
+NODES:
+[FRAME] "D.4.1 Profile - Favorite" #1239:2583 layout={"mode":"none","sizing":{}} fills=White
+  [FRAME] #1239:2587 layout={"mode":"row","padding":"19px 64px 18px 20px","alignItems":"center","gap":"48px","sizing":{"horizontal":"fixed","vertical":"fixed"},"locationRelativeToParent":{"x":65,"y":805},"dimensions":{"width":280,"height":64}} fills="Primary Pink" borderRadius=16px
+    [IMAGE-SVG] "2users" #1239:2588 layout=layout_a111c4b6 componentId=745:531
+    [TEXT] #1239:2589 layout=layout_177c5efc fills=White textStyle=style_cd87c1af text="social circle"
+  [FRAME] #1239:2590 layout={"mode":"row","padding":"19px 64px 18px 20px","justifyContent":"center","alignItems":"center","gap":"72px","sizing":{"horizontal":"fixed","vertical":"fixed"},"locationRelativeToParent":{"x":65,"y":890},"dimensions":{"width":280,"height":64}} fills=Linen borderRadius=16px
+    [IMAGE-SVG] "gear-settings" #1239:2591 layout=layout_a111c4b6 fills=[] componentId=375:710
+    [TEXT] #1239:2592 layout=layout_177c5efc fills=Slate textStyle=style_cd87c1af text="settings"
+  [GROUP] #1239:2593 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":-11,"y":-16},"dimensions":{"width":1465,"height":136}}
+    [RECTANGLE] #1239:2594 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":0,"y":0},"dimensions":{"width":1465,"height":136}} fills=["rgba(255, 255, 255, 0.1)"]
+    [IMAGE-SVG] "Union" #1239:2595 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":75,"y":54.4},"dimensions":{"width":24,"height":27.2}} fills="Primary Pink"
+    [TEXT] #1239:2600 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":115,"y":49.87},"dimensions":{"width":99,"height":37.4}} fills=["#000000"] textStyle={"fontFamily":"Avenir Next","fontStyle":"Regular","fontWeight":400,"fontSize":24,"textAlignHorizontal":"LEFT","textAlignVertical":"TOP"} text="loomette"
+    [TEXT] #1239:2601 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":583,"y":49.87},"dimensions":{"width":61,"height":37.4}} fills=Slate textStyle=style_cd87c1af text="Home"
+    [TEXT] #1239:2602 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":680,"y":49.87},"dimensions":{"width":103,"height":37.4}} fills=Slate textStyle=style_cd87c1af text="calendar"
+    [TEXT] #1239:2603 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":819,"y":49.87},"dimensions":{"width":110,"height":37.4}} fills=Slate textStyle=style_cd87c1af text="wardrobe"
+    [GROUP] #1239:2604 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":1251,"y":49.87},"dimensions":{"width":136,"height":37.4}}
+      [TEXT] #1239:2605 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":0,"y":0},"dimensions":{"width":96,"height":37.4}} fills=Slate textStyle=style_cd87c1af text="gevyndo"
+      [IMAGE-SVG] "user" #1239:2606 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":112,"y":4.53},"dimensions":{"width":24,"height":27.2}} componentId=966:223
+  [GROUP] #1239:2607 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":481,"y":1172},"dimensions":{"width":528,"height":100}} borderRadius="0px 0px 0px 0px"
+    [TEXT] #1239:2608 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":207,"y":0},"dimensions":{"width":67,"height":24}} fills=Slate textStyle={"fontFamily":"Figtree","fontStyle":"Regular","fontWeight":400,"fontSize":20,"textAlignHorizontal":"CENTER","textAlignVertical":"TOP"} text="SHOES"
+    [GROUP] #1239:2609 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":0,"y":40},"dimensions":{"width":528,"height":60}} borderRadius="0px 0px 0px 0px"
+      [TEXT] #1239:2610 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":144,"y":0},"dimensions":{"width":193,"height":60}} fills=Slate textStyle={"fontFamily":"Source Serif Pro","fontStyle":"Regular","fontWeight":400,"fontSize":48,"textAlignHorizontal":"CENTER","textAlignVertical":"TOP"} text="Sneakers"
+      [TEXT] #1239:2611 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":0,"y":0},"dimensions":{"width":117,"height":60}} fills=[{"type":"GRADIENT_LINEAR","gradient":"linear-gradient(270deg, rgba(201, 195, 183, 1) 0%, rgba(250, 250, 247, 0) 100%)"}] textStyle={"fontFamily":"Source Serif Pro","fontStyle":"Regular","fontWeight":400,"fontSize":48,"letterSpacing":"-0.02em","textAlignHorizontal":"CENTER","textAlignVertical":"TOP"} text="Heels"
+      [TEXT] #1239:2612 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":369,"y":0},"dimensions":{"width":159,"height":60}} fills=[{"type":"GRADIENT_LINEAR","gradient":"linear-gradient(90deg, rgba(201, 195, 183, 1) 0%, rgba(250, 250, 247, 0) 100%)"}] textStyle={"fontFamily":"Source Serif Pro","fontStyle":"Regular","fontWeight":400,"fontSize":48,"letterSpacing":"-0.02em","textAlignHorizontal":"LEFT","textAlignVertical":"TOP"} text="Sandals"
+  [RECTANGLE] "image-removebg-preview (8) 6" #1239:2613 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":-81,"y":993},"dimensions":{"width":110,"height":160}} fills=[{"type":"IMAGE","imageRef":"c6ff31d8a14d65a23be1759b2a95a0c039f2a5a7","scaleMode":"FILL","objectFit":"cover","isBackground":false,"imageDownloadArguments":{"needsCropping":false,"requiresImageDimensions":false}}]
+  [RECTANGLE] "image-removebg-preview (9) 1" #1239:2614 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":619,"y":1288},"dimensions":{"width":201,"height":136}} fills=fill_a233a3f2
+  [RECTANGLE] "image-removebg-preview (9) 2" #1239:2615 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":225,"y":1289},"dimensions":{"width":200,"height":136}} fills=fill_a233a3f2
+  [RECTANGLE] "image-removebg-preview (10) 1" #1239:2616 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":425,"y":1289},"dimensions":{"width":194,"height":136}} fills=fill_c0545372
+  [RECTANGLE] "image-removebg-preview (10) 4" #1239:2617 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":31,"y":1289},"dimensions":{"width":194,"height":136}} fills=fill_c0545372
+  [RECTANGLE] "image-removebg-preview (9) 3" #1239:2618 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":1014,"y":1288},"dimensions":{"width":200,"height":136}} fills=fill_a233a3f2
+  [RECTANGLE] "image-removebg-preview (10) 2" #1239:2619 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":820,"y":1288},"dimensions":{"width":194,"height":136}} fills=fill_c0545372
+  [RECTANGLE] "image-removebg-preview (10) 3" #1239:2620 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":1214,"y":1288},"dimensions":{"width":194,"height":136}} fills=fill_c0545372
+  [RECTANGLE] "image-removebg-preview (9) 4" #1239:2621 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":1408,"y":1288},"dimensions":{"width":200,"height":136}} fills=fill_a233a3f2
+  [RECTANGLE] "image-removebg-preview (9) 5" #1239:2622 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":-169,"y":1289},"dimensions":{"width":200,"height":136}} fills=fill_a233a3f2
+  [RECTANGLE] "image 12" #1239:2623 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":100,"y":184},"dimensions":{"width":200,"height":200}} fills=[{"type":"IMAGE","imageRef":"5a1f68886abf772a8ff5086a8e9b98947a628c7b","scaleMode":"FILL","objectFit":"cover","isBackground":false,"imageDownloadArguments":{"needsCropping":false,"requiresImageDimensions":false}}] borderRadius=20px
+  [TEXT] #1239:2624 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":110,"y":445},"dimensions":{"width":180,"height":40}} fills=Slate textStyle={"fontFamily":"Source Serif Pro","fontStyle":"Regular","fontWeight":400,"fontSize":32,"letterSpacing":"-0.02em","textAlignHorizontal":"LEFT","textAlignVertical":"TOP"} text="Tanara Karin"
+  [TEXT] #1239:2625 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":162,"y":414},"dimensions":{"width":75,"height":27}} fills=Slate textStyle=style_359478a5 text="@karina"
+  [RECTANGLE] #1239:2672 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":759,"y":184},"dimensions":{"width":127,"height":47}} fills=Linen borderRadius=8px
+  [TEXT] #1239:2626 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":174,"y":497},"dimensions":{"width":51,"height":22}} fills=Slate textStyle={"fontFamily":"Avenir Next","fontStyle":"Regular","fontWeight":400,"fontSize":16,"textCase":"SMALL_CAPS_FORCED","textAlignHorizontal":"LEFT","textAlignVertical":"TOP"} text="XS ・36"
+  [FRAME] #1239:2627 layout={"mode":"row","alignItems":"center","gap":"24px","sizing":{"horizontal":"hug","vertical":"hug"},"locationRelativeToParent":{"x":501,"y":343}}
+    [GROUP] #1239:2628 template=EL-b05afa4e
+      [TEXT] #1239:2629 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":112,"y":281.05},"dimensions":{"width":45,"height":27}} fills=Stone textStyle=style_359478a5 text="POLO"
+      [TEXT] #1239:2630 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":82,"y":251},"dimensions":{"width":106,"height":30}} fills=Slate textStyle=style_cd03fa65 text="Blue Shirt"
+      [RECTANGLE] #1239:2631 template=EL-55373d16
+      [RECTANGLE] "image-removebg-preview 1" #1239:2632 template=EL-f3ec1cb5
+      [IMAGE-SVG] "Union" #1239:2633 template=EL-711c2d12
+    [GROUP] #1239:2636 template=EL-b05afa4e
+      [RECTANGLE] #1239:2637 template=EL-55373d16
+      [TEXT] #1239:2638 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":102,"y":281.05},"dimensions":{"width":65,"height":27}} fills=Stone textStyle=style_359478a5 text="shopee"
+      [TEXT] #1239:2639 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":60,"y":251},"dimensions":{"width":150,"height":30}} fills=Slate textStyle=style_cd03fa65 text="Polkadot Skirt"
+      [RECTANGLE] "image-removebg-preview 1" #1239:2640 template=EL-f3ec1cb5
+      [IMAGE-SVG] "Union" #1239:2641 template=EL-711c2d12
+    [GROUP] #1239:2644 template=EL-b05afa4e
+      [RECTANGLE] #1239:2645 template=EL-55373d16
+      [IMAGE-SVG] "Union" #1239:2646 template=EL-711c2d12
+      [TEXT] #1239:2649 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":65,"y":250},"dimensions":{"width":140,"height":32}} fills=Slate textStyle={"fontFamily":"Source Serif Pro","fontStyle":"Regular","fontWeight":400,"fontSize":24,"letterSpacing":"-0.02em","textAlignHorizontal":"LEFT","textAlignVertical":"TOP"} text="Summer Red"
+      [RECTANGLE] "___1_-removebg-preview 1" #1239:2650 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":61,"y":26},"dimensions":{"width":147,"height":220}} fills=[{"type":"IMAGE","imageRef":"8bf8b363cb3ab1da75efc052040325af8a76aee1","scaleMode":"STRETCH","objectFit":"fill","isBackground":false,"imageDownloadArguments":{"needsCropping":true,"requiresImageDimensions":false,"cropTransform":[[1,0,0],[0,0.8445945978164673,0.08853083848953247]],"filenameSuffix":"55998c"}}]
+      [TEXT] #1239:2651 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":91,"y":286},"dimensions":{"width":87,"height":22}} fills=Slate textStyle={"fontFamily":"Avenir Next","fontStyle":"Regular","fontWeight":400,"fontSize":16,"letterSpacing":"-0.02em","textAlignHorizontal":"CENTER","textAlignVertical":"TOP"} text="Mix & Match"
+  [TEXT] #1239:2653 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":785,"y":199},"dimensions":{"width":75,"height":19}} fills=Slate textStyle=style_f3b6b27e text="Favorite"
+  [TEXT] #1239:2655 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":937,"y":199},"dimensions":{"width":58,"height":19}} fills=Slate textStyle=style_f3b6b27e text="travel"
+  [TEXT] #1239:2657 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":1072,"y":198},"dimensions":{"width":73,"height":19}} fills=Slate textStyle=style_f3b6b27e text="wishlist"
+  [FRAME] #1239:2659 layout={"mode":"row","padding":"19px 16px 18px","justifyContent":"center","alignItems":"center","gap":"20px","sizing":{"horizontal":"hug","vertical":"fixed"},"locationRelativeToParent":{"x":501,"y":271},"dimensions":{"height":40}} strokes=Slate strokeWeight=1.5px borderRadius=16px
+    [TEXT] #1239:2660 layout=layout_177c5efc fills=Slate textStyle=style_f3b6b27e text="all"
+  [FRAME] #1239:2661 layout={"mode":"row","padding":"19px 16px 18px","justifyContent":"center","alignItems":"center","gap":"20px","sizing":{"horizontal":"hug","vertical":"fixed"},"locationRelativeToParent":{"x":581,"y":271},"dimensions":{"height":40}} strokes=Stone strokeWeight=1px borderRadius=16px
+    [TEXT] #1239:2662 layout=layout_177c5efc fills=Slate textStyle=style_f3b6b27e text="wardrobe"
+  [FRAME] #1239:2663 layout={"mode":"row","padding":"19px 16px 18px","justifyContent":"center","alignItems":"center","gap":"20px","sizing":{"horizontal":"hug","vertical":"fixed"},"locationRelativeToParent":{"x":724,"y":271},"dimensions":{"height":40}} strokes=Stone strokeWeight=1px borderRadius=16px
+    [TEXT] #1239:2664 layout=layout_177c5efc fills=Slate textStyle=style_f3b6b27e text="outfit"
+  [LINE] #1239:2670 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":393,"y":164},"dimensions":{"width":0,"height":812}} strokes=Stone strokeWeight=0.5px
+  [IMAGE-SVG] #1240:2825 layout={"mode":"none","sizing":{},"locationRelativeToParent":{"x":270,"y":353},"dimensions":{"width":52,"height":52}} borderRadius="0px 0px 0px 0px"

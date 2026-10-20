@@ -7,6 +7,7 @@ export default defineConfig({
     tsconfigPaths: true,
   },
   test: {
+    pool: "threads",
     environment: "happy-dom",
     globals: true,
     setupFiles: ["./test/setup.ts"],

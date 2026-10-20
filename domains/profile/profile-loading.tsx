@@ -5,8 +5,9 @@ import { cn } from "@/lib/utils";
 
 export function ProfileFallback() {
   return (
-    <main className="mx-auto flex w-full max-w-sm flex-1 flex-col">
-      <div className="relative h-60 w-full">
+    <main className="mx-auto flex w-full max-w-sm lg:max-w-6xl xl:max-w-7xl flex-1 flex-col lg:flex-row gap-0 lg:gap-14 px-0 lg:px-12 py-0 lg:py-12">
+      {/* Mobile Header (< lg) */}
+      <div className="relative h-60 w-full lg:hidden">
         <Image
           src="/brand/sky.png"
           alt=""
@@ -45,47 +46,73 @@ export function ProfileFallback() {
         </div>
       </div>
 
-      <div className="border-border flex items-center justify-between border-b px-6 pt-5">
-        {["favorite", "travels", "wishlist"].map((value, i) => (
-          <span
-            key={value}
-            className={cn(
-              'pb-3 text-sm font-medium tracking-wide uppercase',
-              i === 0
-                ? "text-foreground border-foreground border-b-2"
-                : "text-muted-foreground opacity-60"
-            )}
-          >
-            {value}
-          </span>
-        ))}
-      </div>
+      {/* Desktop Sidebar Skeleton (lg:) */}
+      <aside className="hidden lg:flex flex-col items-center gap-8 w-64 shrink-0 animate-pulse">
+        <div className="size-36 rounded-3xl bg-muted" />
+        <div className="flex flex-col items-center gap-2">
+          <div className="h-3 w-20 bg-muted rounded" />
+          <div className="h-7 w-36 bg-muted rounded" />
+          <div className="h-3 w-24 bg-muted rounded" />
+        </div>
+        <div className="flex flex-col w-full gap-3 pt-4">
+          <div className="h-12 w-full bg-muted rounded-2xl" />
+          <div className="h-12 w-full bg-muted rounded-2xl" />
+        </div>
+      </aside>
 
-      <div className="flex flex-1 flex-col gap-4 px-6 py-6">
-        <div className="flex gap-2">
-          {["all", "wardrobe", "outfit"].map((value, i) => (
-            <div
+      <div className="hidden lg:block w-px bg-border/60 self-stretch" />
+
+      {/* Content Area */}
+      <section className="flex flex-1 flex-col w-full">
+        <div className="hidden lg:flex items-center justify-end gap-3 pb-6">
+          <div className="h-9 w-24 bg-muted/60 rounded-xl" />
+          <div className="h-9 w-24 bg-muted/60 rounded-xl" />
+          <div className="h-9 w-24 bg-muted/60 rounded-xl" />
+        </div>
+
+        <div className="border-border flex lg:hidden items-center justify-between border-b px-6 pt-5">
+          {["favorite", "travels", "wishlist"].map((value, i) => (
+            <span
               key={value}
-              className={`rounded-full border px-4 py-2 text-xs font-medium tracking-wide uppercase ${i === 0
-                ? "border-foreground text-foreground border-2"
-                : "border-border text-muted-foreground opacity-60"
-                }`}
+              className={cn(
+                "pb-3 text-sm font-medium tracking-wide uppercase",
+                i === 0
+                  ? "text-foreground border-foreground border-b-2"
+                  : "text-muted-foreground opacity-60",
+              )}
             >
               {value}
-            </div>
+            </span>
           ))}
         </div>
 
-        <div className="grid grid-cols-2 gap-4">
-          {[1, 2, 3, 4].map((idx) => (
-            <div key={idx} className="flex flex-col gap-2">
-              <div className="bg-muted aspect-square animate-pulse rounded-2xl" />
-              <div className="bg-muted h-4 w-24 animate-pulse rounded" />
-              <div className="bg-muted h-3 w-12 animate-pulse rounded" />
-            </div>
-          ))}
+        <div className="flex flex-1 flex-col gap-6 px-6 lg:px-0 py-6">
+          <div className="flex gap-2">
+            {["all", "wardrobe", "outfit"].map((value, i) => (
+              <div
+                key={value}
+                className={`rounded-full border px-4 py-2 text-xs font-medium tracking-wide uppercase ${
+                  i === 0
+                    ? "border-foreground text-foreground border-2"
+                    : "border-border text-muted-foreground opacity-60"
+                }`}
+              >
+                {value}
+              </div>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-6">
+            {[1, 2, 3, 4, 5, 6].map((idx) => (
+              <div key={idx} className="flex flex-col gap-2 p-4 border border-border/40 rounded-2xl bg-secondary/30">
+                <div className="bg-muted aspect-square animate-pulse rounded-xl" />
+                <div className="bg-muted h-4 w-24 animate-pulse rounded mt-2" />
+                <div className="bg-muted h-3 w-12 animate-pulse rounded" />
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
     </main>
   );
 }

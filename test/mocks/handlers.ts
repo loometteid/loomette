@@ -34,6 +34,50 @@ export const handlers = [
     return HttpResponse.json([]);
   }),
 
+  // Default mock handler for trip_packing_item table queries
+  http.get(`${MOCK_SUPABASE_URL}/rest/v1/trip_packing_item`, () => {
+    return HttpResponse.json([
+      {
+        id: "pack-1",
+        trip_id: "mock-trip-123",
+        user_id: "user-123",
+        name: "Red Cardigan",
+        is_packed: false,
+        created_at: "2026-10-01T00:00:00Z",
+      },
+      {
+        id: "pack-2",
+        trip_id: "mock-trip-123",
+        user_id: "user-123",
+        name: "Stripes Blue Blouse",
+        is_packed: true,
+        created_at: "2026-10-01T00:01:00Z",
+      },
+    ]);
+  }),
+
+  http.post(`${MOCK_SUPABASE_URL}/rest/v1/trip_packing_item`, async ({ request }) => {
+    const body = (await request.json()) as {
+      trip_id: string;
+      user_id: string;
+      name: string;
+      is_packed?: boolean;
+    };
+    const newItem = {
+      id: "pack-new-1",
+      trip_id: body.trip_id,
+      user_id: body.user_id,
+      name: body.name,
+      is_packed: body.is_packed ?? false,
+      created_at: new Date().toISOString(),
+    };
+    return HttpResponse.json(newItem, { status: 201 });
+  }),
+
+  http.patch(`${MOCK_SUPABASE_URL}/rest/v1/trip_packing_item`, () => {
+    return HttpResponse.json({}, { status: 200 });
+  }),
+
   // Default mock handler for user table (e.g. gender profile or full onboarding profile)
   http.get(`${MOCK_SUPABASE_URL}/rest/v1/user`, ({ request }) => {
     const url = new URL(request.url);

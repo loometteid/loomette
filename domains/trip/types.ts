@@ -21,3 +21,13 @@ export type TripDetail = {
   days: string[];
   outfitsByDay: Record<string, TripDayOutfit[]>;
 };
+
+export type TripPackingItem = {
+  id: string;
+  tripId: string;
+  userId: string;
+  name: string;
+  isPacked: boolean;
+  createdAt: string | null;
+};
+

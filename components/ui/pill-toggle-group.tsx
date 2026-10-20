@@ -26,7 +26,7 @@ export function PillToggleGroup({
           data-entity-id={option.value}
           onClick={() => onToggle(option.value)}
           className={cn(
-            "rounded-full border px-4 py-2 text-xs font-medium tracking-wide uppercase transition-colors",
+            "rounded-full border px-4 py-2 font-sans text-xs md:text-sm font-normal tracking-wider uppercase transition-colors",
             isSelected(option.value)
               ? "border-foreground text-foreground border-2"
               : "border-border text-muted-foreground hover:text-foreground",

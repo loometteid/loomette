@@ -7,6 +7,7 @@ import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { getQueryClient } from "@/lib/tanstack-query";
 import { getUserQueryOptions } from "@/domains/profile/query-options/get-user.query-option";
 import { getTripDetailQueryOptionsForServer } from "@/domains/trip/query-options/get-trip-detail.query-option.server";
+import { getTripPackingItemsQueryOptionsForServer } from "@/domains/trip/query-options/get-trip-packing-items.query-option.server";
 
 export default async function TripPage({
   params,
@@ -29,9 +30,12 @@ export default async function TripPage({
   // Populate user data
   queryClient.setQueryData(getUserQueryOptions().queryKey, () => user);
 
-  // Prefetch trip detail
+  // Prefetch trip detail & packing items in parallel
   void queryClient.ensureQueryData(
     getTripDetailQueryOptionsForServer(user.id, id),
+  );
+  void queryClient.ensureQueryData(
+    getTripPackingItemsQueryOptionsForServer(user.id, id),
   );
 
   const dehydratedQueryClient = dehydrate(queryClient);

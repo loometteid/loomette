@@ -303,6 +303,68 @@ export type Database = {
           },
         ];
       };
+      payment_order: {
+        Row: {
+          amount: number;
+          checkout_url: string | null;
+          created_at: string;
+          currency: string;
+          id: string;
+          metadata: Json | null;
+          order_id: string;
+          paid_at: string | null;
+          plan: string;
+          provider: string;
+          provider_session_id: string | null;
+          provider_transaction_id: string | null;
+          status: string;
+          updated_at: string;
+          user_id: string;
+        };
+        Insert: {
+          amount: number;
+          checkout_url?: string | null;
+          created_at?: string;
+          currency?: string;
+          id?: string;
+          metadata?: Json | null;
+          order_id: string;
+          paid_at?: string | null;
+          plan: string;
+          provider: string;
+          provider_session_id?: string | null;
+          provider_transaction_id?: string | null;
+          status?: string;
+          updated_at?: string;
+          user_id: string;
+        };
+        Update: {
+          amount?: number;
+          checkout_url?: string | null;
+          created_at?: string;
+          currency?: string;
+          id?: string;
+          metadata?: Json | null;
+          order_id?: string;
+          paid_at?: string | null;
+          plan?: string;
+          provider?: string;
+          provider_session_id?: string | null;
+          provider_transaction_id?: string | null;
+          status?: string;
+          updated_at?: string;
+          user_id?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "payment_order_user_id_fkey";
+            columns: ["user_id"];
+            isOneToOne: false;
+            referencedRelation: "user";
+            referencedColumns: ["user_id"];
+          },
+        ];
+      };
       trip: {
         Row: {
           created_at: string | null;
@@ -340,6 +402,105 @@ export type Database = {
         Relationships: [
           {
             foreignKeyName: "trip_user_id_fkey";
+            columns: ["user_id"];
+            isOneToOne: false;
+            referencedRelation: "user";
+            referencedColumns: ["user_id"];
+          },
+        ];
+      };
+      trip_packing_item: {
+        Row: {
+          created_at: string | null;
+          id: string;
+          is_packed: boolean;
+          name: string;
+          trip_id: string;
+          user_id: string;
+        };
+        Insert: {
+          created_at?: string | null;
+          id?: string;
+          is_packed?: boolean;
+          name: string;
+          trip_id: string;
+          user_id: string;
+        };
+        Update: {
+          created_at?: string | null;
+          id?: string;
+          is_packed?: boolean;
+          name?: string;
+          trip_id?: string;
+          user_id?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "trip_packing_item_trip_id_fkey";
+            columns: ["trip_id"];
+            isOneToOne: false;
+            referencedRelation: "trip";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "trip_packing_item_user_id_fkey";
+            columns: ["user_id"];
+            isOneToOne: false;
+            referencedRelation: "user";
+            referencedColumns: ["user_id"];
+          },
+        ];
+      };
+      subscription: {
+        Row: {
+          billing_cycle: string;
+          cancel_at_period_end: boolean;
+          created_at: string;
+          current_period_end: string;
+          current_period_start: string;
+          id: string;
+          latest_order_id: string | null;
+          status: string;
+          tier: string;
+          updated_at: string;
+          user_id: string;
+        };
+        Insert: {
+          billing_cycle?: string;
+          cancel_at_period_end?: boolean;
+          created_at?: string;
+          current_period_end: string;
+          current_period_start?: string;
+          id?: string;
+          latest_order_id?: string | null;
+          status?: string;
+          tier?: string;
+          updated_at?: string;
+          user_id: string;
+        };
+        Update: {
+          billing_cycle?: string;
+          cancel_at_period_end?: boolean;
+          created_at?: string;
+          current_period_end?: string;
+          current_period_start?: string;
+          id?: string;
+          latest_order_id?: string | null;
+          status?: string;
+          tier?: string;
+          updated_at?: string;
+          user_id?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "subscription_latest_order_id_fkey";
+            columns: ["latest_order_id"];
+            isOneToOne: false;
+            referencedRelation: "payment_order";
+            referencedColumns: ["order_id"];
+          },
+          {
+            foreignKeyName: "subscription_user_id_fkey";
             columns: ["user_id"];
             isOneToOne: false;
             referencedRelation: "user";

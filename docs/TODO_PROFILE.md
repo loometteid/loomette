@@ -58,14 +58,20 @@
 ---
 
 ## 6. Figma Typography & Frame Lookups (Rate Limit Status)
-- **Status**: Lookups halted due to Figma API 429 rate limit (starter plan limit reached; retry after ~52,600s).
-- **Enacted Rule**: Stop Figma API calls, mark frames looked up and cached in `figma/snapshots/`, mark remaining frames as TODOs, and implement based on cached snapshots and local design tokens (`figma/Typography.png`, `figma/profile/**/*.png`).
+- **Status**: Pulled and cached all available Figma file overview data, design system tokens, canvas trees, and complete frame ID index into `figma/snapshots/`.
+- **API Status**:
+  - Figma's granular node endpoint (`/v1/files/:fileKey/nodes`) is rate-limited by CloudFront for the current Starter tier account (`Retry-After: ~399,000s`).
+  - Document-level metadata, global variables, design system components, layout templates, and the entire High Fidelity canvas frame hierarchy have been pulled and cached.
 - **Looked Up & Cached** (in `figma/snapshots/`):
+  - [x] Full document hierarchy & frame index $\rightarrow$ `figma/snapshots/figma-frames-index.json`
+  - [x] Global variables, design system, layout templates & node mappings $\rightarrow$ `figma/snapshots/figma-design-system-and-nodes.yaml`
   - [x] `4.1 MOBILE` (node `47:296`) $\rightarrow$ `figma/snapshots/4.1-mobile-47-296.json`
   - [x] `D.4.1 DESKTOP` (node `1239:2583`) $\rightarrow$ `figma/snapshots/D.4.1-desktop-1239-2583.json`
   - [x] `4.2 MOBILE` (node `13:146`) $\rightarrow$ `figma/snapshots/4.2-mobile-13-146.json`
   - [x] `4.2.1 MOBILE` (node `325:66`) $\rightarrow$ `figma/snapshots/4.2.1-mobile-325-66.json`
-- **Pending Lookups (TODO)**:
+- **Visual Design Reference**:
+  - All 112 profile screen designs are saved locally in `figma/profile/desktop` and `figma/profile/mobile` as `@1x` PNGs, `@2x` PNGs, and vector `.svg` files with full paths, CSS styles, and bounding boxes.
+- **Pending Granular Node Snapshots (when rate-limit expires or with upgraded plan)**:
   - Mobile:
     - [ ] `4.2.2.1 MOBILE`: `364:281`
     - [ ] `4.2.2.2 MOBILE`: `744:472`

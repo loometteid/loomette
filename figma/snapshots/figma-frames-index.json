@@ -1,0 +1,1406 @@
+[
+  {
+    "id": "92:2067",
+    "name": "Design System",
+    "frames": [
+      {
+        "id": "92:2162",
+        "name": "Layout",
+        "type": "GROUP"
+      },
+      {
+        "id": "92:2161",
+        "name": "Typography",
+        "type": "GROUP"
+      },
+      {
+        "id": "92:2229",
+        "name": "Button",
+        "type": "GROUP"
+      },
+      {
+        "id": "92:2281",
+        "name": "Text Field",
+        "type": "GROUP"
+      },
+      {
+        "id": "93:2363",
+        "name": "Color",
+        "type": "GROUP"
+      },
+      {
+        "id": "1120:788",
+        "name": "Group 70",
+        "type": "GROUP"
+      },
+      {
+        "id": "1120:845",
+        "name": "Frame 19",
+        "type": "FRAME"
+      },
+      {
+        "id": "1120:847",
+        "name": "Group 249",
+        "type": "GROUP"
+      },
+      {
+        "id": "1128:322",
+        "name": "Group 282",
+        "type": "GROUP"
+      },
+      {
+        "id": "1129:328",
+        "name": "Frame 9",
+        "type": "FRAME"
+      },
+      {
+        "id": "1129:332",
+        "name": "Group 34",
+        "type": "GROUP"
+      },
+      {
+        "id": "1129:338",
+        "name": "Group 128",
+        "type": "GROUP"
+      },
+      {
+        "id": "1129:352",
+        "name": "Group 300",
+        "type": "GROUP"
+      }
+    ]
+  },
+  {
+    "id": "0:1",
+    "name": "High Fidelity",
+    "frames": [
+      {
+        "id": "58:68",
+        "name": "0. Splash Screen",
+        "type": "FRAME"
+      },
+      {
+        "id": "92:1964",
+        "name": "0.1 Welcome screen - w SSO",
+        "type": "FRAME"
+      },
+      {
+        "id": "1532:348",
+        "name": "Group 346",
+        "type": "GROUP"
+      },
+      {
+        "id": "60:193",
+        "name": "0.2.1 Onboarding",
+        "type": "FRAME"
+      },
+      {
+        "id": "61:266",
+        "name": "0.2.2 Onboarding",
+        "type": "FRAME"
+      },
+      {
+        "id": "61:309",
+        "name": "0.2.3 Onboarding",
+        "type": "FRAME"
+      },
+      {
+        "id": "62:449",
+        "name": "0.2.4 Onboarding",
+        "type": "FRAME"
+      },
+      {
+        "id": "61:338",
+        "name": "0.2.5 Onboarding",
+        "type": "FRAME"
+      },
+      {
+        "id": "462:520",
+        "name": "0.2.6 Onboarding",
+        "type": "FRAME"
+      },
+      {
+        "id": "379:1694",
+        "name": "0.2.7.1 Add Initial Item",
+        "type": "FRAME"
+      },
+      {
+        "id": "678:323",
+        "name": "0.2.7.3 Add Initial Item - generate basics",
+        "type": "FRAME"
+      },
+      {
+        "id": "389:1714",
+        "name": "0.2.7.2 Add Initial Item - Photo Uploaded",
+        "type": "FRAME"
+      },
+      {
+        "id": "47:15",
+        "name": "1. Homepage",
+        "type": "FRAME"
+      },
+      {
+        "id": "395:1757",
+        "name": "1.1.1 Outfit Recommendation Detail",
+        "type": "FRAME"
+      },
+      {
+        "id": "395:1877",
+        "name": "1.1.2 Outfit Recomendation Detail -  Pop-up Calendar",
+        "type": "FRAME"
+      },
+      {
+        "id": "581:554",
+        "name": "1.1.3 Outfit Recomendation Detail -  Pop-up Collection",
+        "type": "FRAME"
+      },
+      {
+        "id": "581:740",
+        "name": "1.2 Notifications",
+        "type": "FRAME"
+      },
+      {
+        "id": "47:77",
+        "name": "2. Calendar",
+        "type": "FRAME"
+      },
+      {
+        "id": "149:95",
+        "name": "2.1.1 Loading Generating Outfit",
+        "type": "FRAME"
+      },
+      {
+        "id": "150:167",
+        "name": "2.1.2 Outfit Approval ",
+        "type": "FRAME"
+      },
+      {
+        "id": "150:267",
+        "name": "2.2 outfit details",
+        "type": "FRAME"
+      },
+      {
+        "id": "150:322",
+        "name": "2.3 All outfit history",
+        "type": "FRAME"
+      },
+      {
+        "id": "12:256",
+        "name": "3. Wardrobe",
+        "type": "FRAME"
+      },
+      {
+        "id": "102:216",
+        "name": "3. Wardrobe - add button",
+        "type": "FRAME"
+      },
+      {
+        "id": "102:40",
+        "name": "3.0.1 Wardrobe Filter",
+        "type": "FRAME"
+      },
+      {
+        "id": "1145:309",
+        "name": "2.3.1 Wardrobe Filter",
+        "type": "FRAME"
+      },
+      {
+        "id": "1445:344",
+        "name": "2.4 Share OOTD",
+        "type": "FRAME"
+      },
+      {
+        "id": "176:509",
+        "name": "3.0.2 Wardrobe Search Result",
+        "type": "FRAME"
+      },
+      {
+        "id": "65:740",
+        "name": "3.1 Approval page",
+        "type": "FRAME"
+      },
+      {
+        "id": "400:207",
+        "name": "3.1.1 Approval Page Pop Up",
+        "type": "FRAME"
+      },
+      {
+        "id": "760:197",
+        "name": "3.1.1 Approval Page Pop Up - Details Expanded",
+        "type": "FRAME"
+      },
+      {
+        "id": "63:636",
+        "name": "3.2.2 Add item",
+        "type": "FRAME"
+      },
+      {
+        "id": "63:672",
+        "name": "3.2.3 Add item loading page",
+        "type": "FRAME"
+      },
+      {
+        "id": "66:933",
+        "name": "3.3 Item detail/edit",
+        "type": "FRAME"
+      },
+      {
+        "id": "442:117",
+        "name": "3.3 Item detail/edit - ori photo/sourse",
+        "type": "FRAME"
+      },
+      {
+        "id": "152:89",
+        "name": "3.4.1 Mix & Match",
+        "type": "FRAME"
+      },
+      {
+        "id": "410:717",
+        "name": "3.4.2 Mix & Match - Result",
+        "type": "FRAME"
+      },
+      {
+        "id": "410:749",
+        "name": "3.4.2.1 Mix & Match Result - Calendar Pop Up",
+        "type": "FRAME"
+      },
+      {
+        "id": "410:946",
+        "name": "3.4.3 Mix & Match Succesful",
+        "type": "FRAME"
+      },
+      {
+        "id": "518:147",
+        "name": "3.5 Entry Affiliate Link",
+        "type": "FRAME"
+      },
+      {
+        "id": "47:296",
+        "name": "4.1 Profile - Favorite",
+        "type": "FRAME"
+      },
+      {
+        "id": "13:146",
+        "name": "4.2 Trip",
+        "type": "FRAME"
+      },
+      {
+        "id": "325:66",
+        "name": "4.2.1 Edit Trip",
+        "type": "FRAME"
+      },
+      {
+        "id": "364:281",
+        "name": "4.2.2.1 Trip - Outfit Plan",
+        "type": "FRAME"
+      },
+      {
+        "id": "744:472",
+        "name": "4.2.2.2 Trip - Outfit Plan",
+        "type": "FRAME"
+      },
+      {
+        "id": "364:400",
+        "name": "4.2.3 Trip - Packing List",
+        "type": "FRAME"
+      },
+      {
+        "id": "57:24",
+        "name": "4.3 Wishlist",
+        "type": "FRAME"
+      },
+      {
+        "id": "518:244",
+        "name": "4.3.1 Pop up Add to Wardrobe",
+        "type": "FRAME"
+      },
+      {
+        "id": "89:1775",
+        "name": "4.4 Profile",
+        "type": "FRAME"
+      },
+      {
+        "id": "376:723",
+        "name": "4.5 Settings",
+        "type": "FRAME"
+      },
+      {
+        "id": "378:1015",
+        "name": "4.5.1 Privacy & Policy",
+        "type": "FRAME"
+      },
+      {
+        "id": "378:1096",
+        "name": "4.5.2 Connected Account",
+        "type": "FRAME"
+      },
+      {
+        "id": "731:345",
+        "name": "4.5.5 Pricing",
+        "type": "FRAME"
+      },
+      {
+        "id": "751:573",
+        "name": "4.6 Friends",
+        "type": "FRAME"
+      },
+      {
+        "id": "751:683",
+        "name": "[Phase 2] 4.6.1 Friend Page",
+        "type": "FRAME"
+      },
+      {
+        "id": "379:1241",
+        "name": "4.5.3 Pop-up Logout",
+        "type": "FRAME"
+      },
+      {
+        "id": "1583:540",
+        "name": "Frame",
+        "type": "FRAME"
+      },
+      {
+        "id": "379:1438",
+        "name": "4.5.4.1 Pop-up Delete Account",
+        "type": "FRAME"
+      },
+      {
+        "id": "761:354",
+        "name": "4.5.4.2 Pop-up Delete Account",
+        "type": "FRAME"
+      },
+      {
+        "id": "379:1542",
+        "name": "4.5.4.3 Pop-up Delete Account (2)",
+        "type": "FRAME"
+      },
+      {
+        "id": "581:545",
+        "name": "WBS",
+        "type": "GROUP"
+      },
+      {
+        "id": "582:965",
+        "name": "[HIDE] Arrows",
+        "type": "GROUP"
+      },
+      {
+        "id": "773:512",
+        "name": "-1. Landing Page",
+        "type": "FRAME"
+      },
+      {
+        "id": "643:966",
+        "name": "D-1. Landing Page",
+        "type": "FRAME"
+      },
+      {
+        "id": "1704:339",
+        "name": "Screenshot 2026-10-13 at 20.02.22 1",
+        "type": "RECTANGLE"
+      },
+      {
+        "id": "1525:338",
+        "name": "Group 345",
+        "type": "GROUP"
+      },
+      {
+        "id": "814:751",
+        "name": "D0.1 Register/Sign in",
+        "type": "FRAME"
+      },
+      {
+        "id": "840:176",
+        "name": "D0.2 Onboarding",
+        "type": "FRAME"
+      },
+      {
+        "id": "1704:340",
+        "name": "Group 198",
+        "type": "GROUP"
+      },
+      {
+        "id": "840:240",
+        "name": "D0.3 Onboarding",
+        "type": "FRAME"
+      },
+      {
+        "id": "840:313",
+        "name": "D0.4 Onboarding",
+        "type": "FRAME"
+      },
+      {
+        "id": "840:376",
+        "name": "D0.5 Onboarding",
+        "type": "FRAME"
+      },
+      {
+        "id": "1583:338",
+        "name": "D0.6 Onboarding",
+        "type": "FRAME"
+      },
+      {
+        "id": "866:644",
+        "name": "D0.7 Onboarding",
+        "type": "FRAME"
+      },
+      {
+        "id": "866:799",
+        "name": "D0.8.1 Onboarding",
+        "type": "FRAME"
+      },
+      {
+        "id": "933:187",
+        "name": "D0.8.2 Onboarding",
+        "type": "FRAME"
+      },
+      {
+        "id": "965:187",
+        "name": "D.1 Home",
+        "type": "FRAME"
+      },
+      {
+        "id": "985:972",
+        "name": "D.2 Calendar",
+        "type": "FRAME"
+      },
+      {
+        "id": "1087:439",
+        "name": "D.2.1 Adding Looks",
+        "type": "FRAME"
+      },
+      {
+        "id": "1096:218",
+        "name": "D.3 Wardrobe - Full",
+        "type": "FRAME"
+      },
+      {
+        "id": "1106:395",
+        "name": "D.3 Wardrobe - Cut",
+        "type": "FRAME"
+      },
+      {
+        "id": "1115:277",
+        "name": "D.3.1 Add New Item",
+        "type": "FRAME"
+      },
+      {
+        "id": "1115:880",
+        "name": "D.3.3 Item Approval",
+        "type": "FRAME"
+      },
+      {
+        "id": "1120:263",
+        "name": "D.3 Wardrobe",
+        "type": "FRAME"
+      },
+      {
+        "id": "1118:1432",
+        "name": "D.3.4 Wardrobe Detail",
+        "type": "FRAME"
+      },
+      {
+        "id": "1118:1659",
+        "name": "D.3 Wardrobe",
+        "type": "FRAME"
+      },
+      {
+        "id": "1118:1887",
+        "name": "D.3 Wardrobe",
+        "type": "FRAME"
+      },
+      {
+        "id": "1115:984",
+        "name": "D.3.3.1 Item Approval Details",
+        "type": "FRAME"
+      },
+      {
+        "id": "1115:444",
+        "name": "D.3.2 New Item Loading",
+        "type": "FRAME"
+      },
+      {
+        "id": "1109:946",
+        "name": "D.3 Wardrobe - search result",
+        "type": "FRAME"
+      },
+      {
+        "id": "1239:2583",
+        "name": "D.4.1 Profile - Favorite",
+        "type": "FRAME"
+      },
+      {
+        "id": "1240:2830",
+        "name": "D.4.2 Trip",
+        "type": "FRAME"
+      },
+      {
+        "id": "1240:2915",
+        "name": "D.4.3 Wishlist",
+        "type": "FRAME"
+      },
+      {
+        "id": "1240:3557",
+        "name": "D.4.3.1 Pop up Add to Wardrobe",
+        "type": "FRAME"
+      },
+      {
+        "id": "1240:2994",
+        "name": "D.4.2.2.1 Trip - Outfit Plan",
+        "type": "FRAME"
+      },
+      {
+        "id": "1240:3761",
+        "name": "D.4.2.2.2 Trip - Outfit Plan",
+        "type": "FRAME"
+      },
+      {
+        "id": "1240:3237",
+        "name": "D.4.2.3 Trip - Packing List",
+        "type": "FRAME"
+      },
+      {
+        "id": "1240:3444",
+        "name": "D.4.2.1 Edit Trip",
+        "type": "FRAME"
+      },
+      {
+        "id": "1187:648",
+        "name": "Line 19",
+        "type": "LINE"
+      },
+      {
+        "id": "1230:306",
+        "name": "D.4.5 Settings",
+        "type": "FRAME"
+      },
+      {
+        "id": "1235:1455",
+        "name": "D.4.5.3 Pop-up Logout",
+        "type": "FRAME"
+      },
+      {
+        "id": "1235:1593",
+        "name": "D.4.5.4.1 Pop-up Delete Account",
+        "type": "FRAME"
+      },
+      {
+        "id": "1235:1724",
+        "name": "D.4.5.4.2 Pop-up Delete Account",
+        "type": "FRAME"
+      },
+      {
+        "id": "1235:1870",
+        "name": "D.4.5.4.3 Pop-up Delete Account",
+        "type": "FRAME"
+      },
+      {
+        "id": "1235:1321",
+        "name": "D.4.5.2 Connected Account",
+        "type": "FRAME"
+      },
+      {
+        "id": "1237:2350",
+        "name": "D.4.6.1 Friend Page",
+        "type": "FRAME"
+      },
+      {
+        "id": "1237:2015",
+        "name": "D.4.5.5 Pricing",
+        "type": "FRAME"
+      },
+      {
+        "id": "1233:795",
+        "name": "D.4.5.1 Privacy & Policy",
+        "type": "FRAME"
+      },
+      {
+        "id": "1213:739",
+        "name": "D.4.4 Profile",
+        "type": "FRAME"
+      },
+      {
+        "id": "1109:227",
+        "name": "D.3 Wardrobe - pop up button",
+        "type": "FRAME"
+      },
+      {
+        "id": "1106:494",
+        "name": "D.3 Wardrobe",
+        "type": "FRAME"
+      },
+      {
+        "id": "1109:531",
+        "name": "D.3 Wardrobe - filter",
+        "type": "FRAME"
+      },
+      {
+        "id": "1091:616",
+        "name": "D.2.2 Outfit Result",
+        "type": "FRAME"
+      },
+      {
+        "id": "1092:690",
+        "name": "D.2.3 Calendar Details",
+        "type": "FRAME"
+      },
+      {
+        "id": "1092:743",
+        "name": "D.2.4 Outfit History",
+        "type": "FRAME"
+      },
+      {
+        "id": "983:818",
+        "name": "D.1.1 Home - Notification Center",
+        "type": "FRAME"
+      },
+      {
+        "id": "1262:356",
+        "name": "Group 344",
+        "type": "GROUP"
+      },
+      {
+        "id": "966:340",
+        "name": "D.1.2 Home - Outfit Recomendation Detail",
+        "type": "FRAME"
+      },
+      {
+        "id": "1262:393",
+        "name": "Group 258",
+        "type": "GROUP"
+      },
+      {
+        "id": "1262:387",
+        "name": "Group 58",
+        "type": "GROUP"
+      },
+      {
+        "id": "966:515",
+        "name": "D.1.3 Home - Calendar Pop Up",
+        "type": "FRAME"
+      },
+      {
+        "id": "1444:370",
+        "name": "D.1.4 Home - Outfit Added",
+        "type": "FRAME"
+      },
+      {
+        "id": "1039:208",
+        "name": "Upload once. We'll identify the pieces, organize them, and help you make sense of what you own.",
+        "type": "TEXT"
+      },
+      {
+        "id": "1039:210",
+        "name": "Upload once. We'll identify the pieces, organize them, and help you make sense of what you own.",
+        "type": "TEXT"
+      },
+      {
+        "id": "1039:216",
+        "name": "Upload once. We'll identify the pieces, organize them, and help you make sense of what you own.",
+        "type": "TEXT"
+      },
+      {
+        "id": "1039:218",
+        "name": "Upload once. We'll identify the pieces, organize them, and help you make sense of what you own.",
+        "type": "TEXT"
+      },
+      {
+        "id": "1039:220",
+        "name": "Upload once. We'll identify the pieces, organize them, and help you make sense of what you own.",
+        "type": "TEXT"
+      },
+      {
+        "id": "1120:401",
+        "name": "D.2 Calendar",
+        "type": "FRAME"
+      },
+      {
+        "id": "1120:447",
+        "name": "D.2 Calendar",
+        "type": "FRAME"
+      },
+      {
+        "id": "1120:608",
+        "name": "D.2 Calendar",
+        "type": "FRAME"
+      },
+      {
+        "id": "1191:855",
+        "name": "Instagram story - 1",
+        "type": "FRAME"
+      },
+      {
+        "id": "1197:875",
+        "name": "Instagram story - 2",
+        "type": "FRAME"
+      },
+      {
+        "id": "1209:325",
+        "name": "Instagram story - 5",
+        "type": "FRAME"
+      },
+      {
+        "id": "1210:384",
+        "name": "Instagram story - 6",
+        "type": "FRAME"
+      },
+      {
+        "id": "1210:446",
+        "name": "Instagram story - 7",
+        "type": "FRAME"
+      },
+      {
+        "id": "1285:338",
+        "name": "Instagram story - 9",
+        "type": "FRAME"
+      },
+      {
+        "id": "1210:539",
+        "name": "Instagram story - 8",
+        "type": "FRAME"
+      },
+      {
+        "id": "1210:548",
+        "name": "Group 319",
+        "type": "GROUP"
+      },
+      {
+        "id": "1209:290",
+        "name": "Instagram story - 4",
+        "type": "FRAME"
+      },
+      {
+        "id": "1210:438",
+        "name": "image-removebg-preview 6",
+        "type": "RECTANGLE"
+      },
+      {
+        "id": "1210:440",
+        "name": "image-removebg-preview 7",
+        "type": "RECTANGLE"
+      },
+      {
+        "id": "1264:487",
+        "name": "Group 96",
+        "type": "GROUP"
+      },
+      {
+        "id": "1264:555",
+        "name": "Rectangle 119",
+        "type": "RECTANGLE"
+      },
+      {
+        "id": "1264:556",
+        "name": "Desktop Design System",
+        "type": "TEXT"
+      },
+      {
+        "id": "1444:337",
+        "name": "Slide 16:9 - 1",
+        "type": "FRAME"
+      },
+      {
+        "id": "1465:447",
+        "name": "image 43",
+        "type": "RECTANGLE"
+      },
+      {
+        "id": "1465:448",
+        "name": "image 44",
+        "type": "RECTANGLE"
+      },
+      {
+        "id": "1465:449",
+        "name": "image 45",
+        "type": "RECTANGLE"
+      },
+      {
+        "id": "1465:450",
+        "name": "image 42",
+        "type": "RECTANGLE"
+      },
+      {
+        "id": "1704:355",
+        "name": "Screenshot 2026-10-13 at 20.08.00 1",
+        "type": "RECTANGLE"
+      },
+      {
+        "id": "1704:356",
+        "name": "current implementation",
+        "type": "TEXT"
+      },
+      {
+        "id": "1704:357",
+        "name": "expected",
+        "type": "TEXT"
+      },
+      {
+        "id": "1704:359",
+        "name": "Screenshot 2026-10-13 at 20.08.51 1",
+        "type": "RECTANGLE"
+      }
+    ]
+  },
+  {
+    "id": "42:535",
+    "name": "Socmed",
+    "frames": [
+      {
+        "id": "1759:844",
+        "name": "Rectangle 120",
+        "type": "RECTANGLE"
+      },
+      {
+        "id": "1759:845",
+        "name": "Social media post template",
+        "type": "TEXT"
+      },
+      {
+        "id": "1759:846",
+        "name": "tbh will be very dynamic based on content sihh",
+        "type": "TEXT"
+      },
+      {
+        "id": "1759:847",
+        "name": "instagram post",
+        "type": "TEXT"
+      },
+      {
+        "id": "1759:848",
+        "name": "reels cover",
+        "type": "TEXT"
+      },
+      {
+        "id": "1759:849",
+        "name": "Instagram story - 10",
+        "type": "FRAME"
+      },
+      {
+        "id": "1759:855",
+        "name": "Instagram story - 11",
+        "type": "FRAME"
+      },
+      {
+        "id": "1759:860",
+        "name": "Instagram post - 1",
+        "type": "FRAME"
+      },
+      {
+        "id": "1759:887",
+        "name": "Instagram post - 2",
+        "type": "FRAME"
+      },
+      {
+        "id": "1759:1015",
+        "name": "Instagram post - 4",
+        "type": "FRAME"
+      },
+      {
+        "id": "1759:1033",
+        "name": "Instagram post - 5",
+        "type": "FRAME"
+      },
+      {
+        "id": "1759:896",
+        "name": "Instagram post - 3",
+        "type": "FRAME"
+      },
+      {
+        "id": "1759:903",
+        "name": "Group 352",
+        "type": "GROUP"
+      },
+      {
+        "id": "1759:905",
+        "name": "IMG_0412 1",
+        "type": "RECTANGLE"
+      },
+      {
+        "id": "1759:1012",
+        "name": "Screenshot 2026-10-21 at 19.22.17 1",
+        "type": "RECTANGLE"
+      },
+      {
+        "id": "1759:1013",
+        "name": "Screenshot 2026-10-21 at 19.22.53 1",
+        "type": "RECTANGLE"
+      },
+      {
+        "id": "1759:1014",
+        "name": "Screenshot 2026-10-21 at 19.23.55 1",
+        "type": "RECTANGLE"
+      },
+      {
+        "id": "1760:3",
+        "name": "image 53",
+        "type": "RECTANGLE"
+      },
+      {
+        "id": "1760:402",
+        "name": "Slide 16:9 - 3",
+        "type": "FRAME"
+      },
+      {
+        "id": "1760:425",
+        "name": "image 47",
+        "type": "RECTANGLE"
+      },
+      {
+        "id": "1760:421",
+        "name": "Group 354",
+        "type": "GROUP"
+      },
+      {
+        "id": "1760:423",
+        "name": "image 54",
+        "type": "RECTANGLE"
+      }
+    ]
+  },
+  {
+    "id": "69:1089",
+    "name": "Dumpie",
+    "frames": [
+      {
+        "id": "69:1090",
+        "name": "1. Homepage",
+        "type": "FRAME"
+      },
+      {
+        "id": "69:1186",
+        "name": "2. Wardrobe",
+        "type": "FRAME"
+      },
+      {
+        "id": "69:1251",
+        "name": "3. Profile",
+        "type": "FRAME"
+      },
+      {
+        "id": "69:1287",
+        "name": "A1. Homepage",
+        "type": "FRAME"
+      },
+      {
+        "id": "69:1349",
+        "name": "A2. Calendar",
+        "type": "FRAME"
+      },
+      {
+        "id": "69:1431",
+        "name": "Group 32",
+        "type": "GROUP"
+      },
+      {
+        "id": "69:1434",
+        "name": "B1. Homepage",
+        "type": "FRAME"
+      },
+      {
+        "id": "69:1546",
+        "name": "Group 28",
+        "type": "GROUP"
+      },
+      {
+        "id": "69:1549",
+        "name": "Group 29",
+        "type": "GROUP"
+      },
+      {
+        "id": "69:1552",
+        "name": "Rectangle 34",
+        "type": "RECTANGLE"
+      },
+      {
+        "id": "69:1553",
+        "name": "Arrow 1",
+        "type": "VECTOR"
+      },
+      {
+        "id": "69:1554",
+        "name": "Arrow 2",
+        "type": "VECTOR"
+      },
+      {
+        "id": "174:244",
+        "name": "[WIP] -",
+        "type": "FRAME"
+      },
+      {
+        "id": "400:387",
+        "name": "3.4.1 mix & match loading",
+        "type": "FRAME"
+      },
+      {
+        "id": "400:416",
+        "name": "3.4 mix & match",
+        "type": "FRAME"
+      },
+      {
+        "id": "400:448",
+        "name": "3.4.2 mix & match result",
+        "type": "FRAME"
+      },
+      {
+        "id": "400:475",
+        "name": "3.4.3 mix & match add to calendar",
+        "type": "FRAME"
+      },
+      {
+        "id": "516:162",
+        "name": "3.3 Item detail/edit - ori photo/sourse",
+        "type": "FRAME"
+      },
+      {
+        "id": "581:294",
+        "name": "3. Wardrobe",
+        "type": "FRAME"
+      },
+      {
+        "id": "581:373",
+        "name": "4.2 Trip",
+        "type": "FRAME"
+      },
+      {
+        "id": "581:418",
+        "name": "0.2.6 Onboarding",
+        "type": "FRAME"
+      },
+      {
+        "id": "581:445",
+        "name": "0.2.6 Onboarding",
+        "type": "FRAME"
+      },
+      {
+        "id": "581:459",
+        "name": "1. Homepage",
+        "type": "FRAME"
+      },
+      {
+        "id": "581:519",
+        "name": "Rectangle 16",
+        "type": "RECTANGLE"
+      },
+      {
+        "id": "581:520",
+        "name": "Rectangle 17",
+        "type": "RECTANGLE"
+      },
+      {
+        "id": "581:521",
+        "name": "Rectangle 19",
+        "type": "RECTANGLE"
+      },
+      {
+        "id": "581:522",
+        "name": "Rectangle 20",
+        "type": "RECTANGLE"
+      },
+      {
+        "id": "581:523",
+        "name": "Rectangle 21",
+        "type": "RECTANGLE"
+      },
+      {
+        "id": "581:524",
+        "name": "Rectangle 22",
+        "type": "RECTANGLE"
+      },
+      {
+        "id": "581:525",
+        "name": "Rectangle 23",
+        "type": "RECTANGLE"
+      },
+      {
+        "id": "581:526",
+        "name": "Rectangle 24",
+        "type": "RECTANGLE"
+      },
+      {
+        "id": "581:527",
+        "name": "Rectangle 25",
+        "type": "RECTANGLE"
+      },
+      {
+        "id": "581:528",
+        "name": "Gemini_Generated_Image_fym2refym2refym2 1",
+        "type": "RECTANGLE"
+      },
+      {
+        "id": "581:529",
+        "name": "image 16",
+        "type": "RECTANGLE"
+      },
+      {
+        "id": "581:531",
+        "name": "0.1 Welcome screen",
+        "type": "FRAME"
+      },
+      {
+        "id": "1239:2739",
+        "name": "D.3 Wardrobe - search result",
+        "type": "FRAME"
+      },
+      {
+        "id": "1240:3327",
+        "name": "D.3 Wardrobe - search result",
+        "type": "FRAME"
+      },
+      {
+        "id": "1759:401",
+        "name": "Moodboard",
+        "type": "SECTION"
+      },
+      {
+        "id": "1759:421",
+        "name": "Color Exploration",
+        "type": "SECTION"
+      },
+      {
+        "id": "1759:907",
+        "name": "Logo Exploration",
+        "type": "SECTION"
+      },
+      {
+        "id": "1759:926",
+        "name": "Slide 16:9 - 2",
+        "type": "FRAME"
+      },
+      {
+        "id": "1759:938",
+        "name": "Slide 16:9 - 3",
+        "type": "FRAME"
+      },
+      {
+        "id": "1759:951",
+        "name": "Slide 16:9 - 4",
+        "type": "FRAME"
+      },
+      {
+        "id": "1759:960",
+        "name": "Vector 10",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:961",
+        "name": "Vector 11",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:962",
+        "name": "Vector 12",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:963",
+        "name": "Vector 13",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:964",
+        "name": "Vector 14",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:965",
+        "name": "Vector 15",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:966",
+        "name": "Vector 16",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:967",
+        "name": "Vector 17",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:968",
+        "name": "Vector 18",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:969",
+        "name": "Vector 19",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:970",
+        "name": "Vector 20",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:971",
+        "name": "Vector 21",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:972",
+        "name": "Vector 22",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:973",
+        "name": "Vector 23",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:974",
+        "name": "Vector 24",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:975",
+        "name": "Vector 25",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:976",
+        "name": "Vector 26",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:977",
+        "name": "Vector 27",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:978",
+        "name": "Vector 28",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:979",
+        "name": "Vector 29",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:980",
+        "name": "Vector 30",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:981",
+        "name": "Vector 31",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:982",
+        "name": "Vector 32",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:983",
+        "name": "Vector 33",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:984",
+        "name": "Vector 34",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:985",
+        "name": "Vector 35",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:986",
+        "name": "Vector 36",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:987",
+        "name": "Vector 37",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:988",
+        "name": "Vector 38",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:989",
+        "name": "Vector 39",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:990",
+        "name": "Vector 40",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:991",
+        "name": "Vector 41",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:992",
+        "name": "Vector 42",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:993",
+        "name": "Vector 43",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:994",
+        "name": "Vector 44",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:995",
+        "name": "Vector 45",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:996",
+        "name": "Vector 46",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:997",
+        "name": "Vector 47",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:998",
+        "name": "Vector 48",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:999",
+        "name": "Vector 49",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:1000",
+        "name": "Vector 50",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:1001",
+        "name": "Vector 51",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1759:1002",
+        "name": "Frame 68",
+        "type": "FRAME"
+      },
+      {
+        "id": "1759:1005",
+        "name": "Frame 69",
+        "type": "FRAME"
+      },
+      {
+        "id": "1759:1008",
+        "name": "Frame 70",
+        "type": "FRAME"
+      }
+    ]
+  }
+]

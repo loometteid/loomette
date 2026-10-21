@@ -1,0 +1,489 @@
+NAME: "Loomette.id"
+
+GLOBAL_VARS:
+Primary Pink:
+  - '#444440'
+Stone:
+  - '#C9C3B7'
+layout_d01ebf9d:
+  mode: none
+  sizing: {}
+  dimensions:
+    width: 402
+    height: 874
+White:
+  - '#FAFAF7'
+fill_2605ca4d:
+  - '#FAFAF7'
+Slate:
+  - '#444440'
+layout_a51130ff:
+  mode: none
+  sizing: {}
+  dimensions:
+    width: 1080
+    height: 1920
+fill_658ab2fa:
+  - '#FFFFFF'
+style_b4b71274:
+  fontFamily: Figtree
+  fontStyle: Regular
+  fontWeight: 400
+  fontSize: 48
+  textCase: UPPER
+  textAlignHorizontal: LEFT
+  textAlignVertical: TOP
+fill_1bdafa32:
+  - type: IMAGE
+    imageRef: df16e6c960159f4917aae33274e488c940b4236a
+    scaleMode: FILL
+    objectFit: cover
+    isBackground: false
+    imageDownloadArguments:
+      needsCropping: false
+      requiresImageDimensions: false
+style_9ccb57db:
+  fontFamily: Figtree
+  fontStyle: Bold
+  fontWeight: 700
+  fontSize: 48
+  textCase: SMALL_CAPS_FORCED
+  textAlignHorizontal: LEFT
+  textAlignVertical: TOP
+fill_4ccbbf96:
+  - '#444440'
+fill_81780129:
+  - '#E5487E'
+layout_5aaf62d2:
+  mode: none
+  sizing: {}
+  dimensions:
+    width: 26.53
+    height: 397.88
+fill_fef61db7:
+  - '#D9D9D9'
+layout_d6a0aa80:
+  mode: none
+  sizing: {}
+  dimensions:
+    width: 300.1
+    height: 300.1
+silver:
+  - type: GRADIENT_LINEAR
+    gradient: linear-gradient(47deg, rgba(177, 178, 182, 1) 9%, rgba(123, 124, 129, 1) 30%, rgba(241, 241, 241, 1) 47%, rgba(168, 169, 174, 1) 63%, rgba(237, 237, 237, 1) 82%)
+fill_090ebe47:
+  - rgba(0, 0, 0, 0.1)
+fill_34dc0314:
+  - '#000000'
+
+ELEMENTS:
+EL-29c89cd0:
+  type: GROUP
+  layout:
+    mode: none
+    sizing: {}
+    dimensions:
+      width: 312
+      height: 83
+  borderRadius: 0px 0px 0px 0px
+EL-44bfe218:
+  type: FRAME
+  layout: layout_d01ebf9d
+  fills: White
+EL-7a4e7933:
+  type: FRAME
+  layout: layout_d01ebf9d
+  fills: fill_2605ca4d
+EL-462e49a4:
+  type: FRAME
+  layout:
+    mode: none
+    sizing: {}
+    dimensions:
+      width: 402
+      height: 1049
+  fills: fill_2605ca4d
+EL-eea14abc:
+  type: GROUP
+  layout:
+    mode: none
+    sizing: {}
+    dimensions:
+      width: 1440
+      height: 120
+  borderRadius: 0px 0px 0px 0px
+EL-1a90fa2f:
+  type: FRAME
+  layout:
+    mode: none
+    sizing: {}
+    dimensions:
+      width: 1440
+      height: 1024
+  fills: White
+EL-b7e8209b:
+  type: FRAME
+  layout: layout_a51130ff
+  fills: fill_658ab2fa
+EL-20fcf2b0:
+  type: RECTANGLE
+  layout:
+    mode: none
+    sizing: {}
+    dimensions:
+      width: 197
+      height: 332
+  fills:
+    - type: IMAGE
+      imageRef: 3c925bea2d236ea310369e84727b2e84f33b8e97
+      scaleMode: STRETCH
+      objectFit: fill
+      isBackground: false
+      imageDownloadArguments:
+        needsCropping: true
+        requiresImageDimensions: false
+        cropTransform:
+          - - 0.47989484667778015
+            - 0
+            - 0.27481019496917725
+          - - 0
+            - 0.4544907510280609
+            - 0.14303255081176758
+        filenameSuffix: 5bb4a4
+EL-978fea64:
+  type: RECTANGLE
+  layout:
+    mode: none
+    sizing: {}
+    dimensions:
+      width: 1440
+      height: 169
+  fills: Slate
+EL-404ce7c7:
+  type: FRAME
+  layout:
+    mode: none
+    sizing: {}
+    dimensions:
+      width: 1080
+      height: 1350
+  fills: fill_658ab2fa
+EL-41e84a8d:
+  type: FRAME
+  layout:
+    mode: none
+    sizing: {}
+    dimensions:
+      width: 1920
+      height: 1080
+  fills: fill_658ab2fa
+EL-74b77d95:
+  type: GROUP
+  layout:
+    mode: none
+    sizing: {}
+    dimensions:
+      width: 58
+      height: 61
+  borderRadius: 0px 0px 0px 0px
+EL-4206cabd:
+  type: RECTANGLE
+  layout: layout_d6a0aa80
+  fills:
+    - type: GRADIENT_LINEAR
+      gradient: linear-gradient(90deg, rgba(54, 54, 54, 1) 0%, rgba(218, 218, 218, 1) 48%, rgba(246, 246, 246, 1) 72%, rgba(50, 50, 50, 1) 95%)
+  borderRadius: 1000px
+EL-083c0daf:
+  type: RECTANGLE
+  layout: layout_d6a0aa80
+  fills: silver
+  borderRadius: 1000px
+EL-6e1f936b:
+  type: FRAME
+  layout:
+    mode: none
+    sizing: {}
+    dimensions:
+      width: 1080
+      height: 1080
+  fills: fill_658ab2fa
+
+NODES:
+[CANVAS] "Design System" #92:2067
+  [GROUP] "Layout" #92:2162 layout={"mode":"none","sizing":{},"dimensions":{"width":450,"height":981}} borderRadius="0px 0px 0px 0px"
+  [GROUP] "Typography" #92:2161 layout={"mode":"none","sizing":{},"dimensions":{"width":804,"height":638}} borderRadius="0px 0px 0px 0px"
+  [GROUP] "Button" #92:2229 layout={"mode":"none","sizing":{},"dimensions":{"width":741,"height":519}} borderRadius="0px 0px 0px 0px"
+  [GROUP] "Text Field" #92:2281 layout={"mode":"none","sizing":{},"dimensions":{"width":921,"height":259}} borderRadius="0px 0px 0px 0px"
+  [GROUP] "Color" #93:2363 layout={"mode":"none","sizing":{},"dimensions":{"width":744,"height":777}} borderRadius="0px 0px 0px 0px"
+  [GROUP] #1120:788 layout={"mode":"none","sizing":{},"dimensions":{"width":274,"height":80}} borderRadius="0px 0px 0px 0px"
+  [FRAME] #1120:845 layout={"mode":"row","padding":"19px 108px 18px 107px","justifyContent":"center","alignItems":"center","gap":"10px","sizing":{"horizontal":"fixed","vertical":"fixed"},"dimensions":{"width":320,"height":64}} fills="Primary Pink" borderRadius=16px
+  [GROUP] #1120:847 layout={"mode":"none","sizing":{},"dimensions":{"width":73,"height":48}} borderRadius="0px 0px 0px 0px"
+  [GROUP] #1128:322 layout={"mode":"none","sizing":{},"dimensions":{"width":420,"height":64}} borderRadius="0px 0px 0px 0px"
+  [FRAME] #1129:328 layout={"mode":"row","padding":"16px 64px","justifyContent":"center","alignItems":"center","gap":"16px","sizing":{"horizontal":"hug","vertical":"hug"}} strokes=Stone strokeWeight=1px borderRadius=8px
+  [GROUP] #1129:332 template=EL-29c89cd0
+  [GROUP] #1129:338 layout={"mode":"none","sizing":{},"dimensions":{"width":374,"height":83}} borderRadius="0px 0px 0px 0px"
+  [GROUP] #1129:352 layout={"mode":"none","sizing":{},"dimensions":{"width":264,"height":78}} borderRadius="0px 0px 0px 0px"
+[CANVAS] "High Fidelity" #0:1
+  [FRAME] "0. Splash Screen" #58:68 template=EL-44bfe218
+  [FRAME] "0.1 Welcome screen - w SSO" #92:1964 template=EL-44bfe218
+  [GROUP] #1532:348 layout={"mode":"none","sizing":{},"dimensions":{"width":842,"height":528}} borderRadius="0px 0px 0px 0px"
+  [FRAME] "0.2.1 Onboarding" #60:193 template=EL-44bfe218
+  [FRAME] "0.2.2 Onboarding" #61:266 template=EL-44bfe218
+  [FRAME] "0.2.3 Onboarding" #61:309 template=EL-44bfe218
+  [FRAME] "0.2.4 Onboarding" #62:449 layout={"mode":"none","sizing":{},"dimensions":{"width":402,"height":966}} fills=White
+  [FRAME] "0.2.5 Onboarding" #61:338 template=EL-44bfe218
+  [FRAME] "0.2.6 Onboarding" #462:520 template=EL-44bfe218
+  [FRAME] "0.2.7.1 Add Initial Item" #379:1694 template=EL-44bfe218
+  [FRAME] "0.2.7.3 Add Initial Item - generate basics" #678:323 template=EL-7a4e7933
+  [FRAME] "0.2.7.2 Add Initial Item - Photo Uploaded" #389:1714 template=EL-44bfe218
+  [FRAME] "1. Homepage" #47:15 layout={"mode":"none","sizing":{},"dimensions":{"width":402,"height":1153}} fills=fill_2605ca4d
+  [FRAME] "1.1.1 Outfit Recommendation Detail" #395:1757 layout={"mode":"none","sizing":{},"dimensions":{"width":402,"height":1131}} fills=fill_2605ca4d
+  [FRAME] "1.1.2 Outfit Recomendation Detail -  Pop-up Calendar" #395:1877 template=EL-7a4e7933
+  [FRAME] "1.1.3 Outfit Recomendation Detail -  Pop-up Collection" #581:554 template=EL-7a4e7933
+  [FRAME] "1.2 Notifications" #581:740 template=EL-44bfe218
+  [FRAME] "2. Calendar" #47:77 template=EL-7a4e7933
+  [FRAME] "2.1.1 Loading Generating Outfit" #149:95 template=EL-7a4e7933
+  [FRAME] "2.1.2 Outfit Approval " #150:167 template=EL-7a4e7933
+  [FRAME] "2.2 outfit details" #150:267 layout={"mode":"none","sizing":{},"dimensions":{"width":402,"height":1165}} fills=fill_2605ca4d
+  [FRAME] "2.3 All outfit history" #150:322 template=EL-7a4e7933
+  [FRAME] "3. Wardrobe" #12:256 template=EL-7a4e7933
+  [FRAME] "3. Wardrobe - add button" #102:216 template=EL-7a4e7933
+  [FRAME] "3.0.1 Wardrobe Filter" #102:40 layout={"mode":"none","sizing":{},"dimensions":{"width":402,"height":1030}} fills=fill_2605ca4d
+  [FRAME] "2.3.1 Wardrobe Filter" #1145:309 template=EL-7a4e7933
+  [FRAME] "2.4 Share OOTD" #1445:344 template=EL-7a4e7933
+  [FRAME] "3.0.2 Wardrobe Search Result" #176:509 template=EL-7a4e7933
+  [FRAME] "3.1 Approval page" #65:740 template=EL-7a4e7933
+  [FRAME] "3.1.1 Approval Page Pop Up" #400:207 template=EL-7a4e7933
+  [FRAME] "3.1.1 Approval Page Pop Up - Details Expanded" #760:197 layout={"mode":"none","sizing":{},"dimensions":{"width":402,"height":1250}} fills=fill_2605ca4d
+  [FRAME] "3.2.2 Add item" #63:636 template=EL-7a4e7933
+  [FRAME] "3.2.3 Add item loading page" #63:672 template=EL-7a4e7933
+  [FRAME] "3.3 Item detail/edit" #66:933 layout={"mode":"none","sizing":{},"dimensions":{"width":402,"height":1846}} fills=fill_2605ca4d
+  [FRAME] "3.3 Item detail/edit - ori photo/sourse" #442:117 template=EL-7a4e7933
+  [FRAME] "3.4.1 Mix & Match" #152:89 template=EL-7a4e7933
+  [FRAME] "3.4.2 Mix & Match - Result" #410:717 template=EL-7a4e7933
+  [FRAME] "3.4.2.1 Mix & Match Result - Calendar Pop Up" #410:749 template=EL-7a4e7933
+  [FRAME] "3.4.3 Mix & Match Succesful" #410:946 template=EL-7a4e7933
+  [FRAME] "3.5 Entry Affiliate Link" #518:147 template=EL-7a4e7933
+  [FRAME] "4.1 Profile - Favorite" #47:296 template=EL-7a4e7933
+  [FRAME] "4.2 Trip" #13:146 template=EL-7a4e7933
+  [FRAME] "4.2.1 Edit Trip" #325:66 template=EL-462e49a4
+  [FRAME] "4.2.2.1 Trip - Outfit Plan" #364:281 template=EL-462e49a4
+  [FRAME] "4.2.2.2 Trip - Outfit Plan" #744:472 template=EL-7a4e7933
+  [FRAME] "4.2.3 Trip - Packing List" #364:400 template=EL-462e49a4
+  [FRAME] "4.3 Wishlist" #57:24 template=EL-7a4e7933
+  [FRAME] "4.3.1 Pop up Add to Wardrobe" #518:244 template=EL-7a4e7933
+  [FRAME] "4.4 Profile" #89:1775 layout={"mode":"none","sizing":{},"dimensions":{"width":402,"height":2181}} fills=fill_2605ca4d
+  [FRAME] "4.5 Settings" #376:723 layout={"mode":"none","sizing":{},"dimensions":{"width":402,"height":930}} fills=White
+  [FRAME] "4.5.1 Privacy & Policy" #378:1015 layout={"mode":"none","sizing":{},"dimensions":{"width":402,"height":2386}} fills=White
+  [FRAME] "4.5.2 Connected Account" #378:1096 template=EL-44bfe218
+  [FRAME] "4.5.5 Pricing" #731:345 template=EL-44bfe218
+  [FRAME] "[Phase 2] 4.6.1 Friend Page" #751:683 template=EL-44bfe218
+  [FRAME] "4.5.3 Pop-up Logout" #379:1241 template=EL-44bfe218
+  [FRAME] "Frame" #1583:540 template=EL-44bfe218
+  [FRAME] "4.5.4.1 Pop-up Delete Account" #379:1438 template=EL-44bfe218
+  [FRAME] "4.5.4.2 Pop-up Delete Account" #761:354 template=EL-44bfe218
+  [FRAME] "4.5.4.3 Pop-up Delete Account (2)" #379:1542 template=EL-44bfe218
+  [GROUP] "WBS" #581:545 layout={"mode":"none","sizing":{},"dimensions":{"width":671,"height":2406}} borderRadius="0px 0px 0px 0px"
+  [GROUP] "[HIDE] Arrows" #582:965 layout={"mode":"none","sizing":{},"dimensions":{"width":5157.28,"height":12823.83}} borderRadius="0px 0px 0px 0px"
+  [FRAME] "-1. Landing Page" #773:512 layout={"mode":"none","sizing":{},"dimensions":{"width":402,"height":3932}} fills=fill_2605ca4d
+  [FRAME] "D-1. Landing Page" #643:966 layout={"mode":"none","sizing":{},"dimensions":{"width":1440,"height":6881}} fills=White
+  [RECTANGLE] "Screenshot 2026-10-13 at 20.02.22 1" #1704:339 layout={"mode":"none","sizing":{},"dimensions":{"width":502,"height":105}} fills=[{"type":"IMAGE","imageRef":"1486d8263d945c0fdb681de4897993be5263fd01","scaleMode":"FILL","objectFit":"cover","isBackground":false,"imageDownloadArguments":{"needsCropping":false,"requiresImageDimensions":false}}]
+  [GROUP] #1525:338 template=EL-eea14abc
+  [FRAME] "D0.1 Register/Sign in" #814:751 template=EL-1a90fa2f
+  [FRAME] "D0.2 Onboarding" #840:176 template=EL-1a90fa2f
+  [GROUP] #1704:340 template=EL-29c89cd0
+  [FRAME] "D0.3 Onboarding" #840:240 template=EL-1a90fa2f
+  [FRAME] "D0.4 Onboarding" #840:313 template=EL-1a90fa2f
+  [FRAME] "D0.5 Onboarding" #840:376 template=EL-1a90fa2f
+  [FRAME] "D0.6 Onboarding" #1583:338 template=EL-1a90fa2f
+  [FRAME] "D0.7 Onboarding" #866:644 template=EL-1a90fa2f
+  [FRAME] "D0.8.1 Onboarding" #866:799 template=EL-1a90fa2f
+  [FRAME] "D0.8.2 Onboarding" #933:187 template=EL-1a90fa2f
+  [FRAME] "D.1 Home" #965:187 template=EL-1a90fa2f
+  [FRAME] "D.2 Calendar" #985:972 layout={"mode":"none","sizing":{},"dimensions":{"width":1440,"height":1210}} fills=White
+  [FRAME] "D.2.1 Adding Looks" #1087:439 template=EL-1a90fa2f
+  [FRAME] "D.3 Wardrobe - Full" #1096:218 layout={"mode":"none","sizing":{},"dimensions":{"width":1440,"height":1494}} fills=White
+  [FRAME] "D.3 Wardrobe - Cut" #1106:395 template=EL-1a90fa2f
+  [FRAME] "D.3.1 Add New Item" #1115:277 template=EL-1a90fa2f
+  [FRAME] "D.3.3 Item Approval" #1115:880 template=EL-1a90fa2f
+  [FRAME] "D.3 Wardrobe" #1120:263 template=EL-1a90fa2f
+  [FRAME] "D.3.4 Wardrobe Detail" #1118:1432 layout={"mode":"none","sizing":{},"dimensions":{"width":1440,"height":1477}} fills=White
+  [FRAME] "D.3 Wardrobe" #1118:1659 template=EL-1a90fa2f
+  [FRAME] "D.3 Wardrobe" #1118:1887 template=EL-1a90fa2f
+  [FRAME] "D.3.3.1 Item Approval Details" #1115:984 template=EL-1a90fa2f
+  [FRAME] "D.3.2 New Item Loading" #1115:444 template=EL-1a90fa2f
+  [FRAME] "D.3 Wardrobe - search result" #1109:946 template=EL-1a90fa2f
+  [FRAME] "D.4.1 Profile - Favorite" #1239:2583 template=EL-1a90fa2f
+  [FRAME] "D.4.2 Trip" #1240:2830 template=EL-1a90fa2f
+  [FRAME] "D.4.3 Wishlist" #1240:2915 template=EL-1a90fa2f
+  [FRAME] "D.4.3.1 Pop up Add to Wardrobe" #1240:3557 template=EL-1a90fa2f
+  [FRAME] "D.4.2.2.1 Trip - Outfit Plan" #1240:2994 layout={"mode":"none","sizing":{},"dimensions":{"width":1440,"height":1504}} fills=White
+  [FRAME] "D.4.2.2.2 Trip - Outfit Plan" #1240:3761 template=EL-1a90fa2f
+  [FRAME] "D.4.2.3 Trip - Packing List" #1240:3237 template=EL-1a90fa2f
+  [FRAME] "D.4.2.1 Edit Trip" #1240:3444 template=EL-1a90fa2f
+  [LINE] #1187:648 layout={"mode":"none","sizing":{},"dimensions":{"width":55,"height":0}} strokes=Slate strokeWeight=1px
+  [FRAME] "D.4.5 Settings" #1230:306 layout={"mode":"none","sizing":{},"dimensions":{"width":1440,"height":1476}} fills=White
+  [FRAME] "D.4.5.3 Pop-up Logout" #1235:1455 template=EL-1a90fa2f
+  [FRAME] "D.4.5.4.1 Pop-up Delete Account" #1235:1593 template=EL-1a90fa2f
+  [FRAME] "D.4.5.4.2 Pop-up Delete Account" #1235:1724 template=EL-1a90fa2f
+  [FRAME] "D.4.5.4.3 Pop-up Delete Account" #1235:1870 template=EL-1a90fa2f
+  [FRAME] "D.4.5.2 Connected Account" #1235:1321 template=EL-1a90fa2f
+  [FRAME] "D.4.6.1 Friend Page" #1237:2350 template=EL-1a90fa2f
+  [FRAME] "D.4.5.5 Pricing" #1237:2015 layout={"mode":"none","sizing":{},"dimensions":{"width":1440,"height":1137}} fills=White
+  [FRAME] "D.4.5.1 Privacy & Policy" #1233:795 layout={"mode":"none","sizing":{},"dimensions":{"width":1440,"height":3058}} fills=White
+  [FRAME] "D.4.4 Profile" #1213:739 layout={"mode":"none","sizing":{},"dimensions":{"width":1440,"height":1331}} fills=White
+  [FRAME] "D.3 Wardrobe - pop up button" #1109:227 template=EL-1a90fa2f
+  [FRAME] "D.3 Wardrobe" #1106:494 template=EL-1a90fa2f
+  [FRAME] "D.3 Wardrobe - filter" #1109:531 template=EL-1a90fa2f
+  [FRAME] "D.2.2 Outfit Result" #1091:616 template=EL-1a90fa2f
+  [FRAME] "D.2.3 Calendar Details" #1092:690 template=EL-1a90fa2f
+  [FRAME] "D.2.4 Outfit History" #1092:743 template=EL-1a90fa2f
+  [FRAME] "D.1.1 Home - Notification Center" #983:818 template=EL-1a90fa2f
+  [GROUP] #1262:356 layout={"mode":"none","sizing":{},"dimensions":{"width":408,"height":455}} borderRadius="0px 0px 0px 0px"
+  [FRAME] "D.1.2 Home - Outfit Recomendation Detail" #966:340 template=EL-1a90fa2f
+  [GROUP] #1262:393 layout={"mode":"none","sizing":{},"dimensions":{"width":818,"height":850}} borderRadius="0px 0px 0px 0px"
+  [GROUP] #1262:387 layout={"mode":"none","sizing":{},"dimensions":{"width":56,"height":56}} borderRadius="0px 0px 0px 0px"
+  [FRAME] "D.1.3 Home - Calendar Pop Up" #966:515 template=EL-1a90fa2f
+  [FRAME] "D.1.4 Home - Outfit Added" #1444:370 template=EL-1a90fa2f
+  [TEXT] #1039:208 layout={"mode":"none","sizing":{},"dimensions":{"width":720,"height":66}} fills=Slate textStyle={"fontFamily":"Avenir Next","fontStyle":"Regular","fontWeight":400,"fontSize":24,"textCase":"SMALL_CAPS_FORCED","textAlignHorizontal":"CENTER","textAlignVertical":"TOP"} text="Upload once. We'll identify the pieces, organize them, and help you make sense of what you own."
+  [TEXT] #1039:210 layout={"mode":"none","sizing":{},"dimensions":{"width":720,"height":52}} fills=Slate textStyle={"fontFamily":"Jost","fontStyle":"Regular","fontWeight":400,"fontSize":18,"textCase":"UPPER","textAlignHorizontal":"CENTER","textAlignVertical":"TOP"} text="Upload once. We'll identify the pieces, organize them, and help you make sense of what you own."
+  [TEXT] #1039:216 layout={"mode":"none","sizing":{},"dimensions":{"width":720,"height":54}} fills=Slate textStyle={"fontFamily":"Poppins","fontStyle":"Regular","fontWeight":400,"fontSize":18,"textCase":"UPPER","textAlignHorizontal":"CENTER","textAlignVertical":"TOP"} text="Upload once. We'll identify the pieces, organize them, and help you make sense of what you own."
+  [TEXT] #1039:218 layout={"mode":"none","sizing":{},"dimensions":{"width":720,"height":44}} fills=Slate textStyle={"fontFamily":"Figtree","fontStyle":"Regular","fontWeight":400,"fontSize":18,"textCase":"UPPER","textAlignHorizontal":"CENTER","textAlignVertical":"TOP"} text="Upload once. We'll identify the pieces, organize them, and help you make sense of what you own."
+  [TEXT] #1039:220 layout={"mode":"none","sizing":{},"dimensions":{"width":720,"height":50}} fills=Slate textStyle={"fontFamily":"Manrope","fontStyle":"Regular","fontWeight":400,"fontSize":18,"textCase":"UPPER","textAlignHorizontal":"CENTER","textAlignVertical":"TOP"} text="Upload once. We'll identify the pieces, organize them, and help you make sense of what you own."
+  [FRAME] "D.2 Calendar" #1120:401 template=EL-1a90fa2f
+  [FRAME] "D.2 Calendar" #1120:447 template=EL-1a90fa2f
+  [FRAME] "D.2 Calendar" #1120:608 template=EL-1a90fa2f
+  [FRAME] "Instagram story - 1" #1191:855 template=EL-b7e8209b
+  [FRAME] "Instagram story - 2" #1197:875 template=EL-b7e8209b
+  [FRAME] "Instagram story - 5" #1209:325 template=EL-b7e8209b
+  [FRAME] "Instagram story - 6" #1210:384 template=EL-b7e8209b
+  [FRAME] "Instagram story - 7" #1210:446 template=EL-b7e8209b
+  [FRAME] "Instagram story - 9" #1285:338 template=EL-b7e8209b
+  [FRAME] "Instagram story - 8" #1210:539 template=EL-b7e8209b
+  [GROUP] #1210:548 layout={"mode":"none","sizing":{},"dimensions":{"width":333,"height":44}} borderRadius="0px 0px 0px 0px"
+  [FRAME] "Instagram story - 4" #1209:290 template=EL-b7e8209b
+  [RECTANGLE] "image-removebg-preview 6" #1210:438 template=EL-20fcf2b0
+  [RECTANGLE] "image-removebg-preview 7" #1210:440 template=EL-20fcf2b0
+  [GROUP] #1264:487 template=EL-eea14abc
+  [RECTANGLE] #1264:555 template=EL-978fea64
+  [TEXT] #1264:556 layout={"mode":"none","sizing":{},"dimensions":{"width":597,"height":58}} fills=fill_658ab2fa textStyle=style_b4b71274 text="Desktop Design System"
+  [RECTANGLE] "image 43" #1465:447 layout={"mode":"none","sizing":{},"dimensions":{"width":426,"height":284}} fills=[{"type":"IMAGE","imageRef":"0b474112393cda1b357eba7c9f586748318c4c0e","scaleMode":"FILL","objectFit":"cover","isBackground":false,"imageDownloadArguments":{"needsCropping":false,"requiresImageDimensions":false}}]
+  [RECTANGLE] "image 44" #1465:448 layout={"mode":"none","sizing":{},"dimensions":{"width":220,"height":214}} fills=[{"type":"IMAGE","imageRef":"20bcd246de2d238bc1544536fab4b365ecdf33bf","scaleMode":"FILL","objectFit":"cover","isBackground":false,"imageDownloadArguments":{"needsCropping":false,"requiresImageDimensions":false}}]
+  [RECTANGLE] "image 45" #1465:449 layout={"mode":"none","sizing":{},"dimensions":{"width":220,"height":212}} fills=fill_1bdafa32
+  [RECTANGLE] "image 42" #1465:450 layout={"mode":"none","sizing":{},"dimensions":{"width":381,"height":254}} fills=[{"type":"IMAGE","imageRef":"bb06e4303e18abfe080bed08bb77f7679f03bf5f","scaleMode":"FILL","objectFit":"cover","isBackground":false,"imageDownloadArguments":{"needsCropping":false,"requiresImageDimensions":false}}]
+  [RECTANGLE] "Screenshot 2026-10-13 at 20.08.00 1" #1704:355 layout={"mode":"none","sizing":{},"dimensions":{"width":1316,"height":642}} fills=[{"type":"IMAGE","imageRef":"589fa1c60e2ff18456608a3735ccf5c556cef329","scaleMode":"FILL","objectFit":"cover","isBackground":false,"imageDownloadArguments":{"needsCropping":false,"requiresImageDimensions":false}}]
+  [TEXT] #1704:356 layout={"mode":"none","sizing":{},"dimensions":{"width":524,"height":58}} fills=Slate textStyle=style_9ccb57db text="current implementation"
+  [TEXT] #1704:357 layout={"mode":"none","sizing":{},"dimensions":{"width":208,"height":58}} fills=Slate textStyle=style_9ccb57db text="expected"
+  [RECTANGLE] "Screenshot 2026-10-13 at 20.08.51 1" #1704:359 layout={"mode":"none","sizing":{},"dimensions":{"width":1239,"height":642}} fills=[{"type":"IMAGE","imageRef":"6554e7096ce8cd9a315724a3c232b0f3afc7c7b1","scaleMode":"FILL","objectFit":"cover","isBackground":false,"imageDownloadArguments":{"needsCropping":false,"requiresImageDimensions":false}}]
+[CANVAS] "Socmed" #42:535
+  [RECTANGLE] #1759:844 template=EL-978fea64
+  [TEXT] #1759:845 layout={"mode":"none","sizing":{},"dimensions":{"width":711,"height":58}} fills=fill_658ab2fa textStyle=style_b4b71274 text="Social media post template"
+  [TEXT] #1759:846 layout={"mode":"none","sizing":{},"dimensions":{"width":1264,"height":58}} fills=fill_4ccbbf96 textStyle=style_b4b71274 text="tbh will be very dynamic based on content sihh"
+  [TEXT] #1759:847 layout={"mode":"none","sizing":{},"dimensions":{"width":407,"height":58}} fills=fill_4ccbbf96 textStyle=style_b4b71274 text="instagram post"
+  [TEXT] #1759:848 layout={"mode":"none","sizing":{},"dimensions":{"width":317,"height":58}} fills=fill_4ccbbf96 textStyle=style_b4b71274 text="reels cover"
+  [FRAME] "Instagram story - 10" #1759:849 template=EL-b7e8209b
+  [FRAME] "Instagram story - 11" #1759:855 layout=layout_a51130ff fills=["#C9C3B7"]
+  [FRAME] "Instagram post - 1" #1759:860 template=EL-404ce7c7
+  [FRAME] "Instagram post - 2" #1759:887 template=EL-404ce7c7
+  [FRAME] "Instagram post - 4" #1759:1015 template=EL-404ce7c7
+  [FRAME] "Instagram post - 5" #1759:1033 template=EL-404ce7c7
+  [FRAME] "Instagram post - 3" #1759:896 template=EL-404ce7c7
+  [GROUP] #1759:903 layout={"mode":"none","sizing":{},"dimensions":{"width":626,"height":76}} borderRadius="0px 0px 0px 0px"
+  [RECTANGLE] "IMG_0412 1" #1759:905 layout={"mode":"none","sizing":{},"dimensions":{"width":721,"height":1564}} fills=[{"type":"IMAGE","imageRef":"5d3e3a4e4cf99db2e1fbc7aed0035913879c9e15","scaleMode":"FILL","objectFit":"cover","isBackground":false,"imageDownloadArguments":{"needsCropping":false,"requiresImageDimensions":false}}]
+  [RECTANGLE] "Screenshot 2026-10-21 at 19.22.17 1" #1759:1012 layout={"mode":"none","sizing":{},"dimensions":{"width":2263,"height":1528}} fills=[{"type":"IMAGE","imageRef":"cd1c799cb48ec85d354f0e554efb28a183fe8c42","scaleMode":"FILL","objectFit":"cover","isBackground":false,"imageDownloadArguments":{"needsCropping":false,"requiresImageDimensions":false}}]
+  [RECTANGLE] "Screenshot 2026-10-21 at 19.22.53 1" #1759:1013 layout={"mode":"none","sizing":{},"dimensions":{"width":2263,"height":1637}} fills=[{"type":"IMAGE","imageRef":"986a056197caf040a329387c972c3a56a2119cfa","scaleMode":"FILL","objectFit":"cover","isBackground":false,"imageDownloadArguments":{"needsCropping":false,"requiresImageDimensions":false}}]
+  [RECTANGLE] "Screenshot 2026-10-21 at 19.23.55 1" #1759:1014 layout={"mode":"none","sizing":{},"dimensions":{"width":2263,"height":1617}} fills=[{"type":"IMAGE","imageRef":"8375e69c195ee588eaf3e0f38d67a39b320bad08","scaleMode":"FILL","objectFit":"cover","isBackground":false,"imageDownloadArguments":{"needsCropping":false,"requiresImageDimensions":false}}]
+  [RECTANGLE] "image 53" #1760:3 layout={"mode":"none","sizing":{},"dimensions":{"width":1122,"height":1402}} fills=[{"type":"IMAGE","imageRef":"5d5a44890a31d5fe8cac69774970f843196c3768","scaleMode":"FILL","objectFit":"cover","isBackground":false,"imageDownloadArguments":{"needsCropping":false,"requiresImageDimensions":false}}]
+  [FRAME] "Slide 16:9 - 3" #1760:402 template=EL-41e84a8d
+  [RECTANGLE] "image 47" #1760:425 layout={"mode":"none","sizing":{},"dimensions":{"width":228,"height":219}} fills=fill_1bdafa32
+  [GROUP] #1760:421 layout={"mode":"none","sizing":{},"dimensions":{"width":890,"height":1027}} borderRadius="0px 0px 0px 0px"
+  [RECTANGLE] "image 54" #1760:423 layout={"mode":"none","sizing":{},"dimensions":{"width":1881,"height":836}} fills=[{"type":"IMAGE","imageRef":"2379413d02d68cb2372688748f4a0a0bba8d3588","scaleMode":"FILL","objectFit":"cover","isBackground":false,"imageDownloadArguments":{"needsCropping":false,"requiresImageDimensions":false}}]
+[CANVAS] "Dumpie" #69:1089
+  [FRAME] "1. Homepage" #69:1090 template=EL-7a4e7933
+  [FRAME] "2. Wardrobe" #69:1186 template=EL-7a4e7933
+  [FRAME] "3. Profile" #69:1251 template=EL-7a4e7933
+  [FRAME] "A1. Homepage" #69:1287 template=EL-7a4e7933
+  [FRAME] "A2. Calendar" #69:1349 template=EL-7a4e7933
+  [GROUP] #69:1431 layout={"mode":"none","sizing":{},"dimensions":{"width":185,"height":40}} borderRadius="0px 0px 0px 0px"
+  [FRAME] "B1. Homepage" #69:1434 layout={"mode":"none","sizing":{},"dimensions":{"width":402,"height":1433}} fills=fill_2605ca4d
+  [GROUP] #69:1546 template=EL-74b77d95
+  [GROUP] #69:1549 template=EL-74b77d95
+  [RECTANGLE] #69:1552 layout={"mode":"none","sizing":{},"dimensions":{"width":103,"height":57}} strokes=fill_81780129 strokeWeight=2px
+  [IMAGE-SVG] #69:1553 layout={"mode":"none","sizing":{},"dimensions":{"width":579.43,"height":584.44}} strokes=fill_81780129 strokeWeight=2px
+  [IMAGE-SVG] #69:1554 layout={"mode":"none","sizing":{},"dimensions":{"width":125,"height":0}} strokes=fill_81780129 strokeWeight=2px
+  [FRAME] "[WIP] -" #174:244 layout={"mode":"none","sizing":{},"dimensions":{"width":402,"height":1265}} fills=fill_2605ca4d
+  [FRAME] "3.4.1 mix & match loading" #400:387 template=EL-7a4e7933
+  [FRAME] "3.4 mix & match" #400:416 template=EL-7a4e7933
+  [FRAME] "3.4.2 mix & match result" #400:448 template=EL-7a4e7933
+  [FRAME] "3.4.3 mix & match add to calendar" #400:475 template=EL-7a4e7933
+  [FRAME] "3.3 Item detail/edit - ori photo/sourse" #516:162 template=EL-7a4e7933
+  [FRAME] "3. Wardrobe" #581:294 template=EL-7a4e7933
+  [FRAME] "4.2 Trip" #581:373 template=EL-7a4e7933
+  [FRAME] "0.2.6 Onboarding" #581:418 template=EL-7a4e7933
+  [FRAME] "0.2.6 Onboarding" #581:445 template=EL-7a4e7933
+  [FRAME] "1. Homepage" #581:459 template=EL-7a4e7933
+  [RECTANGLE] #581:519 layout=layout_5aaf62d2 fills=fill_fef61db7 borderRadius=1000px
+  [RECTANGLE] #581:520 layout=layout_d6a0aa80 fills=fill_fef61db7 borderRadius=1000px
+  [RECTANGLE] #581:521 layout=layout_d6a0aa80 fills=[{"type":"GRADIENT_LINEAR","gradient":"linear-gradient(90deg, rgba(21, 21, 21, 1) 0%, rgba(21, 21, 21, 1) 48%, rgba(123, 123, 123, 1) 72%, rgba(74, 74, 74, 1) 95%)"}] borderRadius=1000px
+  [RECTANGLE] #581:522 template=EL-4206cabd
+  [RECTANGLE] #581:523 template=EL-4206cabd
+  [RECTANGLE] #581:524 template=EL-083c0daf
+  [RECTANGLE] #581:525 layout=layout_5aaf62d2 fills=[{"type":"GRADIENT_LINEAR","gradient":"linear-gradient(0deg, rgba(177, 178, 182, 1) 1%, rgba(123, 124, 129, 1) 29%, rgba(241, 241, 241, 1) 51%, rgba(168, 169, 174, 1) 73%, rgba(237, 237, 237, 1) 98%)"}] effects={"boxShadow":"0px 4px 4px 0px rgba(0, 0, 0, 0.25)"} borderRadius=1000px
+  [RECTANGLE] #581:526 template=EL-083c0daf
+  [RECTANGLE] #581:527 layout={"mode":"none","sizing":{},"dimensions":{"width":397.88,"height":26.53}} fills=silver borderRadius=1000px
+  [RECTANGLE] "Gemini_Generated_Image_fym2refym2refym2 1" #581:528 layout={"mode":"none","sizing":{},"dimensions":{"width":273,"height":273}} fills=[{"type":"IMAGE","imageRef":"020b89297b63b676bf613293a94399443cf10224","scaleMode":"FILL","objectFit":"cover","isBackground":false,"imageDownloadArguments":{"needsCropping":false,"requiresImageDimensions":false}}]
+  [RECTANGLE] "image 16" #581:529 layout={"mode":"none","sizing":{},"dimensions":{"width":736,"height":736}} fills=[{"type":"IMAGE","imageRef":"5ea827b90932af24757e5dd08a34dd75e17a2fb4","scaleMode":"FILL","objectFit":"cover","isBackground":false,"imageDownloadArguments":{"needsCropping":false,"requiresImageDimensions":false}}]
+  [FRAME] "0.1 Welcome screen" #581:531 template=EL-7a4e7933
+  [FRAME] "D.3 Wardrobe - search result" #1239:2739 template=EL-1a90fa2f
+  [FRAME] "D.3 Wardrobe - search result" #1240:3327 layout={"mode":"none","sizing":{},"dimensions":{"width":1440,"height":1108}} fills=White
+  [SECTION] "Moodboard" #1759:401 layout={"mode":"none","sizing":{},"dimensions":{"width":2163,"height":1340}} fills=fill_658ab2fa strokes=fill_090ebe47 strokeWeight=1px
+  [SECTION] "Color Exploration" #1759:421 layout={"mode":"none","sizing":{},"dimensions":{"width":2550,"height":2106}} fills=fill_658ab2fa strokes=fill_090ebe47 strokeWeight=1px
+  [SECTION] "Logo Exploration" #1759:907 layout={"mode":"none","sizing":{},"dimensions":{"width":6835,"height":2500}} fills=fill_658ab2fa strokes=fill_090ebe47 strokeWeight=1px
+  [FRAME] "Slide 16:9 - 2" #1759:926 template=EL-41e84a8d
+  [FRAME] "Slide 16:9 - 3" #1759:938 template=EL-41e84a8d
+  [FRAME] "Slide 16:9 - 4" #1759:951 template=EL-41e84a8d
+  [IMAGE-SVG] #1759:960 layout={"mode":"none","sizing":{},"dimensions":{"width":0,"height":1050.55}} strokes=fill_34dc0314 strokeWeight=2px
+  [IMAGE-SVG] #1759:961 layout={"mode":"none","sizing":{},"dimensions":{"width":824.58,"height":0.91}} strokes=fill_34dc0314 strokeWeight=2px
+  [IMAGE-SVG] #1759:962 layout={"mode":"none","sizing":{},"dimensions":{"width":2.7,"height":1132.63}} strokes=fill_34dc0314 strokeWeight=2px
+  [IMAGE-SVG] #1759:963 layout={"mode":"none","sizing":{},"dimensions":{"width":1492.15,"height":32.6}} strokes=fill_34dc0314 strokeWeight=2px
+  [IMAGE-SVG] #1759:964 layout={"mode":"none","sizing":{},"dimensions":{"width":19.76,"height":976.01}} strokes=fill_34dc0314 strokeWeight=2px
+  [IMAGE-SVG] #1759:965 layout={"mode":"none","sizing":{},"dimensions":{"width":105.8,"height":4.86}} strokes=fill_34dc0314 strokeWeight=2px
+  [IMAGE-SVG] #1759:966 layout={"mode":"none","sizing":{},"dimensions":{"width":96.75,"height":159.98}} strokes=fill_34dc0314 strokeWeight=2px
+  [IMAGE-SVG] #1759:967 layout={"mode":"none","sizing":{},"dimensions":{"width":2.15,"height":146.46}} strokes=fill_34dc0314 strokeWeight=2px
+  [IMAGE-SVG] #1759:968 layout={"mode":"none","sizing":{},"dimensions":{"width":245.56,"height":2.1}} strokes=fill_34dc0314 strokeWeight=2px
+  [IMAGE-SVG] #1759:969 layout={"mode":"none","sizing":{},"dimensions":{"width":272.24,"height":0.91}} strokes=fill_34dc0314 strokeWeight=2px
+  [IMAGE-SVG] #1759:970 layout={"mode":"none","sizing":{},"dimensions":{"width":220.41,"height":0}} strokes=fill_34dc0314 strokeWeight=2px
+  [IMAGE-SVG] #1759:971 layout={"mode":"none","sizing":{},"dimensions":{"width":209.52,"height":0}} strokes=fill_34dc0314 strokeWeight=2px
+  [IMAGE-SVG] #1759:972 layout={"mode":"none","sizing":{},"dimensions":{"width":266.11,"height":7.1}} strokes=fill_34dc0314 strokeWeight=2px
+  [IMAGE-SVG] #1759:973 layout={"mode":"none","sizing":{},"dimensions":{"width":215.47,"height":1.02}} strokes=fill_34dc0314 strokeWeight=2px
+  [IMAGE-SVG] #1759:974 layout={"mode":"none","sizing":{},"dimensions":{"width":233.49,"height":1.15}} strokes=fill_34dc0314 strokeWeight=2px
+  [IMAGE-SVG] #1759:975 layout={"mode":"none","sizing":{},"dimensions":{"width":196.6,"height":0}} strokes=fill_34dc0314 strokeWeight=2px
+  [IMAGE-SVG] #1759:976 layout={"mode":"none","sizing":{},"dimensions":{"width":232.57,"height":0.6}} strokes=fill_34dc0314 strokeWeight=2px
+  [IMAGE-SVG] #1759:977 layout={"mode":"none","sizing":{},"dimensions":{"width":194.29,"height":1.71}} strokes=fill_34dc0314 strokeWeight=2px
+  [IMAGE-SVG] #1759:978 layout={"mode":"none","sizing":{},"dimensions":{"width":249.58,"height":1.85}} strokes=fill_34dc0314 strokeWeight=2px
+  [IMAGE-SVG] #1759:979 layout={"mode":"none","sizing":{},"dimensions":{"width":207.35,"height":0}} strokes=fill_34dc0314 strokeWeight=2px
+  [IMAGE-SVG] #1759:980 layout={"mode":"none","sizing":{},"dimensions":{"width":246.91,"height":2.52}} strokes=fill_34dc0314 strokeWeight=2px
+  [IMAGE-SVG] #1759:981 layout={"mode":"none","sizing":{},"dimensions":{"width":214.88,"height":0}} strokes=fill_34dc0314 strokeWeight=2px
+  [IMAGE-SVG] #1759:982 layout={"mode":"none","sizing":{},"dimensions":{"width":227.71,"height":1.45}} strokes=fill_34dc0314 strokeWeight=2px
+  [IMAGE-SVG] #1759:983 layout={"mode":"none","sizing":{},"dimensions":{"width":225.53,"height":0}} strokes=fill_34dc0314 strokeWeight=2px
+  [IMAGE-SVG] #1759:984 layout={"mode":"none","sizing":{},"dimensions":{"width":275.27,"height":0}} strokes=fill_34dc0314 strokeWeight=2px
+  [IMAGE-SVG] #1759:985 layout={"mode":"none","sizing":{},"dimensions":{"width":280.48,"height":0}} strokes=fill_34dc0314 strokeWeight=2px
+  [IMAGE-SVG] #1759:986 layout={"mode":"none","sizing":{},"dimensions":{"width":233.34,"height":2.67}} strokes=fill_34dc0314 strokeWeight=2px
+  [IMAGE-SVG] #1759:987 layout={"mode":"none","sizing":{},"dimensions":{"width":237.7,"height":4.56}} strokes=fill_34dc0314 strokeWeight=2px
+  [IMAGE-SVG] #1759:988 layout={"mode":"none","sizing":{},"dimensions":{"width":206.07,"height":0}} strokes=fill_34dc0314 strokeWeight=2px
+  [IMAGE-SVG] #1759:989 layout={"mode":"none","sizing":{},"dimensions":{"width":162.81,"height":0.91}} strokes=fill_34dc0314 strokeWeight=2px
+  [IMAGE-SVG] #1759:990 layout={"mode":"none","sizing":{},"dimensions":{"width":227.45,"height":0.94}} strokes=fill_34dc0314 strokeWeight=2px
+  [IMAGE-SVG] #1759:991 layout={"mode":"none","sizing":{},"dimensions":{"width":201.36,"height":0}} strokes=fill_34dc0314 strokeWeight=2px
+  [IMAGE-SVG] #1759:992 layout={"mode":"none","sizing":{},"dimensions":{"width":176.37,"height":0}} strokes=fill_34dc0314 strokeWeight=2px
+  [IMAGE-SVG] #1759:993 layout={"mode":"none","sizing":{},"dimensions":{"width":193.8,"height":2.3}} strokes=fill_34dc0314 strokeWeight=2px
+  [IMAGE-SVG] #1759:994 layout={"mode":"none","sizing":{},"dimensions":{"width":167.2,"height":0}} strokes=fill_34dc0314 strokeWeight=2px
+  [IMAGE-SVG] #1759:995 layout={"mode":"none","sizing":{},"dimensions":{"width":204.26,"height":0}} strokes=fill_34dc0314 strokeWeight=2px
+  [IMAGE-SVG] #1759:996 layout={"mode":"none","sizing":{},"dimensions":{"width":265.25,"height":0.94}} strokes=fill_34dc0314 strokeWeight=2px
+  [IMAGE-SVG] #1759:997 layout={"mode":"none","sizing":{},"dimensions":{"width":206.62,"height":0}} strokes=fill_34dc0314 strokeWeight=2px
+  [IMAGE-SVG] #1759:998 layout={"mode":"none","sizing":{},"dimensions":{"width":245.4,"height":1.95}} strokes=fill_34dc0314 strokeWeight=2px
+  [IMAGE-SVG] #1759:999 layout={"mode":"none","sizing":{},"dimensions":{"width":201.17,"height":0}} strokes=fill_34dc0314 strokeWeight=2px
+  [IMAGE-SVG] #1759:1000 layout={"mode":"none","sizing":{},"dimensions":{"width":234.88,"height":0}} strokes=fill_34dc0314 strokeWeight=2px
+  [IMAGE-SVG] #1759:1001 layout={"mode":"none","sizing":{},"dimensions":{"width":215.32,"height":0}} strokes=fill_34dc0314 strokeWeight=2px
+  [FRAME] #1759:1002 template=EL-6e1f936b
+  [FRAME] #1759:1005 template=EL-6e1f936b
+  [FRAME] #1759:1008 template=EL-6e1f936b

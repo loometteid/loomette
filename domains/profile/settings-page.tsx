@@ -313,19 +313,21 @@ export function SettingsView({ userId }: { userId: string }) {
           </SettingsSection>
 
           <SettingsSection id="appearance" title="Appearance">
-            <button
-              type="button"
-              onClick={notImplemented}
-              className="flex items-center justify-between text-left hover:opacity-80 transition-opacity w-full"
-            >
+            <div className="flex items-center justify-between">
               <span className="font-sans text-xs font-normal tracking-wider uppercase text-foreground">
                 Language
               </span>
-              <span className="border-border text-muted-foreground flex items-center gap-1 rounded-full border px-3 py-1 font-sans text-xs font-normal uppercase">
-                EN
-                <ChevronDown className="size-3.5" />
-              </span>
-            </button>
+              <button
+                type="button"
+                onClick={notImplemented}
+                data-testid="settings__language-button"
+                aria-label="Select language"
+                className="inline-flex items-center justify-center gap-1.5 h-10 px-4 rounded-2xl border border-[#C9C3B7] dark:border-border bg-transparent text-xs font-sans font-normal text-[#444440] dark:text-foreground hover:bg-[#F2EDE5]/50 dark:hover:bg-muted/50 transition-colors cursor-pointer"
+              >
+                <span>EN</span>
+                <ChevronDown className="size-3 text-[#444440] dark:text-foreground" />
+              </button>
+            </div>
           </SettingsSection>
 
           <SettingsSection id="privacy-data" title="Privacy & Data">

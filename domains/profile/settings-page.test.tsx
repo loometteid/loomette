@@ -97,4 +97,18 @@ describe("SettingsView - Notification Settings (Component & Integration Tier)", 
     expect(analysisSwitch).toHaveAttribute("aria-checked", "true");
     expect(recapSwitch).toHaveAttribute("aria-checked", "true");
   });
+
+  it("renders the language selector button matching Figma D.4.5 / 4.5", async () => {
+    // Arrange & Act
+    renderWithQueryClient(
+      <Suspense fallback={<div>Loading...</div>}>
+        <SettingsView userId="user-123" />
+      </Suspense>,
+    );
+
+    const langBtn = await screen.findByTestId("settings__language-button");
+    expect(langBtn).toBeInTheDocument();
+    expect(langBtn).toHaveTextContent("EN");
+    expect(langBtn).toHaveClass("rounded-2xl", "border-[#C9C3B7]");
+  });
 });

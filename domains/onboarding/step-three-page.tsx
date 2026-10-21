@@ -117,7 +117,7 @@ export function StepThreeForm({
       <div className="flex flex-col gap-2">
         <Label
           htmlFor="onboarding-profession"
-          className="text-muted-foreground text-xs font-semibold tracking-wider uppercase"
+          className="text-slate text-xs font-semibold tracking-wider uppercase"
         >
           Your profession
         </Label>
@@ -131,7 +131,7 @@ export function StepThreeForm({
       </div>
 
       <div className="flex flex-col gap-2.5">
-        <Label className="text-muted-foreground text-xs font-semibold tracking-wider uppercase">
+        <Label className="text-slate text-xs font-semibold tracking-wider uppercase">
           Your work setting
         </Label>
         <Controller

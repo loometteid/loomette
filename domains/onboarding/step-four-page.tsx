@@ -80,7 +80,7 @@ function MeasurementField({
   return (
     <div className="flex flex-col gap-1.5">
       <div className="flex items-center justify-between">
-        <Label className="text-muted-foreground text-xs font-semibold tracking-wider uppercase">
+        <Label className="text-slate text-xs font-semibold tracking-wider uppercase">
           {label}
         </Label>
         <Badge className="bg-secondary/60 text-[10px] text-muted-foreground uppercase border-none px-2 py-0.5">
@@ -286,7 +286,7 @@ export function StepFourForm({ initialData, userId }: StepFourFormProps) {
       {/* Outfit Size */}
       <div className="flex flex-col gap-2">
         <div className="flex items-center justify-between">
-          <Label className="text-muted-foreground text-xs font-semibold tracking-wider uppercase">
+          <Label className="text-slate text-xs font-semibold tracking-wider uppercase">
             Outfit size
           </Label>
           <Badge className="bg-secondary/60 text-[10px] text-muted-foreground uppercase border-none px-2 py-0.5">
@@ -316,7 +316,7 @@ export function StepFourForm({ initialData, userId }: StepFourFormProps) {
         <div className="flex items-center justify-between">
           <Label
             htmlFor="onboarding-shoe-size"
-            className="text-muted-foreground text-xs font-semibold tracking-wider uppercase"
+            className="text-slate text-xs font-semibold tracking-wider uppercase"
           >
             Shoe size
           </Label>

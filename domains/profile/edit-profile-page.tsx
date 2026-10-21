@@ -101,7 +101,7 @@ function MeasurementField({
 }) {
   return (
     <div className="flex flex-col gap-1.5">
-      <Label className="text-muted-foreground text-xs tracking-wide uppercase">
+      <Label className="text-slate text-xs font-medium tracking-wide uppercase">
         {label}
       </Label>
       <div className="flex gap-2">
@@ -350,7 +350,7 @@ export function EditProfileForm({ userId }: { userId: string }) {
               <div className="flex flex-col gap-1.5">
                 <Label
                   htmlFor="edit-name"
-                  className="text-muted-foreground text-xs tracking-wide uppercase"
+                  className="text-slate text-xs font-medium tracking-wide uppercase"
                 >
                   Name
                 </Label>
@@ -364,7 +364,7 @@ export function EditProfileForm({ userId }: { userId: string }) {
               <div className="flex flex-col gap-1.5">
                 <Label
                   htmlFor="edit-birthday"
-                  className="text-muted-foreground text-xs tracking-wide uppercase"
+                  className="text-slate text-xs font-medium tracking-wide uppercase"
                 >
                   Birthday
                 </Label>
@@ -377,7 +377,7 @@ export function EditProfileForm({ userId }: { userId: string }) {
               </div>
 
               <div className="flex flex-col gap-2">
-                <Label className="text-muted-foreground text-xs tracking-wide uppercase">
+                <Label className="text-slate text-xs font-medium tracking-wide uppercase">
                   How do you identify?
                 </Label>
                 <Controller
@@ -398,7 +398,7 @@ export function EditProfileForm({ userId }: { userId: string }) {
               <div className="flex flex-col gap-1.5">
                 <Label
                   htmlFor="edit-profession"
-                  className="text-muted-foreground text-xs tracking-wide uppercase"
+                  className="text-slate text-xs font-medium tracking-wide uppercase"
                 >
                   Your profession
                 </Label>
@@ -410,7 +410,7 @@ export function EditProfileForm({ userId }: { userId: string }) {
               </div>
 
               <div className="flex flex-col gap-2">
-                <Label className="text-muted-foreground text-xs tracking-wide uppercase">
+                <Label className="text-slate text-xs font-medium tracking-wide uppercase">
                   Your work setting
                 </Label>
                 <Controller
@@ -434,7 +434,7 @@ export function EditProfileForm({ userId }: { userId: string }) {
             {/* Subcolumn 2: Sizes, measurements & style */}
             <div className="flex flex-col gap-6">
               <div className="flex flex-col gap-2">
-                <Label className="text-muted-foreground text-xs tracking-wide uppercase">
+                <Label className="text-slate text-xs font-medium tracking-wide uppercase">
                   Outfit size
                 </Label>
                 <Controller
@@ -457,7 +457,7 @@ export function EditProfileForm({ userId }: { userId: string }) {
               <div className="flex flex-col gap-1.5">
                 <Label
                   htmlFor="edit-shoe-size"
-                  className="text-muted-foreground text-xs tracking-wide uppercase"
+                  className="text-slate text-xs font-medium tracking-wide uppercase"
                 >
                   Shoe size
                 </Label>
@@ -570,7 +570,7 @@ export function EditProfileForm({ userId }: { userId: string }) {
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <Label className="text-muted-foreground text-xs tracking-wide uppercase">
+                <Label className="text-slate text-xs font-medium tracking-wide uppercase">
                   Your body type
                 </Label>
                 <Controller
@@ -597,7 +597,7 @@ export function EditProfileForm({ userId }: { userId: string }) {
               </div>
 
               <div className="flex flex-col gap-2">
-                <span className="text-muted-foreground text-xs tracking-wide uppercase">
+                <span className="text-slate text-xs font-medium tracking-wide uppercase">
                   Your style, in your words
                 </span>
                 <Controller

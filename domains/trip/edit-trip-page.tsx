@@ -237,7 +237,7 @@ function TripFormContent({ userId, trip }: { userId: string; trip?: Trip }) {
         <div className="flex flex-1 flex-col gap-6 w-full max-w-xl">
           <div className="grid grid-cols-2 gap-4">
             <div className="flex flex-col gap-1.5">
-              <Label htmlFor="trip-start-date" className="font-sans text-[11px] font-normal uppercase tracking-wider text-muted-foreground">
+              <Label htmlFor="trip-start-date" className="font-sans text-[11px] font-medium uppercase tracking-wider text-slate">
                 Start date
               </Label>
               <Input
@@ -250,7 +250,7 @@ function TripFormContent({ userId, trip }: { userId: string; trip?: Trip }) {
               />
             </div>
             <div className="flex flex-col gap-1.5">
-              <Label htmlFor="trip-end-date" className="font-sans text-[11px] font-normal uppercase tracking-wider text-muted-foreground">
+              <Label htmlFor="trip-end-date" className="font-sans text-[11px] font-medium uppercase tracking-wider text-slate">
                 End date
               </Label>
               <Input
@@ -265,7 +265,7 @@ function TripFormContent({ userId, trip }: { userId: string; trip?: Trip }) {
           </div>
 
           <div className="flex flex-col gap-2">
-            <Label className="font-sans text-[11px] font-normal uppercase tracking-wider text-muted-foreground">Season</Label>
+            <Label className="font-sans text-[11px] font-medium uppercase tracking-wider text-slate">Season</Label>
             <Controller
               control={control}
               name="season"
@@ -283,7 +283,7 @@ function TripFormContent({ userId, trip }: { userId: string; trip?: Trip }) {
           </div>
 
           <div className="flex flex-col gap-2">
-            <Label className="font-sans text-[11px] font-normal uppercase tracking-wider text-muted-foreground">Travel companion</Label>
+            <Label className="font-sans text-[11px] font-medium uppercase tracking-wider text-slate">Travel companion</Label>
             <Controller
               control={control}
               name="companion"

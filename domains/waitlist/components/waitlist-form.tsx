@@ -86,7 +86,7 @@ export function WaitlistForm({
       <div className="flex flex-col gap-2">
         <Label
           htmlFor="waitlist-name"
-          className="text-muted-foreground text-xs font-semibold tracking-wider uppercase"
+          className="text-slate text-xs font-semibold tracking-wider uppercase"
         >
           What do we call you?
         </Label>
@@ -112,7 +112,7 @@ export function WaitlistForm({
       <div className="flex flex-col gap-2">
         <Label
           htmlFor="waitlist-email"
-          className="text-muted-foreground text-xs font-semibold tracking-wider uppercase"
+          className="text-slate text-xs font-semibold tracking-wider uppercase"
         >
           Your email
         </Label>
@@ -139,7 +139,7 @@ export function WaitlistForm({
       <div className="flex flex-col gap-2">
         <Label
           htmlFor="waitlist-hurdles"
-          className="text-muted-foreground text-xs font-semibold tracking-wider uppercase"
+          className="text-slate text-xs font-semibold tracking-wider uppercase"
         >
           What are your biggest hurdles in fashion?
         </Label>

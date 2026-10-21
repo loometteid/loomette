@@ -296,7 +296,7 @@ export function EditItemForm({ userId, id }: { userId: string; id: string }) {
                 <div className="flex flex-col gap-6">
                   {/* Category */}
                   <div className="flex flex-col gap-2">
-                    <Label className="text-[#8C887B] text-xs font-semibold tracking-widest uppercase">
+                    <Label className="text-slate text-xs font-semibold tracking-widest uppercase">
                       Category
                     </Label>
                     <Controller
@@ -318,7 +318,7 @@ export function EditItemForm({ userId, id }: { userId: string; id: string }) {
                   {/* Subcategory */}
                   {subcategoryOptions.length > 0 && (
                     <div className="flex flex-col gap-2">
-                      <Label className="text-[#8C887B] text-xs font-semibold tracking-widest uppercase">
+                      <Label className="text-slate text-xs font-semibold tracking-widest uppercase">
                         Sub Category
                       </Label>
                       <Controller
@@ -338,7 +338,7 @@ export function EditItemForm({ userId, id }: { userId: string; id: string }) {
                   {/* Outfit Size */}
                   <div className="flex flex-col gap-2">
                     <div className="flex items-center justify-between">
-                      <Label className="text-[#8C887B] text-xs font-semibold tracking-widest uppercase">
+                      <Label className="text-slate text-xs font-semibold tracking-widest uppercase">
                         Outfit Size
                       </Label>
                       <Badge className="bg-[#F2EDE5] text-[#8C887B] text-[0.65rem] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full border-none">
@@ -365,7 +365,7 @@ export function EditItemForm({ userId, id }: { userId: string; id: string }) {
                 <div className="flex flex-col gap-6">
                   {/* Occasion */}
                   <div className="flex flex-col gap-2">
-                    <Label className="text-[#8C887B] text-xs font-semibold tracking-widest uppercase">
+                    <Label className="text-slate text-xs font-semibold tracking-widest uppercase">
                       Occasion
                     </Label>
                     <Controller
@@ -394,7 +394,7 @@ export function EditItemForm({ userId, id }: { userId: string; id: string }) {
                   <div className="flex flex-col gap-1.5">
                     <Label
                       htmlFor="edit-item-price"
-                      className="text-[#8C887B] text-xs font-semibold tracking-widest uppercase"
+                      className="text-slate text-xs font-semibold tracking-widest uppercase"
                     >
                       Price (Rp)
                     </Label>
@@ -412,7 +412,7 @@ export function EditItemForm({ userId, id }: { userId: string; id: string }) {
                   <div className="flex flex-col gap-1.5">
                     <Label
                       htmlFor="edit-item-buy-from"
-                      className="text-[#8C887B] text-xs font-semibold tracking-widest uppercase"
+                      className="text-slate text-xs font-semibold tracking-widest uppercase"
                     >
                       Buy From
                     </Label>

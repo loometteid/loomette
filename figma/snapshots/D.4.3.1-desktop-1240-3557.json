@@ -1,0 +1,226 @@
+{
+  "NAME": "Loomette.id",
+  "FRAME_NAME": "D.4.3.1 Pop up Add to Wardrobe",
+  "NODE_ID": "1240:3557",
+  "SOURCE_SVG": "figma/profile/desktop/D.4.3.1 Pop up Add to Wardrobe.svg",
+  "LAYOUT": {
+    "width": 1440,
+    "height": 1024,
+    "viewBox": "0 0 1440 1024"
+  },
+  "COLORS": {
+    "fills": [
+      "none",
+      "#FAFAF7",
+      "#444440",
+      "#F2EDE5",
+      "white",
+      "black",
+      "#E5487E",
+      "#C9C3B7"
+    ],
+    "strokes": [
+      "#C9C3B7",
+      "#444440"
+    ]
+  },
+  "KEY_ELEMENTS_COUNT": {
+    "paths": 40,
+    "rects": 25,
+    "images": 3,
+    "patterns": 5
+  },
+  "SAMPLE_RECTS": [
+    {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 1024,
+      "fill": "#FAFAF7"
+    },
+    {
+      "x": 65,
+      "y": 805,
+      "width": 280,
+      "height": 64,
+      "rx": 16,
+      "fill": "#444440"
+    },
+    {
+      "x": 65,
+      "y": 890,
+      "width": 280,
+      "height": 64,
+      "rx": 16,
+      "fill": "#F2EDE5"
+    },
+    {
+      "x": 0,
+      "y": 0.1,
+      "width": 1465,
+      "height": 136,
+      "fill": "white"
+    },
+    {
+      "x": 100,
+      "y": 184,
+      "width": 200,
+      "height": 200,
+      "rx": 20,
+      "fill": "url(#pattern0_1240_3557)"
+    },
+    {
+      "x": 1010,
+      "y": 183,
+      "width": 127,
+      "height": 47,
+      "rx": 8,
+      "fill": "#F2EDE5"
+    },
+    {
+      "x": 270,
+      "y": 353,
+      "width": 52,
+      "height": 52,
+      "rx": 8,
+      "fill": "#F2EDE5"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "width": 29.7143,
+      "height": 29.7143,
+      "fill": "#F2EDE5"
+    },
+    {
+      "x": 501.25,
+      "y": 360.25,
+      "width": 268.5,
+      "height": 332.458,
+      "rx": 11.75,
+      "stroke": "#C9C3B7"
+    },
+    {
+      "x": 555,
+      "y": 405,
+      "width": 161,
+      "height": 206,
+      "fill": "url(#pattern1_1240_3557)"
+    },
+    {
+      "x": 521,
+      "y": 347,
+      "width": 69,
+      "height": 35,
+      "rx": 17.5,
+      "fill": "#F2EDE5"
+    },
+    {
+      "x": 794.25,
+      "y": 360.25,
+      "width": 268.5,
+      "height": 332.458,
+      "rx": 11.75,
+      "stroke": "#C9C3B7"
+    },
+    {
+      "x": 844,
+      "y": 424,
+      "width": 169,
+      "height": 160,
+      "fill": "url(#pattern2_1240_3557)"
+    },
+    {
+      "x": 1087.25,
+      "y": 360.25,
+      "width": 268.5,
+      "height": 332.458,
+      "rx": 11.75,
+      "stroke": "#C9C3B7"
+    },
+    {
+      "x": 1137,
+      "y": 424,
+      "width": 169,
+      "height": 160,
+      "fill": "url(#pattern3_1240_3557)"
+    },
+    {
+      "x": 501.75,
+      "y": 271.75,
+      "width": 58.5,
+      "height": 38.5,
+      "rx": 15.25,
+      "stroke": "#444440"
+    },
+    {
+      "x": 581.5,
+      "y": 271.5,
+      "width": 128,
+      "height": 39,
+      "rx": 15.5,
+      "stroke": "#C9C3B7"
+    },
+    {
+      "x": 730.5,
+      "y": 271.5,
+      "width": 75,
+      "height": 39,
+      "rx": 15.5,
+      "stroke": "#C9C3B7"
+    },
+    {
+      "x": 0,
+      "y": 0.2,
+      "width": 1440,
+      "height": 1024,
+      "fill": "#C9C3B7"
+    },
+    {
+      "x": 311,
+      "y": 85,
+      "width": 818,
+      "height": 853,
+      "rx": 20,
+      "fill": "#FAFAF7"
+    },
+    {
+      "x": 311,
+      "y": 83,
+      "width": 818,
+      "height": 850,
+      "rx": 20,
+      "fill": "#FAFAF7"
+    },
+    {
+      "x": 1017,
+      "y": 139,
+      "width": 56,
+      "height": 56,
+      "rx": 8,
+      "fill": "#F2EDE5"
+    },
+    {
+      "x": 560,
+      "y": 701,
+      "width": 320,
+      "height": 64,
+      "rx": 16,
+      "fill": "#444440"
+    },
+    {
+      "x": 600,
+      "y": 259,
+      "width": 240,
+      "height": 308,
+      "fill": "url(#pattern4_1240_3557)"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 1024,
+      "fill": "white"
+    }
+  ]
+}

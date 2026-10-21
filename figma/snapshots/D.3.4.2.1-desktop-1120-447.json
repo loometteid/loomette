@@ -1,0 +1,26 @@
+{
+  "id": "1120:447",
+  "name": "D.3.4.2.1 Mix & Match Result - Calendar Pop Up",
+  "type": "FRAME",
+  "bounds": {
+    "x": 0,
+    "y": 0,
+    "width": 1440,
+    "height": 1024
+  },
+  "background": [
+    {
+      "type": "SOLID",
+      "color": "#FAFAF7"
+    }
+  ],
+  "colorsUsed": [
+    "#FAFAF7",
+    "#444440",
+    "#F2EDE5",
+    "#C9C3B7",
+    "#E5487E"
+  ],
+  "extractedFrom": "figma/mix and match/desktop/D.3.4.2.1 Mix & Match Result - Calendar Pop Up.svg",
+  "timestamp": "2026-10-21T14:25:45.843Z"
+}

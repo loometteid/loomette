@@ -1,0 +1,99 @@
+{
+  "NAME": "Loomette.id",
+  "FRAME_NAME": "D.4.2.2.1 Trip - Outfit Plan",
+  "NODE_ID": "1240:2994",
+  "SOURCE_SVG": "figma/profile/desktop/D.4.2.2.1 Trip - Outfit Plan.svg",
+  "LAYOUT": {
+    "width": 1440,
+    "height": 1504,
+    "viewBox": "0 0 1440 1504"
+  },
+  "COLORS": {
+    "fills": [
+      "none",
+      "#FAFAF7",
+      "white",
+      "#444440",
+      "black",
+      "#F2EDE5"
+    ],
+    "strokes": [
+      "#444440"
+    ]
+  },
+  "KEY_ELEMENTS_COUNT": {
+    "paths": 24,
+    "rects": 9,
+    "images": 2,
+    "patterns": 2
+  },
+  "SAMPLE_RECTS": [
+    {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 1504,
+      "fill": "#FAFAF7"
+    },
+    {
+      "x": 0,
+      "y": 0.1,
+      "width": 1465,
+      "height": 136,
+      "fill": "white"
+    },
+    {
+      "x": 487,
+      "y": 200,
+      "width": 257,
+      "height": 361,
+      "fill": "url(#pattern0_1240_2994)"
+    },
+    {
+      "x": 806,
+      "y": 271,
+      "width": 133,
+      "height": 48,
+      "rx": 16,
+      "fill": "#F2EDE5"
+    },
+    {
+      "x": 603,
+      "y": 609,
+      "width": 127,
+      "height": 47,
+      "rx": 8,
+      "fill": "#F2EDE5"
+    },
+    {
+      "x": 245,
+      "y": 792,
+      "width": 256,
+      "height": 383,
+      "fill": "url(#pattern1_1240_2994)"
+    },
+    {
+      "x": 245,
+      "y": 1284,
+      "width": 284,
+      "height": 64,
+      "rx": 16,
+      "fill": "#444440"
+    },
+    {
+      "x": 818,
+      "y": 792,
+      "width": 284,
+      "height": 64,
+      "rx": 16,
+      "fill": "#444440"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 1504,
+      "fill": "white"
+    }
+  ]
+}

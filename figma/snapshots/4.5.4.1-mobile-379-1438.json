@@ -1,0 +1,165 @@
+{
+  "NAME": "Loomette.id",
+  "FRAME_NAME": "4.5.4.1 Pop-up Delete Account",
+  "NODE_ID": "379:1438",
+  "SOURCE_SVG": "figma/profile/mobile/4.5.4.1 Pop-up Delete Account.svg",
+  "LAYOUT": {
+    "width": 402,
+    "height": 874,
+    "viewBox": "0 0 402 874"
+  },
+  "COLORS": {
+    "fills": [
+      "none",
+      "#FAFAF7",
+      "#F2EDE5",
+      "#444440",
+      "#C9C3B7",
+      "white"
+    ],
+    "strokes": [
+      "#C9C3B7"
+    ]
+  },
+  "KEY_ELEMENTS_COUNT": {
+    "paths": 29,
+    "rects": 17,
+    "images": 0,
+    "patterns": 0
+  },
+  "SAMPLE_RECTS": [
+    {
+      "x": 0,
+      "y": 0,
+      "width": 402,
+      "height": 874,
+      "fill": "#FAFAF7"
+    },
+    {
+      "x": 36,
+      "y": 40,
+      "width": 40,
+      "height": 40,
+      "rx": 8,
+      "fill": "#F2EDE5"
+    },
+    {
+      "x": 309,
+      "y": 229,
+      "width": 44,
+      "height": 24,
+      "rx": 12,
+      "fill": "#444440"
+    },
+    {
+      "x": 331,
+      "y": 231.4,
+      "width": 18.8571,
+      "height": 19.2,
+      "rx": 9.42857,
+      "fill": "#FAFAF7"
+    },
+    {
+      "x": 309,
+      "y": 277,
+      "width": 44,
+      "height": 24,
+      "rx": 12,
+      "fill": "#444440"
+    },
+    {
+      "x": 331,
+      "y": 279.4,
+      "width": 18.8571,
+      "height": 19.2,
+      "rx": 9.42857,
+      "fill": "#FAFAF7"
+    },
+    {
+      "x": 309,
+      "y": 325,
+      "width": 44,
+      "height": 24,
+      "rx": 12,
+      "fill": "#C9C3B7"
+    },
+    {
+      "x": 312.143,
+      "y": 327.4,
+      "width": 18.8571,
+      "height": 19.2,
+      "rx": 9.42857,
+      "fill": "#FAFAF7"
+    },
+    {
+      "x": 283.5,
+      "y": 422.5,
+      "width": 69,
+      "height": 39,
+      "rx": 15.5,
+      "stroke": "#C9C3B7"
+    },
+    {
+      "x": 0,
+      "y": 0.2,
+      "width": 402,
+      "height": 874,
+      "fill": "#C9C3B7"
+    },
+    {
+      "x": 41,
+      "y": 187,
+      "width": 320,
+      "height": 501,
+      "rx": 20,
+      "fill": "#FAFAF7"
+    },
+    {
+      "x": 101,
+      "y": 536,
+      "width": 200,
+      "height": 48,
+      "rx": 8,
+      "fill": "#F2EDE5"
+    },
+    {
+      "x": 101,
+      "y": 600,
+      "width": 200,
+      "height": 48,
+      "rx": 8,
+      "fill": "#444440"
+    },
+    {
+      "x": 297,
+      "y": 211,
+      "width": 40,
+      "height": 40,
+      "rx": 8,
+      "fill": "#F2EDE5"
+    },
+    {
+      "x": 141,
+      "y": 231,
+      "width": 120,
+      "height": 8,
+      "rx": 4,
+      "fill": "#F2EDE5"
+    },
+    {
+      "x": 141,
+      "y": 231,
+      "width": 40,
+      "height": 8,
+      "rx": 4,
+      "fill": "#444440"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "width": 402,
+      "height": 874,
+      "fill": "white"
+    }
+  ]
+}

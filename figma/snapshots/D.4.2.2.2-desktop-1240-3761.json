@@ -1,0 +1,25 @@
+{
+  "id": "1240:3761",
+  "name": "D.4.2.2.2 Trip - Outfit Plan",
+  "type": "FRAME",
+  "bounds": {
+    "x": 0,
+    "y": 0,
+    "width": 1440,
+    "height": 1024
+  },
+  "background": [
+    {
+      "type": "SOLID",
+      "color": "#FAFAF7"
+    }
+  ],
+  "colorsUsed": [
+    "#FAFAF7",
+    "#444440",
+    "#F2EDE5",
+    "#C9C3B7"
+  ],
+  "extractedFrom": "figma/profile/desktop/D.4.2.2.2 Trip - Outfit Plan.svg",
+  "timestamp": "2026-10-21T14:25:45.943Z"
+}

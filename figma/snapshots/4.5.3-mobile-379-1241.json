@@ -1,0 +1,149 @@
+{
+  "NAME": "Loomette.id",
+  "FRAME_NAME": "4.5.3 Pop-up Logout",
+  "NODE_ID": "379:1241",
+  "SOURCE_SVG": "figma/profile/mobile/4.5.3 Pop-up Logout.svg",
+  "LAYOUT": {
+    "width": 402,
+    "height": 874,
+    "viewBox": "0 0 402 874"
+  },
+  "COLORS": {
+    "fills": [
+      "none",
+      "#FAFAF7",
+      "#F2EDE5",
+      "#444440",
+      "#C9C3B7",
+      "white"
+    ],
+    "strokes": [
+      "#C9C3B7"
+    ]
+  },
+  "KEY_ELEMENTS_COUNT": {
+    "paths": 28,
+    "rects": 15,
+    "images": 0,
+    "patterns": 0
+  },
+  "SAMPLE_RECTS": [
+    {
+      "x": 0,
+      "y": 0,
+      "width": 402,
+      "height": 874,
+      "fill": "#FAFAF7"
+    },
+    {
+      "x": 36,
+      "y": 40,
+      "width": 40,
+      "height": 40,
+      "rx": 8,
+      "fill": "#F2EDE5"
+    },
+    {
+      "x": 309,
+      "y": 229,
+      "width": 44,
+      "height": 24,
+      "rx": 12,
+      "fill": "#444440"
+    },
+    {
+      "x": 331,
+      "y": 231.4,
+      "width": 18.8571,
+      "height": 19.2,
+      "rx": 9.42857,
+      "fill": "#FAFAF7"
+    },
+    {
+      "x": 309,
+      "y": 277,
+      "width": 44,
+      "height": 24,
+      "rx": 12,
+      "fill": "#444440"
+    },
+    {
+      "x": 331,
+      "y": 279.4,
+      "width": 18.8571,
+      "height": 19.2,
+      "rx": 9.42857,
+      "fill": "#FAFAF7"
+    },
+    {
+      "x": 309,
+      "y": 325,
+      "width": 44,
+      "height": 24,
+      "rx": 12,
+      "fill": "#C9C3B7"
+    },
+    {
+      "x": 312.143,
+      "y": 327.4,
+      "width": 18.8571,
+      "height": 19.2,
+      "rx": 9.42857,
+      "fill": "#FAFAF7"
+    },
+    {
+      "x": 283.5,
+      "y": 422.5,
+      "width": 69,
+      "height": 39,
+      "rx": 15.5,
+      "stroke": "#C9C3B7"
+    },
+    {
+      "x": 0,
+      "y": 0.2,
+      "width": 402,
+      "height": 874,
+      "fill": "#C9C3B7"
+    },
+    {
+      "x": 71,
+      "y": 247,
+      "width": 260,
+      "height": 380,
+      "rx": 20,
+      "fill": "#FAFAF7"
+    },
+    {
+      "x": 101,
+      "y": 475,
+      "width": 200,
+      "height": 48,
+      "rx": 8,
+      "fill": "#F2EDE5"
+    },
+    {
+      "x": 101,
+      "y": 539,
+      "width": 200,
+      "height": 48,
+      "rx": 8,
+      "fill": "#444440"
+    },
+    {
+      "x": 267,
+      "y": 271,
+      "width": 40,
+      "height": 40,
+      "rx": 8,
+      "fill": "#F2EDE5"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "width": 402,
+      "height": 874,
+      "fill": "white"
+    }
+  ]
+}

@@ -1,0 +1,270 @@
+{
+  "NAME": "Loomette.id",
+  "FRAME_NAME": "4.4 Profile",
+  "NODE_ID": "89:1775",
+  "SOURCE_SVG": "figma/profile/mobile/4.4 Profile.svg",
+  "LAYOUT": {
+    "width": 402,
+    "height": 2181,
+    "viewBox": "0 0 402 2181"
+  },
+  "COLORS": {
+    "fills": [
+      "none",
+      "#FAFAF7",
+      "#F2EDE5",
+      "#444440",
+      "#C9C3B7"
+    ],
+    "strokes": [
+      "#444440",
+      "#C9C3B7"
+    ]
+  },
+  "KEY_ELEMENTS_COUNT": {
+    "paths": 77,
+    "rects": 48,
+    "images": 1,
+    "patterns": 1
+  },
+  "SAMPLE_RECTS": [
+    {
+      "x": 0,
+      "y": 0,
+      "width": 402,
+      "height": 2181,
+      "fill": "#FAFAF7"
+    },
+    {
+      "x": 20,
+      "y": 149,
+      "width": 402,
+      "height": 752,
+      "rx": 20,
+      "fill": "#FAFAF7"
+    },
+    {
+      "x": 36,
+      "y": 40,
+      "width": 40,
+      "height": 40,
+      "rx": 8,
+      "fill": "#F2EDE5"
+    },
+    {
+      "x": 101,
+      "y": 176,
+      "width": 200,
+      "height": 200,
+      "rx": 20,
+      "fill": "url(#pattern0_89_1775)"
+    },
+    {
+      "x": 84,
+      "y": 350,
+      "width": 52,
+      "height": 52,
+      "rx": 8,
+      "fill": "#F2EDE5"
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "width": 29.7143,
+      "height": 29.7143,
+      "fill": "#F2EDE5"
+    },
+    {
+      "x": 40,
+      "y": 477,
+      "width": 312,
+      "height": 48,
+      "rx": 8,
+      "fill": "#F2EDE5"
+    },
+    {
+      "x": 40,
+      "y": 583,
+      "width": 312,
+      "height": 48,
+      "rx": 8,
+      "fill": "#F2EDE5"
+    },
+    {
+      "x": 40.75,
+      "y": 693.75,
+      "width": 86.5,
+      "height": 38.5,
+      "rx": 15.25,
+      "stroke": "#444440"
+    },
+    {
+      "x": 141.5,
+      "y": 693.5,
+      "width": 87,
+      "height": 39,
+      "rx": 15.5,
+      "stroke": "#C9C3B7"
+    },
+    {
+      "x": 242.5,
+      "y": 693.5,
+      "width": 119,
+      "height": 39,
+      "rx": 15.5,
+      "stroke": "#C9C3B7"
+    },
+    {
+      "x": 40.5,
+      "y": 745.5,
+      "width": 179,
+      "height": 39,
+      "rx": 15.5,
+      "stroke": "#C9C3B7"
+    },
+    {
+      "x": 40,
+      "y": 843,
+      "width": 312,
+      "height": 48,
+      "rx": 8,
+      "fill": "#F2EDE5"
+    },
+    {
+      "x": 40.5,
+      "y": 1133.5,
+      "width": 47,
+      "height": 39,
+      "rx": 15.5,
+      "stroke": "#C9C3B7"
+    },
+    {
+      "x": 104.75,
+      "y": 1133.75,
+      "width": 38.5,
+      "height": 38.5,
+      "rx": 15.25,
+      "stroke": "#444440"
+    },
+    {
+      "x": 157.5,
+      "y": 1133.5,
+      "width": 43,
+      "height": 39,
+      "rx": 15.5,
+      "stroke": "#C9C3B7"
+    },
+    {
+      "x": 213.5,
+      "y": 1133.5,
+      "width": 38,
+      "height": 39,
+      "rx": 15.5,
+      "stroke": "#C9C3B7"
+    },
+    {
+      "x": 264.5,
+      "y": 1133.5,
+      "width": 46,
+      "height": 39,
+      "rx": 15.5,
+      "stroke": "#C9C3B7"
+    },
+    {
+      "x": 40.5,
+      "y": 1185.5,
+      "width": 90,
+      "height": 39,
+      "rx": 15.5,
+      "stroke": "#C9C3B7"
+    },
+    {
+      "x": 40,
+      "y": 1287,
+      "width": 234,
+      "height": 48,
+      "rx": 8,
+      "fill": "#F2EDE5"
+    },
+    {
+      "x": 286.5,
+      "y": 1287.5,
+      "width": 65,
+      "height": 47,
+      "rx": 7.5,
+      "stroke": "#C9C3B7"
+    },
+    {
+      "x": 40,
+      "y": 1397,
+      "width": 78,
+      "height": 48,
+      "rx": 8,
+      "fill": "#F2EDE5"
+    },
+    {
+      "x": 126.5,
+      "y": 1397.5,
+      "width": 57,
+      "height": 47,
+      "rx": 7.5,
+      "stroke": "#C9C3B7"
+    },
+    {
+      "x": 208,
+      "y": 1396,
+      "width": 78,
+      "height": 48,
+      "rx": 8,
+      "fill": "#F2EDE5"
+    },
+    {
+      "x": 294.5,
+      "y": 1396.5,
+      "width": 57,
+      "height": 47,
+      "rx": 7.5,
+      "stroke": "#C9C3B7"
+    },
+    {
+      "x": 41,
+      "y": 1507,
+      "width": 78,
+      "height": 48,
+      "rx": 8,
+      "fill": "#F2EDE5"
+    },
+    {
+      "x": 127.5,
+      "y": 1507.5,
+      "width": 57,
+      "height": 47,
+      "rx": 7.5,
+      "stroke": "#C9C3B7"
+    },
+    {
+      "x": 209,
+      "y": 1507,
+      "width": 78,
+      "height": 48,
+      "rx": 8,
+      "fill": "#F2EDE5"
+    },
+    {
+      "x": 295.5,
+      "y": 1507.5,
+      "width": 57,
+      "height": 47,
+      "rx": 7.5,
+      "stroke": "#C9C3B7"
+    },
+    {
+      "x": 40,
+      "y": 1617,
+      "width": 78,
+      "height": 48,
+      "rx": 8,
+      "fill": "#F2EDE5"
+    }
+  ]
+}

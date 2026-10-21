@@ -69,42 +69,47 @@
   - [x] `D.4.1 DESKTOP` (node `1239:2583`) $\rightarrow$ `figma/snapshots/D.4.1-desktop-1239-2583.json`
   - [x] `4.2 MOBILE` (node `13:146`) $\rightarrow$ `figma/snapshots/4.2-mobile-13-146.json`
   - [x] `4.2.1 MOBILE` (node `325:66`) $\rightarrow$ `figma/snapshots/4.2.1-mobile-325-66.json`
+  - [x] `4.2.2.1 MOBILE` (node `364:281`) $\rightarrow$ `figma/snapshots/4.2.2.1-mobile-364-281.json`
+  - [x] `4.2.2.2 MOBILE` (node `744:472`) $\rightarrow$ `figma/snapshots/4.2.2.2-mobile-744-472.json`
+  - [x] `4.2.3 MOBILE` (node `364:400`) $\rightarrow$ `figma/snapshots/4.2.3-mobile-364-400.json`
+  - [x] `4.3 MOBILE` (node `57:24`) $\rightarrow$ `figma/snapshots/4.3-mobile-57-24.json`
+  - [x] `4.3.1 MOBILE` (node `518:244`) $\rightarrow$ `figma/snapshots/4.3.1-mobile-518-244.json`
+  - [x] `4.4 MOBILE` (node `89:1775`) $\rightarrow$ `figma/snapshots/4.4-mobile-89-1775.json`
+  - [x] `4.5 MOBILE` (node `376:723`) $\rightarrow$ `figma/snapshots/4.5-mobile-376-723.json`
+  - [x] `4.5.1 MOBILE` (node `378:1015`) $\rightarrow$ `figma/snapshots/4.5.1-mobile-378-1015.json`
+  - [x] `4.5.2 MOBILE` (node `378:1096`) $\rightarrow$ `figma/snapshots/4.5.2-mobile-378-1096.json`
+  - [x] `4.5.3 MOBILE` (node `379:1241`) $\rightarrow$ `figma/snapshots/4.5.3-mobile-379-1241.json`
+  - [x] `4.5.4.1 MOBILE` (node `379:1438`) $\rightarrow$ `figma/snapshots/4.5.4.1-mobile-379-1438.json`
+  - [x] `4.5.5 MOBILE` (node `731:345`) $\rightarrow$ `figma/snapshots/4.5.5-mobile-731-345.json`
+  - [x] `4.6.1 MOBILE` (node `751:683`) $\rightarrow$ `figma/snapshots/4.6.1-mobile-751-683.json`
+  - [x] `D.4.2 DESKTOP` (node `1240:2830`) $\rightarrow$ `figma/snapshots/D.4.2-desktop-1240-2830.json`
+  - [x] `D.4.2.1 DESKTOP` (node `1240:3444`) $\rightarrow$ `figma/snapshots/D.4.2.1-desktop-1240-3444.json`
+  - [x] `D.4.2.2.1 DESKTOP` (node `1240:2994`) $\rightarrow$ `figma/snapshots/D.4.2.2.1-desktop-1240-2994.json`
+  - [x] `D.4.2.3 DESKTOP` (node `1240:3237`) $\rightarrow$ `figma/snapshots/D.4.2.3-desktop-1240-3237.json`
+  - [x] `D.4.3 DESKTOP` (node `1240:2915`) $\rightarrow$ `figma/snapshots/D.4.3-desktop-1240-2915.json`
+  - [x] `D.4.3.1 DESKTOP` (node `1240:3557`) $\rightarrow$ `figma/snapshots/D.4.3.1-desktop-1240-3557.json`
+  - [x] `D.4.4 DESKTOP` (node `1213:739`) $\rightarrow$ `figma/snapshots/D.4.4-desktop-1213-739.json`
+  - [x] `D.4.5 DESKTOP` (node `1230:306`) $\rightarrow$ `figma/snapshots/D.4.5-desktop-1230-306.json`
+  - [x] `D.4.5.1 DESKTOP` (node `1233:795`) $\rightarrow$ `figma/snapshots/D.4.5.1-desktop-1233-795.json`
+  - [x] `D.4.5.2 DESKTOP` (node `1235:1321`) $\rightarrow$ `figma/snapshots/D.4.5.2-desktop-1235-1321.json`
+  - [x] `D.4.5.3 DESKTOP` (node `1235:1455`) $\rightarrow$ `figma/snapshots/D.4.5.3-desktop-1235-1455.json`
+  - [x] `D.4.5.4.1 DESKTOP` (node `1235:1593`) $\rightarrow$ `figma/snapshots/D.4.5.4.1-desktop-1235-1593.json`
+  - [x] `D.4.5.4.2 DESKTOP` (node `1235:1724`) $\rightarrow$ `figma/snapshots/D.4.5.4.2-desktop-1235-1724.json`
+  - [x] `D.4.5.4.3 DESKTOP` (node `1235:1870`) $\rightarrow$ `figma/snapshots/D.4.5.4.3-desktop-1235-1870.json`
+  - [x] `D.4.5.5 DESKTOP` (node `1237:2015`) $\rightarrow$ `figma/snapshots/D.4.5.5-desktop-1237-2015.json`
+  - [x] `D.4.6.1 DESKTOP` (node `1237:2350`) $\rightarrow$ `figma/snapshots/D.4.6.1-desktop-1237-2350.json`
+  - [x] `4.5.4.2 MOBILE` (node `761:354`) $\rightarrow$ `figma/snapshots/4.5.4.2-mobile-761-354.json`
+  - [x] `4.5.4.3 MOBILE` (node `379:1542`) $\rightarrow$ `figma/snapshots/4.5.4.3-mobile-379-1542.json`
+  - [x] `D.4.2.2.2 DESKTOP` (node `1240:3761`) $\rightarrow$ `figma/snapshots/D.4.2.2.2-desktop-1240-3761.json`
+  - [x] `3.4.1 MOBILE` (node `152:89`) $\rightarrow$ `figma/snapshots/3.4.1-mobile-152-89.json`
+  - [x] `3.4.2 MOBILE` (node `410:717`) $\rightarrow$ `figma/snapshots/3.4.2-mobile-410-717.json`
+  - [x] `3.4.2.1 MOBILE` (node `410:749`) $\rightarrow$ `figma/snapshots/3.4.2.1-mobile-410-749.json`
+  - [x] `3.4.3 MOBILE` (node `410:946`) $\rightarrow$ `figma/snapshots/3.4.3-mobile-410-946.json`
+  - [x] `D.3.4.1 DESKTOP` (node `1115:277`) $\rightarrow$ `figma/snapshots/D.3.4.1-desktop-1115-277.json`
+  - [x] `D.3.4.2 DESKTOP` (node `1120:401`) $\rightarrow$ `figma/snapshots/D.3.4.2-desktop-1120-401.json`
+  - [x] `D.3.4.2.1 DESKTOP` (node `1120:447`) $\rightarrow$ `figma/snapshots/D.3.4.2.1-desktop-1120-447.json`
+  - [x] `D.3.4.3 DESKTOP` (node `1120:608`) $\rightarrow$ `figma/snapshots/D.3.4.3-desktop-1120-608.json`
 - **Visual Design Reference**:
-  - All 112 profile screen designs are saved locally in `figma/profile/desktop` and `figma/profile/mobile` as `@1x` PNGs, `@2x` PNGs, and vector `.svg` files with full paths, CSS styles, and bounding boxes.
-- **Pending Granular Node Snapshots (when rate-limit expires or with upgraded plan)**:
-  - Mobile:
-    - [ ] `4.2.2.1 MOBILE`: `364:281`
-    - [ ] `4.2.2.2 MOBILE`: `744:472`
-    - [ ] `4.2.3 MOBILE`: `364:400`
-    - [ ] `4.3 MOBILE`: `57:24`
-    - [ ] `4.3.1 MOBILE`: `518:244`
-    - [ ] `4.4 MOBILE`: `89:1775`
-    - [ ] `4.5 MOBILE`: `376:723`
-    - [ ] `4.5.1 MOBILE`: `378:1015`
-    - [ ] `4.5.2 MOBILE`: `378:1096`
-    - [ ] `4.5.3 MOBILE`: `379:1241`
-    - [ ] `4.5.4.1 MOBILE`: `379:1438`
-    - [ ] `4.5.4.2 MOBILE`: `761:354`
-    - [ ] `4.5.4.3 MOBILE`: `379:1542`
-    - [ ] `4.5.5 MOBILE`: `731:345`
-    - [ ] `4.6.1 MOBILE`: `751:683`
-  - Desktop:
-    - [ ] `D.4.2 DESKTOP`: `1240:2830`
-    - [ ] `D.4.2.1 DESKTOP`: `1240:3444`
-    - [ ] `D.4.2.2.1 DESKTOP`: `1240:2994`
-    - [ ] `D.4.2.2.2 DESKTOP`: `1240:3761`
-    - [ ] `D.4.2.3 DESKTOP`: `1240:3237`
-    - [ ] `D.4.3 DESKTOP`: `1240:2915`
-    - [ ] `D.4.3.1 DESKTOP`: `1240:3557`
-    - [ ] `D.4.4 DESKTOP`: `1213:739`
-    - [ ] `D.4.5 DESKTOP`: `1230:306`
-    - [ ] `D.4.5.1 DESKTOP`: `1233:795`
-    - [ ] `D.4.5.2 DESKTOP`: `1235:1321`
-    - [ ] `D.4.5.3 DESKTOP`: `1235:1455`
-    - [ ] `D.4.5.4.1 DESKTOP`: `1235:1593`
-    - [ ] `D.4.5.4.2 DESKTOP`: `1235:1724`
-    - [ ] `D.4.5.4.3 DESKTOP`: `1235:1870`
-    - [ ] `D.4.5.5 DESKTOP`: `1237:2015`
-    - [ ] `D.4.6.1 DESKTOP`: `1237:2350`
+  - All profile and mix & match screen designs are saved locally in `figma/profile/desktop`, `figma/profile/mobile`, `figma/mix and match/desktop`, and `figma/mix and match/mobile` as `@1x` PNGs, `@2x` PNGs, and vector `.svg` files with full paths, CSS styles, and bounding boxes.
 - **Fallback Verification Source**:
   - The design system guidelines in `figma/Typography.png`, `figma/Button.png`, `figma/Text Field.png`, `figma/Color.png`, and `figma/Layout.png` along with rendered screens in `figma/profile/mobile/*.png` and `figma/profile/desktop/*.png` provide high-fidelity specifications for typography implementation.

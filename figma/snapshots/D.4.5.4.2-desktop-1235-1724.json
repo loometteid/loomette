@@ -1,0 +1,26 @@
+{
+  "id": "1235:1724",
+  "name": "D.4.5.4.2 Pop-up Delete Account",
+  "type": "FRAME",
+  "bounds": {
+    "x": 0,
+    "y": 0,
+    "width": 1440,
+    "height": 1024
+  },
+  "background": [
+    {
+      "type": "SOLID",
+      "color": "#FAFAF7"
+    }
+  ],
+  "colorsUsed": [
+    "#FAFAF7",
+    "#444440",
+    "#F2EDE5",
+    "#C9C3B7",
+    "#F0ECE5"
+  ],
+  "extractedFrom": "figma/profile/desktop/D.4.5.4.2 Pop-up Delete Account.svg",
+  "timestamp": "2026-10-21T14:25:46.015Z"
+}

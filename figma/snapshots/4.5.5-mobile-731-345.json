@@ -1,0 +1,86 @@
+{
+  "NAME": "Loomette.id",
+  "FRAME_NAME": "4.5.5 Pricing",
+  "NODE_ID": "731:345",
+  "SOURCE_SVG": "figma/profile/mobile/4.5.5 Pricing.svg",
+  "LAYOUT": {
+    "width": 402,
+    "height": 874,
+    "viewBox": "0 0 402 874"
+  },
+  "COLORS": {
+    "fills": [
+      "none",
+      "#FAFAF7",
+      "#F2EDE5",
+      "#444440"
+    ],
+    "strokes": [
+      "#C9C3B7",
+      "#444440"
+    ]
+  },
+  "KEY_ELEMENTS_COUNT": {
+    "paths": 36,
+    "rects": 7,
+    "images": 0,
+    "patterns": 0
+  },
+  "SAMPLE_RECTS": [
+    {
+      "x": 0,
+      "y": 0,
+      "width": 402,
+      "height": 874,
+      "fill": "#FAFAF7"
+    },
+    {
+      "x": 40,
+      "y": 40,
+      "width": 40,
+      "height": 40,
+      "rx": 8,
+      "fill": "#F2EDE5"
+    },
+    {
+      "x": 52.25,
+      "y": 204.25,
+      "width": 297.5,
+      "height": 216.5,
+      "rx": 15.75,
+      "stroke": "#C9C3B7"
+    },
+    {
+      "x": 229,
+      "y": 225,
+      "width": 101,
+      "height": 22,
+      "rx": 11,
+      "fill": "#F2EDE5"
+    },
+    {
+      "x": 52.25,
+      "y": 445.25,
+      "width": 297.5,
+      "height": 368.5,
+      "rx": 15.75,
+      "stroke": "#C9C3B7"
+    },
+    {
+      "x": 228,
+      "y": 465,
+      "width": 104,
+      "height": 22,
+      "rx": 11,
+      "fill": "#444440"
+    },
+    {
+      "x": 78,
+      "y": 750,
+      "width": 248,
+      "height": 40,
+      "rx": 8,
+      "fill": "#444440"
+    }
+  ]
+}

@@ -5,7 +5,7 @@ import { notFound, useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import type { Route } from "next";
-import { ChevronLeft, Pencil, Settings, Users } from "lucide-react";
+import { ChevronDown, ChevronLeft, Pencil, Settings, Users } from "lucide-react";
 import { toast } from "sonner";
 import { Controller, useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -71,18 +71,21 @@ function UnitSelect({
   onChange: (value: string) => void;
 }) {
   return (
-    <select
-      value={value}
-      onChange={(event) => onChange(event.target.value)}
-      aria-label="Unit"
-      className="border-transparent bg-secondary text-foreground h-8 rounded-lg border px-2 text-sm uppercase outline-none"
-    >
-      {units.map((unit) => (
-        <option key={unit} value={unit}>
-          {unit}
-        </option>
-      ))}
-    </select>
+    <div className="relative inline-flex items-center">
+      <select
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
+        aria-label="Unit"
+        className="appearance-none border border-transparent bg-secondary text-foreground h-8 rounded-lg pl-2.5 pr-6 text-xs uppercase outline-none focus-visible:border-black cursor-pointer transition-colors"
+      >
+        {units.map((unit) => (
+          <option key={unit} value={unit}>
+            {unit}
+          </option>
+        ))}
+      </select>
+      <ChevronDown className="pointer-events-none absolute right-1.5 size-3 text-muted-foreground" />
+    </div>
   );
 }
 

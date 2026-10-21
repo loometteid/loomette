@@ -137,7 +137,7 @@ export function SocialProfileView({ userId }: { userId: string }) {
                 key={entry.id}
                 className="group border border-[#EAE4DC] bg-[#FAF8F5] hover:border-foreground/30 hover:shadow-sm flex flex-col justify-between rounded-2xl p-4 transition-colors"
               >
-                <div className="relative aspect-square w-full flex items-center justify-center mb-3">
+                <div className="relative aspect-[3/4] w-full flex items-center justify-center mb-3">
                   {entry.image_url ? (
                     <Image
                       src={entry.image_url}

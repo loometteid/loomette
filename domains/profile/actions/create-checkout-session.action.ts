@@ -62,6 +62,24 @@ export async function createCheckoutSessionAction(
       plan,
     });
 
+    // 1. Pre-insert the pending payment_order before delegating to the gateway
+    const { error: insertError } = await supabase.from("payment_order").insert({
+      order_id: orderId,
+      user_id: user.id,
+      provider: gateway.provider,
+      plan,
+      amount,
+      currency: "IDR",
+      status: "pending",
+    });
+
+    if (insertError) {
+      logger.error("Failed to pre-insert payment_order: {error}", {
+        error: insertError.message,
+      });
+    }
+
+    // 2. Delegate checkout session creation to the active gateway
     const session = await gateway.createCheckoutSession({
       orderId,
       userId: user.id,
@@ -74,23 +92,16 @@ export async function createCheckoutSessionAction(
       cancelUrl,
     });
 
-    const { error: insertError } = await supabase.from("payment_order").insert({
-      order_id: orderId,
-      user_id: user.id,
-      provider: gateway.provider,
-      plan,
-      amount,
-      currency: "IDR",
-      status: "pending",
-      checkout_url: session.checkoutUrl,
-      provider_session_id: session.sessionId,
-      metadata: (session.metadata ?? null) as import("@/types/database.types").Json | null,
-    });
-
-    if (insertError) {
-      logger.error("Failed to store payment_order: {error}", {
-        error: insertError.message,
-      });
+    // 3. Update payment_order with checkout session details
+    if (session.checkoutUrl || session.sessionId) {
+      await supabase
+        .from("payment_order")
+        .update({
+          checkout_url: session.checkoutUrl,
+          provider_session_id: session.sessionId,
+          metadata: (session.metadata ?? null) as import("@/types/database.types").Json | null,
+        })
+        .eq("order_id", orderId);
     }
 
     return {

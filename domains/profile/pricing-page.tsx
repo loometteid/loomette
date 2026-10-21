@@ -4,28 +4,54 @@ import { useEffect, useState, useTransition } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Check, ChevronLeft, Loader2 } from "lucide-react";
 import { toast } from "sonner";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Sparkle } from "@/components/ui/sparkle";
 import { Typography } from "@/components/ui/typography";
 import type { BillingCycle } from "@/lib/payments";
 import { createCheckoutSessionAction } from "./actions/create-checkout-session.action";
+import { cancelSubscriptionAction } from "./actions/cancel-subscription.action";
 import { ProfileBreadcrumb } from "./components/profile-breadcrumb";
+import { getProfileQueryOptionsForBrowser } from "./query-options/get-profile.query-option.client";
+import { getSubscriptionQueryOptionsForBrowser } from "./query-options/get-subscription.query-option.client";
 
-export function PricingView() {
+export function PricingView({ userId }: { userId?: string }) {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const queryClient = useQueryClient();
   const [billingCycle, setBillingCycle] = useState<BillingCycle>("monthly");
   const [isPending, startTransition] = useTransition();
+
+  const { data: profile } = useQuery({
+    ...getProfileQueryOptionsForBrowser(userId ?? ""),
+    enabled: Boolean(userId),
+  });
+  const { data: subscription } = useQuery({
+    ...getSubscriptionQueryOptionsForBrowser(userId ?? ""),
+    enabled: Boolean(userId),
+  });
+
+  const isPro =
+    profile?.subscription_tier === "premium" ||
+    (subscription?.tier === "premium" && subscription?.status === "active");
 
   // Listen for redirected payment status
   useEffect(() => {
     const paymentStatus = searchParams.get("payment_status");
     if (paymentStatus === "success") {
       toast.success("Welcome to Loomette Pro! Your subscription is active.");
+      if (userId) {
+        void queryClient.invalidateQueries({
+          queryKey: getProfileQueryOptionsForBrowser(userId).queryKey,
+        });
+        void queryClient.invalidateQueries({
+          queryKey: getSubscriptionQueryOptionsForBrowser(userId).queryKey,
+        });
+      }
     } else if (paymentStatus === "canceled") {
       toast.info("Payment checkout was canceled. You can try again anytime.");
     }
-  }, [searchParams]);
+  }, [searchParams, queryClient, userId]);
 
   function handleUpgrade() {
     startTransition(async () => {
@@ -36,6 +62,15 @@ export function PricingView() {
           return;
         }
 
+        if (userId) {
+          void queryClient.invalidateQueries({
+            queryKey: getProfileQueryOptionsForBrowser(userId).queryKey,
+          });
+          void queryClient.invalidateQueries({
+            queryKey: getSubscriptionQueryOptionsForBrowser(userId).queryKey,
+          });
+        }
+
         if (result.checkoutUrl) {
           window.location.href = result.checkoutUrl;
         } else {
@@ -43,6 +78,29 @@ export function PricingView() {
         }
       } catch {
         toast.error("An unexpected error occurred. Please try again.");
+      }
+    });
+  }
+
+  function handleCancel() {
+    startTransition(async () => {
+      try {
+        const result = await cancelSubscriptionAction();
+        if (!result.success) {
+          toast.error(result.error || "Failed to cancel subscription.");
+          return;
+        }
+        toast.success("Subscription reset to Free (Starter) plan.");
+        if (userId) {
+          void queryClient.invalidateQueries({
+            queryKey: getProfileQueryOptionsForBrowser(userId).queryKey,
+          });
+          void queryClient.invalidateQueries({
+            queryKey: getSubscriptionQueryOptionsForBrowser(userId).queryKey,
+          });
+        }
+      } catch {
+        toast.error("Failed to cancel subscription.");
       }
     });
   }
@@ -147,9 +205,11 @@ export function PricingView() {
             <span className="font-sans text-xs font-normal tracking-wider uppercase text-muted-foreground">
               Starter
             </span>
-            <span className="bg-[#F2EDE5] text-[#444440] font-sans text-[10px] font-normal tracking-wider uppercase px-3 py-1 rounded-full">
-              Current Plan
-            </span>
+            {!isPro && (
+              <span className="bg-[#F2EDE5] text-[#444440] font-sans text-[10px] font-normal tracking-wider uppercase px-3 py-1 rounded-full">
+                Current Plan
+              </span>
+            )}
           </div>
 
           <div className="flex flex-col gap-1">
@@ -190,7 +250,7 @@ export function PricingView() {
               Pro
             </span>
             <span className="bg-[#383733] text-white font-sans text-[10px] font-normal tracking-wider uppercase px-3 py-1 rounded-full">
-              Most Popular
+              {isPro ? "Current Plan" : "Most Popular"}
             </span>
           </div>
 
@@ -246,22 +306,43 @@ export function PricingView() {
             </li>
           </ul>
 
-          <Button
-            type="button"
-            disabled={isPending}
-            data-testid="upgrade-pro-button"
-            onClick={handleUpgrade}
-            className="w-full mt-2 bg-[#383733] hover:bg-[#2A2926] text-white font-sans text-xs font-normal tracking-wider uppercase py-3.5 rounded-xl border-none shadow-none cursor-pointer disabled:opacity-70"
-          >
-            {isPending ? (
-              <span className="flex items-center gap-2">
-                <Loader2 className="size-4 animate-spin" />
-                Preparing Checkout...
-              </span>
-            ) : (
-              "Upgrade to Pro"
-            )}
-          </Button>
+          {isPro ? (
+            <div className="flex flex-col gap-2 mt-2">
+              <Button
+                type="button"
+                disabled
+                data-testid="current-plan-button"
+                className="w-full bg-[#EAE4DC] text-[#444440] font-sans text-xs font-normal tracking-wider uppercase py-3.5 rounded-xl border-none shadow-none cursor-default"
+              >
+                Active Plan (Pro)
+              </Button>
+              <button
+                type="button"
+                disabled={isPending}
+                onClick={handleCancel}
+                className="text-[11px] font-sans text-muted-foreground hover:text-foreground underline underline-offset-4 tracking-wider uppercase text-center mt-1 cursor-pointer"
+              >
+                {isPending ? "Updating..." : "Downgrade to Free (Mock)"}
+              </button>
+            </div>
+          ) : (
+            <Button
+              type="button"
+              disabled={isPending}
+              data-testid="upgrade-pro-button"
+              onClick={handleUpgrade}
+              className="w-full mt-2 bg-[#383733] hover:bg-[#2A2926] text-white font-sans text-xs font-normal tracking-wider uppercase py-3.5 rounded-xl border-none shadow-none cursor-pointer disabled:opacity-70"
+            >
+              {isPending ? (
+                <span className="flex items-center gap-2">
+                  <Loader2 className="size-4 animate-spin" />
+                  Preparing Checkout...
+                </span>
+              ) : (
+                "Upgrade to Pro"
+              )}
+            </Button>
+          )}
         </div>
       </div>
     </main>

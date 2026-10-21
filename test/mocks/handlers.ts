@@ -370,4 +370,55 @@ export const handlers = [
   http.post(`${MOCK_SUPABASE_URL}/functions/v1/send-waitlist-email`, () => {
     return HttpResponse.json({ success: true });
   }),
+  // Default mock handler for subscription table
+  http.get(`${MOCK_SUPABASE_URL}/rest/v1/subscription`, ({ request }) => {
+    const acceptHeader = request.headers.get("accept") ?? "";
+    const isSingle = acceptHeader.includes("vnd.pgrst.object+json");
+    const mockSubscription = {
+      id: "mock-sub-123",
+      user_id: "user-123",
+      tier: "premium",
+      status: "active",
+      billing_cycle: "monthly",
+      current_period_start: new Date().toISOString(),
+      current_period_end: new Date(
+        Date.now() + 30 * 24 * 60 * 60 * 1000,
+      ).toISOString(),
+      cancel_at_period_end: false,
+      latest_order_id: "ord_123",
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+    };
+    if (isSingle) return HttpResponse.json(mockSubscription);
+    return HttpResponse.json([mockSubscription]);
+  }),
+
+  // Default mock handler for payment_order table
+  http.get(`${MOCK_SUPABASE_URL}/rest/v1/payment_order`, ({ request }) => {
+    const acceptHeader = request.headers.get("accept") ?? "";
+    const isSingle = acceptHeader.includes("vnd.pgrst.object+json");
+    const mockOrder = {
+      id: "mock-order-uuid",
+      order_id: "ord_123",
+      user_id: "user-123",
+      provider: "mock",
+      plan: "monthly",
+      amount: 49000,
+      currency: "IDR",
+      status: "paid",
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+    };
+    if (isSingle) return HttpResponse.json(mockOrder);
+    return HttpResponse.json([mockOrder]);
+  }),
+  // Default mock handler for mock payment webhook
+  http.post("*/api/webhooks/payment/mock", async ({ request }) => {
+    const body = (await request.json()) as { orderId?: string; status?: string };
+    return HttpResponse.json({
+      received: true,
+      orderId: body.orderId ?? "mock_order_123",
+      status: body.status ?? "paid",
+    });
+  }),
 ];

@@ -9,18 +9,25 @@ import type {
 
 export interface MockPaymentConfig {
   simulateFailure?: boolean;
+  autoDispatchWebhook?: boolean;
 }
 
 export class MockPaymentGateway implements PaymentGateway {
   readonly provider = "mock" as const;
   private simulateFailure: boolean;
+  private autoDispatchWebhook: boolean;
 
   constructor(config?: MockPaymentConfig) {
     this.simulateFailure = config?.simulateFailure ?? false;
+    this.autoDispatchWebhook = config?.autoDispatchWebhook ?? true;
   }
 
   setSimulateFailure(fail: boolean): void {
     this.simulateFailure = fail;
+  }
+
+  setAutoDispatchWebhook(auto: boolean): void {
+    this.autoDispatchWebhook = auto;
   }
 
   async createCheckoutSession(
@@ -36,6 +43,10 @@ export class MockPaymentGateway implements PaymentGateway {
       input.orderId,
     )}&mock_status=paid`;
 
+    if (this.autoDispatchWebhook) {
+      await this.postMockWebhook(input);
+    }
+
     return {
       provider: this.provider,
       sessionId,
@@ -48,6 +59,38 @@ export class MockPaymentGateway implements PaymentGateway {
         amount: input.amount,
       },
     };
+  }
+
+  private async postMockWebhook(
+    input: CreateCheckoutSessionInput,
+  ): Promise<void> {
+    try {
+      let webhookUrl: string;
+      try {
+        const parsed = new URL(input.successUrl);
+        webhookUrl = `${parsed.origin}/api/webhooks/payment/mock`;
+      } catch {
+        const siteUrl =
+          process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+        webhookUrl = `${siteUrl}/api/webhooks/payment/mock`;
+      }
+
+      await fetch(webhookUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          orderId: input.orderId,
+          status: "paid",
+          amount: input.amount,
+          currency: input.currency,
+          plan: input.plan,
+        }),
+      });
+    } catch {
+      // Ignore network errors in test/offline environments
+    }
   }
 
   async verifyWebhook(input: WebhookVerificationInput): Promise<boolean> {

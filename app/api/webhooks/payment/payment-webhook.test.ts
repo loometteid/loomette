@@ -21,8 +21,8 @@ const mockSupabase = {
   upsert: vi.fn().mockResolvedValue({ data: null, error: null }),
 };
 
-vi.mock("@/lib/supabase/server", () => ({
-  createServerSupabaseClient: vi.fn(() => Promise.resolve(mockSupabase)),
+vi.mock("@/lib/supabase/admin", () => ({
+  createAdminSupabaseClient: vi.fn(() => mockSupabase),
 }));
 
 describe("POST /api/webhooks/payment/[provider]", () => {

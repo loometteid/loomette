@@ -1,7 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { getLogger } from "@/lib/logging";
 import { getPaymentGateway, type PaymentProvider } from "@/lib/payments";
-import { createServerSupabaseClient } from "@/lib/supabase/server";
+import { createAdminSupabaseClient } from "@/lib/supabase/admin";
 
 const logger = getLogger(["payment", "webhook"]);
 const VALID_PROVIDERS: readonly PaymentProvider[] = [
@@ -55,16 +55,27 @@ export async function POST(
       provider: paymentProvider,
     });
 
-    const supabase = await createServerSupabaseClient();
+    const supabase = createAdminSupabaseClient();
 
     // 1. Update the payment_order record
-    const { data: order, error: orderFetchError } = await supabase
+    let { data: order, error: orderFetchError } = await supabase
       .from("payment_order")
       .select("*")
       .eq("order_id", event.orderId)
       .maybeSingle();
 
-    if (orderFetchError) {
+    if (!order) {
+      // Small pause in case the caller's pre-insert is settling in parallel
+      await new Promise((resolve) => setTimeout(resolve, 150));
+      const retry = await supabase
+        .from("payment_order")
+        .select("*")
+        .eq("order_id", event.orderId)
+        .maybeSingle();
+      order = retry.data;
+    }
+
+    if (orderFetchError && !order) {
       logger.error("Error looking up order {orderId}: {error}", {
         orderId: event.orderId,
         error: orderFetchError.message,

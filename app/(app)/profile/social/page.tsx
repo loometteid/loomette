@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { redirect } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { getQueryClient } from "@/lib/tanstack-query";
@@ -10,6 +10,10 @@ import { SocialProfileView } from "@/domains/profile/social-profile-page";
 import { SocialProfileFallback } from "@/domains/profile/social-profile-loading";
 
 export default async function SocialProfilePage() {
+  if (process.env.NODE_ENV === "production") {
+    notFound();
+  }
+
   const supabase = await createServerSupabaseClient();
 
   const {

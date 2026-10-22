@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Activity, useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
@@ -216,7 +216,7 @@ export function SettingsView({ userId }: { userId: string }) {
   }, []);
 
   return (
-    <main className="mx-auto flex w-full max-w-sm lg:max-w-6xl xl:max-w-7xl flex-1 flex-col gap-8 px-6 lg:px-12 py-8 lg:py-12">
+    <main className="mx-auto flex w-full max-w-[402px] lg:max-w-[1140px] flex-1 flex-col gap-8 px-6 lg:px-12 py-8 lg:py-12">
       {/* Breadcrumb (desktop) */}
       <ProfileBreadcrumb
         items={[
@@ -231,11 +231,11 @@ export function SettingsView({ userId }: { userId: string }) {
           type="button"
           variant="secondary"
           size="icon"
-          className="rounded-xl"
+          className="size-10 rounded-xl bg-[#F2EDE5] text-[#383733] hover:bg-[#EAE4DC]"
           onClick={() => router.back()}
           aria-label="Go back"
         >
-          <ChevronLeft className="size-4" />
+          <ChevronLeft className="size-5" />
         </Button>
       </div>
 
@@ -243,47 +243,57 @@ export function SettingsView({ userId }: { userId: string }) {
       <div className="flex flex-col gap-1.5">
         <div className="flex items-center gap-2">
           <Sparkle className="size-6 text-foreground" />
-          <Typography variant="title" as="h1" className="font-serif text-[32px] md:text-4xl font-normal text-foreground leading-tight">
+          <Typography variant="title" as="h1" className="font-serif text-[32px] md:text-4xl lg:text-[48px] font-normal text-foreground leading-tight">
             Settings
           </Typography>
         </div>
-        <Typography variant="subtitle" className="font-sans text-xs font-normal uppercase tracking-wider text-muted-foreground">
+        <Typography variant="subtitle" className="font-sans text-xs md:text-sm font-normal uppercase tracking-wider text-muted-foreground">
           Manage how the app works for you.
         </Typography>
       </div>
 
       {/* Main Responsive Grid Layout */}
-      <div className="flex flex-col lg:flex-row lg:gap-16 pt-2">
-        {/* Left Sticky Navigation (desktop only) */}
+      <div className="flex flex-col lg:flex-row lg:gap-14 pt-2">
+        {/* Left Sticky Navigation (desktop only, matches Figma 280px sidebar) */}
         <nav
           aria-label="Settings sections"
-          className="hidden lg:flex flex-col gap-2 w-64 shrink-0 sticky top-28 h-fit"
+          className="hidden lg:flex flex-col gap-2.5 w-[280px] shrink-0 sticky top-28 h-fit"
         >
           {SECTIONS.map(({ id, label }) => {
             const isActive = activeSection === id;
-            return (
+            const button = (
               <button
                 key={id}
                 type="button"
                 onClick={() => scrollToSection(id)}
                 className={cn(
-                  "text-left px-5 py-3 rounded-2xl font-sans text-xs lg:text-sm font-normal tracking-wide uppercase transition-colors",
+                  "text-left px-6 py-4 rounded-2xl font-sans text-xs lg:text-sm font-normal tracking-wide uppercase transition-colors",
                   isActive
-                    ? "bg-[#F2EDE5] text-[#383733]"
-                    : "text-muted-foreground hover:text-foreground hover:bg-[#F2EDE5]/40",
+                    ? "bg-[#444440] text-white shadow-xs font-medium"
+                    : "bg-[#F2EDE5] text-[#444440] hover:bg-[#EAE4DC]",
                 )}
               >
                 {label}
               </button>
             );
+
+            if (id === "notification") {
+              return (
+                <Activity key={id} mode="hidden">
+                  {button}
+                </Activity>
+              );
+            }
+
+            return button;
           })}
         </nav>
 
         {/* Vertical divider on desktop */}
         <div className="hidden lg:block w-px bg-border/60 self-stretch" />
 
-        {/* Right Content Sections */}
-        <div className="flex flex-1 flex-col gap-12 max-w-2xl">
+        {/* Right Content Sections (matches Figma 723px content width) */}
+        <div className="flex flex-1 flex-col gap-10 lg:gap-12 w-full max-w-[723px]">
           <SettingsSection id="pricing" title="Pricing">
             <ChevronRow
               label="Your plan"
@@ -291,26 +301,28 @@ export function SettingsView({ userId }: { userId: string }) {
             />
           </SettingsSection>
 
-          <SettingsSection id="notification" title="Notification">
-            <ToggleRow
-              label="Outfit reminders"
-              checked={outfitReminders}
-              onCheckedChange={setOutfitReminders}
-              testId="settings__outfit-reminders-toggle"
-            />
-            <ToggleRow
-              label="Analysis ready"
-              checked={analysisReady}
-              onCheckedChange={setAnalysisReady}
-              testId="settings__analysis-ready-toggle"
-            />
-            <ToggleRow
-              label="Weekly recap"
-              checked={weeklyRecap}
-              onCheckedChange={setWeeklyRecap}
-              testId="settings__weekly-recap-toggle"
-            />
-          </SettingsSection>
+          <Activity mode="hidden">
+            <SettingsSection id="notification" title="Notification">
+              <ToggleRow
+                label="Outfit reminders"
+                checked={outfitReminders}
+                onCheckedChange={setOutfitReminders}
+                testId="settings__outfit-reminders-toggle"
+              />
+              <ToggleRow
+                label="Analysis ready"
+                checked={analysisReady}
+                onCheckedChange={setAnalysisReady}
+                testId="settings__analysis-ready-toggle"
+              />
+              <ToggleRow
+                label="Weekly recap"
+                checked={weeklyRecap}
+                onCheckedChange={setWeeklyRecap}
+                testId="settings__weekly-recap-toggle"
+              />
+            </SettingsSection>
+          </Activity>
 
           <SettingsSection id="appearance" title="Appearance">
             <div className="flex items-center justify-between">

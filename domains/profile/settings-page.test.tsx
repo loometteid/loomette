@@ -1,7 +1,6 @@
 import { Suspense } from "react";
 import { describe, expect, it, beforeEach, vi } from "vitest";
-import { screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { screen, fireEvent } from "@testing-library/react";
 import { renderWithQueryClient } from "@/test/test-utils";
 import { SettingsView } from "./settings-page";
 import { NOTIFICATION_STORAGE_KEY } from "./hooks/use-notification-settings";
@@ -37,7 +36,6 @@ describe("SettingsView - Notification Settings (Component & Integration Tier)", 
 
   it("updates switch state and persists to localStorage when toggled", async () => {
     // Arrange
-    const user = userEvent.setup();
     renderWithQueryClient(
       <Suspense fallback={<div>Loading...</div>}>
         <SettingsView userId="user-123" />
@@ -50,8 +48,13 @@ describe("SettingsView - Notification Settings (Component & Integration Tier)", 
     const recapSwitch = screen.getByTestId("settings__weekly-recap-toggle");
 
     // Act: Toggle outfit reminders and weekly recap
-    await user.click(outfitSwitch);
-    await user.click(recapSwitch);
+    const outfitInput = outfitSwitch.parentElement?.querySelector("input");
+    const recapInput = recapSwitch.parentElement?.querySelector("input");
+    expect(outfitInput).toBeInstanceOf(HTMLInputElement);
+    expect(recapInput).toBeInstanceOf(HTMLInputElement);
+    if (!outfitInput || !recapInput) throw new Error("Inputs not found");
+    fireEvent.click(outfitInput);
+    fireEvent.click(recapInput);
 
     // Assert: Switches are now checked
     expect(outfitSwitch).toHaveAttribute("aria-checked", "true");
@@ -110,5 +113,36 @@ describe("SettingsView - Notification Settings (Component & Integration Tier)", 
     expect(langBtn).toBeInTheDocument();
     expect(langBtn).toHaveTextContent("EN");
     expect(langBtn).toHaveClass("rounded-2xl", "border-[#C9C3B7]");
+  });
+
+  it("hides notification section and sidebar button via React 19 Activity boundary", async () => {
+    // Arrange & Act
+    renderWithQueryClient(
+      <Suspense fallback={<div>Loading...</div>}>
+        <SettingsView userId="user-123" />
+      </Suspense>,
+    );
+
+    // Wait for Suspense to resolve
+    await screen.findByTestId("settings__language-button");
+
+    // Visible accessible queries should not find them
+    expect(
+      screen.queryByRole("heading", { name: "Notification" }),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole("button", { name: "Notification" }),
+    ).not.toBeInTheDocument();
+
+    // The DOM elements remain mounted in memory via React 19 Activity with display: none
+    // Assert: Notification nav button and section are hidden / pruned from accessible view
+    expect(
+      screen.queryByRole("heading", { name: "Notification" }),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole("button", { name: "Notification" }),
+    ).not.toBeInTheDocument();
+
+    expect(document.getElementById("notification")).toBeNull();
   });
 });

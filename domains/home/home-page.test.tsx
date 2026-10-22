@@ -97,4 +97,50 @@ describe("HomeView (Route Lifecycle & Onboarding Guard)", () => {
     expect(await screen.findAllByText(/Rebecca\?/i)).toHaveLength(2);
     expect(screen.getAllByText(/Your preferences/i)).toHaveLength(2);
   });
+
+  it("hides notifications popover and mobile bell link via React 19 Activity boundary", async () => {
+    const queryClient = createTestQueryClient();
+    queryClient.setQueryData(
+      getProfileQueryOptionsForBrowser("user-456").queryKey,
+      {
+        user_id: "user-456",
+        display_name: "Rebecca",
+        gender: "female",
+        birthday: "1998-05-15",
+        profile_photo: null,
+        style_tags: [],
+      } as unknown as UserProfile,
+    );
+    queryClient.setQueryData(
+      getWardrobeItemsQueryOptionsForBrowser("user-456").queryKey,
+      [],
+    );
+    queryClient.setQueryData(
+      getLooksCountQueryOptionsForBrowser("user-456").queryKey,
+      3,
+    );
+    queryClient.setQueryData(
+      getNotificationsQueryOptionsForBrowser("user-456").queryKey,
+      [],
+    );
+    queryClient.setQueryData(
+      getUnreadNotificationsCountQueryOptionsForBrowser("user-456").queryKey,
+      0,
+    );
+
+    renderWithQueryClient(
+      <Suspense fallback={<div>Loading...</div>}>
+        <HomeView userId="user-456" />
+      </Suspense>,
+      { queryClient },
+    );
+
+    expect(await screen.findAllByText(/Rebecca\?/i)).toHaveLength(2);
+    // Notification elements are hidden via React 19 Activity boundary (display: none !important)
+    const bells = screen.getAllByLabelText("Notifications");
+    expect(bells).toHaveLength(2);
+    for (const bell of bells) {
+      expect(bell).not.toBeVisible();
+    }
+  });
 });

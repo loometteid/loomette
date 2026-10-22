@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { Activity, useRef } from "react";
 import { notFound, useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -246,7 +246,7 @@ export function EditProfileForm({ userId }: { userId: string }) {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="mx-auto flex w-full max-w-sm lg:max-w-6xl xl:max-w-7xl flex-1 flex-col gap-8 px-6 lg:px-12 py-8 lg:py-12"
+      className="mx-auto flex w-full max-w-[402px] lg:max-w-[1088px] flex-1 flex-col gap-8 px-6 lg:px-12 py-8 lg:py-12"
     >
       {/* Top Header / Breadcrumbs and Action Icons */}
       <div className="flex items-center justify-between">
@@ -270,22 +270,24 @@ export function EditProfileForm({ userId }: { userId: string }) {
         </div>
 
         <div className="flex items-center gap-2">
-          <Button
-            variant="secondary"
-            size="icon"
-            type="button"
-            className="rounded-xl"
-            nativeButton={false}
-            render={
-              <Link
-                href={"/profile/social" as Route}
-                prefetch
-                aria-label="Social Profile"
-              />
-            }
-          >
-            <Users className="size-4" />
-          </Button>
+          <Activity mode="hidden">
+            <Button
+              variant="secondary"
+              size="icon"
+              type="button"
+              className="rounded-xl"
+              nativeButton={false}
+              render={
+                <Link
+                  href={"/profile/social" as Route}
+                  prefetch
+                  aria-label="Social Profile"
+                />
+              }
+            >
+              <Users className="size-4" />
+            </Button>
+          </Activity>
           <Button
             variant="secondary"
             size="icon"
@@ -307,7 +309,7 @@ export function EditProfileForm({ userId }: { userId: string }) {
 
       <div className="flex items-center gap-2">
         <Sparkle className="size-6 text-foreground" />
-        <Typography variant="title" as="h1" className="font-serif text-[32px] md:text-[44px] font-normal leading-tight text-foreground">
+        <Typography variant="title" as="h1" className="font-serif text-[32px] md:text-4xl lg:text-[48px] font-normal leading-tight text-foreground">
           Profile
         </Typography>
       </div>
@@ -630,7 +632,7 @@ export function EditProfileForm({ userId }: { userId: string }) {
             <Button
               type="submit"
               disabled={isBusy || isSubmitting}
-              className="w-full lg:w-72 bg-[#383733] hover:bg-[#2A2926] text-white py-4 rounded-xl font-sans text-xs font-normal tracking-wider uppercase shadow-sm"
+              className="w-full sm:w-[320px] h-14 md:h-16 bg-[#383733] hover:bg-[#2A2926] text-white rounded-2xl font-sans text-xs md:text-sm font-normal tracking-wider uppercase shadow-xs cursor-pointer"
             >
               {updateProfileMutation.isPending ? "Saving…" : "Save"}
             </Button>

@@ -139,8 +139,11 @@ export function PrivacyPolicyView() {
   };
 
   return (
-    <main className="mx-auto flex w-full max-w-sm lg:max-w-6xl xl:max-w-7xl flex-1 flex-col gap-8 px-6 lg:px-12 py-8 lg:py-12">
-      {/* Breadcrumb (desktop) */}
+    <main
+      className="mx-auto flex w-full max-w-[402px] lg:max-w-[1140px] flex-1 flex-col gap-8 px-6 lg:px-12 py-8 lg:py-12"
+      data-testid="privacy-policy"
+    >
+      {/* Desktop Breadcrumb */}
       <ProfileBreadcrumb
         items={[
           { label: "PROFILE", href: "/profile" },
@@ -171,26 +174,26 @@ export function PrivacyPolicyView() {
           <Typography
             variant="title"
             as="h1"
-            className="font-serif text-[32px] md:text-4xl lg:text-[44px] font-normal leading-tight text-foreground"
+            className="font-serif text-[32px] md:text-4xl lg:text-[48px] font-normal leading-tight text-foreground"
           >
             Privacy & Policy
           </Typography>
         </div>
         <Typography
           variant="subtitle"
-          className="font-sans text-xs font-normal uppercase tracking-wider text-muted-foreground"
+          className="font-sans text-xs md:text-sm font-normal uppercase tracking-wider text-muted-foreground"
         >
           LAST UPDATE: JUNE 2026
         </Typography>
       </div>
 
       {/* Main Responsive Layout */}
-      <div className="flex flex-col lg:flex-row lg:gap-16 pt-2">
-        {/* Left Sticky Navigation (desktop only, D.4.5.1) */}
+      <div className="flex flex-col lg:flex-row lg:gap-14 pt-2">
+        {/* Left Sticky Navigation (desktop only, matches Figma 280px sidebar) */}
         <nav
           aria-label="Privacy policy sections"
           data-testid="privacy-policy__toc"
-          className="hidden lg:flex flex-col gap-2 w-64 shrink-0 sticky top-28 h-fit"
+          className="hidden lg:flex flex-col gap-2.5 w-[280px] shrink-0 sticky top-28 h-fit"
         >
           {SECTIONS.map(({ id, navTitle }) => {
             const isActive = activeSection === id;
@@ -201,7 +204,7 @@ export function PrivacyPolicyView() {
                 data-testid={`privacy-policy__toc-item-${id}`}
                 onClick={() => scrollToSection(id)}
                 className={cn(
-                  "text-left px-5 py-3 rounded-2xl font-sans text-sm font-normal transition-colors",
+                  "text-left px-5 py-3.5 rounded-2xl font-sans text-xs lg:text-sm font-normal uppercase tracking-wide transition-colors",
                   isActive
                     ? "bg-[#F2EDE5] text-[#383733] font-medium dark:bg-muted dark:text-foreground"
                     : "text-[#7A7870] hover:text-foreground hover:bg-[#F2EDE5]/40 dark:text-muted-foreground",
@@ -213,8 +216,11 @@ export function PrivacyPolicyView() {
           })}
         </nav>
 
-        {/* Right Content Sections */}
-        <div className="flex flex-1 flex-col max-w-3xl gap-8 lg:gap-0">
+        {/* Vertical divider on desktop */}
+        <div className="hidden lg:block w-px bg-border/60 self-stretch" />
+
+        {/* Right Content Sections (matches Figma 711px width) */}
+        <div className="flex flex-1 flex-col w-full max-w-[711px] gap-8 lg:gap-0">
           <Section
             id="section-01"
             number="01"

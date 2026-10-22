@@ -69,7 +69,7 @@ export function ConnectedAccountsView({
       connected: Boolean(hasGoogle),
       emailOrHandle: hasGoogle ? (user?.email ?? "hello@gmail.com") : undefined,
       icon: (
-        <svg viewBox="0 0 24 24" className="size-6 shrink-0" aria-hidden>
+        <svg viewBox="0 0 24 24" className="size-6 md:size-10 shrink-0" aria-hidden>
           <path
             fill="#4285F4"
             d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
@@ -95,7 +95,7 @@ export function ConnectedAccountsView({
       connected: Boolean(hasFacebook),
       emailOrHandle: hasFacebook ? (user?.email ?? undefined) : undefined,
       icon: (
-        <svg viewBox="0 0 24 24" className="size-6 shrink-0 fill-[#1877F2]" aria-hidden>
+        <svg viewBox="0 0 24 24" className="size-6 md:size-10 shrink-0 fill-[#1877F2]" aria-hidden>
           <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
         </svg>
       ),
@@ -106,8 +106,8 @@ export function ConnectedAccountsView({
       connected: Boolean(hasTwitter),
       emailOrHandle: hasTwitter ? (user?.email ?? undefined) : undefined,
       icon: (
-        <div className="size-6 rounded-md bg-black flex items-center justify-center shrink-0">
-          <svg viewBox="0 0 24 24" className="size-3.5 fill-white" aria-hidden>
+        <div className="size-6 md:size-10 rounded-md md:rounded-xl bg-black flex items-center justify-center shrink-0">
+          <svg viewBox="0 0 24 24" className="size-3.5 md:size-6 fill-white" aria-hidden>
             <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
           </svg>
         </div>
@@ -168,7 +168,7 @@ export function ConnectedAccountsView({
 
   return (
     <main
-      className="mx-auto flex w-full max-w-sm lg:max-w-6xl xl:max-w-7xl flex-1 flex-col gap-8 px-6 lg:px-12 py-8 lg:py-12"
+      className="mx-auto flex w-full max-w-[402px] lg:max-w-[1088px] flex-1 flex-col gap-8 px-6 lg:px-12 py-8 lg:py-12"
       data-testid="connected-accounts"
     >
       {/* Desktop Breadcrumb */}
@@ -186,12 +186,12 @@ export function ConnectedAccountsView({
           type="button"
           variant="secondary"
           size="icon"
-          className="rounded-xl"
+          className="size-10 rounded-xl bg-[#F2EDE5] text-[#383733] hover:bg-[#EAE4DC]"
           onClick={() => router.back()}
           aria-label="Go back"
           data-testid="connected-accounts__back-button"
         >
-          <ChevronLeft className="size-4" />
+          <ChevronLeft className="size-5" />
         </Button>
       </div>
 
@@ -202,7 +202,7 @@ export function ConnectedAccountsView({
           <Typography
             variant="title"
             as="h1"
-            className="font-serif text-[32px] md:text-4xl font-normal text-foreground leading-tight"
+            className="font-serif text-[32px] md:text-4xl lg:text-[48px] font-normal text-foreground leading-tight"
             data-testid="connected-accounts__title"
           >
             Connected Account
@@ -210,14 +210,14 @@ export function ConnectedAccountsView({
         </div>
         <Typography
           variant="subtitle"
-          className="font-sans text-xs font-normal uppercase tracking-wider text-muted-foreground max-w-xl leading-relaxed"
+          className="font-sans text-xs md:text-sm font-normal text-muted-foreground max-w-xl leading-relaxed"
         >
           Link your accounts to log in faster. We only use these to verify it&apos;s you — nothing else.
         </Typography>
       </div>
 
-      {/* Accounts List */}
-      <div className="flex flex-col gap-6 max-w-xl pt-4">
+      {/* Accounts List (matches Figma 692px width) */}
+      <div className="flex flex-col gap-4 md:gap-6 w-full max-w-[692px] pt-4">
         {providers.map((provider) => {
           const isPending = loadingProvider === provider.id;
           return (
@@ -225,23 +225,23 @@ export function ConnectedAccountsView({
               key={provider.id}
               data-testid="connected-accounts__item"
               data-entity-id={provider.id}
-              className="flex items-center justify-between gap-4 py-2"
+              className="flex items-center justify-between gap-4 py-3 md:py-4 border-b border-[#EAE4DC]/60 last:border-b-0"
             >
-              <div className="flex items-center gap-4">
-                <div className="size-14 rounded-2xl border border-[#EAE4DC] bg-white flex items-center justify-center shadow-2xs shrink-0">
+              <div className="flex items-center gap-3.5 md:gap-5">
+                <div className="size-12 md:size-20 rounded-2xl border border-[#EAE4DC] bg-white flex items-center justify-center shadow-2xs shrink-0">
                   {provider.icon}
                 </div>
-                <div className="flex flex-col gap-1">
-                  <span className="font-sans text-base font-normal text-foreground leading-tight">
+                <div className="flex flex-col gap-0.5 md:gap-1">
+                  <span className="font-sans text-base md:text-2xl font-normal text-foreground leading-tight">
                     {provider.name}
                   </span>
                   {provider.connected ? (
-                    <span className="font-sans text-xs font-normal text-muted-foreground flex items-center gap-1.5">
-                      <span className="text-[8px] text-muted-foreground">●</span>
+                    <span className="font-sans text-xs md:text-sm font-normal text-muted-foreground flex items-center gap-2">
+                      <span className="size-2 rounded-full bg-emerald-500 shrink-0" />
                       <span>{provider.emailOrHandle}</span>
                     </span>
                   ) : (
-                    <span className="font-sans text-xs font-normal text-muted-foreground">
+                    <span className="font-sans text-xs md:text-sm font-normal text-muted-foreground">
                       Not connected
                     </span>
                   )}
@@ -253,7 +253,7 @@ export function ConnectedAccountsView({
                 disabled={isPending}
                 onClick={() => void handleToggleAccount(provider)}
                 data-testid={`connected-accounts__${provider.id}-toggle`}
-                className="rounded-full border border-[#C9C3B7] px-6 py-2 font-sans text-xs font-normal uppercase tracking-wider text-[#444440] hover:bg-[#F2EDE5]/60 transition-colors disabled:opacity-50 shrink-0"
+                className="rounded-full border border-[#C9C3B7] px-5 md:px-8 py-2 md:py-3.5 font-sans text-xs md:text-sm font-normal uppercase tracking-wider text-[#444440] hover:bg-[#F2EDE5]/60 transition-colors disabled:opacity-50 shrink-0 min-w-24 md:min-w-36 text-center cursor-pointer"
               >
                 {isPending
                   ? "…"

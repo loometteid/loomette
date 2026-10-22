@@ -108,8 +108,11 @@ export function PricingView({
   }
 
   return (
-    <main className="mx-auto flex w-full max-w-sm lg:max-w-5xl flex-1 flex-col gap-8 px-6 lg:px-12 py-8 lg:py-12">
-      {/* Breadcrumb (desktop) */}
+    <main
+      className="mx-auto flex w-full max-w-[402px] lg:max-w-[1088px] flex-1 flex-col gap-8 px-6 lg:px-12 py-8 lg:py-12"
+      data-testid="pricing-page"
+    >
+      {/* Desktop Breadcrumb */}
       <ProfileBreadcrumb
         items={[
           { label: "PROFILE", href: "/profile" },
@@ -124,31 +127,31 @@ export function PricingView({
           type="button"
           variant="secondary"
           size="icon"
-          className="rounded-xl"
+          className="size-10 rounded-xl bg-[#F2EDE5] text-[#383733] hover:bg-[#EAE4DC]"
           onClick={() => router.back()}
           aria-label="Go back"
         >
-          <ChevronLeft className="size-4" />
+          <ChevronLeft className="size-5" />
         </Button>
       </div>
 
-      {/* Header */}
-      <div className="flex flex-col gap-1.5">
+      {/* Header title */}
+      <div className="flex flex-col gap-2">
         <div className="flex items-center gap-2">
           <Sparkle className="size-6 text-foreground" />
           <Typography
             variant="title"
             as="h1"
-            className="font-serif text-[32px] md:text-[44px] font-normal leading-tight text-foreground"
+            className="font-serif text-[32px] md:text-4xl lg:text-[48px] font-normal leading-tight text-foreground"
           >
             Pricing
           </Typography>
         </div>
         <Typography
           variant="subtitle"
-          className="font-sans text-xs font-normal uppercase tracking-wider text-muted-foreground max-w-md"
+          className="font-sans text-xs md:text-sm font-normal text-muted-foreground max-w-xl leading-relaxed"
         >
-          See what you&apos;re on and what&apos;s waiting when you&apos;re ready to upgrade.
+          see what you&apos;re on and what&apos;s waiting when you&apos;re ready to upgrade.
         </Typography>
       </div>
 
@@ -199,17 +202,17 @@ export function PricingView({
         </div>
       </div>
 
-      {/* Pricing Cards Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+      {/* Pricing Cards Grid (matches Figma 992px container, 480px card widths) */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start w-full max-w-[992px]">
         {/* Starter Plan */}
-        <div className="bg-[#FAF8F5]/80 border border-[#EAE4DC] rounded-3xl p-8 flex flex-col gap-6">
+        <div className="bg-[#FAF8F5]/80 border border-[#EAE4DC] rounded-3xl p-8 flex flex-col gap-6 w-full md:max-w-[480px]">
           <div className="flex items-center justify-between">
             <span className="font-sans text-xs font-normal tracking-wider uppercase text-muted-foreground">
               Starter
             </span>
             {!isPro && (
               <span className="bg-[#F2EDE5] text-[#444440] font-sans text-[10px] font-normal tracking-wider uppercase px-3 py-1 rounded-full">
-                Current Plan
+                Current plan
               </span>
             )}
           </div>
@@ -225,7 +228,7 @@ export function PricingView({
 
           <div className="h-px w-full bg-[#EAE4DC]" />
 
-          <ul className="flex flex-col gap-3.5 font-sans text-xs font-normal text-foreground/90">
+          <ul className="flex flex-col gap-3.5 font-sans text-xs md:text-sm font-normal text-foreground/90">
             <li className="flex items-center gap-3">
               <Check className="size-4 text-foreground/70 shrink-0" />
               <span>Up to 30 wardrobe items</span>
@@ -246,13 +249,13 @@ export function PricingView({
         </div>
 
         {/* Pro Plan */}
-        <div className="bg-[#FAF8F5]/80 border border-[#EAE4DC] rounded-3xl p-8 flex flex-col gap-6 shadow-sm">
+        <div className="bg-[#FAF8F5]/80 border border-[#EAE4DC] rounded-3xl p-8 flex flex-col gap-6 shadow-sm w-full md:max-w-[480px]">
           <div className="flex items-center justify-between">
             <span className="font-sans text-xs font-normal tracking-wider uppercase text-muted-foreground">
               Pro
             </span>
             <span className="bg-[#383733] text-white font-sans text-[10px] font-normal tracking-wider uppercase px-3 py-1 rounded-full">
-              {isPro ? "Current Plan" : "Most Popular"}
+              {isPro ? "Current plan" : "Most popular"}
             </span>
           </div>
 

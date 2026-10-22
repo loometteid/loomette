@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { redirect } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import { NotificationsView } from "@/domains/home/notifications-page";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
@@ -8,6 +8,10 @@ import { getUserQueryOptions } from "@/domains/profile/query-options/get-user.qu
 import { getNotificationsQueryOptionsForServer } from "@/domains/home/query-options/get-notifications.query-option.server";
 
 export default async function NotificationsPage() {
+  if (process.env.NODE_ENV === "production") {
+    notFound();
+  }
+
   const supabase = await createServerSupabaseClient();
 
   const {

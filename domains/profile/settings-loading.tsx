@@ -1,3 +1,4 @@
+import { Activity } from "react";
 import { ChevronLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sparkle } from "@/components/ui/sparkle";
@@ -49,14 +50,24 @@ export function SettingsFallback() {
           aria-label="Settings sections skeleton"
           className="hidden lg:flex flex-col gap-2 w-64 shrink-0"
         >
-          {["Pricing", "Notification", "Appearance", "Privacy & Data", "Account"].map((item, idx) => (
-            <div
-              key={item}
-              className={`px-5 py-3 rounded-2xl ${
-                idx === 0 ? "bg-[#F2EDE5]" : "bg-muted/40"
-              } h-11 w-full animate-pulse`}
-            />
-          ))}
+          {["Pricing", "Notification", "Appearance", "Privacy & Data", "Account"].map((item, idx) => {
+            const el = (
+              <div
+                key={item}
+                className={`px-5 py-3 rounded-2xl ${
+                  idx === 0 ? "bg-[#F2EDE5]" : "bg-muted/40"
+                } h-11 w-full animate-pulse`}
+              />
+            );
+            if (item === "Notification") {
+              return (
+                <Activity key={item} mode="hidden">
+                  {el}
+                </Activity>
+              );
+            }
+            return el;
+          })}
         </nav>
 
         {/* Vertical divider on desktop */}

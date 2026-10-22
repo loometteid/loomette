@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Activity, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type { Route } from "next";
@@ -109,14 +109,16 @@ export function ProfileView({ userId }: { userId: string }) {
               </Link>
             </div>
 
-            <Link
-              href={"/profile/social" as Route}
-              prefetch
-              aria-label="Social Profile"
-              className="bg-secondary/90 flex size-10 items-center justify-center rounded-xl"
-            >
-              <Users className="size-4" />
-            </Link>
+            <Activity mode="hidden">
+              <Link
+                href={"/profile/social" as Route}
+                prefetch
+                aria-label="Social Profile"
+                className="bg-secondary/90 flex size-10 items-center justify-center rounded-xl"
+              >
+                <Users className="size-4" />
+              </Link>
+            </Activity>
           </div>
 
           <div className="flex flex-col gap-0.5">
@@ -134,9 +136,9 @@ export function ProfileView({ userId }: { userId: string }) {
       </div>
 
       {/* =========================================================================
-          DESKTOP SIDEBAR (lg:)
+          DESKTOP SIDEBAR (lg:, matches Figma 280px width)
       ========================================================================== */}
-      <aside className="hidden lg:flex flex-col items-center text-center gap-8 w-64 shrink-0">
+      <aside className="hidden lg:flex flex-col items-center text-center gap-8 w-[280px] shrink-0">
         <div className="relative">
           <Avatar className="size-36 rounded-3xl bg-[#A2C4B7] shadow-sm">
             <AvatarImage
@@ -174,30 +176,32 @@ export function ProfileView({ userId }: { userId: string }) {
             {displayName ?? username}
           </Typography>
           {sizeLine && (
-            <span className="font-sans text-sm font-normal tracking-wide text-muted-foreground uppercase">
+            <span className="font-sans text-xs font-normal tracking-wide text-[#444440] bg-[#F2EDE5] px-3 py-1 rounded-full uppercase mt-1">
               {sizeLine}
             </span>
           )}
         </div>
 
-        {/* Action Buttons */}
+        {/* Action Buttons (matches Figma 280x64 pill buttons) */}
         <div className="flex flex-col w-full gap-3 pt-4">
-          <Link
-            href={"/profile/social" as Route}
-            prefetch
-            data-testid="profile-page__social-link"
-            className="w-full flex items-center justify-center gap-2.5 bg-[#383733] hover:bg-[#2A2926] text-white py-3.5 rounded-2xl font-sans text-xs lg:text-sm font-normal tracking-wider uppercase transition-colors shadow-sm"
-          >
-            <Users className="size-4" />
-            <span>Social Circle</span>
-          </Link>
+          <Activity mode="hidden">
+            <Link
+              href={"/profile/social" as Route}
+              prefetch
+              data-testid="profile-page__social-link"
+              className="w-full h-14 md:h-16 flex items-center justify-center gap-3 bg-[#444440] hover:bg-[#343430] text-white rounded-2xl font-sans text-xs lg:text-sm font-normal tracking-wider uppercase transition-colors shadow-xs"
+            >
+              <Users className="size-5" />
+              <span>Social Circle</span>
+            </Link>
+          </Activity>
           <Link
             href="/profile/settings"
             prefetch
             data-testid="profile-page__settings-link"
-            className="w-full flex items-center justify-center gap-2.5 bg-[#F2EDE5] hover:bg-[#EAE4DC] text-[#383733] py-3.5 rounded-2xl font-sans text-xs lg:text-sm font-normal tracking-wider uppercase transition-colors"
+            className="w-full h-14 md:h-16 flex items-center justify-center gap-3 bg-[#F2EDE5] hover:bg-[#EAE4DC] text-[#444440] rounded-2xl font-sans text-xs lg:text-sm font-normal tracking-wider uppercase transition-colors"
           >
-            <Settings className="size-4" />
+            <Settings className="size-5" />
             <span>Settings</span>
           </Link>
         </div>

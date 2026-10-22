@@ -33,12 +33,12 @@ export function SocialProfileView({ userId }: { userId: string }) {
   const initials = (displayName ?? username).slice(0, 2).toUpperCase();
 
   return (
-    <main className="mx-auto flex w-full max-w-sm lg:max-w-6xl xl:max-w-7xl flex-1 flex-col gap-8 px-6 lg:px-12 py-8 lg:py-12">
+    <main className="mx-auto flex w-full max-w-[402px] lg:max-w-[1088px] flex-1 flex-col gap-8 px-6 lg:px-12 py-8 lg:py-12">
       {/* Breadcrumb (desktop) */}
       <ProfileBreadcrumb
         items={[
           { label: "PROFILE", href: "/profile" },
-          { label: "SOCIAL PROFILE" },
+          { label: "SOCIAL CIRCLE" },
         ]}
       />
 

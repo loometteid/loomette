@@ -31,11 +31,15 @@ export const mockRedirect = vi.fn(
 );
 export const mockPermanentRedirect = vi.fn();
 
+export const mockNotFound = vi.fn(() => {
+  throw new Error("NEXT_NOT_FOUND");
+});
+
 vi.mock("next/navigation", () => ({
   useRouter: () => mockRouter,
   usePathname: () => "/",
   useSearchParams: () => new URLSearchParams(),
-  notFound: vi.fn(),
+  notFound: () => mockNotFound(),
   redirect: (...args: unknown[]) => mockRedirect(...args),
   permanentRedirect: (...args: unknown[]) => mockPermanentRedirect(...args),
 }));

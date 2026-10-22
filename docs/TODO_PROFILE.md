@@ -57,7 +57,14 @@
 
 ---
 
-## 6. Figma Typography & Frame Lookups (Rate Limit Status)
+## 7. Social Profile Visibility (Figma D.4.6.1 / 4.6.1)
+- **Status**: Hidden in UI via React 19 `<Activity mode="hidden">`; route `/profile/social` returns 404 (`notFound()`) in production.
+- **Context**: Social Circle features and public feeds are deferred until the social graph and sharing permissions are designed.
+- **Master Roadmap**: See [docs/TODO.md](TODO.md) for master application backlog and roadmap.
+
+---
+
+## 8. Figma Typography & Frame Lookups (Rate Limit Status)
 - **Status**: Pulled and cached all available Figma file overview data, design system tokens, canvas trees, and complete frame ID index into `figma/snapshots/`.
 - **API Status**:
   - Figma's granular node endpoint (`/v1/files/:fileKey/nodes`) is rate-limited by CloudFront for the current Starter tier account (`Retry-After: ~399,000s`).

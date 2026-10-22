@@ -91,6 +91,14 @@ describe("ProfileView (Component & Integration Tier)", () => {
     const username = screen.getByTestId("profile-page__username");
     expect(username).toHaveTextContent("@janedoe");
 
+    // Assert: Social Circle / Social Profile links are hidden via React 19 Activity
+    expect(
+      screen.queryByRole("link", { name: "Social Circle" }),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole("link", { name: "Social Profile" }),
+    ).not.toBeInTheDocument();
+
     // Assert: Favorite tab content is active by default
     const favoriteItem = await screen.findByTestId("profile-page__favorite-item");
     expect(favoriteItem).toHaveAttribute("data-entity-id", "outfit-1");

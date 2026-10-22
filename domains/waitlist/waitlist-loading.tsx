@@ -74,10 +74,12 @@ export function WaitlistFallback() {
 
           {/* Content Area Skeleton */}
           <div className="flex flex-1 flex-col my-auto py-6 animate-pulse">
-            <div className="flex flex-col gap-2">
-              <Sparkle className="size-6 text-muted-foreground/40 shrink-0" />
-              <div className="h-8 w-56 rounded-md bg-secondary" />
-              <div className="h-4 w-72 rounded-md bg-secondary/70 mt-1" />
+            <div className="flex items-start gap-3 lg:gap-4">
+              <Sparkle className="size-6 lg:size-8 text-muted-foreground/40 shrink-0 mt-1" />
+              <div className="flex flex-col gap-2 w-full max-w-xs">
+                <div className="h-8 w-56 rounded-md bg-secondary" />
+                <div className="h-4 w-72 rounded-md bg-secondary/70" />
+              </div>
             </div>
 
             <div className="mt-8 flex flex-col gap-6">

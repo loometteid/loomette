@@ -101,20 +101,22 @@ export function AddItemView({ userId }: { userId: string }) {
       </div>
 
       {/* Centered Intake Card */}
-      <main className="mx-auto flex w-full max-w-sm flex-1 flex-col items-center justify-center px-6 py-12 text-center">
-        <div className="flex flex-col items-center gap-3">
-          <Sparkle className="size-6 text-foreground" />
-          <Typography
-            variant="title"
-            as="h1"
-            className="text-3xl font-serif"
-            data-testid="add-item-page__title"
-          >
-            Add a new item.
-          </Typography>
-          <p className="text-[#8C887B] text-xs uppercase tracking-widest font-medium">
-            Snap it fresh or pull from your gallery.
-          </p>
+      <main className="mx-auto flex w-full max-w-sm lg:max-w-xl flex-1 flex-col items-center justify-center px-6 py-12 text-center">
+        <div className="flex items-start gap-3.5 lg:gap-4 text-left">
+          <Sparkle className="size-7 lg:size-10 text-[#444440] shrink-0 mt-1 lg:mt-2" />
+          <div className="flex flex-col gap-1 lg:gap-2">
+            <Typography
+              variant="title"
+              as="h1"
+              className="text-3xl md:text-4xl lg:text-[48px] font-serif text-[#444440] leading-tight"
+              data-testid="add-item-page__title"
+            >
+              Add a new item.
+            </Typography>
+            <p className="font-sans text-xs md:text-sm lg:text-xl font-normal text-[#444440]">
+              Snap it fresh or pull from your gallery.
+            </p>
+          </div>
         </div>
 
         <div className="mt-16 flex w-full flex-col gap-3">

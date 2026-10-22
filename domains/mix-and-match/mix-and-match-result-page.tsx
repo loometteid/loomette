@@ -146,15 +146,17 @@ export function MixAndMatchResult({
         {/* Left Column: Title, Subtitle, Desktop Buttons */}
         <div className="flex flex-col lg:w-1/2 lg:justify-between lg:self-stretch">
           <div>
-            <div className="flex items-center gap-2">
-              <Sparkle className="text-foreground size-5 lg:size-6" />
-              <Typography variant="title" as="h1" className="text-2xl lg:text-4xl">
-                What a Match!
-              </Typography>
+            <div className="flex items-start gap-2.5 lg:gap-3.5">
+              <Sparkle className="text-[#444440] size-6 lg:size-8 shrink-0 mt-1" />
+              <div className="flex flex-col gap-1 lg:gap-2">
+                <Typography variant="title" as="h1" className="text-2xl lg:text-4xl font-serif text-[#444440]">
+                  What a Match!
+                </Typography>
+                <p className="hidden lg:block font-sans text-xs lg:text-xl font-normal text-[#444440] leading-relaxed max-w-md">
+                  You put this together and honestly, it works. Save it before you forget.
+                </p>
+              </div>
             </div>
-            <p className="hidden lg:block text-xs font-semibold tracking-wider uppercase text-muted-foreground leading-relaxed mt-4 max-w-md">
-              You put this together and honestly, it works. Save it before you forget.
-            </p>
           </div>
 
           {/* Desktop action buttons */}

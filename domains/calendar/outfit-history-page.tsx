@@ -67,16 +67,16 @@ export function OutfitHistoryView({ userId }: { userId: string }) {
       </div>
 
       {/* Header */}
-      <div className="flex flex-col gap-2">
-        <div className="flex items-start gap-3">
-          <Sparkle className="size-6 text-foreground shrink-0 mt-1" />
-          <Typography variant="title" as="h1" className="text-2xl lg:text-3xl font-serif">
+      <div className="flex items-start gap-3 lg:gap-4">
+        <Sparkle className="size-6 lg:size-8 text-[#444440] shrink-0 mt-1" />
+        <div className="flex flex-col gap-1 lg:gap-2">
+          <Typography variant="title" as="h1" className="text-2xl lg:text-3xl font-serif text-[#444440]">
             Your looks, all of them.
           </Typography>
+          <p className="font-sans text-xs lg:text-xl font-normal text-[#444440]">
+            {outfits.length} outfits collection so far.
+          </p>
         </div>
-        <span className="text-[0.65rem] lg:text-xs font-semibold tracking-wider text-muted-foreground uppercase pl-9">
-          {outfits.length} OUTFITS COLLECTION SO FAR.
-        </span>
       </div>
 
       {/* Filter Tabs */}

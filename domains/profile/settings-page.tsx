@@ -240,24 +240,24 @@ export function SettingsView({ userId }: { userId: string }) {
       </div>
 
       {/* Header title */}
-      <div className="flex flex-col gap-1.5">
-        <div className="flex items-center gap-2">
-          <Sparkle className="size-6 text-foreground" />
-          <Typography variant="title" as="h1" className="font-serif text-[32px] md:text-4xl lg:text-[48px] font-normal text-foreground leading-tight">
+      <div className="flex items-start gap-3.5 lg:gap-4">
+        <Sparkle className="size-6 lg:size-8 text-[#444440] shrink-0 mt-1 lg:mt-2" />
+        <div className="flex flex-col gap-1 lg:gap-2">
+          <Typography variant="title" as="h1" className="font-serif text-[32px] md:text-4xl lg:text-[48px] font-normal text-[#444440] leading-tight">
             Settings
           </Typography>
+          <p className="font-sans text-xs md:text-sm lg:text-xl font-normal text-[#444440] leading-snug">
+            Manage how the app works for you.
+          </p>
         </div>
-        <Typography variant="subtitle" className="font-sans text-xs md:text-sm font-normal uppercase tracking-wider text-muted-foreground">
-          Manage how the app works for you.
-        </Typography>
       </div>
 
       {/* Main Responsive Grid Layout */}
       <div className="flex flex-col lg:flex-row lg:gap-14 pt-2">
-        {/* Left Sticky Navigation (desktop only, matches Figma 280px sidebar) */}
+        {/* Left Sticky Navigation (desktop only) */}
         <nav
           aria-label="Settings sections"
-          className="hidden lg:flex flex-col gap-2.5 w-[280px] shrink-0 sticky top-28 h-fit"
+          className="hidden lg:flex flex-col gap-2 w-64 shrink-0 sticky top-28 h-fit"
         >
           {SECTIONS.map(({ id, label }) => {
             const isActive = activeSection === id;
@@ -267,10 +267,10 @@ export function SettingsView({ userId }: { userId: string }) {
                 type="button"
                 onClick={() => scrollToSection(id)}
                 className={cn(
-                  "text-left px-6 py-4 rounded-2xl font-sans text-xs lg:text-sm font-normal tracking-wide uppercase transition-colors",
+                  "text-left px-5 py-3 rounded-2xl font-sans text-xs lg:text-sm font-normal tracking-wide uppercase transition-colors",
                   isActive
-                    ? "bg-[#444440] text-white shadow-xs font-medium"
-                    : "bg-[#F2EDE5] text-[#444440] hover:bg-[#EAE4DC]",
+                    ? "bg-[#F2EDE5] text-[#383733]"
+                    : "text-muted-foreground hover:text-foreground hover:bg-[#F2EDE5]/40",
                 )}
               >
                 {label}

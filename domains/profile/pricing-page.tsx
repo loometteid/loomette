@@ -136,23 +136,20 @@ export function PricingView({
       </div>
 
       {/* Header title */}
-      <div className="flex flex-col gap-2">
-        <div className="flex items-center gap-2">
-          <Sparkle className="size-6 text-foreground" />
+      <div className="flex items-start gap-3.5 lg:gap-4">
+        <Sparkle className="size-6 lg:size-8 text-[#444440] shrink-0 mt-1 lg:mt-2" />
+        <div className="flex flex-col gap-1 lg:gap-2">
           <Typography
             variant="title"
             as="h1"
-            className="font-serif text-[32px] md:text-4xl lg:text-[48px] font-normal leading-tight text-foreground"
+            className="font-serif text-[32px] md:text-4xl lg:text-[48px] font-normal leading-tight text-[#444440]"
           >
             Pricing
           </Typography>
+          <p className="font-sans text-xs md:text-sm lg:text-xl font-normal text-[#444440] max-w-xl leading-snug">
+            see what you&apos;re on and what&apos;s waiting when you&apos;re ready to upgrade.
+          </p>
         </div>
-        <Typography
-          variant="subtitle"
-          className="font-sans text-xs md:text-sm font-normal text-muted-foreground max-w-xl leading-relaxed"
-        >
-          see what you&apos;re on and what&apos;s waiting when you&apos;re ready to upgrade.
-        </Typography>
       </div>
 
       {/* Billing Cycle Toggle */}

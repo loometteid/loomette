@@ -149,23 +149,24 @@ export function OnboardingShell({
 
           {/* Content Area */}
           <div className="flex flex-1 flex-col">
-            <div className="mt-6 lg:mt-2 flex flex-col gap-2">
-              <Sparkle className="size-6 text-foreground shrink-0" />
-              <Typography
-                variant="title"
-                as="h1"
-                data-testid="onboarding-shell__title"
-                className="text-2xl sm:text-3xl font-serif text-foreground"
-              >
-                {title}
-              </Typography>
-              <Typography
-                variant="subtitle"
-                data-testid="onboarding-shell__subtitle"
-                className="text-xs text-muted-foreground uppercase tracking-widest"
-              >
-                {subtitle}
-              </Typography>
+            <div className="mt-6 lg:mt-2 flex items-start gap-3 lg:gap-4">
+              <Sparkle className="size-6 lg:size-8 text-[#444440] shrink-0 mt-1 lg:mt-1.5" />
+              <div className="flex flex-col gap-1 lg:gap-2">
+                <Typography
+                  variant="title"
+                  as="h1"
+                  data-testid="onboarding-shell__title"
+                  className="text-2xl sm:text-3xl lg:text-4xl font-serif text-[#444440]"
+                >
+                  {title}
+                </Typography>
+                <p
+                  data-testid="onboarding-shell__subtitle"
+                  className="font-sans text-xs sm:text-sm lg:text-base font-normal text-[#444440]"
+                >
+                  {subtitle}
+                </p>
+              </div>
             </div>
 
             <div className="mt-8 flex flex-col gap-6">{children}</div>

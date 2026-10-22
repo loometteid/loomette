@@ -65,16 +65,16 @@ export function ShareOotdView({ userId }: { userId: string }) {
       </Button>
 
       {/* Header */}
-      <div className="flex flex-col gap-1">
-        <div className="flex items-center gap-2">
-          <Sparkle className="size-6 text-foreground" />
-          <Typography variant="title" as="h1" className="text-2xl font-serif">
+      <div className="flex items-start gap-2.5 lg:gap-3">
+        <Sparkle className="size-6 text-[#444440] shrink-0 mt-1" />
+        <div className="flex flex-col gap-1">
+          <Typography variant="title" as="h1" className="text-2xl lg:text-3xl font-serif text-[#444440]">
             Share your #OOTD
           </Typography>
+          <p className="font-sans text-xs lg:text-sm font-normal text-[#444440]">
+            Select your favorite template here.
+          </p>
         </div>
-        <span className="text-[0.65rem] font-semibold tracking-wider text-muted-foreground uppercase pl-8">
-          SELECT YOUR FAVORITE TEMPLATE HERE.
-        </span>
       </div>
 
       {/* Story Template Preview Card with Chevrons */}

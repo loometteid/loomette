@@ -7,12 +7,12 @@ export function HomeFallback() {
       <div className="hidden lg:grid max-w-7xl mx-auto px-12 py-8 grid-cols-2 gap-12 items-start animate-pulse">
         {/* Left Column */}
         <div className="flex flex-col gap-6">
-          <div className="flex flex-col gap-2">
-            <div className="flex items-center gap-3">
-              <Sparkle className="size-7 text-muted-foreground/40" />
+          <div className="flex items-start gap-3">
+            <Sparkle className="size-7 text-muted-foreground/40 mt-1 shrink-0" />
+            <div className="flex flex-col gap-2">
               <div className="bg-muted h-9 w-64 rounded-md" />
+              <div className="bg-muted/60 h-5 w-56 rounded" />
             </div>
-            <div className="bg-muted/60 h-4 w-48 rounded ml-10" />
           </div>
 
           <div className="relative flex items-center justify-center py-6">
@@ -53,15 +53,13 @@ export function HomeFallback() {
         </div>
 
         {/* Title */}
-        <div className="flex flex-col gap-2">
-          <div className="flex items-start gap-2.5">
-            <Sparkle className="text-muted-foreground/40 size-6" />
-            <div className="flex flex-col gap-2">
-              <div className="bg-muted h-7 w-44 rounded-md" />
-              <div className="bg-muted h-7 w-32 rounded-md" />
-            </div>
+        <div className="flex items-start gap-2.5">
+          <Sparkle className="text-muted-foreground/40 size-6 mt-1 shrink-0" />
+          <div className="flex flex-col gap-2">
+            <div className="bg-muted h-7 w-44 rounded-md" />
+            <div className="bg-muted h-7 w-32 rounded-md" />
+            <div className="bg-muted/70 h-3.5 w-48 rounded" />
           </div>
-          <div className="bg-muted/70 h-3.5 w-48 rounded ml-8.5" />
         </div>
 
         {/* Hero */}

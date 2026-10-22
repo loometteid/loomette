@@ -25,16 +25,16 @@ export function ApprovalFallback() {
         </div>
 
         {/* Title Header */}
-        <div className="mt-6 flex flex-col gap-1">
-          <div className="flex items-center gap-2">
-            <Sparkle className="size-6 text-foreground" />
-            <Typography variant="title" as="h1" className="text-3xl font-serif">
+        <div className="mt-6 flex items-start gap-2.5 lg:gap-3.5">
+          <Sparkle className="size-6 lg:size-8 text-[#444440] shrink-0 mt-1" />
+          <div className="flex flex-col gap-1 lg:gap-2">
+            <Typography variant="title" as="h1" className="text-2xl md:text-3xl lg:text-4xl font-serif text-[#444440]">
               We found these pieces.
             </Typography>
+            <p className="font-sans text-xs md:text-sm lg:text-xl font-normal text-[#444440]">
+              Select what to add to your wardrobe.
+            </p>
           </div>
-          <p className="text-muted-foreground text-[0.68rem] font-medium uppercase tracking-widest">
-            Select what to add to your wardrobe.
-          </p>
         </div>
 
         {/* Responsive Grid Skeletons (4 cols on lg) */}

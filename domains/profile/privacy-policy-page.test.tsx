@@ -18,7 +18,7 @@ describe("PrivacyPolicyView (D.4.5.1 and 4.5.1)", () => {
     expect(
       screen.getByRole("heading", { name: "Privacy & Policy" }),
     ).toBeInTheDocument();
-    expect(screen.getByText("LAST UPDATE: JUNE 2026")).toBeInTheDocument();
+    expect(screen.getByText(/last update: june 2026/i)).toBeInTheDocument();
 
     expect(screen.getByText("What we collect")).toBeInTheDocument();
     expect(screen.getByText("How we use it")).toBeInTheDocument();

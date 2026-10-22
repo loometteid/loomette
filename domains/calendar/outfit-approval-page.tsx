@@ -162,21 +162,21 @@ export function OutfitApproval({ userId }: { userId: string }) {
         <div className="mt-6 lg:mt-0 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center flex-1">
           {/* Left Column: Title, Subtitle, Actions on desktop */}
           <div className="flex flex-col gap-4 lg:gap-6">
-            <div className="flex items-center gap-3">
-              <Sparkle className="size-6 lg:size-8 text-foreground" />
-              <Typography
-                variant="title"
-                as="h1"
-                className="text-3xl lg:text-4xl font-serif"
-              >
-                <em className="italic">Looking</em> Good?
-              </Typography>
+            <div className="flex items-start gap-3 lg:gap-4">
+              <Sparkle className="size-6 lg:size-8 text-[#444440] shrink-0 mt-1" />
+              <div className="flex flex-col gap-1 lg:gap-2">
+                <Typography
+                  variant="title"
+                  as="h1"
+                  className="text-3xl lg:text-4xl font-serif text-[#444440]"
+                >
+                  <em className="italic">Looking</em> Good?
+                </Typography>
+                <p className="font-sans text-xs lg:text-xl font-normal text-[#444440] max-w-sm leading-relaxed">
+                  Here&apos;s what we pulled from your look. Add the ones that are right.
+                </p>
+              </div>
             </div>
-
-            <p className="text-muted-foreground text-xs lg:text-sm uppercase tracking-widest max-w-sm leading-relaxed">
-              Here&apos;s what we pulled from your look. Add the ones that are
-              right.
-            </p>
 
             {/* Desktop Action Buttons (D.2.1.2) */}
             <div className="hidden lg:flex items-center gap-4 mt-8">

@@ -135,17 +135,17 @@ export function HomeView({ userId }: { userId: string }) {
       <div className="hidden lg:grid max-w-7xl mx-auto px-12 py-8 grid-cols-2 gap-12 items-start">
         {/* Left Column: Title, Subtitle, Outfit Hero with Chevrons */}
         <div className="flex flex-col gap-6">
-          <div className="flex flex-col gap-1.5">
-            <div className="flex items-start gap-3">
-              <Sparkle className="text-foreground mt-2 size-7 shrink-0" />
-              <Typography variant="title" as="h1" className="text-4xl font-serif">
+          <div className="flex items-start gap-3">
+            <Sparkle className="text-[#444440] mt-2 size-7 shrink-0" />
+            <div className="flex flex-col gap-2">
+              <Typography variant="title" as="h1" className="text-4xl font-serif text-[#444440]">
                 Ready to <span className="underline">style</span> in,{" "}
                 <em className="italic">{displayName ?? "there"}?</em>
               </Typography>
+              <p className="font-sans text-xl font-normal text-[#444440]">
+                Spring is coming, wear something sweet!
+              </p>
             </div>
-            <p className="text-xs font-semibold tracking-wider text-muted-foreground uppercase pl-10">
-              Spring is coming, wear something sweet!
-            </p>
           </div>
 
           <div className="relative flex items-center justify-center py-6">
@@ -359,18 +359,18 @@ export function HomeView({ userId }: { userId: string }) {
         </div>
 
         {/* Mobile Title */}
-        <div className="flex flex-col gap-1">
-          <div className="flex items-start gap-2.5">
-            <Sparkle className="text-foreground mt-1.5 size-6 shrink-0" />
-            <Typography variant="title" as="h1" className="text-3xl font-serif leading-tight">
+        <div className="flex items-start gap-2.5">
+          <Sparkle className="text-[#444440] mt-1.5 size-6 shrink-0" />
+          <div className="flex flex-col gap-1">
+            <Typography variant="title" as="h1" className="text-3xl font-serif leading-tight text-[#444440]">
               Ready to <span className="underline">style</span> in,
               <br />
               <em className="italic">{displayName ?? "there"}?</em>
             </Typography>
+            <p className="font-sans text-xs font-normal text-[#444440]">
+              Spring is coming, wear something sweet!
+            </p>
           </div>
-          <span className="text-[0.65rem] font-semibold tracking-wider text-muted-foreground uppercase pl-8.5">
-            SPRING IS COMING, WEAR SOMETHING SWEET!
-          </span>
         </div>
 
         {/* Mobile Outfit Hero: Wrapped in Link navigating to /home/recommendation */}

@@ -58,11 +58,13 @@ export async function POST(
     const supabase = createAdminSupabaseClient();
 
     // 1. Update the payment_order record
-    let { data: order, error: orderFetchError } = await supabase
+    const { data: initialOrder, error: orderFetchError } = await supabase
       .from("payment_order")
       .select("*")
       .eq("order_id", event.orderId)
       .maybeSingle();
+
+    let order = initialOrder;
 
     if (!order) {
       // Small pause in case the caller's pre-insert is settling in parallel

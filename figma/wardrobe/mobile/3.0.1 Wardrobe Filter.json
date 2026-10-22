@@ -1,0 +1,2373 @@
+{
+  "file": {
+    "name": "Loomette.id",
+    "version": "plugin-1792667110986"
+  },
+  "root": "3-0-1-wardrobe-filter",
+  "tokens": {
+    "color": {
+      "$c1": "#fafaf7",
+      "$c2": "#f2ede5",
+      "$c3": "#444440",
+      "$c4": "#c9c3b7",
+      "$c5": "#b0cbc3",
+      "$c6": "#dda3b0",
+      "$c7": "#345b83",
+      "$c8": "#d94d30",
+      "$c9": "#d9d9d9"
+    },
+    "text": {
+      "$t1": "400 20px Avenir Next",
+      "$t2": "400 16px Avenir Next",
+      "$t3": "400 28px Source Serif Pro"
+    },
+    "radius": {
+      "$r1": 8,
+      "$r2": 16
+    },
+    "shadow": {},
+    "layout": {
+      "$l1": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          19,
+          108,
+          18,
+          107
+        ]
+      },
+      "$l2": {
+        "flow": "col",
+        "gap": 24,
+        "pad": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l3": {
+        "align": "center",
+        "flow": "row",
+        "gap": 16,
+        "justify": "center",
+        "pad": [
+          19,
+          16,
+          18,
+          16
+        ]
+      },
+      "$l4": {
+        "align": "center",
+        "flow": "row",
+        "gap": 16,
+        "pad": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "vector": {
+      "$v1": "M0.292893 0.292893 C0.683417 -0.0976311 1.31658 -0.0976311 1.70711 0.292893 L7 5.58579 L12.2929 0.292893 C12.6834 -0.0976311 13.3166 -0.0976311 13.7071 0.292893 C14.0976 0.683417 14.0976 1.31658 13.7071 1.70711 L8.41421 7 L13.7071 12.2929 C14.0976 12.6834 14.0976 13.3166 13.7071 13.7071 C13.3166 14.0976 12.6834 14.0976 12.2929 13.7071 L7 8.41421 L1.70711 13.7071 C1.31658 14.0976 0.683417 14.0976 0.292893 13.7071 C-0.0976311 13.3166 -0.0976311 12.6834 0.292893 12.2929 L5.58579 7 L0.292893 1.70711 C-0.0976311 1.31658 -0.0976311 0.683417 0.292893 0.292893 Z",
+      "$v2": "M32 16 C32 24.8366 24.8366 32 16 32 C7.16344 32 0 24.8366 0 16 C0 7.16344 7.16344 0 16 0 C24.8366 0 32 7.16344 32 16 Z",
+      "$v3": "M40 20 C40 31.0457 31.0457 40 20 40 C8.9543 40 0 31.0457 0 20 C0 8.9543 8.9543 0 20 0 C31.0457 0 40 8.9543 40 20 Z",
+      "$v4": "M14.4004 11.3262 L22.4092 3.31738 L23.6826 4.59082 L15.6738 12.5996 L27 12.5996 L27 14.4004 L15.6738 14.4004 L23.6826 22.4092 L22.4092 23.6826 L14.4004 15.6738 L14.4004 27 L12.5996 27 L12.5996 15.6738 L4.59082 23.6826 L3.31738 22.4092 L11.3262 14.4004 L0 14.4004 L0 12.5996 L11.3262 12.5996 L3.31738 4.59082 L4.59082 3.31738 L12.5996 11.3262 L12.5996 0 L14.4004 0 L14.4004 11.3262 Z"
+    },
+    "props": {
+      "$p1": {
+        "size": "24"
+      }
+    },
+    "meta": {
+      "counts": {
+        "$c1": 3,
+        "$c3": 34,
+        "$r2": 21,
+        "$t2": 26,
+        "$l3": 20,
+        "$c4": 23,
+        "$v2": 6,
+        "$v3": 6,
+        "$l4": 6,
+        "$c9": 4
+      }
+    }
+  },
+  "nodes": {
+    "rectangle-11": {
+      "id": "102:49",
+      "el": "rectangle-11",
+      "type": "rect",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "3-0-1-wardrobe-filter.x-button.rectangle-11",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c2",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector": {
+      "id": "I102:65;3:2684",
+      "el": "vector",
+      "type": "vector",
+      "box": {
+        "w": 14,
+        "h": 14
+      },
+      "path": "3-0-1-wardrobe-filter.x-button.close-x.vector",
+      "pos": {
+        "x": 5,
+        "y": 5
+      },
+      "fill": "$c3",
+      "iconHint": "close x",
+      "vectorPath": "$v1",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "close-x": {
+      "id": "102:65",
+      "el": "close-x",
+      "type": "instance",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "name": "close-x",
+      "path": "3-0-1-wardrobe-filter.x-button.close-x",
+      "pos": {
+        "x": 8,
+        "y": 8
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector"
+      ]
+    },
+    "x-button": {
+      "id": "102:299",
+      "el": "x-button",
+      "type": "group",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "3-0-1-wardrobe-filter.x-button",
+      "pos": {
+        "x": 36,
+        "y": 40
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-11",
+        "close-x"
+      ]
+    },
+    "save": {
+      "id": "102:164",
+      "el": "save",
+      "type": "text",
+      "box": {
+        "w": 40,
+        "h": 27
+      },
+      "name": "SAVE",
+      "path": "3-0-1-wardrobe-filter.save-button.save",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c1",
+      "text": "$t1",
+      "chars": "SAVE",
+      "textGrow": "wh"
+    },
+    "save-button": {
+      "id": "102:163",
+      "el": "save-button",
+      "type": "frame",
+      "box": {
+        "w": 320,
+        "h": 64
+      },
+      "name": "save button",
+      "path": "3-0-1-wardrobe-filter.save-button",
+      "pos": {
+        "x": 41,
+        "y": 926
+      },
+      "layout": "$l1",
+      "fill": "$c3",
+      "radius": "$r2",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "save"
+      ]
+    },
+    "category-2": {
+      "id": "102:71",
+      "el": "category-2",
+      "type": "text",
+      "box": {
+        "w": 67,
+        "h": 22
+      },
+      "name": "CATEGORY",
+      "path": "3-0-1-wardrobe-filter.frame-28.category.group-36.group-35.category-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "CATEGORY",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-35": {
+      "id": "102:70",
+      "el": "group-35",
+      "type": "group",
+      "box": {
+        "w": 67,
+        "h": 22
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.category.group-36.group-35",
+      "pos": {
+        "x": 3,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "category-2"
+      ]
+    },
+    "tops": {
+      "id": "102:73",
+      "el": "tops",
+      "type": "text",
+      "box": {
+        "w": 33,
+        "h": 22
+      },
+      "name": "tops",
+      "path": "3-0-1-wardrobe-filter.frame-28.category.group-36.frame-8.tops",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "tops",
+      "textGrow": "wh"
+    },
+    "frame-8": {
+      "id": "102:72",
+      "el": "frame-8",
+      "type": "frame",
+      "box": {
+        "w": 65,
+        "h": 40
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.category.group-36.frame-8",
+      "pos": {
+        "x": 0,
+        "y": 34
+      },
+      "layout": "$l3",
+      "inheritedFill": "$c1",
+      "stroke": "$c3",
+      "strokeW": 1.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "tops"
+      ]
+    },
+    "bottoms": {
+      "id": "102:75",
+      "el": "bottoms",
+      "type": "text",
+      "box": {
+        "w": 62,
+        "h": 22
+      },
+      "name": "BOTTOMS",
+      "path": "3-0-1-wardrobe-filter.frame-28.category.group-36.frame-9.bottoms",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "BOTTOMS",
+      "textGrow": "wh"
+    },
+    "frame-9": {
+      "id": "102:74",
+      "el": "frame-9",
+      "type": "frame",
+      "box": {
+        "w": 94,
+        "h": 40
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.category.group-36.frame-9",
+      "pos": {
+        "x": 77,
+        "y": 34
+      },
+      "layout": "$l3",
+      "inheritedFill": "$c1",
+      "stroke": "$c4",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "bottoms"
+      ]
+    },
+    "shoes": {
+      "id": "102:77",
+      "el": "shoes",
+      "type": "text",
+      "box": {
+        "w": 43,
+        "h": 22
+      },
+      "name": "shoes",
+      "path": "3-0-1-wardrobe-filter.frame-28.category.group-36.frame-13.shoes",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "shoes",
+      "textGrow": "wh"
+    },
+    "frame-13": {
+      "id": "102:76",
+      "el": "frame-13",
+      "type": "frame",
+      "box": {
+        "w": 75,
+        "h": 40
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.category.group-36.frame-13",
+      "pos": {
+        "x": 0,
+        "y": 86
+      },
+      "layout": "$l3",
+      "inheritedFill": "$c1",
+      "stroke": "$c4",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "shoes"
+      ]
+    },
+    "accesories": {
+      "id": "102:79",
+      "el": "accesories",
+      "type": "text",
+      "box": {
+        "w": 80,
+        "h": 22
+      },
+      "name": "aCCESORIES",
+      "path": "3-0-1-wardrobe-filter.frame-28.category.group-36.frame-14.accesories",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "aCCESORIES",
+      "textGrow": "wh"
+    },
+    "frame-14": {
+      "id": "102:78",
+      "el": "frame-14",
+      "type": "frame",
+      "box": {
+        "w": 112,
+        "h": 40
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.category.group-36.frame-14",
+      "pos": {
+        "x": 182,
+        "y": 34
+      },
+      "layout": "$l3",
+      "inheritedFill": "$c1",
+      "stroke": "$c4",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "accesories"
+      ]
+    },
+    "group-36": {
+      "id": "102:69",
+      "el": "group-36",
+      "type": "group",
+      "box": {
+        "w": 294,
+        "h": 126
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.category.group-36",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-35",
+        "frame-8",
+        "frame-9",
+        "frame-13",
+        "frame-14"
+      ]
+    },
+    "category": {
+      "id": "102:68",
+      "el": "category",
+      "type": "group",
+      "box": {
+        "w": 294,
+        "h": 126
+      },
+      "name": "category",
+      "path": "3-0-1-wardrobe-filter.frame-28.category",
+      "inheritedFill": "$c1",
+      "children": [
+        "group-36"
+      ]
+    },
+    "sub-category-2": {
+      "id": "102:84",
+      "el": "sub-category-2",
+      "type": "text",
+      "box": {
+        "w": 94,
+        "h": 22
+      },
+      "name": "sub category",
+      "path": "3-0-1-wardrobe-filter.frame-28.sub-category.group-36-2.group-35-2.sub-category-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "sub category",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-35-2": {
+      "id": "102:83",
+      "el": "group-35-2",
+      "type": "group",
+      "box": {
+        "w": 94,
+        "h": 22
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.sub-category.group-36-2.group-35-2",
+      "pos": {
+        "x": 3,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "sub-category-2"
+      ]
+    },
+    "shirt": {
+      "id": "102:86",
+      "el": "shirt",
+      "type": "text",
+      "box": {
+        "w": 36,
+        "h": 22
+      },
+      "name": "shirt",
+      "path": "3-0-1-wardrobe-filter.frame-28.sub-category.group-36-2.frame-8-2.shirt",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "shirt",
+      "textGrow": "wh"
+    },
+    "frame-8-2": {
+      "id": "102:85",
+      "el": "frame-8-2",
+      "type": "frame",
+      "box": {
+        "w": 68,
+        "h": 40
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.sub-category.group-36-2.frame-8-2",
+      "pos": {
+        "x": 0,
+        "y": 34
+      },
+      "layout": "$l3",
+      "inheritedFill": "$c1",
+      "stroke": "$c3",
+      "strokeW": 1.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "shirt"
+      ]
+    },
+    "blouse": {
+      "id": "102:88",
+      "el": "blouse",
+      "type": "text",
+      "box": {
+        "w": 50,
+        "h": 22
+      },
+      "name": "blouse",
+      "path": "3-0-1-wardrobe-filter.frame-28.sub-category.group-36-2.frame-9-2.blouse",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "blouse",
+      "textGrow": "wh"
+    },
+    "frame-9-2": {
+      "id": "102:87",
+      "el": "frame-9-2",
+      "type": "frame",
+      "box": {
+        "w": 82,
+        "h": 40
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.sub-category.group-36-2.frame-9-2",
+      "pos": {
+        "x": 84,
+        "y": 34
+      },
+      "layout": "$l3",
+      "inheritedFill": "$c1",
+      "stroke": "$c4",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "blouse"
+      ]
+    },
+    "polo": {
+      "id": "102:92",
+      "el": "polo",
+      "type": "text",
+      "box": {
+        "w": 36,
+        "h": 22
+      },
+      "name": "polo",
+      "path": "3-0-1-wardrobe-filter.frame-28.sub-category.group-36-2.frame-14-2.polo",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "polo",
+      "textGrow": "wh"
+    },
+    "frame-14-2": {
+      "id": "102:91",
+      "el": "frame-14-2",
+      "type": "frame",
+      "box": {
+        "w": 68,
+        "h": 40
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.sub-category.group-36-2.frame-14-2",
+      "pos": {
+        "x": 182,
+        "y": 34
+      },
+      "layout": "$l3",
+      "inheritedFill": "$c1",
+      "stroke": "$c4",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "polo"
+      ]
+    },
+    "group-36-2": {
+      "id": "102:82",
+      "el": "group-36-2",
+      "type": "group",
+      "box": {
+        "w": 250,
+        "h": 74
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.sub-category.group-36-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-35-2",
+        "frame-8-2",
+        "frame-9-2",
+        "frame-14-2"
+      ]
+    },
+    "sub-category": {
+      "id": "102:81",
+      "el": "sub-category",
+      "type": "group",
+      "box": {
+        "w": 250,
+        "h": 74
+      },
+      "name": "sub category",
+      "path": "3-0-1-wardrobe-filter.frame-28.sub-category",
+      "inheritedFill": "$c1",
+      "children": [
+        "group-36-2"
+      ]
+    },
+    "colors-2": {
+      "id": "102:97",
+      "el": "colors-2",
+      "type": "text",
+      "box": {
+        "w": 51,
+        "h": 22
+      },
+      "name": "COLORS",
+      "path": "3-0-1-wardrobe-filter.frame-28.colors.group-43.group-36-3.group-35-3.colors-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "COLORS",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-35-3": {
+      "id": "102:96",
+      "el": "group-35-3",
+      "type": "group",
+      "box": {
+        "w": 51,
+        "h": 22
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.colors.group-43.group-36-3.group-35-3",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "colors-2"
+      ]
+    },
+    "group-36-3": {
+      "id": "102:95",
+      "el": "group-36-3",
+      "type": "group",
+      "box": {
+        "w": 51,
+        "h": 22
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.colors.group-43.group-36-3",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-35-3"
+      ]
+    },
+    "group-43": {
+      "id": "102:94",
+      "el": "group-43",
+      "type": "group",
+      "box": {
+        "w": 51,
+        "h": 22
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.colors.group-43",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-36-3"
+      ]
+    },
+    "ellipse-3": {
+      "id": "102:166",
+      "el": "ellipse-3",
+      "type": "ellipse",
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.colors.group-81.group-67.ellipse-3",
+      "pos": {
+        "x": 4,
+        "y": 4
+      },
+      "fill": "$c1",
+      "vectorPath": "$v2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "ellipse-4": {
+      "id": "102:167",
+      "el": "ellipse-4",
+      "type": "ellipse",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.colors.group-81.group-67.ellipse-4",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "stroke": "$c3",
+      "strokeW": 1.5,
+      "strokeAlign": "inside",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-67": {
+      "id": "102:169",
+      "el": "group-67",
+      "type": "group",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.colors.group-81.group-67",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "ellipse-3",
+        "ellipse-4"
+      ]
+    },
+    "ellipse-3-2": {
+      "id": "102:171",
+      "el": "ellipse-3-2",
+      "type": "ellipse",
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.colors.group-81.group-68.ellipse-3-2",
+      "pos": {
+        "x": 4,
+        "y": 4
+      },
+      "fill": "$c3",
+      "vectorPath": "$v2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "ellipse-4-2": {
+      "id": "102:172",
+      "el": "ellipse-4-2",
+      "type": "ellipse",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.colors.group-81.group-68.ellipse-4-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "stroke": "$c4",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-68": {
+      "id": "102:170",
+      "el": "group-68",
+      "type": "group",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.colors.group-81.group-68",
+      "pos": {
+        "x": 52,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "ellipse-3-2",
+        "ellipse-4-2"
+      ]
+    },
+    "ellipse-3-3": {
+      "id": "102:175",
+      "el": "ellipse-3-3",
+      "type": "ellipse",
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.colors.group-81.group-69.ellipse-3-3",
+      "pos": {
+        "x": 4,
+        "y": 4
+      },
+      "fill": "$c5",
+      "vectorPath": "$v2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "ellipse-4-3": {
+      "id": "102:176",
+      "el": "ellipse-4-3",
+      "type": "ellipse",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.colors.group-81.group-69.ellipse-4-3",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "stroke": "$c4",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-69": {
+      "id": "102:174",
+      "el": "group-69",
+      "type": "group",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.colors.group-81.group-69",
+      "pos": {
+        "x": 104,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "ellipse-3-3",
+        "ellipse-4-3"
+      ]
+    },
+    "ellipse-3-4": {
+      "id": "102:179",
+      "el": "ellipse-3-4",
+      "type": "ellipse",
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.colors.group-81.group-70.ellipse-3-4",
+      "pos": {
+        "x": 4,
+        "y": 4
+      },
+      "fill": "$c6",
+      "vectorPath": "$v2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "ellipse-4-4": {
+      "id": "102:180",
+      "el": "ellipse-4-4",
+      "type": "ellipse",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.colors.group-81.group-70.ellipse-4-4",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "stroke": "$c4",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-70": {
+      "id": "102:178",
+      "el": "group-70",
+      "type": "group",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.colors.group-81.group-70",
+      "pos": {
+        "x": 156,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "ellipse-3-4",
+        "ellipse-4-4"
+      ]
+    },
+    "ellipse-3-5": {
+      "id": "102:183",
+      "el": "ellipse-3-5",
+      "type": "ellipse",
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.colors.group-81.group-71.ellipse-3-5",
+      "pos": {
+        "x": 4,
+        "y": 4
+      },
+      "fill": "$c7",
+      "vectorPath": "$v2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "ellipse-4-5": {
+      "id": "102:184",
+      "el": "ellipse-4-5",
+      "type": "ellipse",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.colors.group-81.group-71.ellipse-4-5",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "stroke": "$c4",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-71": {
+      "id": "102:182",
+      "el": "group-71",
+      "type": "group",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.colors.group-81.group-71",
+      "pos": {
+        "x": 208,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "ellipse-3-5",
+        "ellipse-4-5"
+      ]
+    },
+    "ellipse-3-6": {
+      "id": "102:188",
+      "el": "ellipse-3-6",
+      "type": "ellipse",
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.colors.group-81.group-72.ellipse-3-6",
+      "pos": {
+        "x": 4,
+        "y": 4
+      },
+      "fill": "$c8",
+      "vectorPath": "$v2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "ellipse-4-6": {
+      "id": "102:189",
+      "el": "ellipse-4-6",
+      "type": "ellipse",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.colors.group-81.group-72.ellipse-4-6",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "stroke": "$c4",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-72": {
+      "id": "102:187",
+      "el": "group-72",
+      "type": "group",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.colors.group-81.group-72",
+      "pos": {
+        "x": 260,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "ellipse-3-6",
+        "ellipse-4-6"
+      ]
+    },
+    "group-81": {
+      "id": "102:300",
+      "el": "group-81",
+      "type": "group",
+      "box": {
+        "w": 300,
+        "h": 40
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.colors.group-81",
+      "pos": {
+        "x": 0,
+        "y": 34
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-67",
+        "group-68",
+        "group-69",
+        "group-70",
+        "group-71",
+        "group-72"
+      ]
+    },
+    "colors": {
+      "id": "102:301",
+      "el": "colors",
+      "type": "group",
+      "box": {
+        "w": 300,
+        "h": 74
+      },
+      "name": "colors",
+      "path": "3-0-1-wardrobe-filter.frame-28.colors",
+      "inheritedFill": "$c1",
+      "children": [
+        "group-43",
+        "group-81"
+      ]
+    },
+    "occasion-2": {
+      "id": "102:108",
+      "el": "occasion-2",
+      "type": "text",
+      "box": {
+        "w": 67,
+        "h": 22
+      },
+      "name": "Occasion",
+      "path": "3-0-1-wardrobe-filter.frame-28.occasion.group-44.group-36-4.group-35-4.occasion-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "Occasion",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-35-4": {
+      "id": "102:107",
+      "el": "group-35-4",
+      "type": "group",
+      "box": {
+        "w": 67,
+        "h": 22
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.occasion.group-44.group-36-4.group-35-4",
+      "pos": {
+        "x": 3,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "occasion-2"
+      ]
+    },
+    "everyday": {
+      "id": "102:110",
+      "el": "everyday",
+      "type": "text",
+      "box": {
+        "w": 65,
+        "h": 22
+      },
+      "name": "Everyday",
+      "path": "3-0-1-wardrobe-filter.frame-28.occasion.group-44.group-36-4.frame-26.frame-8-3.everyday",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "Everyday",
+      "textGrow": "wh"
+    },
+    "frame-8-3": {
+      "id": "102:109",
+      "el": "frame-8-3",
+      "type": "frame",
+      "box": {
+        "w": 97,
+        "h": 40
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.occasion.group-44.group-36-4.frame-26.frame-8-3",
+      "sizing": {
+        "w": "hug"
+      },
+      "layout": "$l3",
+      "inheritedFill": "$c1",
+      "stroke": "$c4",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "children": [
+        "everyday"
+      ]
+    },
+    "work": {
+      "id": "102:112",
+      "el": "work",
+      "type": "text",
+      "box": {
+        "w": 40,
+        "h": 22
+      },
+      "name": "Work",
+      "path": "3-0-1-wardrobe-filter.frame-28.occasion.group-44.group-36-4.frame-26.frame-9-3.work",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "Work",
+      "textGrow": "wh"
+    },
+    "frame-9-3": {
+      "id": "102:111",
+      "el": "frame-9-3",
+      "type": "frame",
+      "box": {
+        "w": 72,
+        "h": 40
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.occasion.group-44.group-36-4.frame-26.frame-9-3",
+      "sizing": {
+        "w": "hug"
+      },
+      "layout": "$l3",
+      "inheritedFill": "$c1",
+      "stroke": "$c4",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "children": [
+        "work"
+      ]
+    },
+    "going-out": {
+      "id": "102:114",
+      "el": "going-out",
+      "type": "text",
+      "box": {
+        "w": 76,
+        "h": 22
+      },
+      "name": "Going out",
+      "path": "3-0-1-wardrobe-filter.frame-28.occasion.group-44.group-36-4.frame-26.frame-14-3.going-out",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "Going out",
+      "textGrow": "wh"
+    },
+    "frame-14-3": {
+      "id": "102:113",
+      "el": "frame-14-3",
+      "type": "frame",
+      "box": {
+        "w": 108,
+        "h": 40
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.occasion.group-44.group-36-4.frame-26.frame-14-3",
+      "sizing": {
+        "w": "hug"
+      },
+      "layout": "$l3",
+      "inheritedFill": "$c1",
+      "stroke": "$c4",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "children": [
+        "going-out"
+      ]
+    },
+    "frame-26": {
+      "id": "102:116",
+      "el": "frame-26",
+      "type": "frame",
+      "box": {
+        "w": 309,
+        "h": 40
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.occasion.group-44.group-36-4.frame-26",
+      "pos": {
+        "x": 0,
+        "y": 34
+      },
+      "layout": "$l4",
+      "inheritedFill": "$c1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "frame-8-3",
+        "frame-9-3",
+        "frame-14-3"
+      ]
+    },
+    "group-36-4": {
+      "id": "102:106",
+      "el": "group-36-4",
+      "type": "group",
+      "box": {
+        "w": 309,
+        "h": 74
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.occasion.group-44.group-36-4",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-35-4",
+        "frame-26"
+      ]
+    },
+    "group-44": {
+      "id": "102:105",
+      "el": "group-44",
+      "type": "group",
+      "box": {
+        "w": 309,
+        "h": 74
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.occasion.group-44",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-36-4"
+      ]
+    },
+    "special": {
+      "id": "102:119",
+      "el": "special",
+      "type": "text",
+      "box": {
+        "w": 52,
+        "h": 22
+      },
+      "name": "special",
+      "path": "3-0-1-wardrobe-filter.frame-28.occasion.frame-27.frame-8-4.special",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "special",
+      "textGrow": "wh"
+    },
+    "frame-8-4": {
+      "id": "102:118",
+      "el": "frame-8-4",
+      "type": "frame",
+      "box": {
+        "w": 84,
+        "h": 40
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.occasion.frame-27.frame-8-4",
+      "sizing": {
+        "w": "hug"
+      },
+      "layout": "$l3",
+      "inheritedFill": "$c1",
+      "stroke": "$c4",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "children": [
+        "special"
+      ]
+    },
+    "just-vibing": {
+      "id": "102:121",
+      "el": "just-vibing",
+      "type": "text",
+      "box": {
+        "w": 78,
+        "h": 22
+      },
+      "name": "JUST VIBING",
+      "path": "3-0-1-wardrobe-filter.frame-28.occasion.frame-27.frame-9-4.just-vibing",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "JUST VIBING",
+      "textGrow": "wh"
+    },
+    "frame-9-4": {
+      "id": "102:120",
+      "el": "frame-9-4",
+      "type": "frame",
+      "box": {
+        "w": 110,
+        "h": 40
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.occasion.frame-27.frame-9-4",
+      "sizing": {
+        "w": "hug"
+      },
+      "layout": "$l3",
+      "inheritedFill": "$c1",
+      "stroke": "$c4",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "children": [
+        "just-vibing"
+      ]
+    },
+    "frame-27": {
+      "id": "102:117",
+      "el": "frame-27",
+      "type": "frame",
+      "box": {
+        "w": 210,
+        "h": 40
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.occasion.frame-27",
+      "pos": {
+        "x": 0,
+        "y": 86
+      },
+      "layout": "$l4",
+      "inheritedFill": "$c1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "frame-8-4",
+        "frame-9-4"
+      ]
+    },
+    "occasion": {
+      "id": "102:125",
+      "el": "occasion",
+      "type": "group",
+      "box": {
+        "w": 309,
+        "h": 126
+      },
+      "name": "occasion",
+      "path": "3-0-1-wardrobe-filter.frame-28.occasion",
+      "inheritedFill": "$c1",
+      "children": [
+        "group-44",
+        "frame-27"
+      ]
+    },
+    "times-worn-2": {
+      "id": "102:130",
+      "el": "times-worn-2",
+      "type": "text",
+      "box": {
+        "w": 80,
+        "h": 22
+      },
+      "name": "Times worn",
+      "path": "3-0-1-wardrobe-filter.frame-28.times-worn.group-44-2.group-36-5.group-35-5.times-worn-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "Times worn",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-35-5": {
+      "id": "102:129",
+      "el": "group-35-5",
+      "type": "group",
+      "box": {
+        "w": 80,
+        "h": 22
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.times-worn.group-44-2.group-36-5.group-35-5",
+      "pos": {
+        "x": 3,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "times-worn-2"
+      ]
+    },
+    "never-worn": {
+      "id": "102:133",
+      "el": "never-worn",
+      "type": "text",
+      "box": {
+        "w": 87,
+        "h": 22
+      },
+      "name": "Never worn",
+      "path": "3-0-1-wardrobe-filter.frame-28.times-worn.group-44-2.group-36-5.frame-26-2.frame-8-5.never-worn",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "Never worn",
+      "textGrow": "wh"
+    },
+    "frame-8-5": {
+      "id": "102:132",
+      "el": "frame-8-5",
+      "type": "frame",
+      "box": {
+        "w": 119,
+        "h": 40
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.times-worn.group-44-2.group-36-5.frame-26-2.frame-8-5",
+      "sizing": {
+        "w": "hug"
+      },
+      "layout": "$l3",
+      "inheritedFill": "$c1",
+      "stroke": "$c4",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "children": [
+        "never-worn"
+      ]
+    },
+    "1-5-times": {
+      "id": "102:135",
+      "el": "1-5-times",
+      "type": "text",
+      "box": {
+        "w": 64,
+        "h": 22
+      },
+      "name": "1–5 times",
+      "path": "3-0-1-wardrobe-filter.frame-28.times-worn.group-44-2.group-36-5.frame-26-2.frame-9-5.1-5-times",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "1–5 times",
+      "textGrow": "wh"
+    },
+    "frame-9-5": {
+      "id": "102:134",
+      "el": "frame-9-5",
+      "type": "frame",
+      "box": {
+        "w": 96,
+        "h": 40
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.times-worn.group-44-2.group-36-5.frame-26-2.frame-9-5",
+      "sizing": {
+        "w": "hug"
+      },
+      "layout": "$l3",
+      "inheritedFill": "$c1",
+      "stroke": "$c4",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "children": [
+        "1-5-times"
+      ]
+    },
+    "frame-26-2": {
+      "id": "102:131",
+      "el": "frame-26-2",
+      "type": "frame",
+      "box": {
+        "w": 231,
+        "h": 40
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.times-worn.group-44-2.group-36-5.frame-26-2",
+      "pos": {
+        "x": 0,
+        "y": 34
+      },
+      "layout": "$l4",
+      "inheritedFill": "$c1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "frame-8-5",
+        "frame-9-5"
+      ]
+    },
+    "group-36-5": {
+      "id": "102:128",
+      "el": "group-36-5",
+      "type": "group",
+      "box": {
+        "w": 231,
+        "h": 74
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.times-worn.group-44-2.group-36-5",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-35-5",
+        "frame-26-2"
+      ]
+    },
+    "group-44-2": {
+      "id": "102:127",
+      "el": "group-44-2",
+      "type": "group",
+      "box": {
+        "w": 231,
+        "h": 74
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.times-worn.group-44-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-36-5"
+      ]
+    },
+    "6-10-times": {
+      "id": "102:140",
+      "el": "6-10-times",
+      "type": "text",
+      "box": {
+        "w": 72,
+        "h": 22
+      },
+      "name": "6–10 times",
+      "path": "3-0-1-wardrobe-filter.frame-28.times-worn.frame-27-2.frame-8-6.6-10-times",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "6–10 times",
+      "textGrow": "wh"
+    },
+    "frame-8-6": {
+      "id": "102:139",
+      "el": "frame-8-6",
+      "type": "frame",
+      "box": {
+        "w": 104,
+        "h": 40
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.times-worn.frame-27-2.frame-8-6",
+      "sizing": {
+        "w": "hug"
+      },
+      "layout": "$l3",
+      "inheritedFill": "$c1",
+      "stroke": "$c4",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "children": [
+        "6-10-times"
+      ]
+    },
+    "worn-a-lot": {
+      "id": "102:142",
+      "el": "worn-a-lot",
+      "type": "text",
+      "box": {
+        "w": 82,
+        "h": 22
+      },
+      "name": "Worn a lot",
+      "path": "3-0-1-wardrobe-filter.frame-28.times-worn.frame-27-2.frame-9-6.worn-a-lot",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "Worn a lot",
+      "textGrow": "wh"
+    },
+    "frame-9-6": {
+      "id": "102:141",
+      "el": "frame-9-6",
+      "type": "frame",
+      "box": {
+        "w": 114,
+        "h": 40
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.times-worn.frame-27-2.frame-9-6",
+      "sizing": {
+        "w": "hug"
+      },
+      "layout": "$l3",
+      "inheritedFill": "$c1",
+      "stroke": "$c4",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "children": [
+        "worn-a-lot"
+      ]
+    },
+    "frame-27-2": {
+      "id": "102:138",
+      "el": "frame-27-2",
+      "type": "frame",
+      "box": {
+        "w": 234,
+        "h": 40
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.times-worn.frame-27-2",
+      "pos": {
+        "x": 0,
+        "y": 86
+      },
+      "layout": "$l4",
+      "inheritedFill": "$c1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "frame-8-6",
+        "frame-9-6"
+      ]
+    },
+    "times-worn": {
+      "id": "102:126",
+      "el": "times-worn",
+      "type": "group",
+      "box": {
+        "w": 234,
+        "h": 126
+      },
+      "name": "Times worn",
+      "path": "3-0-1-wardrobe-filter.frame-28.times-worn",
+      "inheritedFill": "$c1",
+      "children": [
+        "group-44-2",
+        "frame-27-2"
+      ]
+    },
+    "date-added": {
+      "id": "102:148",
+      "el": "date-added",
+      "type": "text",
+      "box": {
+        "w": 81,
+        "h": 22
+      },
+      "name": "Date added",
+      "path": "3-0-1-wardrobe-filter.frame-28.date.group-44-3.group-36-6.group-35-6.date-added",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "Date added",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-35-6": {
+      "id": "102:147",
+      "el": "group-35-6",
+      "type": "group",
+      "box": {
+        "w": 81,
+        "h": 22
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.date.group-44-3.group-36-6.group-35-6",
+      "pos": {
+        "x": 3,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "date-added"
+      ]
+    },
+    "this-week": {
+      "id": "102:151",
+      "el": "this-week",
+      "type": "text",
+      "box": {
+        "w": 69,
+        "h": 22
+      },
+      "name": "This week",
+      "path": "3-0-1-wardrobe-filter.frame-28.date.group-44-3.group-36-6.frame-26-3.frame-8-7.this-week",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "This week",
+      "textGrow": "wh"
+    },
+    "frame-8-7": {
+      "id": "102:150",
+      "el": "frame-8-7",
+      "type": "frame",
+      "box": {
+        "w": 101,
+        "h": 40
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.date.group-44-3.group-36-6.frame-26-3.frame-8-7",
+      "sizing": {
+        "w": "hug"
+      },
+      "layout": "$l3",
+      "inheritedFill": "$c1",
+      "stroke": "$c4",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "children": [
+        "this-week"
+      ]
+    },
+    "this-month": {
+      "id": "102:153",
+      "el": "this-month",
+      "type": "text",
+      "box": {
+        "w": 82,
+        "h": 22
+      },
+      "name": "This month",
+      "path": "3-0-1-wardrobe-filter.frame-28.date.group-44-3.group-36-6.frame-26-3.frame-9-7.this-month",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "This month",
+      "textGrow": "wh"
+    },
+    "frame-9-7": {
+      "id": "102:152",
+      "el": "frame-9-7",
+      "type": "frame",
+      "box": {
+        "w": 114,
+        "h": 40
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.date.group-44-3.group-36-6.frame-26-3.frame-9-7",
+      "sizing": {
+        "w": "hug"
+      },
+      "layout": "$l3",
+      "inheritedFill": "$c1",
+      "stroke": "$c4",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "children": [
+        "this-month"
+      ]
+    },
+    "this-year": {
+      "id": "102:161",
+      "el": "this-year",
+      "type": "text",
+      "box": {
+        "w": 64,
+        "h": 22
+      },
+      "name": "This year",
+      "path": "3-0-1-wardrobe-filter.frame-28.date.group-44-3.group-36-6.frame-26-3.frame-10.this-year",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "This year",
+      "textGrow": "wh"
+    },
+    "frame-10": {
+      "id": "102:160",
+      "el": "frame-10",
+      "type": "frame",
+      "box": {
+        "w": 96,
+        "h": 40
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.date.group-44-3.group-36-6.frame-26-3.frame-10",
+      "sizing": {
+        "w": "hug"
+      },
+      "layout": "$l3",
+      "inheritedFill": "$c1",
+      "stroke": "$c4",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "children": [
+        "this-year"
+      ]
+    },
+    "frame-26-3": {
+      "id": "102:149",
+      "el": "frame-26-3",
+      "type": "frame",
+      "box": {
+        "w": 343,
+        "h": 40
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.date.group-44-3.group-36-6.frame-26-3",
+      "pos": {
+        "x": 0,
+        "y": 34
+      },
+      "layout": "$l4",
+      "inheritedFill": "$c1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "frame-8-7",
+        "frame-9-7",
+        "frame-10"
+      ]
+    },
+    "group-36-6": {
+      "id": "102:146",
+      "el": "group-36-6",
+      "type": "group",
+      "box": {
+        "w": 343,
+        "h": 74
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.date.group-44-3.group-36-6",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-35-6",
+        "frame-26-3"
+      ]
+    },
+    "group-44-3": {
+      "id": "102:145",
+      "el": "group-44-3",
+      "type": "group",
+      "box": {
+        "w": 343,
+        "h": 74
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.date.group-44-3",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-36-6"
+      ]
+    },
+    "older": {
+      "id": "102:156",
+      "el": "older",
+      "type": "text",
+      "box": {
+        "w": 44,
+        "h": 22
+      },
+      "name": "older",
+      "path": "3-0-1-wardrobe-filter.frame-28.date.frame-27-3.frame-8-8.older",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "older",
+      "textGrow": "wh"
+    },
+    "frame-8-8": {
+      "id": "102:155",
+      "el": "frame-8-8",
+      "type": "frame",
+      "box": {
+        "w": 76,
+        "h": 40
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.date.frame-27-3.frame-8-8",
+      "sizing": {
+        "w": "hug"
+      },
+      "layout": "$l3",
+      "inheritedFill": "$c1",
+      "stroke": "$c4",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "children": [
+        "older"
+      ]
+    },
+    "frame-27-3": {
+      "id": "102:154",
+      "el": "frame-27-3",
+      "type": "frame",
+      "box": {
+        "w": 76,
+        "h": 40
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28.date.frame-27-3",
+      "pos": {
+        "x": 0,
+        "y": 86
+      },
+      "layout": "$l4",
+      "inheritedFill": "$c1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "frame-8-8"
+      ]
+    },
+    "date": {
+      "id": "102:144",
+      "el": "date",
+      "type": "group",
+      "box": {
+        "w": 343,
+        "h": 126
+      },
+      "name": "date",
+      "path": "3-0-1-wardrobe-filter.frame-28.date",
+      "inheritedFill": "$c1",
+      "children": [
+        "group-44-3",
+        "frame-27-3"
+      ]
+    },
+    "frame-28": {
+      "id": "102:302",
+      "el": "frame-28",
+      "type": "frame",
+      "box": {
+        "w": 343,
+        "h": 772
+      },
+      "path": "3-0-1-wardrobe-filter.frame-28",
+      "pos": {
+        "x": 35,
+        "y": 118
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "category",
+        "sub-category",
+        "colors",
+        "occasion",
+        "times-worn",
+        "date"
+      ]
+    },
+    "filter": {
+      "id": "102:58",
+      "el": "filter",
+      "type": "text",
+      "box": {
+        "w": 66,
+        "h": 35
+      },
+      "name": "Filter",
+      "path": "3-0-1-wardrobe-filter.title.group-11.filter",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "Filter",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-11": {
+      "id": "102:57",
+      "el": "group-11",
+      "type": "group",
+      "box": {
+        "w": 66,
+        "h": 35
+      },
+      "path": "3-0-1-wardrobe-filter.title.group-11",
+      "pos": {
+        "x": 35,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "filter"
+      ]
+    },
+    "rectangle-16": {
+      "id": "102:192",
+      "el": "rectangle-16",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 27
+      },
+      "path": "3-0-1-wardrobe-filter.title.union.rectangle-16",
+      "pos": {
+        "x": 13,
+        "y": 0
+      },
+      "fill": "$c9",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17": {
+      "id": "102:193",
+      "el": "rectangle-17",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "3-0-1-wardrobe-filter.title.union.rectangle-17",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c9",
+      "rotation": 2578,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19": {
+      "id": "102:194",
+      "el": "rectangle-19",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "3-0-1-wardrobe-filter.title.union.rectangle-19",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c9",
+      "rotation": 7735,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18": {
+      "id": "102:195",
+      "el": "rectangle-18",
+      "type": "rect",
+      "box": {
+        "w": 27,
+        "h": 2
+      },
+      "path": "3-0-1-wardrobe-filter.title.union.rectangle-18",
+      "pos": {
+        "x": 0,
+        "y": 13
+      },
+      "fill": "$c9",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union": {
+      "id": "102:191",
+      "el": "union",
+      "type": "bool",
+      "box": {
+        "w": 27,
+        "h": 27
+      },
+      "path": "3-0-1-wardrobe-filter.title.union",
+      "pos": {
+        "x": 0,
+        "y": 4
+      },
+      "fill": "$c3",
+      "iconHint": "title",
+      "vectorPath": "$v4",
+      "children": [
+        "rectangle-16",
+        "rectangle-17",
+        "rectangle-19",
+        "rectangle-18"
+      ]
+    },
+    "title": {
+      "id": "102:197",
+      "el": "title",
+      "type": "group",
+      "box": {
+        "w": 101,
+        "h": 35
+      },
+      "name": "title",
+      "path": "3-0-1-wardrobe-filter.title",
+      "pos": {
+        "x": 151,
+        "y": 42
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-11",
+        "union"
+      ]
+    },
+    "3-0-1-wardrobe-filter": {
+      "id": "102:40",
+      "el": "3-0-1-wardrobe-filter",
+      "type": "frame",
+      "box": {
+        "w": 402,
+        "h": 1030
+      },
+      "name": "3.0.1 Wardrobe Filter",
+      "fill": "$c1",
+      "clip": true,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "x-button",
+        "save-button",
+        "frame-28",
+        "title"
+      ]
+    }
+  },
+  "meta": {
+    "nodeCount": 109,
+    "estTokens": 7769,
+    "depthUsed": 12
+  },
+  "next": "Read `tokens` for the design system, then build the UI from `nodes`. Tag each rendered element data-plumb-id=\"<el>\". A node with a `more` count has that many children not yet included — call plumb_node again on that node's `id` to expand them.",
+  "source": "plugin",
+  "node": "3.0.1 Wardrobe Filter"
+}

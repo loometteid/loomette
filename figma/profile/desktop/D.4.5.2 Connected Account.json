@@ -1,0 +1,1131 @@
+{
+  "file": {
+    "name": "Loomette.id",
+    "version": "plugin-1792667151530"
+  },
+  "root": "d-4-5-2-connected-account",
+  "tokens": {
+    "color": {
+      "$c1": "#fafaf7",
+      "$c2": "#ffffff1a",
+      "$c3": "#444440",
+      "$c4": "#d9d9d9",
+      "$c5": "#000000",
+      "$c6": "#c9c3b7",
+      "$c7": "image"
+    },
+    "text": {
+      "$t1": "400 24px Avenir Next",
+      "$t2": "400 48px Source Serif Pro",
+      "$t3": "400 20px Figtree",
+      "$t4": "400 32px Figtree",
+      "$t5": "400 16px Figtree"
+    },
+    "radius": {
+      "$r1": 16
+    },
+    "shadow": {},
+    "layout": {
+      "$l1": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          20,
+          108,
+          20,
+          107
+        ]
+      },
+      "$l2": {
+        "align": "center",
+        "flow": "row",
+        "gap": 4,
+        "justify": "center",
+        "pad": [
+          16,
+          32,
+          16,
+          32
+        ]
+      }
+    },
+    "vector": {
+      "$v1": "M12.7988 11.4121 L19.9199 3.3418 L21.0518 4.62402 L13.9307 12.6934 L24 12.6934 L24 14.5068 L13.9316 14.5068 L21.0508 22.5752 L19.9189 23.8574 L12.7988 15.7871 L12.7988 27.2002 L11.1992 27.2002 L11.1992 15.79 L4.08105 23.8574 L2.94922 22.5752 L10.0674 14.5068 L0 14.5068 L0 12.6934 L10.0693 12.6934 L2.94922 4.62402 L4.08008 3.3418 L11.1992 11.4092 L11.1992 0 L12.7988 0 L12.7988 11.4121 Z",
+      "$v2": "M21.333 16.7812 L33.1992 4.91504 L35.085 6.80078 L23.2197 18.666 L40 18.666 L40 21.333 L23.2188 21.333 L35.084 33.1982 L33.1982 35.084 L21.333 23.2188 L21.333 40 L18.666 40 L18.666 23.2197 L6.80078 35.085 L4.91504 33.1992 L16.7812 21.333 L0 21.333 L0 18.666 L16.7803 18.666 L4.91406 6.7998 L6.7998 4.91406 L18.666 16.7803 L18.666 0 L21.333 0 L21.333 16.7812 Z",
+      "$v3": "M8 4 C8 6.20914 6.20914 8 4 8 C1.79086 8 0 6.20914 0 4 C0 1.79086 1.79086 0 4 0 C6.20914 0 8 1.79086 8 4 Z"
+    },
+    "props": {
+      "$p1": {
+        "size": "24"
+      }
+    },
+    "meta": {
+      "counts": {
+        "$c3": 23,
+        "$c4": 8,
+        "$t1": 5,
+        "$t3": 9,
+        "$l1": 3,
+        "$c6": 6,
+        "$r1": 6,
+        "$c7": 3,
+        "$t4": 3,
+        "$t5": 2,
+        "$l2": 3
+      }
+    }
+  },
+  "nodes": {
+    "rectangle-15": {
+      "id": "1235:1323",
+      "el": "rectangle-15",
+      "type": "rect",
+      "box": {
+        "w": 1465,
+        "h": 136
+      },
+      "path": "d-4-5-2-connected-account.group-96.rectangle-15",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16": {
+      "id": "1235:1325",
+      "el": "rectangle-16",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 27
+      },
+      "path": "d-4-5-2-connected-account.group-96.union.rectangle-16",
+      "pos": {
+        "x": 11,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17": {
+      "id": "1235:1326",
+      "el": "rectangle-17",
+      "type": "rect",
+      "box": {
+        "w": 18,
+        "h": 21
+      },
+      "path": "d-4-5-2-connected-account.group-96.union.rectangle-17",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 2783,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19": {
+      "id": "1235:1327",
+      "el": "rectangle-19",
+      "type": "rect",
+      "box": {
+        "w": 18,
+        "h": 21
+      },
+      "path": "d-4-5-2-connected-account.group-96.union.rectangle-19",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 7530,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18": {
+      "id": "1235:1328",
+      "el": "rectangle-18",
+      "type": "rect",
+      "box": {
+        "w": 24,
+        "h": 2
+      },
+      "path": "d-4-5-2-connected-account.group-96.union.rectangle-18",
+      "pos": {
+        "x": 0,
+        "y": 13
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union": {
+      "id": "1235:1324",
+      "el": "union",
+      "type": "bool",
+      "box": {
+        "w": 24,
+        "h": 27
+      },
+      "path": "d-4-5-2-connected-account.group-96.union",
+      "pos": {
+        "x": 75,
+        "y": 54
+      },
+      "fill": "$c3",
+      "iconHint": "loomette",
+      "vectorPath": "$v1",
+      "children": [
+        "rectangle-16",
+        "rectangle-17",
+        "rectangle-19",
+        "rectangle-18"
+      ]
+    },
+    "loomette": {
+      "id": "1235:1329",
+      "el": "loomette",
+      "type": "text",
+      "box": {
+        "w": 99,
+        "h": 37
+      },
+      "name": "loomette",
+      "path": "d-4-5-2-connected-account.group-96.loomette",
+      "pos": {
+        "x": 115,
+        "y": 50
+      },
+      "fill": "$c5",
+      "text": "$t1",
+      "chars": "loomette",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "home": {
+      "id": "1235:1330",
+      "el": "home",
+      "type": "text",
+      "box": {
+        "w": 61,
+        "h": 37
+      },
+      "name": "Home",
+      "path": "d-4-5-2-connected-account.group-96.home",
+      "pos": {
+        "x": 583,
+        "y": 50
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "Home",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "calendar": {
+      "id": "1235:1331",
+      "el": "calendar",
+      "type": "text",
+      "box": {
+        "w": 103,
+        "h": 37
+      },
+      "name": "calendar",
+      "path": "d-4-5-2-connected-account.group-96.calendar",
+      "pos": {
+        "x": 680,
+        "y": 50
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "calendar",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "wardrobe": {
+      "id": "1235:1332",
+      "el": "wardrobe",
+      "type": "text",
+      "box": {
+        "w": 110,
+        "h": 37
+      },
+      "name": "wardrobe",
+      "path": "d-4-5-2-connected-account.group-96.wardrobe",
+      "pos": {
+        "x": 819,
+        "y": 50
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "wardrobe",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "gevyndo": {
+      "id": "1235:1334",
+      "el": "gevyndo",
+      "type": "text",
+      "box": {
+        "w": 96,
+        "h": 37
+      },
+      "name": "gevyndo",
+      "path": "d-4-5-2-connected-account.group-96.group-254.gevyndo",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "gevyndo",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector": {
+      "id": "I1235:1335;3:3637",
+      "el": "vector",
+      "type": "vector",
+      "box": {
+        "w": 16,
+        "h": 22
+      },
+      "path": "d-4-5-2-connected-account.group-96.group-254.user.vector",
+      "pos": {
+        "x": 4,
+        "y": 3
+      },
+      "fill": "$c3",
+      "iconHint": "gevyndo",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "user": {
+      "id": "1235:1335",
+      "el": "user",
+      "type": "instance",
+      "box": {
+        "w": 24,
+        "h": 27
+      },
+      "name": "user",
+      "path": "d-4-5-2-connected-account.group-96.group-254.user",
+      "pos": {
+        "x": 112,
+        "y": 5
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector"
+      ]
+    },
+    "group-254": {
+      "id": "1235:1333",
+      "el": "group-254",
+      "type": "group",
+      "box": {
+        "w": 136,
+        "h": 37
+      },
+      "path": "d-4-5-2-connected-account.group-96.group-254",
+      "pos": {
+        "x": 1251,
+        "y": 50
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "gevyndo",
+        "user"
+      ]
+    },
+    "group-96": {
+      "id": "1235:1322",
+      "el": "group-96",
+      "type": "group",
+      "box": {
+        "w": 1465,
+        "h": 136
+      },
+      "path": "d-4-5-2-connected-account.group-96",
+      "pos": {
+        "x": -11,
+        "y": -16
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-15",
+        "union",
+        "loomette",
+        "home",
+        "calendar",
+        "wardrobe",
+        "group-254"
+      ]
+    },
+    "connected-account": {
+      "id": "1235:1336",
+      "el": "connected-account",
+      "type": "text",
+      "box": {
+        "w": 403,
+        "h": 60
+      },
+      "name": "Connected Account",
+      "path": "d-4-5-2-connected-account.connected-account",
+      "pos": {
+        "x": 177,
+        "y": 234
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "Connected Account",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16-2": {
+      "id": "1235:1344",
+      "el": "rectangle-16-2",
+      "type": "rect",
+      "box": {
+        "w": 3,
+        "h": 40
+      },
+      "path": "d-4-5-2-connected-account.union-2.rectangle-16-2",
+      "pos": {
+        "x": 19,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17-2": {
+      "id": "1235:1345",
+      "el": "rectangle-17-2",
+      "type": "rect",
+      "box": {
+        "w": 30,
+        "h": 30
+      },
+      "path": "d-4-5-2-connected-account.union-2.rectangle-17-2",
+      "pos": {
+        "x": 5,
+        "y": 5
+      },
+      "fill": "$c4",
+      "rotation": 2578,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19-2": {
+      "id": "1235:1346",
+      "el": "rectangle-19-2",
+      "type": "rect",
+      "box": {
+        "w": 30,
+        "h": 30
+      },
+      "path": "d-4-5-2-connected-account.union-2.rectangle-19-2",
+      "pos": {
+        "x": 5,
+        "y": 5
+      },
+      "fill": "$c4",
+      "rotation": 7735,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18-2": {
+      "id": "1235:1347",
+      "el": "rectangle-18-2",
+      "type": "rect",
+      "box": {
+        "w": 40,
+        "h": 3
+      },
+      "path": "d-4-5-2-connected-account.union-2.rectangle-18-2",
+      "pos": {
+        "x": 0,
+        "y": 19
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union-2": {
+      "id": "1235:1343",
+      "el": "union-2",
+      "type": "bool",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "d-4-5-2-connected-account.union-2",
+      "pos": {
+        "x": 111,
+        "y": 244
+      },
+      "fill": "$c3",
+      "iconHint": "Connected Account",
+      "vectorPath": "$v2",
+      "children": [
+        "rectangle-16-2",
+        "rectangle-17-2",
+        "rectangle-19-2",
+        "rectangle-18-2"
+      ]
+    },
+    "link-your-accounts-to-log-in-faster-we-o": {
+      "id": "1235:1348",
+      "el": "link-your-accounts-to-log-in-faster-we-o",
+      "type": "text",
+      "box": {
+        "w": 975,
+        "h": 24
+      },
+      "name": "Link your accounts to log in faster. We only use these to verify it's you — nothing else.",
+      "path": "d-4-5-2-connected-account.link-your-accounts-to-log-in-faster-we-o",
+      "pos": {
+        "x": 177,
+        "y": 302
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "Link your accounts to log in faster. We only use these to verify it's you — nothing else.",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "profile-settings-connected-account": {
+      "id": "1235:1349",
+      "el": "profile-settings-connected-account",
+      "type": "text",
+      "box": {
+        "w": 445,
+        "h": 24
+      },
+      "name": "profile > settings > connected account",
+      "path": "d-4-5-2-connected-account.profile-settings-connected-account",
+      "pos": {
+        "x": 104,
+        "y": 170
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": [
+        {
+          "t": "profile",
+          "d": "underline"
+        },
+        {
+          "t": " > "
+        },
+        {
+          "t": "settings",
+          "d": "underline"
+        },
+        {
+          "t": " > connected account"
+        }
+      ],
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "facebook-logo-primary-1": {
+      "id": "1235:1430",
+      "el": "facebook-logo-primary-1",
+      "type": "rect",
+      "box": {
+        "w": 48,
+        "h": 48
+      },
+      "name": "Facebook_Logo_Primary 1",
+      "path": "d-4-5-2-connected-account.group-335.frame-12.facebook-logo-primary-1",
+      "assetId": "af6f06778b34a6b7844168f257fff50611bc7dd9",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "af6f06778b34a6b7844168f257fff50611bc7dd9",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "iconHint": "Facebook Logo Primary 1"
+    },
+    "frame-12": {
+      "id": "1235:1429",
+      "el": "frame-12",
+      "type": "frame",
+      "box": {
+        "w": 80,
+        "h": 80
+      },
+      "path": "d-4-5-2-connected-account.group-335.frame-12",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "stroke": "$c6",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "facebook-logo-primary-1"
+      ]
+    },
+    "facebook": {
+      "id": "1235:1435",
+      "el": "facebook",
+      "type": "text",
+      "box": {
+        "w": 136,
+        "h": 38
+      },
+      "name": "Facebook",
+      "path": "d-4-5-2-connected-account.group-335.facebook",
+      "pos": {
+        "x": 131,
+        "y": 7
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "Facebook",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "not-connected": {
+      "id": "1235:1436",
+      "el": "not-connected",
+      "type": "text",
+      "box": {
+        "w": 106,
+        "h": 19
+      },
+      "name": "Not connected",
+      "path": "d-4-5-2-connected-account.group-335.not-connected",
+      "pos": {
+        "x": 131,
+        "y": 53
+      },
+      "fill": "$c3",
+      "text": "$t5",
+      "chars": "Not connected",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "connect": {
+      "id": "1235:1447",
+      "el": "connect",
+      "type": "text",
+      "box": {
+        "w": 99,
+        "h": 24
+      },
+      "name": "CONNECT",
+      "path": "d-4-5-2-connected-account.group-335.frame-17.connect",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "CONNECT",
+      "textGrow": "wh"
+    },
+    "frame-17": {
+      "id": "1235:1446",
+      "el": "frame-17",
+      "type": "frame",
+      "box": {
+        "w": 163,
+        "h": 56
+      },
+      "path": "d-4-5-2-connected-account.group-335.frame-17",
+      "pos": {
+        "x": 529,
+        "y": 12
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "stroke": "$c6",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "center"
+      },
+      "children": [
+        "connect"
+      ]
+    },
+    "group-335": {
+      "id": "1235:1453",
+      "el": "group-335",
+      "type": "group",
+      "box": {
+        "w": 692,
+        "h": 80
+      },
+      "path": "d-4-5-2-connected-account.group-335",
+      "pos": {
+        "x": 177,
+        "y": 510
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "frame-12",
+        "facebook",
+        "not-connected",
+        "frame-17"
+      ]
+    },
+    "image-14": {
+      "id": "1235:1432",
+      "el": "image-14",
+      "type": "rect",
+      "box": {
+        "w": 48,
+        "h": 48
+      },
+      "path": "d-4-5-2-connected-account.group-334.frame-13.image-14",
+      "assetId": "e41481a40c87915036866e41b4eb971939abc042",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "e41481a40c87915036866e41b4eb971939abc042",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              0.6928572058677673,
+              0,
+              0.15732143819332123
+            ],
+            [
+              0,
+              0.6896551847457886,
+              0.13793103396892548
+            ]
+          ]
+        }
+      ],
+      "iconHint": "X"
+    },
+    "frame-13": {
+      "id": "1235:1431",
+      "el": "frame-13",
+      "type": "frame",
+      "box": {
+        "w": 80,
+        "h": 80
+      },
+      "path": "d-4-5-2-connected-account.group-334.frame-13",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "stroke": "$c6",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "image-14"
+      ]
+    },
+    "x": {
+      "id": "1235:1437",
+      "el": "x",
+      "type": "text",
+      "box": {
+        "w": 20,
+        "h": 38
+      },
+      "path": "d-4-5-2-connected-account.group-334.x",
+      "pos": {
+        "x": 131,
+        "y": 21
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "X",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "connect-2": {
+      "id": "1235:1450",
+      "el": "connect-2",
+      "type": "text",
+      "box": {
+        "w": 99,
+        "h": 24
+      },
+      "name": "CONNECT",
+      "path": "d-4-5-2-connected-account.group-334.frame-18.connect-2",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "CONNECT",
+      "textGrow": "wh"
+    },
+    "frame-18": {
+      "id": "1235:1449",
+      "el": "frame-18",
+      "type": "frame",
+      "box": {
+        "w": 163,
+        "h": 56
+      },
+      "path": "d-4-5-2-connected-account.group-334.frame-18",
+      "pos": {
+        "x": 529,
+        "y": 12
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "stroke": "$c6",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "center"
+      },
+      "children": [
+        "connect-2"
+      ]
+    },
+    "group-334": {
+      "id": "1235:1452",
+      "el": "group-334",
+      "type": "group",
+      "box": {
+        "w": 692,
+        "h": 80
+      },
+      "path": "d-4-5-2-connected-account.group-334",
+      "pos": {
+        "x": 177,
+        "y": 630
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "frame-13",
+        "x",
+        "frame-18"
+      ]
+    },
+    "image-13": {
+      "id": "1235:1428",
+      "el": "image-13",
+      "type": "rect",
+      "box": {
+        "w": 48,
+        "h": 49
+      },
+      "path": "d-4-5-2-connected-account.group-336.frame-11.image-13",
+      "assetId": "5c1893a80c50d8db19636c221e0367e2399a79df",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "5c1893a80c50d8db19636c221e0367e2399a79df",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              0.4885416626930237,
+              0,
+              0.2526041567325592
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "iconHint": "Google"
+    },
+    "frame-11": {
+      "id": "1235:1427",
+      "el": "frame-11",
+      "type": "frame",
+      "box": {
+        "w": 80,
+        "h": 80
+      },
+      "path": "d-4-5-2-connected-account.group-336.frame-11",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "stroke": "$c6",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "image-13"
+      ]
+    },
+    "google": {
+      "id": "1235:1433",
+      "el": "google",
+      "type": "text",
+      "box": {
+        "w": 102,
+        "h": 38
+      },
+      "name": "Google",
+      "path": "d-4-5-2-connected-account.group-336.google",
+      "pos": {
+        "x": 131,
+        "y": 8
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "Google",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "hello-gmail-com": {
+      "id": "1235:1434",
+      "el": "hello-gmail-com",
+      "type": "text",
+      "box": {
+        "w": 119,
+        "h": 19
+      },
+      "name": "hello@gmail.com",
+      "path": "d-4-5-2-connected-account.group-336.hello-gmail-com",
+      "pos": {
+        "x": 151,
+        "y": 50
+      },
+      "fill": "$c3",
+      "text": "$t5",
+      "chars": "hello@gmail.com",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "disconnect": {
+      "id": "1235:1439",
+      "el": "disconnect",
+      "type": "text",
+      "box": {
+        "w": 130,
+        "h": 24
+      },
+      "name": "DISCONNECT",
+      "path": "d-4-5-2-connected-account.group-336.frame-14.disconnect",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "DISCONNECT",
+      "textGrow": "wh"
+    },
+    "frame-14": {
+      "id": "1235:1438",
+      "el": "frame-14",
+      "type": "frame",
+      "box": {
+        "w": 194,
+        "h": 56
+      },
+      "path": "d-4-5-2-connected-account.group-336.frame-14",
+      "pos": {
+        "x": 498,
+        "y": 12
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "stroke": "$c6",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "center"
+      },
+      "children": [
+        "disconnect"
+      ]
+    },
+    "ellipse-6": {
+      "id": "1235:1444",
+      "el": "ellipse-6",
+      "type": "ellipse",
+      "box": {
+        "w": 8,
+        "h": 8
+      },
+      "path": "d-4-5-2-connected-account.group-336.ellipse-6",
+      "pos": {
+        "x": 131,
+        "y": 57
+      },
+      "fill": "$c3",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-336": {
+      "id": "1235:1454",
+      "el": "group-336",
+      "type": "group",
+      "box": {
+        "w": 692,
+        "h": 80
+      },
+      "path": "d-4-5-2-connected-account.group-336",
+      "pos": {
+        "x": 177,
+        "y": 390
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "frame-11",
+        "google",
+        "hello-gmail-com",
+        "frame-14",
+        "ellipse-6"
+      ]
+    },
+    "d-4-5-2-connected-account": {
+      "id": "1235:1321",
+      "el": "d-4-5-2-connected-account",
+      "type": "frame",
+      "box": {
+        "w": 1440,
+        "h": 1024
+      },
+      "name": "D.4.5.2 Connected Account",
+      "fill": "$c1",
+      "clip": true,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "group-96",
+        "connected-account",
+        "union-2",
+        "link-your-accounts-to-log-in-faster-we-o",
+        "profile-settings-connected-account",
+        "group-335",
+        "group-334",
+        "group-336"
+      ]
+    }
+  },
+  "meta": {
+    "nodeCount": 45,
+    "estTokens": 3613,
+    "depthUsed": 12
+  },
+  "next": "Read `tokens` for the design system, then build the UI from `nodes`. Tag each rendered element data-plumb-id=\"<el>\". A node with a `more` count has that many children not yet included — call plumb_node again on that node's `id` to expand them. This screen has 3 image asset(s) (nodes with `assetId`). Call plumb_assets with this screen's id to download them to disk BEFORE generating HTML — without the real files any <img> will be a placeholder and plumb_verify will flag every image node as asset.missing.",
+  "source": "plugin",
+  "node": "D.4.5.2 Connected Account"
+}

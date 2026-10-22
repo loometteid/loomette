@@ -1,0 +1,3564 @@
+{
+  "file": {
+    "name": "Loomette.id",
+    "version": "plugin-1792666967415"
+  },
+  "root": "d-1-2-notifications",
+  "tokens": {
+    "color": {
+      "$c1": "#fafaf7",
+      "$c2": "#ffffff1a",
+      "$c3": "#444440",
+      "$c4": "#d9d9d9",
+      "$c5": "#000000",
+      "$c6": "image",
+      "$c7": "#c9c3b7",
+      "$c8": "#f2ede5",
+      "$c9": "#f598b0",
+      "$c10": "#ffffff",
+      "$c11": "#e5487e",
+      "$c12": "#c9c3b733"
+    },
+    "text": {
+      "$t1": "400 24px Avenir Next",
+      "$t2": "400 48px",
+      "$t3": "400 48px Source Serif Pro",
+      "$t4": "400 20px Avenir Next",
+      "$t5": "400 32px",
+      "$t6": "400 32px Source Serif Pro",
+      "$t7": "400 14px Avenir",
+      "$t8": "400 16px Avenir Next",
+      "$t9": "400 20px Source Serif Pro",
+      "$t10": "400 8px Avenir Next",
+      "$t11": "400 24px Source Serif Pro",
+      "$t12": "400 12px Avenir Next",
+      "$t13": "400 16px Figtree",
+      "$t14": "400 12px Figtree",
+      "$t15": "400 20px Source Sans Pro",
+      "$t16": "400 8px Figtree"
+    },
+    "radius": {
+      "$r1": 16,
+      "$r2": 8,
+      "$r3": 20,
+      "$r4": "full"
+    },
+    "shadow": {},
+    "layout": {
+      "$l1": {
+        "align": "center",
+        "flow": "row",
+        "gap": 8,
+        "justify": "center",
+        "pad": [
+          10,
+          16,
+          10,
+          16
+        ]
+      },
+      "$l2": {
+        "align": "center",
+        "flow": "row",
+        "gap": 9,
+        "justify": "space-between",
+        "pad": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l3": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          1,
+          16,
+          2,
+          16
+        ]
+      }
+    },
+    "vector": {
+      "$v1": "M12.7998 10.0693 L19.9199 2.94922 L21.0518 4.08008 L13.9307 11.2002 L24 11.2002 L24 12.7998 L13.9307 12.7998 L21.0508 19.9199 L19.9189 21.0508 L12.7998 13.9307 L12.7998 24 L11.2002 24 L11.2002 13.9316 L4.08105 21.0508 L2.94922 19.9199 L10.0684 12.7998 L0 12.7998 L0 11.2002 L10.0684 11.2002 L2.94922 4.08008 L4.08008 2.94922 L11.2002 10.0693 L11.2002 0 L12.7998 0 L12.7998 10.0693 Z",
+      "$v2": "M25.0664 20.1367 L39.0088 5.89844 L41.2246 8.16113 L27.2803 22.4004 L47 22.4004 L47 25.6006 L27.2832 25.6006 L41.2256 39.8389 L39.0098 42.1016 L25.0664 27.8613 L25.0664 48 L21.9326 48 L21.9326 27.8623 L7.99023 42.1016 L5.77441 39.8389 L19.7148 25.6006 L0 25.6006 L0 22.4004 L19.7178 22.4004 L5.77539 8.16113 L7.99121 5.89844 L21.9326 20.1357 L21.9326 0 L25.0664 0 L25.0664 20.1367 Z",
+      "$v3": "M0.390524 0.390524 C0.911223 -0.130175 1.75544 -0.130175 2.27614 0.390524 L10.0404 8.15482 C10.6913 8.80569 10.6913 9.86097 10.0404 10.5118 L2.27614 18.2761 C1.75544 18.7968 0.911223 18.7968 0.390524 18.2761 C-0.130175 17.7554 -0.130175 16.9112 0.390524 16.3905 L7.44772 9.33333 L0.390524 2.27614 C-0.130175 1.75544 -0.130175 0.911223 0.390524 0.390524 Z",
+      "$v4": "M64 47.1045 L99.5977 13.7969 L105.255 19.0898 L69.6562 52.3975 L120 52.3975 L120 59.8828 L69.6562 59.8828 L105.255 93.1914 L99.5977 98.4844 L64 65.1758 L64 112.28 L56 112.28 L56 65.1758 L20.4023 98.4844 L14.7451 93.1914 L50.3428 59.8828 L0 59.8828 L0 52.3975 L50.3428 52.3975 L14.7451 19.0898 L20.4023 13.7969 L56 47.1045 L56 0 L64 0 L64 47.1045 Z",
+      "$v5": "M15.0508 11.0752 L23.4209 3.24414 L24.751 4.48926 L16.3779 12.3213 L28.2178 12.3213 L28.2178 14.0811 L16.3799 14.0811 L24.751 21.9131 L23.4209 23.1582 L15.0508 15.3262 L15.0508 26.4023 L13.1699 26.4023 L13.1699 15.3242 L4.79785 23.1582 L3.46777 21.9141 L11.8369 14.0811 L0 14.0811 L0 12.3213 L11.8389 12.3213 L3.46777 4.48926 L4.79785 3.24414 L13.1699 11.0771 L13.1699 0 L15.0508 0 L15.0508 11.0752 Z",
+      "$v6": "M15.0508 11.0762 L23.4209 3.24512 L24.751 4.48926 L16.3779 12.3213 L28.2178 12.3213 L28.2178 14.082 L16.3809 14.082 L24.751 21.9141 L23.4209 23.1582 L15.0508 15.3262 L15.0508 26.4023 L13.1699 26.4023 L13.1699 15.3242 L4.79785 23.1582 L3.46777 21.9141 L11.8369 14.082 L0 14.082 L0 12.3213 L11.8379 12.3213 L3.46777 4.48926 L4.79785 3.24414 L13.1699 11.0771 L13.1699 0 L15.0508 0 L15.0508 11.0762 Z",
+      "$v7": "M15.0508 11.0742 L23.4199 3.24414 L24.75 4.48828 L16.3779 12.3213 L28.2178 12.3213 L28.2178 14.0811 L16.3799 14.0811 L24.75 21.9131 L23.4199 23.1582 L15.0508 15.3262 L15.0508 26.4023 L13.1689 26.4023 L13.1689 15.3242 L4.79785 23.1582 L3.46777 21.9131 L11.8369 14.0811 L0 14.0811 L0 12.3213 L11.8389 12.3213 L3.46777 4.48828 L4.79785 3.24414 L13.1689 11.0762 L13.1689 0 L15.0508 0 L15.0508 11.0742 Z",
+      "$v8": "M4 2 C4 3.10457 3.10457 4 2 4 C0.895431 4 0 3.10457 0 2 C0 0.895431 0.895431 0 2 0 C3.10457 0 4 0.895431 4 2 Z",
+      "$v9": "M388 19 C399.046 19 408 27.9543 408 39 L408 435 C408 446.046 399.046 455 388 455 L20 455 C8.95431 455 0 446.046 0 435 L0 39 C0 27.9543 8.95431 19 20 19 L388 19 Z M387.325 18.75 L365.675 18.75 L376.5 0 L387.325 18.75 Z",
+      "$v10": "M12.5 0 L23.3253 18.75 L1.67468 18.75 L12.5 0 Z",
+      "$v11": "M8 4 C8 6.20914 6.20914 8 4 8 C1.79086 8 0 6.20914 0 4 C0 1.79086 1.79086 0 4 0 C6.20914 0 8 1.79086 8 4 Z"
+    },
+    "props": {
+      "$p1": {
+        "size": "24"
+      }
+    },
+    "meta": {
+      "counts": {
+        "$c1": 12,
+        "$c3": 52,
+        "$c4": 28,
+        "$t1": 5,
+        "$p1": 4,
+        "$c6": 9,
+        "$t3": 4,
+        "$c7": 7,
+        "$r1": 3,
+        "$t5": 2,
+        "$t6": 7,
+        "$r2": 13,
+        "$c8": 7,
+        "$l1": 2,
+        "$t8": 2,
+        "$v3": 2,
+        "$c9": 5,
+        "$c10": 4,
+        "$v4": 2,
+        "$t9": 3,
+        "$t10": 3,
+        "$t13": 2,
+        "$t14": 4,
+        "$t15": 4,
+        "$l3": 4,
+        "$r4": 4,
+        "$t16": 4,
+        "$v11": 2
+      }
+    }
+  },
+  "nodes": {
+    "123": {
+      "id": "983:921",
+      "el": "123",
+      "type": "text",
+      "box": {
+        "w": 30,
+        "h": 25
+      },
+      "name": "123",
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.group-11.group-10-5.123",
+      "pos": {
+        "x": 0,
+        "y": 9
+      },
+      "fill": "$c1",
+      "text": "$t9",
+      "chars": "123",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-15": {
+      "id": "983:820",
+      "el": "rectangle-15",
+      "type": "rect",
+      "box": {
+        "w": 1440,
+        "h": 120
+      },
+      "path": "d-1-2-notifications.group-262.group-96.rectangle-15",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16": {
+      "id": "983:822",
+      "el": "rectangle-16",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 24
+      },
+      "path": "d-1-2-notifications.group-262.group-96.union.rectangle-16",
+      "pos": {
+        "x": 11,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17": {
+      "id": "983:823",
+      "el": "rectangle-17",
+      "type": "rect",
+      "box": {
+        "w": 18,
+        "h": 18
+      },
+      "path": "d-1-2-notifications.group-262.group-96.union.rectangle-17",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 2578,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19": {
+      "id": "983:824",
+      "el": "rectangle-19",
+      "type": "rect",
+      "box": {
+        "w": 18,
+        "h": 18
+      },
+      "path": "d-1-2-notifications.group-262.group-96.union.rectangle-19",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 7735,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18": {
+      "id": "983:825",
+      "el": "rectangle-18",
+      "type": "rect",
+      "box": {
+        "w": 24,
+        "h": 2
+      },
+      "path": "d-1-2-notifications.group-262.group-96.union.rectangle-18",
+      "pos": {
+        "x": 0,
+        "y": 11
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union": {
+      "id": "983:821",
+      "el": "union",
+      "type": "bool",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "path": "d-1-2-notifications.group-262.group-96.union",
+      "pos": {
+        "x": 64,
+        "y": 48
+      },
+      "fill": "$c3",
+      "iconHint": "loomette",
+      "vectorPath": "$v1",
+      "children": [
+        "rectangle-16",
+        "rectangle-17",
+        "rectangle-19",
+        "rectangle-18"
+      ]
+    },
+    "loomette": {
+      "id": "983:826",
+      "el": "loomette",
+      "type": "text",
+      "box": {
+        "w": 99,
+        "h": 33
+      },
+      "name": "loomette",
+      "path": "d-1-2-notifications.group-262.group-96.loomette",
+      "pos": {
+        "x": 104,
+        "y": 44
+      },
+      "fill": "$c5",
+      "text": "$t1",
+      "chars": "loomette",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "home": {
+      "id": "983:827",
+      "el": "home",
+      "type": "text",
+      "box": {
+        "w": 61,
+        "h": 33
+      },
+      "name": "Home",
+      "path": "d-1-2-notifications.group-262.group-96.home",
+      "pos": {
+        "x": 572,
+        "y": 44
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "Home",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "calendar": {
+      "id": "983:828",
+      "el": "calendar",
+      "type": "text",
+      "box": {
+        "w": 103,
+        "h": 33
+      },
+      "name": "calendar",
+      "path": "d-1-2-notifications.group-262.group-96.calendar",
+      "pos": {
+        "x": 669,
+        "y": 44
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "calendar",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "wardrobe": {
+      "id": "983:829",
+      "el": "wardrobe",
+      "type": "text",
+      "box": {
+        "w": 110,
+        "h": 33
+      },
+      "name": "wardrobe",
+      "path": "d-1-2-notifications.group-262.group-96.wardrobe",
+      "pos": {
+        "x": 808,
+        "y": 44
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "wardrobe",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "gevyndo": {
+      "id": "983:831",
+      "el": "gevyndo",
+      "type": "text",
+      "box": {
+        "w": 96,
+        "h": 33
+      },
+      "name": "gevyndo",
+      "path": "d-1-2-notifications.group-262.group-96.group-254.gevyndo",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "gevyndo",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector": {
+      "id": "I983:832;3:3637",
+      "el": "vector",
+      "type": "vector",
+      "box": {
+        "w": 16,
+        "h": 19
+      },
+      "path": "d-1-2-notifications.group-262.group-96.group-254.user.vector",
+      "pos": {
+        "x": 4,
+        "y": 3
+      },
+      "fill": "$c3",
+      "iconHint": "gevyndo",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "user": {
+      "id": "983:832",
+      "el": "user",
+      "type": "instance",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "name": "user",
+      "path": "d-1-2-notifications.group-262.group-96.group-254.user",
+      "pos": {
+        "x": 112,
+        "y": 4
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector"
+      ]
+    },
+    "group-254": {
+      "id": "983:830",
+      "el": "group-254",
+      "type": "group",
+      "box": {
+        "w": 136,
+        "h": 33
+      },
+      "path": "d-1-2-notifications.group-262.group-96.group-254",
+      "pos": {
+        "x": 1240,
+        "y": 44
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "gevyndo",
+        "user"
+      ]
+    },
+    "group-96": {
+      "id": "983:819",
+      "el": "group-96",
+      "type": "group",
+      "box": {
+        "w": 1440,
+        "h": 120
+      },
+      "path": "d-1-2-notifications.group-262.group-96",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-15",
+        "union",
+        "loomette",
+        "home",
+        "calendar",
+        "wardrobe",
+        "group-254"
+      ]
+    },
+    "image-removebg-preview-7-1": {
+      "id": "983:834",
+      "el": "image-removebg-preview-7-1",
+      "type": "rect",
+      "box": {
+        "w": 300,
+        "h": 385
+      },
+      "name": "image-removebg-preview (7) 1",
+      "path": "d-1-2-notifications.group-262.group-135.image-removebg-preview-7-1",
+      "pos": {
+        "x": 18,
+        "y": 153
+      },
+      "assetId": "e5420007b99f8c30cfc67be00af0ec3b2f376e2a",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "e5420007b99f8c30cfc67be00af0ec3b2f376e2a",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.8557214140892029,
+              0.07213930040597916
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-1": {
+      "id": "983:835",
+      "el": "image-removebg-preview-1",
+      "type": "rect",
+      "box": {
+        "w": 263,
+        "h": 249
+      },
+      "name": "image-removebg-preview 1",
+      "path": "d-1-2-notifications.group-262.group-135.image-removebg-preview-1",
+      "pos": {
+        "x": 36,
+        "y": 24
+      },
+      "assetId": "837079d7a4263daef60e6c2261fde3a6852552dd",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "837079d7a4263daef60e6c2261fde3a6852552dd",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.7313451170921326,
+              0.13030901551246643
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-10-1": {
+      "id": "983:836",
+      "el": "image-removebg-preview-10-1",
+      "type": "rect",
+      "box": {
+        "w": 116,
+        "h": 81
+      },
+      "name": "image-removebg-preview (10) 1",
+      "path": "d-1-2-notifications.group-262.group-135.image-removebg-preview-10-1",
+      "pos": {
+        "x": 168,
+        "y": 480
+      },
+      "assetId": "178406f88b315152b95287f3aeb79ee56c5d2443",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "178406f88b315152b95287f3aeb79ee56c5d2443",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.720081090927124,
+              0.12576064467430115
+            ]
+          ]
+        }
+      ],
+      "rotation": 10313,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-4-1": {
+      "id": "983:837",
+      "el": "image-removebg-preview-4-1",
+      "type": "rect",
+      "box": {
+        "w": 169,
+        "h": 169
+      },
+      "name": "image-removebg-preview (4) 1",
+      "path": "d-1-2-notifications.group-262.group-135.image-removebg-preview-4-1",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "assetId": "b5383112df490c825aacd83035b1de7245c291b4",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "b5383112df490c825aacd83035b1de7245c291b4",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-135": {
+      "id": "983:833",
+      "el": "group-135",
+      "type": "group",
+      "box": {
+        "w": 318,
+        "h": 561
+      },
+      "path": "d-1-2-notifications.group-262.group-135",
+      "pos": {
+        "x": 235,
+        "y": 308
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "image-removebg-preview-7-1",
+        "image-removebg-preview-1",
+        "image-removebg-preview-10-1",
+        "image-removebg-preview-4-1"
+      ]
+    },
+    "ready-to-style-in-gev": {
+      "id": "983:839",
+      "el": "ready-to-style-in-gev",
+      "type": "text",
+      "box": {
+        "w": 449,
+        "h": 60
+      },
+      "name": "Ready to style in, Gev?",
+      "path": "d-1-2-notifications.group-262.group-255.ready-to-style-in-gev",
+      "pos": {
+        "x": 71,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": [
+        {
+          "t": "Ready to ",
+          "s": "$t3"
+        },
+        {
+          "t": "style",
+          "s": "$t3",
+          "d": "underline"
+        },
+        {
+          "t": " in, ",
+          "s": "$t3"
+        },
+        {
+          "t": "Gev?",
+          "s": "$t3"
+        }
+      ],
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16-2": {
+      "id": "983:841",
+      "el": "rectangle-16-2",
+      "type": "rect",
+      "box": {
+        "w": 3,
+        "h": 48
+      },
+      "path": "d-1-2-notifications.group-262.group-255.union-2.rectangle-16-2",
+      "pos": {
+        "x": 22,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17-2": {
+      "id": "983:842",
+      "el": "rectangle-17-2",
+      "type": "rect",
+      "box": {
+        "w": 35,
+        "h": 36
+      },
+      "path": "d-1-2-notifications.group-262.group-255.union-2.rectangle-17-2",
+      "pos": {
+        "x": 6,
+        "y": 6
+      },
+      "fill": "$c4",
+      "rotation": 2613,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19-2": {
+      "id": "983:843",
+      "el": "rectangle-19-2",
+      "type": "rect",
+      "box": {
+        "w": 35,
+        "h": 36
+      },
+      "path": "d-1-2-notifications.group-262.group-255.union-2.rectangle-19-2",
+      "pos": {
+        "x": 6,
+        "y": 6
+      },
+      "fill": "$c4",
+      "rotation": 7700,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18-2": {
+      "id": "983:844",
+      "el": "rectangle-18-2",
+      "type": "rect",
+      "box": {
+        "w": 47,
+        "h": 3
+      },
+      "path": "d-1-2-notifications.group-262.group-255.union-2.rectangle-18-2",
+      "pos": {
+        "x": 0,
+        "y": 22
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union-2": {
+      "id": "983:840",
+      "el": "union-2",
+      "type": "bool",
+      "box": {
+        "w": 47,
+        "h": 48
+      },
+      "path": "d-1-2-notifications.group-262.group-255.union-2",
+      "pos": {
+        "x": 0,
+        "y": 3
+      },
+      "fill": "$c3",
+      "iconHint": "Ready to style in, Gev?",
+      "vectorPath": "$v2",
+      "children": [
+        "rectangle-16-2",
+        "rectangle-17-2",
+        "rectangle-19-2",
+        "rectangle-18-2"
+      ]
+    },
+    "group-255": {
+      "id": "983:838",
+      "el": "group-255",
+      "type": "group",
+      "box": {
+        "w": 520,
+        "h": 60
+      },
+      "path": "d-1-2-notifications.group-262.group-255",
+      "pos": {
+        "x": 128,
+        "y": 182
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "ready-to-style-in-gev",
+        "union-2"
+      ]
+    },
+    "spring-is-coming-wear-something-sweet": {
+      "id": "983:845",
+      "el": "spring-is-coming-wear-something-sweet",
+      "type": "text",
+      "box": {
+        "w": 373,
+        "h": 27
+      },
+      "name": "Spring is coming, wear something sweet!",
+      "path": "d-1-2-notifications.group-262.spring-is-coming-wear-something-sweet",
+      "pos": {
+        "x": 199,
+        "y": 254
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "Spring is coming, wear something sweet!",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-32": {
+      "id": "983:847",
+      "el": "rectangle-32",
+      "type": "rect",
+      "box": {
+        "w": 524,
+        "h": 217
+      },
+      "path": "d-1-2-notifications.group-262.group-256.rectangle-32",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "i-want-to-wear": {
+      "id": "983:848",
+      "el": "i-want-to-wear",
+      "type": "text",
+      "box": {
+        "w": 217,
+        "h": 40
+      },
+      "name": "I want to wear...",
+      "path": "d-1-2-notifications.group-262.group-256.i-want-to-wear",
+      "pos": {
+        "x": 36,
+        "y": 32
+      },
+      "fill": "$c3",
+      "text": "$t5",
+      "chars": [
+        {
+          "t": "I want to ",
+          "s": "$t6"
+        },
+        {
+          "t": "wear",
+          "s": "$t6",
+          "d": "underline"
+        },
+        {
+          "t": "...",
+          "s": "$t6"
+        }
+      ],
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16-3": {
+      "id": "983:850",
+      "el": "rectangle-16-3",
+      "type": "rect",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "d-1-2-notifications.group-262.group-256.group-97.rectangle-16-3",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "stars-1": {
+      "id": "983:852",
+      "el": "stars-1",
+      "type": "rect",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "name": "stars 1",
+      "path": "d-1-2-notifications.group-262.group-256.group-97.group-100.stars-1",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "assetId": "611a7ed438c17eedd10d16c6293254281a4d7b0e",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "611a7ed438c17eedd10d16c6293254281a4d7b0e",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "iconHint": "stars 1",
+      "isMask": true,
+      "maskMode": "alpha",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-42": {
+      "id": "983:853",
+      "el": "rectangle-42",
+      "type": "rect",
+      "box": {
+        "w": 29,
+        "h": 60
+      },
+      "path": "d-1-2-notifications.group-262.group-256.group-97.group-100.rectangle-42",
+      "pos": {
+        "x": -1,
+        "y": -11
+      },
+      "fill": "$c1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "masked": "stars-1"
+    },
+    "group-100": {
+      "id": "983:851",
+      "el": "group-100",
+      "type": "group",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "path": "d-1-2-notifications.group-262.group-256.group-97.group-100",
+      "pos": {
+        "x": 8,
+        "y": 8
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "stars-1",
+        "rectangle-42"
+      ]
+    },
+    "group-97": {
+      "id": "983:849",
+      "el": "group-97",
+      "type": "group",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "d-1-2-notifications.group-262.group-256.group-97",
+      "pos": {
+        "x": 448,
+        "y": 143
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-16-3",
+        "group-100"
+      ]
+    },
+    "rectangle-25": {
+      "id": "983:855",
+      "el": "rectangle-25",
+      "type": "rect",
+      "box": {
+        "w": 400,
+        "h": 44
+      },
+      "path": "d-1-2-notifications.group-262.group-256.group-98.rectangle-25",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c8",
+      "radius": "$r2",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "blue-shirt-with-pink-accessory": {
+      "id": "983:856",
+      "el": "blue-shirt-with-pink-accessory",
+      "type": "text",
+      "box": {
+        "w": 202,
+        "h": 19
+      },
+      "name": "Blue shirt with pink accessory...",
+      "path": "d-1-2-notifications.group-262.group-256.group-98.blue-shirt-with-pink-accessory",
+      "pos": {
+        "x": 17,
+        "y": 11
+      },
+      "fill": "$c7",
+      "text": "$t7",
+      "chars": "Blue shirt with pink accessory... ",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-98": {
+      "id": "983:854",
+      "el": "group-98",
+      "type": "group",
+      "box": {
+        "w": 400,
+        "h": 44
+      },
+      "path": "d-1-2-notifications.group-262.group-256.group-98",
+      "pos": {
+        "x": 36,
+        "y": 141
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-25",
+        "blue-shirt-with-pink-accessory"
+      ]
+    },
+    "trend-1": {
+      "id": "983:859",
+      "el": "trend-1",
+      "type": "rect",
+      "box": {
+        "w": 16,
+        "h": 16
+      },
+      "name": "trend 1",
+      "path": "d-1-2-notifications.group-262.group-256.frame-11.group-99.trend-1",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "assetId": "86d74154f6ac017cd1c67d6fba25b05e9dbe7741",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "86d74154f6ac017cd1c67d6fba25b05e9dbe7741",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "iconHint": "trend 1",
+      "isMask": true,
+      "maskMode": "alpha",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-41": {
+      "id": "983:860",
+      "el": "rectangle-41",
+      "type": "rect",
+      "box": {
+        "w": 16,
+        "h": 50
+      },
+      "path": "d-1-2-notifications.group-262.group-256.frame-11.group-99.rectangle-41",
+      "pos": {
+        "x": 0,
+        "y": -13
+      },
+      "fill": "$c3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "masked": "trend-1"
+    },
+    "group-99": {
+      "id": "983:858",
+      "el": "group-99",
+      "type": "group",
+      "box": {
+        "w": 16,
+        "h": 16
+      },
+      "path": "d-1-2-notifications.group-262.group-256.frame-11.group-99",
+      "inheritedFill": "$c1",
+      "children": [
+        "trend-1",
+        "rectangle-41"
+      ]
+    },
+    "clean-minimal": {
+      "id": "983:861",
+      "el": "clean-minimal",
+      "type": "text",
+      "box": {
+        "w": 116,
+        "h": 22
+      },
+      "name": "Clean & minimal",
+      "path": "d-1-2-notifications.group-262.group-256.frame-11.clean-minimal",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t8",
+      "chars": "Clean & minimal",
+      "textGrow": "wh"
+    },
+    "frame-11": {
+      "id": "983:857",
+      "el": "frame-11",
+      "type": "frame",
+      "box": {
+        "w": 172,
+        "h": 34
+      },
+      "path": "d-1-2-notifications.group-262.group-256.frame-11",
+      "pos": {
+        "x": 36,
+        "y": 84
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "group-99",
+        "clean-minimal"
+      ]
+    },
+    "trend-1-2": {
+      "id": "983:864",
+      "el": "trend-1-2",
+      "type": "rect",
+      "box": {
+        "w": 16,
+        "h": 16
+      },
+      "name": "trend 1",
+      "path": "d-1-2-notifications.group-262.group-256.frame-12.group-99-2.trend-1-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "assetId": "86d74154f6ac017cd1c67d6fba25b05e9dbe7741",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "86d74154f6ac017cd1c67d6fba25b05e9dbe7741",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "iconHint": "trend 1",
+      "isMask": true,
+      "maskMode": "alpha",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-41-2": {
+      "id": "983:865",
+      "el": "rectangle-41-2",
+      "type": "rect",
+      "box": {
+        "w": 16,
+        "h": 50
+      },
+      "path": "d-1-2-notifications.group-262.group-256.frame-12.group-99-2.rectangle-41-2",
+      "pos": {
+        "x": 0,
+        "y": -13
+      },
+      "fill": "$c3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "masked": "trend-1-2"
+    },
+    "group-99-2": {
+      "id": "983:863",
+      "el": "group-99-2",
+      "type": "group",
+      "box": {
+        "w": 16,
+        "h": 16
+      },
+      "path": "d-1-2-notifications.group-262.group-256.frame-12.group-99-2",
+      "inheritedFill": "$c1",
+      "children": [
+        "trend-1-2",
+        "rectangle-41-2"
+      ]
+    },
+    "disney": {
+      "id": "983:866",
+      "el": "disney",
+      "type": "text",
+      "box": {
+        "w": 47,
+        "h": 22
+      },
+      "name": "disney",
+      "path": "d-1-2-notifications.group-262.group-256.frame-12.disney",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t8",
+      "chars": "disney",
+      "textGrow": "wh"
+    },
+    "frame-12": {
+      "id": "983:862",
+      "el": "frame-12",
+      "type": "frame",
+      "box": {
+        "w": 103,
+        "h": 34
+      },
+      "path": "d-1-2-notifications.group-262.group-256.frame-12",
+      "pos": {
+        "x": 224,
+        "y": 84
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "group-99-2",
+        "disney"
+      ]
+    },
+    "group-256": {
+      "id": "983:846",
+      "el": "group-256",
+      "type": "group",
+      "box": {
+        "w": 524,
+        "h": 217
+      },
+      "path": "d-1-2-notifications.group-262.group-256",
+      "pos": {
+        "x": 764,
+        "y": 670
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-32",
+        "i-want-to-wear",
+        "group-97",
+        "group-98",
+        "frame-11",
+        "frame-12"
+      ]
+    },
+    "vector-2": {
+      "id": "I983:867;3:2644",
+      "el": "vector-2",
+      "type": "vector",
+      "box": {
+        "w": 11,
+        "h": 19
+      },
+      "path": "d-1-2-notifications.group-262.chevron-right.vector-2",
+      "pos": {
+        "x": 11,
+        "y": 7
+      },
+      "fill": "$c3",
+      "iconHint": "Spring is coming, wear something sweet!",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-right": {
+      "id": "983:867",
+      "el": "chevron-right",
+      "type": "instance",
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "name": "chevron-right",
+      "path": "d-1-2-notifications.group-262.chevron-right",
+      "pos": {
+        "x": 589,
+        "y": 534
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector-2"
+      ]
+    },
+    "vector-3": {
+      "id": "I983:868;3:2644",
+      "el": "vector-3",
+      "type": "vector",
+      "box": {
+        "w": 11,
+        "h": 19
+      },
+      "path": "d-1-2-notifications.group-262.chevron-right-2.vector-3",
+      "pos": {
+        "x": 11,
+        "y": 7
+      },
+      "fill": "$c3",
+      "iconHint": "Spring is coming, wear something sweet!",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-right-2": {
+      "id": "983:868",
+      "el": "chevron-right-2",
+      "type": "instance",
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "name": "chevron-right",
+      "path": "d-1-2-notifications.group-262.chevron-right-2",
+      "pos": {
+        "x": 167,
+        "y": 534
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "rotation": 10313,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector-3"
+      ]
+    },
+    "your-preferences": {
+      "id": "983:870",
+      "el": "your-preferences",
+      "type": "text",
+      "box": {
+        "w": 235,
+        "h": 40
+      },
+      "name": "Your preferences",
+      "path": "d-1-2-notifications.group-262.group-99-3.your-preferences",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t6",
+      "chars": "Your preferences",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-14": {
+      "id": "983:873",
+      "el": "rectangle-14",
+      "type": "rect",
+      "box": {
+        "w": 280,
+        "h": 160
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.group-2.rectangle-14",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c9",
+      "radius": "$r2",
+      "isMask": true,
+      "maskMode": "alpha",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16-4": {
+      "id": "983:874",
+      "el": "rectangle-16-4",
+      "type": "rect",
+      "box": {
+        "w": 280,
+        "h": 160
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.group-2.rectangle-16-4",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "masked": "rectangle-14"
+    },
+    "you-are-so-casual-chic-coded": {
+      "id": "983:875",
+      "el": "you-are-so-casual-chic-coded",
+      "type": "text",
+      "box": {
+        "w": 147,
+        "h": 120
+      },
+      "name": "You are so casual-chic coded",
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.group-2.you-are-so-casual-chic-coded",
+      "pos": {
+        "x": 16,
+        "y": 15
+      },
+      "fill": "$c10",
+      "text": "$t5",
+      "chars": [
+        {
+          "t": "You are so \n",
+          "s": "$t6"
+        },
+        {
+          "t": "casual-chic\n",
+          "s": "$t6",
+          "d": "underline"
+        },
+        {
+          "t": "coded",
+          "s": "$t6"
+        }
+      ],
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "masked": "rectangle-14"
+    },
+    "rectangle-16-5": {
+      "id": "983:877",
+      "el": "rectangle-16-5",
+      "type": "rect",
+      "box": {
+        "w": 8,
+        "h": 112
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.group-2.union-3.rectangle-16-5",
+      "pos": {
+        "x": 56,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17-3": {
+      "id": "983:878",
+      "el": "rectangle-17-3",
+      "type": "rect",
+      "box": {
+        "w": 91,
+        "h": 85
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.group-2.union-3.rectangle-17-3",
+      "pos": {
+        "x": 15,
+        "y": 14
+      },
+      "fill": "$c4",
+      "rotation": 2469,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19-3": {
+      "id": "983:879",
+      "el": "rectangle-19-3",
+      "type": "rect",
+      "box": {
+        "w": 91,
+        "h": 85
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.group-2.union-3.rectangle-19-3",
+      "pos": {
+        "x": 15,
+        "y": 14
+      },
+      "fill": "$c4",
+      "rotation": 7844,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18-3": {
+      "id": "983:880",
+      "el": "rectangle-18-3",
+      "type": "rect",
+      "box": {
+        "w": 120,
+        "h": 7
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.group-2.union-3.rectangle-18-3",
+      "pos": {
+        "x": 0,
+        "y": 52
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union-3": {
+      "id": "983:876",
+      "el": "union-3",
+      "type": "bool",
+      "box": {
+        "w": 120,
+        "h": 112
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.group-2.union-3",
+      "pos": {
+        "x": 166,
+        "y": 74
+      },
+      "fill": "$c1",
+      "vectorPath": "$v4",
+      "children": [
+        "rectangle-16-5",
+        "rectangle-17-3",
+        "rectangle-19-3",
+        "rectangle-18-3"
+      ],
+      "masked": "rectangle-14"
+    },
+    "group-2": {
+      "id": "983:872",
+      "el": "group-2",
+      "type": "group",
+      "box": {
+        "w": 280,
+        "h": 160
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.group-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-14",
+        "rectangle-16-4",
+        "you-are-so-casual-chic-coded",
+        "union-3"
+      ]
+    },
+    "rectangle-14-2": {
+      "id": "983:882",
+      "el": "rectangle-14-2",
+      "type": "rect",
+      "box": {
+        "w": 200,
+        "h": 88
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.group-9.rectangle-14-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c9",
+      "radius": "$r2",
+      "isMask": true,
+      "maskMode": "alpha",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16-6": {
+      "id": "983:883",
+      "el": "rectangle-16-6",
+      "type": "rect",
+      "box": {
+        "w": 200,
+        "h": 88
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.group-9.rectangle-16-6",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c8",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "masked": "rectangle-14-2"
+    },
+    "screenshot-2026-05-12-at-15-53-11-remove": {
+      "id": "983:884",
+      "el": "screenshot-2026-05-12-at-15-53-11-remove",
+      "type": "rect",
+      "box": {
+        "w": 80,
+        "h": 193
+      },
+      "name": "Screenshot_2026-05-12_at_15.53.11-removebg-preview 1",
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.group-9.screenshot-2026-05-12-at-15-53-11-remove",
+      "pos": {
+        "x": 105,
+        "y": 9
+      },
+      "assetId": "adcae1e6d970ef3b13a8cb0933e0ec24dfb3b65d",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "adcae1e6d970ef3b13a8cb0933e0ec24dfb3b65d",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "masked": "rectangle-14-2"
+    },
+    "1-top": {
+      "id": "983:886",
+      "el": "1-top",
+      "type": "text",
+      "box": {
+        "w": 56,
+        "h": 25
+      },
+      "name": "#1 Top",
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.group-9.group-10.1-top",
+      "pos": {
+        "x": 0,
+        "y": 9
+      },
+      "fill": "$c3",
+      "text": "$t9",
+      "chars": "#1 Top",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "your-favorite": {
+      "id": "983:887",
+      "el": "your-favorite",
+      "type": "text",
+      "box": {
+        "w": 50,
+        "h": 11
+      },
+      "name": "Your favorite",
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.group-9.group-10.your-favorite",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t10",
+      "chars": "Your favorite",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-10": {
+      "id": "983:885",
+      "el": "group-10",
+      "type": "group",
+      "box": {
+        "w": 56,
+        "h": 34
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.group-9.group-10",
+      "pos": {
+        "x": 24,
+        "y": 27
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "1-top",
+        "your-favorite"
+      ],
+      "masked": "rectangle-14-2"
+    },
+    "group-9": {
+      "id": "983:881",
+      "el": "group-9",
+      "type": "group",
+      "box": {
+        "w": 200,
+        "h": 88
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.group-9",
+      "pos": {
+        "x": 304,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-14-2",
+        "rectangle-16-6",
+        "screenshot-2026-05-12-at-15-53-11-remove",
+        "group-10"
+      ]
+    },
+    "rectangle-14-3": {
+      "id": "983:889",
+      "el": "rectangle-14-3",
+      "type": "rect",
+      "box": {
+        "w": 200,
+        "h": 88
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.group-10-2.rectangle-14-3",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c9",
+      "radius": "$r2",
+      "isMask": true,
+      "maskMode": "alpha",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16-7": {
+      "id": "983:890",
+      "el": "rectangle-16-7",
+      "type": "rect",
+      "box": {
+        "w": 200,
+        "h": 88
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.group-10-2.rectangle-16-7",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "masked": "rectangle-14-3"
+    },
+    "1-bottom": {
+      "id": "983:892",
+      "el": "1-bottom",
+      "type": "text",
+      "box": {
+        "w": 88,
+        "h": 25
+      },
+      "name": "#1 Bottom",
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.group-10-2.group-10-3.1-bottom",
+      "pos": {
+        "x": 0,
+        "y": 9
+      },
+      "fill": "$c1",
+      "text": "$t9",
+      "chars": "#1 Bottom",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "your-favorite-2": {
+      "id": "983:893",
+      "el": "your-favorite-2",
+      "type": "text",
+      "box": {
+        "w": 50,
+        "h": 11
+      },
+      "name": "Your favorite",
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.group-10-2.group-10-3.your-favorite-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c1",
+      "text": "$t10",
+      "chars": "Your favorite",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-10-3": {
+      "id": "983:891",
+      "el": "group-10-3",
+      "type": "group",
+      "box": {
+        "w": 88,
+        "h": 34
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.group-10-2.group-10-3",
+      "pos": {
+        "x": 24,
+        "y": 27
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "1-bottom",
+        "your-favorite-2"
+      ],
+      "masked": "rectangle-14-3"
+    },
+    "3-removebg-preview-1": {
+      "id": "983:894",
+      "el": "3-removebg-preview-1",
+      "type": "rect",
+      "box": {
+        "w": 90,
+        "h": 113
+      },
+      "name": "___3_-removebg-preview 1",
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.group-10-2.3-removebg-preview-1",
+      "pos": {
+        "x": 115,
+        "y": -27
+      },
+      "assetId": "75678a8bfd83306524198a2152c0f9dda9ffe612",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "75678a8bfd83306524198a2152c0f9dda9ffe612",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              0.7235556840896606,
+              0,
+              0.13822223246097565
+            ],
+            [
+              0,
+              0.5201289057731628,
+              0.33172303438186646
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "masked": "rectangle-14-3"
+    },
+    "group-10-2": {
+      "id": "983:888",
+      "el": "group-10-2",
+      "type": "group",
+      "box": {
+        "w": 200,
+        "h": 88
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.group-10-2",
+      "pos": {
+        "x": 304,
+        "y": 104
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-14-3",
+        "rectangle-16-7",
+        "group-10-3",
+        "3-removebg-preview-1"
+      ]
+    },
+    "rectangle-14-4": {
+      "id": "983:897",
+      "el": "rectangle-14-4",
+      "type": "rect",
+      "box": {
+        "w": 280,
+        "h": 120
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.frame-61.group-12.rectangle-14-4",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c9",
+      "radius": "$r2",
+      "isMask": true,
+      "maskMode": "alpha",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16-8": {
+      "id": "983:898",
+      "el": "rectangle-16-8",
+      "type": "rect",
+      "box": {
+        "w": 280,
+        "h": 120
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.frame-61.group-12.rectangle-16-8",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "masked": "rectangle-14-4"
+    },
+    "1-top-2": {
+      "id": "983:900",
+      "el": "1-top-2",
+      "type": "text",
+      "box": {
+        "w": 68,
+        "h": 30
+      },
+      "name": "#1 Top",
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.frame-61.group-12.group-10-4.1-top-2",
+      "pos": {
+        "x": 0,
+        "y": 16
+      },
+      "fill": "$c3",
+      "text": "$t11",
+      "chars": "#1 Top",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "number-of-wardrobe": {
+      "id": "983:901",
+      "el": "number-of-wardrobe",
+      "type": "text",
+      "box": {
+        "w": 116,
+        "h": 16
+      },
+      "name": "number of wardrobe",
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.frame-61.group-12.group-10-4.number-of-wardrobe",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t12",
+      "chars": "number of wardrobe",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-10-4": {
+      "id": "983:899",
+      "el": "group-10-4",
+      "type": "group",
+      "box": {
+        "w": 116,
+        "h": 46
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.frame-61.group-12.group-10-4",
+      "pos": {
+        "x": 106,
+        "y": 37
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "1-top-2",
+        "number-of-wardrobe"
+      ],
+      "masked": "rectangle-14-4"
+    },
+    "rectangle-16-9": {
+      "id": "983:903",
+      "el": "rectangle-16-9",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 26
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.frame-61.group-12.union-4.rectangle-16-9",
+      "pos": {
+        "x": 13,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17-4": {
+      "id": "983:904",
+      "el": "rectangle-17-4",
+      "type": "rect",
+      "box": {
+        "w": 21,
+        "h": 20
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.frame-61.group-12.union-4.rectangle-17-4",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 2469,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19-4": {
+      "id": "983:905",
+      "el": "rectangle-19-4",
+      "type": "rect",
+      "box": {
+        "w": 21,
+        "h": 20
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.frame-61.group-12.union-4.rectangle-19-4",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 7844,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18-4": {
+      "id": "983:906",
+      "el": "rectangle-18-4",
+      "type": "rect",
+      "box": {
+        "w": 28,
+        "h": 2
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.frame-61.group-12.union-4.rectangle-18-4",
+      "pos": {
+        "x": 0,
+        "y": 12
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union-4": {
+      "id": "983:902",
+      "el": "union-4",
+      "type": "bool",
+      "box": {
+        "w": 28,
+        "h": 26
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.frame-61.group-12.union-4",
+      "pos": {
+        "x": 24,
+        "y": 24
+      },
+      "fill": "$c3",
+      "vectorPath": "$v5",
+      "children": [
+        "rectangle-16-9",
+        "rectangle-17-4",
+        "rectangle-19-4",
+        "rectangle-18-4"
+      ],
+      "masked": "rectangle-14-4"
+    },
+    "rectangle-16-10": {
+      "id": "983:908",
+      "el": "rectangle-16-10",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 26
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.frame-61.group-12.union-5.rectangle-16-10",
+      "pos": {
+        "x": 13,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17-5": {
+      "id": "983:909",
+      "el": "rectangle-17-5",
+      "type": "rect",
+      "box": {
+        "w": 21,
+        "h": 20
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.frame-61.group-12.union-5.rectangle-17-5",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 2469,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19-5": {
+      "id": "983:910",
+      "el": "rectangle-19-5",
+      "type": "rect",
+      "box": {
+        "w": 21,
+        "h": 20
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.frame-61.group-12.union-5.rectangle-19-5",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 7844,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18-5": {
+      "id": "983:911",
+      "el": "rectangle-18-5",
+      "type": "rect",
+      "box": {
+        "w": 28,
+        "h": 2
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.frame-61.group-12.union-5.rectangle-18-5",
+      "pos": {
+        "x": 0,
+        "y": 12
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union-5": {
+      "id": "983:907",
+      "el": "union-5",
+      "type": "bool",
+      "box": {
+        "w": 28,
+        "h": 26
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.frame-61.group-12.union-5",
+      "pos": {
+        "x": 54,
+        "y": 45
+      },
+      "fill": "$c3",
+      "vectorPath": "$v6",
+      "children": [
+        "rectangle-16-10",
+        "rectangle-17-5",
+        "rectangle-19-5",
+        "rectangle-18-5"
+      ],
+      "masked": "rectangle-14-4"
+    },
+    "rectangle-16-11": {
+      "id": "983:913",
+      "el": "rectangle-16-11",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 26
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.frame-61.group-12.union-6.rectangle-16-11",
+      "pos": {
+        "x": 13,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17-6": {
+      "id": "983:914",
+      "el": "rectangle-17-6",
+      "type": "rect",
+      "box": {
+        "w": 21,
+        "h": 20
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.frame-61.group-12.union-6.rectangle-17-6",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 2469,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19-6": {
+      "id": "983:915",
+      "el": "rectangle-19-6",
+      "type": "rect",
+      "box": {
+        "w": 21,
+        "h": 20
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.frame-61.group-12.union-6.rectangle-19-6",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 7844,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18-6": {
+      "id": "983:916",
+      "el": "rectangle-18-6",
+      "type": "rect",
+      "box": {
+        "w": 28,
+        "h": 2
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.frame-61.group-12.union-6.rectangle-18-6",
+      "pos": {
+        "x": 0,
+        "y": 12
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union-6": {
+      "id": "983:912",
+      "el": "union-6",
+      "type": "bool",
+      "box": {
+        "w": 28,
+        "h": 26
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.frame-61.group-12.union-6",
+      "pos": {
+        "x": 23,
+        "y": 69
+      },
+      "fill": "$c3",
+      "vectorPath": "$v7",
+      "children": [
+        "rectangle-16-11",
+        "rectangle-17-6",
+        "rectangle-19-6",
+        "rectangle-18-6"
+      ],
+      "masked": "rectangle-14-4"
+    },
+    "group-12": {
+      "id": "983:896",
+      "el": "group-12",
+      "type": "group",
+      "box": {
+        "w": 280,
+        "h": 120
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.frame-61.group-12",
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-14-4",
+        "rectangle-16-8",
+        "group-10-4",
+        "union-4",
+        "union-5",
+        "union-6"
+      ]
+    },
+    "frame-61": {
+      "id": "983:895",
+      "el": "frame-61",
+      "type": "frame",
+      "box": {
+        "w": 280,
+        "h": 120
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.frame-61",
+      "pos": {
+        "x": 0,
+        "y": 176
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "group-12"
+      ]
+    },
+    "rectangle-14-5": {
+      "id": "983:918",
+      "el": "rectangle-14-5",
+      "type": "rect",
+      "box": {
+        "w": 200,
+        "h": 88
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.group-11.rectangle-14-5",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c9",
+      "radius": "$r2",
+      "isMask": true,
+      "maskMode": "alpha",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16-12": {
+      "id": "983:919",
+      "el": "rectangle-16-12",
+      "type": "rect",
+      "box": {
+        "w": 200,
+        "h": 88
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.group-11.rectangle-16-12",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "masked": "rectangle-14-5"
+    },
+    "number-of-looks": {
+      "id": "983:922",
+      "el": "number-of-looks",
+      "type": "text",
+      "box": {
+        "w": 63,
+        "h": 11
+      },
+      "name": "number of looks",
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.group-11.group-10-5.number-of-looks",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c1",
+      "text": "$t10",
+      "chars": "number of looks",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-10-5": {
+      "id": "983:920",
+      "el": "group-10-5",
+      "type": "group",
+      "box": {
+        "w": 63,
+        "h": 34
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.group-11.group-10-5",
+      "pos": {
+        "x": 24,
+        "y": 27
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "123",
+        "number-of-looks"
+      ],
+      "masked": "rectangle-14-5"
+    },
+    "rectangle-16-13": {
+      "id": "983:924",
+      "el": "rectangle-16-13",
+      "type": "rect",
+      "box": {
+        "w": 8,
+        "h": 112
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.group-11.union-7.rectangle-16-13",
+      "pos": {
+        "x": 56,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17-7": {
+      "id": "983:925",
+      "el": "rectangle-17-7",
+      "type": "rect",
+      "box": {
+        "w": 91,
+        "h": 85
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.group-11.union-7.rectangle-17-7",
+      "pos": {
+        "x": 15,
+        "y": 14
+      },
+      "fill": "$c4",
+      "rotation": 2469,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19-7": {
+      "id": "983:926",
+      "el": "rectangle-19-7",
+      "type": "rect",
+      "box": {
+        "w": 91,
+        "h": 85
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.group-11.union-7.rectangle-19-7",
+      "pos": {
+        "x": 15,
+        "y": 14
+      },
+      "fill": "$c4",
+      "rotation": 7844,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18-7": {
+      "id": "983:927",
+      "el": "rectangle-18-7",
+      "type": "rect",
+      "box": {
+        "w": 120,
+        "h": 7
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.group-11.union-7.rectangle-18-7",
+      "pos": {
+        "x": 0,
+        "y": 52
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union-7": {
+      "id": "983:923",
+      "el": "union-7",
+      "type": "bool",
+      "box": {
+        "w": 120,
+        "h": 112
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.group-11.union-7",
+      "pos": {
+        "x": 100,
+        "y": -4
+      },
+      "fill": "$c1",
+      "vectorPath": "$v4",
+      "children": [
+        "rectangle-16-13",
+        "rectangle-17-7",
+        "rectangle-19-7",
+        "rectangle-18-7"
+      ],
+      "masked": "rectangle-14-5"
+    },
+    "group-11": {
+      "id": "983:917",
+      "el": "group-11",
+      "type": "group",
+      "box": {
+        "w": 200,
+        "h": 88
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25.group-11",
+      "pos": {
+        "x": 304,
+        "y": 208
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-14-5",
+        "rectangle-16-12",
+        "group-10-5",
+        "union-7"
+      ]
+    },
+    "group-25": {
+      "id": "983:871",
+      "el": "group-25",
+      "type": "group",
+      "box": {
+        "w": 504,
+        "h": 296
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3.group-25",
+      "pos": {
+        "x": 0,
+        "y": 60
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-2",
+        "group-9",
+        "group-10-2",
+        "frame-61",
+        "group-11"
+      ]
+    },
+    "group-99-3": {
+      "id": "983:869",
+      "el": "group-99-3",
+      "type": "group",
+      "box": {
+        "w": 504,
+        "h": 356
+      },
+      "path": "d-1-2-notifications.group-262.group-99-3",
+      "pos": {
+        "x": 764,
+        "y": 274
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "your-preferences",
+        "group-25"
+      ]
+    },
+    "rectangle-11": {
+      "id": "983:929",
+      "el": "rectangle-11",
+      "type": "rect",
+      "box": {
+        "w": 44,
+        "h": 44
+      },
+      "path": "d-1-2-notifications.group-262.group-259.rectangle-11",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c8",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-4": {
+      "id": "I983:930;3:2997",
+      "el": "vector-4",
+      "type": "vector",
+      "box": {
+        "w": 18,
+        "h": 21
+      },
+      "path": "d-1-2-notifications.group-262.group-259.bell-notification.vector-4",
+      "pos": {
+        "x": 3,
+        "y": 1
+      },
+      "fill": "$c3",
+      "iconHint": "bell notification",
+      "smooth": 0.6000000238418579,
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "bell-notification": {
+      "id": "983:930",
+      "el": "bell-notification",
+      "type": "instance",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "name": "bell-notification",
+      "path": "d-1-2-notifications.group-262.group-259.bell-notification",
+      "pos": {
+        "x": 10,
+        "y": 10
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector-4"
+      ]
+    },
+    "ellipse-2": {
+      "id": "983:931",
+      "el": "ellipse-2",
+      "type": "ellipse",
+      "box": {
+        "w": 4,
+        "h": 4
+      },
+      "path": "d-1-2-notifications.group-262.group-259.ellipse-2",
+      "pos": {
+        "x": 29,
+        "y": 9
+      },
+      "fill": "$c11",
+      "vectorPath": "$v8",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-259": {
+      "id": "983:928",
+      "el": "group-259",
+      "type": "group",
+      "box": {
+        "w": 44,
+        "h": 44
+      },
+      "path": "d-1-2-notifications.group-262.group-259",
+      "pos": {
+        "x": 1276,
+        "y": 190
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-11",
+        "bell-notification",
+        "ellipse-2"
+      ]
+    },
+    "group-262": {
+      "id": "983:937",
+      "el": "group-262",
+      "type": "group",
+      "box": {
+        "w": 1440,
+        "h": 887
+      },
+      "path": "d-1-2-notifications.group-262",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-96",
+        "group-135",
+        "group-255",
+        "spring-is-coming-wear-something-sweet",
+        "group-256",
+        "chevron-right",
+        "chevron-right-2",
+        "group-99-3",
+        "group-259"
+      ]
+    },
+    "rectangle-45": {
+      "id": "983:940",
+      "el": "rectangle-45",
+      "type": "rect",
+      "box": {
+        "w": 1440,
+        "h": 1024
+      },
+      "path": "d-1-2-notifications.rectangle-45",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c12",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-47": {
+      "id": "983:938",
+      "el": "rectangle-47",
+      "type": "rect",
+      "box": {
+        "w": 408,
+        "h": 436
+      },
+      "path": "d-1-2-notifications.group-343.union-8.rectangle-47",
+      "pos": {
+        "x": 0,
+        "y": 19
+      },
+      "fill": "$c1",
+      "radius": "$r3",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      }
+    },
+    "polygon-1": {
+      "id": "983:942",
+      "el": "polygon-1",
+      "type": "polygon",
+      "box": {
+        "w": 25,
+        "h": 25
+      },
+      "name": "Polygon 1",
+      "path": "d-1-2-notifications.group-343.union-8.polygon-1",
+      "pos": {
+        "x": 364,
+        "y": 0
+      },
+      "fill": "$c1",
+      "vectorPath": "$v10",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union-8": {
+      "id": "983:944",
+      "el": "union-8",
+      "type": "bool",
+      "box": {
+        "w": 408,
+        "h": 455
+      },
+      "path": "d-1-2-notifications.group-343.union-8",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c1",
+      "vectorPath": "$v9",
+      "children": [
+        "rectangle-47",
+        "polygon-1"
+      ]
+    },
+    "today": {
+      "id": "983:945",
+      "el": "today",
+      "type": "text",
+      "box": {
+        "w": 52,
+        "h": 19
+      },
+      "name": "TODAY",
+      "path": "d-1-2-notifications.group-343.today",
+      "pos": {
+        "x": 42,
+        "y": 60
+      },
+      "fill": "$c3",
+      "text": "$t13",
+      "chars": "TODAY",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "this-week": {
+      "id": "983:946",
+      "el": "this-week",
+      "type": "text",
+      "box": {
+        "w": 81,
+        "h": 19
+      },
+      "name": "This week",
+      "path": "d-1-2-notifications.group-343.this-week",
+      "pos": {
+        "x": 40,
+        "y": 248
+      },
+      "fill": "$c3",
+      "text": "$t13",
+      "chars": "This week",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "we-ve-analyzed-your-outfit-head-back-to": {
+      "id": "983:948",
+      "el": "we-ve-analyzed-your-outfit-head-back-to",
+      "type": "text",
+      "box": {
+        "w": 326,
+        "h": 28
+      },
+      "name": "We've analyzed your outfit. Head back to review and approve the pieces.",
+      "path": "d-1-2-notifications.group-343.group-180.we-ve-analyzed-your-outfit-head-back-to",
+      "pos": {
+        "x": 0,
+        "y": 29
+      },
+      "fill": "$c3",
+      "text": "$t14",
+      "chars": "We've analyzed your outfit. Head back to review and approve the pieces.",
+      "textGrow": "h",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "your-look-is-ready": {
+      "id": "983:949",
+      "el": "your-look-is-ready",
+      "type": "text",
+      "box": {
+        "w": 144,
+        "h": 25
+      },
+      "name": "Your look is ready.",
+      "path": "d-1-2-notifications.group-343.group-180.your-look-is-ready",
+      "pos": {
+        "x": 24,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t15",
+      "chars": "Your look is ready.",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "2-min-ago": {
+      "id": "983:951",
+      "el": "2-min-ago",
+      "type": "text",
+      "box": {
+        "w": 40,
+        "h": 10
+      },
+      "name": "2 min ago",
+      "path": "d-1-2-notifications.group-343.group-180.frame-18.2-min-ago",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t16",
+      "chars": "2 min ago",
+      "textGrow": "wh"
+    },
+    "frame-18": {
+      "id": "983:950",
+      "el": "frame-18",
+      "type": "frame",
+      "box": {
+        "w": 72,
+        "h": 22
+      },
+      "path": "d-1-2-notifications.group-343.group-180.frame-18",
+      "pos": {
+        "x": 243,
+        "y": 1
+      },
+      "layout": "$l3",
+      "fill": "$c8",
+      "radius": "$r4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "2-min-ago"
+      ]
+    },
+    "ellipse-7": {
+      "id": "983:952",
+      "el": "ellipse-7",
+      "type": "ellipse",
+      "box": {
+        "w": 8,
+        "h": 8
+      },
+      "path": "d-1-2-notifications.group-343.group-180.ellipse-7",
+      "pos": {
+        "x": 4,
+        "y": 8
+      },
+      "fill": "$c3",
+      "vectorPath": "$v11",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-180": {
+      "id": "983:947",
+      "el": "group-180",
+      "type": "group",
+      "box": {
+        "w": 326,
+        "h": 57
+      },
+      "path": "d-1-2-notifications.group-343.group-180",
+      "pos": {
+        "x": 42,
+        "y": 94
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "we-ve-analyzed-your-outfit-head-back-to",
+        "your-look-is-ready",
+        "frame-18",
+        "ellipse-7"
+      ]
+    },
+    "you-logged-4-outfits-this-week-your-most": {
+      "id": "983:954",
+      "el": "you-logged-4-outfits-this-week-your-most",
+      "type": "text",
+      "box": {
+        "w": 328,
+        "h": 28
+      },
+      "name": "You logged 4 outfits this week. Your most worn piece: white linen shirt.",
+      "path": "d-1-2-notifications.group-343.group-182.you-logged-4-outfits-this-week-your-most",
+      "pos": {
+        "x": 0,
+        "y": 29
+      },
+      "fill": "$c3",
+      "text": "$t14",
+      "chars": "You logged 4 outfits this week. Your most worn piece: white linen shirt.",
+      "textGrow": "h",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "your-week-in-looks": {
+      "id": "983:955",
+      "el": "your-week-in-looks",
+      "type": "text",
+      "box": {
+        "w": 153,
+        "h": 25
+      },
+      "name": "Your week in looks.",
+      "path": "d-1-2-notifications.group-343.group-182.your-week-in-looks",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t15",
+      "chars": "Your week in looks.",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "mon-23-jun": {
+      "id": "983:957",
+      "el": "mon-23-jun",
+      "type": "text",
+      "box": {
+        "w": 49,
+        "h": 10
+      },
+      "name": "Mon, 23 Jun",
+      "path": "d-1-2-notifications.group-343.group-182.frame-18-2.mon-23-jun",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t16",
+      "chars": "Mon, 23 Jun",
+      "textGrow": "wh"
+    },
+    "frame-18-2": {
+      "id": "983:956",
+      "el": "frame-18-2",
+      "type": "frame",
+      "box": {
+        "w": 81,
+        "h": 22
+      },
+      "path": "d-1-2-notifications.group-343.group-182.frame-18-2",
+      "pos": {
+        "x": 234,
+        "y": 0
+      },
+      "layout": "$l3",
+      "fill": "$c8",
+      "radius": "$r4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "mon-23-jun"
+      ]
+    },
+    "group-182": {
+      "id": "983:953",
+      "el": "group-182",
+      "type": "group",
+      "box": {
+        "w": 328,
+        "h": 57
+      },
+      "path": "d-1-2-notifications.group-343.group-182",
+      "pos": {
+        "x": 40,
+        "y": 278
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "you-logged-4-outfits-this-week-your-most",
+        "your-week-in-looks",
+        "frame-18-2"
+      ]
+    },
+    "we-couldn-t-process-your-upload-try-agai": {
+      "id": "983:959",
+      "el": "we-couldn-t-process-your-upload-try-agai",
+      "type": "text",
+      "box": {
+        "w": 328,
+        "h": 28
+      },
+      "name": "We couldn't process your upload. Try again with a clearer shot.",
+      "path": "d-1-2-notifications.group-343.group-183.we-couldn-t-process-your-upload-try-agai",
+      "pos": {
+        "x": 0,
+        "y": 29
+      },
+      "fill": "$c3",
+      "text": "$t14",
+      "chars": "We couldn't process your upload. Try again with a clearer shot.",
+      "textGrow": "h",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "something-went-wrong": {
+      "id": "983:960",
+      "el": "something-went-wrong",
+      "type": "text",
+      "box": {
+        "w": 192,
+        "h": 25
+      },
+      "name": "Something went wrong.",
+      "path": "d-1-2-notifications.group-343.group-183.something-went-wrong",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t15",
+      "chars": "Something went wrong.",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "wed-18-jun": {
+      "id": "983:962",
+      "el": "wed-18-jun",
+      "type": "text",
+      "box": {
+        "w": 47,
+        "h": 10
+      },
+      "name": "Wed, 18 Jun",
+      "path": "d-1-2-notifications.group-343.group-183.frame-18-3.wed-18-jun",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t16",
+      "chars": "Wed, 18 Jun",
+      "textGrow": "wh"
+    },
+    "frame-18-3": {
+      "id": "983:961",
+      "el": "frame-18-3",
+      "type": "frame",
+      "box": {
+        "w": 79,
+        "h": 22
+      },
+      "path": "d-1-2-notifications.group-343.group-183.frame-18-3",
+      "pos": {
+        "x": 234,
+        "y": 0
+      },
+      "layout": "$l3",
+      "fill": "$c8",
+      "radius": "$r4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "wed-18-jun"
+      ]
+    },
+    "group-183": {
+      "id": "983:958",
+      "el": "group-183",
+      "type": "group",
+      "box": {
+        "w": 328,
+        "h": 57
+      },
+      "path": "d-1-2-notifications.group-343.group-183",
+      "pos": {
+        "x": 40,
+        "y": 363
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "we-couldn-t-process-your-upload-try-agai",
+        "something-went-wrong",
+        "frame-18-3"
+      ]
+    },
+    "log-today-s-look-before-the-day-slips-by": {
+      "id": "983:964",
+      "el": "log-today-s-look-before-the-day-slips-by",
+      "type": "text",
+      "box": {
+        "w": 326,
+        "h": 14
+      },
+      "name": "Log today's look before the day slips by.",
+      "path": "d-1-2-notifications.group-343.group-181.log-today-s-look-before-the-day-slips-by",
+      "pos": {
+        "x": 0,
+        "y": 29
+      },
+      "fill": "$c3",
+      "text": "$t14",
+      "chars": "Log today's look before the day slips by.",
+      "textGrow": "h",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "what-are-you-wearing": {
+      "id": "983:965",
+      "el": "what-are-you-wearing",
+      "type": "text",
+      "box": {
+        "w": 180,
+        "h": 25
+      },
+      "name": "What are you wearing?",
+      "path": "d-1-2-notifications.group-343.group-181.what-are-you-wearing",
+      "pos": {
+        "x": 24,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t15",
+      "chars": "What are you wearing?",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "8-00-am": {
+      "id": "983:967",
+      "el": "8-00-am",
+      "type": "text",
+      "box": {
+        "w": 31,
+        "h": 10
+      },
+      "name": "8:00 AM",
+      "path": "d-1-2-notifications.group-343.group-181.frame-18-4.8-00-am",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t16",
+      "chars": "8:00 AM",
+      "textGrow": "wh"
+    },
+    "frame-18-4": {
+      "id": "983:966",
+      "el": "frame-18-4",
+      "type": "frame",
+      "box": {
+        "w": 63,
+        "h": 22
+      },
+      "path": "d-1-2-notifications.group-343.group-181.frame-18-4",
+      "pos": {
+        "x": 256,
+        "y": 1
+      },
+      "layout": "$l3",
+      "fill": "$c8",
+      "radius": "$r4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "8-00-am"
+      ]
+    },
+    "ellipse-7-2": {
+      "id": "983:968",
+      "el": "ellipse-7-2",
+      "type": "ellipse",
+      "box": {
+        "w": 8,
+        "h": 8
+      },
+      "path": "d-1-2-notifications.group-343.group-181.ellipse-7-2",
+      "pos": {
+        "x": 4,
+        "y": 8
+      },
+      "fill": "$c3",
+      "vectorPath": "$v11",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-181": {
+      "id": "983:963",
+      "el": "group-181",
+      "type": "group",
+      "box": {
+        "w": 326,
+        "h": 43
+      },
+      "path": "d-1-2-notifications.group-343.group-181",
+      "pos": {
+        "x": 42,
+        "y": 179
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "log-today-s-look-before-the-day-slips-by",
+        "what-are-you-wearing",
+        "frame-18-4",
+        "ellipse-7-2"
+      ]
+    },
+    "line-12": {
+      "id": "983:969",
+      "el": "line-12",
+      "type": "line",
+      "box": {
+        "w": 326,
+        "h": 0
+      },
+      "path": "d-1-2-notifications.group-343.line-12",
+      "pos": {
+        "x": 42,
+        "y": 167
+      },
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "center",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "line-13": {
+      "id": "983:970",
+      "el": "line-13",
+      "type": "line",
+      "box": {
+        "w": 328,
+        "h": 0
+      },
+      "path": "d-1-2-notifications.group-343.line-13",
+      "pos": {
+        "x": 40,
+        "y": 351
+      },
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "center",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-343": {
+      "id": "1262:355",
+      "el": "group-343",
+      "type": "group",
+      "box": {
+        "w": 408,
+        "h": 455
+      },
+      "path": "d-1-2-notifications.group-343",
+      "pos": {
+        "x": 918,
+        "y": 242
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "union-8",
+        "today",
+        "this-week",
+        "group-180",
+        "group-182",
+        "group-183",
+        "group-181",
+        "line-12",
+        "line-13"
+      ]
+    },
+    "d-1-2-notifications": {
+      "id": "983:818",
+      "el": "d-1-2-notifications",
+      "type": "frame",
+      "box": {
+        "w": 1440,
+        "h": 1024
+      },
+      "name": "D.1.2 Notifications",
+      "fill": "$c1",
+      "clip": true,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "group-262",
+        "rectangle-45",
+        "group-343"
+      ]
+    }
+  },
+  "meta": {
+    "nodeCount": 150,
+    "estTokens": 12371,
+    "depthUsed": 12
+  },
+  "next": "Read `tokens` for the design system, then build the UI from `nodes`. Tag each rendered element data-plumb-id=\"<el>\". A node with a `more` count has that many children not yet included — call plumb_node again on that node's `id` to expand them. This screen has 9 image asset(s) (nodes with `assetId`). Call plumb_assets with this screen's id to download them to disk BEFORE generating HTML — without the real files any <img> will be a placeholder and plumb_verify will flag every image node as asset.missing.",
+  "source": "plugin",
+  "node": "D.1.2 Notifications"
+}

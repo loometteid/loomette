@@ -1,0 +1,681 @@
+{
+  "file": {
+    "name": "Loomette.id",
+    "version": "plugin-1792666940685"
+  },
+  "root": "3-4-2-mix-match-result",
+  "tokens": {
+    "color": {
+      "$c1": "#fafaf7",
+      "$c2": "#f2ede5",
+      "$c3": "#444440",
+      "$c4": "#d9d9d9",
+      "$c5": "image"
+    },
+    "text": {
+      "$t1": "400 32px Source Serif Pro",
+      "$t2": "400 16px Avenir Next"
+    },
+    "radius": {
+      "$r1": 8,
+      "$r2": 16
+    },
+    "shadow": {},
+    "layout": {
+      "$l1": {
+        "align": "center",
+        "flow": "row",
+        "gap": 13,
+        "justify": "space-between",
+        "pad": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l2": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          19,
+          108,
+          18,
+          107
+        ]
+      }
+    },
+    "vector": {
+      "$v1": "M7.60355 0.292893 C7.99408 0.683418 7.99408 1.31658 7.60355 1.70711 L2.31066 7 L7.60355 12.2929 C7.99408 12.6834 7.99408 13.3166 7.60355 13.7071 C7.21303 14.0976 6.57986 14.0976 6.18934 13.7071 L0.366116 7.88388 C-0.12204 7.39573 -0.122038 6.60427 0.366117 6.11612 L6.18934 0.292893 C6.57986 -0.0976311 7.21303 -0.0976311 7.60355 0.292893 Z",
+      "$v2": "M14.4004 11.3262 L22.4092 3.31738 L23.6826 4.59082 L15.6738 12.5996 L27 12.5996 L27 14.4004 L15.6738 14.4004 L23.6826 22.4092 L22.4092 23.6826 L14.4004 15.6738 L14.4004 27 L12.5996 27 L12.5996 15.6738 L4.59082 23.6826 L3.31738 22.4092 L11.3262 14.4004 L0 14.4004 L0 12.5996 L11.3262 12.5996 L3.31738 4.59082 L4.59082 3.31738 L12.5996 11.3262 L12.5996 0 L14.4004 0 L14.4004 11.3262 Z"
+    },
+    "props": {
+      "$p1": {
+        "size": "24"
+      }
+    },
+    "meta": {
+      "counts": {
+        "$c1": 2,
+        "$c2": 2,
+        "$p1": 2,
+        "$c3": 7,
+        "$t1": 2,
+        "$c4": 4,
+        "$l2": 2,
+        "$r2": 2,
+        "$t2": 2,
+        "$c5": 3
+      }
+    }
+  },
+  "nodes": {
+    "rectangle-11": {
+      "id": "410:718",
+      "el": "rectangle-11",
+      "type": "rect",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "3-4-2-mix-match-result.rectangle-11",
+      "pos": {
+        "x": 36,
+        "y": 40
+      },
+      "fill": "$c2",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector": {
+      "id": "I410:719;3:2631",
+      "el": "vector",
+      "type": "vector",
+      "box": {
+        "w": 8,
+        "h": 14
+      },
+      "path": "3-4-2-mix-match-result.chevron-left.vector",
+      "pos": {
+        "x": 8,
+        "y": 5
+      },
+      "fill": "$c3",
+      "iconHint": "What a Match!",
+      "vectorPath": "$v1",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-left": {
+      "id": "410:719",
+      "el": "chevron-left",
+      "type": "instance",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "name": "chevron-left",
+      "path": "3-4-2-mix-match-result.chevron-left",
+      "pos": {
+        "x": 44,
+        "y": 48
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector"
+      ]
+    },
+    "what-a-match": {
+      "id": "410:720",
+      "el": "what-a-match",
+      "type": "text",
+      "box": {
+        "w": 278,
+        "h": 40
+      },
+      "name": "What a Match!",
+      "path": "3-4-2-mix-match-result.what-a-match",
+      "pos": {
+        "x": 84,
+        "y": 108
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "What a Match!",
+      "textGrow": "h",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16": {
+      "id": "410:722",
+      "el": "rectangle-16",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 27
+      },
+      "path": "3-4-2-mix-match-result.union.rectangle-16",
+      "pos": {
+        "x": 13,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17": {
+      "id": "410:723",
+      "el": "rectangle-17",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "3-4-2-mix-match-result.union.rectangle-17",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 2578,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19": {
+      "id": "410:724",
+      "el": "rectangle-19",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "3-4-2-mix-match-result.union.rectangle-19",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 7735,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18": {
+      "id": "410:725",
+      "el": "rectangle-18",
+      "type": "rect",
+      "box": {
+        "w": 27,
+        "h": 2
+      },
+      "path": "3-4-2-mix-match-result.union.rectangle-18",
+      "pos": {
+        "x": 0,
+        "y": 13
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union": {
+      "id": "410:721",
+      "el": "union",
+      "type": "bool",
+      "box": {
+        "w": 27,
+        "h": 27
+      },
+      "path": "3-4-2-mix-match-result.union",
+      "pos": {
+        "x": 43,
+        "y": 112
+      },
+      "fill": "$c3",
+      "iconHint": "What a Match!",
+      "vectorPath": "$v2",
+      "children": [
+        "rectangle-16",
+        "rectangle-17",
+        "rectangle-19",
+        "rectangle-18"
+      ]
+    },
+    "add-to-collection": {
+      "id": "410:730",
+      "el": "add-to-collection",
+      "type": "text",
+      "box": {
+        "w": 135,
+        "h": 22
+      },
+      "name": "add to collection",
+      "path": "3-4-2-mix-match-result.group-89.frame-30.group-76.frame-7.add-to-collection",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "add to collection",
+      "textGrow": "wh"
+    },
+    "frame-7": {
+      "id": "410:729",
+      "el": "frame-7",
+      "type": "frame",
+      "box": {
+        "w": 154,
+        "h": 64
+      },
+      "path": "3-4-2-mix-match-result.group-89.frame-30.group-76.frame-7",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "layout": "$l2",
+      "fill": "$c2",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "add-to-collection"
+      ]
+    },
+    "group-76": {
+      "id": "410:728",
+      "el": "group-76",
+      "type": "group",
+      "box": {
+        "w": 154,
+        "h": 64
+      },
+      "path": "3-4-2-mix-match-result.group-89.frame-30.group-76",
+      "inheritedFill": "$c1",
+      "children": [
+        "frame-7"
+      ]
+    },
+    "add-to-calendar": {
+      "id": "410:733",
+      "el": "add-to-calendar",
+      "type": "text",
+      "box": {
+        "w": 122,
+        "h": 22
+      },
+      "name": "add to calendar",
+      "path": "3-4-2-mix-match-result.group-89.frame-30.group-75.frame-7-2.add-to-calendar",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c1",
+      "text": "$t2",
+      "chars": "add to calendar",
+      "textGrow": "wh"
+    },
+    "frame-7-2": {
+      "id": "410:732",
+      "el": "frame-7-2",
+      "type": "frame",
+      "box": {
+        "w": 154,
+        "h": 64
+      },
+      "path": "3-4-2-mix-match-result.group-89.frame-30.group-75.frame-7-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "layout": "$l2",
+      "fill": "$c3",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "add-to-calendar"
+      ]
+    },
+    "group-75": {
+      "id": "410:731",
+      "el": "group-75",
+      "type": "group",
+      "box": {
+        "w": 154,
+        "h": 64
+      },
+      "path": "3-4-2-mix-match-result.group-89.frame-30.group-75",
+      "inheritedFill": "$c1",
+      "children": [
+        "frame-7-2"
+      ]
+    },
+    "frame-30": {
+      "id": "410:727",
+      "el": "frame-30",
+      "type": "frame",
+      "box": {
+        "w": 321,
+        "h": 64
+      },
+      "path": "3-4-2-mix-match-result.group-89.frame-30",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "group-76",
+        "group-75"
+      ]
+    },
+    "group-89": {
+      "id": "410:726",
+      "el": "group-89",
+      "type": "group",
+      "box": {
+        "w": 321,
+        "h": 64
+      },
+      "path": "3-4-2-mix-match-result.group-89",
+      "pos": {
+        "x": 41,
+        "y": 770
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "frame-30"
+      ]
+    },
+    "image-removebg-preview-7-1": {
+      "id": "410:735",
+      "el": "image-removebg-preview-7-1",
+      "type": "rect",
+      "box": {
+        "w": 237,
+        "h": 305
+      },
+      "name": "image-removebg-preview (7) 1",
+      "path": "3-4-2-mix-match-result.group-91.image-removebg-preview-7-1",
+      "pos": {
+        "x": 0,
+        "y": 133
+      },
+      "assetId": "e5420007b99f8c30cfc67be00af0ec3b2f376e2a",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "e5420007b99f8c30cfc67be00af0ec3b2f376e2a",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.8557214140892029,
+              0.07213930040597916
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-1": {
+      "id": "410:736",
+      "el": "image-removebg-preview-1",
+      "type": "rect",
+      "box": {
+        "w": 230,
+        "h": 218
+      },
+      "name": "image-removebg-preview 1",
+      "path": "3-4-2-mix-match-result.group-91.image-removebg-preview-1",
+      "pos": {
+        "x": 3,
+        "y": 0
+      },
+      "assetId": "837079d7a4263daef60e6c2261fde3a6852552dd",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "837079d7a4263daef60e6c2261fde3a6852552dd",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.7313451170921326,
+              0.13030901551246643
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-10-1": {
+      "id": "410:737",
+      "el": "image-removebg-preview-10-1",
+      "type": "rect",
+      "box": {
+        "w": 111,
+        "h": 79
+      },
+      "name": "image-removebg-preview (10) 1",
+      "path": "3-4-2-mix-match-result.group-91.image-removebg-preview-10-1",
+      "pos": {
+        "x": 63,
+        "y": 382
+      },
+      "assetId": "178406f88b315152b95287f3aeb79ee56c5d2443",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "178406f88b315152b95287f3aeb79ee56c5d2443",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.720081090927124,
+              0.12576064467430115
+            ]
+          ]
+        }
+      ],
+      "rotation": 10313,
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-91": {
+      "id": "410:734",
+      "el": "group-91",
+      "type": "group",
+      "box": {
+        "w": 237,
+        "h": 461
+      },
+      "path": "3-4-2-mix-match-result.group-91",
+      "pos": {
+        "x": 82,
+        "y": 168
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "image-removebg-preview-7-1",
+        "image-removebg-preview-1",
+        "image-removebg-preview-10-1"
+      ]
+    },
+    "chic-kinda-day": {
+      "id": "410:739",
+      "el": "chic-kinda-day",
+      "type": "text",
+      "box": {
+        "w": 211,
+        "h": 40
+      },
+      "name": "Chic Kinda Day",
+      "path": "3-4-2-mix-match-result.group-93.chic-kinda-day",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "Chic Kinda Day",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "vector-2": {
+      "id": "I410:740;4:174",
+      "el": "vector-2",
+      "type": "vector",
+      "box": {
+        "w": 12,
+        "h": 13
+      },
+      "path": "3-4-2-mix-match-result.group-93.edit.vector-2",
+      "pos": {
+        "x": 2,
+        "y": 2
+      },
+      "fill": "$c3",
+      "iconHint": "Chic Kinda Day",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "edit": {
+      "id": "410:740",
+      "el": "edit",
+      "type": "instance",
+      "box": {
+        "w": 16,
+        "h": 16
+      },
+      "name": "edit",
+      "path": "3-4-2-mix-match-result.group-93.edit",
+      "pos": {
+        "x": 219,
+        "y": 12
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector-2"
+      ]
+    },
+    "group-93": {
+      "id": "410:738",
+      "el": "group-93",
+      "type": "group",
+      "box": {
+        "w": 235,
+        "h": 40
+      },
+      "path": "3-4-2-mix-match-result.group-93",
+      "pos": {
+        "x": 83,
+        "y": 653
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "chic-kinda-day",
+        "edit"
+      ]
+    },
+    "3-4-2-mix-match-result": {
+      "id": "410:717",
+      "el": "3-4-2-mix-match-result",
+      "type": "frame",
+      "box": {
+        "w": 402,
+        "h": 874
+      },
+      "name": "3.4.2 Mix & Match - Result",
+      "fill": "$c1",
+      "clip": true,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "rectangle-11",
+        "chevron-left",
+        "what-a-match",
+        "union",
+        "group-89",
+        "group-91",
+        "group-93"
+      ]
+    }
+  },
+  "meta": {
+    "nodeCount": 26,
+    "estTokens": 2147,
+    "depthUsed": 12
+  },
+  "next": "Read `tokens` for the design system, then build the UI from `nodes`. Tag each rendered element data-plumb-id=\"<el>\". A node with a `more` count has that many children not yet included — call plumb_node again on that node's `id` to expand them. This screen has 3 image asset(s) (nodes with `assetId`). Call plumb_assets with this screen's id to download them to disk BEFORE generating HTML — without the real files any <img> will be a placeholder and plumb_verify will flag every image node as asset.missing.",
+  "source": "plugin",
+  "node": "3.4.2 Mix & Match - Result"
+}

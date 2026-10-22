@@ -1,0 +1,755 @@
+{
+  "file": {
+    "name": "Loomette.id",
+    "version": "plugin-1792667036859"
+  },
+  "root": "d-0-2-1-onboarding",
+  "tokens": {
+    "color": {
+      "$c1": "#fafaf7",
+      "$c2": "#d9d9d9",
+      "$c3": "image",
+      "$c4": "#444440",
+      "$c5": "#f2ede5",
+      "$c6": "#c9c3b7"
+    },
+    "text": {
+      "$t1": "400 48px Source Serif Pro",
+      "$t2": "400 16px Avenir Next",
+      "$t3": "400 20px Avenir Next",
+      "$t4": "400 12px Avenir"
+    },
+    "radius": {
+      "$r1": 8,
+      "$r2": "full"
+    },
+    "shadow": {},
+    "layout": {
+      "$l1": {
+        "flow": "col",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          12,
+          212,
+          12,
+          16
+        ]
+      },
+      "$l2": {
+        "align": "center",
+        "flow": "row",
+        "gap": 8,
+        "pad": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l3": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          13,
+          26,
+          13,
+          26
+        ]
+      }
+    },
+    "vector": {
+      "$v1": "M25.0664 20.1367 L39.0088 5.89844 L41.2246 8.16113 L27.2803 22.4004 L47 22.4004 L47 25.6006 L27.2832 25.6006 L41.2256 39.8389 L39.0098 42.1016 L25.0664 27.8613 L25.0664 48 L21.9326 48 L21.9326 27.8623 L7.99023 42.1016 L5.77441 39.8389 L19.7148 25.6006 L0 25.6006 L0 22.4004 L19.7178 22.4004 L5.77539 8.16113 L7.99121 5.89844 L21.9326 20.1357 L21.9326 0 L25.0664 0 L25.0664 20.1367 Z"
+    },
+    "meta": {
+      "counts": {
+        "$c1": 2,
+        "$c2": 5,
+        "$c3": 3,
+        "$c4": 7,
+        "$t2": 2,
+        "$t3": 2,
+        "$l1": 2,
+        "$c5": 3,
+        "$r1": 3,
+        "$l2": 2,
+        "$c6": 2,
+        "$t4": 2,
+        "$r2": 2
+      }
+    }
+  },
+  "nodes": {
+    "rectangle-35": {
+      "id": "840:178",
+      "el": "rectangle-35",
+      "type": "rect",
+      "box": {
+        "w": 825,
+        "h": 1024
+      },
+      "path": "d-0-2-1-onboarding.group-33.rectangle-35",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c2",
+      "isMask": true,
+      "maskMode": "alpha",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "image-11": {
+      "id": "840:179",
+      "el": "image-11",
+      "type": "rect",
+      "box": {
+        "w": 1497,
+        "h": 1103
+      },
+      "path": "d-0-2-1-onboarding.group-33.image-11",
+      "pos": {
+        "x": 0,
+        "y": -40
+      },
+      "assetId": "7dbffdcc18b74e31b2d0e62c32dfcb142a3c4873",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "7dbffdcc18b74e31b2d0e62c32dfcb142a3c4873",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1.8169935941696167,
+              0,
+              0.0003471141681075096
+            ],
+            [
+              0,
+              0.7520545125007629,
+              0.18999600410461426
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "masked": "rectangle-35"
+    },
+    "image-42": {
+      "id": "1493:363",
+      "el": "image-42",
+      "type": "rect",
+      "box": {
+        "w": 506,
+        "h": 337
+      },
+      "path": "d-0-2-1-onboarding.group-33.image-42",
+      "pos": {
+        "x": 494,
+        "y": 163
+      },
+      "assetId": "bb06e4303e18abfe080bed08bb77f7679f03bf5f",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "bb06e4303e18abfe080bed08bb77f7679f03bf5f",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "masked": "rectangle-35"
+    },
+    "image-43": {
+      "id": "1493:364",
+      "el": "image-43",
+      "type": "rect",
+      "box": {
+        "w": 540,
+        "h": 360
+      },
+      "path": "d-0-2-1-onboarding.group-33.image-43",
+      "pos": {
+        "x": -102,
+        "y": 575
+      },
+      "assetId": "0b474112393cda1b357eba7c9f586748318c4c0e",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "0b474112393cda1b357eba7c9f586748318c4c0e",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "masked": "rectangle-35"
+    },
+    "group-33": {
+      "id": "840:177",
+      "el": "group-33",
+      "type": "group",
+      "box": {
+        "w": 825,
+        "h": 1024
+      },
+      "path": "d-0-2-1-onboarding.group-33",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-35",
+        "image-11",
+        "image-42",
+        "image-43"
+      ]
+    },
+    "first-let-s-make-this-yours": {
+      "id": "840:199",
+      "el": "first-let-s-make-this-yours",
+      "type": "text",
+      "box": {
+        "w": 359,
+        "h": 120
+      },
+      "name": "First, let's make this yours.",
+      "path": "d-0-2-1-onboarding.group-248.first-let-s-make-this-yours",
+      "pos": {
+        "x": 71,
+        "y": 72
+      },
+      "fill": "$c4",
+      "text": "$t1",
+      "chars": "First, let's make this yours.",
+      "textGrow": "h",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16": {
+      "id": "840:201",
+      "el": "rectangle-16",
+      "type": "rect",
+      "box": {
+        "w": 3,
+        "h": 48
+      },
+      "path": "d-0-2-1-onboarding.group-248.union.rectangle-16",
+      "pos": {
+        "x": 22,
+        "y": 0
+      },
+      "fill": "$c2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17": {
+      "id": "840:202",
+      "el": "rectangle-17",
+      "type": "rect",
+      "box": {
+        "w": 35,
+        "h": 36
+      },
+      "path": "d-0-2-1-onboarding.group-248.union.rectangle-17",
+      "pos": {
+        "x": 6,
+        "y": 6
+      },
+      "fill": "$c2",
+      "rotation": 2613,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19": {
+      "id": "840:203",
+      "el": "rectangle-19",
+      "type": "rect",
+      "box": {
+        "w": 35,
+        "h": 36
+      },
+      "path": "d-0-2-1-onboarding.group-248.union.rectangle-19",
+      "pos": {
+        "x": 6,
+        "y": 6
+      },
+      "fill": "$c2",
+      "rotation": 7700,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18": {
+      "id": "840:204",
+      "el": "rectangle-18",
+      "type": "rect",
+      "box": {
+        "w": 47,
+        "h": 3
+      },
+      "path": "d-0-2-1-onboarding.group-248.union.rectangle-18",
+      "pos": {
+        "x": 0,
+        "y": 22
+      },
+      "fill": "$c2",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union": {
+      "id": "840:200",
+      "el": "union",
+      "type": "bool",
+      "box": {
+        "w": 47,
+        "h": 48
+      },
+      "path": "d-0-2-1-onboarding.group-248.union",
+      "pos": {
+        "x": 0,
+        "y": 75
+      },
+      "fill": "$c4",
+      "iconHint": "First, let's make this yours.",
+      "vectorPath": "$v1",
+      "children": [
+        "rectangle-16",
+        "rectangle-17",
+        "rectangle-19",
+        "rectangle-18"
+      ]
+    },
+    "no-spam-just-your-wardrobe-personalized": {
+      "id": "840:205",
+      "el": "no-spam-just-your-wardrobe-personalized",
+      "type": "text",
+      "box": {
+        "w": 321,
+        "h": 22
+      },
+      "name": "No spam. Just your wardrobe, personalized.",
+      "path": "d-0-2-1-onboarding.group-248.no-spam-just-your-wardrobe-personalized",
+      "pos": {
+        "x": 71,
+        "y": 196
+      },
+      "fill": "$c4",
+      "text": "$t2",
+      "chars": "No spam. Just your wardrobe, personalized.",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "what-do-we-call-you": {
+      "id": "840:207",
+      "el": "what-do-we-call-you",
+      "type": "text",
+      "box": {
+        "w": 191,
+        "h": 27
+      },
+      "name": "What do we call you?",
+      "path": "d-0-2-1-onboarding.group-248.group-34.what-do-we-call-you",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c4",
+      "text": "$t3",
+      "chars": "What do we call you?",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "e-g-gonjoi": {
+      "id": "840:210",
+      "el": "e-g-gonjoi",
+      "type": "text",
+      "box": {
+        "w": 63,
+        "h": 16
+      },
+      "name": "e.g. Gonjoi",
+      "path": "d-0-2-1-onboarding.group-248.group-34.frame-6.frame-5.e-g-gonjoi",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c6",
+      "text": "$t4",
+      "chars": "e.g. Gonjoi",
+      "textGrow": "wh"
+    },
+    "frame-5": {
+      "id": "840:209",
+      "el": "frame-5",
+      "type": "frame",
+      "box": {
+        "w": 63,
+        "h": 16
+      },
+      "path": "d-0-2-1-onboarding.group-248.group-34.frame-6.frame-5",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c5",
+      "children": [
+        "e-g-gonjoi"
+      ]
+    },
+    "frame-6": {
+      "id": "840:208",
+      "el": "frame-6",
+      "type": "frame",
+      "box": {
+        "w": 312,
+        "h": 48
+      },
+      "path": "d-0-2-1-onboarding.group-248.group-34.frame-6",
+      "pos": {
+        "x": 0,
+        "y": 35
+      },
+      "layout": "$l1",
+      "fill": "$c5",
+      "radius": "$r1",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "frame-5"
+      ]
+    },
+    "group-34": {
+      "id": "840:206",
+      "el": "group-34",
+      "type": "group",
+      "box": {
+        "w": 312,
+        "h": 83
+      },
+      "path": "d-0-2-1-onboarding.group-248.group-34",
+      "pos": {
+        "x": 71,
+        "y": 273
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "what-do-we-call-you",
+        "frame-6"
+      ]
+    },
+    "your-email": {
+      "id": "840:212",
+      "el": "your-email",
+      "type": "text",
+      "box": {
+        "w": 94,
+        "h": 27
+      },
+      "name": "Your email",
+      "path": "d-0-2-1-onboarding.group-248.group-35.your-email",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c4",
+      "text": "$t3",
+      "chars": "Your email",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "you-example-com": {
+      "id": "840:215",
+      "el": "you-example-com",
+      "type": "text",
+      "box": {
+        "w": 105,
+        "h": 16
+      },
+      "name": "you@example.com",
+      "path": "d-0-2-1-onboarding.group-248.group-35.frame-8.frame-5-2.you-example-com",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c6",
+      "text": "$t4",
+      "chars": "you@example.com",
+      "textGrow": "wh"
+    },
+    "frame-5-2": {
+      "id": "840:214",
+      "el": "frame-5-2",
+      "type": "frame",
+      "box": {
+        "w": 105,
+        "h": 16
+      },
+      "path": "d-0-2-1-onboarding.group-248.group-35.frame-8.frame-5-2",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c5",
+      "children": [
+        "you-example-com"
+      ]
+    },
+    "frame-8": {
+      "id": "840:213",
+      "el": "frame-8",
+      "type": "frame",
+      "box": {
+        "w": 312,
+        "h": 48
+      },
+      "path": "d-0-2-1-onboarding.group-248.group-35.frame-8",
+      "pos": {
+        "x": 0,
+        "y": 35
+      },
+      "layout": "$l1",
+      "fill": "$c5",
+      "radius": "$r1",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "frame-5-2"
+      ]
+    },
+    "group-35": {
+      "id": "840:211",
+      "el": "group-35",
+      "type": "group",
+      "box": {
+        "w": 312,
+        "h": 83
+      },
+      "path": "d-0-2-1-onboarding.group-248.group-35",
+      "pos": {
+        "x": 71,
+        "y": 380
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "your-email",
+        "frame-8"
+      ]
+    },
+    "continue": {
+      "id": "840:230",
+      "el": "continue",
+      "type": "text",
+      "box": {
+        "w": 68,
+        "h": 22
+      },
+      "name": "continue",
+      "path": "d-0-2-1-onboarding.group-248.frame-67.continue",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c1",
+      "text": "$t2",
+      "chars": "continue",
+      "textGrow": "wh"
+    },
+    "frame-67": {
+      "id": "1583:527",
+      "el": "frame-67",
+      "type": "frame",
+      "box": {
+        "w": 120,
+        "h": 48
+      },
+      "path": "d-0-2-1-onboarding.group-248.frame-67",
+      "pos": {
+        "x": 263,
+        "y": 543
+      },
+      "layout": "$l3",
+      "fill": "$c4",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "continue"
+      ]
+    },
+    "rectangle-100": {
+      "id": "840:236",
+      "el": "rectangle-100",
+      "type": "rect",
+      "box": {
+        "w": 160,
+        "h": 8
+      },
+      "path": "d-0-2-1-onboarding.group-248.group-197.rectangle-100",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c5",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-101": {
+      "id": "840:237",
+      "el": "rectangle-101",
+      "type": "rect",
+      "box": {
+        "w": 32,
+        "h": 8
+      },
+      "path": "d-0-2-1-onboarding.group-248.group-197.rectangle-101",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c4",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-197": {
+      "id": "840:235",
+      "el": "group-197",
+      "type": "group",
+      "box": {
+        "w": 160,
+        "h": 8
+      },
+      "path": "d-0-2-1-onboarding.group-248.group-197",
+      "pos": {
+        "x": 147,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-100",
+        "rectangle-101"
+      ]
+    },
+    "group-248": {
+      "id": "840:239",
+      "el": "group-248",
+      "type": "group",
+      "box": {
+        "w": 430,
+        "h": 591
+      },
+      "path": "d-0-2-1-onboarding.group-248",
+      "pos": {
+        "x": 905,
+        "y": 216
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "first-let-s-make-this-yours",
+        "union",
+        "no-spam-just-your-wardrobe-personalized",
+        "group-34",
+        "group-35",
+        "frame-67",
+        "group-197"
+      ]
+    },
+    "d-0-2-1-onboarding": {
+      "id": "840:176",
+      "el": "d-0-2-1-onboarding",
+      "type": "frame",
+      "box": {
+        "w": 1440,
+        "h": 1024
+      },
+      "name": "D.0.2.1 Onboarding",
+      "fill": "$c1",
+      "clip": true,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "group-33",
+        "group-248"
+      ]
+    }
+  },
+  "meta": {
+    "nodeCount": 29,
+    "estTokens": 2279,
+    "depthUsed": 12
+  },
+  "next": "Read `tokens` for the design system, then build the UI from `nodes`. Tag each rendered element data-plumb-id=\"<el>\". A node with a `more` count has that many children not yet included — call plumb_node again on that node's `id` to expand them. This screen has 3 image asset(s) (nodes with `assetId`). Call plumb_assets with this screen's id to download them to disk BEFORE generating HTML — without the real files any <img> will be a placeholder and plumb_verify will flag every image node as asset.missing.",
+  "source": "plugin",
+  "node": "D.0.2.1 Onboarding"
+}

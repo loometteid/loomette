@@ -1,0 +1,1188 @@
+{
+  "file": {
+    "name": "Loomette.id",
+    "version": "plugin-1792667162502"
+  },
+  "root": "4-2-trip",
+  "tokens": {
+    "color": {
+      "$c1": "#fafaf7",
+      "$c2": "image",
+      "$c3": "#444440",
+      "$c4": "#ffffff",
+      "$c5": "#d9d9d9",
+      "$c6": "#ffffff1a",
+      "$c7": "#f2ede5"
+    },
+    "text": {
+      "$t1": "400 20px Avenir Next",
+      "$t2": "400 32px Avenir",
+      "$t3": "400 28px Source Serif Pro",
+      "$t4": "400 14px Avenir Next",
+      "$t5": "400 24px Source Serif Pro",
+      "$t6": "400 16px Avenir Next"
+    },
+    "radius": {
+      "$r1": 20,
+      "$r2": 8
+    },
+    "shadow": {
+      "$s1": "4px 4px 20px 0px #c9c3b780"
+    },
+    "layout": {
+      "$l1": {
+        "align": "center",
+        "flow": "row",
+        "gap": 34,
+        "pad": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "vector": {
+      "$v1": "M82.6504 60.8311 L128.622 17.8174 L135.928 24.6523 L89.9541 67.667 L154.97 67.667 L154.97 77.334 L89.957 77.334 L135.928 120.348 L128.622 127.184 L82.6504 84.168 L82.6504 145.001 L72.3193 145.001 L72.3193 84.1689 L26.3477 127.184 L19.042 120.348 L65.0117 77.334 L0 77.334 L0 67.667 L65.0146 67.667 L19.043 24.6523 L26.3477 17.8174 L72.3193 60.8311 L72.3193 0 L82.6504 0 L82.6504 60.8311 Z",
+      "$v2": "M4 2 C4 3.10457 3.10457 4 2 4 C0.895431 4 0 3.10457 0 2 C0 0.895431 0.895431 0 2 0 C3.10457 0 4 0.895431 4 2 Z"
+    },
+    "props": {
+      "$p1": {
+        "size": "24"
+      }
+    },
+    "meta": {
+      "counts": {
+        "$c1": 3,
+        "$c2": 4,
+        "$r1": 2,
+        "$c3": 16,
+        "$t1": 3,
+        "$c4": 6,
+        "$t2": 2,
+        "$t4": 4,
+        "$t5": 2,
+        "$c5": 4,
+        "$r2": 3,
+        "$p1": 2,
+        "$t6": 4
+      }
+    }
+  },
+  "nodes": {
+    "image-11": {
+      "id": "14:228",
+      "el": "image-11",
+      "type": "rect",
+      "box": {
+        "w": 403,
+        "h": 253
+      },
+      "path": "4-2-trip.image-11",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "assetId": "7dbffdcc18b74e31b2d0e62c32dfcb142a3c4873",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "7dbffdcc18b74e31b2d0e62c32dfcb142a3c4873",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.35326001048088074,
+              0.2889295220375061
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-28": {
+      "id": "13:217",
+      "el": "rectangle-28",
+      "type": "rect",
+      "box": {
+        "w": 402,
+        "h": 752
+      },
+      "path": "4-2-trip.rectangle-28",
+      "pos": {
+        "x": 0,
+        "y": 149
+      },
+      "fill": "$c1",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "line-1": {
+      "id": "14:270",
+      "el": "line-1",
+      "type": "line",
+      "box": {
+        "w": 83,
+        "h": 0
+      },
+      "path": "4-2-trip.line-1",
+      "pos": {
+        "x": 163,
+        "y": 204
+      },
+      "stroke": "$c3",
+      "strokeW": 1,
+      "strokeAlign": "center",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "favorite": {
+      "id": "14:264",
+      "el": "favorite",
+      "type": "text",
+      "box": {
+        "w": 76,
+        "h": 27
+      },
+      "name": "fAVORITE",
+      "path": "4-2-trip.group-2.favorite",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "fAVORITE",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "travel": {
+      "id": "14:265",
+      "el": "travel",
+      "type": "text",
+      "box": {
+        "w": 58,
+        "h": 27
+      },
+      "name": "tRAVEL",
+      "path": "4-2-trip.group-2.travel",
+      "pos": {
+        "x": 131,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "tRAVEL",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "wishlist": {
+      "id": "14:266",
+      "el": "wishlist",
+      "type": "text",
+      "box": {
+        "w": 73,
+        "h": 27
+      },
+      "name": "wISHLIST",
+      "path": "4-2-trip.group-2.wishlist",
+      "pos": {
+        "x": 249,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "wISHLIST",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-2": {
+      "id": "14:263",
+      "el": "group-2",
+      "type": "group",
+      "box": {
+        "w": 322,
+        "h": 27
+      },
+      "path": "4-2-trip.group-2",
+      "pos": {
+        "x": 40,
+        "y": 169
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "favorite",
+        "travel",
+        "wishlist"
+      ]
+    },
+    "text": {
+      "id": "13:210",
+      "el": "text",
+      "type": "text",
+      "box": {
+        "w": 22,
+        "h": 44
+      },
+      "path": "4-2-trip.text",
+      "pos": {
+        "x": 345,
+        "y": 730
+      },
+      "fill": "$c4",
+      "text": "$t2",
+      "chars": "+",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-12": {
+      "id": "14:233",
+      "el": "image-12",
+      "type": "rect",
+      "box": {
+        "w": 75,
+        "h": 75
+      },
+      "path": "4-2-trip.image-12",
+      "pos": {
+        "x": 36,
+        "y": 40
+      },
+      "assetId": "5a1f68886abf772a8ff5086a8e9b98947a628c7b",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "5a1f68886abf772a8ff5086a8e9b98947a628c7b",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "tanara-karin": {
+      "id": "14:235",
+      "el": "tanara-karin",
+      "type": "text",
+      "box": {
+        "w": 157,
+        "h": 35
+      },
+      "name": "Tanara Karin",
+      "path": "4-2-trip.tanara-karin",
+      "pos": {
+        "x": 136,
+        "y": 63
+      },
+      "fill": "$c4",
+      "text": "$t3",
+      "chars": "Tanara Karin",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "karina": {
+      "id": "14:237",
+      "el": "karina",
+      "type": "text",
+      "box": {
+        "w": 53,
+        "h": 19
+      },
+      "name": "@karina",
+      "path": "4-2-trip.karina",
+      "pos": {
+        "x": 136,
+        "y": 40
+      },
+      "fill": "$c4",
+      "text": "$t4",
+      "chars": "@karina",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "xs-36": {
+      "id": "14:261",
+      "el": "xs-36",
+      "type": "text",
+      "box": {
+        "w": 45,
+        "h": 19
+      },
+      "name": "XS ・36",
+      "path": "4-2-trip.xs-36",
+      "pos": {
+        "x": 136,
+        "y": 98
+      },
+      "fill": "$c4",
+      "text": "$t4",
+      "chars": "XS ・36",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "may-2026": {
+      "id": "14:278",
+      "el": "may-2026",
+      "type": "text",
+      "box": {
+        "w": 55,
+        "h": 19
+      },
+      "name": "May 2026",
+      "path": "4-2-trip.group-20.may-2026",
+      "pos": {
+        "x": 37,
+        "y": 210
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "May 2026",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-11-1": {
+      "id": "14:275",
+      "el": "image-removebg-preview-11-1",
+      "type": "rect",
+      "box": {
+        "w": 129,
+        "h": 182
+      },
+      "name": "image-removebg-preview (11) 1",
+      "path": "4-2-trip.group-20.image-removebg-preview-11-1",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "assetId": "bb071ae72883175e0f5994471c5c9538d27b0caa",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "bb071ae72883175e0f5994471c5c9538d27b0caa",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "japan": {
+      "id": "14:276",
+      "el": "japan",
+      "type": "text",
+      "box": {
+        "w": 59,
+        "h": 30
+      },
+      "name": "Japan",
+      "path": "4-2-trip.group-20.japan",
+      "pos": {
+        "x": 35,
+        "y": 176
+      },
+      "fill": "$c3",
+      "text": "$t5",
+      "chars": "Japan",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-20": {
+      "id": "14:314",
+      "el": "group-20",
+      "type": "group",
+      "box": {
+        "w": 129,
+        "h": 229
+      },
+      "path": "4-2-trip.group-20",
+      "pos": {
+        "x": 46,
+        "y": 231
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "may-2026",
+        "image-removebg-preview-11-1",
+        "japan"
+      ]
+    },
+    "jan-2025": {
+      "id": "14:316",
+      "el": "jan-2025",
+      "type": "text",
+      "box": {
+        "w": 53,
+        "h": 19
+      },
+      "name": "Jan 2025",
+      "path": "4-2-trip.group-21.jan-2025",
+      "pos": {
+        "x": 38,
+        "y": 210
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "Jan 2025",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-11-1-2": {
+      "id": "14:317",
+      "el": "image-removebg-preview-11-1-2",
+      "type": "rect",
+      "box": {
+        "w": 129,
+        "h": 182
+      },
+      "name": "image-removebg-preview (11) 1",
+      "path": "4-2-trip.group-21.image-removebg-preview-11-1-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "assetId": "bb071ae72883175e0f5994471c5c9538d27b0caa",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "bb071ae72883175e0f5994471c5c9538d27b0caa",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "france": {
+      "id": "14:318",
+      "el": "france",
+      "type": "text",
+      "box": {
+        "w": 72,
+        "h": 30
+      },
+      "name": "France",
+      "path": "4-2-trip.group-21.france",
+      "pos": {
+        "x": 28,
+        "y": 176
+      },
+      "fill": "$c3",
+      "text": "$t5",
+      "chars": "France",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-21": {
+      "id": "14:315",
+      "el": "group-21",
+      "type": "group",
+      "box": {
+        "w": 129,
+        "h": 229
+      },
+      "path": "4-2-trip.group-21",
+      "pos": {
+        "x": 228,
+        "y": 231
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "jan-2025",
+        "image-removebg-preview-11-1-2",
+        "france"
+      ]
+    },
+    "rectangle-16": {
+      "id": "14:285",
+      "el": "rectangle-16",
+      "type": "rect",
+      "box": {
+        "w": 10,
+        "h": 145
+      },
+      "path": "4-2-trip.union.rectangle-16",
+      "pos": {
+        "x": 72,
+        "y": 0
+      },
+      "fill": "$c5",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17": {
+      "id": "14:286",
+      "el": "rectangle-17",
+      "type": "rect",
+      "box": {
+        "w": 117,
+        "h": 109
+      },
+      "path": "4-2-trip.union.rectangle-17",
+      "pos": {
+        "x": 19,
+        "y": 18
+      },
+      "fill": "$c5",
+      "rotation": 2469,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19": {
+      "id": "14:287",
+      "el": "rectangle-19",
+      "type": "rect",
+      "box": {
+        "w": 117,
+        "h": 109
+      },
+      "path": "4-2-trip.union.rectangle-19",
+      "pos": {
+        "x": 19,
+        "y": 18
+      },
+      "fill": "$c5",
+      "rotation": 7844,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18": {
+      "id": "14:288",
+      "el": "rectangle-18",
+      "type": "rect",
+      "box": {
+        "w": 155,
+        "h": 10
+      },
+      "path": "4-2-trip.union.rectangle-18",
+      "pos": {
+        "x": 0,
+        "y": 68
+      },
+      "fill": "$c5",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union": {
+      "id": "14:284",
+      "el": "union",
+      "type": "bool",
+      "box": {
+        "w": 155,
+        "h": 145
+      },
+      "path": "4-2-trip.union",
+      "pos": {
+        "x": 293,
+        "y": -23
+      },
+      "fill": "$c1",
+      "vectorPath": "$v1",
+      "children": [
+        "rectangle-16",
+        "rectangle-17",
+        "rectangle-19",
+        "rectangle-18"
+      ]
+    },
+    "rectangle-31": {
+      "id": "14:296",
+      "el": "rectangle-31",
+      "type": "rect",
+      "box": {
+        "w": 28,
+        "h": 28
+      },
+      "path": "4-2-trip.group-19.rectangle-31",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c4",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector": {
+      "id": "I14:308;4:174",
+      "el": "vector",
+      "type": "vector",
+      "box": {
+        "w": 12,
+        "h": 13
+      },
+      "path": "4-2-trip.group-19.edit.vector",
+      "pos": {
+        "x": 2,
+        "y": 2
+      },
+      "fill": "$c3",
+      "iconHint": "edit",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "edit": {
+      "id": "14:308",
+      "el": "edit",
+      "type": "instance",
+      "box": {
+        "w": 16,
+        "h": 16
+      },
+      "name": "edit",
+      "path": "4-2-trip.group-19.edit",
+      "pos": {
+        "x": 6,
+        "y": 6
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector"
+      ]
+    },
+    "group-19": {
+      "id": "14:311",
+      "el": "group-19",
+      "type": "group",
+      "box": {
+        "w": 28,
+        "h": 28
+      },
+      "path": "4-2-trip.group-19",
+      "pos": {
+        "x": 26,
+        "y": 94
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-31",
+        "edit"
+      ]
+    },
+    "rectangle-15": {
+      "id": "47:281",
+      "el": "rectangle-15",
+      "type": "rect",
+      "box": {
+        "w": 431,
+        "h": 100
+      },
+      "path": "4-2-trip.rectangle-15",
+      "pos": {
+        "x": -15,
+        "y": 800
+      },
+      "fill": "$c6",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "home": {
+      "id": "47:284",
+      "el": "home",
+      "type": "text",
+      "box": {
+        "w": 41,
+        "h": 22
+      },
+      "name": "HOME",
+      "path": "4-2-trip.frame-3.group-1.home",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t6",
+      "chars": "HOME",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-1": {
+      "id": "47:283",
+      "el": "group-1",
+      "type": "group",
+      "box": {
+        "w": 41,
+        "h": 22
+      },
+      "path": "4-2-trip.frame-3.group-1",
+      "inheritedFill": "$c1",
+      "children": [
+        "home"
+      ]
+    },
+    "calendar": {
+      "id": "47:286",
+      "el": "calendar",
+      "type": "text",
+      "box": {
+        "w": 69,
+        "h": 22
+      },
+      "name": "CALENDAR",
+      "path": "4-2-trip.frame-3.group-11.calendar",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t6",
+      "chars": "CALENDAR",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-11": {
+      "id": "47:285",
+      "el": "group-11",
+      "type": "group",
+      "box": {
+        "w": 69,
+        "h": 22
+      },
+      "path": "4-2-trip.frame-3.group-11",
+      "inheritedFill": "$c1",
+      "children": [
+        "calendar"
+      ]
+    },
+    "wardrobe": {
+      "id": "47:288",
+      "el": "wardrobe",
+      "type": "text",
+      "box": {
+        "w": 73,
+        "h": 22
+      },
+      "name": "Wardrobe",
+      "path": "4-2-trip.frame-3.group-12.wardrobe",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t6",
+      "chars": "Wardrobe",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-12": {
+      "id": "47:287",
+      "el": "group-12",
+      "type": "group",
+      "box": {
+        "w": 73,
+        "h": 22
+      },
+      "path": "4-2-trip.frame-3.group-12",
+      "inheritedFill": "$c1",
+      "children": [
+        "wardrobe"
+      ]
+    },
+    "profile": {
+      "id": "47:290",
+      "el": "profile",
+      "type": "text",
+      "box": {
+        "w": 53,
+        "h": 22
+      },
+      "name": "Profile",
+      "path": "4-2-trip.frame-3.group-13.profile",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t6",
+      "chars": "Profile",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-13": {
+      "id": "47:289",
+      "el": "group-13",
+      "type": "group",
+      "box": {
+        "w": 53,
+        "h": 22
+      },
+      "path": "4-2-trip.frame-3.group-13",
+      "inheritedFill": "$c1",
+      "children": [
+        "profile"
+      ]
+    },
+    "frame-3": {
+      "id": "47:282",
+      "el": "frame-3",
+      "type": "frame",
+      "box": {
+        "w": 338,
+        "h": 22
+      },
+      "path": "4-2-trip.frame-3",
+      "pos": {
+        "x": 32,
+        "y": 818
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "group-1",
+        "group-11",
+        "group-12",
+        "group-13"
+      ]
+    },
+    "ellipse-1": {
+      "id": "47:294",
+      "el": "ellipse-1",
+      "type": "ellipse",
+      "box": {
+        "w": 4,
+        "h": 4
+      },
+      "path": "4-2-trip.ellipse-1",
+      "pos": {
+        "x": 342,
+        "y": 840
+      },
+      "fill": "$c3",
+      "vectorPath": "$v2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-26": {
+      "id": "363:204",
+      "el": "rectangle-26",
+      "type": "rect",
+      "box": {
+        "w": 56,
+        "h": 56
+      },
+      "path": "4-2-trip.group-77.group-76.rectangle-26",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "radius": "$r2",
+      "shadow": "$s1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-76": {
+      "id": "363:203",
+      "el": "group-76",
+      "type": "group",
+      "box": {
+        "w": 56,
+        "h": 56
+      },
+      "path": "4-2-trip.group-77.group-76",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-26"
+      ]
+    },
+    "text-2": {
+      "id": "363:205",
+      "el": "text-2",
+      "type": "text",
+      "box": {
+        "w": 22,
+        "h": 44
+      },
+      "path": "4-2-trip.group-77.text-2",
+      "pos": {
+        "x": 17,
+        "y": 6
+      },
+      "fill": "$c4",
+      "text": "$t2",
+      "chars": "+",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-77": {
+      "id": "363:202",
+      "el": "group-77",
+      "type": "group",
+      "box": {
+        "w": 56,
+        "h": 56
+      },
+      "path": "4-2-trip.group-77",
+      "pos": {
+        "x": 306,
+        "y": 720
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-76",
+        "text-2"
+      ]
+    },
+    "rectangle-11": {
+      "id": "745:545",
+      "el": "rectangle-11",
+      "type": "rect",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "4-2-trip.group-74.rectangle-11",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c7",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-2": {
+      "id": "I745:546;3:3649",
+      "el": "vector-2",
+      "type": "vector",
+      "box": {
+        "w": 19,
+        "h": 19
+      },
+      "path": "4-2-trip.group-74.2users.vector-2",
+      "pos": {
+        "x": 4,
+        "y": 3
+      },
+      "fill": "$c3",
+      "iconHint": "2users",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "2users": {
+      "id": "745:546",
+      "el": "2users",
+      "type": "instance",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "name": "2users",
+      "path": "4-2-trip.group-74.2users",
+      "pos": {
+        "x": 8,
+        "y": 8
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector-2"
+      ]
+    },
+    "group-74": {
+      "id": "745:544",
+      "el": "group-74",
+      "type": "group",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "4-2-trip.group-74",
+      "pos": {
+        "x": 322,
+        "y": 40
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-11",
+        "2users"
+      ]
+    },
+    "4-2-trip": {
+      "id": "13:146",
+      "el": "4-2-trip",
+      "type": "frame",
+      "box": {
+        "w": 402,
+        "h": 874
+      },
+      "name": "4.2 Trip",
+      "fill": "$c1",
+      "clip": true,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "image-11",
+        "rectangle-28",
+        "line-1",
+        "group-2",
+        "text",
+        "image-12",
+        "tanara-karin",
+        "karina",
+        "xs-36",
+        "group-20",
+        "group-21",
+        "union",
+        "group-19",
+        "rectangle-15",
+        "frame-3",
+        "ellipse-1",
+        "group-77",
+        "group-74"
+      ]
+    }
+  },
+  "meta": {
+    "nodeCount": 49,
+    "estTokens": 3213,
+    "depthUsed": 12
+  },
+  "next": "Read `tokens` for the design system, then build the UI from `nodes`. Tag each rendered element data-plumb-id=\"<el>\". A node with a `more` count has that many children not yet included — call plumb_node again on that node's `id` to expand them. This screen has 4 image asset(s) (nodes with `assetId`). Call plumb_assets with this screen's id to download them to disk BEFORE generating HTML — without the real files any <img> will be a placeholder and plumb_verify will flag every image node as asset.missing.",
+  "source": "plugin",
+  "node": "4.2 Trip"
+}

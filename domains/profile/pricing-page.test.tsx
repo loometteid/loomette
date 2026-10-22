@@ -8,6 +8,7 @@ import * as checkoutActions from "./actions/create-checkout-session.action";
 import * as cancelActions from "./actions/cancel-subscription.action";
 import { getProfileQueryOptionsForBrowser } from "./query-options/get-profile.query-option.client";
 import { getSubscriptionQueryOptionsForBrowser } from "./query-options/get-subscription.query-option.client";
+import type { Database } from "@/types/database.types";
 
 vi.mock("sonner", () => ({
   toast: {
@@ -136,7 +137,7 @@ describe("PricingView Component", () => {
       {
         user_id: userId,
         subscription_tier: "premium",
-      } as any,
+      } as unknown as Database["public"]["Tables"]["user"]["Row"],
     );
     queryClient.setQueryData(
       getSubscriptionQueryOptionsForBrowser(userId).queryKey,
@@ -144,7 +145,7 @@ describe("PricingView Component", () => {
         user_id: userId,
         tier: "premium",
         status: "active",
-      } as any,
+      } as unknown as Database["public"]["Tables"]["subscription"]["Row"],
     );
 
     const cancelSpy = vi

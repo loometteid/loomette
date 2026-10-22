@@ -1,0 +1,1459 @@
+{
+  "file": {
+    "name": "Loomette.id",
+    "version": "plugin-1792667175430"
+  },
+  "root": "4-5-5-pricing",
+  "tokens": {
+    "color": {
+      "$c1": "#fafaf7",
+      "$c2": "#f2ede5",
+      "$c3": "#444440",
+      "$c4": "#d9d9d9",
+      "$c5": "#c9c3b7"
+    },
+    "text": {
+      "$t1": "400 32px Source Serif Pro",
+      "$t2": "400 12px Avenir Next",
+      "$t3": "400 8px Avenir Next",
+      "$t4": "400 24px Source Serif Pro",
+      "$t5": "400 12px Avenir"
+    },
+    "radius": {
+      "$r1": 8,
+      "$r2": 16,
+      "$r3": "full"
+    },
+    "shadow": {
+      "$s1": "4px 4px 20px 0px #c9c3b780"
+    },
+    "layout": {
+      "$l1": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          1,
+          16,
+          2,
+          16
+        ]
+      },
+      "$l2": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          12,
+          23,
+          12,
+          22
+        ]
+      }
+    },
+    "vector": {
+      "$v1": "M7.60355 0.292893 C7.99408 0.683418 7.99408 1.31658 7.60355 1.70711 L2.31066 7 L7.60355 12.2929 C7.99408 12.6834 7.99408 13.3166 7.60355 13.7071 C7.21303 14.0976 6.57986 14.0976 6.18934 13.7071 L0.366116 7.88388 C-0.12204 7.39573 -0.122038 6.60427 0.366117 6.11612 L6.18934 0.292893 C6.57986 -0.0976311 7.21303 -0.0976311 7.60355 0.292893 Z",
+      "$v2": "M14.4004 11.3262 L22.4092 3.31738 L23.6826 4.59082 L15.6738 12.5996 L27 12.5996 L27 14.4004 L15.6738 14.4004 L23.6826 22.4092 L22.4092 23.6826 L14.4004 15.6738 L14.4004 27 L12.5996 27 L12.5996 15.6738 L4.59082 23.6826 L3.31738 22.4092 L11.3262 14.4004 L0 14.4004 L0 12.5996 L11.3262 12.5996 L3.31738 4.59082 L4.59082 3.31738 L12.5996 11.3262 L12.5996 0 L14.4004 0 L14.4004 11.3262 Z"
+    },
+    "props": {
+      "$p1": {
+        "size": "24"
+      }
+    },
+    "meta": {
+      "counts": {
+        "$c1": 3,
+        "$c2": 2,
+        "$r1": 2,
+        "$c3": 36,
+        "$c4": 4,
+        "$t2": 16,
+        "$c5": 4,
+        "$r2": 2,
+        "$t3": 3,
+        "$t4": 2,
+        "$l1": 2,
+        "$r3": 2
+      }
+    }
+  },
+  "nodes": {
+    "rectangle-11": {
+      "id": "731:347",
+      "el": "rectangle-11",
+      "type": "rect",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "4-5-5-pricing.group-58.rectangle-11",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c2",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector": {
+      "id": "I731:348;3:2631",
+      "el": "vector",
+      "type": "vector",
+      "box": {
+        "w": 8,
+        "h": 14
+      },
+      "path": "4-5-5-pricing.group-58.chevron-left.vector",
+      "pos": {
+        "x": 8,
+        "y": 5
+      },
+      "fill": "$c3",
+      "iconHint": "chevron left",
+      "vectorPath": "$v1",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-left": {
+      "id": "731:348",
+      "el": "chevron-left",
+      "type": "instance",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "name": "chevron-left",
+      "path": "4-5-5-pricing.group-58.chevron-left",
+      "pos": {
+        "x": 8,
+        "y": 8
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector"
+      ]
+    },
+    "group-58": {
+      "id": "731:346",
+      "el": "group-58",
+      "type": "group",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "4-5-5-pricing.group-58",
+      "pos": {
+        "x": 40,
+        "y": 40
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-11",
+        "chevron-left"
+      ]
+    },
+    "pricing": {
+      "id": "731:349",
+      "el": "pricing",
+      "type": "text",
+      "box": {
+        "w": 278,
+        "h": 40
+      },
+      "name": "Pricing",
+      "path": "4-5-5-pricing.pricing",
+      "pos": {
+        "x": 84,
+        "y": 108
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "Pricing",
+      "textGrow": "h",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16": {
+      "id": "731:351",
+      "el": "rectangle-16",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 27
+      },
+      "path": "4-5-5-pricing.union.rectangle-16",
+      "pos": {
+        "x": 13,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17": {
+      "id": "731:352",
+      "el": "rectangle-17",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "4-5-5-pricing.union.rectangle-17",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 2578,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19": {
+      "id": "731:353",
+      "el": "rectangle-19",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "4-5-5-pricing.union.rectangle-19",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 7735,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18": {
+      "id": "731:354",
+      "el": "rectangle-18",
+      "type": "rect",
+      "box": {
+        "w": 27,
+        "h": 2
+      },
+      "path": "4-5-5-pricing.union.rectangle-18",
+      "pos": {
+        "x": 0,
+        "y": 13
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union": {
+      "id": "731:350",
+      "el": "union",
+      "type": "bool",
+      "box": {
+        "w": 27,
+        "h": 27
+      },
+      "path": "4-5-5-pricing.union",
+      "pos": {
+        "x": 43,
+        "y": 112
+      },
+      "fill": "$c3",
+      "iconHint": "Pricing",
+      "vectorPath": "$v2",
+      "children": [
+        "rectangle-16",
+        "rectangle-17",
+        "rectangle-19",
+        "rectangle-18"
+      ]
+    },
+    "see-what-you-re-on-and-what-s-waiting-wh": {
+      "id": "731:366",
+      "el": "see-what-you-re-on-and-what-s-waiting-wh",
+      "type": "text",
+      "box": {
+        "w": 266,
+        "h": 32
+      },
+      "name": "See what you're on and what's waiting when you're ready to upgrade.",
+      "path": "4-5-5-pricing.see-what-you-re-on-and-what-s-waiting-wh",
+      "pos": {
+        "x": 84,
+        "y": 148
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "See what you're on and what's waiting when you're ready to upgrade.",
+      "textGrow": "h",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "starter": {
+      "id": "738:388",
+      "el": "starter",
+      "type": "text",
+      "box": {
+        "w": 39,
+        "h": 16
+      },
+      "name": "Starter",
+      "path": "4-5-5-pricing.frame-11.starter",
+      "pos": {
+        "x": 20,
+        "y": 16
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "Starter",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "forever": {
+      "id": "739:392",
+      "el": "forever",
+      "type": "text",
+      "box": {
+        "w": 27,
+        "h": 11
+      },
+      "name": "Forever",
+      "path": "4-5-5-pricing.frame-11.forever",
+      "pos": {
+        "x": 20,
+        "y": 66
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "Forever",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "free": {
+      "id": "739:390",
+      "el": "free",
+      "type": "text",
+      "box": {
+        "w": 47,
+        "h": 30
+      },
+      "name": "Free",
+      "path": "4-5-5-pricing.frame-11.free",
+      "pos": {
+        "x": 20,
+        "y": 36
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "Free",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "line-16": {
+      "id": "739:403",
+      "el": "line-16",
+      "type": "line",
+      "box": {
+        "w": 258,
+        "h": 0
+      },
+      "path": "4-5-5-pricing.frame-11.line-16",
+      "pos": {
+        "x": 20,
+        "y": 89
+      },
+      "stroke": "$c5",
+      "strokeW": 0.5,
+      "strokeAlign": "center",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "up-to-30-wardrobe-items": {
+      "id": "739:404",
+      "el": "up-to-30-wardrobe-items",
+      "type": "text",
+      "box": {
+        "w": 131,
+        "h": 16
+      },
+      "name": "Up to 30 wardrobe items",
+      "path": "4-5-5-pricing.frame-11.group-218.up-to-30-wardrobe-items",
+      "pos": {
+        "x": 21,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "Up to 30 wardrobe items",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-5": {
+      "id": "739:414",
+      "el": "vector-5",
+      "type": "vector",
+      "box": {
+        "w": 8,
+        "h": 8
+      },
+      "path": "4-5-5-pricing.frame-11.group-218.vector-5",
+      "pos": {
+        "x": 0,
+        "y": 4
+      },
+      "iconHint": "Up to 30 wardrobe items",
+      "stroke": "$c3",
+      "strokeW": 0.5,
+      "strokeAlign": "center",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-218": {
+      "id": "739:427",
+      "el": "group-218",
+      "type": "group",
+      "box": {
+        "w": 152,
+        "h": 16
+      },
+      "path": "4-5-5-pricing.frame-11.group-218",
+      "pos": {
+        "x": 26,
+        "y": 101
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "up-to-30-wardrobe-items",
+        "vector-5"
+      ]
+    },
+    "5-outfit-logs-per-month": {
+      "id": "739:406",
+      "el": "5-outfit-logs-per-month",
+      "type": "text",
+      "box": {
+        "w": 121,
+        "h": 16
+      },
+      "name": "5 outfit logs per month",
+      "path": "4-5-5-pricing.frame-11.group-217.5-outfit-logs-per-month",
+      "pos": {
+        "x": 21,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "5 outfit logs per month",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-6": {
+      "id": "739:415",
+      "el": "vector-6",
+      "type": "vector",
+      "box": {
+        "w": 8,
+        "h": 8
+      },
+      "path": "4-5-5-pricing.frame-11.group-217.vector-6",
+      "pos": {
+        "x": 0,
+        "y": 4
+      },
+      "iconHint": "5 outfit logs per month",
+      "stroke": "$c3",
+      "strokeW": 0.5,
+      "strokeAlign": "center",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-217": {
+      "id": "739:426",
+      "el": "group-217",
+      "type": "group",
+      "box": {
+        "w": 142,
+        "h": 16
+      },
+      "path": "4-5-5-pricing.frame-11.group-217",
+      "pos": {
+        "x": 26,
+        "y": 129
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "5-outfit-logs-per-month",
+        "vector-6"
+      ]
+    },
+    "ai-detection-for-every-upload": {
+      "id": "739:408",
+      "el": "ai-detection-for-every-upload",
+      "type": "text",
+      "box": {
+        "w": 154,
+        "h": 16
+      },
+      "name": "AI detection for every upload",
+      "path": "4-5-5-pricing.frame-11.group-216.ai-detection-for-every-upload",
+      "pos": {
+        "x": 21,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "AI detection for every upload",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-7": {
+      "id": "739:417",
+      "el": "vector-7",
+      "type": "vector",
+      "box": {
+        "w": 8,
+        "h": 8
+      },
+      "path": "4-5-5-pricing.frame-11.group-216.vector-7",
+      "pos": {
+        "x": 0,
+        "y": 4
+      },
+      "iconHint": "AI detection for every upload",
+      "stroke": "$c3",
+      "strokeW": 0.5,
+      "strokeAlign": "center",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-216": {
+      "id": "739:425",
+      "el": "group-216",
+      "type": "group",
+      "box": {
+        "w": 175,
+        "h": 16
+      },
+      "path": "4-5-5-pricing.frame-11.group-216",
+      "pos": {
+        "x": 26,
+        "y": 157
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "ai-detection-for-every-upload",
+        "vector-7"
+      ]
+    },
+    "calendar-view": {
+      "id": "739:409",
+      "el": "calendar-view",
+      "type": "text",
+      "box": {
+        "w": 75,
+        "h": 16
+      },
+      "name": "Calendar view",
+      "path": "4-5-5-pricing.frame-11.group-215.calendar-view",
+      "pos": {
+        "x": 21,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "Calendar view",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-8": {
+      "id": "739:419",
+      "el": "vector-8",
+      "type": "vector",
+      "box": {
+        "w": 8,
+        "h": 8
+      },
+      "path": "4-5-5-pricing.frame-11.group-215.vector-8",
+      "pos": {
+        "x": 0,
+        "y": 4
+      },
+      "iconHint": "Calendar view",
+      "stroke": "$c3",
+      "strokeW": 0.5,
+      "strokeAlign": "center",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-215": {
+      "id": "739:424",
+      "el": "group-215",
+      "type": "group",
+      "box": {
+        "w": 96,
+        "h": 16
+      },
+      "path": "4-5-5-pricing.frame-11.group-215",
+      "pos": {
+        "x": 26,
+        "y": 185
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "calendar-view",
+        "vector-8"
+      ]
+    },
+    "current-plan": {
+      "id": "739:422",
+      "el": "current-plan",
+      "type": "text",
+      "box": {
+        "w": 69,
+        "h": 16
+      },
+      "name": "current plan",
+      "path": "4-5-5-pricing.frame-11.frame-18.current-plan",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "current plan",
+      "textGrow": "wh"
+    },
+    "frame-18": {
+      "id": "739:421",
+      "el": "frame-18",
+      "type": "frame",
+      "box": {
+        "w": 101,
+        "h": 22
+      },
+      "path": "4-5-5-pricing.frame-11.frame-18",
+      "pos": {
+        "x": 177,
+        "y": 21
+      },
+      "layout": "$l1",
+      "fill": "$c2",
+      "radius": "$r3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "current-plan"
+      ]
+    },
+    "frame-11": {
+      "id": "731:367",
+      "el": "frame-11",
+      "type": "frame",
+      "box": {
+        "w": 298,
+        "h": 217
+      },
+      "path": "4-5-5-pricing.frame-11",
+      "pos": {
+        "x": 52,
+        "y": 204
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c5",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "starter",
+        "forever",
+        "free",
+        "line-16",
+        "group-218",
+        "group-217",
+        "group-216",
+        "group-215",
+        "frame-18"
+      ]
+    },
+    "pro": {
+      "id": "739:429",
+      "el": "pro",
+      "type": "text",
+      "box": {
+        "w": 20,
+        "h": 16
+      },
+      "name": "PRO",
+      "path": "4-5-5-pricing.frame-12.pro",
+      "pos": {
+        "x": 20,
+        "y": 16
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "PRO",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rp-470k-year-save-20": {
+      "id": "739:430",
+      "el": "rp-470k-year-save-20",
+      "type": "text",
+      "box": {
+        "w": 92,
+        "h": 11
+      },
+      "name": "Rp 470k / year — save 20%",
+      "path": "4-5-5-pricing.frame-12.rp-470k-year-save-20",
+      "pos": {
+        "x": 20,
+        "y": 66
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "Rp 470k / year — save 20%",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "month": {
+      "id": "739:448",
+      "el": "month",
+      "type": "text",
+      "box": {
+        "w": 26,
+        "h": 11
+      },
+      "name": "/month",
+      "path": "4-5-5-pricing.frame-12.month",
+      "pos": {
+        "x": 94,
+        "y": 50
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "/month",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rp-49k": {
+      "id": "739:431",
+      "el": "rp-49k",
+      "type": "text",
+      "box": {
+        "w": 70,
+        "h": 30
+      },
+      "name": "Rp 49k",
+      "path": "4-5-5-pricing.frame-12.rp-49k",
+      "pos": {
+        "x": 20,
+        "y": 36
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "Rp 49k",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "line-16-2": {
+      "id": "739:432",
+      "el": "line-16-2",
+      "type": "line",
+      "box": {
+        "w": 258,
+        "h": 0
+      },
+      "path": "4-5-5-pricing.frame-12.line-16-2",
+      "pos": {
+        "x": 20,
+        "y": 89
+      },
+      "stroke": "$c5",
+      "strokeW": 0.5,
+      "strokeAlign": "center",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "everything-in-starter-plus": {
+      "id": "739:434",
+      "el": "everything-in-starter-plus",
+      "type": "text",
+      "box": {
+        "w": 136,
+        "h": 16
+      },
+      "name": "Everything in Starter, plus:",
+      "path": "4-5-5-pricing.frame-12.group-218-2.everything-in-starter-plus",
+      "pos": {
+        "x": 21,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "Everything in Starter, plus:",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-5-2": {
+      "id": "739:435",
+      "el": "vector-5-2",
+      "type": "vector",
+      "box": {
+        "w": 8,
+        "h": 8
+      },
+      "path": "4-5-5-pricing.frame-12.group-218-2.vector-5-2",
+      "pos": {
+        "x": 0,
+        "y": 4
+      },
+      "iconHint": "Everything in Starter, plus:",
+      "stroke": "$c3",
+      "strokeW": 0.5,
+      "strokeAlign": "center",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-218-2": {
+      "id": "739:433",
+      "el": "group-218-2",
+      "type": "group",
+      "box": {
+        "w": 157,
+        "h": 16
+      },
+      "path": "4-5-5-pricing.frame-12.group-218-2",
+      "pos": {
+        "x": 26,
+        "y": 101
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "everything-in-starter-plus",
+        "vector-5-2"
+      ]
+    },
+    "unlimited-wardrobe-items": {
+      "id": "739:437",
+      "el": "unlimited-wardrobe-items",
+      "type": "text",
+      "box": {
+        "w": 137,
+        "h": 16
+      },
+      "name": "Unlimited wardrobe items",
+      "path": "4-5-5-pricing.frame-12.group-217-2.unlimited-wardrobe-items",
+      "pos": {
+        "x": 21,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "Unlimited wardrobe items",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-6-2": {
+      "id": "739:438",
+      "el": "vector-6-2",
+      "type": "vector",
+      "box": {
+        "w": 8,
+        "h": 8
+      },
+      "path": "4-5-5-pricing.frame-12.group-217-2.vector-6-2",
+      "pos": {
+        "x": 0,
+        "y": 4
+      },
+      "iconHint": "Unlimited wardrobe items",
+      "stroke": "$c3",
+      "strokeW": 0.5,
+      "strokeAlign": "center",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-217-2": {
+      "id": "739:436",
+      "el": "group-217-2",
+      "type": "group",
+      "box": {
+        "w": 158,
+        "h": 16
+      },
+      "path": "4-5-5-pricing.frame-12.group-217-2",
+      "pos": {
+        "x": 26,
+        "y": 129
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "unlimited-wardrobe-items",
+        "vector-6-2"
+      ]
+    },
+    "unlimited-outfit-logs": {
+      "id": "739:440",
+      "el": "unlimited-outfit-logs",
+      "type": "text",
+      "box": {
+        "w": 107,
+        "h": 16
+      },
+      "name": "Unlimited outfit logs",
+      "path": "4-5-5-pricing.frame-12.group-216-2.unlimited-outfit-logs",
+      "pos": {
+        "x": 21,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "Unlimited outfit logs",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-7-2": {
+      "id": "739:441",
+      "el": "vector-7-2",
+      "type": "vector",
+      "box": {
+        "w": 8,
+        "h": 8
+      },
+      "path": "4-5-5-pricing.frame-12.group-216-2.vector-7-2",
+      "pos": {
+        "x": 0,
+        "y": 4
+      },
+      "iconHint": "Unlimited outfit logs",
+      "stroke": "$c3",
+      "strokeW": 0.5,
+      "strokeAlign": "center",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-216-2": {
+      "id": "739:439",
+      "el": "group-216-2",
+      "type": "group",
+      "box": {
+        "w": 128,
+        "h": 16
+      },
+      "path": "4-5-5-pricing.frame-12.group-216-2",
+      "pos": {
+        "x": 26,
+        "y": 157
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "unlimited-outfit-logs",
+        "vector-7-2"
+      ]
+    },
+    "weekly-style-recap": {
+      "id": "739:443",
+      "el": "weekly-style-recap",
+      "type": "text",
+      "box": {
+        "w": 98,
+        "h": 16
+      },
+      "name": "Weekly style recap",
+      "path": "4-5-5-pricing.frame-12.group-215-2.weekly-style-recap",
+      "pos": {
+        "x": 21,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "Weekly style recap",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-8-2": {
+      "id": "739:444",
+      "el": "vector-8-2",
+      "type": "vector",
+      "box": {
+        "w": 8,
+        "h": 8
+      },
+      "path": "4-5-5-pricing.frame-12.group-215-2.vector-8-2",
+      "pos": {
+        "x": 0,
+        "y": 4
+      },
+      "iconHint": "Weekly style recap",
+      "stroke": "$c3",
+      "strokeW": 0.5,
+      "strokeAlign": "center",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-215-2": {
+      "id": "739:442",
+      "el": "group-215-2",
+      "type": "group",
+      "box": {
+        "w": 119,
+        "h": 16
+      },
+      "path": "4-5-5-pricing.frame-12.group-215-2",
+      "pos": {
+        "x": 26,
+        "y": 185
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "weekly-style-recap",
+        "vector-8-2"
+      ]
+    },
+    "wear-insights-and-analytics": {
+      "id": "739:451",
+      "el": "wear-insights-and-analytics",
+      "type": "text",
+      "box": {
+        "w": 142,
+        "h": 16
+      },
+      "name": "Wear insights and analytics",
+      "path": "4-5-5-pricing.frame-12.group-219.wear-insights-and-analytics",
+      "pos": {
+        "x": 21,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "Wear insights and analytics",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-8-3": {
+      "id": "739:452",
+      "el": "vector-8-3",
+      "type": "vector",
+      "box": {
+        "w": 8,
+        "h": 8
+      },
+      "path": "4-5-5-pricing.frame-12.group-219.vector-8-3",
+      "pos": {
+        "x": 0,
+        "y": 4
+      },
+      "iconHint": "Wear insights and analytics",
+      "stroke": "$c3",
+      "strokeW": 0.5,
+      "strokeAlign": "center",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-219": {
+      "id": "739:450",
+      "el": "group-219",
+      "type": "group",
+      "box": {
+        "w": 163,
+        "h": 16
+      },
+      "path": "4-5-5-pricing.frame-12.group-219",
+      "pos": {
+        "x": 26,
+        "y": 213
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "wear-insights-and-analytics",
+        "vector-8-3"
+      ]
+    },
+    "priority-processing": {
+      "id": "739:455",
+      "el": "priority-processing",
+      "type": "text",
+      "box": {
+        "w": 97,
+        "h": 16
+      },
+      "name": "Priority processing",
+      "path": "4-5-5-pricing.frame-12.group-220.priority-processing",
+      "pos": {
+        "x": 21,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "Priority processing",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-8-4": {
+      "id": "739:456",
+      "el": "vector-8-4",
+      "type": "vector",
+      "box": {
+        "w": 8,
+        "h": 8
+      },
+      "path": "4-5-5-pricing.frame-12.group-220.vector-8-4",
+      "pos": {
+        "x": 0,
+        "y": 4
+      },
+      "iconHint": "Priority processing",
+      "stroke": "$c3",
+      "strokeW": 0.5,
+      "strokeAlign": "center",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-220": {
+      "id": "739:454",
+      "el": "group-220",
+      "type": "group",
+      "box": {
+        "w": 118,
+        "h": 16
+      },
+      "path": "4-5-5-pricing.frame-12.group-220",
+      "pos": {
+        "x": 26,
+        "y": 241
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "priority-processing",
+        "vector-8-4"
+      ]
+    },
+    "export-your-wardrobe-data": {
+      "id": "739:459",
+      "el": "export-your-wardrobe-data",
+      "type": "text",
+      "box": {
+        "w": 141,
+        "h": 16
+      },
+      "name": "Export your wardrobe data",
+      "path": "4-5-5-pricing.frame-12.group-221.export-your-wardrobe-data",
+      "pos": {
+        "x": 21,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "Export your wardrobe data",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-8-5": {
+      "id": "739:460",
+      "el": "vector-8-5",
+      "type": "vector",
+      "box": {
+        "w": 8,
+        "h": 8
+      },
+      "path": "4-5-5-pricing.frame-12.group-221.vector-8-5",
+      "pos": {
+        "x": 0,
+        "y": 4
+      },
+      "iconHint": "Export your wardrobe data",
+      "stroke": "$c3",
+      "strokeW": 0.5,
+      "strokeAlign": "center",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-221": {
+      "id": "739:458",
+      "el": "group-221",
+      "type": "group",
+      "box": {
+        "w": 162,
+        "h": 16
+      },
+      "path": "4-5-5-pricing.frame-12.group-221",
+      "pos": {
+        "x": 26,
+        "y": 269
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "export-your-wardrobe-data",
+        "vector-8-5"
+      ]
+    },
+    "most-popular": {
+      "id": "739:446",
+      "el": "most-popular",
+      "type": "text",
+      "box": {
+        "w": 72,
+        "h": 16
+      },
+      "name": "Most Popular",
+      "path": "4-5-5-pricing.frame-12.frame-18-2.most-popular",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c1",
+      "text": "$t2",
+      "chars": "Most Popular",
+      "textGrow": "wh"
+    },
+    "frame-18-2": {
+      "id": "739:445",
+      "el": "frame-18-2",
+      "type": "frame",
+      "box": {
+        "w": 104,
+        "h": 22
+      },
+      "path": "4-5-5-pricing.frame-12.frame-18-2",
+      "pos": {
+        "x": 176,
+        "y": 20
+      },
+      "layout": "$l1",
+      "fill": "$c3",
+      "radius": "$r3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "most-popular"
+      ]
+    },
+    "upgrade-to-pro": {
+      "id": "739:466",
+      "el": "upgrade-to-pro",
+      "type": "text",
+      "box": {
+        "w": 105,
+        "h": 16
+      },
+      "name": "upgrade to pro",
+      "path": "4-5-5-pricing.frame-12.frame-20.upgrade-to-pro",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c1",
+      "text": "$t5",
+      "chars": "upgrade to pro",
+      "textGrow": "wh"
+    },
+    "frame-20": {
+      "id": "739:465",
+      "el": "frame-20",
+      "type": "frame",
+      "box": {
+        "w": 248,
+        "h": 40
+      },
+      "path": "4-5-5-pricing.frame-12.frame-20",
+      "pos": {
+        "x": 26,
+        "y": 305
+      },
+      "layout": "$l2",
+      "fill": "$c3",
+      "radius": "$r1",
+      "shadow": "$s1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "upgrade-to-pro"
+      ]
+    },
+    "frame-12": {
+      "id": "739:428",
+      "el": "frame-12",
+      "type": "frame",
+      "box": {
+        "w": 298,
+        "h": 369
+      },
+      "path": "4-5-5-pricing.frame-12",
+      "pos": {
+        "x": 52,
+        "y": 445
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c5",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "pro",
+        "rp-470k-year-save-20",
+        "month",
+        "rp-49k",
+        "line-16-2",
+        "group-218-2",
+        "group-217-2",
+        "group-216-2",
+        "group-215-2",
+        "group-219",
+        "group-220",
+        "group-221",
+        "frame-18-2",
+        "frame-20"
+      ]
+    },
+    "4-5-5-pricing": {
+      "id": "731:345",
+      "el": "4-5-5-pricing",
+      "type": "frame",
+      "box": {
+        "w": 402,
+        "h": 874
+      },
+      "name": "4.5.5 Pricing",
+      "fill": "$c1",
+      "clip": true,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "group-58",
+        "pricing",
+        "union",
+        "see-what-you-re-on-and-what-s-waiting-wh",
+        "frame-11",
+        "frame-12"
+      ]
+    }
+  },
+  "meta": {
+    "nodeCount": 62,
+    "estTokens": 4623,
+    "depthUsed": 12
+  },
+  "next": "Read `tokens` for the design system, then build the UI from `nodes`. Tag each rendered element data-plumb-id=\"<el>\". A node with a `more` count has that many children not yet included — call plumb_node again on that node's `id` to expand them.",
+  "source": "plugin",
+  "node": "4.5.5 Pricing"
+}

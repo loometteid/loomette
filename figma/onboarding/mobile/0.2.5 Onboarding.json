@@ -1,0 +1,816 @@
+{
+  "file": {
+    "name": "Loomette.id",
+    "version": "plugin-1792667045204"
+  },
+  "root": "0-2-5-onboarding",
+  "tokens": {
+    "color": {
+      "$c1": "#fafaf7",
+      "$c2": "#444440",
+      "$c3": "#d9d9d9",
+      "$c4": "#f2ede5",
+      "$c5": "#c9c3b7"
+    },
+    "text": {
+      "$t1": "400 32px Source Serif Pro",
+      "$t2": "400 12px Avenir Next",
+      "$t3": "400 20px Avenir Next",
+      "$t4": "400 16px Avenir Next"
+    },
+    "radius": {
+      "$r1": 8,
+      "$r2": 16,
+      "$r3": "full"
+    },
+    "shadow": {},
+    "layout": {
+      "$l1": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          19,
+          108,
+          18,
+          107
+        ]
+      },
+      "$l2": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          19,
+          16,
+          18,
+          16
+        ]
+      }
+    },
+    "vector": {
+      "$v1": "M14.4004 11.3262 L22.4092 3.31738 L23.6826 4.59082 L15.6738 12.5996 L27 12.5996 L27 14.4004 L15.6738 14.4004 L23.6826 22.4092 L22.4092 23.6826 L14.4004 15.6738 L14.4004 27 L12.5996 27 L12.5996 15.6738 L4.59082 23.6826 L3.31738 22.4092 L11.3262 14.4004 L0 14.4004 L0 12.5996 L11.3262 12.5996 L3.31738 4.59082 L4.59082 3.31738 L12.5996 11.3262 L12.5996 0 L14.4004 0 L14.4004 11.3262 Z",
+      "$v2": "M7.60355 0.292893 C7.99408 0.683418 7.99408 1.31658 7.60355 1.70711 L2.31066 7 L7.60355 12.2929 C7.99408 12.6834 7.99408 13.3166 7.60355 13.7071 C7.21303 14.0976 6.57986 14.0976 6.18934 13.7071 L0.366116 7.88388 C-0.12204 7.39573 -0.122038 6.60427 0.366117 6.11612 L6.18934 0.292893 C6.57986 -0.0976311 7.21303 -0.0976311 7.60355 0.292893 Z"
+    },
+    "props": {
+      "$p1": {
+        "size": "24"
+      }
+    },
+    "meta": {
+      "counts": {
+        "$c1": 2,
+        "$c2": 16,
+        "$c3": 4,
+        "$c4": 2,
+        "$r2": 8,
+        "$t4": 8,
+        "$l2": 7,
+        "$c5": 5,
+        "$r3": 2
+      }
+    }
+  },
+  "nodes": {
+    "now-the-fun-part": {
+      "id": "61:339",
+      "el": "now-the-fun-part",
+      "type": "text",
+      "box": {
+        "w": 279,
+        "h": 40
+      },
+      "name": "Now the fun part.",
+      "path": "0-2-5-onboarding.now-the-fun-part",
+      "pos": {
+        "x": 84,
+        "y": 108
+      },
+      "fill": "$c2",
+      "text": "$t1",
+      "chars": "Now the fun part.",
+      "textGrow": "h",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16": {
+      "id": "61:341",
+      "el": "rectangle-16",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 27
+      },
+      "path": "0-2-5-onboarding.union.rectangle-16",
+      "pos": {
+        "x": 13,
+        "y": 0
+      },
+      "fill": "$c3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17": {
+      "id": "61:342",
+      "el": "rectangle-17",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "0-2-5-onboarding.union.rectangle-17",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c3",
+      "rotation": 2578,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19": {
+      "id": "61:343",
+      "el": "rectangle-19",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "0-2-5-onboarding.union.rectangle-19",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c3",
+      "rotation": 7735,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18": {
+      "id": "61:344",
+      "el": "rectangle-18",
+      "type": "rect",
+      "box": {
+        "w": 27,
+        "h": 2
+      },
+      "path": "0-2-5-onboarding.union.rectangle-18",
+      "pos": {
+        "x": 0,
+        "y": 13
+      },
+      "fill": "$c3",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union": {
+      "id": "61:340",
+      "el": "union",
+      "type": "bool",
+      "box": {
+        "w": 27,
+        "h": 27
+      },
+      "path": "0-2-5-onboarding.union",
+      "pos": {
+        "x": 43,
+        "y": 112
+      },
+      "fill": "$c2",
+      "iconHint": "Now the fun part.",
+      "vectorPath": "$v1",
+      "children": [
+        "rectangle-16",
+        "rectangle-17",
+        "rectangle-19",
+        "rectangle-18"
+      ]
+    },
+    "pick-what-resonates-you-can-always-chang": {
+      "id": "61:345",
+      "el": "pick-what-resonates-you-can-always-chang",
+      "type": "text",
+      "box": {
+        "w": 247,
+        "h": 32
+      },
+      "name": "Pick what resonates. You can always change this later.",
+      "path": "0-2-5-onboarding.pick-what-resonates-you-can-always-chang",
+      "pos": {
+        "x": 84,
+        "y": 152
+      },
+      "fill": "$c2",
+      "text": "$t2",
+      "chars": "Pick what resonates. You can always change this later.",
+      "textGrow": "h",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-11": {
+      "id": "61:353",
+      "el": "rectangle-11",
+      "type": "rect",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "0-2-5-onboarding.rectangle-11",
+      "pos": {
+        "x": 36,
+        "y": 40
+      },
+      "fill": "$c4",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector": {
+      "id": "I61:354;3:2631",
+      "el": "vector",
+      "type": "vector",
+      "box": {
+        "w": 8,
+        "h": 14
+      },
+      "path": "0-2-5-onboarding.chevron-left.vector",
+      "pos": {
+        "x": 8,
+        "y": 5
+      },
+      "fill": "$c2",
+      "iconHint": "Now the fun part.",
+      "vectorPath": "$v2",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-left": {
+      "id": "61:354",
+      "el": "chevron-left",
+      "type": "instance",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "name": "chevron-left",
+      "path": "0-2-5-onboarding.chevron-left",
+      "pos": {
+        "x": 44,
+        "y": 48
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector"
+      ]
+    },
+    "continue": {
+      "id": "61:356",
+      "el": "continue",
+      "type": "text",
+      "box": {
+        "w": 85,
+        "h": 27
+      },
+      "name": "Continue",
+      "path": "0-2-5-onboarding.frame-7.continue",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c1",
+      "text": "$t3",
+      "chars": "Continue",
+      "textGrow": "wh"
+    },
+    "frame-7": {
+      "id": "61:355",
+      "el": "frame-7",
+      "type": "frame",
+      "box": {
+        "w": 320,
+        "h": 64
+      },
+      "path": "0-2-5-onboarding.frame-7",
+      "pos": {
+        "x": 41,
+        "y": 758
+      },
+      "layout": "$l1",
+      "fill": "$c2",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "continue"
+      ]
+    },
+    "your-style-in-your-words": {
+      "id": "61:352",
+      "el": "your-style-in-your-words",
+      "type": "text",
+      "box": {
+        "w": 180,
+        "h": 22
+      },
+      "name": "Your style, in your words",
+      "path": "0-2-5-onboarding.group-63.group-35.your-style-in-your-words",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c2",
+      "text": "$t4",
+      "chars": "Your style, in your words",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-35": {
+      "id": "61:351",
+      "el": "group-35",
+      "type": "group",
+      "box": {
+        "w": 180,
+        "h": 22
+      },
+      "path": "0-2-5-onboarding.group-63.group-35",
+      "pos": {
+        "x": 3,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "your-style-in-your-words"
+      ]
+    },
+    "clean-minimal": {
+      "id": "61:364",
+      "el": "clean-minimal",
+      "type": "text",
+      "box": {
+        "w": 116,
+        "h": 22
+      },
+      "name": "Clean & minimal",
+      "path": "0-2-5-onboarding.group-63.frame-11.clean-minimal",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c2",
+      "text": "$t4",
+      "chars": "Clean & minimal",
+      "textGrow": "wh"
+    },
+    "frame-11": {
+      "id": "61:363",
+      "el": "frame-11",
+      "type": "frame",
+      "box": {
+        "w": 148,
+        "h": 40
+      },
+      "path": "0-2-5-onboarding.group-63.frame-11",
+      "pos": {
+        "x": 0,
+        "y": 34
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "stroke": "$c5",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "clean-minimal"
+      ]
+    },
+    "soft-feminine": {
+      "id": "61:377",
+      "el": "soft-feminine",
+      "type": "text",
+      "box": {
+        "w": 112,
+        "h": 22
+      },
+      "name": "Soft & feminine",
+      "path": "0-2-5-onboarding.group-63.frame-14.soft-feminine",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c2",
+      "text": "$t4",
+      "chars": "Soft & feminine",
+      "textGrow": "wh"
+    },
+    "frame-14": {
+      "id": "61:376",
+      "el": "frame-14",
+      "type": "frame",
+      "box": {
+        "w": 144,
+        "h": 40
+      },
+      "path": "0-2-5-onboarding.group-63.frame-14",
+      "pos": {
+        "x": 137,
+        "y": 87
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "stroke": "$c5",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "soft-feminine"
+      ]
+    },
+    "still-figuring-it-out": {
+      "id": "61:386",
+      "el": "still-figuring-it-out",
+      "type": "text",
+      "box": {
+        "w": 144,
+        "h": 22
+      },
+      "name": "Still figuring it out",
+      "path": "0-2-5-onboarding.group-63.frame-17.still-figuring-it-out",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c2",
+      "text": "$t4",
+      "chars": "Still figuring it out",
+      "textGrow": "wh"
+    },
+    "frame-17": {
+      "id": "61:385",
+      "el": "frame-17",
+      "type": "frame",
+      "box": {
+        "w": 176,
+        "h": 40
+      },
+      "path": "0-2-5-onboarding.group-63.frame-17",
+      "pos": {
+        "x": 0,
+        "y": 191
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "stroke": "$c5",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "still-figuring-it-out"
+      ]
+    },
+    "street-inspired": {
+      "id": "61:383",
+      "el": "street-inspired",
+      "type": "text",
+      "box": {
+        "w": 109,
+        "h": 22
+      },
+      "name": "Street-inspired",
+      "path": "0-2-5-onboarding.group-63.frame-16.street-inspired",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c2",
+      "text": "$t4",
+      "chars": "Street-inspired",
+      "textGrow": "wh"
+    },
+    "frame-16": {
+      "id": "61:382",
+      "el": "frame-16",
+      "type": "frame",
+      "box": {
+        "w": 141,
+        "h": 40
+      },
+      "path": "0-2-5-onboarding.group-63.frame-16",
+      "pos": {
+        "x": 172,
+        "y": 139
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "stroke": "$c2",
+      "strokeW": 1.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "street-inspired"
+      ]
+    },
+    "office-ready": {
+      "id": "61:374",
+      "el": "office-ready",
+      "type": "text",
+      "box": {
+        "w": 93,
+        "h": 22
+      },
+      "name": "Office-ready",
+      "path": "0-2-5-onboarding.group-63.frame-13.office-ready",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c2",
+      "text": "$t4",
+      "chars": "Office-ready",
+      "textGrow": "wh"
+    },
+    "frame-13": {
+      "id": "61:373",
+      "el": "frame-13",
+      "type": "frame",
+      "box": {
+        "w": 125,
+        "h": 40
+      },
+      "path": "0-2-5-onboarding.group-63.frame-13",
+      "pos": {
+        "x": 0,
+        "y": 87
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "stroke": "$c2",
+      "strokeW": 1.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "office-ready"
+      ]
+    },
+    "bold-expressive": {
+      "id": "61:380",
+      "el": "bold-expressive",
+      "type": "text",
+      "box": {
+        "w": 126,
+        "h": 22
+      },
+      "name": "Bold & expressive",
+      "path": "0-2-5-onboarding.group-63.frame-15.bold-expressive",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c2",
+      "text": "$t4",
+      "chars": "Bold & expressive",
+      "textGrow": "wh"
+    },
+    "frame-15": {
+      "id": "61:379",
+      "el": "frame-15",
+      "type": "frame",
+      "box": {
+        "w": 158,
+        "h": 40
+      },
+      "path": "0-2-5-onboarding.group-63.frame-15",
+      "pos": {
+        "x": 0,
+        "y": 139
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "stroke": "$c5",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "bold-expressive"
+      ]
+    },
+    "effortlessly-casual": {
+      "id": "61:371",
+      "el": "effortlessly-casual",
+      "type": "text",
+      "box": {
+        "w": 144,
+        "h": 22
+      },
+      "name": "Effortlessly casual",
+      "path": "0-2-5-onboarding.group-63.frame-12.effortlessly-casual",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c2",
+      "text": "$t4",
+      "chars": "Effortlessly casual",
+      "textGrow": "wh"
+    },
+    "frame-12": {
+      "id": "61:370",
+      "el": "frame-12",
+      "type": "frame",
+      "box": {
+        "w": 176,
+        "h": 40
+      },
+      "path": "0-2-5-onboarding.group-63.frame-12",
+      "pos": {
+        "x": 160,
+        "y": 34
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "stroke": "$c5",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "effortlessly-casual"
+      ]
+    },
+    "group-63": {
+      "id": "92:1939",
+      "el": "group-63",
+      "type": "group",
+      "box": {
+        "w": 336,
+        "h": 231
+      },
+      "path": "0-2-5-onboarding.group-63",
+      "pos": {
+        "x": 41,
+        "y": 224
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-35",
+        "frame-11",
+        "frame-14",
+        "frame-17",
+        "frame-16",
+        "frame-13",
+        "frame-15",
+        "frame-12"
+      ]
+    },
+    "rectangle-100": {
+      "id": "678:316",
+      "el": "rectangle-100",
+      "type": "rect",
+      "box": {
+        "w": 160,
+        "h": 8
+      },
+      "path": "0-2-5-onboarding.group-197.rectangle-100",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c4",
+      "radius": "$r3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-101": {
+      "id": "678:317",
+      "el": "rectangle-101",
+      "type": "rect",
+      "box": {
+        "w": 160,
+        "h": 8
+      },
+      "path": "0-2-5-onboarding.group-197.rectangle-101",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c2",
+      "radius": "$r3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-197": {
+      "id": "678:315",
+      "el": "group-197",
+      "type": "group",
+      "box": {
+        "w": 160,
+        "h": 8
+      },
+      "path": "0-2-5-onboarding.group-197",
+      "pos": {
+        "x": 121,
+        "y": 56
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-100",
+        "rectangle-101"
+      ]
+    },
+    "0-2-5-onboarding": {
+      "id": "61:338",
+      "el": "0-2-5-onboarding",
+      "type": "frame",
+      "box": {
+        "w": 402,
+        "h": 874
+      },
+      "name": "0.2.5 Onboarding",
+      "fill": "$c1",
+      "clip": true,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "now-the-fun-part",
+        "union",
+        "pick-what-resonates-you-can-always-chang",
+        "rectangle-11",
+        "chevron-left",
+        "frame-7",
+        "group-63",
+        "group-197"
+      ]
+    }
+  },
+  "meta": {
+    "nodeCount": 33,
+    "estTokens": 2611,
+    "depthUsed": 12
+  },
+  "next": "Read `tokens` for the design system, then build the UI from `nodes`. Tag each rendered element data-plumb-id=\"<el>\". A node with a `more` count has that many children not yet included — call plumb_node again on that node's `id` to expand them.",
+  "source": "plugin",
+  "node": "0.2.5 Onboarding"
+}

@@ -1,0 +1,812 @@
+{
+  "file": {
+    "name": "Loomette.id",
+    "version": "plugin-1792667162931"
+  },
+  "root": "4-2-2-1-trip-outfit-plan",
+  "tokens": {
+    "color": {
+      "$c1": "#fafaf7",
+      "$c2": "#f2ede5",
+      "$c3": "#444440",
+      "$c4": "image",
+      "$c5": "#d9d9d9",
+      "$c6": "#c9c3b7"
+    },
+    "text": {
+      "$t1": "400 32px Source Serif Pro",
+      "$t2": "400 24px Source Serif Pro",
+      "$t3": "400 16px Avenir Next",
+      "$t4": "400 20px Avenir Next"
+    },
+    "radius": {
+      "$r1": 20,
+      "$r2": 8
+    },
+    "shadow": {},
+    "layout": {
+      "$l1": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          19,
+          108,
+          18,
+          107
+        ]
+      }
+    },
+    "vector": {
+      "$v1": "M7.60355 0.292893 C7.99408 0.683418 7.99408 1.31658 7.60355 1.70711 L2.31066 7 L7.60355 12.2929 C7.99408 12.6834 7.99408 13.3166 7.60355 13.7071 C7.21303 14.0976 6.57986 14.0976 6.18934 13.7071 L0.366116 7.88388 C-0.12204 7.39573 -0.122038 6.60427 0.366117 6.11612 L6.18934 0.292893 C6.57986 -0.0976311 7.21303 -0.0976311 7.60355 0.292893 Z",
+      "$v2": "M14.4004 11.3262 L22.4092 3.31738 L23.6826 4.59082 L15.6738 12.5996 L27 12.5996 L27 14.4004 L15.6738 14.4004 L23.6826 22.4092 L22.4092 23.6826 L14.4004 15.6738 L14.4004 27 L12.5996 27 L12.5996 15.6738 L4.59082 23.6826 L3.31738 22.4092 L11.3262 14.4004 L0 14.4004 L0 12.5996 L11.3262 12.5996 L3.31738 4.59082 L4.59082 3.31738 L12.5996 11.3262 L12.5996 0 L14.4004 0 L14.4004 11.3262 Z"
+    },
+    "props": {
+      "$p1": {
+        "size": "24"
+      }
+    },
+    "meta": {
+      "counts": {
+        "$c1": 2,
+        "$c2": 2,
+        "$r2": 3,
+        "$p1": 2,
+        "$c3": 13,
+        "$c4": 2,
+        "$t2": 2,
+        "$v2": 2,
+        "$c5": 8,
+        "$t3": 2,
+        "$t4": 2
+      }
+    }
+  },
+  "nodes": {
+    "rectangle-28": {
+      "id": "364:283",
+      "el": "rectangle-28",
+      "type": "rect",
+      "box": {
+        "w": 402,
+        "h": 752
+      },
+      "path": "4-2-2-1-trip-outfit-plan.rectangle-28",
+      "pos": {
+        "x": 0,
+        "y": 149
+      },
+      "fill": "$c1",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-11": {
+      "id": "364:284",
+      "el": "rectangle-11",
+      "type": "rect",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "4-2-2-1-trip-outfit-plan.rectangle-11",
+      "pos": {
+        "x": 36,
+        "y": 40
+      },
+      "fill": "$c2",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector": {
+      "id": "I364:285;3:2631",
+      "el": "vector",
+      "type": "vector",
+      "box": {
+        "w": 8,
+        "h": 14
+      },
+      "path": "4-2-2-1-trip-outfit-plan.chevron-left.vector",
+      "pos": {
+        "x": 8,
+        "y": 5
+      },
+      "fill": "$c3",
+      "iconHint": "Japan",
+      "vectorPath": "$v1",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-left": {
+      "id": "364:285",
+      "el": "chevron-left",
+      "type": "instance",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "name": "chevron-left",
+      "path": "4-2-2-1-trip-outfit-plan.chevron-left",
+      "pos": {
+        "x": 44,
+        "y": 48
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector"
+      ]
+    },
+    "image-removebg-preview-11-1": {
+      "id": "364:286",
+      "el": "image-removebg-preview-11-1",
+      "type": "rect",
+      "box": {
+        "w": 113,
+        "h": 190
+      },
+      "name": "image-removebg-preview (11) 1",
+      "path": "4-2-2-1-trip-outfit-plan.image-removebg-preview-11-1",
+      "pos": {
+        "x": 144,
+        "y": 94
+      },
+      "assetId": "bb071ae72883175e0f5994471c5c9538d27b0caa",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "bb071ae72883175e0f5994471c5c9538d27b0caa",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              0.6878306269645691,
+              0,
+              0.15343913435935974
+            ],
+            [
+              0,
+              0.8202667236328125,
+              0.05412108823657036
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "japan": {
+      "id": "364:287",
+      "el": "japan",
+      "type": "text",
+      "box": {
+        "w": 79,
+        "h": 40
+      },
+      "name": "Japan",
+      "path": "4-2-2-1-trip-outfit-plan.japan",
+      "pos": {
+        "x": 161,
+        "y": 300
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "Japan",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-11-2": {
+      "id": "364:338",
+      "el": "rectangle-11-2",
+      "type": "rect",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "4-2-2-1-trip-outfit-plan.group-74.rectangle-11-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c2",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-2": {
+      "id": "I364:339;4:174",
+      "el": "vector-2",
+      "type": "vector",
+      "box": {
+        "w": 15,
+        "h": 16
+      },
+      "path": "4-2-2-1-trip-outfit-plan.group-74.edit.vector-2",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c3",
+      "iconHint": "edit",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "edit": {
+      "id": "364:339",
+      "el": "edit",
+      "type": "instance",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "name": "edit",
+      "path": "4-2-2-1-trip-outfit-plan.group-74.edit",
+      "pos": {
+        "x": 10,
+        "y": 10
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector-2"
+      ]
+    },
+    "group-74": {
+      "id": "364:337",
+      "el": "group-74",
+      "type": "group",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "4-2-2-1-trip-outfit-plan.group-74",
+      "pos": {
+        "x": 322,
+        "y": 40
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-11-2",
+        "edit"
+      ]
+    },
+    "day-1-02-04-2026": {
+      "id": "364:342",
+      "el": "day-1-02-04-2026",
+      "type": "text",
+      "box": {
+        "w": 182,
+        "h": 30
+      },
+      "name": "Day 1 - 02/04/2026",
+      "path": "4-2-2-1-trip-outfit-plan.day-1-02-04-2026",
+      "pos": {
+        "x": 81,
+        "y": 452
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "Day 1 - 02/04/2026",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16": {
+      "id": "364:344",
+      "el": "rectangle-16",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 27
+      },
+      "path": "4-2-2-1-trip-outfit-plan.union.rectangle-16",
+      "pos": {
+        "x": 13,
+        "y": 0
+      },
+      "fill": "$c5",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17": {
+      "id": "364:345",
+      "el": "rectangle-17",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "4-2-2-1-trip-outfit-plan.union.rectangle-17",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c5",
+      "rotation": 2578,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19": {
+      "id": "364:346",
+      "el": "rectangle-19",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "4-2-2-1-trip-outfit-plan.union.rectangle-19",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c5",
+      "rotation": 7735,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18": {
+      "id": "364:347",
+      "el": "rectangle-18",
+      "type": "rect",
+      "box": {
+        "w": 27,
+        "h": 2
+      },
+      "path": "4-2-2-1-trip-outfit-plan.union.rectangle-18",
+      "pos": {
+        "x": 0,
+        "y": 13
+      },
+      "fill": "$c5",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union": {
+      "id": "364:343",
+      "el": "union",
+      "type": "bool",
+      "box": {
+        "w": 27,
+        "h": 27
+      },
+      "path": "4-2-2-1-trip-outfit-plan.union",
+      "pos": {
+        "x": 40,
+        "y": 456
+      },
+      "fill": "$c3",
+      "iconHint": "Japan",
+      "vectorPath": "$v2",
+      "children": [
+        "rectangle-16",
+        "rectangle-17",
+        "rectangle-19",
+        "rectangle-18"
+      ]
+    },
+    "day-2-03-04-2026": {
+      "id": "364:384",
+      "el": "day-2-03-04-2026",
+      "type": "text",
+      "box": {
+        "w": 182,
+        "h": 30
+      },
+      "name": "Day 2 - 03/04/2026",
+      "path": "4-2-2-1-trip-outfit-plan.day-2-03-04-2026",
+      "pos": {
+        "x": 81,
+        "y": 919
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "Day 2 - 03/04/2026",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16-2": {
+      "id": "364:386",
+      "el": "rectangle-16-2",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 27
+      },
+      "path": "4-2-2-1-trip-outfit-plan.union-2.rectangle-16-2",
+      "pos": {
+        "x": 13,
+        "y": 0
+      },
+      "fill": "$c5",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17-2": {
+      "id": "364:387",
+      "el": "rectangle-17-2",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "4-2-2-1-trip-outfit-plan.union-2.rectangle-17-2",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c5",
+      "rotation": 2578,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19-2": {
+      "id": "364:388",
+      "el": "rectangle-19-2",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "4-2-2-1-trip-outfit-plan.union-2.rectangle-19-2",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c5",
+      "rotation": 7735,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18-2": {
+      "id": "364:389",
+      "el": "rectangle-18-2",
+      "type": "rect",
+      "box": {
+        "w": 27,
+        "h": 2
+      },
+      "path": "4-2-2-1-trip-outfit-plan.union-2.rectangle-18-2",
+      "pos": {
+        "x": 0,
+        "y": 13
+      },
+      "fill": "$c5",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union-2": {
+      "id": "364:385",
+      "el": "union-2",
+      "type": "bool",
+      "box": {
+        "w": 27,
+        "h": 27
+      },
+      "path": "4-2-2-1-trip-outfit-plan.union-2",
+      "pos": {
+        "x": 40,
+        "y": 923
+      },
+      "fill": "$c3",
+      "iconHint": "Japan",
+      "vectorPath": "$v2",
+      "children": [
+        "rectangle-16-2",
+        "rectangle-17-2",
+        "rectangle-19-2",
+        "rectangle-18-2"
+      ]
+    },
+    "2-days": {
+      "id": "364:351",
+      "el": "2-days",
+      "type": "text",
+      "box": {
+        "w": 45,
+        "h": 22
+      },
+      "name": "2 days",
+      "path": "4-2-2-1-trip-outfit-plan.2-days",
+      "pos": {
+        "x": 178,
+        "y": 344
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "2 days",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "1-removebg-preview-1": {
+      "id": "364:353",
+      "el": "1-removebg-preview-1",
+      "type": "rect",
+      "box": {
+        "w": 256,
+        "h": 383
+      },
+      "name": "___1_-removebg-preview 1",
+      "path": "4-2-2-1-trip-outfit-plan.1-removebg-preview-1",
+      "pos": {
+        "x": 81,
+        "y": 502
+      },
+      "assetId": "8bf8b363cb3ab1da75efc052040325af8a76aee1",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "8bf8b363cb3ab1da75efc052040325af8a76aee1",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.8445945978164673,
+              0.08853083848953247
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "line-4": {
+      "id": "364:355",
+      "el": "line-4",
+      "type": "line",
+      "box": {
+        "w": 0,
+        "h": 408
+      },
+      "path": "4-2-2-1-trip-outfit-plan.line-4",
+      "pos": {
+        "x": 53,
+        "y": 497
+      },
+      "stroke": "$c3",
+      "strokeW": 1,
+      "strokeAlign": "center",
+      "strokeDash": [
+        4,
+        4
+      ],
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "plan-outfit": {
+      "id": "364:392",
+      "el": "plan-outfit",
+      "type": "text",
+      "box": {
+        "w": 83,
+        "h": 22
+      },
+      "name": "plan outfit",
+      "path": "4-2-2-1-trip-outfit-plan.frame-7.plan-outfit",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "plan outfit",
+      "textGrow": "wh"
+    },
+    "frame-7": {
+      "id": "364:391",
+      "el": "frame-7",
+      "type": "frame",
+      "box": {
+        "w": 248,
+        "h": 48
+      },
+      "path": "4-2-2-1-trip-outfit-plan.frame-7",
+      "pos": {
+        "x": 81,
+        "y": 961
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "stroke": "$c6",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "plan-outfit"
+      ]
+    },
+    "line-1": {
+      "id": "364:394",
+      "el": "line-1",
+      "type": "line",
+      "box": {
+        "w": 103,
+        "h": 0
+      },
+      "path": "4-2-2-1-trip-outfit-plan.line-1",
+      "pos": {
+        "x": 64,
+        "y": 421
+      },
+      "stroke": "$c3",
+      "strokeW": 1,
+      "strokeAlign": "center",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "outfit-plan": {
+      "id": "364:395",
+      "el": "outfit-plan",
+      "type": "text",
+      "box": {
+        "w": 103,
+        "h": 27
+      },
+      "name": "outfit plan",
+      "path": "4-2-2-1-trip-outfit-plan.group-109.outfit-plan",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "outfit plan",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "packing-list": {
+      "id": "364:397",
+      "el": "packing-list",
+      "type": "text",
+      "box": {
+        "w": 107,
+        "h": 27
+      },
+      "name": "packing list",
+      "path": "4-2-2-1-trip-outfit-plan.group-109.packing-list",
+      "pos": {
+        "x": 167,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "packing list",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-109": {
+      "id": "364:399",
+      "el": "group-109",
+      "type": "group",
+      "box": {
+        "w": 274,
+        "h": 27
+      },
+      "path": "4-2-2-1-trip-outfit-plan.group-109",
+      "pos": {
+        "x": 64,
+        "y": 389
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "outfit-plan",
+        "packing-list"
+      ]
+    },
+    "4-2-2-1-trip-outfit-plan": {
+      "id": "364:281",
+      "el": "4-2-2-1-trip-outfit-plan",
+      "type": "frame",
+      "box": {
+        "w": 402,
+        "h": 1049
+      },
+      "name": "4.2.2.1 Trip - Outfit Plan",
+      "fill": "$c1",
+      "clip": true,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "rectangle-28",
+        "rectangle-11",
+        "chevron-left",
+        "image-removebg-preview-11-1",
+        "japan",
+        "group-74",
+        "day-1-02-04-2026",
+        "union",
+        "day-2-03-04-2026",
+        "union-2",
+        "2-days",
+        "1-removebg-preview-1",
+        "line-4",
+        "frame-7",
+        "line-1",
+        "group-109"
+      ]
+    }
+  },
+  "meta": {
+    "nodeCount": 32,
+    "estTokens": 2498,
+    "depthUsed": 12
+  },
+  "next": "Read `tokens` for the design system, then build the UI from `nodes`. Tag each rendered element data-plumb-id=\"<el>\". A node with a `more` count has that many children not yet included — call plumb_node again on that node's `id` to expand them. This screen has 2 image asset(s) (nodes with `assetId`). Call plumb_assets with this screen's id to download them to disk BEFORE generating HTML — without the real files any <img> will be a placeholder and plumb_verify will flag every image node as asset.missing.",
+  "source": "plugin",
+  "node": "4.2.2.1 Trip - Outfit Plan"
+}

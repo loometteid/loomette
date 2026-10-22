@@ -1,0 +1,2164 @@
+{
+  "file": {
+    "name": "Loomette.id",
+    "version": "plugin-1792666968268"
+  },
+  "root": "1-1-2-outfit-recomendation-detail-pop-up",
+  "tokens": {
+    "color": {
+      "$c1": "#fafaf7",
+      "$c2": "#f2ede5",
+      "$c3": "#444440",
+      "$c4": "#d9d9d9",
+      "$c5": "#c9c3b7",
+      "$c6": "image",
+      "$c7": "#c9c3b733",
+      "$c8": "#e5487e",
+      "$c9": "#ffffff"
+    },
+    "text": {
+      "$t1": "400 32px",
+      "$t2": "400 32px Source Serif Pro",
+      "$t3": "400 10px Avenir Next",
+      "$t4": "400 14px Source Serif Pro",
+      "$t5": "400 16px Avenir Next",
+      "$t6": "400 8px Avenir Next",
+      "$t7": "700 8px Avenir Next",
+      "$t8": "400 12px Avenir Next",
+      "$t9": "400 20px Avenir Next"
+    },
+    "radius": {
+      "$r1": 8,
+      "$r2": 12,
+      "$r3": "full",
+      "$r4": 16,
+      "$r5": 20
+    },
+    "shadow": {},
+    "layout": {
+      "$l1": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          1,
+          16,
+          2,
+          16
+        ]
+      },
+      "$l2": {
+        "align": "center",
+        "flow": "row",
+        "gap": 13,
+        "justify": "space-between",
+        "pad": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l3": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          19,
+          108,
+          18,
+          107
+        ]
+      },
+      "$l4": {
+        "flow": "row",
+        "gap": 20,
+        "pad": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "vector": {
+      "$v1": "M7.60355 0.292893 C7.99408 0.683418 7.99408 1.31658 7.60355 1.70711 L2.31066 7 L7.60355 12.2929 C7.99408 12.6834 7.99408 13.3166 7.60355 13.7071 C7.21303 14.0976 6.57986 14.0976 6.18934 13.7071 L0.366116 7.88388 C-0.12204 7.39573 -0.122038 6.60427 0.366117 6.11612 L6.18934 0.292893 C6.57986 -0.0976311 7.21303 -0.0976311 7.60355 0.292893 Z",
+      "$v2": "M14.4004 11.3262 L22.4092 3.31738 L23.6826 4.59082 L15.6738 12.5996 L27 12.5996 L27 14.4004 L15.6738 14.4004 L23.6826 22.4092 L22.4092 23.6826 L14.4004 15.6738 L14.4004 27 L12.5996 27 L12.5996 15.6738 L4.59082 23.6826 L3.31738 22.4092 L11.3262 14.4004 L0 14.4004 L0 12.5996 L11.3262 12.5996 L3.31738 4.59082 L4.59082 3.31738 L12.5996 11.3262 L12.5996 0 L14.4004 0 L14.4004 11.3262 Z",
+      "$v3": "M0.244078 0.244078 C0.569515 -0.0813593 1.09715 -0.0813593 1.42259 0.244078 L5.83333 4.65482 L10.2441 0.244078 C10.5695 -0.0813593 11.0972 -0.0813593 11.4226 0.244078 C11.748 0.569515 11.748 1.09715 11.4226 1.42259 L7.01184 5.83333 L11.4226 10.2441 C11.748 10.5695 11.748 11.0972 11.4226 11.4226 C11.0972 11.748 10.5695 11.748 10.2441 11.4226 L5.83333 7.01184 L1.42259 11.4226 C1.09715 11.748 0.569515 11.748 0.244078 11.4226 C-0.0813593 11.0972 -0.0813593 10.5695 0.244078 10.2441 L4.65482 5.83333 L0.244078 1.42259 C-0.0813593 1.09715 -0.0813593 0.569515 0.244078 0.244078 Z",
+      "$v4": "M5.17678 0.21967 C5.46967 0.512563 5.46967 0.987437 5.17678 1.28033 L1.70711 4.75 L5.17678 8.21967 C5.46967 8.51256 5.46967 8.98744 5.17678 9.28033 C4.88388 9.57322 4.40901 9.57322 4.11612 9.28033 L0.292893 5.45711 C-0.0976322 5.06658 -0.0976299 4.43342 0.292893 4.04289 L4.11612 0.21967 C4.40901 -0.0732233 4.88388 -0.0732233 5.17678 0.21967 Z",
+      "$v5": "M0.21967 0.21967 C0.512563 -0.0732233 0.987437 -0.0732233 1.28033 0.21967 L5.10355 4.04289 C5.49408 4.43342 5.49408 5.06658 5.10355 5.45711 L1.28033 9.28033 C0.987437 9.57322 0.512563 9.57322 0.21967 9.28033 C-0.0732233 8.98744 -0.0732233 8.51256 0.21967 8.21967 L3.68934 4.75 L0.21967 1.28033 C-0.0732233 0.987437 -0.0732233 0.512563 0.21967 0.21967 Z"
+    },
+    "props": {
+      "$p1": {
+        "size": "24"
+      },
+      "$p2": {
+        "size": "16"
+      }
+    },
+    "meta": {
+      "counts": {
+        "$c1": 4,
+        "$c2": 4,
+        "$r1": 34,
+        "$p1": 2,
+        "$c3": 57,
+        "$t2": 2,
+        "$c4": 4,
+        "$c5": 37,
+        "$t3": 5,
+        "$r2": 3,
+        "$c6": 7,
+        "$t4": 3,
+        "$t5": 4,
+        "$t8": 39,
+        "$l3": 3,
+        "$r4": 2,
+        "$c8": 2,
+        "$p2": 2
+      }
+    }
+  },
+  "nodes": {
+    "20": {
+      "id": "395:2026",
+      "el": "20",
+      "type": "text",
+      "box": {
+        "w": 12,
+        "h": 16
+      },
+      "name": "20",
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-131.group-169.group-157.20",
+      "pos": {
+        "x": 9,
+        "y": 7
+      },
+      "fill": "$c9",
+      "text": "$t8",
+      "chars": "20",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "21": {
+      "id": "395:2029",
+      "el": "21",
+      "type": "text",
+      "box": {
+        "w": 12,
+        "h": 16
+      },
+      "name": "21",
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-131.group-169.group-158.21",
+      "pos": {
+        "x": 9,
+        "y": 7
+      },
+      "fill": "$c3",
+      "text": "$t8",
+      "chars": "21",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-11": {
+      "id": "395:1878",
+      "el": "rectangle-11",
+      "type": "rect",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.rectangle-11",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c2",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector": {
+      "id": "I395:1879;3:2631",
+      "el": "vector",
+      "type": "vector",
+      "box": {
+        "w": 8,
+        "h": 14
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.chevron-left.vector",
+      "pos": {
+        "x": 8,
+        "y": 5
+      },
+      "fill": "$c3",
+      "iconHint": "Outfit Recommendation",
+      "vectorPath": "$v1",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-left": {
+      "id": "395:1879",
+      "el": "chevron-left",
+      "type": "instance",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "name": "chevron-left",
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.chevron-left",
+      "pos": {
+        "x": 8,
+        "y": 8
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector"
+      ]
+    },
+    "outfit-recommendation": {
+      "id": "395:1880",
+      "el": "outfit-recommendation",
+      "type": "text",
+      "box": {
+        "w": 256,
+        "h": 80
+      },
+      "name": "Outfit Recommendation",
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.outfit-recommendation",
+      "pos": {
+        "x": 48,
+        "y": 68
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": [
+        {
+          "t": "Outfit",
+          "s": "$t2",
+          "d": "underline"
+        },
+        {
+          "t": " Recommendation",
+          "s": "$t2"
+        }
+      ],
+      "textGrow": "h",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16": {
+      "id": "395:1882",
+      "el": "rectangle-16",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 27
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.union.rectangle-16",
+      "pos": {
+        "x": 13,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17": {
+      "id": "395:1883",
+      "el": "rectangle-17",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.union.rectangle-17",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 2578,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19": {
+      "id": "395:1884",
+      "el": "rectangle-19",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.union.rectangle-19",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 7735,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18": {
+      "id": "395:1885",
+      "el": "rectangle-18",
+      "type": "rect",
+      "box": {
+        "w": 27,
+        "h": 2
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.union.rectangle-18",
+      "pos": {
+        "x": 0,
+        "y": 13
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union": {
+      "id": "395:1881",
+      "el": "union",
+      "type": "bool",
+      "box": {
+        "w": 27,
+        "h": 27
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.union",
+      "pos": {
+        "x": 7,
+        "y": 72
+      },
+      "fill": "$c3",
+      "iconHint": "Outfit Recommendation",
+      "vectorPath": "$v2",
+      "children": [
+        "rectangle-16",
+        "rectangle-17",
+        "rectangle-19",
+        "rectangle-18"
+      ]
+    },
+    "from-wardrobe": {
+      "id": "395:1895",
+      "el": "from-wardrobe",
+      "type": "text",
+      "box": {
+        "w": 72,
+        "h": 14
+      },
+      "name": "From wardrobe",
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.group-46.from-wardrobe",
+      "pos": {
+        "x": 36,
+        "y": 151
+      },
+      "fill": "$c5",
+      "text": "$t3",
+      "chars": "From wardrobe",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-36": {
+      "id": "395:1896",
+      "el": "rectangle-36",
+      "type": "rect",
+      "box": {
+        "w": 143,
+        "h": 177
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.group-46.rectangle-36",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c5",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-1": {
+      "id": "395:1897",
+      "el": "image-removebg-preview-1",
+      "type": "rect",
+      "box": {
+        "w": 103,
+        "h": 97
+      },
+      "name": "image-removebg-preview 1",
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.group-46.image-removebg-preview-1",
+      "pos": {
+        "x": 20,
+        "y": 24
+      },
+      "assetId": "837079d7a4263daef60e6c2261fde3a6852552dd",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "837079d7a4263daef60e6c2261fde3a6852552dd",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.7313451170921326,
+              0.13030901551246643
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "blue-shirt": {
+      "id": "395:1898",
+      "el": "blue-shirt",
+      "type": "text",
+      "box": {
+        "w": 58,
+        "h": 18
+      },
+      "name": "Blue shirt",
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.group-46.blue-shirt",
+      "pos": {
+        "x": 43,
+        "y": 133
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "Blue shirt",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-46": {
+      "id": "395:1894",
+      "el": "group-46",
+      "type": "group",
+      "box": {
+        "w": 143,
+        "h": 177
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.group-46",
+      "pos": {
+        "x": 11,
+        "y": 667
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "from-wardrobe",
+        "rectangle-36",
+        "image-removebg-preview-1",
+        "blue-shirt"
+      ]
+    },
+    "ai-generated": {
+      "id": "395:1900",
+      "el": "ai-generated",
+      "type": "text",
+      "box": {
+        "w": 59,
+        "h": 14
+      },
+      "name": "ai generated",
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.group-47.ai-generated",
+      "pos": {
+        "x": 42,
+        "y": 151
+      },
+      "fill": "$c5",
+      "text": "$t3",
+      "chars": "ai generated",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-36-2": {
+      "id": "395:1901",
+      "el": "rectangle-36-2",
+      "type": "rect",
+      "box": {
+        "w": 143,
+        "h": 177
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.group-47.rectangle-36-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c5",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-7-1": {
+      "id": "395:1902",
+      "el": "image-removebg-preview-7-1",
+      "type": "rect",
+      "box": {
+        "w": 78,
+        "h": 100
+      },
+      "name": "image-removebg-preview (7) 1",
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.group-47.image-removebg-preview-7-1",
+      "pos": {
+        "x": 33,
+        "y": 28
+      },
+      "assetId": "e5420007b99f8c30cfc67be00af0ec3b2f376e2a",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "e5420007b99f8c30cfc67be00af0ec3b2f376e2a",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.8557214140892029,
+              0.07213930040597916
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "polkadot-skirt": {
+      "id": "395:1903",
+      "el": "polkadot-skirt",
+      "type": "text",
+      "box": {
+        "w": 83,
+        "h": 18
+      },
+      "name": "Polkadot skirt",
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.group-47.polkadot-skirt",
+      "pos": {
+        "x": 30,
+        "y": 133
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "Polkadot skirt",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-47": {
+      "id": "395:1899",
+      "el": "group-47",
+      "type": "group",
+      "box": {
+        "w": 143,
+        "h": 177
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.group-47",
+      "pos": {
+        "x": 176,
+        "y": 667
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "ai-generated",
+        "rectangle-36-2",
+        "image-removebg-preview-7-1",
+        "polkadot-skirt"
+      ]
+    },
+    "wardrobe-detail": {
+      "id": "395:1907",
+      "el": "wardrobe-detail",
+      "type": "text",
+      "box": {
+        "w": 116,
+        "h": 22
+      },
+      "name": "wardrobe detail",
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.group-49.group-36.group-35.wardrobe-detail",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t5",
+      "chars": "wardrobe detail",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-35": {
+      "id": "395:1906",
+      "el": "group-35",
+      "type": "group",
+      "box": {
+        "w": 116,
+        "h": 22
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.group-49.group-36.group-35",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "wardrobe-detail"
+      ]
+    },
+    "group-36": {
+      "id": "395:1905",
+      "el": "group-36",
+      "type": "group",
+      "box": {
+        "w": 116,
+        "h": 22
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.group-49.group-36",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-35"
+      ]
+    },
+    "group-49": {
+      "id": "395:1904",
+      "el": "group-49",
+      "type": "group",
+      "box": {
+        "w": 116,
+        "h": 22
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.group-49",
+      "pos": {
+        "x": 11,
+        "y": 633
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-36"
+      ]
+    },
+    "rectangle-36-3": {
+      "id": "395:1909",
+      "el": "rectangle-36-3",
+      "type": "rect",
+      "box": {
+        "w": 143,
+        "h": 177
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.group-107.rectangle-36-3",
+      "pos": {
+        "x": 0,
+        "y": 11
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c5",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "pink-pashmina": {
+      "id": "395:1910",
+      "el": "pink-pashmina",
+      "type": "text",
+      "box": {
+        "w": 91,
+        "h": 18
+      },
+      "name": "Pink Pashmina",
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.group-107.pink-pashmina",
+      "pos": {
+        "x": 26,
+        "y": 150
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "Pink Pashmina",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rp39-000": {
+      "id": "395:1911",
+      "el": "rp39-000",
+      "type": "text",
+      "box": {
+        "w": 35,
+        "h": 11
+      },
+      "name": "Rp39.000",
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.group-107.rp39-000",
+      "pos": {
+        "x": 34,
+        "y": 168
+      },
+      "fill": "$c3",
+      "text": "$t6",
+      "chars": "Rp39.000",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rp29-000": {
+      "id": "395:1912",
+      "el": "rp29-000",
+      "type": "text",
+      "box": {
+        "w": 38,
+        "h": 11
+      },
+      "name": "Rp29.000",
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.group-107.rp29-000",
+      "pos": {
+        "x": 74,
+        "y": 168
+      },
+      "fill": "$c3",
+      "text": "$t7",
+      "chars": "Rp29.000",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "line-5": {
+      "id": "395:1913",
+      "el": "line-5",
+      "type": "line",
+      "box": {
+        "w": 38,
+        "h": 0
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.group-107.line-5",
+      "pos": {
+        "x": 32,
+        "y": 174
+      },
+      "stroke": "$c3",
+      "strokeW": 1,
+      "strokeAlign": "center",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-4-1": {
+      "id": "395:1914",
+      "el": "image-removebg-preview-4-1",
+      "type": "rect",
+      "box": {
+        "w": 114,
+        "h": 114
+      },
+      "name": "image-removebg-preview (4) 1",
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.group-107.image-removebg-preview-4-1",
+      "pos": {
+        "x": 12,
+        "y": 28
+      },
+      "assetId": "b5383112df490c825aacd83035b1de7245c291b4",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "b5383112df490c825aacd83035b1de7245c291b4",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "1-trending": {
+      "id": "395:1916",
+      "el": "1-trending",
+      "type": "text",
+      "box": {
+        "w": 63,
+        "h": 16
+      },
+      "name": "#1 TRENDING",
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.group-107.frame-18.1-trending",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t8",
+      "chars": "#1 TRENDING",
+      "textGrow": "wh"
+    },
+    "frame-18": {
+      "id": "395:1915",
+      "el": "frame-18",
+      "type": "frame",
+      "box": {
+        "w": 95,
+        "h": 22
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.group-107.frame-18",
+      "pos": {
+        "x": 12,
+        "y": 0
+      },
+      "layout": "$l1",
+      "fill": "$c2",
+      "radius": "$r3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "1-trending"
+      ]
+    },
+    "group-107": {
+      "id": "395:1908",
+      "el": "group-107",
+      "type": "group",
+      "box": {
+        "w": 143,
+        "h": 188
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.group-107",
+      "pos": {
+        "x": 11,
+        "y": 863
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-36-3",
+        "pink-pashmina",
+        "rp39-000",
+        "rp29-000",
+        "line-5",
+        "image-removebg-preview-4-1",
+        "frame-18"
+      ]
+    },
+    "add-to-collection": {
+      "id": "395:1921",
+      "el": "add-to-collection",
+      "type": "text",
+      "box": {
+        "w": 135,
+        "h": 22
+      },
+      "name": "add to collection",
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.group-89.frame-30.group-76.frame-7.add-to-collection",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t5",
+      "chars": "add to collection",
+      "textGrow": "wh"
+    },
+    "frame-7": {
+      "id": "395:1920",
+      "el": "frame-7",
+      "type": "frame",
+      "box": {
+        "w": 154,
+        "h": 64
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.group-89.frame-30.group-76.frame-7",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "layout": "$l3",
+      "fill": "$c2",
+      "radius": "$r4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "add-to-collection"
+      ]
+    },
+    "group-76": {
+      "id": "395:1919",
+      "el": "group-76",
+      "type": "group",
+      "box": {
+        "w": 154,
+        "h": 64
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.group-89.frame-30.group-76",
+      "inheritedFill": "$c1",
+      "children": [
+        "frame-7"
+      ]
+    },
+    "add-to-calendar": {
+      "id": "395:1924",
+      "el": "add-to-calendar",
+      "type": "text",
+      "box": {
+        "w": 122,
+        "h": 22
+      },
+      "name": "add to calendar",
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.group-89.frame-30.group-75.frame-7-2.add-to-calendar",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c1",
+      "text": "$t5",
+      "chars": "add to calendar",
+      "textGrow": "wh"
+    },
+    "frame-7-2": {
+      "id": "395:1923",
+      "el": "frame-7-2",
+      "type": "frame",
+      "box": {
+        "w": 154,
+        "h": 64
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.group-89.frame-30.group-75.frame-7-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "layout": "$l3",
+      "fill": "$c3",
+      "radius": "$r4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "add-to-calendar"
+      ]
+    },
+    "group-75": {
+      "id": "395:1922",
+      "el": "group-75",
+      "type": "group",
+      "box": {
+        "w": 154,
+        "h": 64
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.group-89.frame-30.group-75",
+      "inheritedFill": "$c1",
+      "children": [
+        "frame-7-2"
+      ]
+    },
+    "frame-30": {
+      "id": "395:1918",
+      "el": "frame-30",
+      "type": "frame",
+      "box": {
+        "w": 321,
+        "h": 64
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.group-89.frame-30",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "group-76",
+        "group-75"
+      ]
+    },
+    "group-89": {
+      "id": "395:1917",
+      "el": "group-89",
+      "type": "group",
+      "box": {
+        "w": 321,
+        "h": 64
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.group-89",
+      "pos": {
+        "x": 4,
+        "y": 545
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "frame-30"
+      ]
+    },
+    "image-removebg-preview-7-1-2": {
+      "id": "395:1926",
+      "el": "image-removebg-preview-7-1-2",
+      "type": "rect",
+      "box": {
+        "w": 184,
+        "h": 236
+      },
+      "name": "image-removebg-preview (7) 1",
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.group-135.image-removebg-preview-7-1-2",
+      "pos": {
+        "x": 11,
+        "y": 94
+      },
+      "assetId": "e5420007b99f8c30cfc67be00af0ec3b2f376e2a",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "e5420007b99f8c30cfc67be00af0ec3b2f376e2a",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.8557214140892029,
+              0.07213930040597916
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-1-2": {
+      "id": "395:1927",
+      "el": "image-removebg-preview-1-2",
+      "type": "rect",
+      "box": {
+        "w": 161,
+        "h": 153
+      },
+      "name": "image-removebg-preview 1",
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.group-135.image-removebg-preview-1-2",
+      "pos": {
+        "x": 22,
+        "y": 15
+      },
+      "assetId": "837079d7a4263daef60e6c2261fde3a6852552dd",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "837079d7a4263daef60e6c2261fde3a6852552dd",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.7313451170921326,
+              0.13030901551246643
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-10-1": {
+      "id": "395:1928",
+      "el": "image-removebg-preview-10-1",
+      "type": "rect",
+      "box": {
+        "w": 71,
+        "h": 50
+      },
+      "name": "image-removebg-preview (10) 1",
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.group-135.image-removebg-preview-10-1",
+      "pos": {
+        "x": 103,
+        "y": 294
+      },
+      "assetId": "178406f88b315152b95287f3aeb79ee56c5d2443",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "178406f88b315152b95287f3aeb79ee56c5d2443",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.720081090927124,
+              0.12576064467430115
+            ]
+          ]
+        }
+      ],
+      "rotation": 10313,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-4-1-2": {
+      "id": "395:1929",
+      "el": "image-removebg-preview-4-1-2",
+      "type": "rect",
+      "box": {
+        "w": 103,
+        "h": 104
+      },
+      "name": "image-removebg-preview (4) 1",
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.group-135.image-removebg-preview-4-1-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "assetId": "b5383112df490c825aacd83035b1de7245c291b4",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "b5383112df490c825aacd83035b1de7245c291b4",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-135": {
+      "id": "395:1925",
+      "el": "group-135",
+      "type": "group",
+      "box": {
+        "w": 195,
+        "h": 344
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137.group-135",
+      "pos": {
+        "x": 68,
+        "y": 161
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "image-removebg-preview-7-1-2",
+        "image-removebg-preview-1-2",
+        "image-removebg-preview-10-1",
+        "image-removebg-preview-4-1-2"
+      ]
+    },
+    "group-137": {
+      "id": "395:1933",
+      "el": "group-137",
+      "type": "group",
+      "box": {
+        "w": 325,
+        "h": 1051
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-137",
+      "pos": {
+        "x": 36,
+        "y": 40
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-11",
+        "chevron-left",
+        "outfit-recommendation",
+        "union",
+        "group-46",
+        "group-47",
+        "group-49",
+        "group-107",
+        "group-89",
+        "group-135"
+      ]
+    },
+    "rectangle-45": {
+      "id": "395:1934",
+      "el": "rectangle-45",
+      "type": "rect",
+      "box": {
+        "w": 402,
+        "h": 874
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.rectangle-45",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c7",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-46": {
+      "id": "395:1936",
+      "el": "rectangle-46",
+      "type": "rect",
+      "box": {
+        "w": 314,
+        "h": 446
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-131.rectangle-46",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c1",
+      "radius": "$r5",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      }
+    },
+    "rectangle-11-2": {
+      "id": "395:1943",
+      "el": "rectangle-11-2",
+      "type": "rect",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-131.group-58.rectangle-11-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c2",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-2": {
+      "id": "I395:1944;3:2684",
+      "el": "vector-2",
+      "type": "vector",
+      "box": {
+        "w": 12,
+        "h": 12
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-131.group-58.close-x.vector-2",
+      "pos": {
+        "x": 4,
+        "y": 4
+      },
+      "fill": "$c3",
+      "iconHint": "close x",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "close-x": {
+      "id": "395:1944",
+      "el": "close-x",
+      "type": "instance",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "name": "close-x",
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-131.group-58.close-x",
+      "pos": {
+        "x": 10,
+        "y": 10
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector-2"
+      ]
+    },
+    "group-58": {
+      "id": "395:1942",
+      "el": "group-58",
+      "type": "group",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-131.group-58",
+      "pos": {
+        "x": 250,
+        "y": 24
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-11-2",
+        "close-x"
+      ]
+    },
+    "may-2026": {
+      "id": "395:1948",
+      "el": "may-2026",
+      "type": "text",
+      "box": {
+        "w": 78,
+        "h": 27
+      },
+      "name": "May 2026",
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-131.may-2026",
+      "pos": {
+        "x": 46,
+        "y": 30
+      },
+      "fill": "$c3",
+      "text": "$t9",
+      "chars": "May 2026",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "sun": {
+      "id": "395:1951",
+      "el": "sun",
+      "type": "text",
+      "box": {
+        "w": 20,
+        "h": 16
+      },
+      "name": "SUN",
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-131.frame-1.sun",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c8",
+      "text": "$t8",
+      "chars": "SUN",
+      "textGrow": "wh"
+    },
+    "mon": {
+      "id": "395:1952",
+      "el": "mon",
+      "type": "text",
+      "box": {
+        "w": 25,
+        "h": 16
+      },
+      "name": "mon",
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-131.frame-1.mon",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t8",
+      "chars": "mon",
+      "textGrow": "wh"
+    },
+    "tue": {
+      "id": "395:1953",
+      "el": "tue",
+      "type": "text",
+      "box": {
+        "w": 19,
+        "h": 16
+      },
+      "name": "TUE",
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-131.frame-1.tue",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t8",
+      "chars": "TUE",
+      "textGrow": "wh"
+    },
+    "wed": {
+      "id": "395:1954",
+      "el": "wed",
+      "type": "text",
+      "box": {
+        "w": 23,
+        "h": 16
+      },
+      "name": "wed",
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-131.frame-1.wed",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t8",
+      "chars": "wed",
+      "textGrow": "wh"
+    },
+    "thu": {
+      "id": "395:1955",
+      "el": "thu",
+      "type": "text",
+      "box": {
+        "w": 20,
+        "h": 16
+      },
+      "name": "thu",
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-131.frame-1.thu",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t8",
+      "chars": "thu",
+      "textGrow": "wh"
+    },
+    "fri": {
+      "id": "395:1956",
+      "el": "fri",
+      "type": "text",
+      "box": {
+        "w": 15,
+        "h": 16
+      },
+      "name": "fRI",
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-131.frame-1.fri",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t8",
+      "chars": "fRI",
+      "textGrow": "wh"
+    },
+    "sat": {
+      "id": "395:1957",
+      "el": "sat",
+      "type": "text",
+      "box": {
+        "w": 17,
+        "h": 16
+      },
+      "name": "SAT",
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-131.frame-1.sat",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c8",
+      "text": "$t8",
+      "chars": "SAT",
+      "textGrow": "wh"
+    },
+    "frame-1": {
+      "id": "395:1950",
+      "el": "frame-1",
+      "type": "frame",
+      "box": {
+        "w": 259,
+        "h": 16
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-131.frame-1",
+      "pos": {
+        "x": 27,
+        "y": 85
+      },
+      "layout": "$l4",
+      "inheritedFill": "$c1",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "sun",
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat"
+      ]
+    },
+    "01": {
+      "id": "395:1959",
+      "el": "01",
+      "type": "text",
+      "box": {
+        "w": 12,
+        "h": 16
+      },
+      "name": "01",
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-131.group-169.group-139.01",
+      "pos": {
+        "x": 9,
+        "y": 7
+      },
+      "fill": "$c3",
+      "text": "$t8",
+      "chars": "01",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-53": {
+      "id": "395:1962",
+      "el": "rectangle-53",
+      "type": "rect",
+      "box": {
+        "w": 30,
+        "h": 31
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-131.group-169.group-139.rectangle-53",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c5",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-139": {
+      "id": "395:1966",
+      "el": "group-139",
+      "type": "group",
+      "box": {
+        "w": 30,
+        "h": 31
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-131.group-169.group-139",
+      "pos": {
+        "x": 205,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "01",
+        "rectangle-53"
+      ]
+    },
+    "rectangle-54-16": {
+      "id": "395:2027",
+      "el": "rectangle-54-16",
+      "type": "rect",
+      "box": {
+        "w": 30,
+        "h": 31
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-131.group-169.group-157.rectangle-54-16",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-157": {
+      "id": "395:2025",
+      "el": "group-157",
+      "type": "group",
+      "box": {
+        "w": 30,
+        "h": 31
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-131.group-169.group-157",
+      "pos": {
+        "x": 126,
+        "y": 117
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-54-16",
+        "20"
+      ]
+    },
+    "rectangle-54-17": {
+      "id": "395:2030",
+      "el": "rectangle-54-17",
+      "type": "rect",
+      "box": {
+        "w": 30,
+        "h": 31
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-131.group-169.group-158.rectangle-54-17",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c5",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-158": {
+      "id": "395:2028",
+      "el": "group-158",
+      "type": "group",
+      "box": {
+        "w": 30,
+        "h": 31
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-131.group-169.group-158",
+      "pos": {
+        "x": 167,
+        "y": 117
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "21",
+        "rectangle-54-17"
+      ]
+    },
+    "group-169": {
+      "id": "395:2086",
+      "el": "group-169",
+      "type": "group",
+      "box": {
+        "w": 271,
+        "h": 226
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-131.group-169",
+      "pos": {
+        "x": 22,
+        "y": 106
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-139",
+        "group-138",
+        "group-140",
+        "group-141",
+        "group-142",
+        "group-143",
+        "group-144",
+        "group-145",
+        "group-146",
+        "group-147",
+        "group-148",
+        "group-149",
+        "group-150",
+        "group-151",
+        "group-152",
+        "group-153",
+        "group-154",
+        "group-155",
+        "group-156",
+        "group-157",
+        "group-158",
+        "group-159",
+        "group-160",
+        "group-161",
+        "group-168",
+        "group-162",
+        "group-163",
+        "group-164",
+        "group-165",
+        "group-166",
+        "group-167"
+      ],
+      "repeat": [
+        {
+          "template": "group-139",
+          "data": {
+            "group-138": {
+              "01": {
+                "chars": "02"
+              }
+            },
+            "group-140": {
+              "01": {
+                "chars": "03"
+              }
+            },
+            "group-141": {
+              "01": {
+                "chars": "04"
+              }
+            },
+            "group-142": {
+              "01": {
+                "chars": "05"
+              }
+            },
+            "group-143": {
+              "01": {
+                "chars": "06"
+              }
+            },
+            "group-144": {
+              "01": {
+                "chars": "07"
+              }
+            },
+            "group-145": {
+              "01": {
+                "chars": "08"
+              }
+            },
+            "group-146": {
+              "01": {
+                "chars": "09"
+              }
+            },
+            "group-147": {
+              "01": {
+                "chars": "10"
+              }
+            },
+            "group-148": {
+              "01": {
+                "chars": "11"
+              }
+            },
+            "group-149": {
+              "01": {
+                "chars": "12"
+              }
+            },
+            "group-150": {
+              "01": {
+                "chars": "13"
+              }
+            },
+            "group-151": {
+              "01": {
+                "chars": "14"
+              }
+            },
+            "group-152": {
+              "01": {
+                "chars": "15"
+              }
+            },
+            "group-153": {
+              "01": {
+                "chars": "16"
+              }
+            },
+            "group-154": {
+              "01": {
+                "chars": "17"
+              }
+            },
+            "group-155": {
+              "01": {
+                "chars": "18"
+              }
+            },
+            "group-156": {
+              "01": {
+                "chars": "19"
+              }
+            }
+          }
+        },
+        {
+          "template": "group-158",
+          "data": {
+            "group-159": {
+              "21": {
+                "chars": "22"
+              }
+            },
+            "group-160": {
+              "21": {
+                "chars": "23"
+              }
+            },
+            "group-161": {
+              "21": {
+                "chars": "24"
+              }
+            },
+            "group-168": {
+              "21": {
+                "chars": "31"
+              }
+            },
+            "group-162": {
+              "21": {
+                "chars": "25"
+              }
+            },
+            "group-163": {
+              "21": {
+                "chars": "26"
+              }
+            },
+            "group-164": {
+              "21": {
+                "chars": "27"
+              }
+            },
+            "group-165": {
+              "21": {
+                "chars": "28"
+              }
+            },
+            "group-166": {
+              "21": {
+                "chars": "29"
+              }
+            },
+            "group-167": {
+              "21": {
+                "chars": "30"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "vector-3": {
+      "id": "I395:2087;3:2638",
+      "el": "vector-3",
+      "type": "vector",
+      "box": {
+        "w": 5,
+        "h": 10
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-131.chevron-left-2.vector-3",
+      "pos": {
+        "x": 5,
+        "y": 3
+      },
+      "fill": "$c5",
+      "iconHint": "May 2026",
+      "vectorPath": "$v4",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-left-2": {
+      "id": "395:2087",
+      "el": "chevron-left-2",
+      "type": "instance",
+      "box": {
+        "w": 16,
+        "h": 16
+      },
+      "name": "chevron-left",
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-131.chevron-left-2",
+      "pos": {
+        "x": 22,
+        "y": 37
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector-3"
+      ]
+    },
+    "vector-4": {
+      "id": "I395:2088;3:2650",
+      "el": "vector-4",
+      "type": "vector",
+      "box": {
+        "w": 5,
+        "h": 10
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-131.chevron-right.vector-4",
+      "pos": {
+        "x": 5,
+        "y": 3
+      },
+      "fill": "$c5",
+      "iconHint": "May 2026",
+      "vectorPath": "$v5",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-right": {
+      "id": "395:2088",
+      "el": "chevron-right",
+      "type": "instance",
+      "box": {
+        "w": 16,
+        "h": 16
+      },
+      "name": "chevron-right",
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-131.chevron-right",
+      "pos": {
+        "x": 131,
+        "y": 37
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector-4"
+      ]
+    },
+    "save": {
+      "id": "395:2096",
+      "el": "save",
+      "type": "text",
+      "box": {
+        "w": 32,
+        "h": 22
+      },
+      "name": "save",
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-131.frame-8.save",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c1",
+      "text": "$t5",
+      "chars": "save",
+      "textGrow": "wh"
+    },
+    "frame-8": {
+      "id": "395:2095",
+      "el": "frame-8",
+      "type": "frame",
+      "box": {
+        "w": 200,
+        "h": 48
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-131.frame-8",
+      "pos": {
+        "x": 57,
+        "y": 356
+      },
+      "layout": "$l3",
+      "fill": "$c3",
+      "radius": "$r1",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "save"
+      ]
+    },
+    "or-add-to-collections": {
+      "id": "760:171",
+      "el": "or-add-to-collections",
+      "type": "text",
+      "box": {
+        "w": 104,
+        "h": 14
+      },
+      "name": "or add to collections",
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-131.or-add-to-collections",
+      "pos": {
+        "x": 105,
+        "y": 412
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": [
+        {
+          "t": "or add to "
+        },
+        {
+          "t": "collections",
+          "d": "underline"
+        }
+      ],
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-131": {
+      "id": "395:1935",
+      "el": "group-131",
+      "type": "group",
+      "box": {
+        "w": 314,
+        "h": 446
+      },
+      "path": "1-1-2-outfit-recomendation-detail-pop-up.group-131",
+      "pos": {
+        "x": 44,
+        "y": 214
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-46",
+        "group-58",
+        "may-2026",
+        "frame-1",
+        "group-169",
+        "chevron-left-2",
+        "chevron-right",
+        "frame-8",
+        "or-add-to-collections"
+      ]
+    },
+    "1-1-2-outfit-recomendation-detail-pop-up": {
+      "id": "395:1877",
+      "el": "1-1-2-outfit-recomendation-detail-pop-up",
+      "type": "frame",
+      "box": {
+        "w": 402,
+        "h": 874
+      },
+      "name": "1.1.2 Outfit Recomendation Detail -  Pop-up Calendar",
+      "fill": "$c1",
+      "clip": true,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "group-137",
+        "rectangle-45",
+        "group-131"
+      ]
+    }
+  },
+  "meta": {
+    "nodeCount": 80,
+    "estTokens": 7232,
+    "depthUsed": 12
+  },
+  "next": "Read `tokens` for the design system, then build the UI from `nodes`. Tag each rendered element data-plumb-id=\"<el>\". A node with a `more` count has that many children not yet included — call plumb_node again on that node's `id` to expand them. This screen has 7 image asset(s) (nodes with `assetId`). Call plumb_assets with this screen's id to download them to disk BEFORE generating HTML — without the real files any <img> will be a placeholder and plumb_verify will flag every image node as asset.missing.",
+  "source": "plugin",
+  "node": "1.1.2 Outfit Recomendation Detail -  Pop-up Calendar"
+}

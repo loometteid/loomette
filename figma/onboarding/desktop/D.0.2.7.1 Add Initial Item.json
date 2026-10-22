@@ -1,0 +1,419 @@
+{
+  "file": {
+    "name": "Loomette.id",
+    "version": "plugin-1792667037899"
+  },
+  "root": "d-0-2-7-1-add-initial-item",
+  "tokens": {
+    "color": {
+      "$c1": "#fafaf7",
+      "$c2": "#444440",
+      "$c3": "#d9d9d9",
+      "$c4": "#c9c3b7",
+      "$c5": "image"
+    },
+    "text": {
+      "$t1": "400 20px Avenir Next",
+      "$t2": "400 72px Source Serif Pro",
+      "$t3": "400 24px Avenir Next"
+    },
+    "radius": {
+      "$r1": 16
+    },
+    "shadow": {},
+    "layout": {
+      "$l1": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          19,
+          108,
+          18,
+          107
+        ]
+      }
+    },
+    "vector": {
+      "$v1": "M25.0664 20.1367 L39.0088 5.89844 L41.2246 8.16113 L27.2803 22.4004 L47 22.4004 L47 25.6006 L27.2832 25.6006 L41.2256 39.8389 L39.0098 42.1016 L25.0664 27.8613 L25.0664 48 L21.9326 48 L21.9326 27.8623 L7.99023 42.1016 L5.77441 39.8389 L19.7148 25.6006 L0 25.6006 L0 22.4004 L19.7197 22.4004 L5.77637 8.16113 L7.99121 5.89844 L21.9326 20.1357 L21.9326 0 L25.0664 0 L25.0664 20.1367 Z"
+    },
+    "meta": {
+      "counts": {
+        "$c1": 2,
+        "$c2": 5,
+        "$c3": 4,
+        "$l1": 2,
+        "$r1": 2,
+        "$t3": 2,
+        "$c5": 2
+      }
+    }
+  },
+  "nodes": {
+    "add-5-10-of-your-go-to-pieces-the-ones-y": {
+      "id": "866:811",
+      "el": "add-5-10-of-your-go-to-pieces-the-ones-y",
+      "type": "text",
+      "box": {
+        "w": 586,
+        "h": 27
+      },
+      "name": "Add 5–10 of your go-to pieces. The ones you actually reach for.",
+      "path": "d-0-2-7-1-add-initial-item.add-5-10-of-your-go-to-pieces-the-ones-y",
+      "pos": {
+        "x": 427,
+        "y": 485
+      },
+      "fill": "$c2",
+      "text": "$t1",
+      "chars": "Add 5–10 of your go-to pieces. The ones you actually reach for.",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "now-let-s-fill-your-wardrobe": {
+      "id": "866:809",
+      "el": "now-let-s-fill-your-wardrobe",
+      "type": "text",
+      "box": {
+        "w": 914,
+        "h": 90
+      },
+      "name": "Now, let’s fill your wardrobe.",
+      "path": "d-0-2-7-1-add-initial-item.group-252.now-let-s-fill-your-wardrobe",
+      "pos": {
+        "x": 79,
+        "y": 0
+      },
+      "fill": "$c2",
+      "text": "$t2",
+      "chars": "Now, let’s fill your wardrobe.",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-16": {
+      "id": "866:814",
+      "el": "rectangle-16",
+      "type": "rect",
+      "box": {
+        "w": 3,
+        "h": 48
+      },
+      "path": "d-0-2-7-1-add-initial-item.group-252.union.rectangle-16",
+      "pos": {
+        "x": 22,
+        "y": 0
+      },
+      "fill": "$c3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17": {
+      "id": "866:815",
+      "el": "rectangle-17",
+      "type": "rect",
+      "box": {
+        "w": 35,
+        "h": 36
+      },
+      "path": "d-0-2-7-1-add-initial-item.group-252.union.rectangle-17",
+      "pos": {
+        "x": 6,
+        "y": 6
+      },
+      "fill": "$c3",
+      "rotation": 2613,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19": {
+      "id": "866:816",
+      "el": "rectangle-19",
+      "type": "rect",
+      "box": {
+        "w": 35,
+        "h": 36
+      },
+      "path": "d-0-2-7-1-add-initial-item.group-252.union.rectangle-19",
+      "pos": {
+        "x": 6,
+        "y": 6
+      },
+      "fill": "$c3",
+      "rotation": 7700,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18": {
+      "id": "866:817",
+      "el": "rectangle-18",
+      "type": "rect",
+      "box": {
+        "w": 47,
+        "h": 3
+      },
+      "path": "d-0-2-7-1-add-initial-item.group-252.union.rectangle-18",
+      "pos": {
+        "x": 0,
+        "y": 22
+      },
+      "fill": "$c3",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union": {
+      "id": "866:813",
+      "el": "union",
+      "type": "bool",
+      "box": {
+        "w": 47,
+        "h": 48
+      },
+      "path": "d-0-2-7-1-add-initial-item.group-252.union",
+      "pos": {
+        "x": 0,
+        "y": 21
+      },
+      "fill": "$c2",
+      "iconHint": "Now, let’s fill your wardrobe.",
+      "vectorPath": "$v1",
+      "children": [
+        "rectangle-16",
+        "rectangle-17",
+        "rectangle-19",
+        "rectangle-18"
+      ]
+    },
+    "group-252": {
+      "id": "866:819",
+      "el": "group-252",
+      "type": "group",
+      "box": {
+        "w": 993,
+        "h": 90
+      },
+      "path": "d-0-2-7-1-add-initial-item.group-252",
+      "pos": {
+        "x": 223,
+        "y": 379
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "now-let-s-fill-your-wardrobe",
+        "union"
+      ]
+    },
+    "upload-photos": {
+      "id": "866:821",
+      "el": "upload-photos",
+      "type": "text",
+      "box": {
+        "w": 164,
+        "h": 33
+      },
+      "name": "upload photos",
+      "path": "d-0-2-7-1-add-initial-item.frame-7.upload-photos",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c2",
+      "text": "$t3",
+      "chars": "upload photos",
+      "textGrow": "wh"
+    },
+    "frame-7": {
+      "id": "866:820",
+      "el": "frame-7",
+      "type": "frame",
+      "box": {
+        "w": 320,
+        "h": 64
+      },
+      "path": "d-0-2-7-1-add-initial-item.frame-7",
+      "pos": {
+        "x": 599,
+        "y": 562
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "stroke": "$c4",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "upload-photos"
+      ]
+    },
+    "generate-the-basics": {
+      "id": "866:824",
+      "el": "generate-the-basics",
+      "type": "text",
+      "box": {
+        "w": 216,
+        "h": 33
+      },
+      "name": "generate the basics",
+      "path": "d-0-2-7-1-add-initial-item.frame-8.generate-the-basics",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c1",
+      "text": "$t3",
+      "chars": "generate the basics",
+      "textGrow": "wh"
+    },
+    "frame-8": {
+      "id": "866:823",
+      "el": "frame-8",
+      "type": "frame",
+      "box": {
+        "w": 320,
+        "h": 64
+      },
+      "path": "d-0-2-7-1-add-initial-item.frame-8",
+      "pos": {
+        "x": 599,
+        "y": 650
+      },
+      "layout": "$l1",
+      "fill": "$c2",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "generate-the-basics"
+      ]
+    },
+    "image-45": {
+      "id": "1493:386",
+      "el": "image-45",
+      "type": "rect",
+      "box": {
+        "w": 296,
+        "h": 285
+      },
+      "path": "d-0-2-7-1-add-initial-item.image-45",
+      "pos": {
+        "x": 75,
+        "y": 650
+      },
+      "assetId": "df16e6c960159f4917aae33274e488c940b4236a",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "df16e6c960159f4917aae33274e488c940b4236a",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-43": {
+      "id": "1493:388",
+      "el": "image-43",
+      "type": "rect",
+      "box": {
+        "w": 474,
+        "h": 316
+      },
+      "path": "d-0-2-7-1-add-initial-item.image-43",
+      "pos": {
+        "x": 1041,
+        "y": 24
+      },
+      "assetId": "0b474112393cda1b357eba7c9f586748318c4c0e",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "0b474112393cda1b357eba7c9f586748318c4c0e",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "d-0-2-7-1-add-initial-item": {
+      "id": "866:799",
+      "el": "d-0-2-7-1-add-initial-item",
+      "type": "frame",
+      "box": {
+        "w": 1440,
+        "h": 1024
+      },
+      "name": "D.0.2.7.1 Add Initial Item",
+      "fill": "$c1",
+      "clip": true,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "add-5-10-of-your-go-to-pieces-the-ones-y",
+        "group-252",
+        "frame-7",
+        "frame-8",
+        "image-45",
+        "image-43"
+      ]
+    }
+  },
+  "meta": {
+    "nodeCount": 15,
+    "estTokens": 1336,
+    "depthUsed": 12
+  },
+  "next": "Read `tokens` for the design system, then build the UI from `nodes`. Tag each rendered element data-plumb-id=\"<el>\". A node with a `more` count has that many children not yet included — call plumb_node again on that node's `id` to expand them. This screen has 2 image asset(s) (nodes with `assetId`). Call plumb_assets with this screen's id to download them to disk BEFORE generating HTML — without the real files any <img> will be a placeholder and plumb_verify will flag every image node as asset.missing.",
+  "source": "plugin",
+  "node": "D.0.2.7.1 Add Initial Item"
+}

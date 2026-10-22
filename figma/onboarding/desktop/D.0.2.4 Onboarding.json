@@ -1,0 +1,3099 @@
+{
+  "file": {
+    "name": "Loomette.id",
+    "version": "plugin-1792667037557"
+  },
+  "root": "d-0-2-4-onboarding",
+  "tokens": {
+    "color": {
+      "$c1": "#fafaf7",
+      "$c2": "#d9d9d9",
+      "$c3": "image",
+      "$c4": "#444440",
+      "$c5": "#f2ede5",
+      "$c6": "#c9c3b7"
+    },
+    "text": {
+      "$t1": "400 48px Source Serif Pro",
+      "$t2": "400 16px Avenir Next",
+      "$t3": "400 20px Avenir Next",
+      "$t4": "400 12px Avenir Next",
+      "$t5": "400 12px Avenir",
+      "$t6": "400 14px Avenir"
+    },
+    "radius": {
+      "$r1": 8,
+      "$r2": "full",
+      "$r3": 16
+    },
+    "shadow": {},
+    "layout": {
+      "$l1": {
+        "align": "center",
+        "flow": "row",
+        "gap": 16,
+        "justify": "center",
+        "pad": [
+          19,
+          16,
+          18,
+          16
+        ]
+      },
+      "$l2": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          1,
+          16,
+          2,
+          16
+        ]
+      },
+      "$l3": {
+        "flow": "col",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          12,
+          212,
+          12,
+          16
+        ]
+      },
+      "$l4": {
+        "align": "center",
+        "flow": "row",
+        "gap": 8,
+        "pad": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l5": {
+        "align": "center",
+        "flow": "row",
+        "gap": 4,
+        "justify": "center",
+        "pad": [
+          19,
+          16,
+          18,
+          16
+        ]
+      },
+      "$l6": {
+        "flow": "col",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          12,
+          212,
+          12,
+          12
+        ]
+      },
+      "$l7": {
+        "align": "center",
+        "contentMain": 37,
+        "flow": "row",
+        "gap": 4,
+        "justify": "center",
+        "pad": [
+          19,
+          8,
+          18,
+          8
+        ]
+      },
+      "$l8": {
+        "align": "center",
+        "contentMain": 34,
+        "flow": "row",
+        "gap": 4,
+        "justify": "center",
+        "pad": [
+          19,
+          8,
+          18,
+          8
+        ]
+      },
+      "$l9": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          13,
+          26,
+          13,
+          26
+        ]
+      }
+    },
+    "vector": {
+      "$v1": "M25.0664 20.1367 L39.0088 5.89844 L41.2246 8.16113 L27.2803 22.4004 L47 22.4004 L47 25.6006 L27.2832 25.6006 L41.2256 39.8389 L39.0098 42.1016 L25.0664 27.8613 L25.0664 48 L21.9326 48 L21.9326 27.8623 L7.99023 42.1016 L5.77441 39.8389 L19.7148 25.6006 L0 25.6006 L0 22.4004 L19.7178 22.4004 L5.77539 8.16113 L7.99121 5.89844 L21.9326 20.1357 L21.9326 0 L25.0664 0 L25.0664 20.1367 Z",
+      "$v2": "M10.1381 0.390524 C10.6588 0.911223 10.6588 1.75544 10.1381 2.27614 L3.08088 9.33333 L10.1381 16.3905 C10.6588 16.9112 10.6588 17.7554 10.1381 18.2761 C9.61737 18.7968 8.77315 18.7968 8.25245 18.2761 L0.488155 10.5118 C-0.16272 9.86097 -0.162717 8.80569 0.488156 8.15482 L8.25245 0.390524 C8.77315 -0.130175 9.61737 -0.130175 10.1381 0.390524 Z",
+      "$v3": "M0.146447 0.146447 C0.341709 -0.0488155 0.658291 -0.0488155 0.853553 0.146447 L3.5 2.79289 L6.14645 0.146447 C6.34171 -0.0488155 6.65829 -0.0488155 6.85355 0.146447 C7.04882 0.341709 7.04882 0.658291 6.85355 0.853553 L3.94194 3.76516 C3.69787 4.00924 3.30214 4.00924 3.05806 3.76517 L0.146447 0.853553 C-0.0488155 0.658291 -0.0488155 0.341709 0.146447 0.146447 Z"
+    },
+    "props": {
+      "$p1": {
+        "size": "24"
+      }
+    },
+    "meta": {
+      "counts": {
+        "$c1": 2,
+        "$c2": 5,
+        "$c3": 3,
+        "$c4": 46,
+        "$t2": 15,
+        "$c5": 17,
+        "$r1": 16,
+        "$p1": 8,
+        "$r2": 10,
+        "$t3": 8,
+        "$l1": 6,
+        "$c6": 16,
+        "$r3": 6,
+        "$l2": 8,
+        "$t4": 8,
+        "$l4": 7,
+        "$t5": 3,
+        "$v3": 7,
+        "$l6": 6,
+        "$l7": 5,
+        "$t6": 4
+      }
+    }
+  },
+  "nodes": {
+    "60": {
+      "id": "865:605",
+      "el": "60",
+      "type": "text",
+      "box": {
+        "w": 16,
+        "h": 19
+      },
+      "name": "60",
+      "path": "d-0-2-4-onboarding.group-248.group-64.group-39-2.group-132-4.frame-6-5.frame-5-5.60",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c4",
+      "text": "$t6",
+      "chars": "60",
+      "textGrow": "wh"
+    },
+    "80": {
+      "id": "865:618",
+      "el": "80",
+      "type": "text",
+      "box": {
+        "w": 16,
+        "h": 19
+      },
+      "name": "80",
+      "path": "d-0-2-4-onboarding.group-248.group-129.group-38-3.group-132-5.frame-6-6.frame-5-6.80",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c4",
+      "text": "$t6",
+      "chars": "80",
+      "textGrow": "wh"
+    },
+    "90": {
+      "id": "865:593",
+      "el": "90",
+      "type": "text",
+      "box": {
+        "w": 16,
+        "h": 19
+      },
+      "name": "90",
+      "path": "d-0-2-4-onboarding.group-248.group-64.group-38-2.group-132-3.frame-6-4.frame-5-4.90",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c4",
+      "text": "$t6",
+      "chars": "90",
+      "textGrow": "wh"
+    },
+    "rectangle-35": {
+      "id": "840:378",
+      "el": "rectangle-35",
+      "type": "rect",
+      "box": {
+        "w": 825,
+        "h": 1024
+      },
+      "path": "d-0-2-4-onboarding.group-33.rectangle-35",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c2",
+      "isMask": true,
+      "maskMode": "alpha",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "image-11": {
+      "id": "840:379",
+      "el": "image-11",
+      "type": "rect",
+      "box": {
+        "w": 1497,
+        "h": 1103
+      },
+      "path": "d-0-2-4-onboarding.group-33.image-11",
+      "pos": {
+        "x": 0,
+        "y": -40
+      },
+      "assetId": "7dbffdcc18b74e31b2d0e62c32dfcb142a3c4873",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "7dbffdcc18b74e31b2d0e62c32dfcb142a3c4873",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1.8169935941696167,
+              0,
+              0.0003471141681075096
+            ],
+            [
+              0,
+              0.7520545125007629,
+              0.18999600410461426
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "masked": "rectangle-35"
+    },
+    "image-42": {
+      "id": "1493:372",
+      "el": "image-42",
+      "type": "rect",
+      "box": {
+        "w": 506,
+        "h": 337
+      },
+      "path": "d-0-2-4-onboarding.group-33.image-42",
+      "pos": {
+        "x": 494,
+        "y": 163
+      },
+      "assetId": "bb06e4303e18abfe080bed08bb77f7679f03bf5f",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "bb06e4303e18abfe080bed08bb77f7679f03bf5f",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "masked": "rectangle-35"
+    },
+    "image-43": {
+      "id": "1493:373",
+      "el": "image-43",
+      "type": "rect",
+      "box": {
+        "w": 540,
+        "h": 360
+      },
+      "path": "d-0-2-4-onboarding.group-33.image-43",
+      "pos": {
+        "x": -102,
+        "y": 575
+      },
+      "assetId": "0b474112393cda1b357eba7c9f586748318c4c0e",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "0b474112393cda1b357eba7c9f586748318c4c0e",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "masked": "rectangle-35"
+    },
+    "group-33": {
+      "id": "840:377",
+      "el": "group-33",
+      "type": "group",
+      "box": {
+        "w": 825,
+        "h": 1024
+      },
+      "path": "d-0-2-4-onboarding.group-33",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-35",
+        "image-11",
+        "image-42",
+        "image-43"
+      ]
+    },
+    "dress-for-your-body-not-the-other-way": {
+      "id": "840:383",
+      "el": "dress-for-your-body-not-the-other-way",
+      "type": "text",
+      "box": {
+        "w": 360,
+        "h": 180
+      },
+      "name": "Dress for your body, not the other way.",
+      "path": "d-0-2-4-onboarding.group-248.dress-for-your-body-not-the-other-way",
+      "pos": {
+        "x": 71,
+        "y": 48
+      },
+      "fill": "$c4",
+      "text": "$t1",
+      "chars": "Dress for your body, not the other way.",
+      "textGrow": "h",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16": {
+      "id": "840:385",
+      "el": "rectangle-16",
+      "type": "rect",
+      "box": {
+        "w": 3,
+        "h": 48
+      },
+      "path": "d-0-2-4-onboarding.group-248.union.rectangle-16",
+      "pos": {
+        "x": 22,
+        "y": 0
+      },
+      "fill": "$c2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17": {
+      "id": "840:386",
+      "el": "rectangle-17",
+      "type": "rect",
+      "box": {
+        "w": 35,
+        "h": 36
+      },
+      "path": "d-0-2-4-onboarding.group-248.union.rectangle-17",
+      "pos": {
+        "x": 6,
+        "y": 6
+      },
+      "fill": "$c2",
+      "rotation": 2613,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19": {
+      "id": "840:387",
+      "el": "rectangle-19",
+      "type": "rect",
+      "box": {
+        "w": 35,
+        "h": 36
+      },
+      "path": "d-0-2-4-onboarding.group-248.union.rectangle-19",
+      "pos": {
+        "x": 6,
+        "y": 6
+      },
+      "fill": "$c2",
+      "rotation": 7700,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18": {
+      "id": "840:388",
+      "el": "rectangle-18",
+      "type": "rect",
+      "box": {
+        "w": 47,
+        "h": 3
+      },
+      "path": "d-0-2-4-onboarding.group-248.union.rectangle-18",
+      "pos": {
+        "x": 0,
+        "y": 22
+      },
+      "fill": "$c2",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union": {
+      "id": "840:384",
+      "el": "union",
+      "type": "bool",
+      "box": {
+        "w": 47,
+        "h": 48
+      },
+      "path": "d-0-2-4-onboarding.group-248.union",
+      "pos": {
+        "x": 0,
+        "y": 51
+      },
+      "fill": "$c4",
+      "iconHint": "Dress for your body, not the other way.",
+      "vectorPath": "$v1",
+      "children": [
+        "rectangle-16",
+        "rectangle-17",
+        "rectangle-19",
+        "rectangle-18"
+      ]
+    },
+    "we-ll-help-you-dress-for-where-you-actua": {
+      "id": "840:389",
+      "el": "we-ll-help-you-dress-for-where-you-actua",
+      "type": "text",
+      "box": {
+        "w": 355,
+        "h": 22
+      },
+      "name": "We'll help you dress for where you actually go.",
+      "path": "d-0-2-4-onboarding.group-248.we-ll-help-you-dress-for-where-you-actua",
+      "pos": {
+        "x": 71,
+        "y": 227
+      },
+      "fill": "$c4",
+      "text": "$t2",
+      "chars": "We'll help you dress for where you actually go.",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-11": {
+      "id": "840:391",
+      "el": "rectangle-11",
+      "type": "rect",
+      "box": {
+        "w": 48,
+        "h": 48
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-246.rectangle-11",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c5",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector": {
+      "id": "I840:392;3:2631",
+      "el": "vector",
+      "type": "vector",
+      "box": {
+        "w": 11,
+        "h": 19
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-246.chevron-left.vector",
+      "pos": {
+        "x": 11,
+        "y": 7
+      },
+      "fill": "$c4",
+      "iconHint": "chevron left",
+      "vectorPath": "$v2",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-left": {
+      "id": "840:392",
+      "el": "chevron-left",
+      "type": "instance",
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "name": "chevron-left",
+      "path": "d-0-2-4-onboarding.group-248.group-246.chevron-left",
+      "pos": {
+        "x": 8,
+        "y": 8
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector"
+      ]
+    },
+    "group-246": {
+      "id": "840:390",
+      "el": "group-246",
+      "type": "group",
+      "box": {
+        "w": 48,
+        "h": 48
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-246",
+      "pos": {
+        "x": 71,
+        "y": 821
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-11",
+        "chevron-left"
+      ]
+    },
+    "rectangle-100": {
+      "id": "840:398",
+      "el": "rectangle-100",
+      "type": "rect",
+      "box": {
+        "w": 160,
+        "h": 8
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-197.rectangle-100",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c5",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-101": {
+      "id": "840:399",
+      "el": "rectangle-101",
+      "type": "rect",
+      "box": {
+        "w": 96,
+        "h": 8
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-197.rectangle-101",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c4",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-197": {
+      "id": "840:397",
+      "el": "group-197",
+      "type": "group",
+      "box": {
+        "w": 160,
+        "h": 8
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-197",
+      "pos": {
+        "x": 147,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-100",
+        "rectangle-101"
+      ]
+    },
+    "outfit-size": {
+      "id": "840:421",
+      "el": "outfit-size",
+      "type": "text",
+      "box": {
+        "w": 92,
+        "h": 27
+      },
+      "name": "Outfit size",
+      "path": "d-0-2-4-onboarding.group-248.group-41.group-36.group-35.outfit-size",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c4",
+      "text": "$t3",
+      "chars": "Outfit size",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-35": {
+      "id": "840:420",
+      "el": "group-35",
+      "type": "group",
+      "box": {
+        "w": 92,
+        "h": 27
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-41.group-36.group-35",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "outfit-size"
+      ]
+    },
+    "xs": {
+      "id": "840:423",
+      "el": "xs",
+      "type": "text",
+      "box": {
+        "w": 16,
+        "h": 22
+      },
+      "name": "XS",
+      "path": "d-0-2-4-onboarding.group-248.group-41.group-36.frame-8.xs",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c4",
+      "text": "$t2",
+      "chars": "XS",
+      "textGrow": "wh"
+    },
+    "frame-8": {
+      "id": "840:422",
+      "el": "frame-8",
+      "type": "frame",
+      "box": {
+        "w": 48,
+        "h": 40
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-41.group-36.frame-8",
+      "pos": {
+        "x": 0,
+        "y": 35
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "stroke": "$c6",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "xs"
+      ]
+    },
+    "s": {
+      "id": "840:425",
+      "el": "s",
+      "type": "text",
+      "box": {
+        "w": 8,
+        "h": 22
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-41.group-36.frame-9.s",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c4",
+      "text": "$t2",
+      "chars": "S",
+      "textGrow": "wh"
+    },
+    "frame-9": {
+      "id": "840:424",
+      "el": "frame-9",
+      "type": "frame",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-41.group-36.frame-9",
+      "pos": {
+        "x": 64,
+        "y": 35
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "stroke": "$c6",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "s"
+      ]
+    },
+    "m": {
+      "id": "840:427",
+      "el": "m",
+      "type": "text",
+      "box": {
+        "w": 12,
+        "h": 22
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-41.group-36.frame-10.m",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c4",
+      "text": "$t2",
+      "chars": "M",
+      "textGrow": "wh"
+    },
+    "frame-10": {
+      "id": "840:426",
+      "el": "frame-10",
+      "type": "frame",
+      "box": {
+        "w": 44,
+        "h": 40
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-41.group-36.frame-10",
+      "pos": {
+        "x": 117,
+        "y": 35
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "stroke": "$c6",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "m"
+      ]
+    },
+    "l": {
+      "id": "840:429",
+      "el": "l",
+      "type": "text",
+      "box": {
+        "w": 7,
+        "h": 22
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-41.group-36.frame-11.l",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c4",
+      "text": "$t2",
+      "chars": "L",
+      "textGrow": "wh"
+    },
+    "frame-11": {
+      "id": "840:428",
+      "el": "frame-11",
+      "type": "frame",
+      "box": {
+        "w": 39,
+        "h": 40
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-41.group-36.frame-11",
+      "pos": {
+        "x": 173,
+        "y": 35
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "stroke": "$c6",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "l"
+      ]
+    },
+    "xl": {
+      "id": "840:431",
+      "el": "xl",
+      "type": "text",
+      "box": {
+        "w": 15,
+        "h": 22
+      },
+      "name": "XL",
+      "path": "d-0-2-4-onboarding.group-248.group-41.group-36.frame-12.xl",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c4",
+      "text": "$t2",
+      "chars": "XL",
+      "textGrow": "wh"
+    },
+    "frame-12": {
+      "id": "840:430",
+      "el": "frame-12",
+      "type": "frame",
+      "box": {
+        "w": 47,
+        "h": 40
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-41.group-36.frame-12",
+      "pos": {
+        "x": 224,
+        "y": 35
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "stroke": "$c6",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "xl"
+      ]
+    },
+    "it-varies": {
+      "id": "840:433",
+      "el": "it-varies",
+      "type": "text",
+      "box": {
+        "w": 59,
+        "h": 22
+      },
+      "name": "It varies",
+      "path": "d-0-2-4-onboarding.group-248.group-41.group-36.frame-13.it-varies",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c4",
+      "text": "$t2",
+      "chars": "It varies",
+      "textGrow": "wh"
+    },
+    "frame-13": {
+      "id": "840:432",
+      "el": "frame-13",
+      "type": "frame",
+      "box": {
+        "w": 91,
+        "h": 40
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-41.group-36.frame-13",
+      "pos": {
+        "x": 283,
+        "y": 35
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "stroke": "$c6",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "it-varies"
+      ]
+    },
+    "group-36": {
+      "id": "840:419",
+      "el": "group-36",
+      "type": "group",
+      "box": {
+        "w": 374,
+        "h": 75
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-41.group-36",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-35",
+        "frame-8",
+        "frame-9",
+        "frame-10",
+        "frame-11",
+        "frame-12",
+        "frame-13"
+      ]
+    },
+    "optional": {
+      "id": "840:435",
+      "el": "optional",
+      "type": "text",
+      "box": {
+        "w": 48,
+        "h": 16
+      },
+      "name": "optional",
+      "path": "d-0-2-4-onboarding.group-248.group-41.frame-18.optional",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c4",
+      "text": "$t4",
+      "chars": "optional",
+      "textGrow": "wh"
+    },
+    "frame-18": {
+      "id": "840:434",
+      "el": "frame-18",
+      "type": "frame",
+      "box": {
+        "w": 80,
+        "h": 22
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-41.frame-18",
+      "pos": {
+        "x": 294,
+        "y": 1
+      },
+      "layout": "$l2",
+      "fill": "$c5",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "optional"
+      ]
+    },
+    "group-41": {
+      "id": "840:418",
+      "el": "group-41",
+      "type": "group",
+      "box": {
+        "w": 374,
+        "h": 75
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-41",
+      "pos": {
+        "x": 71,
+        "y": 270
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-36",
+        "frame-18"
+      ]
+    },
+    "shoe-size": {
+      "id": "840:439",
+      "el": "shoe-size",
+      "type": "text",
+      "box": {
+        "w": 81,
+        "h": 27
+      },
+      "name": "Shoe size",
+      "path": "d-0-2-4-onboarding.group-248.group-128.group-37.group-34.shoe-size",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c4",
+      "text": "$t3",
+      "chars": "Shoe size",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "e-g-38-39-whatever-you-go-by": {
+      "id": "840:442",
+      "el": "e-g-38-39-whatever-you-go-by",
+      "type": "text",
+      "box": {
+        "w": 190,
+        "h": 16
+      },
+      "name": "e.g. 38, 39 — whatever you go by",
+      "path": "d-0-2-4-onboarding.group-248.group-128.group-37.group-34.frame-6.frame-5.e-g-38-39-whatever-you-go-by",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c6",
+      "text": "$t5",
+      "chars": "e.g. 38, 39 — whatever you go by",
+      "textGrow": "wh"
+    },
+    "frame-5": {
+      "id": "840:441",
+      "el": "frame-5",
+      "type": "frame",
+      "box": {
+        "w": 190,
+        "h": 16
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-128.group-37.group-34.frame-6.frame-5",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l4",
+      "inheritedFill": "$c5",
+      "children": [
+        "e-g-38-39-whatever-you-go-by"
+      ]
+    },
+    "frame-6": {
+      "id": "840:440",
+      "el": "frame-6",
+      "type": "frame",
+      "box": {
+        "w": 296,
+        "h": 48
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-128.group-37.group-34.frame-6",
+      "pos": {
+        "x": 0,
+        "y": 35
+      },
+      "layout": "$l3",
+      "fill": "$c5",
+      "radius": "$r1",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "frame-5"
+      ]
+    },
+    "group-34": {
+      "id": "840:438",
+      "el": "group-34",
+      "type": "group",
+      "box": {
+        "w": 296,
+        "h": 83
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-128.group-37.group-34",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "shoe-size",
+        "frame-6"
+      ]
+    },
+    "group-37": {
+      "id": "840:437",
+      "el": "group-37",
+      "type": "group",
+      "box": {
+        "w": 296,
+        "h": 83
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-128.group-37",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-34"
+      ]
+    },
+    "uk": {
+      "id": "840:444",
+      "el": "uk",
+      "type": "text",
+      "box": {
+        "w": 18,
+        "h": 22
+      },
+      "name": "UK",
+      "path": "d-0-2-4-onboarding.group-248.group-128.frame-13-2.uk",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c4",
+      "text": "$t2",
+      "chars": "UK",
+      "textGrow": "wh"
+    },
+    "vector-2": {
+      "id": "I840:445;3:2664",
+      "el": "vector-2",
+      "type": "vector",
+      "box": {
+        "w": 7,
+        "h": 4
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-128.frame-13-2.chevron-down.vector-2",
+      "pos": {
+        "x": 3,
+        "y": 4
+      },
+      "fill": "$c4",
+      "iconHint": "UK",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-down": {
+      "id": "840:445",
+      "el": "chevron-down",
+      "type": "instance",
+      "box": {
+        "w": 12,
+        "h": 12
+      },
+      "name": "chevron-down",
+      "path": "d-0-2-4-onboarding.group-248.group-128.frame-13-2.chevron-down",
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "children": [
+        "vector-2"
+      ]
+    },
+    "frame-13-2": {
+      "id": "840:443",
+      "el": "frame-13-2",
+      "type": "frame",
+      "box": {
+        "w": 66,
+        "h": 48
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-128.frame-13-2",
+      "pos": {
+        "x": 308,
+        "y": 35
+      },
+      "layout": "$l5",
+      "inheritedFill": "$c1",
+      "stroke": "$c6",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "uk",
+        "chevron-down"
+      ]
+    },
+    "optional-2": {
+      "id": "840:447",
+      "el": "optional-2",
+      "type": "text",
+      "box": {
+        "w": 48,
+        "h": 16
+      },
+      "name": "optional",
+      "path": "d-0-2-4-onboarding.group-248.group-128.frame-18-2.optional-2",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c4",
+      "text": "$t4",
+      "chars": "optional",
+      "textGrow": "wh"
+    },
+    "frame-18-2": {
+      "id": "840:446",
+      "el": "frame-18-2",
+      "type": "frame",
+      "box": {
+        "w": 80,
+        "h": 22
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-128.frame-18-2",
+      "pos": {
+        "x": 294,
+        "y": 5
+      },
+      "layout": "$l2",
+      "fill": "$c5",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "optional-2"
+      ]
+    },
+    "group-128": {
+      "id": "840:436",
+      "el": "group-128",
+      "type": "group",
+      "box": {
+        "w": 374,
+        "h": 83
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-128",
+      "pos": {
+        "x": 71,
+        "y": 369
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-37",
+        "frame-13-2",
+        "frame-18-2"
+      ]
+    },
+    "height": {
+      "id": "865:564",
+      "el": "height",
+      "type": "text",
+      "box": {
+        "w": 59,
+        "h": 27
+      },
+      "name": "Height",
+      "path": "d-0-2-4-onboarding.group-248.group-40.group-38.group-34-2.height",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c4",
+      "text": "$t3",
+      "chars": "Height",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "e-g-160": {
+      "id": "865:568",
+      "el": "e-g-160",
+      "type": "text",
+      "box": {
+        "w": 46,
+        "h": 16
+      },
+      "name": "e.g. 160",
+      "path": "d-0-2-4-onboarding.group-248.group-40.group-38.group-34-2.group-132.frame-6-2.frame-5-2.e-g-160",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c6",
+      "text": "$t5",
+      "chars": "e.g. 160",
+      "textGrow": "wh"
+    },
+    "frame-5-2": {
+      "id": "865:567",
+      "el": "frame-5-2",
+      "type": "frame",
+      "box": {
+        "w": 46,
+        "h": 16
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-40.group-38.group-34-2.group-132.frame-6-2.frame-5-2",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l4",
+      "inheritedFill": "$c5",
+      "children": [
+        "e-g-160"
+      ]
+    },
+    "frame-6-2": {
+      "id": "865:566",
+      "el": "frame-6-2",
+      "type": "frame",
+      "box": {
+        "w": 112,
+        "h": 48
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-40.group-38.group-34-2.group-132.frame-6-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "layout": "$l6",
+      "fill": "$c5",
+      "radius": "$r1",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "frame-5-2"
+      ]
+    },
+    "cm": {
+      "id": "865:570",
+      "el": "cm",
+      "type": "text",
+      "box": {
+        "w": 21,
+        "h": 22
+      },
+      "name": "CM",
+      "path": "d-0-2-4-onboarding.group-248.group-40.group-38.group-34-2.group-132.frame-13-3.cm",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c4",
+      "text": "$t2",
+      "chars": "CM",
+      "textGrow": "wh"
+    },
+    "vector-3": {
+      "id": "I865:571;3:2664",
+      "el": "vector-3",
+      "type": "vector",
+      "box": {
+        "w": 7,
+        "h": 4
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-40.group-38.group-34-2.group-132.frame-13-3.chevron-down-2.vector-3",
+      "pos": {
+        "x": 3,
+        "y": 4
+      },
+      "fill": "$c4",
+      "iconHint": "CM",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-down-2": {
+      "id": "865:571",
+      "el": "chevron-down-2",
+      "type": "instance",
+      "box": {
+        "w": 12,
+        "h": 12
+      },
+      "name": "chevron-down",
+      "path": "d-0-2-4-onboarding.group-248.group-40.group-38.group-34-2.group-132.frame-13-3.chevron-down-2",
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "children": [
+        "vector-3"
+      ]
+    },
+    "frame-13-3": {
+      "id": "865:569",
+      "el": "frame-13-3",
+      "type": "frame",
+      "box": {
+        "w": 58,
+        "h": 48
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-40.group-38.group-34-2.group-132.frame-13-3",
+      "pos": {
+        "x": 120,
+        "y": 0
+      },
+      "layout": "$l7",
+      "inheritedFill": "$c1",
+      "stroke": "$c6",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "cm",
+        "chevron-down-2"
+      ]
+    },
+    "group-132": {
+      "id": "865:565",
+      "el": "group-132",
+      "type": "group",
+      "box": {
+        "w": 178,
+        "h": 48
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-40.group-38.group-34-2.group-132",
+      "pos": {
+        "x": 0,
+        "y": 35
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "frame-6-2",
+        "frame-13-3"
+      ]
+    },
+    "group-34-2": {
+      "id": "865:563",
+      "el": "group-34-2",
+      "type": "group",
+      "box": {
+        "w": 178,
+        "h": 83
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-40.group-38.group-34-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "height",
+        "group-132"
+      ]
+    },
+    "optional-3": {
+      "id": "865:573",
+      "el": "optional-3",
+      "type": "text",
+      "box": {
+        "w": 48,
+        "h": 16
+      },
+      "name": "optional",
+      "path": "d-0-2-4-onboarding.group-248.group-40.group-38.frame-18-3.optional-3",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c4",
+      "text": "$t4",
+      "chars": "optional",
+      "textGrow": "wh"
+    },
+    "frame-18-3": {
+      "id": "865:572",
+      "el": "frame-18-3",
+      "type": "frame",
+      "box": {
+        "w": 72,
+        "h": 22
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-40.group-38.frame-18-3",
+      "pos": {
+        "x": 106,
+        "y": 3
+      },
+      "layout": "$l2",
+      "fill": "$c5",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "optional-3"
+      ]
+    },
+    "group-38": {
+      "id": "865:562",
+      "el": "group-38",
+      "type": "group",
+      "box": {
+        "w": 178,
+        "h": 83
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-40.group-38",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-34-2",
+        "frame-18-3"
+      ]
+    },
+    "weight": {
+      "id": "865:576",
+      "el": "weight",
+      "type": "text",
+      "box": {
+        "w": 62,
+        "h": 27
+      },
+      "name": "Weight",
+      "path": "d-0-2-4-onboarding.group-248.group-40.group-39.group-34-3.weight",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c4",
+      "text": "$t3",
+      "chars": "Weight",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-34-3": {
+      "id": "865:575",
+      "el": "group-34-3",
+      "type": "group",
+      "box": {
+        "w": 62,
+        "h": 27
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-40.group-39.group-34-3",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "weight"
+      ]
+    },
+    "e-g-160-2": {
+      "id": "865:580",
+      "el": "e-g-160-2",
+      "type": "text",
+      "box": {
+        "w": 46,
+        "h": 16
+      },
+      "name": "e.g. 160",
+      "path": "d-0-2-4-onboarding.group-248.group-40.group-39.group-132-2.frame-6-3.frame-5-3.e-g-160-2",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c6",
+      "text": "$t5",
+      "chars": "e.g. 160",
+      "textGrow": "wh"
+    },
+    "frame-5-3": {
+      "id": "865:579",
+      "el": "frame-5-3",
+      "type": "frame",
+      "box": {
+        "w": 46,
+        "h": 16
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-40.group-39.group-132-2.frame-6-3.frame-5-3",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l4",
+      "inheritedFill": "$c5",
+      "children": [
+        "e-g-160-2"
+      ]
+    },
+    "frame-6-3": {
+      "id": "865:578",
+      "el": "frame-6-3",
+      "type": "frame",
+      "box": {
+        "w": 112,
+        "h": 48
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-40.group-39.group-132-2.frame-6-3",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "layout": "$l6",
+      "fill": "$c5",
+      "radius": "$r1",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "frame-5-3"
+      ]
+    },
+    "gg": {
+      "id": "865:582",
+      "el": "gg",
+      "type": "text",
+      "box": {
+        "w": 18,
+        "h": 22
+      },
+      "name": "gg",
+      "path": "d-0-2-4-onboarding.group-248.group-40.group-39.group-132-2.frame-13-4.gg",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c4",
+      "text": "$t2",
+      "chars": "kg",
+      "textGrow": "wh"
+    },
+    "vector-4": {
+      "id": "I865:583;3:2664",
+      "el": "vector-4",
+      "type": "vector",
+      "box": {
+        "w": 7,
+        "h": 4
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-40.group-39.group-132-2.frame-13-4.chevron-down-3.vector-4",
+      "pos": {
+        "x": 3,
+        "y": 4
+      },
+      "fill": "$c4",
+      "iconHint": "kg",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-down-3": {
+      "id": "865:583",
+      "el": "chevron-down-3",
+      "type": "instance",
+      "box": {
+        "w": 12,
+        "h": 12
+      },
+      "name": "chevron-down",
+      "path": "d-0-2-4-onboarding.group-248.group-40.group-39.group-132-2.frame-13-4.chevron-down-3",
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "children": [
+        "vector-4"
+      ]
+    },
+    "frame-13-4": {
+      "id": "865:581",
+      "el": "frame-13-4",
+      "type": "frame",
+      "box": {
+        "w": 58,
+        "h": 48
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-40.group-39.group-132-2.frame-13-4",
+      "pos": {
+        "x": 120,
+        "y": 0
+      },
+      "layout": "$l8",
+      "inheritedFill": "$c1",
+      "stroke": "$c6",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "gg",
+        "chevron-down-3"
+      ]
+    },
+    "group-132-2": {
+      "id": "865:577",
+      "el": "group-132-2",
+      "type": "group",
+      "box": {
+        "w": 178,
+        "h": 48
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-40.group-39.group-132-2",
+      "pos": {
+        "x": 0,
+        "y": 34
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "frame-6-3",
+        "frame-13-4"
+      ]
+    },
+    "optional-4": {
+      "id": "865:585",
+      "el": "optional-4",
+      "type": "text",
+      "box": {
+        "w": 48,
+        "h": 16
+      },
+      "name": "optional",
+      "path": "d-0-2-4-onboarding.group-248.group-40.group-39.frame-18-4.optional-4",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c4",
+      "text": "$t4",
+      "chars": "optional",
+      "textGrow": "wh"
+    },
+    "frame-18-4": {
+      "id": "865:584",
+      "el": "frame-18-4",
+      "type": "frame",
+      "box": {
+        "w": 72,
+        "h": 22
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-40.group-39.frame-18-4",
+      "pos": {
+        "x": 106,
+        "y": 2
+      },
+      "layout": "$l2",
+      "fill": "$c5",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "optional-4"
+      ]
+    },
+    "group-39": {
+      "id": "865:574",
+      "el": "group-39",
+      "type": "group",
+      "box": {
+        "w": 178,
+        "h": 82
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-40.group-39",
+      "pos": {
+        "x": 196,
+        "y": 1
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-34-3",
+        "group-132-2",
+        "frame-18-4"
+      ]
+    },
+    "group-40": {
+      "id": "865:561",
+      "el": "group-40",
+      "type": "group",
+      "box": {
+        "w": 374,
+        "h": 83
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-40",
+      "pos": {
+        "x": 71,
+        "y": 476
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-38",
+        "group-39"
+      ]
+    },
+    "bust-size": {
+      "id": "865:589",
+      "el": "bust-size",
+      "type": "text",
+      "box": {
+        "w": 76,
+        "h": 27
+      },
+      "name": "Bust Size",
+      "path": "d-0-2-4-onboarding.group-248.group-64.group-38-2.group-34-4.bust-size",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c4",
+      "text": "$t3",
+      "chars": "Bust Size",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-34-4": {
+      "id": "865:588",
+      "el": "group-34-4",
+      "type": "group",
+      "box": {
+        "w": 76,
+        "h": 27
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-64.group-38-2.group-34-4",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "bust-size"
+      ]
+    },
+    "frame-5-4": {
+      "id": "865:592",
+      "el": "frame-5-4",
+      "type": "frame",
+      "box": {
+        "w": 16,
+        "h": 19
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-64.group-38-2.group-132-3.frame-6-4.frame-5-4",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l4",
+      "inheritedFill": "$c5",
+      "children": [
+        "90"
+      ]
+    },
+    "frame-6-4": {
+      "id": "865:591",
+      "el": "frame-6-4",
+      "type": "frame",
+      "box": {
+        "w": 112,
+        "h": 48
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-64.group-38-2.group-132-3.frame-6-4",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "layout": "$l6",
+      "fill": "$c5",
+      "radius": "$r1",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "frame-5-4"
+      ]
+    },
+    "cm-2": {
+      "id": "865:595",
+      "el": "cm-2",
+      "type": "text",
+      "box": {
+        "w": 21,
+        "h": 22
+      },
+      "name": "CM",
+      "path": "d-0-2-4-onboarding.group-248.group-64.group-38-2.group-132-3.frame-13-5.cm-2",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c4",
+      "text": "$t2",
+      "chars": "CM",
+      "textGrow": "wh"
+    },
+    "vector-5": {
+      "id": "I865:596;3:2664",
+      "el": "vector-5",
+      "type": "vector",
+      "box": {
+        "w": 7,
+        "h": 4
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-64.group-38-2.group-132-3.frame-13-5.chevron-down-4.vector-5",
+      "pos": {
+        "x": 3,
+        "y": 4
+      },
+      "fill": "$c4",
+      "iconHint": "CM",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-down-4": {
+      "id": "865:596",
+      "el": "chevron-down-4",
+      "type": "instance",
+      "box": {
+        "w": 12,
+        "h": 12
+      },
+      "name": "chevron-down",
+      "path": "d-0-2-4-onboarding.group-248.group-64.group-38-2.group-132-3.frame-13-5.chevron-down-4",
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "children": [
+        "vector-5"
+      ]
+    },
+    "frame-13-5": {
+      "id": "865:594",
+      "el": "frame-13-5",
+      "type": "frame",
+      "box": {
+        "w": 58,
+        "h": 48
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-64.group-38-2.group-132-3.frame-13-5",
+      "pos": {
+        "x": 120,
+        "y": 0
+      },
+      "layout": "$l7",
+      "inheritedFill": "$c1",
+      "stroke": "$c6",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "cm-2",
+        "chevron-down-4"
+      ]
+    },
+    "group-132-3": {
+      "id": "865:590",
+      "el": "group-132-3",
+      "type": "group",
+      "box": {
+        "w": 178,
+        "h": 48
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-64.group-38-2.group-132-3",
+      "pos": {
+        "x": 0,
+        "y": 35
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "frame-6-4",
+        "frame-13-5"
+      ]
+    },
+    "optional-5": {
+      "id": "865:598",
+      "el": "optional-5",
+      "type": "text",
+      "box": {
+        "w": 48,
+        "h": 16
+      },
+      "name": "optional",
+      "path": "d-0-2-4-onboarding.group-248.group-64.group-38-2.frame-18-5.optional-5",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c4",
+      "text": "$t4",
+      "chars": "optional",
+      "textGrow": "wh"
+    },
+    "frame-18-5": {
+      "id": "865:597",
+      "el": "frame-18-5",
+      "type": "frame",
+      "box": {
+        "w": 72,
+        "h": 22
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-64.group-38-2.frame-18-5",
+      "pos": {
+        "x": 106,
+        "y": 5
+      },
+      "layout": "$l2",
+      "fill": "$c5",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "optional-5"
+      ]
+    },
+    "group-38-2": {
+      "id": "865:587",
+      "el": "group-38-2",
+      "type": "group",
+      "box": {
+        "w": 178,
+        "h": 83
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-64.group-38-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-34-4",
+        "group-132-3",
+        "frame-18-5"
+      ]
+    },
+    "waist-size": {
+      "id": "865:601",
+      "el": "waist-size",
+      "type": "text",
+      "box": {
+        "w": 84,
+        "h": 27
+      },
+      "name": "Waist Size",
+      "path": "d-0-2-4-onboarding.group-248.group-64.group-39-2.group-34-5.waist-size",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c4",
+      "text": "$t3",
+      "chars": "Waist Size",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-34-5": {
+      "id": "865:600",
+      "el": "group-34-5",
+      "type": "group",
+      "box": {
+        "w": 84,
+        "h": 27
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-64.group-39-2.group-34-5",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "waist-size"
+      ]
+    },
+    "frame-5-5": {
+      "id": "865:604",
+      "el": "frame-5-5",
+      "type": "frame",
+      "box": {
+        "w": 16,
+        "h": 19
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-64.group-39-2.group-132-4.frame-6-5.frame-5-5",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l4",
+      "inheritedFill": "$c5",
+      "children": [
+        "60"
+      ]
+    },
+    "frame-6-5": {
+      "id": "865:603",
+      "el": "frame-6-5",
+      "type": "frame",
+      "box": {
+        "w": 112,
+        "h": 48
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-64.group-39-2.group-132-4.frame-6-5",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "layout": "$l6",
+      "fill": "$c5",
+      "radius": "$r1",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "frame-5-5"
+      ]
+    },
+    "cm-3": {
+      "id": "865:607",
+      "el": "cm-3",
+      "type": "text",
+      "box": {
+        "w": 21,
+        "h": 22
+      },
+      "name": "CM",
+      "path": "d-0-2-4-onboarding.group-248.group-64.group-39-2.group-132-4.frame-13-6.cm-3",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c4",
+      "text": "$t2",
+      "chars": "CM",
+      "textGrow": "wh"
+    },
+    "vector-6": {
+      "id": "I865:608;3:2664",
+      "el": "vector-6",
+      "type": "vector",
+      "box": {
+        "w": 7,
+        "h": 4
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-64.group-39-2.group-132-4.frame-13-6.chevron-down-5.vector-6",
+      "pos": {
+        "x": 3,
+        "y": 4
+      },
+      "fill": "$c4",
+      "iconHint": "CM",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-down-5": {
+      "id": "865:608",
+      "el": "chevron-down-5",
+      "type": "instance",
+      "box": {
+        "w": 12,
+        "h": 12
+      },
+      "name": "chevron-down",
+      "path": "d-0-2-4-onboarding.group-248.group-64.group-39-2.group-132-4.frame-13-6.chevron-down-5",
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "children": [
+        "vector-6"
+      ]
+    },
+    "frame-13-6": {
+      "id": "865:606",
+      "el": "frame-13-6",
+      "type": "frame",
+      "box": {
+        "w": 58,
+        "h": 48
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-64.group-39-2.group-132-4.frame-13-6",
+      "pos": {
+        "x": 120,
+        "y": 0
+      },
+      "layout": "$l7",
+      "inheritedFill": "$c1",
+      "stroke": "$c6",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "cm-3",
+        "chevron-down-5"
+      ]
+    },
+    "group-132-4": {
+      "id": "865:602",
+      "el": "group-132-4",
+      "type": "group",
+      "box": {
+        "w": 178,
+        "h": 48
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-64.group-39-2.group-132-4",
+      "pos": {
+        "x": 0,
+        "y": 35
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "frame-6-5",
+        "frame-13-6"
+      ]
+    },
+    "optional-6": {
+      "id": "865:610",
+      "el": "optional-6",
+      "type": "text",
+      "box": {
+        "w": 48,
+        "h": 16
+      },
+      "name": "optional",
+      "path": "d-0-2-4-onboarding.group-248.group-64.group-39-2.frame-18-6.optional-6",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c4",
+      "text": "$t4",
+      "chars": "optional",
+      "textGrow": "wh"
+    },
+    "frame-18-6": {
+      "id": "865:609",
+      "el": "frame-18-6",
+      "type": "frame",
+      "box": {
+        "w": 72,
+        "h": 22
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-64.group-39-2.frame-18-6",
+      "pos": {
+        "x": 106,
+        "y": 3
+      },
+      "layout": "$l2",
+      "fill": "$c5",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "optional-6"
+      ]
+    },
+    "group-39-2": {
+      "id": "865:599",
+      "el": "group-39-2",
+      "type": "group",
+      "box": {
+        "w": 178,
+        "h": 83
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-64.group-39-2",
+      "pos": {
+        "x": 196,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-34-5",
+        "group-132-4",
+        "frame-18-6"
+      ]
+    },
+    "group-64": {
+      "id": "865:586",
+      "el": "group-64",
+      "type": "group",
+      "box": {
+        "w": 374,
+        "h": 83
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-64",
+      "pos": {
+        "x": 71,
+        "y": 583
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-38-2",
+        "group-39-2"
+      ]
+    },
+    "high-hip": {
+      "id": "865:614",
+      "el": "high-hip",
+      "type": "text",
+      "box": {
+        "w": 72,
+        "h": 27
+      },
+      "name": "High Hip",
+      "path": "d-0-2-4-onboarding.group-248.group-129.group-38-3.group-34-6.high-hip",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c4",
+      "text": "$t3",
+      "chars": "High Hip",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-34-6": {
+      "id": "865:613",
+      "el": "group-34-6",
+      "type": "group",
+      "box": {
+        "w": 72,
+        "h": 27
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-129.group-38-3.group-34-6",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "high-hip"
+      ]
+    },
+    "frame-5-6": {
+      "id": "865:617",
+      "el": "frame-5-6",
+      "type": "frame",
+      "box": {
+        "w": 16,
+        "h": 19
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-129.group-38-3.group-132-5.frame-6-6.frame-5-6",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l4",
+      "inheritedFill": "$c5",
+      "children": [
+        "80"
+      ]
+    },
+    "frame-6-6": {
+      "id": "865:616",
+      "el": "frame-6-6",
+      "type": "frame",
+      "box": {
+        "w": 112,
+        "h": 48
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-129.group-38-3.group-132-5.frame-6-6",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "layout": "$l6",
+      "fill": "$c5",
+      "radius": "$r1",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "frame-5-6"
+      ]
+    },
+    "group-132-5": {
+      "id": "865:615",
+      "el": "group-132-5",
+      "type": "group",
+      "box": {
+        "w": 112,
+        "h": 48
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-129.group-38-3.group-132-5",
+      "pos": {
+        "x": 0,
+        "y": 35
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "frame-6-6"
+      ]
+    },
+    "optional-7": {
+      "id": "865:623",
+      "el": "optional-7",
+      "type": "text",
+      "box": {
+        "w": 48,
+        "h": 16
+      },
+      "name": "optional",
+      "path": "d-0-2-4-onboarding.group-248.group-129.group-38-3.frame-18-7.optional-7",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c4",
+      "text": "$t4",
+      "chars": "optional",
+      "textGrow": "wh"
+    },
+    "frame-18-7": {
+      "id": "865:622",
+      "el": "frame-18-7",
+      "type": "frame",
+      "box": {
+        "w": 72,
+        "h": 22
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-129.group-38-3.frame-18-7",
+      "pos": {
+        "x": 106,
+        "y": 5
+      },
+      "layout": "$l2",
+      "fill": "$c5",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "optional-7"
+      ]
+    },
+    "cm-4": {
+      "id": "865:620",
+      "el": "cm-4",
+      "type": "text",
+      "box": {
+        "w": 21,
+        "h": 22
+      },
+      "name": "CM",
+      "path": "d-0-2-4-onboarding.group-248.group-129.group-38-3.frame-13-7.cm-4",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c4",
+      "text": "$t2",
+      "chars": "CM",
+      "textGrow": "wh"
+    },
+    "vector-7": {
+      "id": "I865:621;3:2664",
+      "el": "vector-7",
+      "type": "vector",
+      "box": {
+        "w": 7,
+        "h": 4
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-129.group-38-3.frame-13-7.chevron-down-6.vector-7",
+      "pos": {
+        "x": 3,
+        "y": 4
+      },
+      "fill": "$c4",
+      "iconHint": "CM",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-down-6": {
+      "id": "865:621",
+      "el": "chevron-down-6",
+      "type": "instance",
+      "box": {
+        "w": 12,
+        "h": 12
+      },
+      "name": "chevron-down",
+      "path": "d-0-2-4-onboarding.group-248.group-129.group-38-3.frame-13-7.chevron-down-6",
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "children": [
+        "vector-7"
+      ]
+    },
+    "frame-13-7": {
+      "id": "865:619",
+      "el": "frame-13-7",
+      "type": "frame",
+      "box": {
+        "w": 58,
+        "h": 48
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-129.group-38-3.frame-13-7",
+      "pos": {
+        "x": 120,
+        "y": 35
+      },
+      "layout": "$l7",
+      "inheritedFill": "$c1",
+      "stroke": "$c6",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "cm-4",
+        "chevron-down-6"
+      ]
+    },
+    "group-38-3": {
+      "id": "865:612",
+      "el": "group-38-3",
+      "type": "group",
+      "box": {
+        "w": 178,
+        "h": 83
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-129.group-38-3",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-34-6",
+        "group-132-5",
+        "frame-18-7",
+        "frame-13-7"
+      ]
+    },
+    "hip-size": {
+      "id": "865:627",
+      "el": "hip-size",
+      "type": "text",
+      "box": {
+        "w": 64,
+        "h": 27
+      },
+      "name": "HIP SIZE",
+      "path": "d-0-2-4-onboarding.group-248.group-129.group-39-3.group-133.group-34-7.hip-size",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c4",
+      "text": "$t3",
+      "chars": "HIP SIZE",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-34-7": {
+      "id": "865:626",
+      "el": "group-34-7",
+      "type": "group",
+      "box": {
+        "w": 64,
+        "h": 27
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-129.group-39-3.group-133.group-34-7",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "hip-size"
+      ]
+    },
+    "90-2": {
+      "id": "865:631",
+      "el": "90-2",
+      "type": "text",
+      "box": {
+        "w": 16,
+        "h": 19
+      },
+      "name": "90",
+      "path": "d-0-2-4-onboarding.group-248.group-129.group-39-3.group-133.group-132-6.frame-6-7.frame-5-7.90-2",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c4",
+      "text": "$t6",
+      "chars": "90",
+      "textGrow": "wh"
+    },
+    "frame-5-7": {
+      "id": "865:630",
+      "el": "frame-5-7",
+      "type": "frame",
+      "box": {
+        "w": 16,
+        "h": 19
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-129.group-39-3.group-133.group-132-6.frame-6-7.frame-5-7",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l4",
+      "inheritedFill": "$c5",
+      "children": [
+        "90-2"
+      ]
+    },
+    "frame-6-7": {
+      "id": "865:629",
+      "el": "frame-6-7",
+      "type": "frame",
+      "box": {
+        "w": 112,
+        "h": 48
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-129.group-39-3.group-133.group-132-6.frame-6-7",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "layout": "$l6",
+      "fill": "$c5",
+      "radius": "$r1",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "frame-5-7"
+      ]
+    },
+    "group-132-6": {
+      "id": "865:628",
+      "el": "group-132-6",
+      "type": "group",
+      "box": {
+        "w": 112,
+        "h": 48
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-129.group-39-3.group-133.group-132-6",
+      "pos": {
+        "x": 0,
+        "y": 35
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "frame-6-7"
+      ]
+    },
+    "cm-5": {
+      "id": "865:633",
+      "el": "cm-5",
+      "type": "text",
+      "box": {
+        "w": 21,
+        "h": 22
+      },
+      "name": "CM",
+      "path": "d-0-2-4-onboarding.group-248.group-129.group-39-3.group-133.frame-13-8.cm-5",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c4",
+      "text": "$t2",
+      "chars": "CM",
+      "textGrow": "wh"
+    },
+    "vector-8": {
+      "id": "I865:634;3:2664",
+      "el": "vector-8",
+      "type": "vector",
+      "box": {
+        "w": 7,
+        "h": 4
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-129.group-39-3.group-133.frame-13-8.chevron-down-7.vector-8",
+      "pos": {
+        "x": 3,
+        "y": 4
+      },
+      "fill": "$c4",
+      "iconHint": "CM",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-down-7": {
+      "id": "865:634",
+      "el": "chevron-down-7",
+      "type": "instance",
+      "box": {
+        "w": 12,
+        "h": 12
+      },
+      "name": "chevron-down",
+      "path": "d-0-2-4-onboarding.group-248.group-129.group-39-3.group-133.frame-13-8.chevron-down-7",
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "children": [
+        "vector-8"
+      ]
+    },
+    "frame-13-8": {
+      "id": "865:632",
+      "el": "frame-13-8",
+      "type": "frame",
+      "box": {
+        "w": 58,
+        "h": 48
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-129.group-39-3.group-133.frame-13-8",
+      "pos": {
+        "x": 120,
+        "y": 35
+      },
+      "layout": "$l7",
+      "inheritedFill": "$c1",
+      "stroke": "$c6",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "cm-5",
+        "chevron-down-7"
+      ]
+    },
+    "group-133": {
+      "id": "865:625",
+      "el": "group-133",
+      "type": "group",
+      "box": {
+        "w": 178,
+        "h": 83
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-129.group-39-3.group-133",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-34-7",
+        "group-132-6",
+        "frame-13-8"
+      ]
+    },
+    "optional-8": {
+      "id": "865:636",
+      "el": "optional-8",
+      "type": "text",
+      "box": {
+        "w": 48,
+        "h": 16
+      },
+      "name": "optional",
+      "path": "d-0-2-4-onboarding.group-248.group-129.group-39-3.frame-18-8.optional-8",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c4",
+      "text": "$t4",
+      "chars": "optional",
+      "textGrow": "wh"
+    },
+    "frame-18-8": {
+      "id": "865:635",
+      "el": "frame-18-8",
+      "type": "frame",
+      "box": {
+        "w": 72,
+        "h": 22
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-129.group-39-3.frame-18-8",
+      "pos": {
+        "x": 108,
+        "y": 5
+      },
+      "layout": "$l2",
+      "fill": "$c5",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "optional-8"
+      ]
+    },
+    "group-39-3": {
+      "id": "865:624",
+      "el": "group-39-3",
+      "type": "group",
+      "box": {
+        "w": 180,
+        "h": 83
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-129.group-39-3",
+      "pos": {
+        "x": 196,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-133",
+        "frame-18-8"
+      ]
+    },
+    "group-129": {
+      "id": "865:611",
+      "el": "group-129",
+      "type": "group",
+      "box": {
+        "w": 376,
+        "h": 83
+      },
+      "path": "d-0-2-4-onboarding.group-248.group-129",
+      "pos": {
+        "x": 71,
+        "y": 690
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-38-3",
+        "group-39-3"
+      ]
+    },
+    "group-248": {
+      "id": "840:382",
+      "el": "group-248",
+      "type": "group",
+      "box": {
+        "w": 447,
+        "h": 869
+      },
+      "path": "d-0-2-4-onboarding.group-248",
+      "pos": {
+        "x": 905,
+        "y": 77
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "dress-for-your-body-not-the-other-way",
+        "union",
+        "we-ll-help-you-dress-for-where-you-actua",
+        "group-246",
+        "group-197",
+        "group-41",
+        "group-128",
+        "group-40",
+        "group-64",
+        "group-129"
+      ]
+    },
+    "continue": {
+      "id": "1583:535",
+      "el": "continue",
+      "type": "text",
+      "box": {
+        "w": 68,
+        "h": 22
+      },
+      "name": "continue",
+      "path": "d-0-2-4-onboarding.frame-67.continue",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c1",
+      "text": "$t2",
+      "chars": "continue",
+      "textGrow": "wh"
+    },
+    "frame-67": {
+      "id": "1583:534",
+      "el": "frame-67",
+      "type": "frame",
+      "box": {
+        "w": 120,
+        "h": 48
+      },
+      "path": "d-0-2-4-onboarding.frame-67",
+      "pos": {
+        "x": 1230,
+        "y": 898
+      },
+      "layout": "$l9",
+      "fill": "$c4",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "continue"
+      ]
+    },
+    "d-0-2-4-onboarding": {
+      "id": "840:376",
+      "el": "d-0-2-4-onboarding",
+      "type": "frame",
+      "box": {
+        "w": 1440,
+        "h": 1024
+      },
+      "name": "D.0.2.4 Onboarding",
+      "fill": "$c1",
+      "clip": true,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "group-33",
+        "group-248",
+        "frame-67"
+      ]
+    }
+  },
+  "meta": {
+    "nodeCount": 136,
+    "estTokens": 9944,
+    "depthUsed": 12,
+    "suspiciousText": [
+      {
+        "path": "d-0-2-4-onboarding.group-248.group-41.group-36.frame-10.m",
+        "value": "M",
+        "hint": "Possible typo: \"CM\" appears 5× nearby"
+      }
+    ]
+  },
+  "next": "Read `tokens` for the design system, then build the UI from `nodes`. Tag each rendered element data-plumb-id=\"<el>\". A node with a `more` count has that many children not yet included — call plumb_node again on that node's `id` to expand them. This screen has 3 image asset(s) (nodes with `assetId`). Call plumb_assets with this screen's id to download them to disk BEFORE generating HTML — without the real files any <img> will be a placeholder and plumb_verify will flag every image node as asset.missing.",
+  "source": "plugin",
+  "node": "D.0.2.4 Onboarding"
+}

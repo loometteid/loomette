@@ -1,0 +1,3350 @@
+{
+  "file": {
+    "name": "Loomette.id",
+    "version": "plugin-1792667100512"
+  },
+  "root": "d-3-3-item-detail-edit-ori-photo",
+  "tokens": {
+    "color": {
+      "$c1": "#fafaf7",
+      "$c2": "#ffffff1a",
+      "$c3": "#444440",
+      "$c4": "#d9d9d9",
+      "$c5": "#000000",
+      "$c6": "image",
+      "$c7": "#c9c3b7",
+      "$c8": "#f2ede5",
+      "$c9": "#c9c3b733"
+    },
+    "text": {
+      "$t1": "400 24px Avenir Next",
+      "$t2": "400 20px Avenir Next",
+      "$t3": "400 48px Source Serif Pro",
+      "$t4": "400 16px Avenir Next",
+      "$t5": "400 12px Avenir Next",
+      "$t6": "400 12px Avenir",
+      "$t7": "400 32px Avenir Next",
+      "$t8": "300 16px Figtree",
+      "$t9": "400 24px Source Serif Pro"
+    },
+    "radius": {
+      "$r1": 8,
+      "$r2": 16,
+      "$r3": "full",
+      "$r4": 12,
+      "$r5": 20
+    },
+    "shadow": {},
+    "layout": {
+      "$l1": {
+        "align": "center",
+        "flow": "row",
+        "gap": 16,
+        "justify": "center",
+        "pad": [
+          16,
+          64,
+          16,
+          64
+        ]
+      },
+      "$l2": {
+        "align": "center",
+        "flow": "row",
+        "gap": 16,
+        "justify": "center",
+        "pad": [
+          19,
+          16,
+          18,
+          16
+        ]
+      },
+      "$l3": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          1,
+          16,
+          2,
+          16
+        ]
+      },
+      "$l4": {
+        "align": "center",
+        "flow": "row",
+        "gap": 16,
+        "pad": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l5": {
+        "flow": "col",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          12,
+          212,
+          12,
+          16
+        ]
+      },
+      "$l6": {
+        "align": "center",
+        "flow": "row",
+        "gap": 8,
+        "pad": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l7": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          4,
+          16,
+          4,
+          16
+        ]
+      },
+      "$l8": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          19,
+          64,
+          18,
+          64
+        ]
+      }
+    },
+    "vector": {
+      "$v1": "M12.7988 11.4121 L19.9199 3.3418 L21.0518 4.62402 L13.9307 12.6934 L24 12.6934 L24 14.5068 L13.9316 14.5068 L21.0508 22.5752 L19.9189 23.8574 L12.7988 15.7871 L12.7988 27.2002 L11.1992 27.2002 L11.1992 15.79 L4.08105 23.8574 L2.94922 22.5752 L10.0674 14.5068 L0 14.5068 L0 12.6934 L10.0693 12.6934 L2.94922 4.62402 L4.08008 3.3418 L11.1992 11.4092 L11.1992 0 L12.7988 0 L12.7988 11.4121 Z",
+      "$v2": "M0.390524 0.390524 C0.911223 -0.130175 1.75544 -0.130175 2.27614 0.390524 L9.33333 7.44772 L16.3905 0.390524 C16.9112 -0.130175 17.7554 -0.130175 18.2761 0.390524 C18.7968 0.911223 18.7968 1.75544 18.2761 2.27614 L11.219 9.33333 L18.2761 16.3905 C18.7968 16.9112 18.7968 17.7554 18.2761 18.2761 C17.7554 18.7968 16.9112 18.7968 16.3905 18.2761 L9.33333 11.219 L2.27614 18.2761 C1.75544 18.7968 0.911223 18.7968 0.390524 18.2761 C-0.130175 17.7554 -0.130175 16.9112 0.390524 16.3905 L7.44772 9.33333 L0.390524 2.27614 C-0.130175 1.75544 -0.130175 0.911223 0.390524 0.390524 Z",
+      "$v3": "M25.0674 20.1348 L39.0078 5.89844 L41.2236 8.16113 L27.2793 22.4004 L47 22.4004 L47 25.6006 L27.2822 25.6006 L41.2246 39.8389 L39.0088 42.1016 L25.0674 27.8633 L25.0674 48 L21.9336 48 L21.9336 27.8604 L7.98926 42.1016 L5.77344 39.8389 L19.7148 25.6006 L0 25.6006 L0 22.4004 L19.7178 22.4004 L5.77539 8.16113 L7.99023 5.89844 L21.9336 20.1377 L21.9336 0 L25.0674 0 L25.0674 20.1348 Z"
+    },
+    "props": {
+      "$p1": {
+        "size": "24"
+      },
+      "$p2": {
+        "size": "20"
+      },
+      "$p3": {
+        "size": "16"
+      }
+    },
+    "meta": {
+      "counts": {
+        "$c1": 4,
+        "$c3": 58,
+        "$c4": 9,
+        "$t1": 9,
+        "$p1": 2,
+        "$c6": 9,
+        "$c7": 24,
+        "$r1": 4,
+        "$t2": 2,
+        "$t3": 2,
+        "$t4": 25,
+        "$l2": 18,
+        "$r2": 18,
+        "$c8": 5,
+        "$r3": 4,
+        "$l4": 2,
+        "$l5": 2,
+        "$l6": 2,
+        "$t6": 2,
+        "$r4": 6,
+        "$t8": 4,
+        "$t9": 4,
+        "$r5": 2
+      }
+    }
+  },
+  "nodes": {
+    "rectangle-15": {
+      "id": "1118:1661",
+      "el": "rectangle-15",
+      "type": "rect",
+      "box": {
+        "w": 1465,
+        "h": 136
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-96.rectangle-15",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16": {
+      "id": "1118:1663",
+      "el": "rectangle-16",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 27
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-96.union.rectangle-16",
+      "pos": {
+        "x": 11,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17": {
+      "id": "1118:1664",
+      "el": "rectangle-17",
+      "type": "rect",
+      "box": {
+        "w": 18,
+        "h": 21
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-96.union.rectangle-17",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 2783,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19": {
+      "id": "1118:1665",
+      "el": "rectangle-19",
+      "type": "rect",
+      "box": {
+        "w": 18,
+        "h": 21
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-96.union.rectangle-19",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 7530,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18": {
+      "id": "1118:1666",
+      "el": "rectangle-18",
+      "type": "rect",
+      "box": {
+        "w": 24,
+        "h": 2
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-96.union.rectangle-18",
+      "pos": {
+        "x": 0,
+        "y": 13
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union": {
+      "id": "1118:1662",
+      "el": "union",
+      "type": "bool",
+      "box": {
+        "w": 24,
+        "h": 27
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-96.union",
+      "pos": {
+        "x": 75,
+        "y": 54
+      },
+      "fill": "$c3",
+      "iconHint": "loomette",
+      "vectorPath": "$v1",
+      "children": [
+        "rectangle-16",
+        "rectangle-17",
+        "rectangle-19",
+        "rectangle-18"
+      ]
+    },
+    "loomette": {
+      "id": "1118:1667",
+      "el": "loomette",
+      "type": "text",
+      "box": {
+        "w": 99,
+        "h": 37
+      },
+      "name": "loomette",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-96.loomette",
+      "pos": {
+        "x": 115,
+        "y": 50
+      },
+      "fill": "$c5",
+      "text": "$t1",
+      "chars": "loomette",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "line-17": {
+      "id": "1118:1668",
+      "el": "line-17",
+      "type": "line",
+      "box": {
+        "w": 103,
+        "h": 0
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-96.line-17",
+      "pos": {
+        "x": 822,
+        "y": 91
+      },
+      "stroke": "$c3",
+      "strokeW": 1,
+      "strokeAlign": "center",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "home": {
+      "id": "1118:1669",
+      "el": "home",
+      "type": "text",
+      "box": {
+        "w": 61,
+        "h": 37
+      },
+      "name": "Home",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-96.home",
+      "pos": {
+        "x": 583,
+        "y": 50
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "Home",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "calendar": {
+      "id": "1118:1670",
+      "el": "calendar",
+      "type": "text",
+      "box": {
+        "w": 103,
+        "h": 37
+      },
+      "name": "calendar",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-96.calendar",
+      "pos": {
+        "x": 680,
+        "y": 50
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "calendar",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "wardrobe": {
+      "id": "1118:1671",
+      "el": "wardrobe",
+      "type": "text",
+      "box": {
+        "w": 110,
+        "h": 37
+      },
+      "name": "wardrobe",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-96.wardrobe",
+      "pos": {
+        "x": 819,
+        "y": 50
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "wardrobe",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "gevyndo": {
+      "id": "1118:1673",
+      "el": "gevyndo",
+      "type": "text",
+      "box": {
+        "w": 96,
+        "h": 37
+      },
+      "name": "gevyndo",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-96.group-254.gevyndo",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "gevyndo",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector": {
+      "id": "I1118:1674;3:3637",
+      "el": "vector",
+      "type": "vector",
+      "box": {
+        "w": 16,
+        "h": 22
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-96.group-254.user.vector",
+      "pos": {
+        "x": 4,
+        "y": 3
+      },
+      "fill": "$c3",
+      "iconHint": "gevyndo",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "user": {
+      "id": "1118:1674",
+      "el": "user",
+      "type": "instance",
+      "box": {
+        "w": 24,
+        "h": 27
+      },
+      "name": "user",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-96.group-254.user",
+      "pos": {
+        "x": 112,
+        "y": 5
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector"
+      ]
+    },
+    "group-254": {
+      "id": "1118:1672",
+      "el": "group-254",
+      "type": "group",
+      "box": {
+        "w": 136,
+        "h": 37
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-96.group-254",
+      "pos": {
+        "x": 1251,
+        "y": 50
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "gevyndo",
+        "user"
+      ]
+    },
+    "group-96": {
+      "id": "1118:1660",
+      "el": "group-96",
+      "type": "group",
+      "box": {
+        "w": 1465,
+        "h": 136
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-96",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-15",
+        "union",
+        "loomette",
+        "line-17",
+        "home",
+        "calendar",
+        "wardrobe",
+        "group-254"
+      ]
+    },
+    "image-removebg-preview-2": {
+      "id": "1118:1675",
+      "el": "image-removebg-preview-2",
+      "type": "rect",
+      "box": {
+        "w": 400,
+        "h": 379
+      },
+      "name": "image-removebg-preview 2",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.image-removebg-preview-2",
+      "pos": {
+        "x": 149,
+        "y": 238
+      },
+      "assetId": "837079d7a4263daef60e6c2261fde3a6852552dd",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "837079d7a4263daef60e6c2261fde3a6852552dd",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.7313451170921326,
+              0.13030901551246643
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "see-original-photo": {
+      "id": "1118:1678",
+      "el": "see-original-photo",
+      "type": "text",
+      "box": {
+        "w": 174,
+        "h": 27
+      },
+      "name": "SEE ORIGINAL PHOTO",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.frame-10.see-original-photo",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "SEE ORIGINAL PHOTO",
+      "textGrow": "wh"
+    },
+    "frame-10": {
+      "id": "1118:1676",
+      "el": "frame-10",
+      "type": "frame",
+      "box": {
+        "w": 302,
+        "h": 59
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.frame-10",
+      "pos": {
+        "x": 198,
+        "y": 802
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r1",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "see-original-photo"
+      ]
+    },
+    "blue-shirt": {
+      "id": "1118:1680",
+      "el": "blue-shirt",
+      "type": "text",
+      "box": {
+        "w": 203,
+        "h": 60
+      },
+      "name": "Blue Shirt",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-305.blue-shirt",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "Blue Shirt",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-2": {
+      "id": "I1118:1681;4:179",
+      "el": "vector-2",
+      "type": "vector",
+      "box": {
+        "w": 15,
+        "h": 16
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-305.edit.vector-2",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c3",
+      "iconHint": "Blue Shirt",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "edit": {
+      "id": "1118:1681",
+      "el": "edit",
+      "type": "instance",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "name": "edit",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-305.edit",
+      "pos": {
+        "x": 215,
+        "y": 20
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector-2"
+      ]
+    },
+    "group-305": {
+      "id": "1118:1679",
+      "el": "group-305",
+      "type": "group",
+      "box": {
+        "w": 235,
+        "h": 60
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-305",
+      "pos": {
+        "x": 232,
+        "y": 657
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "blue-shirt",
+        "edit"
+      ]
+    },
+    "vector-3": {
+      "id": "I1118:1683;4:181",
+      "el": "vector-3",
+      "type": "vector",
+      "box": {
+        "w": 12,
+        "h": 13
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-304.edit-2.vector-3",
+      "pos": {
+        "x": 2,
+        "y": 2
+      },
+      "fill": "$c3",
+      "iconHint": "POLO",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "edit-2": {
+      "id": "1118:1683",
+      "el": "edit-2",
+      "type": "instance",
+      "box": {
+        "w": 16,
+        "h": 16
+      },
+      "name": "edit",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-304.edit-2",
+      "pos": {
+        "x": 62,
+        "y": 9
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector-3"
+      ]
+    },
+    "polo": {
+      "id": "1118:1684",
+      "el": "polo",
+      "type": "text",
+      "box": {
+        "w": 54,
+        "h": 33
+      },
+      "name": "POLO",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-304.polo",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "POLO",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-304": {
+      "id": "1118:1682",
+      "el": "group-304",
+      "type": "group",
+      "box": {
+        "w": 78,
+        "h": 33
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-304",
+      "pos": {
+        "x": 311,
+        "y": 725
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "edit-2",
+        "polo"
+      ]
+    },
+    "category": {
+      "id": "1118:1688",
+      "el": "category",
+      "type": "text",
+      "box": {
+        "w": 67,
+        "h": 22
+      },
+      "name": "CATEGORY",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-41.group-36.group-35.category",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "CATEGORY",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-35": {
+      "id": "1118:1687",
+      "el": "group-35",
+      "type": "group",
+      "box": {
+        "w": 67,
+        "h": 22
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-41.group-36.group-35",
+      "pos": {
+        "x": 3,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "category"
+      ]
+    },
+    "tops": {
+      "id": "1118:1690",
+      "el": "tops",
+      "type": "text",
+      "box": {
+        "w": 33,
+        "h": 22
+      },
+      "name": "tops",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-41.group-36.frame-8.tops",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "tops",
+      "textGrow": "wh"
+    },
+    "frame-8": {
+      "id": "1118:1689",
+      "el": "frame-8",
+      "type": "frame",
+      "box": {
+        "w": 65,
+        "h": 40
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-41.group-36.frame-8",
+      "pos": {
+        "x": 0,
+        "y": 34
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "stroke": "$c3",
+      "strokeW": 1.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "tops"
+      ]
+    },
+    "bottoms": {
+      "id": "1118:1692",
+      "el": "bottoms",
+      "type": "text",
+      "box": {
+        "w": 62,
+        "h": 22
+      },
+      "name": "BOTTOMS",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-41.group-36.frame-9.bottoms",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "BOTTOMS",
+      "textGrow": "wh"
+    },
+    "frame-9": {
+      "id": "1118:1691",
+      "el": "frame-9",
+      "type": "frame",
+      "box": {
+        "w": 94,
+        "h": 40
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-41.group-36.frame-9",
+      "pos": {
+        "x": 77,
+        "y": 34
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "bottoms"
+      ]
+    },
+    "shoes": {
+      "id": "1118:1694",
+      "el": "shoes",
+      "type": "text",
+      "box": {
+        "w": 43,
+        "h": 22
+      },
+      "name": "shoes",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-41.group-36.frame-13.shoes",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "shoes",
+      "textGrow": "wh"
+    },
+    "frame-13": {
+      "id": "1118:1693",
+      "el": "frame-13",
+      "type": "frame",
+      "box": {
+        "w": 75,
+        "h": 40
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-41.group-36.frame-13",
+      "pos": {
+        "x": 0,
+        "y": 86
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "shoes"
+      ]
+    },
+    "accesories": {
+      "id": "1118:1696",
+      "el": "accesories",
+      "type": "text",
+      "box": {
+        "w": 80,
+        "h": 22
+      },
+      "name": "aCCESORIES",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-41.group-36.frame-14.accesories",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "aCCESORIES",
+      "textGrow": "wh"
+    },
+    "frame-14": {
+      "id": "1118:1695",
+      "el": "frame-14",
+      "type": "frame",
+      "box": {
+        "w": 112,
+        "h": 40
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-41.group-36.frame-14",
+      "pos": {
+        "x": 182,
+        "y": 34
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "accesories"
+      ]
+    },
+    "group-36": {
+      "id": "1118:1686",
+      "el": "group-36",
+      "type": "group",
+      "box": {
+        "w": 294,
+        "h": 126
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-41.group-36",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-35",
+        "frame-8",
+        "frame-9",
+        "frame-13",
+        "frame-14"
+      ]
+    },
+    "group-41": {
+      "id": "1118:1685",
+      "el": "group-41",
+      "type": "group",
+      "box": {
+        "w": 294,
+        "h": 126
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-41",
+      "pos": {
+        "x": 627,
+        "y": 206
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-36"
+      ]
+    },
+    "outfit-size": {
+      "id": "1118:1700",
+      "el": "outfit-size",
+      "type": "text",
+      "box": {
+        "w": 74,
+        "h": 22
+      },
+      "name": "Outfit size",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-42.group-36-2.group-35-2.outfit-size",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "Outfit size",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-35-2": {
+      "id": "1118:1699",
+      "el": "group-35-2",
+      "type": "group",
+      "box": {
+        "w": 74,
+        "h": 22
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-42.group-36-2.group-35-2",
+      "pos": {
+        "x": 3,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "outfit-size"
+      ]
+    },
+    "xs": {
+      "id": "1118:1702",
+      "el": "xs",
+      "type": "text",
+      "box": {
+        "w": 16,
+        "h": 22
+      },
+      "name": "XS",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-42.group-36-2.frame-8-2.xs",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "XS",
+      "textGrow": "wh"
+    },
+    "frame-8-2": {
+      "id": "1118:1701",
+      "el": "frame-8-2",
+      "type": "frame",
+      "box": {
+        "w": 48,
+        "h": 40
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-42.group-36-2.frame-8-2",
+      "pos": {
+        "x": 0,
+        "y": 34
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "xs"
+      ]
+    },
+    "s": {
+      "id": "1118:1704",
+      "el": "s",
+      "type": "text",
+      "box": {
+        "w": 8,
+        "h": 22
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-42.group-36-2.frame-9-2.s",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "S",
+      "textGrow": "wh"
+    },
+    "frame-9-2": {
+      "id": "1118:1703",
+      "el": "frame-9-2",
+      "type": "frame",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-42.group-36-2.frame-9-2",
+      "pos": {
+        "x": 64,
+        "y": 34
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "stroke": "$c3",
+      "strokeW": 1.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "s"
+      ]
+    },
+    "m": {
+      "id": "1118:1706",
+      "el": "m",
+      "type": "text",
+      "box": {
+        "w": 12,
+        "h": 22
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-42.group-36-2.frame-10-2.m",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "M",
+      "textGrow": "wh"
+    },
+    "frame-10-2": {
+      "id": "1118:1705",
+      "el": "frame-10-2",
+      "type": "frame",
+      "box": {
+        "w": 44,
+        "h": 40
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-42.group-36-2.frame-10-2",
+      "pos": {
+        "x": 117,
+        "y": 34
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "m"
+      ]
+    },
+    "l": {
+      "id": "1118:1708",
+      "el": "l",
+      "type": "text",
+      "box": {
+        "w": 7,
+        "h": 22
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-42.group-36-2.frame-11.l",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "L",
+      "textGrow": "wh"
+    },
+    "frame-11": {
+      "id": "1118:1707",
+      "el": "frame-11",
+      "type": "frame",
+      "box": {
+        "w": 39,
+        "h": 40
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-42.group-36-2.frame-11",
+      "pos": {
+        "x": 173,
+        "y": 34
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "l"
+      ]
+    },
+    "xl": {
+      "id": "1118:1710",
+      "el": "xl",
+      "type": "text",
+      "box": {
+        "w": 15,
+        "h": 22
+      },
+      "name": "XL",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-42.group-36-2.frame-12.xl",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "XL",
+      "textGrow": "wh"
+    },
+    "frame-12": {
+      "id": "1118:1709",
+      "el": "frame-12",
+      "type": "frame",
+      "box": {
+        "w": 47,
+        "h": 40
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-42.group-36-2.frame-12",
+      "pos": {
+        "x": 224,
+        "y": 34
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "xl"
+      ]
+    },
+    "group-36-2": {
+      "id": "1118:1698",
+      "el": "group-36-2",
+      "type": "group",
+      "box": {
+        "w": 271,
+        "h": 74
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-42.group-36-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-35-2",
+        "frame-8-2",
+        "frame-9-2",
+        "frame-10-2",
+        "frame-11",
+        "frame-12"
+      ]
+    },
+    "optional": {
+      "id": "1118:1712",
+      "el": "optional",
+      "type": "text",
+      "box": {
+        "w": 48,
+        "h": 16
+      },
+      "name": "optional",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-42.frame-18.optional",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t5",
+      "chars": "optional",
+      "textGrow": "wh"
+    },
+    "frame-18": {
+      "id": "1118:1711",
+      "el": "frame-18",
+      "type": "frame",
+      "box": {
+        "w": 80,
+        "h": 22
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-42.frame-18",
+      "pos": {
+        "x": 232,
+        "y": 0
+      },
+      "layout": "$l3",
+      "fill": "$c8",
+      "radius": "$r3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "optional"
+      ]
+    },
+    "group-42": {
+      "id": "1118:1697",
+      "el": "group-42",
+      "type": "group",
+      "box": {
+        "w": 312,
+        "h": 74
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-42",
+      "pos": {
+        "x": 627,
+        "y": 454
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-36-2",
+        "frame-18"
+      ]
+    },
+    "sub-category-2": {
+      "id": "1118:1716",
+      "el": "sub-category-2",
+      "type": "text",
+      "box": {
+        "w": 94,
+        "h": 22
+      },
+      "name": "sub category",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.sub-category.group-36-3.group-35-3.sub-category-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "sub category",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-35-3": {
+      "id": "1118:1715",
+      "el": "group-35-3",
+      "type": "group",
+      "box": {
+        "w": 94,
+        "h": 22
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.sub-category.group-36-3.group-35-3",
+      "pos": {
+        "x": 3,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "sub-category-2"
+      ]
+    },
+    "shirt": {
+      "id": "1118:1718",
+      "el": "shirt",
+      "type": "text",
+      "box": {
+        "w": 36,
+        "h": 22
+      },
+      "name": "shirt",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.sub-category.group-36-3.frame-8-3.shirt",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "shirt",
+      "textGrow": "wh"
+    },
+    "frame-8-3": {
+      "id": "1118:1717",
+      "el": "frame-8-3",
+      "type": "frame",
+      "box": {
+        "w": 68,
+        "h": 40
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.sub-category.group-36-3.frame-8-3",
+      "pos": {
+        "x": 0,
+        "y": 34
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "stroke": "$c3",
+      "strokeW": 1.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "shirt"
+      ]
+    },
+    "blouse": {
+      "id": "1118:1720",
+      "el": "blouse",
+      "type": "text",
+      "box": {
+        "w": 50,
+        "h": 22
+      },
+      "name": "blouse",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.sub-category.group-36-3.frame-9-3.blouse",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "blouse",
+      "textGrow": "wh"
+    },
+    "frame-9-3": {
+      "id": "1118:1719",
+      "el": "frame-9-3",
+      "type": "frame",
+      "box": {
+        "w": 82,
+        "h": 40
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.sub-category.group-36-3.frame-9-3",
+      "pos": {
+        "x": 84,
+        "y": 34
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "blouse"
+      ]
+    },
+    "polo-2": {
+      "id": "1118:1722",
+      "el": "polo-2",
+      "type": "text",
+      "box": {
+        "w": 36,
+        "h": 22
+      },
+      "name": "polo",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.sub-category.group-36-3.frame-14-2.polo-2",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "polo",
+      "textGrow": "wh"
+    },
+    "frame-14-2": {
+      "id": "1118:1721",
+      "el": "frame-14-2",
+      "type": "frame",
+      "box": {
+        "w": 68,
+        "h": 40
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.sub-category.group-36-3.frame-14-2",
+      "pos": {
+        "x": 182,
+        "y": 34
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "polo-2"
+      ]
+    },
+    "group-36-3": {
+      "id": "1118:1714",
+      "el": "group-36-3",
+      "type": "group",
+      "box": {
+        "w": 250,
+        "h": 74
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.sub-category.group-36-3",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-35-3",
+        "frame-8-3",
+        "frame-9-3",
+        "frame-14-2"
+      ]
+    },
+    "sub-category": {
+      "id": "1118:1713",
+      "el": "sub-category",
+      "type": "group",
+      "box": {
+        "w": 250,
+        "h": 74
+      },
+      "name": "sub category",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.sub-category",
+      "pos": {
+        "x": 627,
+        "y": 356
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-36-3"
+      ]
+    },
+    "occasion-2": {
+      "id": "1118:1725",
+      "el": "occasion-2",
+      "type": "text",
+      "box": {
+        "w": 67,
+        "h": 22
+      },
+      "name": "Occasion",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.occasion.group-35-4.occasion-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "Occasion",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-35-4": {
+      "id": "1118:1724",
+      "el": "group-35-4",
+      "type": "group",
+      "box": {
+        "w": 67,
+        "h": 22
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.occasion.group-35-4",
+      "pos": {
+        "x": 3,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "occasion-2"
+      ]
+    },
+    "everyday": {
+      "id": "1118:1728",
+      "el": "everyday",
+      "type": "text",
+      "box": {
+        "w": 65,
+        "h": 22
+      },
+      "name": "Everyday",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.occasion.frame-26.frame-8-4.everyday",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "Everyday",
+      "textGrow": "wh"
+    },
+    "frame-8-4": {
+      "id": "1118:1727",
+      "el": "frame-8-4",
+      "type": "frame",
+      "box": {
+        "w": 97,
+        "h": 40
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.occasion.frame-26.frame-8-4",
+      "sizing": {
+        "w": "hug"
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "children": [
+        "everyday"
+      ]
+    },
+    "work": {
+      "id": "1118:1730",
+      "el": "work",
+      "type": "text",
+      "box": {
+        "w": 40,
+        "h": 22
+      },
+      "name": "Work",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.occasion.frame-26.frame-9-4.work",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "Work",
+      "textGrow": "wh"
+    },
+    "frame-9-4": {
+      "id": "1118:1729",
+      "el": "frame-9-4",
+      "type": "frame",
+      "box": {
+        "w": 72,
+        "h": 40
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.occasion.frame-26.frame-9-4",
+      "sizing": {
+        "w": "hug"
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "children": [
+        "work"
+      ]
+    },
+    "frame-26": {
+      "id": "1118:1726",
+      "el": "frame-26",
+      "type": "frame",
+      "box": {
+        "w": 185,
+        "h": 40
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.occasion.frame-26",
+      "pos": {
+        "x": 0,
+        "y": 34
+      },
+      "layout": "$l4",
+      "inheritedFill": "$c1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "frame-8-4",
+        "frame-9-4"
+      ]
+    },
+    "special": {
+      "id": "1118:1733",
+      "el": "special",
+      "type": "text",
+      "box": {
+        "w": 52,
+        "h": 22
+      },
+      "name": "special",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.occasion.frame-27.frame-8-5.special",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "special",
+      "textGrow": "wh"
+    },
+    "frame-8-5": {
+      "id": "1118:1732",
+      "el": "frame-8-5",
+      "type": "frame",
+      "box": {
+        "w": 84,
+        "h": 40
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.occasion.frame-27.frame-8-5",
+      "sizing": {
+        "w": "hug"
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "children": [
+        "special"
+      ]
+    },
+    "frame-27": {
+      "id": "1118:1731",
+      "el": "frame-27",
+      "type": "frame",
+      "box": {
+        "w": 84,
+        "h": 40
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.occasion.frame-27",
+      "pos": {
+        "x": 0,
+        "y": 87
+      },
+      "layout": "$l4",
+      "inheritedFill": "$c1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "frame-8-5"
+      ]
+    },
+    "just-vibing": {
+      "id": "1118:1735",
+      "el": "just-vibing",
+      "type": "text",
+      "box": {
+        "w": 78,
+        "h": 22
+      },
+      "name": "JUST VIBING",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.occasion.frame-9-5.just-vibing",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "JUST VIBING",
+      "textGrow": "wh"
+    },
+    "frame-9-5": {
+      "id": "1118:1734",
+      "el": "frame-9-5",
+      "type": "frame",
+      "box": {
+        "w": 110,
+        "h": 40
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.occasion.frame-9-5",
+      "pos": {
+        "x": 96,
+        "y": 87
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "just-vibing"
+      ]
+    },
+    "going-out": {
+      "id": "1118:1737",
+      "el": "going-out",
+      "type": "text",
+      "box": {
+        "w": 76,
+        "h": 22
+      },
+      "name": "Going out",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.occasion.frame-14-3.going-out",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "Going out",
+      "textGrow": "wh"
+    },
+    "frame-14-3": {
+      "id": "1118:1736",
+      "el": "frame-14-3",
+      "type": "frame",
+      "box": {
+        "w": 108,
+        "h": 40
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.occasion.frame-14-3",
+      "pos": {
+        "x": 201,
+        "y": 32
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "going-out"
+      ]
+    },
+    "occasion": {
+      "id": "1118:1723",
+      "el": "occasion",
+      "type": "group",
+      "box": {
+        "w": 309,
+        "h": 127
+      },
+      "name": "occasion",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.occasion",
+      "pos": {
+        "x": 1003,
+        "y": 206
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-35-4",
+        "frame-26",
+        "frame-27",
+        "frame-9-5",
+        "frame-14-3"
+      ]
+    },
+    "price": {
+      "id": "1118:1739",
+      "el": "price",
+      "type": "text",
+      "box": {
+        "w": 36,
+        "h": 22
+      },
+      "name": "Price",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-299.price",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "Price",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "e-g-100": {
+      "id": "1118:1742",
+      "el": "e-g-100",
+      "type": "text",
+      "box": {
+        "w": 53,
+        "h": 16
+      },
+      "name": "e.g. $100",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-299.frame-6.frame-5.e-g-100",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c7",
+      "text": "$t6",
+      "chars": "e.g. $100",
+      "textGrow": "wh"
+    },
+    "frame-5": {
+      "id": "1118:1741",
+      "el": "frame-5",
+      "type": "frame",
+      "box": {
+        "w": 53,
+        "h": 16
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-299.frame-6.frame-5",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l6",
+      "inheritedFill": "$c8",
+      "children": [
+        "e-g-100"
+      ]
+    },
+    "frame-6": {
+      "id": "1118:1740",
+      "el": "frame-6",
+      "type": "frame",
+      "box": {
+        "w": 264,
+        "h": 48
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-299.frame-6",
+      "pos": {
+        "x": 0,
+        "y": 30
+      },
+      "layout": "$l5",
+      "fill": "$c8",
+      "radius": "$r1",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "frame-5"
+      ]
+    },
+    "group-299": {
+      "id": "1118:1738",
+      "el": "group-299",
+      "type": "group",
+      "box": {
+        "w": 264,
+        "h": 78
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-299",
+      "pos": {
+        "x": 1003,
+        "y": 353
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "price",
+        "frame-6"
+      ]
+    },
+    "buy-from": {
+      "id": "1118:1744",
+      "el": "buy-from",
+      "type": "text",
+      "box": {
+        "w": 65,
+        "h": 22
+      },
+      "name": "Buy from",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-300.buy-from",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "Buy from",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "e-g-offline-store": {
+      "id": "1118:1747",
+      "el": "e-g-offline-store",
+      "type": "text",
+      "box": {
+        "w": 96,
+        "h": 16
+      },
+      "name": "e.g. Offline Store",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-300.frame-6-2.frame-5-2.e-g-offline-store",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c7",
+      "text": "$t6",
+      "chars": "e.g. Offline Store ",
+      "textGrow": "wh"
+    },
+    "frame-5-2": {
+      "id": "1118:1746",
+      "el": "frame-5-2",
+      "type": "frame",
+      "box": {
+        "w": 96,
+        "h": 16
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-300.frame-6-2.frame-5-2",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l6",
+      "inheritedFill": "$c8",
+      "children": [
+        "e-g-offline-store"
+      ]
+    },
+    "frame-6-2": {
+      "id": "1118:1745",
+      "el": "frame-6-2",
+      "type": "frame",
+      "box": {
+        "w": 264,
+        "h": 48
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-300.frame-6-2",
+      "pos": {
+        "x": 0,
+        "y": 30
+      },
+      "layout": "$l5",
+      "fill": "$c8",
+      "radius": "$r1",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "frame-5-2"
+      ]
+    },
+    "group-300": {
+      "id": "1118:1743",
+      "el": "group-300",
+      "type": "group",
+      "box": {
+        "w": 264,
+        "h": 78
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-300",
+      "pos": {
+        "x": 1003,
+        "y": 447
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "buy-from",
+        "frame-6-2"
+      ]
+    },
+    "last-pairing": {
+      "id": "1118:1748",
+      "el": "last-pairing",
+      "type": "text",
+      "box": {
+        "w": 122,
+        "h": 33
+      },
+      "name": "Last pairing",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.last-pairing",
+      "pos": {
+        "x": 630,
+        "y": 573
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "Last pairing",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "might-be-a-perfect-match": {
+      "id": "1118:1749",
+      "el": "might-be-a-perfect-match",
+      "type": "text",
+      "box": {
+        "w": 265,
+        "h": 33
+      },
+      "name": "Might be a perfect match",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.might-be-a-perfect-match",
+      "pos": {
+        "x": 115,
+        "y": 1007
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "Might be a perfect match",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-36": {
+      "id": "1118:1751",
+      "el": "rectangle-36",
+      "type": "rect",
+      "box": {
+        "w": 269,
+        "h": 333
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-46.rectangle-36",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-7-1": {
+      "id": "1118:1753",
+      "el": "image-removebg-preview-7-1",
+      "type": "rect",
+      "box": {
+        "w": 153,
+        "h": 196
+      },
+      "name": "image-removebg-preview (7) 1",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-46.group-55.image-removebg-preview-7-1",
+      "pos": {
+        "x": 11,
+        "y": 78
+      },
+      "assetId": "e5420007b99f8c30cfc67be00af0ec3b2f376e2a",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "e5420007b99f8c30cfc67be00af0ec3b2f376e2a",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.8557214140892029,
+              0.07213930040597916
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-1": {
+      "id": "1118:1754",
+      "el": "image-removebg-preview-1",
+      "type": "rect",
+      "box": {
+        "w": 138,
+        "h": 130
+      },
+      "name": "image-removebg-preview 1",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-46.group-55.image-removebg-preview-1",
+      "pos": {
+        "x": 18,
+        "y": 13
+      },
+      "assetId": "837079d7a4263daef60e6c2261fde3a6852552dd",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "837079d7a4263daef60e6c2261fde3a6852552dd",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.7313451170921326,
+              0.13030901551246643
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-10-1": {
+      "id": "1118:1755",
+      "el": "image-removebg-preview-10-1",
+      "type": "rect",
+      "box": {
+        "w": 58,
+        "h": 41
+      },
+      "name": "image-removebg-preview (10) 1",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-46.group-55.image-removebg-preview-10-1",
+      "pos": {
+        "x": 88,
+        "y": 248
+      },
+      "assetId": "178406f88b315152b95287f3aeb79ee56c5d2443",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "178406f88b315152b95287f3aeb79ee56c5d2443",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.720081090927124,
+              0.12576064467430115
+            ]
+          ]
+        }
+      ],
+      "iconHint": "image removebg preview (10) 1",
+      "rotation": 10313,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-4-1": {
+      "id": "1118:1756",
+      "el": "image-removebg-preview-4-1",
+      "type": "rect",
+      "box": {
+        "w": 86,
+        "h": 86
+      },
+      "name": "image-removebg-preview (4) 1",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-46.group-55.image-removebg-preview-4-1",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "assetId": "b5383112df490c825aacd83035b1de7245c291b4",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "b5383112df490c825aacd83035b1de7245c291b4",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-55": {
+      "id": "1118:1752",
+      "el": "group-55",
+      "type": "group",
+      "box": {
+        "w": 164,
+        "h": 289
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-46.group-55",
+      "pos": {
+        "x": 53,
+        "y": 22
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "image-removebg-preview-7-1",
+        "image-removebg-preview-1",
+        "image-removebg-preview-10-1",
+        "image-removebg-preview-4-1"
+      ]
+    },
+    "group-46": {
+      "id": "1118:1750",
+      "el": "group-46",
+      "type": "group",
+      "box": {
+        "w": 269,
+        "h": 333
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-46",
+      "pos": {
+        "x": 630,
+        "y": 626
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-36",
+        "group-55"
+      ]
+    },
+    "rectangle-36-2": {
+      "id": "1118:1758",
+      "el": "rectangle-36-2",
+      "type": "rect",
+      "box": {
+        "w": 269,
+        "h": 333
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-301.rectangle-36-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "text": {
+      "id": "1118:1760",
+      "el": "text",
+      "type": "text",
+      "box": {
+        "w": 22,
+        "h": 44
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-301.frame-11-2.text",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t7",
+      "chars": "+",
+      "textGrow": "wh"
+    },
+    "frame-11-2": {
+      "id": "1118:1759",
+      "el": "frame-11-2",
+      "type": "frame",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-301.frame-11-2",
+      "pos": {
+        "x": 103,
+        "y": 102
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "stroke": "$c3",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "strokeDash": [
+        4,
+        4
+      ],
+      "radius": "$r3",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "text"
+      ]
+    },
+    "mix-match-this-item": {
+      "id": "1118:1761",
+      "el": "mix-match-this-item",
+      "type": "text",
+      "box": {
+        "w": 90,
+        "h": 44
+      },
+      "name": "MIX & MATCH this item",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-301.mix-match-this-item",
+      "pos": {
+        "x": 90,
+        "y": 186
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "MIX & MATCH this item",
+      "textGrow": "h",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-301": {
+      "id": "1118:1757",
+      "el": "group-301",
+      "type": "group",
+      "box": {
+        "w": 269,
+        "h": 333
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-301",
+      "pos": {
+        "x": 919,
+        "y": 626
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-36-2",
+        "frame-11-2",
+        "mix-match-this-item"
+      ]
+    },
+    "rectangle-36-3": {
+      "id": "1118:1763",
+      "el": "rectangle-36-3",
+      "type": "rect",
+      "box": {
+        "w": 269,
+        "h": 333
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-49.rectangle-36-3",
+      "pos": {
+        "x": 0,
+        "y": 14
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rp39-000": {
+      "id": "1118:1764",
+      "el": "rp39-000",
+      "type": "text",
+      "box": {
+        "w": 71,
+        "h": 19
+      },
+      "name": "Rp39.000",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-49.rp39-000",
+      "pos": {
+        "x": 99,
+        "y": 291
+      },
+      "fill": "$c3",
+      "text": "$t8",
+      "chars": "Rp39.000",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "polkadot-skirt": {
+      "id": "1118:1765",
+      "el": "polkadot-skirt",
+      "type": "text",
+      "box": {
+        "w": 150,
+        "h": 30
+      },
+      "name": "Polkadot Skirt",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-49.polkadot-skirt",
+      "pos": {
+        "x": 60,
+        "y": 262
+      },
+      "fill": "$c3",
+      "text": "$t9",
+      "chars": "Polkadot Skirt",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "1-trending": {
+      "id": "1118:1767",
+      "el": "1-trending",
+      "type": "text",
+      "box": {
+        "w": 84,
+        "h": 22
+      },
+      "name": "#1 TRENDING",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-49.frame-18-2.1-trending",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "#1 TRENDING",
+      "textGrow": "wh"
+    },
+    "frame-18-2": {
+      "id": "1118:1766",
+      "el": "frame-18-2",
+      "type": "frame",
+      "box": {
+        "w": 116,
+        "h": 30
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-49.frame-18-2",
+      "pos": {
+        "x": 16,
+        "y": 0
+      },
+      "layout": "$l7",
+      "fill": "$c8",
+      "radius": "$r3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "1-trending"
+      ]
+    },
+    "image-removebg-preview-7-1-2": {
+      "id": "1118:1768",
+      "el": "image-removebg-preview-7-1-2",
+      "type": "rect",
+      "box": {
+        "w": 160,
+        "h": 205
+      },
+      "name": "image-removebg-preview (7) 1",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-49.image-removebg-preview-7-1-2",
+      "pos": {
+        "x": 55,
+        "y": 54
+      },
+      "assetId": "e5420007b99f8c30cfc67be00af0ec3b2f376e2a",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "e5420007b99f8c30cfc67be00af0ec3b2f376e2a",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.8557214140892029,
+              0.07213930040597916
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-49": {
+      "id": "1118:1762",
+      "el": "group-49",
+      "type": "group",
+      "box": {
+        "w": 269,
+        "h": 347
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-49",
+      "pos": {
+        "x": 115,
+        "y": 1050
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-36-3",
+        "rp39-000",
+        "polkadot-skirt",
+        "frame-18-2",
+        "image-removebg-preview-7-1-2"
+      ]
+    },
+    "rectangle-36-4": {
+      "id": "1118:1770",
+      "el": "rectangle-36-4",
+      "type": "rect",
+      "box": {
+        "w": 269,
+        "h": 333
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-50.rectangle-36-4",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "pink-shirt": {
+      "id": "1118:1771",
+      "el": "pink-shirt",
+      "type": "text",
+      "box": {
+        "w": 107,
+        "h": 30
+      },
+      "name": "Pink Shirt",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-50.pink-shirt",
+      "pos": {
+        "x": 81,
+        "y": 248
+      },
+      "fill": "$c3",
+      "text": "$t9",
+      "chars": "Pink Shirt",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-2-2": {
+      "id": "1118:1772",
+      "el": "image-removebg-preview-2-2",
+      "type": "rect",
+      "box": {
+        "w": 160,
+        "h": 130
+      },
+      "name": "image-removebg-preview (2) 2",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-50.image-removebg-preview-2-2",
+      "pos": {
+        "x": 55,
+        "y": 72
+      },
+      "assetId": "2c96fdb95692206ccacaf02ef93f2d4e8c676941",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "2c96fdb95692206ccacaf02ef93f2d4e8c676941",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              0.9970929026603699,
+              0,
+              0.0014535118825733662
+            ],
+            [
+              0,
+              0.6083915829658508,
+              0.23076923191547394
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rp19-000": {
+      "id": "1118:1773",
+      "el": "rp19-000",
+      "type": "text",
+      "box": {
+        "w": 69,
+        "h": 19
+      },
+      "name": "Rp19.000",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-50.rp19-000",
+      "pos": {
+        "x": 100,
+        "y": 277
+      },
+      "fill": "$c3",
+      "text": "$t8",
+      "chars": "Rp19.000",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-50": {
+      "id": "1118:1769",
+      "el": "group-50",
+      "type": "group",
+      "box": {
+        "w": 269,
+        "h": 333
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.group-50",
+      "pos": {
+        "x": 408,
+        "y": 1064
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-36-4",
+        "pink-shirt",
+        "image-removebg-preview-2-2",
+        "rp19-000"
+      ]
+    },
+    "rectangle-106": {
+      "id": "1118:1784",
+      "el": "rectangle-106",
+      "type": "rect",
+      "box": {
+        "w": 36,
+        "h": 8
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306.rectangle-106",
+      "pos": {
+        "x": 630,
+        "y": 975
+      },
+      "fill": "$c7",
+      "radius": "$r3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-306": {
+      "id": "1118:1789",
+      "el": "group-306",
+      "type": "group",
+      "box": {
+        "w": 1465,
+        "h": 1398
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-306",
+      "pos": {
+        "x": -11,
+        "y": -16
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-96",
+        "image-removebg-preview-2",
+        "frame-10",
+        "group-305",
+        "group-304",
+        "group-41",
+        "group-42",
+        "sub-category",
+        "occasion",
+        "group-299",
+        "group-300",
+        "last-pairing",
+        "might-be-a-perfect-match",
+        "group-46",
+        "group-301",
+        "group-49",
+        "group-50",
+        "group-302",
+        "group-303",
+        "rectangle-106"
+      ],
+      "repeat": {
+        "template": "group-50",
+        "data": {
+          "group-302": {},
+          "group-303": {}
+        }
+      }
+    },
+    "rectangle-45": {
+      "id": "1118:1790",
+      "el": "rectangle-45",
+      "type": "rect",
+      "box": {
+        "w": 1440,
+        "h": 1024
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.rectangle-45",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c9",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-46": {
+      "id": "1118:1793",
+      "el": "rectangle-46",
+      "type": "rect",
+      "box": {
+        "w": 818,
+        "h": 850
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-138.rectangle-46",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c1",
+      "radius": "$r5",
+      "isMask": true,
+      "maskMode": "alpha",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      }
+    },
+    "rectangle-47": {
+      "id": "1118:1794",
+      "el": "rectangle-47",
+      "type": "rect",
+      "box": {
+        "w": 818,
+        "h": 850
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-138.rectangle-47",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c1",
+      "radius": "$r5",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      },
+      "masked": "rectangle-46"
+    },
+    "link-if-any": {
+      "id": "1118:1882",
+      "el": "link-if-any",
+      "type": "text",
+      "box": {
+        "w": 106,
+        "h": 27
+      },
+      "name": "{LINK IF ANY}",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-138.link-if-any",
+      "pos": {
+        "x": 356,
+        "y": 640
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "{LINK IF ANY}",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "masked": "rectangle-46"
+    },
+    "rectangle-11": {
+      "id": "1118:1797",
+      "el": "rectangle-11",
+      "type": "rect",
+      "box": {
+        "w": 56,
+        "h": 56
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-138.group-58.group-258.rectangle-11",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c8",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-4": {
+      "id": "I1118:1798;3:2684",
+      "el": "vector-4",
+      "type": "vector",
+      "box": {
+        "w": 19,
+        "h": 19
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-138.group-58.group-258.close-x.vector-4",
+      "pos": {
+        "x": 7,
+        "y": 7
+      },
+      "fill": "$c3",
+      "iconHint": "close x",
+      "vectorPath": "$v2",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "close-x": {
+      "id": "1118:1798",
+      "el": "close-x",
+      "type": "instance",
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "name": "close-x",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-138.group-58.group-258.close-x",
+      "pos": {
+        "x": 12,
+        "y": 12
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      },
+      "children": [
+        "vector-4"
+      ]
+    },
+    "group-258": {
+      "id": "1118:1796",
+      "el": "group-258",
+      "type": "group",
+      "box": {
+        "w": 56,
+        "h": 56
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-138.group-58.group-258",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-11",
+        "close-x"
+      ]
+    },
+    "group-58": {
+      "id": "1118:1795",
+      "el": "group-58",
+      "type": "group",
+      "box": {
+        "w": 56,
+        "h": 56
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-138.group-58",
+      "pos": {
+        "x": 703,
+        "y": 56
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-258"
+      ],
+      "masked": "rectangle-46"
+    },
+    "source-preview": {
+      "id": "1118:1873",
+      "el": "source-preview",
+      "type": "text",
+      "box": {
+        "w": 316,
+        "h": 60
+      },
+      "name": "Source Preview",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-138.group-255.source-preview",
+      "pos": {
+        "x": 71,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "Source Preview",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16-2": {
+      "id": "1118:1875",
+      "el": "rectangle-16-2",
+      "type": "rect",
+      "box": {
+        "w": 3,
+        "h": 48
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-138.group-255.union-2.rectangle-16-2",
+      "pos": {
+        "x": 22,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17-2": {
+      "id": "1118:1876",
+      "el": "rectangle-17-2",
+      "type": "rect",
+      "box": {
+        "w": 35,
+        "h": 36
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-138.group-255.union-2.rectangle-17-2",
+      "pos": {
+        "x": 6,
+        "y": 6
+      },
+      "fill": "$c4",
+      "rotation": 2613,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19-2": {
+      "id": "1118:1877",
+      "el": "rectangle-19-2",
+      "type": "rect",
+      "box": {
+        "w": 35,
+        "h": 36
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-138.group-255.union-2.rectangle-19-2",
+      "pos": {
+        "x": 6,
+        "y": 6
+      },
+      "fill": "$c4",
+      "rotation": 7700,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18-2": {
+      "id": "1118:1878",
+      "el": "rectangle-18-2",
+      "type": "rect",
+      "box": {
+        "w": 47,
+        "h": 3
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-138.group-255.union-2.rectangle-18-2",
+      "pos": {
+        "x": 0,
+        "y": 22
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union-2": {
+      "id": "1118:1874",
+      "el": "union-2",
+      "type": "bool",
+      "box": {
+        "w": 47,
+        "h": 48
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-138.group-255.union-2",
+      "pos": {
+        "x": 0,
+        "y": 3
+      },
+      "fill": "$c3",
+      "iconHint": "Source Preview",
+      "vectorPath": "$v3",
+      "children": [
+        "rectangle-16-2",
+        "rectangle-17-2",
+        "rectangle-19-2",
+        "rectangle-18-2"
+      ]
+    },
+    "group-255": {
+      "id": "1118:1872",
+      "el": "group-255",
+      "type": "group",
+      "box": {
+        "w": 387,
+        "h": 60
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-138.group-255",
+      "pos": {
+        "x": 216,
+        "y": 124
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "source-preview",
+        "union-2"
+      ],
+      "masked": "rectangle-46"
+    },
+    "rectangle-62": {
+      "id": "1118:1880",
+      "el": "rectangle-62",
+      "type": "rect",
+      "box": {
+        "w": 400,
+        "h": 400
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-138.rectangle-62",
+      "pos": {
+        "x": 209,
+        "y": 220
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "masked": "rectangle-46"
+    },
+    "okay": {
+      "id": "1118:1885",
+      "el": "okay",
+      "type": "text",
+      "box": {
+        "w": 52,
+        "h": 33
+      },
+      "name": "OKAY",
+      "path": "d-3-3-item-detail-edit-ori-photo.group-138.frame-8-6.okay",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c1",
+      "text": "$t1",
+      "chars": "OKAY",
+      "textGrow": "wh"
+    },
+    "frame-8-6": {
+      "id": "1118:1884",
+      "el": "frame-8-6",
+      "type": "frame",
+      "box": {
+        "w": 180,
+        "h": 64
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-138.frame-8-6",
+      "pos": {
+        "x": 319,
+        "y": 722
+      },
+      "layout": "$l8",
+      "fill": "$c3",
+      "radius": "$r2",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "okay"
+      ],
+      "masked": "rectangle-46"
+    },
+    "group-138": {
+      "id": "1118:1792",
+      "el": "group-138",
+      "type": "group",
+      "box": {
+        "w": 818,
+        "h": 850
+      },
+      "path": "d-3-3-item-detail-edit-ori-photo.group-138",
+      "pos": {
+        "x": 313,
+        "y": 87
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-46",
+        "rectangle-47",
+        "link-if-any",
+        "group-58",
+        "group-255",
+        "rectangle-62",
+        "frame-8-6"
+      ]
+    },
+    "d-3-3-item-detail-edit-ori-photo": {
+      "id": "1118:1659",
+      "el": "d-3-3-item-detail-edit-ori-photo",
+      "type": "frame",
+      "box": {
+        "w": 1440,
+        "h": 1024
+      },
+      "name": "D.3.3 Item Detail Edit Ori Photo",
+      "fill": "$c1",
+      "clip": true,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "group-306",
+        "rectangle-45",
+        "group-138"
+      ]
+    }
+  },
+  "meta": {
+    "nodeCount": 139,
+    "estTokens": 11073,
+    "depthUsed": 12
+  },
+  "next": "Read `tokens` for the design system, then build the UI from `nodes`. Tag each rendered element data-plumb-id=\"<el>\". A node with a `more` count has that many children not yet included — call plumb_node again on that node's `id` to expand them. This screen has 7 image asset(s) (nodes with `assetId`). Call plumb_assets with this screen's id to download them to disk BEFORE generating HTML — without the real files any <img> will be a placeholder and plumb_verify will flag every image node as asset.missing.",
+  "source": "plugin",
+  "node": "D.3.3 Item Detail Edit Ori Photo"
+}

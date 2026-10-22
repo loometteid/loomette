@@ -1,0 +1,849 @@
+{
+  "file": {
+    "name": "Loomette.id",
+    "version": "plugin-1792667044520"
+  },
+  "root": "0-2-2-onboarding",
+  "tokens": {
+    "color": {
+      "$c1": "#fafaf7",
+      "$c2": "#444440",
+      "$c3": "#d9d9d9",
+      "$c4": "#f2ede5",
+      "$c5": "#c9c3b7"
+    },
+    "text": {
+      "$t1": "400 32px Source Serif Pro",
+      "$t2": "400 12px Avenir Next",
+      "$t3": "400 16px Avenir Next",
+      "$t4": "400 12px Avenir",
+      "$t5": "400 20px Avenir Next"
+    },
+    "radius": {
+      "$r1": 8,
+      "$r2": "full",
+      "$r3": 16
+    },
+    "shadow": {},
+    "layout": {
+      "$l1": {
+        "flow": "col",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          12,
+          212,
+          12,
+          16
+        ]
+      },
+      "$l2": {
+        "align": "center",
+        "flow": "row",
+        "gap": 8,
+        "pad": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l3": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          1,
+          16,
+          2,
+          16
+        ]
+      },
+      "$l4": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          19,
+          108,
+          18,
+          107
+        ]
+      }
+    },
+    "vector": {
+      "$v1": "M14.4004 11.3262 L22.4092 3.31738 L23.6826 4.59082 L15.6738 12.5996 L27 12.5996 L27 14.4004 L15.6738 14.4004 L23.6826 22.4092 L22.4092 23.6826 L14.4004 15.6738 L14.4004 27 L12.5996 27 L12.5996 15.6738 L4.59082 23.6826 L3.31738 22.4092 L11.3262 14.4004 L0 14.4004 L0 12.5996 L11.3262 12.5996 L3.31738 4.59082 L4.59082 3.31738 L12.5996 11.3262 L12.5996 0 L14.4004 0 L14.4004 11.3262 Z",
+      "$v2": "M7.60355 0.292893 C7.99408 0.683418 7.99408 1.31658 7.60355 1.70711 L2.31066 7 L7.60355 12.2929 C7.99408 12.6834 7.99408 13.3166 7.60355 13.7071 C7.21303 14.0976 6.57986 14.0976 6.18934 13.7071 L0.366116 7.88388 C-0.12204 7.39573 -0.122038 6.60427 0.366117 6.11612 L6.18934 0.292893 C6.57986 -0.0976311 7.21303 -0.0976311 7.60355 0.292893 Z"
+    },
+    "props": {
+      "$p1": {
+        "size": "24"
+      }
+    },
+    "meta": {
+      "counts": {
+        "$c1": 2,
+        "$c2": 14,
+        "$c3": 4,
+        "$t2": 2,
+        "$t3": 6,
+        "$c4": 4,
+        "$r1": 2,
+        "$c5": 4,
+        "$r2": 3,
+        "$l4": 5,
+        "$r3": 5
+      }
+    }
+  },
+  "nodes": {
+    "a-little-more-about-you": {
+      "id": "61:267",
+      "el": "a-little-more-about-you",
+      "type": "text",
+      "box": {
+        "w": 241,
+        "h": 80
+      },
+      "name": "A little more about you.",
+      "path": "0-2-2-onboarding.a-little-more-about-you",
+      "pos": {
+        "x": 84,
+        "y": 108
+      },
+      "fill": "$c2",
+      "text": "$t1",
+      "chars": "A little more about you.",
+      "textGrow": "h",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16": {
+      "id": "61:269",
+      "el": "rectangle-16",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 27
+      },
+      "path": "0-2-2-onboarding.union.rectangle-16",
+      "pos": {
+        "x": 13,
+        "y": 0
+      },
+      "fill": "$c3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17": {
+      "id": "61:270",
+      "el": "rectangle-17",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "0-2-2-onboarding.union.rectangle-17",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c3",
+      "rotation": 2578,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19": {
+      "id": "61:271",
+      "el": "rectangle-19",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "0-2-2-onboarding.union.rectangle-19",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c3",
+      "rotation": 7735,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18": {
+      "id": "61:272",
+      "el": "rectangle-18",
+      "type": "rect",
+      "box": {
+        "w": 27,
+        "h": 2
+      },
+      "path": "0-2-2-onboarding.union.rectangle-18",
+      "pos": {
+        "x": 0,
+        "y": 13
+      },
+      "fill": "$c3",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union": {
+      "id": "61:268",
+      "el": "union",
+      "type": "bool",
+      "box": {
+        "w": 27,
+        "h": 27
+      },
+      "path": "0-2-2-onboarding.union",
+      "pos": {
+        "x": 43,
+        "y": 112
+      },
+      "fill": "$c2",
+      "iconHint": "A little more about you.",
+      "vectorPath": "$v1",
+      "children": [
+        "rectangle-16",
+        "rectangle-17",
+        "rectangle-19",
+        "rectangle-18"
+      ]
+    },
+    "helps-us-tailor-suggestions-that-actuall": {
+      "id": "61:273",
+      "el": "helps-us-tailor-suggestions-that-actuall",
+      "type": "text",
+      "box": {
+        "w": 249,
+        "h": 16
+      },
+      "name": "Helps us tailor suggestions that actually fit.",
+      "path": "0-2-2-onboarding.helps-us-tailor-suggestions-that-actuall",
+      "pos": {
+        "x": 84,
+        "y": 192
+      },
+      "fill": "$c2",
+      "text": "$t2",
+      "chars": "Helps us tailor suggestions that actually fit.",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "when-s-your-birthday": {
+      "id": "61:275",
+      "el": "when-s-your-birthday",
+      "type": "text",
+      "box": {
+        "w": 157,
+        "h": 22
+      },
+      "name": "When's your birthday?",
+      "path": "0-2-2-onboarding.group-34.when-s-your-birthday",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c2",
+      "text": "$t3",
+      "chars": "When's your birthday?",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "dd-mm-yyyy": {
+      "id": "61:278",
+      "el": "dd-mm-yyyy",
+      "type": "text",
+      "box": {
+        "w": 93,
+        "h": 16
+      },
+      "name": "DD / MM / YYYY",
+      "path": "0-2-2-onboarding.group-34.frame-6.frame-5.dd-mm-yyyy",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c5",
+      "text": "$t4",
+      "chars": "DD / MM / YYYY",
+      "textGrow": "wh"
+    },
+    "frame-5": {
+      "id": "61:277",
+      "el": "frame-5",
+      "type": "frame",
+      "box": {
+        "w": 93,
+        "h": 16
+      },
+      "path": "0-2-2-onboarding.group-34.frame-6.frame-5",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c4",
+      "children": [
+        "dd-mm-yyyy"
+      ]
+    },
+    "frame-6": {
+      "id": "61:276",
+      "el": "frame-6",
+      "type": "frame",
+      "box": {
+        "w": 312,
+        "h": 48
+      },
+      "path": "0-2-2-onboarding.group-34.frame-6",
+      "pos": {
+        "x": 0,
+        "y": 30
+      },
+      "layout": "$l1",
+      "fill": "$c4",
+      "radius": "$r1",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "frame-5"
+      ]
+    },
+    "optional": {
+      "id": "270:68",
+      "el": "optional",
+      "type": "text",
+      "box": {
+        "w": 48,
+        "h": 16
+      },
+      "name": "optional",
+      "path": "0-2-2-onboarding.group-34.frame-18.optional",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c2",
+      "text": "$t2",
+      "chars": "optional",
+      "textGrow": "wh"
+    },
+    "frame-18": {
+      "id": "270:67",
+      "el": "frame-18",
+      "type": "frame",
+      "box": {
+        "w": 80,
+        "h": 22
+      },
+      "path": "0-2-2-onboarding.group-34.frame-18",
+      "pos": {
+        "x": 232,
+        "y": 0
+      },
+      "layout": "$l3",
+      "fill": "$c4",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "optional"
+      ]
+    },
+    "group-34": {
+      "id": "61:274",
+      "el": "group-34",
+      "type": "group",
+      "box": {
+        "w": 312,
+        "h": 78
+      },
+      "path": "0-2-2-onboarding.group-34",
+      "pos": {
+        "x": 44,
+        "y": 256
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "when-s-your-birthday",
+        "frame-6",
+        "frame-18"
+      ]
+    },
+    "rectangle-11": {
+      "id": "61:284",
+      "el": "rectangle-11",
+      "type": "rect",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "0-2-2-onboarding.rectangle-11",
+      "pos": {
+        "x": 36,
+        "y": 40
+      },
+      "fill": "$c4",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector": {
+      "id": "I61:285;3:2631",
+      "el": "vector",
+      "type": "vector",
+      "box": {
+        "w": 8,
+        "h": 14
+      },
+      "path": "0-2-2-onboarding.chevron-left.vector",
+      "pos": {
+        "x": 8,
+        "y": 5
+      },
+      "fill": "$c2",
+      "iconHint": "A little more about you.",
+      "vectorPath": "$v2",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-left": {
+      "id": "61:285",
+      "el": "chevron-left",
+      "type": "instance",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "name": "chevron-left",
+      "path": "0-2-2-onboarding.chevron-left",
+      "pos": {
+        "x": 44,
+        "y": 48
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector"
+      ]
+    },
+    "continue": {
+      "id": "61:287",
+      "el": "continue",
+      "type": "text",
+      "box": {
+        "w": 85,
+        "h": 27
+      },
+      "name": "Continue",
+      "path": "0-2-2-onboarding.frame-7.continue",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c1",
+      "text": "$t5",
+      "chars": "Continue",
+      "textGrow": "wh"
+    },
+    "frame-7": {
+      "id": "61:286",
+      "el": "frame-7",
+      "type": "frame",
+      "box": {
+        "w": 320,
+        "h": 64
+      },
+      "path": "0-2-2-onboarding.frame-7",
+      "pos": {
+        "x": 41,
+        "y": 758
+      },
+      "layout": "$l4",
+      "fill": "$c2",
+      "radius": "$r3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "continue"
+      ]
+    },
+    "how-do-you-identify": {
+      "id": "61:280",
+      "el": "how-do-you-identify",
+      "type": "text",
+      "box": {
+        "w": 151,
+        "h": 22
+      },
+      "name": "How do you identify?",
+      "path": "0-2-2-onboarding.group-60.group-35.how-do-you-identify",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c2",
+      "text": "$t3",
+      "chars": "How do you identify?",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-35": {
+      "id": "61:279",
+      "el": "group-35",
+      "type": "group",
+      "box": {
+        "w": 151,
+        "h": 22
+      },
+      "path": "0-2-2-onboarding.group-60.group-35",
+      "pos": {
+        "x": 3,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "how-do-you-identify"
+      ]
+    },
+    "she-her": {
+      "id": "61:291",
+      "el": "she-her",
+      "type": "text",
+      "box": {
+        "w": 65,
+        "h": 22
+      },
+      "name": "She / Her",
+      "path": "0-2-2-onboarding.group-60.frame-8.she-her",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c2",
+      "text": "$t3",
+      "chars": "She / Her",
+      "textGrow": "wh"
+    },
+    "frame-8": {
+      "id": "61:290",
+      "el": "frame-8",
+      "type": "frame",
+      "box": {
+        "w": 88,
+        "h": 40
+      },
+      "path": "0-2-2-onboarding.group-60.frame-8",
+      "pos": {
+        "x": 0,
+        "y": 34
+      },
+      "layout": "$l4",
+      "inheritedFill": "$c1",
+      "stroke": "$c2",
+      "strokeW": 1.5,
+      "strokeAlign": "inside",
+      "radius": "$r3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "she-her"
+      ]
+    },
+    "he-him": {
+      "id": "61:301",
+      "el": "he-him",
+      "type": "text",
+      "box": {
+        "w": 58,
+        "h": 22
+      },
+      "name": "He / Him",
+      "path": "0-2-2-onboarding.group-60.frame-9.he-him",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c2",
+      "text": "$t3",
+      "chars": "He / Him",
+      "textGrow": "wh"
+    },
+    "frame-9": {
+      "id": "61:300",
+      "el": "frame-9",
+      "type": "frame",
+      "box": {
+        "w": 88,
+        "h": 40
+      },
+      "path": "0-2-2-onboarding.group-60.frame-9",
+      "pos": {
+        "x": 101,
+        "y": 34
+      },
+      "layout": "$l4",
+      "inheritedFill": "$c1",
+      "stroke": "$c5",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "he-him"
+      ]
+    },
+    "they-them": {
+      "id": "61:304",
+      "el": "they-them",
+      "type": "text",
+      "box": {
+        "w": 83,
+        "h": 22
+      },
+      "name": "They / Them",
+      "path": "0-2-2-onboarding.group-60.frame-10.they-them",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c2",
+      "text": "$t3",
+      "chars": "They / Them",
+      "textGrow": "wh"
+    },
+    "frame-10": {
+      "id": "61:303",
+      "el": "frame-10",
+      "type": "frame",
+      "box": {
+        "w": 120,
+        "h": 40
+      },
+      "path": "0-2-2-onboarding.group-60.frame-10",
+      "pos": {
+        "x": 202,
+        "y": 34
+      },
+      "layout": "$l4",
+      "inheritedFill": "$c1",
+      "stroke": "$c5",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "they-them"
+      ]
+    },
+    "prefer-not-to-say": {
+      "id": "61:307",
+      "el": "prefer-not-to-say",
+      "type": "text",
+      "box": {
+        "w": 127,
+        "h": 22
+      },
+      "name": "Prefer not to say",
+      "path": "0-2-2-onboarding.group-60.frame-11.prefer-not-to-say",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c2",
+      "text": "$t3",
+      "chars": "Prefer not to say",
+      "textGrow": "wh"
+    },
+    "frame-11": {
+      "id": "61:306",
+      "el": "frame-11",
+      "type": "frame",
+      "box": {
+        "w": 180,
+        "h": 40
+      },
+      "path": "0-2-2-onboarding.group-60.frame-11",
+      "pos": {
+        "x": 0,
+        "y": 86
+      },
+      "layout": "$l4",
+      "inheritedFill": "$c1",
+      "stroke": "$c5",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "prefer-not-to-say"
+      ]
+    },
+    "group-60": {
+      "id": "89:1855",
+      "el": "group-60",
+      "type": "group",
+      "box": {
+        "w": 322,
+        "h": 126
+      },
+      "path": "0-2-2-onboarding.group-60",
+      "pos": {
+        "x": 41,
+        "y": 366
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-35",
+        "frame-8",
+        "frame-9",
+        "frame-10",
+        "frame-11"
+      ]
+    },
+    "rectangle-100": {
+      "id": "678:304",
+      "el": "rectangle-100",
+      "type": "rect",
+      "box": {
+        "w": 160,
+        "h": 8
+      },
+      "path": "0-2-2-onboarding.group-197.rectangle-100",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c4",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-101": {
+      "id": "678:305",
+      "el": "rectangle-101",
+      "type": "rect",
+      "box": {
+        "w": 64,
+        "h": 8
+      },
+      "path": "0-2-2-onboarding.group-197.rectangle-101",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c2",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-197": {
+      "id": "678:303",
+      "el": "group-197",
+      "type": "group",
+      "box": {
+        "w": 160,
+        "h": 8
+      },
+      "path": "0-2-2-onboarding.group-197",
+      "pos": {
+        "x": 121,
+        "y": 56
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-100",
+        "rectangle-101"
+      ]
+    },
+    "0-2-2-onboarding": {
+      "id": "61:266",
+      "el": "0-2-2-onboarding",
+      "type": "frame",
+      "box": {
+        "w": 402,
+        "h": 874
+      },
+      "name": "0.2.2 Onboarding",
+      "fill": "$c1",
+      "clip": true,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "a-little-more-about-you",
+        "union",
+        "helps-us-tailor-suggestions-that-actuall",
+        "group-34",
+        "rectangle-11",
+        "chevron-left",
+        "frame-7",
+        "group-60",
+        "group-197"
+      ]
+    }
+  },
+  "meta": {
+    "nodeCount": 34,
+    "estTokens": 2607,
+    "depthUsed": 12
+  },
+  "next": "Read `tokens` for the design system, then build the UI from `nodes`. Tag each rendered element data-plumb-id=\"<el>\". A node with a `more` count has that many children not yet included — call plumb_node again on that node's `id` to expand them.",
+  "source": "plugin",
+  "node": "0.2.2 Onboarding"
+}

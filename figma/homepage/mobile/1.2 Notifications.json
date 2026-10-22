@@ -1,0 +1,880 @@
+{
+  "file": {
+    "name": "Loomette.id",
+    "version": "plugin-1792666968729"
+  },
+  "root": "1-2-notifications",
+  "tokens": {
+    "color": {
+      "$c1": "#fafaf7",
+      "$c2": "#f2ede5",
+      "$c3": "#444440",
+      "$c4": "#d9d9d9",
+      "$c5": "#c9c3b7"
+    },
+    "text": {
+      "$t1": "400 32px Source Serif Pro",
+      "$t2": "400 16px Avenir Next",
+      "$t3": "400 12px Avenir Next",
+      "$t4": "400 20px Source Sans Pro"
+    },
+    "radius": {
+      "$r1": 8,
+      "$r2": "full"
+    },
+    "shadow": {},
+    "layout": {
+      "$l1": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          1,
+          16,
+          2,
+          16
+        ]
+      }
+    },
+    "vector": {
+      "$v1": "M7.60355 0.292893 C7.99408 0.683418 7.99408 1.31658 7.60355 1.70711 L2.31066 7 L7.60355 12.2929 C7.99408 12.6834 7.99408 13.3166 7.60355 13.7071 C7.21303 14.0976 6.57986 14.0976 6.18934 13.7071 L0.366116 7.88388 C-0.12204 7.39573 -0.122038 6.60427 0.366117 6.11612 L6.18934 0.292893 C6.57986 -0.0976311 7.21303 -0.0976311 7.60355 0.292893 Z",
+      "$v2": "M14.4004 11.3262 L22.4092 3.31738 L23.6826 4.59082 L15.6738 12.5996 L27 12.5996 L27 14.4004 L15.6738 14.4004 L23.6826 22.4092 L22.4092 23.6826 L14.4004 15.6738 L14.4004 27 L12.5996 27 L12.5996 15.6738 L4.59082 23.6826 L3.31738 22.4092 L11.3262 14.4004 L0 14.4004 L0 12.5996 L11.3262 12.5996 L3.31738 4.59082 L4.59082 3.31738 L12.5996 11.3262 L12.5996 0 L14.4004 0 L14.4004 11.3262 Z",
+      "$v3": "M8 4 C8 6.20914 6.20914 8 4 8 C1.79086 8 0 6.20914 0 4 C0 1.79086 1.79086 0 4 0 C6.20914 0 8 1.79086 8 4 Z"
+    },
+    "props": {
+      "$p1": {
+        "size": "24"
+      }
+    },
+    "meta": {
+      "counts": {
+        "$c2": 5,
+        "$c3": 19,
+        "$c4": 4,
+        "$t2": 2,
+        "$t3": 8,
+        "$t4": 4,
+        "$l1": 4,
+        "$r2": 4,
+        "$v3": 2,
+        "$c5": 2
+      }
+    }
+  },
+  "nodes": {
+    "rectangle-11": {
+      "id": "581:742",
+      "el": "rectangle-11",
+      "type": "rect",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "1-2-notifications.group-58.rectangle-11",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c2",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector": {
+      "id": "I581:743;3:2631",
+      "el": "vector",
+      "type": "vector",
+      "box": {
+        "w": 8,
+        "h": 14
+      },
+      "path": "1-2-notifications.group-58.chevron-left.vector",
+      "pos": {
+        "x": 8,
+        "y": 5
+      },
+      "fill": "$c3",
+      "iconHint": "chevron left",
+      "vectorPath": "$v1",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-left": {
+      "id": "581:743",
+      "el": "chevron-left",
+      "type": "instance",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "name": "chevron-left",
+      "path": "1-2-notifications.group-58.chevron-left",
+      "pos": {
+        "x": 8,
+        "y": 8
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector"
+      ]
+    },
+    "group-58": {
+      "id": "581:741",
+      "el": "group-58",
+      "type": "group",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "1-2-notifications.group-58",
+      "pos": {
+        "x": 36,
+        "y": 40
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-11",
+        "chevron-left"
+      ]
+    },
+    "notifications": {
+      "id": "581:744",
+      "el": "notifications",
+      "type": "text",
+      "box": {
+        "w": 241,
+        "h": 40
+      },
+      "name": "Notifications",
+      "path": "1-2-notifications.notifications",
+      "pos": {
+        "x": 84,
+        "y": 108
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "Notifications",
+      "textGrow": "h",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16": {
+      "id": "581:746",
+      "el": "rectangle-16",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 27
+      },
+      "path": "1-2-notifications.union.rectangle-16",
+      "pos": {
+        "x": 13,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17": {
+      "id": "581:747",
+      "el": "rectangle-17",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "1-2-notifications.union.rectangle-17",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 2578,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19": {
+      "id": "581:748",
+      "el": "rectangle-19",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "1-2-notifications.union.rectangle-19",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 7735,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18": {
+      "id": "581:749",
+      "el": "rectangle-18",
+      "type": "rect",
+      "box": {
+        "w": 27,
+        "h": 2
+      },
+      "path": "1-2-notifications.union.rectangle-18",
+      "pos": {
+        "x": 0,
+        "y": 13
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union": {
+      "id": "581:745",
+      "el": "union",
+      "type": "bool",
+      "box": {
+        "w": 27,
+        "h": 27
+      },
+      "path": "1-2-notifications.union",
+      "pos": {
+        "x": 43,
+        "y": 112
+      },
+      "fill": "$c3",
+      "iconHint": "Notifications",
+      "vectorPath": "$v2",
+      "children": [
+        "rectangle-16",
+        "rectangle-17",
+        "rectangle-19",
+        "rectangle-18"
+      ]
+    },
+    "today": {
+      "id": "581:821",
+      "el": "today",
+      "type": "text",
+      "box": {
+        "w": 42,
+        "h": 22
+      },
+      "name": "TODAY",
+      "path": "1-2-notifications.today",
+      "pos": {
+        "x": 36,
+        "y": 172
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "TODAY",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "this-week": {
+      "id": "581:852",
+      "el": "this-week",
+      "type": "text",
+      "box": {
+        "w": 67,
+        "h": 22
+      },
+      "name": "This week",
+      "path": "1-2-notifications.this-week",
+      "pos": {
+        "x": 34,
+        "y": 360
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "This week",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "we-ve-analyzed-your-outfit-head-back-to": {
+      "id": "581:834",
+      "el": "we-ve-analyzed-your-outfit-head-back-to",
+      "type": "text",
+      "box": {
+        "w": 326,
+        "h": 32
+      },
+      "name": "We've analyzed your outfit. Head back to review and approve the pieces.",
+      "path": "1-2-notifications.group-180.we-ve-analyzed-your-outfit-head-back-to",
+      "pos": {
+        "x": 0,
+        "y": 29
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "We've analyzed your outfit. Head back to review and approve the pieces.",
+      "textGrow": "h",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "your-look-is-ready": {
+      "id": "581:822",
+      "el": "your-look-is-ready",
+      "type": "text",
+      "box": {
+        "w": 144,
+        "h": 25
+      },
+      "name": "Your look is ready.",
+      "path": "1-2-notifications.group-180.your-look-is-ready",
+      "pos": {
+        "x": 24,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "Your look is ready.",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "2-min-ago": {
+      "id": "581:837",
+      "el": "2-min-ago",
+      "type": "text",
+      "box": {
+        "w": 51,
+        "h": 16
+      },
+      "name": "2 min ago",
+      "path": "1-2-notifications.group-180.frame-18.2-min-ago",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "2 min ago",
+      "textGrow": "wh"
+    },
+    "frame-18": {
+      "id": "581:836",
+      "el": "frame-18",
+      "type": "frame",
+      "box": {
+        "w": 83,
+        "h": 22
+      },
+      "path": "1-2-notifications.group-180.frame-18",
+      "pos": {
+        "x": 243,
+        "y": 1
+      },
+      "layout": "$l1",
+      "fill": "$c2",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "2-min-ago"
+      ]
+    },
+    "ellipse-7": {
+      "id": "581:842",
+      "el": "ellipse-7",
+      "type": "ellipse",
+      "box": {
+        "w": 8,
+        "h": 8
+      },
+      "path": "1-2-notifications.group-180.ellipse-7",
+      "pos": {
+        "x": 4,
+        "y": 8
+      },
+      "fill": "$c3",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-180": {
+      "id": "581:843",
+      "el": "group-180",
+      "type": "group",
+      "box": {
+        "w": 326,
+        "h": 61
+      },
+      "path": "1-2-notifications.group-180",
+      "pos": {
+        "x": 36,
+        "y": 206
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "we-ve-analyzed-your-outfit-head-back-to",
+        "your-look-is-ready",
+        "frame-18",
+        "ellipse-7"
+      ]
+    },
+    "you-logged-4-outfits-this-week-your-most": {
+      "id": "581:855",
+      "el": "you-logged-4-outfits-this-week-your-most",
+      "type": "text",
+      "box": {
+        "w": 328,
+        "h": 32
+      },
+      "name": "You logged 4 outfits this week. Your most worn piece: white linen shirt.",
+      "path": "1-2-notifications.group-182.you-logged-4-outfits-this-week-your-most",
+      "pos": {
+        "x": 0,
+        "y": 29
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "You logged 4 outfits this week. Your most worn piece: white linen shirt.",
+      "textGrow": "h",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "your-week-in-looks": {
+      "id": "581:856",
+      "el": "your-week-in-looks",
+      "type": "text",
+      "box": {
+        "w": 153,
+        "h": 25
+      },
+      "name": "Your week in looks.",
+      "path": "1-2-notifications.group-182.your-week-in-looks",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "Your week in looks.",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "mon-23-jun": {
+      "id": "581:858",
+      "el": "mon-23-jun",
+      "type": "text",
+      "box": {
+        "w": 62,
+        "h": 16
+      },
+      "name": "Mon, 23 Jun",
+      "path": "1-2-notifications.group-182.frame-18-2.mon-23-jun",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "Mon, 23 Jun",
+      "textGrow": "wh"
+    },
+    "frame-18-2": {
+      "id": "581:857",
+      "el": "frame-18-2",
+      "type": "frame",
+      "box": {
+        "w": 94,
+        "h": 22
+      },
+      "path": "1-2-notifications.group-182.frame-18-2",
+      "pos": {
+        "x": 234,
+        "y": 0
+      },
+      "layout": "$l1",
+      "fill": "$c2",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "mon-23-jun"
+      ]
+    },
+    "group-182": {
+      "id": "581:854",
+      "el": "group-182",
+      "type": "group",
+      "box": {
+        "w": 328,
+        "h": 61
+      },
+      "path": "1-2-notifications.group-182",
+      "pos": {
+        "x": 34,
+        "y": 390
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "you-logged-4-outfits-this-week-your-most",
+        "your-week-in-looks",
+        "frame-18-2"
+      ]
+    },
+    "we-couldn-t-process-your-upload-try-agai": {
+      "id": "581:864",
+      "el": "we-couldn-t-process-your-upload-try-agai",
+      "type": "text",
+      "box": {
+        "w": 328,
+        "h": 16
+      },
+      "name": "We couldn't process your upload. Try again with a clearer shot.",
+      "path": "1-2-notifications.group-183.we-couldn-t-process-your-upload-try-agai",
+      "pos": {
+        "x": 0,
+        "y": 29
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "We couldn't process your upload. Try again with a clearer shot.",
+      "textGrow": "h",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "something-went-wrong": {
+      "id": "581:865",
+      "el": "something-went-wrong",
+      "type": "text",
+      "box": {
+        "w": 192,
+        "h": 25
+      },
+      "name": "Something went wrong.",
+      "path": "1-2-notifications.group-183.something-went-wrong",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "Something went wrong.",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "wed-18-jun": {
+      "id": "581:867",
+      "el": "wed-18-jun",
+      "type": "text",
+      "box": {
+        "w": 60,
+        "h": 16
+      },
+      "name": "Wed, 18 Jun",
+      "path": "1-2-notifications.group-183.frame-18-3.wed-18-jun",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "Wed, 18 Jun",
+      "textGrow": "wh"
+    },
+    "frame-18-3": {
+      "id": "581:866",
+      "el": "frame-18-3",
+      "type": "frame",
+      "box": {
+        "w": 92,
+        "h": 22
+      },
+      "path": "1-2-notifications.group-183.frame-18-3",
+      "pos": {
+        "x": 234,
+        "y": 0
+      },
+      "layout": "$l1",
+      "fill": "$c2",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "wed-18-jun"
+      ]
+    },
+    "group-183": {
+      "id": "581:863",
+      "el": "group-183",
+      "type": "group",
+      "box": {
+        "w": 328,
+        "h": 45
+      },
+      "path": "1-2-notifications.group-183",
+      "pos": {
+        "x": 34,
+        "y": 475
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "we-couldn-t-process-your-upload-try-agai",
+        "something-went-wrong",
+        "frame-18-3"
+      ]
+    },
+    "log-today-s-look-before-the-day-slips-by": {
+      "id": "581:846",
+      "el": "log-today-s-look-before-the-day-slips-by",
+      "type": "text",
+      "box": {
+        "w": 326,
+        "h": 16
+      },
+      "name": "Log today's look before the day slips by.",
+      "path": "1-2-notifications.group-181.log-today-s-look-before-the-day-slips-by",
+      "pos": {
+        "x": 0,
+        "y": 29
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "Log today's look before the day slips by.",
+      "textGrow": "h",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "what-are-you-wearing": {
+      "id": "581:847",
+      "el": "what-are-you-wearing",
+      "type": "text",
+      "box": {
+        "w": 180,
+        "h": 25
+      },
+      "name": "What are you wearing?",
+      "path": "1-2-notifications.group-181.what-are-you-wearing",
+      "pos": {
+        "x": 24,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "What are you wearing?",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "8-00-am": {
+      "id": "581:849",
+      "el": "8-00-am",
+      "type": "text",
+      "box": {
+        "w": 38,
+        "h": 16
+      },
+      "name": "8:00 AM",
+      "path": "1-2-notifications.group-181.frame-18-4.8-00-am",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "8:00 AM",
+      "textGrow": "wh"
+    },
+    "frame-18-4": {
+      "id": "581:848",
+      "el": "frame-18-4",
+      "type": "frame",
+      "box": {
+        "w": 70,
+        "h": 22
+      },
+      "path": "1-2-notifications.group-181.frame-18-4",
+      "pos": {
+        "x": 256,
+        "y": 1
+      },
+      "layout": "$l1",
+      "fill": "$c2",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "8-00-am"
+      ]
+    },
+    "ellipse-7-2": {
+      "id": "581:850",
+      "el": "ellipse-7-2",
+      "type": "ellipse",
+      "box": {
+        "w": 8,
+        "h": 8
+      },
+      "path": "1-2-notifications.group-181.ellipse-7-2",
+      "pos": {
+        "x": 4,
+        "y": 8
+      },
+      "fill": "$c3",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-181": {
+      "id": "581:845",
+      "el": "group-181",
+      "type": "group",
+      "box": {
+        "w": 326,
+        "h": 45
+      },
+      "path": "1-2-notifications.group-181",
+      "pos": {
+        "x": 36,
+        "y": 291
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "log-today-s-look-before-the-day-slips-by",
+        "what-are-you-wearing",
+        "frame-18-4",
+        "ellipse-7-2"
+      ]
+    },
+    "line-12": {
+      "id": "581:844",
+      "el": "line-12",
+      "type": "line",
+      "box": {
+        "w": 326,
+        "h": 0
+      },
+      "path": "1-2-notifications.line-12",
+      "pos": {
+        "x": 36,
+        "y": 279
+      },
+      "stroke": "$c5",
+      "strokeW": 0.5,
+      "strokeAlign": "center",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "line-13": {
+      "id": "581:861",
+      "el": "line-13",
+      "type": "line",
+      "box": {
+        "w": 328,
+        "h": 0
+      },
+      "path": "1-2-notifications.line-13",
+      "pos": {
+        "x": 34,
+        "y": 463
+      },
+      "stroke": "$c5",
+      "strokeW": 0.5,
+      "strokeAlign": "center",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "1-2-notifications": {
+      "id": "581:740",
+      "el": "1-2-notifications",
+      "type": "frame",
+      "box": {
+        "w": 402,
+        "h": 874
+      },
+      "name": "1.2 Notifications",
+      "fill": "$c1",
+      "clip": true,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "group-58",
+        "notifications",
+        "union",
+        "today",
+        "this-week",
+        "group-180",
+        "group-182",
+        "group-183",
+        "group-181",
+        "line-12",
+        "line-13"
+      ]
+    }
+  },
+  "meta": {
+    "nodeCount": 37,
+    "estTokens": 2931,
+    "depthUsed": 12
+  },
+  "next": "Read `tokens` for the design system, then build the UI from `nodes`. Tag each rendered element data-plumb-id=\"<el>\". A node with a `more` count has that many children not yet included — call plumb_node again on that node's `id` to expand them.",
+  "source": "plugin",
+  "node": "1.2 Notifications"
+}

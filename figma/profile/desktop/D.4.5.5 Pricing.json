@@ -1,0 +1,2800 @@
+{
+  "file": {
+    "name": "Loomette.id",
+    "version": "plugin-1792667161846"
+  },
+  "root": "d-4-5-5-pricing",
+  "tokens": {
+    "color": {
+      "$c1": "#fafaf7",
+      "$c2": "#ffffff1a",
+      "$c3": "#444440",
+      "$c4": "#d9d9d9",
+      "$c5": "#000000",
+      "$c6": "#c9c3b7",
+      "$c7": "#f2ede5"
+    },
+    "text": {
+      "$t1": "400 24px Avenir Next",
+      "$t2": "400 48px Source Serif Pro",
+      "$t3": "400 20px Figtree",
+      "$t4": "400 16px/1.5 Figtree 1px",
+      "$t5": "400 16px/1.5 Figtree 0.5px",
+      "$t6": "400 40px/1 Source Serif Pro -0.8px",
+      "$t7": "400 16px/1.5 Figtree",
+      "$t8": "400 16px/1.4 Figtree"
+    },
+    "radius": {
+      "$r1": 16,
+      "$r2": "full",
+      "$r3": 8
+    },
+    "shadow": {
+      "$s1": "4px 4px 10px 0px #c9c3b780"
+    },
+    "layout": {
+      "$l1": {
+        "flow": "col",
+        "pad": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l2": {
+        "flow": "row",
+        "pad": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l3": {
+        "flow": "col",
+        "pad": [
+          32,
+          32,
+          32,
+          32
+        ]
+      },
+      "$l4": {
+        "align": "center",
+        "contentMain": 229,
+        "flow": "row",
+        "justify": "space-between",
+        "pad": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l5": {
+        "flow": "col",
+        "pad": [
+          6,
+          16,
+          6,
+          16
+        ]
+      },
+      "$l6": {
+        "align": "flex-end",
+        "flow": "col",
+        "pad": [
+          24,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l7": {
+        "align": "flex-end",
+        "flow": "row",
+        "gap": 12,
+        "pad": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l8": {
+        "flow": "col",
+        "pad": [
+          12,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l9": {
+        "flow": "col",
+        "pad": [
+          28,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l10": {
+        "flow": "col",
+        "gap": 20,
+        "pad": [
+          28,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l11": {
+        "flow": "row",
+        "gap": 16,
+        "pad": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l12": {
+        "flow": "col",
+        "pad": [
+          7,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l13": {
+        "align": "center",
+        "contentMain": 192,
+        "flow": "row",
+        "justify": "space-between",
+        "pad": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l14": {
+        "align": "flex-end",
+        "flow": "row",
+        "gap": 8,
+        "pad": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l15": {
+        "flow": "col",
+        "pad": [
+          0,
+          0,
+          6,
+          0
+        ]
+      }
+    },
+    "vector": {
+      "$v1": "M12.7988 11.4121 L19.9199 3.3418 L21.0518 4.62402 L13.9307 12.6934 L24 12.6934 L24 14.5068 L13.9316 14.5068 L21.0508 22.5752 L19.9189 23.8574 L12.7988 15.7871 L12.7988 27.2002 L11.1992 27.2002 L11.1992 15.79 L4.08105 23.8574 L2.94922 22.5752 L10.0674 14.5068 L0 14.5068 L0 12.6934 L10.0693 12.6934 L2.94922 4.62402 L4.08008 3.3418 L11.1992 11.4092 L11.1992 0 L12.7988 0 L12.7988 11.4121 Z",
+      "$v2": "M21.333 16.7812 L33.1992 4.91504 L35.085 6.80078 L23.2197 18.666 L40 18.666 L40 21.333 L23.2188 21.333 L35.084 33.1982 L33.1982 35.084 L21.333 23.2188 L21.333 40 L18.666 40 L18.666 23.2197 L6.80078 35.085 L4.91504 33.1992 L16.7812 21.333 L0 21.333 L0 18.666 L16.7803 18.666 L4.91406 6.7998 L6.7998 4.91406 L18.666 16.7803 L18.666 0 L21.333 0 L21.333 16.7812 Z"
+    },
+    "props": {
+      "$p1": {
+        "size": "24"
+      }
+    },
+    "meta": {
+      "counts": {
+        "$c1": 5,
+        "$c3": 46,
+        "$c4": 8,
+        "$t1": 5,
+        "$t3": 6,
+        "$l1": 16,
+        "$l3": 2,
+        "$c6": 4,
+        "$r1": 2,
+        "$t4": 3,
+        "$l5": 2,
+        "$r2": 2,
+        "$t5": 2,
+        "$l6": 2,
+        "$t6": 2,
+        "$l8": 2,
+        "$t7": 3,
+        "$l9": 2,
+        "$l10": 2,
+        "$l11": 11,
+        "$l12": 11,
+        "$t8": 11
+      }
+    }
+  },
+  "nodes": {
+    "rectangle-15": {
+      "id": "1237:2017",
+      "el": "rectangle-15",
+      "type": "rect",
+      "box": {
+        "w": 1465,
+        "h": 136
+      },
+      "path": "d-4-5-5-pricing.group-96.rectangle-15",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16": {
+      "id": "1237:2019",
+      "el": "rectangle-16",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 27
+      },
+      "path": "d-4-5-5-pricing.group-96.union.rectangle-16",
+      "pos": {
+        "x": 11,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17": {
+      "id": "1237:2020",
+      "el": "rectangle-17",
+      "type": "rect",
+      "box": {
+        "w": 18,
+        "h": 21
+      },
+      "path": "d-4-5-5-pricing.group-96.union.rectangle-17",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 2783,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19": {
+      "id": "1237:2021",
+      "el": "rectangle-19",
+      "type": "rect",
+      "box": {
+        "w": 18,
+        "h": 21
+      },
+      "path": "d-4-5-5-pricing.group-96.union.rectangle-19",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 7530,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18": {
+      "id": "1237:2022",
+      "el": "rectangle-18",
+      "type": "rect",
+      "box": {
+        "w": 24,
+        "h": 2
+      },
+      "path": "d-4-5-5-pricing.group-96.union.rectangle-18",
+      "pos": {
+        "x": 0,
+        "y": 13
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union": {
+      "id": "1237:2018",
+      "el": "union",
+      "type": "bool",
+      "box": {
+        "w": 24,
+        "h": 27
+      },
+      "path": "d-4-5-5-pricing.group-96.union",
+      "pos": {
+        "x": 75,
+        "y": 54
+      },
+      "fill": "$c3",
+      "iconHint": "loomette",
+      "vectorPath": "$v1",
+      "children": [
+        "rectangle-16",
+        "rectangle-17",
+        "rectangle-19",
+        "rectangle-18"
+      ]
+    },
+    "loomette": {
+      "id": "1237:2023",
+      "el": "loomette",
+      "type": "text",
+      "box": {
+        "w": 99,
+        "h": 37
+      },
+      "name": "loomette",
+      "path": "d-4-5-5-pricing.group-96.loomette",
+      "pos": {
+        "x": 115,
+        "y": 50
+      },
+      "fill": "$c5",
+      "text": "$t1",
+      "chars": "loomette",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "home": {
+      "id": "1237:2024",
+      "el": "home",
+      "type": "text",
+      "box": {
+        "w": 61,
+        "h": 37
+      },
+      "name": "Home",
+      "path": "d-4-5-5-pricing.group-96.home",
+      "pos": {
+        "x": 583,
+        "y": 50
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "Home",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "calendar": {
+      "id": "1237:2025",
+      "el": "calendar",
+      "type": "text",
+      "box": {
+        "w": 103,
+        "h": 37
+      },
+      "name": "calendar",
+      "path": "d-4-5-5-pricing.group-96.calendar",
+      "pos": {
+        "x": 680,
+        "y": 50
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "calendar",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "wardrobe": {
+      "id": "1237:2026",
+      "el": "wardrobe",
+      "type": "text",
+      "box": {
+        "w": 110,
+        "h": 37
+      },
+      "name": "wardrobe",
+      "path": "d-4-5-5-pricing.group-96.wardrobe",
+      "pos": {
+        "x": 819,
+        "y": 50
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "wardrobe",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "gevyndo": {
+      "id": "1237:2028",
+      "el": "gevyndo",
+      "type": "text",
+      "box": {
+        "w": 96,
+        "h": 37
+      },
+      "name": "gevyndo",
+      "path": "d-4-5-5-pricing.group-96.group-254.gevyndo",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "gevyndo",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector": {
+      "id": "I1237:2029;3:3637",
+      "el": "vector",
+      "type": "vector",
+      "box": {
+        "w": 16,
+        "h": 22
+      },
+      "path": "d-4-5-5-pricing.group-96.group-254.user.vector",
+      "pos": {
+        "x": 4,
+        "y": 3
+      },
+      "fill": "$c3",
+      "iconHint": "gevyndo",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "user": {
+      "id": "1237:2029",
+      "el": "user",
+      "type": "instance",
+      "box": {
+        "w": 24,
+        "h": 27
+      },
+      "name": "user",
+      "path": "d-4-5-5-pricing.group-96.group-254.user",
+      "pos": {
+        "x": 112,
+        "y": 5
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector"
+      ]
+    },
+    "group-254": {
+      "id": "1237:2027",
+      "el": "group-254",
+      "type": "group",
+      "box": {
+        "w": 136,
+        "h": 37
+      },
+      "path": "d-4-5-5-pricing.group-96.group-254",
+      "pos": {
+        "x": 1251,
+        "y": 50
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "gevyndo",
+        "user"
+      ]
+    },
+    "group-96": {
+      "id": "1237:2016",
+      "el": "group-96",
+      "type": "group",
+      "box": {
+        "w": 1465,
+        "h": 136
+      },
+      "path": "d-4-5-5-pricing.group-96",
+      "pos": {
+        "x": -11,
+        "y": -16
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-15",
+        "union",
+        "loomette",
+        "home",
+        "calendar",
+        "wardrobe",
+        "group-254"
+      ]
+    },
+    "pricing": {
+      "id": "1237:2030",
+      "el": "pricing",
+      "type": "text",
+      "box": {
+        "w": 149,
+        "h": 60
+      },
+      "name": "Pricing",
+      "path": "d-4-5-5-pricing.pricing",
+      "pos": {
+        "x": 177,
+        "y": 234
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "Pricing",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16-2": {
+      "id": "1237:2032",
+      "el": "rectangle-16-2",
+      "type": "rect",
+      "box": {
+        "w": 3,
+        "h": 40
+      },
+      "path": "d-4-5-5-pricing.union-2.rectangle-16-2",
+      "pos": {
+        "x": 19,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17-2": {
+      "id": "1237:2033",
+      "el": "rectangle-17-2",
+      "type": "rect",
+      "box": {
+        "w": 30,
+        "h": 30
+      },
+      "path": "d-4-5-5-pricing.union-2.rectangle-17-2",
+      "pos": {
+        "x": 5,
+        "y": 5
+      },
+      "fill": "$c4",
+      "rotation": 2578,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19-2": {
+      "id": "1237:2034",
+      "el": "rectangle-19-2",
+      "type": "rect",
+      "box": {
+        "w": 30,
+        "h": 30
+      },
+      "path": "d-4-5-5-pricing.union-2.rectangle-19-2",
+      "pos": {
+        "x": 5,
+        "y": 5
+      },
+      "fill": "$c4",
+      "rotation": 7735,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18-2": {
+      "id": "1237:2035",
+      "el": "rectangle-18-2",
+      "type": "rect",
+      "box": {
+        "w": 40,
+        "h": 3
+      },
+      "path": "d-4-5-5-pricing.union-2.rectangle-18-2",
+      "pos": {
+        "x": 0,
+        "y": 19
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union-2": {
+      "id": "1237:2031",
+      "el": "union-2",
+      "type": "bool",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "d-4-5-5-pricing.union-2",
+      "pos": {
+        "x": 111,
+        "y": 244
+      },
+      "fill": "$c3",
+      "iconHint": "Pricing",
+      "vectorPath": "$v2",
+      "children": [
+        "rectangle-16-2",
+        "rectangle-17-2",
+        "rectangle-19-2",
+        "rectangle-18-2"
+      ]
+    },
+    "see-what-you-re-on-and-what-s-waiting-wh": {
+      "id": "1237:2036",
+      "el": "see-what-you-re-on-and-what-s-waiting-wh",
+      "type": "text",
+      "box": {
+        "w": 660,
+        "h": 48
+      },
+      "name": "see what you’re on and what’s waiting when you’re ready to upgrade.",
+      "path": "d-4-5-5-pricing.see-what-you-re-on-and-what-s-waiting-wh",
+      "pos": {
+        "x": 177,
+        "y": 302
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "see what you’re on and what’s waiting when you’re ready to upgrade.",
+      "textGrow": "h",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "profile-settings-pricing": {
+      "id": "1237:2037",
+      "el": "profile-settings-pricing",
+      "type": "text",
+      "box": {
+        "w": 298,
+        "h": 24
+      },
+      "name": "profile > settings > pricing",
+      "path": "d-4-5-5-pricing.profile-settings-pricing",
+      "pos": {
+        "x": 104,
+        "y": 170
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": [
+        {
+          "t": "profile",
+          "d": "underline"
+        },
+        {
+          "t": " > "
+        },
+        {
+          "t": "settings",
+          "d": "underline"
+        },
+        {
+          "t": " > pricing"
+        }
+      ],
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "starter": {
+      "id": "1237:2251",
+      "el": "starter",
+      "type": "text",
+      "box": {
+        "w": 73,
+        "h": 24
+      },
+      "name": "Starter",
+      "path": "d-4-5-5-pricing.container-margin.container.section.container-2.text.starter",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "Starter",
+      "textGrow": "wh"
+    },
+    "text": {
+      "id": "1237:2250",
+      "el": "text",
+      "type": "frame",
+      "box": {
+        "w": 73,
+        "h": 24
+      },
+      "name": "Text",
+      "path": "d-4-5-5-pricing.container-margin.container.section.container-2.text",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "children": [
+        "starter"
+      ]
+    },
+    "current-plan": {
+      "id": "1237:2253",
+      "el": "current-plan",
+      "type": "text",
+      "box": {
+        "w": 124,
+        "h": 24
+      },
+      "name": "Current plan",
+      "path": "d-4-5-5-pricing.container-margin.container.section.container-2.text-2.current-plan",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t5",
+      "chars": "Current plan",
+      "textGrow": "wh"
+    },
+    "text-2": {
+      "id": "1237:2252",
+      "el": "text-2",
+      "type": "frame",
+      "box": {
+        "w": 156,
+        "h": 36
+      },
+      "name": "Text",
+      "path": "d-4-5-5-pricing.container-margin.container.section.container-2.text-2",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l5",
+      "fill": "$c7",
+      "radius": "$r2",
+      "children": [
+        "current-plan"
+      ]
+    },
+    "container-2": {
+      "id": "1237:2249",
+      "el": "container-2",
+      "type": "frame",
+      "box": {
+        "w": 414,
+        "h": 36
+      },
+      "name": "Container",
+      "path": "d-4-5-5-pricing.container-margin.container.section.container-2",
+      "sizing": {
+        "h": "hug"
+      },
+      "layout": "$l4",
+      "inheritedFill": "$c1",
+      "children": [
+        "text",
+        "text-2"
+      ]
+    },
+    "free": {
+      "id": "1237:2257",
+      "el": "free",
+      "type": "text",
+      "box": {
+        "w": 78,
+        "h": 40
+      },
+      "name": "Free",
+      "path": "d-4-5-5-pricing.container-margin.container.section.container-margin-2.container-3.text-3.free",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t6",
+      "chars": "Free",
+      "textGrow": "wh"
+    },
+    "text-3": {
+      "id": "1237:2256",
+      "el": "text-3",
+      "type": "frame",
+      "box": {
+        "w": 78,
+        "h": 40
+      },
+      "name": "Text",
+      "path": "d-4-5-5-pricing.container-margin.container.section.container-margin-2.container-3.text-3",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "children": [
+        "free"
+      ]
+    },
+    "container-3": {
+      "id": "1237:2255",
+      "el": "container-3",
+      "type": "frame",
+      "box": {
+        "w": 414,
+        "h": 40
+      },
+      "name": "Container",
+      "path": "d-4-5-5-pricing.container-margin.container.section.container-margin-2.container-3",
+      "sizing": {
+        "h": "hug"
+      },
+      "layout": "$l7",
+      "inheritedFill": "$c1",
+      "children": [
+        "text-3"
+      ]
+    },
+    "container-margin-2": {
+      "id": "1237:2254",
+      "el": "container-margin-2",
+      "type": "frame",
+      "box": {
+        "w": 414,
+        "h": 64
+      },
+      "name": "Container:margin",
+      "path": "d-4-5-5-pricing.container-margin.container.section.container-margin-2",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill",
+        "h": "hug"
+      },
+      "layout": "$l6",
+      "inheritedFill": "$c1",
+      "children": [
+        "container-3"
+      ]
+    },
+    "forever": {
+      "id": "1237:2259",
+      "el": "forever",
+      "type": "text",
+      "box": {
+        "w": 55,
+        "h": 24
+      },
+      "name": "Forever",
+      "path": "d-4-5-5-pricing.container-margin.container.section.paragraph.forever",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t7",
+      "chars": "Forever",
+      "textGrow": "wh"
+    },
+    "paragraph": {
+      "id": "1237:2258",
+      "el": "paragraph",
+      "type": "frame",
+      "box": {
+        "w": 414,
+        "h": 36
+      },
+      "name": "Paragraph",
+      "path": "d-4-5-5-pricing.container-margin.container.section.paragraph",
+      "layout": "$l8",
+      "inheritedFill": "$c1",
+      "children": [
+        "forever"
+      ]
+    },
+    "container-4": {
+      "id": "1237:2261",
+      "el": "container-4",
+      "type": "frame",
+      "box": {
+        "w": 414,
+        "h": 1
+      },
+      "name": "Container",
+      "path": "d-4-5-5-pricing.container-margin.container.section.container-margin-3.container-4",
+      "fill": "$c6"
+    },
+    "container-margin-3": {
+      "id": "1237:2260",
+      "el": "container-margin-3",
+      "type": "frame",
+      "box": {
+        "w": 414,
+        "h": 29
+      },
+      "name": "Container:margin",
+      "path": "d-4-5-5-pricing.container-margin.container.section.container-margin-3",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l9",
+      "inheritedFill": "$c1",
+      "children": [
+        "container-4"
+      ]
+    },
+    "vector-2": {
+      "id": "1237:2266",
+      "el": "vector-2",
+      "type": "vector",
+      "box": {
+        "w": 9,
+        "h": 9
+      },
+      "path": "d-4-5-5-pricing.container-margin.container.section.list.feature.check.icon.vector-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "iconHint": "Check",
+      "stroke": "$c3",
+      "strokeW": 0.58,
+      "strokeAlign": "center",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "icon": {
+      "id": "1237:2265",
+      "el": "icon",
+      "type": "frame",
+      "box": {
+        "w": 10,
+        "h": 10
+      },
+      "path": "d-4-5-5-pricing.container-margin.container.section.list.feature.check.icon",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill"
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "children": [
+        "vector-2"
+      ]
+    },
+    "check": {
+      "id": "1237:2264",
+      "el": "check",
+      "type": "frame",
+      "box": {
+        "w": 10,
+        "h": 17
+      },
+      "name": "Check",
+      "path": "d-4-5-5-pricing.container-margin.container.section.list.feature.check",
+      "layout": "$l12",
+      "inheritedFill": "$c1",
+      "children": [
+        "icon"
+      ]
+    },
+    "up-to-30-wardrobe-items": {
+      "id": "1237:2268",
+      "el": "up-to-30-wardrobe-items",
+      "type": "text",
+      "box": {
+        "w": 179,
+        "h": 23
+      },
+      "name": "Up to 30 wardrobe items",
+      "path": "d-4-5-5-pricing.container-margin.container.section.list.feature.text-4.up-to-30-wardrobe-items",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t8",
+      "chars": "Up to 30 wardrobe items",
+      "textGrow": "wh"
+    },
+    "text-4": {
+      "id": "1237:2267",
+      "el": "text-4",
+      "type": "frame",
+      "box": {
+        "w": 179,
+        "h": 23
+      },
+      "name": "Text",
+      "path": "d-4-5-5-pricing.container-margin.container.section.list.feature.text-4",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "children": [
+        "up-to-30-wardrobe-items"
+      ]
+    },
+    "feature": {
+      "id": "1237:2263",
+      "el": "feature",
+      "type": "frame",
+      "box": {
+        "w": 414,
+        "h": 23
+      },
+      "name": "Feature",
+      "path": "d-4-5-5-pricing.container-margin.container.section.list.feature",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill",
+        "h": "hug"
+      },
+      "layout": "$l11",
+      "inheritedFill": "$c1",
+      "children": [
+        "check",
+        "text-4"
+      ]
+    },
+    "vector-3": {
+      "id": "1237:2272",
+      "el": "vector-3",
+      "type": "vector",
+      "box": {
+        "w": 9,
+        "h": 9
+      },
+      "path": "d-4-5-5-pricing.container-margin.container.section.list.feature-2.check-2.icon-2.vector-3",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "iconHint": "Check",
+      "stroke": "$c3",
+      "strokeW": 0.58,
+      "strokeAlign": "center",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "icon-2": {
+      "id": "1237:2271",
+      "el": "icon-2",
+      "type": "frame",
+      "box": {
+        "w": 10,
+        "h": 10
+      },
+      "path": "d-4-5-5-pricing.container-margin.container.section.list.feature-2.check-2.icon-2",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill"
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "children": [
+        "vector-3"
+      ]
+    },
+    "check-2": {
+      "id": "1237:2270",
+      "el": "check-2",
+      "type": "frame",
+      "box": {
+        "w": 10,
+        "h": 17
+      },
+      "name": "Check",
+      "path": "d-4-5-5-pricing.container-margin.container.section.list.feature-2.check-2",
+      "layout": "$l12",
+      "inheritedFill": "$c1",
+      "children": [
+        "icon-2"
+      ]
+    },
+    "5-outfit-logs-per-month": {
+      "id": "1237:2274",
+      "el": "5-outfit-logs-per-month",
+      "type": "text",
+      "box": {
+        "w": 165,
+        "h": 23
+      },
+      "name": "5 outfit logs per month",
+      "path": "d-4-5-5-pricing.container-margin.container.section.list.feature-2.text-5.5-outfit-logs-per-month",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t8",
+      "chars": "5 outfit logs per month",
+      "textGrow": "wh"
+    },
+    "text-5": {
+      "id": "1237:2273",
+      "el": "text-5",
+      "type": "frame",
+      "box": {
+        "w": 165,
+        "h": 23
+      },
+      "name": "Text",
+      "path": "d-4-5-5-pricing.container-margin.container.section.list.feature-2.text-5",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "children": [
+        "5-outfit-logs-per-month"
+      ]
+    },
+    "feature-2": {
+      "id": "1237:2269",
+      "el": "feature-2",
+      "type": "frame",
+      "box": {
+        "w": 414,
+        "h": 23
+      },
+      "name": "Feature",
+      "path": "d-4-5-5-pricing.container-margin.container.section.list.feature-2",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill",
+        "h": "hug"
+      },
+      "layout": "$l11",
+      "inheritedFill": "$c1",
+      "children": [
+        "check-2",
+        "text-5"
+      ]
+    },
+    "vector-4": {
+      "id": "1237:2278",
+      "el": "vector-4",
+      "type": "vector",
+      "box": {
+        "w": 9,
+        "h": 9
+      },
+      "path": "d-4-5-5-pricing.container-margin.container.section.list.feature-3.check-3.icon-3.vector-4",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "iconHint": "Check",
+      "stroke": "$c3",
+      "strokeW": 0.58,
+      "strokeAlign": "center",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "icon-3": {
+      "id": "1237:2277",
+      "el": "icon-3",
+      "type": "frame",
+      "box": {
+        "w": 10,
+        "h": 10
+      },
+      "path": "d-4-5-5-pricing.container-margin.container.section.list.feature-3.check-3.icon-3",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill"
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "children": [
+        "vector-4"
+      ]
+    },
+    "check-3": {
+      "id": "1237:2276",
+      "el": "check-3",
+      "type": "frame",
+      "box": {
+        "w": 10,
+        "h": 17
+      },
+      "name": "Check",
+      "path": "d-4-5-5-pricing.container-margin.container.section.list.feature-3.check-3",
+      "layout": "$l12",
+      "inheritedFill": "$c1",
+      "children": [
+        "icon-3"
+      ]
+    },
+    "ai-detection-for-every-upload": {
+      "id": "1237:2280",
+      "el": "ai-detection-for-every-upload",
+      "type": "text",
+      "box": {
+        "w": 209,
+        "h": 23
+      },
+      "name": "AI detection for every upload",
+      "path": "d-4-5-5-pricing.container-margin.container.section.list.feature-3.text-6.ai-detection-for-every-upload",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t8",
+      "chars": "AI detection for every upload",
+      "textGrow": "wh"
+    },
+    "text-6": {
+      "id": "1237:2279",
+      "el": "text-6",
+      "type": "frame",
+      "box": {
+        "w": 209,
+        "h": 23
+      },
+      "name": "Text",
+      "path": "d-4-5-5-pricing.container-margin.container.section.list.feature-3.text-6",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "children": [
+        "ai-detection-for-every-upload"
+      ]
+    },
+    "feature-3": {
+      "id": "1237:2275",
+      "el": "feature-3",
+      "type": "frame",
+      "box": {
+        "w": 414,
+        "h": 23
+      },
+      "name": "Feature",
+      "path": "d-4-5-5-pricing.container-margin.container.section.list.feature-3",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill",
+        "h": "hug"
+      },
+      "layout": "$l11",
+      "inheritedFill": "$c1",
+      "children": [
+        "check-3",
+        "text-6"
+      ]
+    },
+    "vector-5": {
+      "id": "1237:2284",
+      "el": "vector-5",
+      "type": "vector",
+      "box": {
+        "w": 9,
+        "h": 9
+      },
+      "path": "d-4-5-5-pricing.container-margin.container.section.list.feature-4.check-4.icon-4.vector-5",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "iconHint": "Check",
+      "stroke": "$c3",
+      "strokeW": 0.58,
+      "strokeAlign": "center",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "icon-4": {
+      "id": "1237:2283",
+      "el": "icon-4",
+      "type": "frame",
+      "box": {
+        "w": 10,
+        "h": 10
+      },
+      "path": "d-4-5-5-pricing.container-margin.container.section.list.feature-4.check-4.icon-4",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill"
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "children": [
+        "vector-5"
+      ]
+    },
+    "check-4": {
+      "id": "1237:2282",
+      "el": "check-4",
+      "type": "frame",
+      "box": {
+        "w": 10,
+        "h": 17
+      },
+      "name": "Check",
+      "path": "d-4-5-5-pricing.container-margin.container.section.list.feature-4.check-4",
+      "layout": "$l12",
+      "inheritedFill": "$c1",
+      "children": [
+        "icon-4"
+      ]
+    },
+    "calendar-view": {
+      "id": "1237:2286",
+      "el": "calendar-view",
+      "type": "text",
+      "box": {
+        "w": 101,
+        "h": 23
+      },
+      "name": "Calendar view",
+      "path": "d-4-5-5-pricing.container-margin.container.section.list.feature-4.text-7.calendar-view",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t8",
+      "chars": "Calendar view",
+      "textGrow": "wh"
+    },
+    "text-7": {
+      "id": "1237:2285",
+      "el": "text-7",
+      "type": "frame",
+      "box": {
+        "w": 101,
+        "h": 23
+      },
+      "name": "Text",
+      "path": "d-4-5-5-pricing.container-margin.container.section.list.feature-4.text-7",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "children": [
+        "calendar-view"
+      ]
+    },
+    "feature-4": {
+      "id": "1237:2281",
+      "el": "feature-4",
+      "type": "frame",
+      "box": {
+        "w": 414,
+        "h": 23
+      },
+      "name": "Feature",
+      "path": "d-4-5-5-pricing.container-margin.container.section.list.feature-4",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill",
+        "h": "hug"
+      },
+      "layout": "$l11",
+      "inheritedFill": "$c1",
+      "children": [
+        "check-4",
+        "text-7"
+      ]
+    },
+    "list": {
+      "id": "1237:2262",
+      "el": "list",
+      "type": "frame",
+      "box": {
+        "w": 414,
+        "h": 180
+      },
+      "name": "List",
+      "path": "d-4-5-5-pricing.container-margin.container.section.list",
+      "layout": "$l10",
+      "inheritedFill": "$c1",
+      "children": [
+        "feature",
+        "feature-2",
+        "feature-3",
+        "feature-4"
+      ]
+    },
+    "section": {
+      "id": "1237:2248",
+      "el": "section",
+      "type": "frame",
+      "box": {
+        "w": 480,
+        "h": 408
+      },
+      "name": "Section",
+      "path": "d-4-5-5-pricing.container-margin.container.section",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "grow": 1,
+      "sizing": {
+        "w": "fill"
+      },
+      "layout": "$l3",
+      "fill": "$c1",
+      "stroke": "$c6",
+      "strokeW": 0.76,
+      "strokeAlign": "inside",
+      "radius": "$r1",
+      "children": [
+        "container-2",
+        "container-margin-2",
+        "paragraph",
+        "container-margin-3",
+        "list"
+      ]
+    },
+    "pro": {
+      "id": "1237:2290",
+      "el": "pro",
+      "type": "text",
+      "box": {
+        "w": 34,
+        "h": 24
+      },
+      "name": "Pro",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.container-5.text-8.pro",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "Pro",
+      "textGrow": "wh"
+    },
+    "text-8": {
+      "id": "1237:2289",
+      "el": "text-8",
+      "type": "frame",
+      "box": {
+        "w": 34,
+        "h": 24
+      },
+      "name": "Text",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.container-5.text-8",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "children": [
+        "pro"
+      ]
+    },
+    "most-popular": {
+      "id": "1237:2292",
+      "el": "most-popular",
+      "type": "text",
+      "box": {
+        "w": 126,
+        "h": 24
+      },
+      "name": "Most popular",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.container-5.text-9.most-popular",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c1",
+      "text": "$t5",
+      "chars": "Most popular",
+      "textGrow": "wh"
+    },
+    "text-9": {
+      "id": "1237:2291",
+      "el": "text-9",
+      "type": "frame",
+      "box": {
+        "w": 158,
+        "h": 36
+      },
+      "name": "Text",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.container-5.text-9",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l5",
+      "fill": "$c3",
+      "radius": "$r2",
+      "children": [
+        "most-popular"
+      ]
+    },
+    "container-5": {
+      "id": "1237:2288",
+      "el": "container-5",
+      "type": "frame",
+      "box": {
+        "w": 415,
+        "h": 36
+      },
+      "name": "Container",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.container-5",
+      "sizing": {
+        "h": "hug"
+      },
+      "layout": "$l13",
+      "inheritedFill": "$c1",
+      "children": [
+        "text-8",
+        "text-9"
+      ]
+    },
+    "rp-49k": {
+      "id": "1237:2296",
+      "el": "rp-49k",
+      "type": "text",
+      "box": {
+        "w": 117,
+        "h": 40
+      },
+      "name": "Rp 49k",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.container-margin-4.container-6.text-10.rp-49k",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t6",
+      "chars": "Rp 49k",
+      "textGrow": "wh"
+    },
+    "text-10": {
+      "id": "1237:2295",
+      "el": "text-10",
+      "type": "frame",
+      "box": {
+        "w": 117,
+        "h": 40
+      },
+      "name": "Text",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.container-margin-4.container-6.text-10",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "children": [
+        "rp-49k"
+      ]
+    },
+    "month": {
+      "id": "1237:2298",
+      "el": "month",
+      "type": "text",
+      "box": {
+        "w": 53,
+        "h": 24
+      },
+      "name": "/month",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.container-margin-4.container-6.text-11.month",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t7",
+      "chars": "/month",
+      "textGrow": "wh"
+    },
+    "text-11": {
+      "id": "1237:2297",
+      "el": "text-11",
+      "type": "frame",
+      "box": {
+        "w": 53,
+        "h": 30
+      },
+      "name": "Text",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.container-margin-4.container-6.text-11",
+      "layout": "$l15",
+      "inheritedFill": "$c1",
+      "children": [
+        "month"
+      ]
+    },
+    "container-6": {
+      "id": "1237:2294",
+      "el": "container-6",
+      "type": "frame",
+      "box": {
+        "w": 415,
+        "h": 40
+      },
+      "name": "Container",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.container-margin-4.container-6",
+      "sizing": {
+        "h": "hug"
+      },
+      "layout": "$l14",
+      "inheritedFill": "$c1",
+      "children": [
+        "text-10",
+        "text-11"
+      ]
+    },
+    "container-margin-4": {
+      "id": "1237:2293",
+      "el": "container-margin-4",
+      "type": "frame",
+      "box": {
+        "w": 414,
+        "h": 64
+      },
+      "name": "Container:margin",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.container-margin-4",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill",
+        "h": "hug"
+      },
+      "layout": "$l6",
+      "inheritedFill": "$c1",
+      "children": [
+        "container-6"
+      ]
+    },
+    "rp-470k-year-save-20": {
+      "id": "1237:2300",
+      "el": "rp-470k-year-save-20",
+      "type": "text",
+      "box": {
+        "w": 199,
+        "h": 24
+      },
+      "name": "Rp 470k / year — save 20%",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.paragraph-2.rp-470k-year-save-20",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t7",
+      "chars": "Rp 470k / year — save 20%",
+      "textGrow": "wh"
+    },
+    "paragraph-2": {
+      "id": "1237:2299",
+      "el": "paragraph-2",
+      "type": "frame",
+      "box": {
+        "w": 415,
+        "h": 36
+      },
+      "name": "Paragraph",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.paragraph-2",
+      "layout": "$l8",
+      "inheritedFill": "$c1",
+      "children": [
+        "rp-470k-year-save-20"
+      ]
+    },
+    "container-7": {
+      "id": "1237:2302",
+      "el": "container-7",
+      "type": "frame",
+      "box": {
+        "w": 415,
+        "h": 1
+      },
+      "name": "Container",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.container-margin-5.container-7",
+      "fill": "$c6"
+    },
+    "container-margin-5": {
+      "id": "1237:2301",
+      "el": "container-margin-5",
+      "type": "frame",
+      "box": {
+        "w": 415,
+        "h": 29
+      },
+      "name": "Container:margin",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.container-margin-5",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l9",
+      "inheritedFill": "$c1",
+      "children": [
+        "container-7"
+      ]
+    },
+    "vector-6": {
+      "id": "1237:2307",
+      "el": "vector-6",
+      "type": "vector",
+      "box": {
+        "w": 9,
+        "h": 9
+      },
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-5.check-5.icon-5.vector-6",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "iconHint": "Check",
+      "stroke": "$c3",
+      "strokeW": 0.58,
+      "strokeAlign": "center",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "icon-5": {
+      "id": "1237:2306",
+      "el": "icon-5",
+      "type": "frame",
+      "box": {
+        "w": 10,
+        "h": 10
+      },
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-5.check-5.icon-5",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill"
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "children": [
+        "vector-6"
+      ]
+    },
+    "check-5": {
+      "id": "1237:2305",
+      "el": "check-5",
+      "type": "frame",
+      "box": {
+        "w": 10,
+        "h": 17
+      },
+      "name": "Check",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-5.check-5",
+      "layout": "$l12",
+      "inheritedFill": "$c1",
+      "children": [
+        "icon-5"
+      ]
+    },
+    "everything-in-starter-plus": {
+      "id": "1237:2309",
+      "el": "everything-in-starter-plus",
+      "type": "text",
+      "box": {
+        "w": 189,
+        "h": 23
+      },
+      "name": "Everything in Starter, plus:",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-5.text-12.everything-in-starter-plus",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t8",
+      "chars": "Everything in Starter, plus:",
+      "textGrow": "wh"
+    },
+    "text-12": {
+      "id": "1237:2308",
+      "el": "text-12",
+      "type": "frame",
+      "box": {
+        "w": 189,
+        "h": 23
+      },
+      "name": "Text",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-5.text-12",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "children": [
+        "everything-in-starter-plus"
+      ]
+    },
+    "feature-5": {
+      "id": "1237:2304",
+      "el": "feature-5",
+      "type": "frame",
+      "box": {
+        "w": 415,
+        "h": 23
+      },
+      "name": "Feature",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-5",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill",
+        "h": "hug"
+      },
+      "layout": "$l11",
+      "inheritedFill": "$c1",
+      "children": [
+        "check-5",
+        "text-12"
+      ]
+    },
+    "vector-7": {
+      "id": "1237:2313",
+      "el": "vector-7",
+      "type": "vector",
+      "box": {
+        "w": 9,
+        "h": 9
+      },
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-6.check-6.icon-6.vector-7",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "iconHint": "Check",
+      "stroke": "$c3",
+      "strokeW": 0.58,
+      "strokeAlign": "center",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "icon-6": {
+      "id": "1237:2312",
+      "el": "icon-6",
+      "type": "frame",
+      "box": {
+        "w": 10,
+        "h": 10
+      },
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-6.check-6.icon-6",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill"
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "children": [
+        "vector-7"
+      ]
+    },
+    "check-6": {
+      "id": "1237:2311",
+      "el": "check-6",
+      "type": "frame",
+      "box": {
+        "w": 10,
+        "h": 17
+      },
+      "name": "Check",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-6.check-6",
+      "layout": "$l12",
+      "inheritedFill": "$c1",
+      "children": [
+        "icon-6"
+      ]
+    },
+    "unlimited-wardrobe-items": {
+      "id": "1237:2315",
+      "el": "unlimited-wardrobe-items",
+      "type": "text",
+      "box": {
+        "w": 185,
+        "h": 23
+      },
+      "name": "Unlimited wardrobe items",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-6.text-13.unlimited-wardrobe-items",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t8",
+      "chars": "Unlimited wardrobe items",
+      "textGrow": "wh"
+    },
+    "text-13": {
+      "id": "1237:2314",
+      "el": "text-13",
+      "type": "frame",
+      "box": {
+        "w": 185,
+        "h": 23
+      },
+      "name": "Text",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-6.text-13",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "children": [
+        "unlimited-wardrobe-items"
+      ]
+    },
+    "feature-6": {
+      "id": "1237:2310",
+      "el": "feature-6",
+      "type": "frame",
+      "box": {
+        "w": 415,
+        "h": 23
+      },
+      "name": "Feature",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-6",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill",
+        "h": "hug"
+      },
+      "layout": "$l11",
+      "inheritedFill": "$c1",
+      "children": [
+        "check-6",
+        "text-13"
+      ]
+    },
+    "vector-8": {
+      "id": "1237:2319",
+      "el": "vector-8",
+      "type": "vector",
+      "box": {
+        "w": 9,
+        "h": 9
+      },
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-7.check-7.icon-7.vector-8",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "iconHint": "Check",
+      "stroke": "$c3",
+      "strokeW": 0.58,
+      "strokeAlign": "center",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "icon-7": {
+      "id": "1237:2318",
+      "el": "icon-7",
+      "type": "frame",
+      "box": {
+        "w": 10,
+        "h": 10
+      },
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-7.check-7.icon-7",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill"
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "children": [
+        "vector-8"
+      ]
+    },
+    "check-7": {
+      "id": "1237:2317",
+      "el": "check-7",
+      "type": "frame",
+      "box": {
+        "w": 10,
+        "h": 17
+      },
+      "name": "Check",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-7.check-7",
+      "layout": "$l12",
+      "inheritedFill": "$c1",
+      "children": [
+        "icon-7"
+      ]
+    },
+    "unlimited-outfit-logs": {
+      "id": "1237:2321",
+      "el": "unlimited-outfit-logs",
+      "type": "text",
+      "box": {
+        "w": 147,
+        "h": 23
+      },
+      "name": "Unlimited outfit logs",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-7.text-14.unlimited-outfit-logs",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t8",
+      "chars": "Unlimited outfit logs",
+      "textGrow": "wh"
+    },
+    "text-14": {
+      "id": "1237:2320",
+      "el": "text-14",
+      "type": "frame",
+      "box": {
+        "w": 147,
+        "h": 23
+      },
+      "name": "Text",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-7.text-14",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "children": [
+        "unlimited-outfit-logs"
+      ]
+    },
+    "feature-7": {
+      "id": "1237:2316",
+      "el": "feature-7",
+      "type": "frame",
+      "box": {
+        "w": 415,
+        "h": 23
+      },
+      "name": "Feature",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-7",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill",
+        "h": "hug"
+      },
+      "layout": "$l11",
+      "inheritedFill": "$c1",
+      "children": [
+        "check-7",
+        "text-14"
+      ]
+    },
+    "vector-9": {
+      "id": "1237:2325",
+      "el": "vector-9",
+      "type": "vector",
+      "box": {
+        "w": 9,
+        "h": 9
+      },
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-8.check-8.icon-8.vector-9",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "iconHint": "Check",
+      "stroke": "$c3",
+      "strokeW": 0.58,
+      "strokeAlign": "center",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "icon-8": {
+      "id": "1237:2324",
+      "el": "icon-8",
+      "type": "frame",
+      "box": {
+        "w": 10,
+        "h": 10
+      },
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-8.check-8.icon-8",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill"
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "children": [
+        "vector-9"
+      ]
+    },
+    "check-8": {
+      "id": "1237:2323",
+      "el": "check-8",
+      "type": "frame",
+      "box": {
+        "w": 10,
+        "h": 17
+      },
+      "name": "Check",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-8.check-8",
+      "layout": "$l12",
+      "inheritedFill": "$c1",
+      "children": [
+        "icon-8"
+      ]
+    },
+    "weekly-style-recap": {
+      "id": "1237:2327",
+      "el": "weekly-style-recap",
+      "type": "text",
+      "box": {
+        "w": 135,
+        "h": 23
+      },
+      "name": "Weekly style recap",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-8.text-15.weekly-style-recap",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t8",
+      "chars": "Weekly style recap",
+      "textGrow": "wh"
+    },
+    "text-15": {
+      "id": "1237:2326",
+      "el": "text-15",
+      "type": "frame",
+      "box": {
+        "w": 135,
+        "h": 23
+      },
+      "name": "Text",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-8.text-15",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "children": [
+        "weekly-style-recap"
+      ]
+    },
+    "feature-8": {
+      "id": "1237:2322",
+      "el": "feature-8",
+      "type": "frame",
+      "box": {
+        "w": 415,
+        "h": 23
+      },
+      "name": "Feature",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-8",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill",
+        "h": "hug"
+      },
+      "layout": "$l11",
+      "inheritedFill": "$c1",
+      "children": [
+        "check-8",
+        "text-15"
+      ]
+    },
+    "vector-10": {
+      "id": "1237:2331",
+      "el": "vector-10",
+      "type": "vector",
+      "box": {
+        "w": 9,
+        "h": 9
+      },
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-9.check-9.icon-9.vector-10",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "iconHint": "Check",
+      "stroke": "$c3",
+      "strokeW": 0.58,
+      "strokeAlign": "center",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "icon-9": {
+      "id": "1237:2330",
+      "el": "icon-9",
+      "type": "frame",
+      "box": {
+        "w": 10,
+        "h": 10
+      },
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-9.check-9.icon-9",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill"
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "children": [
+        "vector-10"
+      ]
+    },
+    "check-9": {
+      "id": "1237:2329",
+      "el": "check-9",
+      "type": "frame",
+      "box": {
+        "w": 10,
+        "h": 17
+      },
+      "name": "Check",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-9.check-9",
+      "layout": "$l12",
+      "inheritedFill": "$c1",
+      "children": [
+        "icon-9"
+      ]
+    },
+    "wear-insights-and-analytics": {
+      "id": "1237:2333",
+      "el": "wear-insights-and-analytics",
+      "type": "text",
+      "box": {
+        "w": 194,
+        "h": 23
+      },
+      "name": "Wear insights and analytics",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-9.text-16.wear-insights-and-analytics",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t8",
+      "chars": "Wear insights and analytics",
+      "textGrow": "wh"
+    },
+    "text-16": {
+      "id": "1237:2332",
+      "el": "text-16",
+      "type": "frame",
+      "box": {
+        "w": 194,
+        "h": 23
+      },
+      "name": "Text",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-9.text-16",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "children": [
+        "wear-insights-and-analytics"
+      ]
+    },
+    "feature-9": {
+      "id": "1237:2328",
+      "el": "feature-9",
+      "type": "frame",
+      "box": {
+        "w": 415,
+        "h": 23
+      },
+      "name": "Feature",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-9",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill",
+        "h": "hug"
+      },
+      "layout": "$l11",
+      "inheritedFill": "$c1",
+      "children": [
+        "check-9",
+        "text-16"
+      ]
+    },
+    "vector-11": {
+      "id": "1237:2337",
+      "el": "vector-11",
+      "type": "vector",
+      "box": {
+        "w": 9,
+        "h": 9
+      },
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-10.check-10.icon-10.vector-11",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "iconHint": "Check",
+      "stroke": "$c3",
+      "strokeW": 0.58,
+      "strokeAlign": "center",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "icon-10": {
+      "id": "1237:2336",
+      "el": "icon-10",
+      "type": "frame",
+      "box": {
+        "w": 10,
+        "h": 10
+      },
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-10.check-10.icon-10",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill"
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "children": [
+        "vector-11"
+      ]
+    },
+    "check-10": {
+      "id": "1237:2335",
+      "el": "check-10",
+      "type": "frame",
+      "box": {
+        "w": 10,
+        "h": 17
+      },
+      "name": "Check",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-10.check-10",
+      "layout": "$l12",
+      "inheritedFill": "$c1",
+      "children": [
+        "icon-10"
+      ]
+    },
+    "priority-processing": {
+      "id": "1237:2339",
+      "el": "priority-processing",
+      "type": "text",
+      "box": {
+        "w": 134,
+        "h": 23
+      },
+      "name": "Priority processing",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-10.text-17.priority-processing",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t8",
+      "chars": "Priority processing",
+      "textGrow": "wh"
+    },
+    "text-17": {
+      "id": "1237:2338",
+      "el": "text-17",
+      "type": "frame",
+      "box": {
+        "w": 134,
+        "h": 23
+      },
+      "name": "Text",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-10.text-17",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "children": [
+        "priority-processing"
+      ]
+    },
+    "feature-10": {
+      "id": "1237:2334",
+      "el": "feature-10",
+      "type": "frame",
+      "box": {
+        "w": 415,
+        "h": 23
+      },
+      "name": "Feature",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-10",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill",
+        "h": "hug"
+      },
+      "layout": "$l11",
+      "inheritedFill": "$c1",
+      "children": [
+        "check-10",
+        "text-17"
+      ]
+    },
+    "vector-12": {
+      "id": "1237:2343",
+      "el": "vector-12",
+      "type": "vector",
+      "box": {
+        "w": 9,
+        "h": 9
+      },
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-11.check-11.icon-11.vector-12",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "iconHint": "Check",
+      "stroke": "$c3",
+      "strokeW": 0.58,
+      "strokeAlign": "center",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "icon-11": {
+      "id": "1237:2342",
+      "el": "icon-11",
+      "type": "frame",
+      "box": {
+        "w": 10,
+        "h": 10
+      },
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-11.check-11.icon-11",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill"
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "children": [
+        "vector-12"
+      ]
+    },
+    "check-11": {
+      "id": "1237:2341",
+      "el": "check-11",
+      "type": "frame",
+      "box": {
+        "w": 10,
+        "h": 17
+      },
+      "name": "Check",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-11.check-11",
+      "layout": "$l12",
+      "inheritedFill": "$c1",
+      "children": [
+        "icon-11"
+      ]
+    },
+    "export-your-wardrobe-data": {
+      "id": "1237:2345",
+      "el": "export-your-wardrobe-data",
+      "type": "text",
+      "box": {
+        "w": 191,
+        "h": 23
+      },
+      "name": "Export your wardrobe data",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-11.text-18.export-your-wardrobe-data",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t8",
+      "chars": "Export your wardrobe data",
+      "textGrow": "wh"
+    },
+    "text-18": {
+      "id": "1237:2344",
+      "el": "text-18",
+      "type": "frame",
+      "box": {
+        "w": 191,
+        "h": 23
+      },
+      "name": "Text",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-11.text-18",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "children": [
+        "export-your-wardrobe-data"
+      ]
+    },
+    "feature-11": {
+      "id": "1237:2340",
+      "el": "feature-11",
+      "type": "frame",
+      "box": {
+        "w": 415,
+        "h": 23
+      },
+      "name": "Feature",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2.feature-11",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill",
+        "h": "hug"
+      },
+      "layout": "$l11",
+      "inheritedFill": "$c1",
+      "children": [
+        "check-11",
+        "text-18"
+      ]
+    },
+    "list-2": {
+      "id": "1237:2303",
+      "el": "list-2",
+      "type": "frame",
+      "box": {
+        "w": 415,
+        "h": 309
+      },
+      "name": "List",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.list-2",
+      "layout": "$l10",
+      "inheritedFill": "$c1",
+      "children": [
+        "feature-5",
+        "feature-6",
+        "feature-7",
+        "feature-8",
+        "feature-9",
+        "feature-10",
+        "feature-11"
+      ]
+    },
+    "upgrade-to-pro": {
+      "id": "1237:2348",
+      "el": "upgrade-to-pro",
+      "type": "text",
+      "box": {
+        "w": 148,
+        "h": 24
+      },
+      "name": "Upgrade to Pro",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.container-8.button.upgrade-to-pro",
+      "pos": {
+        "x": 133,
+        "y": 15
+      },
+      "fill": "$c1",
+      "text": "$t4",
+      "chars": "Upgrade to Pro",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "button": {
+      "id": "1237:2347",
+      "el": "button",
+      "type": "frame",
+      "box": {
+        "w": 415,
+        "h": 56
+      },
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.container-8.button",
+      "pos": {
+        "x": 0,
+        "y": 32
+      },
+      "fill": "$c3",
+      "radius": "$r3",
+      "shadow": "$s1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "upgrade-to-pro"
+      ]
+    },
+    "container-8": {
+      "id": "1237:2346",
+      "el": "container-8",
+      "type": "frame",
+      "box": {
+        "w": 414,
+        "h": 88
+      },
+      "name": "Container",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2.container-8",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill"
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "button"
+      ]
+    },
+    "section-2": {
+      "id": "1237:2287",
+      "el": "section-2",
+      "type": "frame",
+      "box": {
+        "w": 480,
+        "h": 623
+      },
+      "name": "Section",
+      "path": "d-4-5-5-pricing.container-margin.container.section-2",
+      "pos": {
+        "x": 512,
+        "y": 0
+      },
+      "grow": 1,
+      "sizing": {
+        "w": "fill"
+      },
+      "layout": "$l3",
+      "fill": "$c1",
+      "stroke": "$c6",
+      "strokeW": 0.76,
+      "strokeAlign": "inside",
+      "radius": "$r1",
+      "children": [
+        "container-5",
+        "container-margin-4",
+        "paragraph-2",
+        "container-margin-5",
+        "list-2",
+        "container-8"
+      ]
+    },
+    "container": {
+      "id": "1237:2247",
+      "el": "container",
+      "type": "frame",
+      "box": {
+        "w": 992,
+        "h": 623
+      },
+      "name": "Container",
+      "path": "d-4-5-5-pricing.container-margin.container",
+      "sizing": {
+        "h": "hug"
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "children": [
+        "section",
+        "section-2"
+      ]
+    },
+    "container-margin": {
+      "id": "1237:2246",
+      "el": "container-margin",
+      "type": "frame",
+      "box": {
+        "w": 992,
+        "h": 623
+      },
+      "name": "Container:margin",
+      "path": "d-4-5-5-pricing.container-margin",
+      "pos": {
+        "x": 177,
+        "y": 390
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "container"
+      ]
+    },
+    "d-4-5-5-pricing": {
+      "id": "1237:2015",
+      "el": "d-4-5-5-pricing",
+      "type": "frame",
+      "box": {
+        "w": 1440,
+        "h": 1137
+      },
+      "name": "D.4.5.5 Pricing",
+      "fill": "$c1",
+      "clip": true,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "group-96",
+        "pricing",
+        "union-2",
+        "see-what-you-re-on-and-what-s-waiting-wh",
+        "profile-settings-pricing",
+        "container-margin"
+      ]
+    }
+  },
+  "meta": {
+    "nodeCount": 127,
+    "estTokens": 9684,
+    "depthUsed": 12
+  },
+  "next": "Read `tokens` for the design system, then build the UI from `nodes`. Tag each rendered element data-plumb-id=\"<el>\". A node with a `more` count has that many children not yet included — call plumb_node again on that node's `id` to expand them.",
+  "source": "plugin",
+  "node": "D.4.5.5 Pricing"
+}

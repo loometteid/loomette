@@ -26,8 +26,10 @@ export default async function ConnectedAccountsPage() {
   const dehydratedQueryClient = dehydrate(queryClient);
 
   return (
-    <Suspense fallback={<ConnectedAccountsFallback />}>
-      <ConnectedAccountsView initialUser={user} />
-    </Suspense>
+    <HydrationBoundary state={dehydratedQueryClient}>
+      <Suspense fallback={<ConnectedAccountsFallback />}>
+        <ConnectedAccountsView initialUser={user} />
+      </Suspense>
+    </HydrationBoundary>
   );
 }

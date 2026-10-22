@@ -1,0 +1,1154 @@
+{
+  "file": {
+    "name": "Loomette.id",
+    "version": "plugin-1792667148905"
+  },
+  "root": "d-4-2-3-trip-packing-list",
+  "tokens": {
+    "color": {
+      "$c1": "#fafaf7",
+      "$c2": "#ffffff1a",
+      "$c3": "#444440",
+      "$c4": "#d9d9d9",
+      "$c5": "#000000",
+      "$c6": "image",
+      "$c7": "#f2ede5",
+      "$c8": "#c9c3b7"
+    },
+    "text": {
+      "$t1": "400 24px Avenir Next",
+      "$t2": "400 16px Figtree",
+      "$t3": "400 64px Source Serif Pro",
+      "$t4": "400 12px Figtree",
+      "$t5": "400 24px Figtree",
+      "$t6": "400 40px Figtree",
+      "$t7": "400 20px Figtree"
+    },
+    "radius": {
+      "$r1": 16,
+      "$r2": 8,
+      "$r3": 4
+    },
+    "shadow": {},
+    "layout": {
+      "$l1": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          16,
+          16,
+          16,
+          16
+        ]
+      },
+      "$l2": {
+        "flow": "col",
+        "gap": 32,
+        "pad": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l3": {
+        "flow": "col",
+        "gap": 20,
+        "pad": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "vector": {
+      "$v1": "M12.7988 11.4121 L19.9199 3.3418 L21.0518 4.62402 L13.9307 12.6934 L24 12.6934 L24 14.5068 L13.9316 14.5068 L21.0508 22.5752 L19.9189 23.8574 L12.7988 15.7871 L12.7988 27.2002 L11.1992 27.2002 L11.1992 15.79 L4.08105 23.8574 L2.94922 22.5752 L10.0674 14.5068 L0 14.5068 L0 12.6934 L10.0693 12.6934 L2.94922 4.62402 L4.08008 3.3418 L11.1992 11.4092 L11.1992 0 L12.7988 0 L12.7988 11.4121 Z",
+      "$v2": "M12.5303 0.21967 C12.8232 0.512563 12.8232 0.987437 12.5303 1.28033 L5.56066 8.25 C4.97487 8.83579 4.02513 8.83579 3.43934 8.25 L0.21967 5.03033 C-0.0732233 4.73744 -0.0732233 4.26256 0.21967 3.96967 C0.512563 3.67678 0.987437 3.67678 1.28033 3.96967 L4.5 7.18934 L11.4697 0.21967 C11.7626 -0.0732233 12.2374 -0.0732233 12.5303 0.21967 Z"
+    },
+    "props": {
+      "$p1": {
+        "size": "24"
+      }
+    },
+    "meta": {
+      "counts": {
+        "$c1": 3,
+        "$c3": 21,
+        "$c4": 4,
+        "$t1": 6,
+        "$p1": 3,
+        "$t2": 3,
+        "$c7": 2,
+        "$t5": 3,
+        "$c8": 2,
+        "$r3": 4,
+        "$t7": 3
+      }
+    }
+  },
+  "nodes": {
+    "rectangle-15": {
+      "id": "1240:3239",
+      "el": "rectangle-15",
+      "type": "rect",
+      "box": {
+        "w": 1465,
+        "h": 136
+      },
+      "path": "d-4-2-3-trip-packing-list.group-96.rectangle-15",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16": {
+      "id": "1240:3241",
+      "el": "rectangle-16",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 27
+      },
+      "path": "d-4-2-3-trip-packing-list.group-96.union.rectangle-16",
+      "pos": {
+        "x": 11,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17": {
+      "id": "1240:3242",
+      "el": "rectangle-17",
+      "type": "rect",
+      "box": {
+        "w": 18,
+        "h": 21
+      },
+      "path": "d-4-2-3-trip-packing-list.group-96.union.rectangle-17",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 2783,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19": {
+      "id": "1240:3243",
+      "el": "rectangle-19",
+      "type": "rect",
+      "box": {
+        "w": 18,
+        "h": 21
+      },
+      "path": "d-4-2-3-trip-packing-list.group-96.union.rectangle-19",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 7530,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18": {
+      "id": "1240:3244",
+      "el": "rectangle-18",
+      "type": "rect",
+      "box": {
+        "w": 24,
+        "h": 2
+      },
+      "path": "d-4-2-3-trip-packing-list.group-96.union.rectangle-18",
+      "pos": {
+        "x": 0,
+        "y": 13
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union": {
+      "id": "1240:3240",
+      "el": "union",
+      "type": "bool",
+      "box": {
+        "w": 24,
+        "h": 27
+      },
+      "path": "d-4-2-3-trip-packing-list.group-96.union",
+      "pos": {
+        "x": 75,
+        "y": 54
+      },
+      "fill": "$c3",
+      "iconHint": "loomette",
+      "vectorPath": "$v1",
+      "children": [
+        "rectangle-16",
+        "rectangle-17",
+        "rectangle-19",
+        "rectangle-18"
+      ]
+    },
+    "loomette": {
+      "id": "1240:3245",
+      "el": "loomette",
+      "type": "text",
+      "box": {
+        "w": 99,
+        "h": 37
+      },
+      "name": "loomette",
+      "path": "d-4-2-3-trip-packing-list.group-96.loomette",
+      "pos": {
+        "x": 115,
+        "y": 50
+      },
+      "fill": "$c5",
+      "text": "$t1",
+      "chars": "loomette",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "home": {
+      "id": "1240:3246",
+      "el": "home",
+      "type": "text",
+      "box": {
+        "w": 61,
+        "h": 37
+      },
+      "name": "Home",
+      "path": "d-4-2-3-trip-packing-list.group-96.home",
+      "pos": {
+        "x": 583,
+        "y": 50
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "Home",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "calendar": {
+      "id": "1240:3247",
+      "el": "calendar",
+      "type": "text",
+      "box": {
+        "w": 103,
+        "h": 37
+      },
+      "name": "calendar",
+      "path": "d-4-2-3-trip-packing-list.group-96.calendar",
+      "pos": {
+        "x": 680,
+        "y": 50
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "calendar",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "wardrobe": {
+      "id": "1240:3248",
+      "el": "wardrobe",
+      "type": "text",
+      "box": {
+        "w": 110,
+        "h": 37
+      },
+      "name": "wardrobe",
+      "path": "d-4-2-3-trip-packing-list.group-96.wardrobe",
+      "pos": {
+        "x": 819,
+        "y": 50
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "wardrobe",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "gevyndo": {
+      "id": "1240:3250",
+      "el": "gevyndo",
+      "type": "text",
+      "box": {
+        "w": 96,
+        "h": 37
+      },
+      "name": "gevyndo",
+      "path": "d-4-2-3-trip-packing-list.group-96.group-254.gevyndo",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "gevyndo",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector": {
+      "id": "I1240:3251;3:3637",
+      "el": "vector",
+      "type": "vector",
+      "box": {
+        "w": 16,
+        "h": 22
+      },
+      "path": "d-4-2-3-trip-packing-list.group-96.group-254.user.vector",
+      "pos": {
+        "x": 4,
+        "y": 3
+      },
+      "fill": "$c3",
+      "iconHint": "gevyndo",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "user": {
+      "id": "1240:3251",
+      "el": "user",
+      "type": "instance",
+      "box": {
+        "w": 24,
+        "h": 27
+      },
+      "name": "user",
+      "path": "d-4-2-3-trip-packing-list.group-96.group-254.user",
+      "pos": {
+        "x": 112,
+        "y": 5
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector"
+      ]
+    },
+    "group-254": {
+      "id": "1240:3249",
+      "el": "group-254",
+      "type": "group",
+      "box": {
+        "w": 136,
+        "h": 37
+      },
+      "path": "d-4-2-3-trip-packing-list.group-96.group-254",
+      "pos": {
+        "x": 1251,
+        "y": 50
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "gevyndo",
+        "user"
+      ]
+    },
+    "group-96": {
+      "id": "1240:3238",
+      "el": "group-96",
+      "type": "group",
+      "box": {
+        "w": 1465,
+        "h": 136
+      },
+      "path": "d-4-2-3-trip-packing-list.group-96",
+      "pos": {
+        "x": -11,
+        "y": -16
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-15",
+        "union",
+        "loomette",
+        "home",
+        "calendar",
+        "wardrobe",
+        "group-254"
+      ]
+    },
+    "image-removebg-preview-11-1": {
+      "id": "1240:3254",
+      "el": "image-removebg-preview-11-1",
+      "type": "rect",
+      "box": {
+        "w": 257,
+        "h": 361
+      },
+      "name": "image-removebg-preview (11) 1",
+      "path": "d-4-2-3-trip-packing-list.group-339.group-20.image-removebg-preview-11-1",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "assetId": "bb071ae72883175e0f5994471c5c9538d27b0caa",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "bb071ae72883175e0f5994471c5c9538d27b0caa",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-20": {
+      "id": "1240:3253",
+      "el": "group-20",
+      "type": "group",
+      "box": {
+        "w": 257,
+        "h": 361
+      },
+      "path": "d-4-2-3-trip-packing-list.group-339.group-20",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "image-removebg-preview-11-1"
+      ]
+    },
+    "may-2026": {
+      "id": "1240:3549",
+      "el": "may-2026",
+      "type": "text",
+      "box": {
+        "w": 94,
+        "h": 33
+      },
+      "name": "May 2026",
+      "path": "d-4-2-3-trip-packing-list.group-339.group-338.may-2026",
+      "pos": {
+        "x": 33,
+        "y": 162
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "May 2026",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "summer-solo-travel": {
+      "id": "1240:3550",
+      "el": "summer-solo-travel",
+      "type": "text",
+      "box": {
+        "w": 162,
+        "h": 19
+      },
+      "name": "Summer ・ Solo Travel",
+      "path": "d-4-2-3-trip-packing-list.group-339.group-338.summer-solo-travel",
+      "pos": {
+        "x": 0,
+        "y": 200
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "Summer ・ Solo Travel",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "japan": {
+      "id": "1240:3551",
+      "el": "japan",
+      "type": "text",
+      "box": {
+        "w": 157,
+        "h": 80
+      },
+      "name": "Japan",
+      "path": "d-4-2-3-trip-packing-list.group-339.group-338.japan",
+      "pos": {
+        "x": 2,
+        "y": 70
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "Japan",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-2": {
+      "id": "I1240:3553;4:174",
+      "el": "vector-2",
+      "type": "vector",
+      "box": {
+        "w": 12,
+        "h": 13
+      },
+      "path": "d-4-2-3-trip-packing-list.group-339.group-338.frame-8.edit.vector-2",
+      "pos": {
+        "x": 2,
+        "y": 2
+      },
+      "fill": "$c3",
+      "iconHint": "edit details",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "edit": {
+      "id": "1240:3553",
+      "el": "edit",
+      "type": "instance",
+      "box": {
+        "w": 16,
+        "h": 16
+      },
+      "name": "edit",
+      "path": "d-4-2-3-trip-packing-list.group-339.group-338.frame-8.edit",
+      "inheritedFill": "$c7",
+      "clip": true,
+      "props": "$p1",
+      "children": [
+        "vector-2"
+      ]
+    },
+    "edit-details": {
+      "id": "1240:3554",
+      "el": "edit-details",
+      "type": "text",
+      "box": {
+        "w": 75,
+        "h": 14
+      },
+      "name": "edit details",
+      "path": "d-4-2-3-trip-packing-list.group-339.group-338.frame-8.edit-details",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "edit details",
+      "textGrow": "wh"
+    },
+    "frame-8": {
+      "id": "1240:3552",
+      "el": "frame-8",
+      "type": "frame",
+      "box": {
+        "w": 133,
+        "h": 48
+      },
+      "path": "d-4-2-3-trip-packing-list.group-339.group-338.frame-8",
+      "pos": {
+        "x": 14,
+        "y": 0
+      },
+      "layout": "$l1",
+      "fill": "$c7",
+      "radius": "$r1",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "edit",
+        "edit-details"
+      ]
+    },
+    "group-338": {
+      "id": "1240:3548",
+      "el": "group-338",
+      "type": "group",
+      "box": {
+        "w": 162,
+        "h": 219
+      },
+      "path": "d-4-2-3-trip-packing-list.group-339.group-338",
+      "pos": {
+        "x": 305,
+        "y": 71
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "may-2026",
+        "summer-solo-travel",
+        "japan",
+        "frame-8"
+      ]
+    },
+    "group-339": {
+      "id": "1240:3252",
+      "el": "group-339",
+      "type": "group",
+      "box": {
+        "w": 467,
+        "h": 361
+      },
+      "path": "d-4-2-3-trip-packing-list.group-339",
+      "pos": {
+        "x": 487,
+        "y": 200
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-20",
+        "group-338"
+      ]
+    },
+    "rectangle-118": {
+      "id": "1240:3262",
+      "el": "rectangle-118",
+      "type": "rect",
+      "box": {
+        "w": 127,
+        "h": 47
+      },
+      "path": "d-4-2-3-trip-packing-list.group-340.rectangle-118",
+      "pos": {
+        "x": 153,
+        "y": 0
+      },
+      "fill": "$c7",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "outfit-plan": {
+      "id": "1240:3263",
+      "el": "outfit-plan",
+      "type": "text",
+      "box": {
+        "w": 100,
+        "h": 19
+      },
+      "name": "outfit plan",
+      "path": "d-4-2-3-trip-packing-list.group-340.outfit-plan",
+      "pos": {
+        "x": 0,
+        "y": 14
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "outfit plan",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "packing-list": {
+      "id": "1240:3264",
+      "el": "packing-list",
+      "type": "text",
+      "box": {
+        "w": 106,
+        "h": 19
+      },
+      "name": "packing list",
+      "path": "d-4-2-3-trip-packing-list.group-340.packing-list",
+      "pos": {
+        "x": 164,
+        "y": 14
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "packing list",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-340": {
+      "id": "1240:3261",
+      "el": "group-340",
+      "type": "group",
+      "box": {
+        "w": 280,
+        "h": 47
+      },
+      "path": "d-4-2-3-trip-packing-list.group-340",
+      "pos": {
+        "x": 617,
+        "y": 610
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-118",
+        "outfit-plan",
+        "packing-list"
+      ]
+    },
+    "red-cardigan": {
+      "id": "1240:3299",
+      "el": "red-cardigan",
+      "type": "text",
+      "box": {
+        "w": 182,
+        "h": 29
+      },
+      "name": "red cardigan",
+      "path": "d-4-2-3-trip-packing-list.frame-36.frame-35.group-116.red-cardigan",
+      "pos": {
+        "x": 44,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t5",
+      "chars": "red cardigan",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-37": {
+      "id": "1240:3300",
+      "el": "rectangle-37",
+      "type": "rect",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "path": "d-4-2-3-trip-packing-list.frame-36.frame-35.group-116.rectangle-37",
+      "pos": {
+        "x": 0,
+        "y": 2
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c8",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-116": {
+      "id": "1240:3294",
+      "el": "group-116",
+      "type": "group",
+      "box": {
+        "w": 226,
+        "h": 29
+      },
+      "path": "d-4-2-3-trip-packing-list.frame-36.frame-35.group-116",
+      "inheritedFill": "$c1",
+      "children": [
+        "red-cardigan",
+        "rectangle-37"
+      ]
+    },
+    "stripes-blue-blouse": {
+      "id": "1240:3302",
+      "el": "stripes-blue-blouse",
+      "type": "text",
+      "box": {
+        "w": 263,
+        "h": 29
+      },
+      "name": "stripes blue blouse",
+      "path": "d-4-2-3-trip-packing-list.frame-36.frame-35.group-111.stripes-blue-blouse",
+      "pos": {
+        "x": 40,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t5",
+      "chars": "stripes blue blouse",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-38": {
+      "id": "1240:3304",
+      "el": "rectangle-38",
+      "type": "rect",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "path": "d-4-2-3-trip-packing-list.frame-36.frame-35.group-111.group-110.rectangle-38",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "radius": "$r3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-3": {
+      "id": "I1240:3305;3:2694",
+      "el": "vector-3",
+      "type": "vector",
+      "box": {
+        "w": 13,
+        "h": 9
+      },
+      "path": "d-4-2-3-trip-packing-list.frame-36.frame-35.group-111.group-110.done-v.vector-3",
+      "pos": {
+        "x": 2,
+        "y": 5
+      },
+      "fill": "$c1",
+      "iconHint": "done v",
+      "vectorPath": "$v2",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "done-v": {
+      "id": "1240:3305",
+      "el": "done-v",
+      "type": "instance",
+      "box": {
+        "w": 18,
+        "h": 18
+      },
+      "name": "done-v",
+      "path": "d-4-2-3-trip-packing-list.frame-36.frame-35.group-111.group-110.done-v",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector-3"
+      ]
+    },
+    "group-110": {
+      "id": "1240:3303",
+      "el": "group-110",
+      "type": "group",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "path": "d-4-2-3-trip-packing-list.frame-36.frame-35.group-111.group-110",
+      "pos": {
+        "x": 0,
+        "y": 2
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-38",
+        "done-v"
+      ]
+    },
+    "group-111": {
+      "id": "1240:3301",
+      "el": "group-111",
+      "type": "group",
+      "box": {
+        "w": 303,
+        "h": 29
+      },
+      "path": "d-4-2-3-trip-packing-list.frame-36.frame-35.group-111",
+      "inheritedFill": "$c1",
+      "children": [
+        "stripes-blue-blouse",
+        "group-110"
+      ]
+    },
+    "red-cardigan-2": {
+      "id": "1240:3311",
+      "el": "red-cardigan-2",
+      "type": "text",
+      "box": {
+        "w": 182,
+        "h": 29
+      },
+      "name": "red cardigan",
+      "path": "d-4-2-3-trip-packing-list.frame-36.frame-35.group-118.red-cardigan-2",
+      "pos": {
+        "x": 40,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t5",
+      "chars": "red cardigan",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-37-2": {
+      "id": "1240:3312",
+      "el": "rectangle-37-2",
+      "type": "rect",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "path": "d-4-2-3-trip-packing-list.frame-36.frame-35.group-118.rectangle-37-2",
+      "pos": {
+        "x": 0,
+        "y": 2
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c8",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-118": {
+      "id": "1240:3306",
+      "el": "group-118",
+      "type": "group",
+      "box": {
+        "w": 222,
+        "h": 29
+      },
+      "path": "d-4-2-3-trip-packing-list.frame-36.frame-35.group-118",
+      "inheritedFill": "$c1",
+      "children": [
+        "red-cardigan-2",
+        "rectangle-37-2"
+      ]
+    },
+    "frame-35": {
+      "id": "1240:3293",
+      "el": "frame-35",
+      "type": "frame",
+      "box": {
+        "w": 303,
+        "h": 127
+      },
+      "path": "d-4-2-3-trip-packing-list.frame-36.frame-35",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l3",
+      "inheritedFill": "$c1",
+      "children": [
+        "group-116",
+        "group-111",
+        "group-118"
+      ]
+    },
+    "rectangle-37-3": {
+      "id": "1240:3314",
+      "el": "rectangle-37-3",
+      "type": "rect",
+      "box": {
+        "w": 48,
+        "h": 48
+      },
+      "path": "d-4-2-3-trip-packing-list.frame-36.group-119.rectangle-37-3",
+      "pos": {
+        "x": 0,
+        "y": 3
+      },
+      "fill": "$c3",
+      "radius": "$r3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "text": {
+      "id": "1240:3315",
+      "el": "text",
+      "type": "text",
+      "box": {
+        "w": 22,
+        "h": 44
+      },
+      "path": "d-4-2-3-trip-packing-list.frame-36.group-119.text",
+      "pos": {
+        "x": 12,
+        "y": 0
+      },
+      "fill": "$c1",
+      "text": "$t6",
+      "chars": "+",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      }
+    },
+    "group-119": {
+      "id": "1240:3313",
+      "el": "group-119",
+      "type": "group",
+      "box": {
+        "w": 48,
+        "h": 51
+      },
+      "path": "d-4-2-3-trip-packing-list.frame-36.group-119",
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-37-3",
+        "text"
+      ]
+    },
+    "frame-36": {
+      "id": "1240:3292",
+      "el": "frame-36",
+      "type": "frame",
+      "box": {
+        "w": 303,
+        "h": 210
+      },
+      "path": "d-4-2-3-trip-packing-list.frame-36",
+      "pos": {
+        "x": 203,
+        "y": 705
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "frame-35",
+        "group-119"
+      ]
+    },
+    "profile-travel-detail": {
+      "id": "1240:3442",
+      "el": "profile-travel-detail",
+      "type": "text",
+      "box": {
+        "w": 255,
+        "h": 24
+      },
+      "name": "profile > travel detail",
+      "path": "d-4-2-3-trip-packing-list.profile-travel-detail",
+      "pos": {
+        "x": 104,
+        "y": 170
+      },
+      "fill": "$c3",
+      "text": "$t7",
+      "chars": [
+        {
+          "t": "profile",
+          "d": "underline"
+        },
+        {
+          "t": " > travel detail"
+        }
+      ],
+      "textGrow": "h",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "d-4-2-3-trip-packing-list": {
+      "id": "1240:3237",
+      "el": "d-4-2-3-trip-packing-list",
+      "type": "frame",
+      "box": {
+        "w": 1440,
+        "h": 1024
+      },
+      "name": "D.4.2.3 Trip - Packing List",
+      "fill": "$c1",
+      "clip": true,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "group-96",
+        "group-339",
+        "group-340",
+        "frame-36",
+        "profile-travel-detail"
+      ]
+    }
+  },
+  "meta": {
+    "nodeCount": 49,
+    "estTokens": 3655,
+    "depthUsed": 12
+  },
+  "next": "Read `tokens` for the design system, then build the UI from `nodes`. Tag each rendered element data-plumb-id=\"<el>\". A node with a `more` count has that many children not yet included — call plumb_node again on that node's `id` to expand them. This screen has 1 image asset(s) (nodes with `assetId`). Call plumb_assets with this screen's id to download them to disk BEFORE generating HTML — without the real files any <img> will be a placeholder and plumb_verify will flag every image node as asset.missing.",
+  "source": "plugin",
+  "node": "D.4.2.3 Trip - Packing List"
+}

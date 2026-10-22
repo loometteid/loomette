@@ -1,0 +1,2406 @@
+{
+  "file": {
+    "name": "Loomette.id",
+    "version": "plugin-1792667006746"
+  },
+  "root": "d-2-calendar",
+  "tokens": {
+    "color": {
+      "$c1": "#fafaf7",
+      "$c2": "#ffffff1a",
+      "$c3": "#444440",
+      "$c4": "#d9d9d9",
+      "$c5": "#000000",
+      "$c6": "#c9c3b7",
+      "$c7": "#e5487e",
+      "$c8": "image",
+      "$c9": "#f2ede5"
+    },
+    "text": {
+      "$t1": "400 24px Avenir Next",
+      "$t2": "400 48px Source Serif Pro",
+      "$t3": "400 40px Avenir Next",
+      "$t4": "400 20px Avenir Next"
+    },
+    "radius": {
+      "$r1": 8,
+      "$r2": 16
+    },
+    "shadow": {},
+    "layout": {
+      "$l1": {
+        "flow": "row",
+        "gap": 32,
+        "pad": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l2": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          19,
+          32,
+          18,
+          32
+        ]
+      }
+    },
+    "vector": {
+      "$v1": "M12.7988 11.4121 L19.9199 3.3418 L21.0518 4.62402 L13.9307 12.6934 L24 12.6934 L24 14.5068 L13.9316 14.5068 L21.0508 22.5752 L19.9189 23.8574 L12.7988 15.7871 L12.7988 27.2002 L11.1992 27.2002 L11.1992 15.79 L4.08105 23.8574 L2.94922 22.5752 L10.0674 14.5068 L0 14.5068 L0 12.6934 L10.0693 12.6934 L2.94922 4.62402 L4.08008 3.3418 L11.1992 11.4092 L11.1992 0 L12.7988 0 L12.7988 11.4121 Z",
+      "$v2": "M25.0674 20.1348 L39.0078 5.89844 L41.2236 8.16113 L27.2793 22.4004 L47 22.4004 L47 25.6006 L27.2822 25.6006 L41.2246 39.8389 L39.0088 42.1016 L25.0674 27.8633 L25.0674 48 L21.9336 48 L21.9336 27.8604 L7.98926 42.1016 L5.77344 39.8389 L19.7148 25.6006 L0 25.6006 L0 22.4004 L19.7178 22.4004 L5.77539 8.16113 L7.99023 5.89844 L21.9336 20.1377 L21.9336 0 L25.0674 0 L25.0674 20.1348 Z",
+      "$v3": "M10.3536 0.43934 C10.9393 1.02513 10.9393 1.97487 10.3536 2.56066 L3.41421 9.5 L10.3536 16.4393 C10.9393 17.0251 10.9393 17.9749 10.3536 18.5607 C9.76777 19.1464 8.81802 19.1464 8.23223 18.5607 L0.585786 10.9142 C-0.195264 10.1332 -0.19526 8.86683 0.585787 8.08579 L8.23223 0.43934 C8.81802 -0.146447 9.76777 -0.146447 10.3536 0.43934 Z",
+      "$v4": "M0.43934 0.43934 C1.02513 -0.146447 1.97487 -0.146447 2.56066 0.43934 L10.2071 8.08579 C10.9882 8.86683 10.9882 10.1332 10.2071 10.9142 L2.56066 18.5607 C1.97487 19.1464 1.02513 19.1464 0.43934 18.5607 C-0.146447 17.9749 -0.146447 17.0251 0.43934 16.4393 L7.37868 9.5 L0.43934 2.56066 C-0.146447 1.97487 -0.146447 1.02513 0.43934 0.43934 Z"
+    },
+    "props": {
+      "$p1": {
+        "size": "24"
+      },
+      "$p2": {
+        "size": "16"
+      }
+    },
+    "meta": {
+      "counts": {
+        "$c1": 3,
+        "$c3": 84,
+        "$c4": 8,
+        "$t1": 21,
+        "$t3": 2,
+        "$p2": 2,
+        "$c6": 2,
+        "$l1": 2,
+        "$c7": 4,
+        "$t4": 61,
+        "$c8": 10,
+        "$l2": 2,
+        "$r2": 2
+      }
+    }
+  },
+  "nodes": {
+    "10": {
+      "id": "1056:264",
+      "el": "10",
+      "type": "text",
+      "box": {
+        "w": 20,
+        "h": 27
+      },
+      "name": "10",
+      "path": "d-2-calendar.group-280.group-270.10",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "10",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "31": {
+      "id": "1077:288",
+      "el": "31",
+      "type": "text",
+      "box": {
+        "w": 20,
+        "h": 27
+      },
+      "name": "31",
+      "path": "d-2-calendar.group-280.group-273.31",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "31",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-15": {
+      "id": "1046:209",
+      "el": "rectangle-15",
+      "type": "rect",
+      "box": {
+        "w": 1464,
+        "h": 136
+      },
+      "path": "d-2-calendar.group-96.rectangle-15",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16": {
+      "id": "1046:211",
+      "el": "rectangle-16",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 27
+      },
+      "path": "d-2-calendar.group-96.union.rectangle-16",
+      "pos": {
+        "x": 11,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17": {
+      "id": "1046:212",
+      "el": "rectangle-17",
+      "type": "rect",
+      "box": {
+        "w": 18,
+        "h": 21
+      },
+      "path": "d-2-calendar.group-96.union.rectangle-17",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 2783,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19": {
+      "id": "1046:213",
+      "el": "rectangle-19",
+      "type": "rect",
+      "box": {
+        "w": 18,
+        "h": 21
+      },
+      "path": "d-2-calendar.group-96.union.rectangle-19",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 7530,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18": {
+      "id": "1046:214",
+      "el": "rectangle-18",
+      "type": "rect",
+      "box": {
+        "w": 24,
+        "h": 2
+      },
+      "path": "d-2-calendar.group-96.union.rectangle-18",
+      "pos": {
+        "x": 0,
+        "y": 13
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union": {
+      "id": "1046:210",
+      "el": "union",
+      "type": "bool",
+      "box": {
+        "w": 24,
+        "h": 27
+      },
+      "path": "d-2-calendar.group-96.union",
+      "pos": {
+        "x": 75,
+        "y": 54
+      },
+      "fill": "$c3",
+      "iconHint": "loomette",
+      "vectorPath": "$v1",
+      "children": [
+        "rectangle-16",
+        "rectangle-17",
+        "rectangle-19",
+        "rectangle-18"
+      ]
+    },
+    "loomette": {
+      "id": "1046:215",
+      "el": "loomette",
+      "type": "text",
+      "box": {
+        "w": 99,
+        "h": 37
+      },
+      "name": "loomette",
+      "path": "d-2-calendar.group-96.loomette",
+      "pos": {
+        "x": 115,
+        "y": 50
+      },
+      "fill": "$c5",
+      "text": "$t1",
+      "chars": "loomette",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "line-17": {
+      "id": "1046:216",
+      "el": "line-17",
+      "type": "line",
+      "box": {
+        "w": 103,
+        "h": 0
+      },
+      "path": "d-2-calendar.group-96.line-17",
+      "pos": {
+        "x": 680,
+        "y": 92
+      },
+      "stroke": "$c3",
+      "strokeW": 1,
+      "strokeAlign": "center",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "home": {
+      "id": "1046:217",
+      "el": "home",
+      "type": "text",
+      "box": {
+        "w": 61,
+        "h": 37
+      },
+      "name": "Home",
+      "path": "d-2-calendar.group-96.home",
+      "pos": {
+        "x": 583,
+        "y": 50
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "Home",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "calendar": {
+      "id": "1046:218",
+      "el": "calendar",
+      "type": "text",
+      "box": {
+        "w": 103,
+        "h": 37
+      },
+      "name": "calendar",
+      "path": "d-2-calendar.group-96.calendar",
+      "pos": {
+        "x": 680,
+        "y": 50
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "calendar",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "wardrobe": {
+      "id": "1046:219",
+      "el": "wardrobe",
+      "type": "text",
+      "box": {
+        "w": 110,
+        "h": 37
+      },
+      "name": "wardrobe",
+      "path": "d-2-calendar.group-96.wardrobe",
+      "pos": {
+        "x": 819,
+        "y": 50
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "wardrobe",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "gevyndo": {
+      "id": "1046:221",
+      "el": "gevyndo",
+      "type": "text",
+      "box": {
+        "w": 96,
+        "h": 37
+      },
+      "name": "gevyndo",
+      "path": "d-2-calendar.group-96.group-254.gevyndo",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "gevyndo",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector": {
+      "id": "I1046:222;3:3637",
+      "el": "vector",
+      "type": "vector",
+      "box": {
+        "w": 16,
+        "h": 22
+      },
+      "path": "d-2-calendar.group-96.group-254.user.vector",
+      "pos": {
+        "x": 4,
+        "y": 3
+      },
+      "fill": "$c3",
+      "iconHint": "gevyndo",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "user": {
+      "id": "1046:222",
+      "el": "user",
+      "type": "instance",
+      "box": {
+        "w": 24,
+        "h": 27
+      },
+      "name": "user",
+      "path": "d-2-calendar.group-96.group-254.user",
+      "pos": {
+        "x": 112,
+        "y": 5
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector"
+      ]
+    },
+    "group-254": {
+      "id": "1046:220",
+      "el": "group-254",
+      "type": "group",
+      "box": {
+        "w": 136,
+        "h": 37
+      },
+      "path": "d-2-calendar.group-96.group-254",
+      "pos": {
+        "x": 1251,
+        "y": 50
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "gevyndo",
+        "user"
+      ]
+    },
+    "group-96": {
+      "id": "1046:208",
+      "el": "group-96",
+      "type": "group",
+      "box": {
+        "w": 1464,
+        "h": 136
+      },
+      "path": "d-2-calendar.group-96",
+      "pos": {
+        "x": -11,
+        "y": -16
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-15",
+        "union",
+        "loomette",
+        "line-17",
+        "home",
+        "calendar",
+        "wardrobe",
+        "group-254"
+      ]
+    },
+    "rectangle-103": {
+      "id": "1077:302",
+      "el": "rectangle-103",
+      "type": "rect",
+      "box": {
+        "w": 65,
+        "h": 116
+      },
+      "path": "d-2-calendar.rectangle-103",
+      "pos": {
+        "x": 415,
+        "y": 463
+      },
+      "fill": "$c3",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "your-outfit-diary": {
+      "id": "1046:226",
+      "el": "your-outfit-diary",
+      "type": "text",
+      "box": {
+        "w": 334,
+        "h": 60
+      },
+      "name": "Your outfit diary",
+      "path": "d-2-calendar.group-255.your-outfit-diary",
+      "pos": {
+        "x": 71,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "Your outfit diary",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16-2": {
+      "id": "1046:228",
+      "el": "rectangle-16-2",
+      "type": "rect",
+      "box": {
+        "w": 3,
+        "h": 48
+      },
+      "path": "d-2-calendar.group-255.union-2.rectangle-16-2",
+      "pos": {
+        "x": 22,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17-2": {
+      "id": "1046:229",
+      "el": "rectangle-17-2",
+      "type": "rect",
+      "box": {
+        "w": 35,
+        "h": 36
+      },
+      "path": "d-2-calendar.group-255.union-2.rectangle-17-2",
+      "pos": {
+        "x": 6,
+        "y": 6
+      },
+      "fill": "$c4",
+      "rotation": 2613,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19-2": {
+      "id": "1046:230",
+      "el": "rectangle-19-2",
+      "type": "rect",
+      "box": {
+        "w": 35,
+        "h": 36
+      },
+      "path": "d-2-calendar.group-255.union-2.rectangle-19-2",
+      "pos": {
+        "x": 6,
+        "y": 6
+      },
+      "fill": "$c4",
+      "rotation": 7700,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18-2": {
+      "id": "1046:231",
+      "el": "rectangle-18-2",
+      "type": "rect",
+      "box": {
+        "w": 47,
+        "h": 3
+      },
+      "path": "d-2-calendar.group-255.union-2.rectangle-18-2",
+      "pos": {
+        "x": 0,
+        "y": 22
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union-2": {
+      "id": "1046:227",
+      "el": "union-2",
+      "type": "bool",
+      "box": {
+        "w": 47,
+        "h": 48
+      },
+      "path": "d-2-calendar.group-255.union-2",
+      "pos": {
+        "x": 0,
+        "y": 3
+      },
+      "fill": "$c3",
+      "iconHint": "Your outfit diary",
+      "vectorPath": "$v2",
+      "children": [
+        "rectangle-16-2",
+        "rectangle-17-2",
+        "rectangle-19-2",
+        "rectangle-18-2"
+      ]
+    },
+    "group-255": {
+      "id": "1046:225",
+      "el": "group-255",
+      "type": "group",
+      "box": {
+        "w": 405,
+        "h": 60
+      },
+      "path": "d-2-calendar.group-255",
+      "pos": {
+        "x": 128,
+        "y": 154
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "your-outfit-diary",
+        "union-2"
+      ]
+    },
+    "may-2026": {
+      "id": "1046:234",
+      "el": "may-2026",
+      "type": "text",
+      "box": {
+        "w": 156,
+        "h": 55
+      },
+      "name": "May 2026",
+      "path": "d-2-calendar.group-261.may-2026",
+      "pos": {
+        "x": 159,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "May 2026",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "june-2026": {
+      "id": "1073:274",
+      "el": "june-2026",
+      "type": "text",
+      "box": {
+        "w": 171,
+        "h": 55
+      },
+      "name": "June 2026",
+      "path": "d-2-calendar.group-261.june-2026",
+      "pos": {
+        "x": 823,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "June 2026",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "vector-2": {
+      "id": "I1046:235;3:2638",
+      "el": "vector-2",
+      "type": "vector",
+      "box": {
+        "w": 11,
+        "h": 19
+      },
+      "path": "d-2-calendar.group-261.chevron-left.vector-2",
+      "pos": {
+        "x": 11,
+        "y": 7
+      },
+      "fill": "$c6",
+      "iconHint": "May 2026",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-left": {
+      "id": "1046:235",
+      "el": "chevron-left",
+      "type": "instance",
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "name": "chevron-left",
+      "path": "d-2-calendar.group-261.chevron-left",
+      "pos": {
+        "x": 0,
+        "y": 12
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector-2"
+      ]
+    },
+    "vector-3": {
+      "id": "I1046:236;3:2650",
+      "el": "vector-3",
+      "type": "vector",
+      "box": {
+        "w": 11,
+        "h": 19
+      },
+      "path": "d-2-calendar.group-261.chevron-right.vector-3",
+      "pos": {
+        "x": 11,
+        "y": 7
+      },
+      "fill": "$c6",
+      "iconHint": "May 2026",
+      "vectorPath": "$v4",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-right": {
+      "id": "1046:236",
+      "el": "chevron-right",
+      "type": "instance",
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "name": "chevron-right",
+      "path": "d-2-calendar.group-261.chevron-right",
+      "pos": {
+        "x": 1110,
+        "y": 12
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector-3"
+      ]
+    },
+    "group-261": {
+      "id": "1046:233",
+      "el": "group-261",
+      "type": "group",
+      "box": {
+        "w": 1142,
+        "h": 55
+      },
+      "path": "d-2-calendar.group-261",
+      "pos": {
+        "x": 128,
+        "y": 230
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "may-2026",
+        "june-2026",
+        "chevron-left",
+        "chevron-right"
+      ]
+    },
+    "sun": {
+      "id": "1046:241",
+      "el": "sun",
+      "type": "text",
+      "box": {
+        "w": 40,
+        "h": 33
+      },
+      "name": "SUN",
+      "path": "d-2-calendar.group-280.frame-1.sun",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c7",
+      "text": "$t1",
+      "chars": "SUN",
+      "textGrow": "wh"
+    },
+    "mon": {
+      "id": "1046:242",
+      "el": "mon",
+      "type": "text",
+      "box": {
+        "w": 49,
+        "h": 33
+      },
+      "name": "mon",
+      "path": "d-2-calendar.group-280.frame-1.mon",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "mon",
+      "textGrow": "wh"
+    },
+    "tue": {
+      "id": "1046:243",
+      "el": "tue",
+      "type": "text",
+      "box": {
+        "w": 37,
+        "h": 33
+      },
+      "name": "TUE",
+      "path": "d-2-calendar.group-280.frame-1.tue",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "TUE",
+      "textGrow": "wh"
+    },
+    "wed": {
+      "id": "1046:244",
+      "el": "wed",
+      "type": "text",
+      "box": {
+        "w": 46,
+        "h": 33
+      },
+      "name": "wed",
+      "path": "d-2-calendar.group-280.frame-1.wed",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "wed",
+      "textGrow": "wh"
+    },
+    "thu": {
+      "id": "1046:245",
+      "el": "thu",
+      "type": "text",
+      "box": {
+        "w": 40,
+        "h": 33
+      },
+      "name": "thu",
+      "path": "d-2-calendar.group-280.frame-1.thu",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "thu",
+      "textGrow": "wh"
+    },
+    "fri": {
+      "id": "1046:246",
+      "el": "fri",
+      "type": "text",
+      "box": {
+        "w": 30,
+        "h": 33
+      },
+      "name": "fRI",
+      "path": "d-2-calendar.group-280.frame-1.fri",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "fRI",
+      "textGrow": "wh"
+    },
+    "sat": {
+      "id": "1046:247",
+      "el": "sat",
+      "type": "text",
+      "box": {
+        "w": 34,
+        "h": 33
+      },
+      "name": "SAT",
+      "path": "d-2-calendar.group-280.frame-1.sat",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c7",
+      "text": "$t1",
+      "chars": "SAT",
+      "textGrow": "wh"
+    },
+    "frame-1": {
+      "id": "1046:240",
+      "el": "frame-1",
+      "type": "frame",
+      "box": {
+        "w": 468,
+        "h": 33
+      },
+      "path": "d-2-calendar.group-280.frame-1",
+      "pos": {
+        "x": 4,
+        "y": 0
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "sun",
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat"
+      ]
+    },
+    "01": {
+      "id": "1048:321",
+      "el": "01",
+      "type": "text",
+      "box": {
+        "w": 20,
+        "h": 27
+      },
+      "name": "01",
+      "path": "d-2-calendar.group-280.group-264.01",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "01",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "02": {
+      "id": "1048:323",
+      "el": "02",
+      "type": "text",
+      "box": {
+        "w": 20,
+        "h": 27
+      },
+      "name": "02",
+      "path": "d-2-calendar.group-280.group-264.02",
+      "pos": {
+        "x": 64,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "02",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-264": {
+      "id": "1048:311",
+      "el": "group-264",
+      "type": "group",
+      "box": {
+        "w": 84,
+        "h": 27
+      },
+      "path": "d-2-calendar.group-280.group-264",
+      "pos": {
+        "x": 381,
+        "y": 41
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "01",
+        "02"
+      ]
+    },
+    "03": {
+      "id": "1056:250",
+      "el": "03",
+      "type": "text",
+      "box": {
+        "w": 20,
+        "h": 27
+      },
+      "name": "03",
+      "path": "d-2-calendar.group-280.group-269.03",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "03",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "07": {
+      "id": "1056:257",
+      "el": "07",
+      "type": "text",
+      "box": {
+        "w": 20,
+        "h": 27
+      },
+      "name": "07",
+      "path": "d-2-calendar.group-280.group-269.07",
+      "pos": {
+        "x": 296,
+        "y": 0
+      },
+      "fill": "$c1",
+      "text": "$t4",
+      "chars": "07",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "08": {
+      "id": "1056:259",
+      "el": "08",
+      "type": "text",
+      "box": {
+        "w": 20,
+        "h": 27
+      },
+      "name": "08",
+      "path": "d-2-calendar.group-280.group-269.08",
+      "pos": {
+        "x": 364,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "08",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "09": {
+      "id": "1056:261",
+      "el": "09",
+      "type": "text",
+      "box": {
+        "w": 20,
+        "h": 27
+      },
+      "name": "09",
+      "path": "d-2-calendar.group-280.group-269.09",
+      "pos": {
+        "x": 428,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "09",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-269": {
+      "id": "1056:249",
+      "el": "group-269",
+      "type": "group",
+      "box": {
+        "w": 448,
+        "h": 27
+      },
+      "path": "d-2-calendar.group-280.group-269",
+      "pos": {
+        "x": 17,
+        "y": 160
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08",
+        "09"
+      ],
+      "repeat": {
+        "template": "03",
+        "data": {
+          "04": {
+            "03": {
+              "chars": "04"
+            }
+          },
+          "05": {
+            "03": {
+              "chars": "05"
+            }
+          },
+          "06": {
+            "03": {
+              "chars": "06"
+            }
+          }
+        }
+      }
+    },
+    "group-270": {
+      "id": "1056:263",
+      "el": "group-270",
+      "type": "group",
+      "box": {
+        "w": 448,
+        "h": 27
+      },
+      "path": "d-2-calendar.group-280.group-270",
+      "pos": {
+        "x": 17,
+        "y": 279
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ],
+      "repeat": {
+        "template": "10",
+        "data": {
+          "11": {
+            "10": {
+              "chars": "11"
+            }
+          },
+          "12": {
+            "10": {
+              "chars": "12"
+            }
+          },
+          "13": {
+            "10": {
+              "chars": "13"
+            }
+          },
+          "14": {
+            "10": {
+              "chars": "14"
+            }
+          },
+          "15": {
+            "10": {
+              "chars": "15"
+            }
+          },
+          "16": {
+            "10": {
+              "chars": "16"
+            }
+          }
+        }
+      }
+    },
+    "group-273": {
+      "id": "1077:287",
+      "el": "group-273",
+      "type": "group",
+      "box": {
+        "w": 20,
+        "h": 27
+      },
+      "path": "d-2-calendar.group-280.group-273",
+      "pos": {
+        "x": 17,
+        "y": 636
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "31"
+      ]
+    },
+    "screenshot-2026-05-12-at-15-53-11-remove": {
+      "id": "1056:247",
+      "el": "screenshot-2026-05-12-at-15-53-11-remove",
+      "type": "rect",
+      "box": {
+        "w": 40,
+        "h": 96
+      },
+      "name": "Screenshot_2026-05-12_at_15.53.11-removebg-preview 1",
+      "path": "d-2-calendar.group-280.screenshot-2026-05-12-at-15-53-11-remove",
+      "pos": {
+        "x": 435,
+        "y": 68
+      },
+      "assetId": "adcae1e6d970ef3b13a8cb0933e0ec24dfb3b65d",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "adcae1e6d970ef3b13a8cb0933e0ec24dfb3b65d",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-7-1": {
+      "id": "1077:297",
+      "el": "image-removebg-preview-7-1",
+      "type": "rect",
+      "box": {
+        "w": 51,
+        "h": 65
+      },
+      "name": "image-removebg-preview (7) 1",
+      "path": "d-2-calendar.group-280.group-135.image-removebg-preview-7-1",
+      "pos": {
+        "x": 3,
+        "y": 26
+      },
+      "assetId": "e5420007b99f8c30cfc67be00af0ec3b2f376e2a",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "e5420007b99f8c30cfc67be00af0ec3b2f376e2a",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.8557214140892029,
+              0.07213930040597916
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-1": {
+      "id": "1077:298",
+      "el": "image-removebg-preview-1",
+      "type": "rect",
+      "box": {
+        "w": 45,
+        "h": 42
+      },
+      "name": "image-removebg-preview 1",
+      "path": "d-2-calendar.group-280.group-135.image-removebg-preview-1",
+      "pos": {
+        "x": 6,
+        "y": 4
+      },
+      "assetId": "837079d7a4263daef60e6c2261fde3a6852552dd",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "837079d7a4263daef60e6c2261fde3a6852552dd",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.7313451170921326,
+              0.13030901551246643
+            ]
+          ]
+        }
+      ],
+      "iconHint": "image removebg preview 1",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-10-1": {
+      "id": "1077:299",
+      "el": "image-removebg-preview-10-1",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 14
+      },
+      "name": "image-removebg-preview (10) 1",
+      "path": "d-2-calendar.group-280.group-135.image-removebg-preview-10-1",
+      "pos": {
+        "x": 28,
+        "y": 81
+      },
+      "assetId": "178406f88b315152b95287f3aeb79ee56c5d2443",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "178406f88b315152b95287f3aeb79ee56c5d2443",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.720081090927124,
+              0.12576064467430115
+            ]
+          ]
+        }
+      ],
+      "iconHint": "image removebg preview (10) 1",
+      "rotation": 10313,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-4-1": {
+      "id": "1077:300",
+      "el": "image-removebg-preview-4-1",
+      "type": "rect",
+      "box": {
+        "w": 29,
+        "h": 29
+      },
+      "name": "image-removebg-preview (4) 1",
+      "path": "d-2-calendar.group-280.group-135.image-removebg-preview-4-1",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "assetId": "b5383112df490c825aacd83035b1de7245c291b4",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "b5383112df490c825aacd83035b1de7245c291b4",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "iconHint": "image removebg preview (4) 1",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-135": {
+      "id": "1077:296",
+      "el": "group-135",
+      "type": "group",
+      "box": {
+        "w": 54,
+        "h": 95
+      },
+      "path": "d-2-calendar.group-280.group-135",
+      "pos": {
+        "x": 222,
+        "y": 306
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "image-removebg-preview-7-1",
+        "image-removebg-preview-1",
+        "image-removebg-preview-10-1",
+        "image-removebg-preview-4-1"
+      ]
+    },
+    "image-removebg-preview-7-1-2": {
+      "id": "1077:313",
+      "el": "image-removebg-preview-7-1-2",
+      "type": "rect",
+      "box": {
+        "w": 51,
+        "h": 65
+      },
+      "name": "image-removebg-preview (7) 1",
+      "path": "d-2-calendar.group-280.group-274.image-removebg-preview-7-1-2",
+      "pos": {
+        "x": 3,
+        "y": 26
+      },
+      "assetId": "e5420007b99f8c30cfc67be00af0ec3b2f376e2a",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "e5420007b99f8c30cfc67be00af0ec3b2f376e2a",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.8557214140892029,
+              0.07213930040597916
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-1-2": {
+      "id": "1077:314",
+      "el": "image-removebg-preview-1-2",
+      "type": "rect",
+      "box": {
+        "w": 45,
+        "h": 42
+      },
+      "name": "image-removebg-preview 1",
+      "path": "d-2-calendar.group-280.group-274.image-removebg-preview-1-2",
+      "pos": {
+        "x": 6,
+        "y": 4
+      },
+      "assetId": "837079d7a4263daef60e6c2261fde3a6852552dd",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "837079d7a4263daef60e6c2261fde3a6852552dd",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.7313451170921326,
+              0.13030901551246643
+            ]
+          ]
+        }
+      ],
+      "iconHint": "image removebg preview 1",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-10-1-2": {
+      "id": "1077:315",
+      "el": "image-removebg-preview-10-1-2",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 14
+      },
+      "name": "image-removebg-preview (10) 1",
+      "path": "d-2-calendar.group-280.group-274.image-removebg-preview-10-1-2",
+      "pos": {
+        "x": 28,
+        "y": 81
+      },
+      "assetId": "178406f88b315152b95287f3aeb79ee56c5d2443",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "178406f88b315152b95287f3aeb79ee56c5d2443",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.720081090927124,
+              0.12576064467430115
+            ]
+          ]
+        }
+      ],
+      "iconHint": "image removebg preview (10) 1",
+      "rotation": 10313,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-4-1-2": {
+      "id": "1077:316",
+      "el": "image-removebg-preview-4-1-2",
+      "type": "rect",
+      "box": {
+        "w": 29,
+        "h": 29
+      },
+      "name": "image-removebg-preview (4) 1",
+      "path": "d-2-calendar.group-280.group-274.image-removebg-preview-4-1-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "assetId": "b5383112df490c825aacd83035b1de7245c291b4",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "b5383112df490c825aacd83035b1de7245c291b4",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "iconHint": "image removebg preview (4) 1",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-274": {
+      "id": "1077:312",
+      "el": "group-274",
+      "type": "group",
+      "box": {
+        "w": 54,
+        "h": 95
+      },
+      "path": "d-2-calendar.group-280.group-274",
+      "pos": {
+        "x": 0,
+        "y": 663
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "image-removebg-preview-7-1-2",
+        "image-removebg-preview-1-2",
+        "image-removebg-preview-10-1-2",
+        "image-removebg-preview-4-1-2"
+      ]
+    },
+    "group-280": {
+      "id": "1073:286",
+      "el": "group-280",
+      "type": "group",
+      "box": {
+        "w": 475,
+        "h": 758
+      },
+      "path": "d-2-calendar.group-280",
+      "pos": {
+        "x": 125,
+        "y": 303
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "frame-1",
+        "group-264",
+        "group-269",
+        "group-270",
+        "group-271",
+        "group-272",
+        "group-273",
+        "screenshot-2026-05-12-at-15-53-11-remove",
+        "group-135",
+        "group-274"
+      ],
+      "repeat": {
+        "template": "group-270",
+        "data": {
+          "group-271": {
+            "10": {
+              "chars": "17"
+            }
+          },
+          "group-272": {
+            "10": {
+              "chars": "24"
+            }
+          }
+        }
+      }
+    },
+    "sun-2": {
+      "id": "1073:230",
+      "el": "sun-2",
+      "type": "text",
+      "box": {
+        "w": 40,
+        "h": 33
+      },
+      "name": "SUN",
+      "path": "d-2-calendar.group-279.frame-2.sun-2",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c7",
+      "text": "$t1",
+      "chars": "SUN",
+      "textGrow": "wh"
+    },
+    "mon-2": {
+      "id": "1073:231",
+      "el": "mon-2",
+      "type": "text",
+      "box": {
+        "w": 49,
+        "h": 33
+      },
+      "name": "mon",
+      "path": "d-2-calendar.group-279.frame-2.mon-2",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "mon",
+      "textGrow": "wh"
+    },
+    "tue-2": {
+      "id": "1073:232",
+      "el": "tue-2",
+      "type": "text",
+      "box": {
+        "w": 37,
+        "h": 33
+      },
+      "name": "TUE",
+      "path": "d-2-calendar.group-279.frame-2.tue-2",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "TUE",
+      "textGrow": "wh"
+    },
+    "wed-2": {
+      "id": "1073:233",
+      "el": "wed-2",
+      "type": "text",
+      "box": {
+        "w": 46,
+        "h": 33
+      },
+      "name": "wed",
+      "path": "d-2-calendar.group-279.frame-2.wed-2",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "wed",
+      "textGrow": "wh"
+    },
+    "thu-2": {
+      "id": "1073:234",
+      "el": "thu-2",
+      "type": "text",
+      "box": {
+        "w": 40,
+        "h": 33
+      },
+      "name": "thu",
+      "path": "d-2-calendar.group-279.frame-2.thu-2",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "thu",
+      "textGrow": "wh"
+    },
+    "fri-2": {
+      "id": "1073:235",
+      "el": "fri-2",
+      "type": "text",
+      "box": {
+        "w": 30,
+        "h": 33
+      },
+      "name": "fRI",
+      "path": "d-2-calendar.group-279.frame-2.fri-2",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "fRI",
+      "textGrow": "wh"
+    },
+    "sat-2": {
+      "id": "1073:236",
+      "el": "sat-2",
+      "type": "text",
+      "box": {
+        "w": 34,
+        "h": 33
+      },
+      "name": "SAT",
+      "path": "d-2-calendar.group-279.frame-2.sat-2",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c7",
+      "text": "$t1",
+      "chars": "SAT",
+      "textGrow": "wh"
+    },
+    "frame-2": {
+      "id": "1073:229",
+      "el": "frame-2",
+      "type": "frame",
+      "box": {
+        "w": 468,
+        "h": 33
+      },
+      "path": "d-2-calendar.group-279.frame-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "sun-2",
+        "mon-2",
+        "tue-2",
+        "wed-2",
+        "thu-2",
+        "fri-2",
+        "sat-2"
+      ]
+    },
+    "07-2": {
+      "id": "1073:241",
+      "el": "07-2",
+      "type": "text",
+      "box": {
+        "w": 20,
+        "h": 27
+      },
+      "name": "07",
+      "path": "d-2-calendar.group-279.group-274-2.07-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "07",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-274-2": {
+      "id": "1073:240",
+      "el": "group-274-2",
+      "type": "group",
+      "box": {
+        "w": 451,
+        "h": 27
+      },
+      "path": "d-2-calendar.group-279.group-274-2",
+      "pos": {
+        "x": 10,
+        "y": 160
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "07-2",
+        "08-2",
+        "09-2",
+        "10-2",
+        "11-2",
+        "12-2",
+        "13-2"
+      ],
+      "repeat": {
+        "template": "07-2",
+        "data": {
+          "08-2": {
+            "07-2": {
+              "chars": "08"
+            }
+          },
+          "09-2": {
+            "07-2": {
+              "chars": "09"
+            }
+          },
+          "10-2": {
+            "07-2": {
+              "chars": "10"
+            }
+          },
+          "11-2": {
+            "07-2": {
+              "chars": "11"
+            }
+          },
+          "12-2": {
+            "07-2": {
+              "chars": "12"
+            }
+          },
+          "13-2": {
+            "07-2": {
+              "chars": "13"
+            }
+          }
+        }
+      }
+    },
+    "01-2": {
+      "id": "1073:278",
+      "el": "01-2",
+      "type": "text",
+      "box": {
+        "w": 20,
+        "h": 27
+      },
+      "name": "01",
+      "path": "d-2-calendar.group-279.group-278.01-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "01",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-278": {
+      "id": "1073:276",
+      "el": "group-278",
+      "type": "group",
+      "box": {
+        "w": 374,
+        "h": 27
+      },
+      "path": "d-2-calendar.group-279.group-278",
+      "pos": {
+        "x": 87,
+        "y": 41
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "01-2",
+        "02-2",
+        "03-2",
+        "04-2",
+        "05-2",
+        "06-2"
+      ],
+      "repeat": {
+        "template": "01-2",
+        "data": {
+          "02-2": {
+            "01-2": {
+              "chars": "02"
+            }
+          },
+          "03-2": {
+            "01-2": {
+              "chars": "03"
+            }
+          },
+          "04-2": {
+            "01-2": {
+              "chars": "04"
+            }
+          },
+          "05-2": {
+            "01-2": {
+              "chars": "05"
+            }
+          },
+          "06-2": {
+            "01-2": {
+              "chars": "06"
+            }
+          }
+        }
+      }
+    },
+    "14-2": {
+      "id": "1073:249",
+      "el": "14-2",
+      "type": "text",
+      "box": {
+        "w": 20,
+        "h": 27
+      },
+      "name": "14",
+      "path": "d-2-calendar.group-279.group-275.14-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "14",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-275": {
+      "id": "1073:248",
+      "el": "group-275",
+      "type": "group",
+      "box": {
+        "w": 448,
+        "h": 27
+      },
+      "path": "d-2-calendar.group-279.group-275",
+      "pos": {
+        "x": 13,
+        "y": 279
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "14-2",
+        "15-2",
+        "16-2",
+        "17-2",
+        "18-2",
+        "19-2",
+        "20-2"
+      ],
+      "repeat": {
+        "template": "14-2",
+        "data": {
+          "15-2": {
+            "14-2": {
+              "chars": "15"
+            }
+          },
+          "16-2": {
+            "14-2": {
+              "chars": "16"
+            }
+          },
+          "17-2": {
+            "14-2": {
+              "chars": "17"
+            }
+          },
+          "18-2": {
+            "14-2": {
+              "chars": "18"
+            }
+          },
+          "19-2": {
+            "14-2": {
+              "chars": "19"
+            }
+          },
+          "20-2": {
+            "14-2": {
+              "chars": "20"
+            }
+          }
+        }
+      }
+    },
+    "21-2": {
+      "id": "1073:257",
+      "el": "21-2",
+      "type": "text",
+      "box": {
+        "w": 20,
+        "h": 27
+      },
+      "name": "21",
+      "path": "d-2-calendar.group-279.group-276.21-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "21",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-276": {
+      "id": "1073:256",
+      "el": "group-276",
+      "type": "group",
+      "box": {
+        "w": 448,
+        "h": 27
+      },
+      "path": "d-2-calendar.group-279.group-276",
+      "pos": {
+        "x": 13,
+        "y": 398
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "21-2",
+        "22-2",
+        "23-2",
+        "24-2",
+        "25-2",
+        "26-2",
+        "27-2"
+      ],
+      "repeat": {
+        "template": "21-2",
+        "data": {
+          "22-2": {
+            "21-2": {
+              "chars": "22"
+            }
+          },
+          "23-2": {
+            "21-2": {
+              "chars": "23"
+            }
+          },
+          "24-2": {
+            "21-2": {
+              "chars": "24"
+            }
+          },
+          "25-2": {
+            "21-2": {
+              "chars": "25"
+            }
+          },
+          "26-2": {
+            "21-2": {
+              "chars": "26"
+            }
+          },
+          "27-2": {
+            "21-2": {
+              "chars": "27"
+            }
+          }
+        }
+      }
+    },
+    "28-2": {
+      "id": "1073:265",
+      "el": "28-2",
+      "type": "text",
+      "box": {
+        "w": 20,
+        "h": 27
+      },
+      "name": "28",
+      "path": "d-2-calendar.group-279.group-277.28-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "28",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-277": {
+      "id": "1073:264",
+      "el": "group-277",
+      "type": "group",
+      "box": {
+        "w": 169,
+        "h": 27
+      },
+      "path": "d-2-calendar.group-279.group-277",
+      "pos": {
+        "x": 13,
+        "y": 517
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "28-2",
+        "29-2",
+        "30-2"
+      ],
+      "repeat": {
+        "template": "28-2",
+        "data": {
+          "29-2": {
+            "28-2": {
+              "chars": "29"
+            }
+          },
+          "30-2": {
+            "28-2": {
+              "chars": "30"
+            }
+          }
+        }
+      }
+    },
+    "screenshot-2026-05-12-at-15-53-11-remove-2": {
+      "id": "1073:272",
+      "el": "screenshot-2026-05-12-at-15-53-11-remove-2",
+      "type": "rect",
+      "box": {
+        "w": 40,
+        "h": 96
+      },
+      "name": "Screenshot_2026-05-12_at_15.53.11-removebg-preview 2",
+      "path": "d-2-calendar.group-279.screenshot-2026-05-12-at-15-53-11-remove-2",
+      "pos": {
+        "x": 225,
+        "y": 187
+      },
+      "assetId": "adcae1e6d970ef3b13a8cb0933e0ec24dfb3b65d",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "adcae1e6d970ef3b13a8cb0933e0ec24dfb3b65d",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-279": {
+      "id": "1073:285",
+      "el": "group-279",
+      "type": "group",
+      "box": {
+        "w": 468,
+        "h": 544
+      },
+      "path": "d-2-calendar.group-279",
+      "pos": {
+        "x": 800,
+        "y": 303
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "frame-2",
+        "group-274-2",
+        "group-278",
+        "group-275",
+        "group-276",
+        "group-277",
+        "screenshot-2026-05-12-at-15-53-11-remove-2"
+      ]
+    },
+    "upload-photo": {
+      "id": "1077:307",
+      "el": "upload-photo",
+      "type": "text",
+      "box": {
+        "w": 153,
+        "h": 33
+      },
+      "name": "upload photo",
+      "path": "d-2-calendar.frame-8.upload-photo",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c1",
+      "text": "$t1",
+      "chars": "upload photo",
+      "textGrow": "wh"
+    },
+    "frame-8": {
+      "id": "1077:306",
+      "el": "frame-8",
+      "type": "frame",
+      "box": {
+        "w": 217,
+        "h": 64
+      },
+      "path": "d-2-calendar.frame-8",
+      "pos": {
+        "x": 1051,
+        "y": 1079
+      },
+      "layout": "$l2",
+      "fill": "$c3",
+      "radius": "$r2",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "upload-photo"
+      ]
+    },
+    "mix-match": {
+      "id": "1077:310",
+      "el": "mix-match",
+      "type": "text",
+      "box": {
+        "w": 129,
+        "h": 33
+      },
+      "name": "mix & match",
+      "path": "d-2-calendar.frame-9.mix-match",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "mix & match",
+      "textGrow": "wh"
+    },
+    "frame-9": {
+      "id": "1077:309",
+      "el": "frame-9",
+      "type": "frame",
+      "box": {
+        "w": 193,
+        "h": 64
+      },
+      "path": "d-2-calendar.frame-9",
+      "pos": {
+        "x": 834,
+        "y": 1079
+      },
+      "layout": "$l2",
+      "fill": "$c9",
+      "radius": "$r2",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "mix-match"
+      ]
+    },
+    "d-2-calendar": {
+      "id": "985:972",
+      "el": "d-2-calendar",
+      "type": "frame",
+      "box": {
+        "w": 1440,
+        "h": 1210
+      },
+      "name": "D.2 Calendar",
+      "fill": "$c1",
+      "clip": true,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "group-96",
+        "rectangle-103",
+        "group-255",
+        "group-261",
+        "group-280",
+        "group-279",
+        "frame-8",
+        "frame-9"
+      ]
+    }
+  },
+  "meta": {
+    "nodeCount": 88,
+    "estTokens": 6880,
+    "depthUsed": 12
+  },
+  "next": "Read `tokens` for the design system, then build the UI from `nodes`. Tag each rendered element data-plumb-id=\"<el>\". A node with a `more` count has that many children not yet included — call plumb_node again on that node's `id` to expand them. This screen has 10 image asset(s) (nodes with `assetId`). Call plumb_assets with this screen's id to download them to disk BEFORE generating HTML — without the real files any <img> will be a placeholder and plumb_verify will flag every image node as asset.missing.",
+  "source": "plugin",
+  "node": "D.2 Calendar"
+}

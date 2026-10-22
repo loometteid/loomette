@@ -1,0 +1,330 @@
+{
+  "file": {
+    "name": "Loomette.id",
+    "version": "plugin-1792667066849"
+  },
+  "root": "d-0-2-6-onboarding",
+  "tokens": {
+    "color": {
+      "$c1": "#fafaf7",
+      "$c2": "#444440",
+      "$c3": "image"
+    },
+    "text": {
+      "$t1": "400 88px",
+      "$t2": "400 88px Source Serif Pro",
+      "$t3": "700 88px Source Serif Pro",
+      "$t4": "400 20px Avenir Next",
+      "$t5": "400 24px Avenir Next"
+    },
+    "radius": {
+      "$r1": 16
+    },
+    "shadow": {},
+    "layout": {
+      "$l1": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          19,
+          108,
+          18,
+          107
+        ]
+      }
+    },
+    "meta": {
+      "counts": {
+        "$c1": 2,
+        "$c2": 5,
+        "$c3": 4
+      }
+    }
+  },
+  "nodes": {
+    "you-re-all-set": {
+      "id": "866:787",
+      "el": "you-re-all-set",
+      "type": "text",
+      "box": {
+        "w": 349,
+        "h": 220
+      },
+      "name": "You’re all set.",
+      "path": "d-0-2-6-onboarding.you-re-all-set",
+      "pos": {
+        "x": 909,
+        "y": 321
+      },
+      "fill": "$c2",
+      "text": "$t1",
+      "chars": [
+        {
+          "t": "You’re ",
+          "s": "$t2"
+        },
+        {
+          "t": "all set.",
+          "s": "$t3"
+        }
+      ],
+      "textGrow": "h",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "your-wardrobe-is-waiting": {
+      "id": "866:789",
+      "el": "your-wardrobe-is-waiting",
+      "type": "text",
+      "box": {
+        "w": 239,
+        "h": 27
+      },
+      "name": "Your wardrobe is waiting.",
+      "path": "d-0-2-6-onboarding.your-wardrobe-is-waiting",
+      "pos": {
+        "x": 909,
+        "y": 549
+      },
+      "fill": "$c2",
+      "text": "$t4",
+      "chars": "Your wardrobe is waiting.",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "continue": {
+      "id": "866:795",
+      "el": "continue",
+      "type": "text",
+      "box": {
+        "w": 101,
+        "h": 33
+      },
+      "name": "continue",
+      "path": "d-0-2-6-onboarding.frame-7.continue",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c1",
+      "text": "$t5",
+      "chars": "continue",
+      "textGrow": "wh"
+    },
+    "frame-7": {
+      "id": "866:794",
+      "el": "frame-7",
+      "type": "frame",
+      "box": {
+        "w": 320,
+        "h": 64
+      },
+      "path": "d-0-2-6-onboarding.frame-7",
+      "pos": {
+        "x": 909,
+        "y": 640
+      },
+      "layout": "$l1",
+      "fill": "$c2",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "continue"
+      ]
+    },
+    "image-42": {
+      "id": "1493:375",
+      "el": "image-42",
+      "type": "rect",
+      "box": {
+        "w": 506,
+        "h": 337
+      },
+      "path": "d-0-2-6-onboarding.image-42",
+      "pos": {
+        "x": 279,
+        "y": 641
+      },
+      "assetId": "bb06e4303e18abfe080bed08bb77f7679f03bf5f",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "bb06e4303e18abfe080bed08bb77f7679f03bf5f",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-43": {
+      "id": "1493:379",
+      "el": "image-43",
+      "type": "rect",
+      "box": {
+        "w": 540,
+        "h": 360
+      },
+      "path": "d-0-2-6-onboarding.image-43",
+      "pos": {
+        "x": -100,
+        "y": 238
+      },
+      "assetId": "0b474112393cda1b357eba7c9f586748318c4c0e",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "0b474112393cda1b357eba7c9f586748318c4c0e",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-44": {
+      "id": "1493:381",
+      "el": "image-44",
+      "type": "rect",
+      "box": {
+        "w": 303,
+        "h": 295
+      },
+      "path": "d-0-2-6-onboarding.image-44",
+      "pos": {
+        "x": 1185,
+        "y": 0
+      },
+      "assetId": "20bcd246de2d238bc1544536fab4b365ecdf33bf",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "20bcd246de2d238bc1544536fab4b365ecdf33bf",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-45": {
+      "id": "1493:382",
+      "el": "image-45",
+      "type": "rect",
+      "box": {
+        "w": 218,
+        "h": 210
+      },
+      "path": "d-0-2-6-onboarding.image-45",
+      "pos": {
+        "x": 436,
+        "y": 160
+      },
+      "assetId": "df16e6c960159f4917aae33274e488c940b4236a",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "df16e6c960159f4917aae33274e488c940b4236a",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "d-0-2-6-onboarding": {
+      "id": "866:644",
+      "el": "d-0-2-6-onboarding",
+      "type": "frame",
+      "box": {
+        "w": 1440,
+        "h": 1024
+      },
+      "name": "D.0.2.6 Onboarding",
+      "fill": "$c1",
+      "clip": true,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "you-re-all-set",
+        "your-wardrobe-is-waiting",
+        "frame-7",
+        "image-42",
+        "image-43",
+        "image-44",
+        "image-45"
+      ]
+    }
+  },
+  "meta": {
+    "nodeCount": 9,
+    "estTokens": 824,
+    "depthUsed": 12
+  },
+  "source": "plugin",
+  "node": "D.0.2.6 Onboarding"
+}

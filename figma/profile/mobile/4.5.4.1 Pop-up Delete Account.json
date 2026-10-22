@@ -1,0 +1,1927 @@
+{
+  "file": {
+    "name": "Loomette.id",
+    "version": "plugin-1792667174284"
+  },
+  "root": "4-5-4-1-pop-up-delete-account",
+  "tokens": {
+    "color": {
+      "$c1": "#fafaf7",
+      "$c2": "#f2ede5",
+      "$c3": "#444440",
+      "$c4": "#d9d9d9",
+      "$c5": "#c9c3b7",
+      "$c6": "#c9c3b733"
+    },
+    "text": {
+      "$t1": "400 32px Source Serif Pro",
+      "$t2": "400 12px Avenir Next",
+      "$t3": "400 20px Source Serif Pro",
+      "$t4": "400 16px Avenir Next",
+      "$t5": "400 20px Avenir Next",
+      "$t6": "400 14px",
+      "$t7": "400 14px Avenir Next",
+      "$t8": "700 14px Avenir Next"
+    },
+    "radius": {
+      "$r1": 8,
+      "$r2": "full",
+      "$r3": 16,
+      "$r4": 20
+    },
+    "shadow": {},
+    "layout": {
+      "$l1": {
+        "flow": "col",
+        "gap": 16,
+        "pad": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l2": {
+        "flow": "col",
+        "gap": 24,
+        "pad": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l3": {
+        "align": "center",
+        "flow": "row",
+        "gap": 4,
+        "justify": "center",
+        "pad": [
+          19,
+          16,
+          18,
+          16
+        ]
+      },
+      "$l4": {
+        "flow": "col",
+        "gap": 20,
+        "pad": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l5": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          19,
+          108,
+          18,
+          107
+        ]
+      }
+    },
+    "vector": {
+      "$v1": "M7.60355 0.292893 C7.99408 0.683418 7.99408 1.31658 7.60355 1.70711 L2.31066 7 L7.60355 12.2929 C7.99408 12.6834 7.99408 13.3166 7.60355 13.7071 C7.21303 14.0976 6.57986 14.0976 6.18934 13.7071 L0.366116 7.88388 C-0.12204 7.39573 -0.122038 6.60427 0.366117 6.11612 L6.18934 0.292893 C6.57986 -0.0976311 7.21303 -0.0976311 7.60355 0.292893 Z",
+      "$v2": "M14.4004 11.3262 L22.4092 3.31738 L23.6826 4.59082 L15.6738 12.5996 L27 12.5996 L27 14.4004 L15.6738 14.4004 L23.6826 22.4092 L22.4092 23.6826 L14.4004 15.6738 L14.4004 27 L12.5996 27 L12.5996 15.6738 L4.59082 23.6826 L3.31738 22.4092 L11.3262 14.4004 L0 14.4004 L0 12.5996 L11.3262 12.5996 L3.31738 4.59082 L4.59082 3.31738 L12.5996 11.3262 L12.5996 0 L14.4004 0 L14.4004 11.3262 Z",
+      "$v3": "M0.170854 0.170854 C0.39866 -0.0569515 0.768007 -0.0569515 0.995812 0.170854 L4.08333 3.25838 L7.17086 0.170854 C7.39866 -0.0569515 7.76801 -0.0569515 7.99581 0.170854 C8.22362 0.39866 8.22362 0.768007 7.99581 0.995812 L4.59893 4.39269 C4.31418 4.67745 3.85249 4.67745 3.56774 4.39269 L0.170854 0.995812 C-0.0569515 0.768007 -0.0569515 0.39866 0.170854 0.170854 Z",
+      "$v4": "M0.292893 0.292893 C0.683417 -0.0976311 1.31658 -0.0976311 1.70711 0.292893 L7.53033 6.11612 C8.01848 6.60427 8.01849 7.39573 7.53033 7.88388 L1.70711 13.7071 C1.31658 14.0976 0.683417 14.0976 0.292893 13.7071 C-0.0976311 13.3166 -0.0976311 12.6834 0.292893 12.2929 L5.58579 7 L0.292893 1.70711 C-0.0976311 1.31658 -0.0976311 0.683417 0.292893 0.292893 Z",
+      "$v5": "M0.244078 0.244078 C0.569515 -0.0813593 1.09715 -0.0813593 1.42259 0.244078 L5.83333 4.65482 L10.2441 0.244078 C10.5695 -0.0813593 11.0972 -0.0813593 11.4226 0.244078 C11.748 0.569515 11.748 1.09715 11.4226 1.42259 L7.01184 5.83333 L11.4226 10.2441 C11.748 10.5695 11.748 11.0972 11.4226 11.4226 C11.0972 11.748 10.5695 11.748 10.2441 11.4226 L5.83333 7.01184 L1.42259 11.4226 C1.09715 11.748 0.569515 11.748 0.244078 11.4226 C-0.0813593 11.0972 -0.0813593 10.5695 0.244078 10.2441 L4.65482 5.83333 L0.244078 1.42259 C-0.0813593 1.09715 -0.0813593 0.569515 0.244078 0.244078 Z"
+    },
+    "props": {
+      "$p1": {
+        "size": "24"
+      }
+    },
+    "meta": {
+      "counts": {
+        "$c1": 6,
+        "$c2": 4,
+        "$r1": 4,
+        "$p1": 7,
+        "$c3": 33,
+        "$t1": 2,
+        "$c4": 4,
+        "$t2": 2,
+        "$l1": 4,
+        "$t3": 4,
+        "$l2": 6,
+        "$t4": 10,
+        "$r2": 8,
+        "$c5": 3,
+        "$v4": 4,
+        "$l5": 2,
+        "$t7": 2
+      }
+    }
+  },
+  "nodes": {
+    "rectangle-11": {
+      "id": "379:1452",
+      "el": "rectangle-11",
+      "type": "rect",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.group-58.rectangle-11",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c2",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector": {
+      "id": "I379:1453;3:2631",
+      "el": "vector",
+      "type": "vector",
+      "box": {
+        "w": 8,
+        "h": 14
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.group-58.chevron-left.vector",
+      "pos": {
+        "x": 8,
+        "y": 5
+      },
+      "fill": "$c3",
+      "iconHint": "chevron left",
+      "vectorPath": "$v1",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-left": {
+      "id": "379:1453",
+      "el": "chevron-left",
+      "type": "instance",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "name": "chevron-left",
+      "path": "4-5-4-1-pop-up-delete-account.group-130.group-58.chevron-left",
+      "pos": {
+        "x": 8,
+        "y": 8
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector"
+      ]
+    },
+    "group-58": {
+      "id": "379:1451",
+      "el": "group-58",
+      "type": "group",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.group-58",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-11",
+        "chevron-left"
+      ]
+    },
+    "settings": {
+      "id": "379:1454",
+      "el": "settings",
+      "type": "text",
+      "box": {
+        "w": 241,
+        "h": 40
+      },
+      "name": "Settings",
+      "path": "4-5-4-1-pop-up-delete-account.group-130.settings",
+      "pos": {
+        "x": 48,
+        "y": 68
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "Settings",
+      "textGrow": "h",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16": {
+      "id": "379:1456",
+      "el": "rectangle-16",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 27
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.union.rectangle-16",
+      "pos": {
+        "x": 13,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17": {
+      "id": "379:1457",
+      "el": "rectangle-17",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.union.rectangle-17",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 2578,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19": {
+      "id": "379:1458",
+      "el": "rectangle-19",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.union.rectangle-19",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 7735,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18": {
+      "id": "379:1459",
+      "el": "rectangle-18",
+      "type": "rect",
+      "box": {
+        "w": 27,
+        "h": 2
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.union.rectangle-18",
+      "pos": {
+        "x": 0,
+        "y": 13
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union": {
+      "id": "379:1455",
+      "el": "union",
+      "type": "bool",
+      "box": {
+        "w": 27,
+        "h": 27
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.union",
+      "pos": {
+        "x": 7,
+        "y": 72
+      },
+      "fill": "$c3",
+      "iconHint": "Settings",
+      "vectorPath": "$v2",
+      "children": [
+        "rectangle-16",
+        "rectangle-17",
+        "rectangle-19",
+        "rectangle-18"
+      ]
+    },
+    "manage-how-the-app-works-for-you": {
+      "id": "379:1460",
+      "el": "manage-how-the-app-works-for-you",
+      "type": "text",
+      "box": {
+        "w": 192,
+        "h": 16
+      },
+      "name": "Manage how the app works for you.",
+      "path": "4-5-4-1-pop-up-delete-account.group-130.manage-how-the-app-works-for-you",
+      "pos": {
+        "x": 48,
+        "y": 108
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "Manage how the app works for you.",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "notification": {
+      "id": "379:1463",
+      "el": "notification",
+      "type": "text",
+      "box": {
+        "w": 102,
+        "h": 25
+      },
+      "name": "Notification",
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-45.group-124.notification",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "Notification",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-124": {
+      "id": "379:1462",
+      "el": "group-124",
+      "type": "group",
+      "box": {
+        "w": 102,
+        "h": 25
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-45.group-124",
+      "inheritedFill": "$c1",
+      "children": [
+        "notification"
+      ]
+    },
+    "outfit-reminders": {
+      "id": "379:1466",
+      "el": "outfit-reminders",
+      "type": "text",
+      "box": {
+        "w": 119,
+        "h": 22
+      },
+      "name": "Outfit reminders",
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-45.frame-37.group-121.outfit-reminders",
+      "pos": {
+        "x": 0,
+        "y": 1
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "Outfit reminders",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-43": {
+      "id": "379:1468",
+      "el": "rectangle-43",
+      "type": "rect",
+      "box": {
+        "w": 44,
+        "h": 24
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-45.frame-37.group-121.group-120.rectangle-43",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-44": {
+      "id": "379:1469",
+      "el": "rectangle-44",
+      "type": "rect",
+      "box": {
+        "w": 19,
+        "h": 19
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-45.frame-37.group-121.group-120.rectangle-44",
+      "pos": {
+        "x": 22,
+        "y": 2
+      },
+      "fill": "$c1",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-120": {
+      "id": "379:1467",
+      "el": "group-120",
+      "type": "group",
+      "box": {
+        "w": 44,
+        "h": 24
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-45.frame-37.group-121.group-120",
+      "pos": {
+        "x": 266,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-43",
+        "rectangle-44"
+      ]
+    },
+    "group-121": {
+      "id": "379:1465",
+      "el": "group-121",
+      "type": "group",
+      "box": {
+        "w": 310,
+        "h": 24
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-45.frame-37.group-121",
+      "inheritedFill": "$c1",
+      "children": [
+        "outfit-reminders",
+        "group-120"
+      ]
+    },
+    "analysis-ready": {
+      "id": "379:1471",
+      "el": "analysis-ready",
+      "type": "text",
+      "box": {
+        "w": 100,
+        "h": 22
+      },
+      "name": "analysis ready",
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-45.frame-37.group-122.analysis-ready",
+      "pos": {
+        "x": 0,
+        "y": 1
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "analysis ready",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-43-2": {
+      "id": "379:1473",
+      "el": "rectangle-43-2",
+      "type": "rect",
+      "box": {
+        "w": 44,
+        "h": 24
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-45.frame-37.group-122.group-120-2.rectangle-43-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-44-2": {
+      "id": "379:1474",
+      "el": "rectangle-44-2",
+      "type": "rect",
+      "box": {
+        "w": 19,
+        "h": 19
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-45.frame-37.group-122.group-120-2.rectangle-44-2",
+      "pos": {
+        "x": 22,
+        "y": 2
+      },
+      "fill": "$c1",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-120-2": {
+      "id": "379:1472",
+      "el": "group-120-2",
+      "type": "group",
+      "box": {
+        "w": 44,
+        "h": 24
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-45.frame-37.group-122.group-120-2",
+      "pos": {
+        "x": 266,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-43-2",
+        "rectangle-44-2"
+      ]
+    },
+    "group-122": {
+      "id": "379:1470",
+      "el": "group-122",
+      "type": "group",
+      "box": {
+        "w": 310,
+        "h": 24
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-45.frame-37.group-122",
+      "inheritedFill": "$c1",
+      "children": [
+        "analysis-ready",
+        "group-120-2"
+      ]
+    },
+    "weekly-recap": {
+      "id": "379:1476",
+      "el": "weekly-recap",
+      "type": "text",
+      "box": {
+        "w": 92,
+        "h": 22
+      },
+      "name": "weekly recap",
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-45.frame-37.group-123.weekly-recap",
+      "pos": {
+        "x": 0,
+        "y": 1
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "weekly recap",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-43-3": {
+      "id": "379:1478",
+      "el": "rectangle-43-3",
+      "type": "rect",
+      "box": {
+        "w": 44,
+        "h": 24
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-45.frame-37.group-123.group-120-3.rectangle-43-3",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c5",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-44-3": {
+      "id": "379:1479",
+      "el": "rectangle-44-3",
+      "type": "rect",
+      "box": {
+        "w": 19,
+        "h": 19
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-45.frame-37.group-123.group-120-3.rectangle-44-3",
+      "pos": {
+        "x": 3,
+        "y": 2
+      },
+      "fill": "$c1",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-120-3": {
+      "id": "379:1477",
+      "el": "group-120-3",
+      "type": "group",
+      "box": {
+        "w": 44,
+        "h": 24
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-45.frame-37.group-123.group-120-3",
+      "pos": {
+        "x": 266,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-43-3",
+        "rectangle-44-3"
+      ]
+    },
+    "group-123": {
+      "id": "379:1475",
+      "el": "group-123",
+      "type": "group",
+      "box": {
+        "w": 310,
+        "h": 24
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-45.frame-37.group-123",
+      "inheritedFill": "$c1",
+      "children": [
+        "weekly-recap",
+        "group-120-3"
+      ]
+    },
+    "frame-37": {
+      "id": "379:1464",
+      "el": "frame-37",
+      "type": "frame",
+      "box": {
+        "w": 310,
+        "h": 120
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-45.frame-37",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill",
+        "h": "hug"
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "children": [
+        "group-121",
+        "group-122",
+        "group-123"
+      ]
+    },
+    "frame-45": {
+      "id": "379:1461",
+      "el": "frame-45",
+      "type": "frame",
+      "box": {
+        "w": 310,
+        "h": 161
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-45",
+      "pos": {
+        "x": 7,
+        "y": 148
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "group-124",
+        "frame-37"
+      ]
+    },
+    "appearance": {
+      "id": "379:1482",
+      "el": "appearance",
+      "type": "text",
+      "box": {
+        "w": 103,
+        "h": 25
+      },
+      "name": "Appearance",
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-47.group-125.appearance",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "Appearance",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-125": {
+      "id": "379:1481",
+      "el": "group-125",
+      "type": "group",
+      "box": {
+        "w": 103,
+        "h": 25
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-47.group-125",
+      "inheritedFill": "$c1",
+      "children": [
+        "appearance"
+      ]
+    },
+    "language": {
+      "id": "379:1485",
+      "el": "language",
+      "type": "text",
+      "box": {
+        "w": 69,
+        "h": 22
+      },
+      "name": "Language",
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-47.frame-38.group-121-2.language",
+      "pos": {
+        "x": 0,
+        "y": 9
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "Language",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "center"
+      }
+    },
+    "text": {
+      "id": "379:1487",
+      "el": "text",
+      "type": "text",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "name": "🇬🇧",
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-47.frame-38.group-121-2.frame-13.text",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t5",
+      "chars": "🇬🇧",
+      "textGrow": "wh"
+    },
+    "vector-2": {
+      "id": "I379:1488;3:2664",
+      "el": "vector-2",
+      "type": "vector",
+      "box": {
+        "w": 8,
+        "h": 5
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-47.frame-38.group-121-2.frame-13.chevron-down.vector-2",
+      "pos": {
+        "x": 3,
+        "y": 5
+      },
+      "fill": "$c3",
+      "iconHint": "🇬🇧",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-down": {
+      "id": "379:1488",
+      "el": "chevron-down",
+      "type": "instance",
+      "box": {
+        "w": 14,
+        "h": 14
+      },
+      "name": "chevron-down",
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-47.frame-38.group-121-2.frame-13.chevron-down",
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "children": [
+        "vector-2"
+      ]
+    },
+    "frame-13": {
+      "id": "379:1486",
+      "el": "frame-13",
+      "type": "frame",
+      "box": {
+        "w": 70,
+        "h": 40
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-47.frame-38.group-121-2.frame-13",
+      "pos": {
+        "x": 240,
+        "y": 0
+      },
+      "layout": "$l3",
+      "inheritedFill": "$c1",
+      "stroke": "$c5",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r3",
+      "constraints": {
+        "h": "left",
+        "v": "center"
+      },
+      "children": [
+        "text",
+        "chevron-down"
+      ]
+    },
+    "group-121-2": {
+      "id": "379:1484",
+      "el": "group-121-2",
+      "type": "group",
+      "box": {
+        "w": 310,
+        "h": 40
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-47.frame-38.group-121-2",
+      "inheritedFill": "$c1",
+      "children": [
+        "language",
+        "frame-13"
+      ]
+    },
+    "frame-38": {
+      "id": "379:1483",
+      "el": "frame-38",
+      "type": "frame",
+      "box": {
+        "w": 310,
+        "h": 40
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-47.frame-38",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill",
+        "h": "hug"
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "children": [
+        "group-121-2"
+      ]
+    },
+    "frame-47": {
+      "id": "379:1480",
+      "el": "frame-47",
+      "type": "frame",
+      "box": {
+        "w": 310,
+        "h": 81
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-47",
+      "pos": {
+        "x": 7,
+        "y": 341
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "group-125",
+        "frame-38"
+      ]
+    },
+    "privacy-data": {
+      "id": "379:1491",
+      "el": "privacy-data",
+      "type": "text",
+      "box": {
+        "w": 126,
+        "h": 25
+      },
+      "name": "Privacy & Data",
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-46.group-126.privacy-data",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "Privacy & Data",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-126": {
+      "id": "379:1490",
+      "el": "group-126",
+      "type": "group",
+      "box": {
+        "w": 126,
+        "h": 25
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-46.group-126",
+      "inheritedFill": "$c1",
+      "children": [
+        "privacy-data"
+      ]
+    },
+    "privacy-policy": {
+      "id": "379:1494",
+      "el": "privacy-policy",
+      "type": "text",
+      "box": {
+        "w": 111,
+        "h": 22
+      },
+      "name": "privacy & policy",
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-46.frame-39.group-121-3.privacy-policy",
+      "pos": {
+        "x": 0,
+        "y": 1
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "privacy & policy",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-3": {
+      "id": "I379:1495;3:2644",
+      "el": "vector-3",
+      "type": "vector",
+      "box": {
+        "w": 8,
+        "h": 14
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-46.frame-39.group-121-3.chevron-right.vector-3",
+      "pos": {
+        "x": 8,
+        "y": 5
+      },
+      "fill": "$c3",
+      "iconHint": "privacy & policy",
+      "vectorPath": "$v4",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-right": {
+      "id": "379:1495",
+      "el": "chevron-right",
+      "type": "instance",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "name": "chevron-right",
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-46.frame-39.group-121-3.chevron-right",
+      "pos": {
+        "x": 286,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector-3"
+      ]
+    },
+    "group-121-3": {
+      "id": "379:1493",
+      "el": "group-121-3",
+      "type": "group",
+      "box": {
+        "w": 310,
+        "h": 24
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-46.frame-39.group-121-3",
+      "inheritedFill": "$c1",
+      "children": [
+        "privacy-policy",
+        "chevron-right"
+      ]
+    },
+    "frame-39": {
+      "id": "379:1492",
+      "el": "frame-39",
+      "type": "frame",
+      "box": {
+        "w": 310,
+        "h": 24
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-46.frame-39",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill",
+        "h": "hug"
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "children": [
+        "group-121-3"
+      ]
+    },
+    "frame-46": {
+      "id": "379:1489",
+      "el": "frame-46",
+      "type": "frame",
+      "box": {
+        "w": 310,
+        "h": 65
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-46",
+      "pos": {
+        "x": 7,
+        "y": 438
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "group-126",
+        "frame-39"
+      ]
+    },
+    "account": {
+      "id": "379:1498",
+      "el": "account",
+      "type": "text",
+      "box": {
+        "w": 71,
+        "h": 25
+      },
+      "name": "Account",
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-44.group-127.account",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "Account",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-127": {
+      "id": "379:1497",
+      "el": "group-127",
+      "type": "group",
+      "box": {
+        "w": 71,
+        "h": 25
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-44.group-127",
+      "inheritedFill": "$c1",
+      "children": [
+        "account"
+      ]
+    },
+    "change-password": {
+      "id": "379:1502",
+      "el": "change-password",
+      "type": "text",
+      "box": {
+        "w": 125,
+        "h": 22
+      },
+      "name": "change password",
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-44.frame-43.frame-40.group-121-4.change-password",
+      "pos": {
+        "x": 0,
+        "y": 1
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "change password",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-4": {
+      "id": "I379:1503;3:2644",
+      "el": "vector-4",
+      "type": "vector",
+      "box": {
+        "w": 8,
+        "h": 14
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-44.frame-43.frame-40.group-121-4.chevron-right-2.vector-4",
+      "pos": {
+        "x": 8,
+        "y": 5
+      },
+      "fill": "$c3",
+      "iconHint": "change password",
+      "vectorPath": "$v4",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-right-2": {
+      "id": "379:1503",
+      "el": "chevron-right-2",
+      "type": "instance",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "name": "chevron-right",
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-44.frame-43.frame-40.group-121-4.chevron-right-2",
+      "pos": {
+        "x": 286,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector-4"
+      ]
+    },
+    "group-121-4": {
+      "id": "379:1501",
+      "el": "group-121-4",
+      "type": "group",
+      "box": {
+        "w": 310,
+        "h": 24
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-44.frame-43.frame-40.group-121-4",
+      "inheritedFill": "$c1",
+      "children": [
+        "change-password",
+        "chevron-right-2"
+      ]
+    },
+    "frame-40": {
+      "id": "379:1500",
+      "el": "frame-40",
+      "type": "frame",
+      "box": {
+        "w": 310,
+        "h": 24
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-44.frame-43.frame-40",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill",
+        "h": "hug"
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "children": [
+        "group-121-4"
+      ]
+    },
+    "log-out": {
+      "id": "379:1506",
+      "el": "log-out",
+      "type": "text",
+      "box": {
+        "w": 56,
+        "h": 22
+      },
+      "name": "log out",
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-44.frame-43.frame-41.group-121-5.log-out",
+      "pos": {
+        "x": 0,
+        "y": 1
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "log out",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-5": {
+      "id": "I379:1507;3:2644",
+      "el": "vector-5",
+      "type": "vector",
+      "box": {
+        "w": 8,
+        "h": 14
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-44.frame-43.frame-41.group-121-5.chevron-right-3.vector-5",
+      "pos": {
+        "x": 8,
+        "y": 5
+      },
+      "fill": "$c3",
+      "iconHint": "log out",
+      "vectorPath": "$v4",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-right-3": {
+      "id": "379:1507",
+      "el": "chevron-right-3",
+      "type": "instance",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "name": "chevron-right",
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-44.frame-43.frame-41.group-121-5.chevron-right-3",
+      "pos": {
+        "x": 286,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector-5"
+      ]
+    },
+    "group-121-5": {
+      "id": "379:1505",
+      "el": "group-121-5",
+      "type": "group",
+      "box": {
+        "w": 310,
+        "h": 24
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-44.frame-43.frame-41.group-121-5",
+      "inheritedFill": "$c1",
+      "children": [
+        "log-out",
+        "chevron-right-3"
+      ]
+    },
+    "frame-41": {
+      "id": "379:1504",
+      "el": "frame-41",
+      "type": "frame",
+      "box": {
+        "w": 310,
+        "h": 24
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-44.frame-43.frame-41",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill",
+        "h": "hug"
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "children": [
+        "group-121-5"
+      ]
+    },
+    "delete-account": {
+      "id": "379:1510",
+      "el": "delete-account",
+      "type": "text",
+      "box": {
+        "w": 111,
+        "h": 22
+      },
+      "name": "delete account",
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-44.frame-43.frame-42.group-121-6.delete-account",
+      "pos": {
+        "x": 0,
+        "y": 1
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "delete account",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-6": {
+      "id": "I379:1511;3:2644",
+      "el": "vector-6",
+      "type": "vector",
+      "box": {
+        "w": 8,
+        "h": 14
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-44.frame-43.frame-42.group-121-6.chevron-right-4.vector-6",
+      "pos": {
+        "x": 8,
+        "y": 5
+      },
+      "fill": "$c3",
+      "iconHint": "delete account",
+      "vectorPath": "$v4",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-right-4": {
+      "id": "379:1511",
+      "el": "chevron-right-4",
+      "type": "instance",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "name": "chevron-right",
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-44.frame-43.frame-42.group-121-6.chevron-right-4",
+      "pos": {
+        "x": 286,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector-6"
+      ]
+    },
+    "group-121-6": {
+      "id": "379:1509",
+      "el": "group-121-6",
+      "type": "group",
+      "box": {
+        "w": 310,
+        "h": 24
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-44.frame-43.frame-42.group-121-6",
+      "inheritedFill": "$c1",
+      "children": [
+        "delete-account",
+        "chevron-right-4"
+      ]
+    },
+    "frame-42": {
+      "id": "379:1508",
+      "el": "frame-42",
+      "type": "frame",
+      "box": {
+        "w": 310,
+        "h": 24
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-44.frame-43.frame-42",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill",
+        "h": "hug"
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "children": [
+        "group-121-6"
+      ]
+    },
+    "frame-43": {
+      "id": "379:1499",
+      "el": "frame-43",
+      "type": "frame",
+      "box": {
+        "w": 310,
+        "h": 112
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-44.frame-43",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill",
+        "h": "hug"
+      },
+      "layout": "$l4",
+      "inheritedFill": "$c1",
+      "children": [
+        "frame-40",
+        "frame-41",
+        "frame-42"
+      ]
+    },
+    "frame-44": {
+      "id": "379:1496",
+      "el": "frame-44",
+      "type": "frame",
+      "box": {
+        "w": 310,
+        "h": 153
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130.frame-44",
+      "pos": {
+        "x": 7,
+        "y": 535
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "group-127",
+        "frame-43"
+      ]
+    },
+    "tbd-version-0-0-1": {
+      "id": "379:1512",
+      "el": "tbd-version-0-0-1",
+      "type": "text",
+      "box": {
+        "w": 93,
+        "h": 16
+      },
+      "name": "tbd · version 0.0.1",
+      "path": "4-5-4-1-pop-up-delete-account.group-130.tbd-version-0-0-1",
+      "pos": {
+        "x": 119,
+        "y": 738
+      },
+      "fill": "$c5",
+      "text": "$t2",
+      "chars": "tbd · version 0.0.1",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-130": {
+      "id": "379:1450",
+      "el": "group-130",
+      "type": "group",
+      "box": {
+        "w": 317,
+        "h": 754
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-130",
+      "pos": {
+        "x": 36,
+        "y": 40
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-58",
+        "settings",
+        "union",
+        "manage-how-the-app-works-for-you",
+        "frame-45",
+        "frame-47",
+        "frame-46",
+        "frame-44",
+        "tbd-version-0-0-1"
+      ]
+    },
+    "rectangle-45": {
+      "id": "379:1513",
+      "el": "rectangle-45",
+      "type": "rect",
+      "box": {
+        "w": 402,
+        "h": 874
+      },
+      "path": "4-5-4-1-pop-up-delete-account.rectangle-45",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c6",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-46": {
+      "id": "379:1515",
+      "el": "rectangle-46",
+      "type": "rect",
+      "box": {
+        "w": 320,
+        "h": 501
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-131.rectangle-46",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c1",
+      "radius": "$r4",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      }
+    },
+    "continue-to-delete": {
+      "id": "379:1517",
+      "el": "continue-to-delete",
+      "type": "text",
+      "box": {
+        "w": 141,
+        "h": 22
+      },
+      "name": "continue to delete",
+      "path": "4-5-4-1-pop-up-delete-account.group-131.frame-7.continue-to-delete",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "continue to delete",
+      "textGrow": "wh"
+    },
+    "frame-7": {
+      "id": "379:1516",
+      "el": "frame-7",
+      "type": "frame",
+      "box": {
+        "w": 200,
+        "h": 48
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-131.frame-7",
+      "pos": {
+        "x": 60,
+        "y": 349
+      },
+      "layout": "$l5",
+      "fill": "$c2",
+      "radius": "$r1",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "continue-to-delete"
+      ]
+    },
+    "keep-my-account": {
+      "id": "379:1519",
+      "el": "keep-my-account",
+      "type": "text",
+      "box": {
+        "w": 122,
+        "h": 22
+      },
+      "name": "keep my account",
+      "path": "4-5-4-1-pop-up-delete-account.group-131.frame-8.keep-my-account",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c1",
+      "text": "$t4",
+      "chars": "keep my account",
+      "textGrow": "wh"
+    },
+    "frame-8": {
+      "id": "379:1518",
+      "el": "frame-8",
+      "type": "frame",
+      "box": {
+        "w": 200,
+        "h": 48
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-131.frame-8",
+      "pos": {
+        "x": 60,
+        "y": 413
+      },
+      "layout": "$l5",
+      "fill": "$c3",
+      "radius": "$r1",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "keep-my-account"
+      ]
+    },
+    "deleting-your-account-removes-everything": {
+      "id": "379:1520",
+      "el": "deleting-your-account-removes-everything",
+      "type": "text",
+      "box": {
+        "w": 200,
+        "h": 171
+      },
+      "name": "Deleting your account removes everything — your wardrobe, outfit history, and profile. This can't be undone. what you’ll lose All wardrobe items Your full outfit history Your profile and preferences",
+      "path": "4-5-4-1-pop-up-delete-account.group-131.deleting-your-account-removes-everything",
+      "pos": {
+        "x": 60,
+        "y": 136
+      },
+      "fill": "$c3",
+      "text": "$t6",
+      "chars": [
+        {
+          "t": "Deleting your account removes everything — your wardrobe, outfit history, and profile. This can't be undone.\n\n",
+          "s": "$t7"
+        },
+        {
+          "t": "what you’ll lose\n",
+          "s": "$t8",
+          "d": "underline"
+        },
+        {
+          "t": "All wardrobe items\nYour full outfit history\nYour profile and preferences",
+          "s": "$t7"
+        }
+      ],
+      "textGrow": "h",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-11-2": {
+      "id": "379:1522",
+      "el": "rectangle-11-2",
+      "type": "rect",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-131.group-58-2.rectangle-11-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c2",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-7": {
+      "id": "I379:1523;3:2684",
+      "el": "vector-7",
+      "type": "vector",
+      "box": {
+        "w": 12,
+        "h": 12
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-131.group-58-2.close-x.vector-7",
+      "pos": {
+        "x": 4,
+        "y": 4
+      },
+      "fill": "$c3",
+      "iconHint": "close x",
+      "vectorPath": "$v5",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "close-x": {
+      "id": "379:1523",
+      "el": "close-x",
+      "type": "instance",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "name": "close-x",
+      "path": "4-5-4-1-pop-up-delete-account.group-131.group-58-2.close-x",
+      "pos": {
+        "x": 10,
+        "y": 10
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector-7"
+      ]
+    },
+    "group-58-2": {
+      "id": "379:1521",
+      "el": "group-58-2",
+      "type": "group",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-131.group-58-2",
+      "pos": {
+        "x": 256,
+        "y": 24
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-11-2",
+        "close-x"
+      ]
+    },
+    "before-you-go": {
+      "id": "379:1524",
+      "el": "before-you-go",
+      "type": "text",
+      "box": {
+        "w": 196,
+        "h": 40
+      },
+      "name": "Before you go.",
+      "path": "4-5-4-1-pop-up-delete-account.group-131.before-you-go",
+      "pos": {
+        "x": 62,
+        "y": 88
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "Before you go.",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-100": {
+      "id": "761:492",
+      "el": "rectangle-100",
+      "type": "rect",
+      "box": {
+        "w": 120,
+        "h": 8
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-131.group-197.rectangle-100",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c2",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-101": {
+      "id": "761:493",
+      "el": "rectangle-101",
+      "type": "rect",
+      "box": {
+        "w": 40,
+        "h": 8
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-131.group-197.rectangle-101",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-197": {
+      "id": "761:491",
+      "el": "group-197",
+      "type": "group",
+      "box": {
+        "w": 120,
+        "h": 8
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-131.group-197",
+      "pos": {
+        "x": 100,
+        "y": 44
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-100",
+        "rectangle-101"
+      ]
+    },
+    "group-131": {
+      "id": "379:1514",
+      "el": "group-131",
+      "type": "group",
+      "box": {
+        "w": 320,
+        "h": 501
+      },
+      "path": "4-5-4-1-pop-up-delete-account.group-131",
+      "pos": {
+        "x": 41,
+        "y": 187
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-46",
+        "frame-7",
+        "frame-8",
+        "deleting-your-account-removes-everything",
+        "group-58-2",
+        "before-you-go",
+        "group-197"
+      ]
+    },
+    "4-5-4-1-pop-up-delete-account": {
+      "id": "379:1438",
+      "el": "4-5-4-1-pop-up-delete-account",
+      "type": "frame",
+      "box": {
+        "w": 402,
+        "h": 874
+      },
+      "name": "4.5.4.1 Pop-up Delete Account",
+      "fill": "$c1",
+      "clip": true,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "group-130",
+        "rectangle-45",
+        "group-131"
+      ]
+    }
+  },
+  "meta": {
+    "nodeCount": 86,
+    "estTokens": 6943,
+    "depthUsed": 12
+  },
+  "next": "Read `tokens` for the design system, then build the UI from `nodes`. Tag each rendered element data-plumb-id=\"<el>\". A node with a `more` count has that many children not yet included — call plumb_node again on that node's `id` to expand them.",
+  "source": "plugin",
+  "node": "4.5.4.1 Pop-up Delete Account"
+}

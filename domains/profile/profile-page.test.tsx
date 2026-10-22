@@ -16,7 +16,6 @@ describe("ProfileView (Component & Integration Tier)", () => {
     // Arrange: Mock user profile data, outfits, trips, and wishlist
     server.use(
       http.get(`${MOCK_SUPABASE_URL}/rest/v1/user`, ({ request }) => {
-        const url = new URL(request.url);
         const accept = request.headers.get("accept") ?? "";
         const isSingle = accept.includes("vnd.pgrst.object+json");
 

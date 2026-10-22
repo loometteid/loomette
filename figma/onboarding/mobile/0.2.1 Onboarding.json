@@ -1,0 +1,650 @@
+{
+  "file": {
+    "name": "Loomette.id",
+    "version": "plugin-1792667038152"
+  },
+  "root": "0-2-1-onboarding",
+  "tokens": {
+    "color": {
+      "$c1": "#fafaf7",
+      "$c2": "#444440",
+      "$c3": "#d9d9d9",
+      "$c4": "#f2ede5",
+      "$c5": "#c9c3b7"
+    },
+    "text": {
+      "$t1": "400 32px Source Serif Pro",
+      "$t2": "400 12px Avenir Next",
+      "$t3": "400 16px Avenir Next",
+      "$t4": "400 12px Avenir",
+      "$t5": "400 20px Avenir Next"
+    },
+    "radius": {
+      "$r1": 8,
+      "$r2": 16,
+      "$r3": "full"
+    },
+    "shadow": {},
+    "layout": {
+      "$l1": {
+        "flow": "col",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          12,
+          212,
+          12,
+          16
+        ]
+      },
+      "$l2": {
+        "align": "center",
+        "flow": "row",
+        "gap": 8,
+        "pad": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l3": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          19,
+          108,
+          18,
+          107
+        ]
+      }
+    },
+    "vector": {
+      "$v1": "M14.4004 11.3262 L22.4092 3.31738 L23.6826 4.59082 L15.6738 12.5996 L27 12.5996 L27 14.4004 L15.6738 14.4004 L23.6826 22.4092 L22.4092 23.6826 L14.4004 15.6738 L14.4004 27 L12.5996 27 L12.5996 15.6738 L4.59082 23.6826 L3.31738 22.4092 L11.3262 14.4004 L0 14.4004 L0 12.5996 L11.3262 12.5996 L3.31738 4.59082 L4.59082 3.31738 L12.5996 11.3262 L12.5996 0 L14.4004 0 L14.4004 11.3262 Z",
+      "$v2": "M7.60355 0.292893 C7.99408 0.683418 7.99408 1.31658 7.60355 1.70711 L2.31066 7 L7.60355 12.2929 C7.99408 12.6834 7.99408 13.3166 7.60355 13.7071 C7.21303 14.0976 6.57986 14.0976 6.18934 13.7071 L0.366116 7.88388 C-0.12204 7.39573 -0.122038 6.60427 0.366117 6.11612 L6.18934 0.292893 C6.57986 -0.0976311 7.21303 -0.0976311 7.60355 0.292893 Z"
+    },
+    "props": {
+      "$p1": {
+        "size": "24"
+      }
+    },
+    "meta": {
+      "counts": {
+        "$c1": 2,
+        "$c2": 8,
+        "$c3": 4,
+        "$t3": 2,
+        "$l1": 2,
+        "$c4": 4,
+        "$r1": 3,
+        "$l2": 2,
+        "$c5": 2,
+        "$t4": 2,
+        "$r3": 2
+      }
+    }
+  },
+  "nodes": {
+    "first-let-s-make-this-yours": {
+      "id": "60:221",
+      "el": "first-let-s-make-this-yours",
+      "type": "text",
+      "box": {
+        "w": 241,
+        "h": 80
+      },
+      "name": "First, let's make this yours.",
+      "path": "0-2-1-onboarding.first-let-s-make-this-yours",
+      "pos": {
+        "x": 84,
+        "y": 108
+      },
+      "fill": "$c2",
+      "text": "$t1",
+      "chars": "First, let's make this yours.",
+      "textGrow": "h",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16": {
+      "id": "60:223",
+      "el": "rectangle-16",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 27
+      },
+      "path": "0-2-1-onboarding.union.rectangle-16",
+      "pos": {
+        "x": 13,
+        "y": 0
+      },
+      "fill": "$c3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17": {
+      "id": "60:224",
+      "el": "rectangle-17",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "0-2-1-onboarding.union.rectangle-17",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c3",
+      "rotation": 2578,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19": {
+      "id": "60:225",
+      "el": "rectangle-19",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "0-2-1-onboarding.union.rectangle-19",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c3",
+      "rotation": 7735,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18": {
+      "id": "60:226",
+      "el": "rectangle-18",
+      "type": "rect",
+      "box": {
+        "w": 27,
+        "h": 2
+      },
+      "path": "0-2-1-onboarding.union.rectangle-18",
+      "pos": {
+        "x": 0,
+        "y": 13
+      },
+      "fill": "$c3",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union": {
+      "id": "60:222",
+      "el": "union",
+      "type": "bool",
+      "box": {
+        "w": 27,
+        "h": 27
+      },
+      "path": "0-2-1-onboarding.union",
+      "pos": {
+        "x": 43,
+        "y": 112
+      },
+      "fill": "$c2",
+      "iconHint": "First, let's make this yours.",
+      "vectorPath": "$v1",
+      "children": [
+        "rectangle-16",
+        "rectangle-17",
+        "rectangle-19",
+        "rectangle-18"
+      ]
+    },
+    "no-spam-just-your-wardrobe-personalized": {
+      "id": "61:228",
+      "el": "no-spam-just-your-wardrobe-personalized",
+      "type": "text",
+      "box": {
+        "w": 241,
+        "h": 16
+      },
+      "name": "No spam. Just your wardrobe, personalized.",
+      "path": "0-2-1-onboarding.no-spam-just-your-wardrobe-personalized",
+      "pos": {
+        "x": 84,
+        "y": 192
+      },
+      "fill": "$c2",
+      "text": "$t2",
+      "chars": "No spam. Just your wardrobe, personalized.",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "what-do-we-call-you": {
+      "id": "61:230",
+      "el": "what-do-we-call-you",
+      "type": "text",
+      "box": {
+        "w": 153,
+        "h": 22
+      },
+      "name": "What do we call you?",
+      "path": "0-2-1-onboarding.group-34.what-do-we-call-you",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c2",
+      "text": "$t3",
+      "chars": "What do we call you?",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "e-g-gonjoi": {
+      "id": "61:233",
+      "el": "e-g-gonjoi",
+      "type": "text",
+      "box": {
+        "w": 63,
+        "h": 16
+      },
+      "name": "e.g. Gonjoi",
+      "path": "0-2-1-onboarding.group-34.frame-6.frame-5.e-g-gonjoi",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c5",
+      "text": "$t4",
+      "chars": "e.g. Gonjoi",
+      "textGrow": "wh"
+    },
+    "frame-5": {
+      "id": "61:232",
+      "el": "frame-5",
+      "type": "frame",
+      "box": {
+        "w": 63,
+        "h": 16
+      },
+      "path": "0-2-1-onboarding.group-34.frame-6.frame-5",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c4",
+      "children": [
+        "e-g-gonjoi"
+      ]
+    },
+    "frame-6": {
+      "id": "61:231",
+      "el": "frame-6",
+      "type": "frame",
+      "box": {
+        "w": 312,
+        "h": 48
+      },
+      "path": "0-2-1-onboarding.group-34.frame-6",
+      "pos": {
+        "x": 0,
+        "y": 30
+      },
+      "layout": "$l1",
+      "fill": "$c4",
+      "radius": "$r1",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "frame-5"
+      ]
+    },
+    "group-34": {
+      "id": "61:264",
+      "el": "group-34",
+      "type": "group",
+      "box": {
+        "w": 312,
+        "h": 78
+      },
+      "path": "0-2-1-onboarding.group-34",
+      "pos": {
+        "x": 44,
+        "y": 256
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "what-do-we-call-you",
+        "frame-6"
+      ]
+    },
+    "your-email": {
+      "id": "61:259",
+      "el": "your-email",
+      "type": "text",
+      "box": {
+        "w": 76,
+        "h": 22
+      },
+      "name": "Your email",
+      "path": "0-2-1-onboarding.group-35.your-email",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c2",
+      "text": "$t3",
+      "chars": "Your email",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "you-example-com": {
+      "id": "61:262",
+      "el": "you-example-com",
+      "type": "text",
+      "box": {
+        "w": 105,
+        "h": 16
+      },
+      "name": "you@example.com",
+      "path": "0-2-1-onboarding.group-35.frame-8.frame-5-2.you-example-com",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c5",
+      "text": "$t4",
+      "chars": "you@example.com",
+      "textGrow": "wh"
+    },
+    "frame-5-2": {
+      "id": "61:261",
+      "el": "frame-5-2",
+      "type": "frame",
+      "box": {
+        "w": 105,
+        "h": 16
+      },
+      "path": "0-2-1-onboarding.group-35.frame-8.frame-5-2",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c4",
+      "children": [
+        "you-example-com"
+      ]
+    },
+    "frame-8": {
+      "id": "61:260",
+      "el": "frame-8",
+      "type": "frame",
+      "box": {
+        "w": 312,
+        "h": 48
+      },
+      "path": "0-2-1-onboarding.group-35.frame-8",
+      "pos": {
+        "x": 0,
+        "y": 30
+      },
+      "layout": "$l1",
+      "fill": "$c4",
+      "radius": "$r1",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "frame-5-2"
+      ]
+    },
+    "group-35": {
+      "id": "61:265",
+      "el": "group-35",
+      "type": "group",
+      "box": {
+        "w": 312,
+        "h": 78
+      },
+      "path": "0-2-1-onboarding.group-35",
+      "pos": {
+        "x": 44,
+        "y": 366
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "your-email",
+        "frame-8"
+      ]
+    },
+    "rectangle-11": {
+      "id": "61:239",
+      "el": "rectangle-11",
+      "type": "rect",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "0-2-1-onboarding.rectangle-11",
+      "pos": {
+        "x": 36,
+        "y": 40
+      },
+      "fill": "$c4",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector": {
+      "id": "I61:252;3:2631",
+      "el": "vector",
+      "type": "vector",
+      "box": {
+        "w": 8,
+        "h": 14
+      },
+      "path": "0-2-1-onboarding.chevron-left.vector",
+      "pos": {
+        "x": 8,
+        "y": 5
+      },
+      "fill": "$c2",
+      "iconHint": "First, let's make this yours.",
+      "vectorPath": "$v2",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-left": {
+      "id": "61:252",
+      "el": "chevron-left",
+      "type": "instance",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "name": "chevron-left",
+      "path": "0-2-1-onboarding.chevron-left",
+      "pos": {
+        "x": 44,
+        "y": 48
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector"
+      ]
+    },
+    "continue": {
+      "id": "61:256",
+      "el": "continue",
+      "type": "text",
+      "box": {
+        "w": 85,
+        "h": 27
+      },
+      "name": "Continue",
+      "path": "0-2-1-onboarding.frame-7.continue",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c1",
+      "text": "$t5",
+      "chars": "Continue",
+      "textGrow": "wh"
+    },
+    "frame-7": {
+      "id": "61:258",
+      "el": "frame-7",
+      "type": "frame",
+      "box": {
+        "w": 320,
+        "h": 64
+      },
+      "path": "0-2-1-onboarding.frame-7",
+      "pos": {
+        "x": 41,
+        "y": 758
+      },
+      "layout": "$l3",
+      "fill": "$c2",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "continue"
+      ]
+    },
+    "rectangle-100": {
+      "id": "678:299",
+      "el": "rectangle-100",
+      "type": "rect",
+      "box": {
+        "w": 160,
+        "h": 8
+      },
+      "path": "0-2-1-onboarding.group-197.rectangle-100",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c4",
+      "radius": "$r3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-101": {
+      "id": "678:300",
+      "el": "rectangle-101",
+      "type": "rect",
+      "box": {
+        "w": 32,
+        "h": 8
+      },
+      "path": "0-2-1-onboarding.group-197.rectangle-101",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c2",
+      "radius": "$r3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-197": {
+      "id": "678:302",
+      "el": "group-197",
+      "type": "group",
+      "box": {
+        "w": 160,
+        "h": 8
+      },
+      "path": "0-2-1-onboarding.group-197",
+      "pos": {
+        "x": 121,
+        "y": 56
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-100",
+        "rectangle-101"
+      ]
+    },
+    "0-2-1-onboarding": {
+      "id": "60:193",
+      "el": "0-2-1-onboarding",
+      "type": "frame",
+      "box": {
+        "w": 402,
+        "h": 874
+      },
+      "name": "0.2.1 Onboarding",
+      "fill": "$c1",
+      "clip": true,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "first-let-s-make-this-yours",
+        "union",
+        "no-spam-just-your-wardrobe-personalized",
+        "group-34",
+        "group-35",
+        "rectangle-11",
+        "chevron-left",
+        "frame-7",
+        "group-197"
+      ]
+    }
+  },
+  "meta": {
+    "nodeCount": 26,
+    "estTokens": 2019,
+    "depthUsed": 12
+  },
+  "next": "Read `tokens` for the design system, then build the UI from `nodes`. Tag each rendered element data-plumb-id=\"<el>\". A node with a `more` count has that many children not yet included — call plumb_node again on that node's `id` to expand them.",
+  "source": "plugin",
+  "node": "0.2.1 Onboarding"
+}

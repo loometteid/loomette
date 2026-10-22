@@ -1,0 +1,1285 @@
+{
+  "file": {
+    "name": "Loomette.id",
+    "version": "plugin-1792666967898"
+  },
+  "root": "1-1-1-outfit-recommendation-detail",
+  "tokens": {
+    "color": {
+      "$c1": "#fafaf7",
+      "$c2": "#f2ede5",
+      "$c3": "#444440",
+      "$c4": "#d9d9d9",
+      "$c5": "#c9c3b7",
+      "$c6": "image"
+    },
+    "text": {
+      "$t1": "400 32px",
+      "$t2": "400 32px Source Serif Pro",
+      "$t3": "400 10px Avenir Next",
+      "$t4": "400 14px Source Serif Pro",
+      "$t5": "400 16px Avenir Next",
+      "$t6": "400 8px Avenir Next",
+      "$t7": "700 8px Avenir Next",
+      "$t8": "400 12px Avenir Next"
+    },
+    "radius": {
+      "$r1": 8,
+      "$r2": 12,
+      "$r3": "full",
+      "$r4": 16
+    },
+    "shadow": {
+      "$s1": "0px 4px 10px 0px #c9c3b780"
+    },
+    "layout": {
+      "$l1": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          1,
+          16,
+          2,
+          16
+        ]
+      },
+      "$l2": {
+        "align": "center",
+        "flow": "row",
+        "gap": 13,
+        "justify": "space-between",
+        "pad": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l3": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          19,
+          108,
+          18,
+          107
+        ]
+      },
+      "$l4": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          1,
+          7,
+          1,
+          5
+        ]
+      }
+    },
+    "vector": {
+      "$v1": "M7.60355 0.292893 C7.99408 0.683418 7.99408 1.31658 7.60355 1.70711 L2.31066 7 L7.60355 12.2929 C7.99408 12.6834 7.99408 13.3166 7.60355 13.7071 C7.21303 14.0976 6.57986 14.0976 6.18934 13.7071 L0.366116 7.88388 C-0.12204 7.39573 -0.122038 6.60427 0.366117 6.11612 L6.18934 0.292893 C6.57986 -0.0976311 7.21303 -0.0976311 7.60355 0.292893 Z",
+      "$v2": "M14.4004 11.3262 L22.4092 3.31738 L23.6826 4.59082 L15.6738 12.5996 L27 12.5996 L27 14.4004 L15.6738 14.4004 L23.6826 22.4092 L22.4092 23.6826 L14.4004 15.6738 L14.4004 27 L12.5996 27 L12.5996 15.6738 L4.59082 23.6826 L3.31738 22.4092 L11.3262 14.4004 L0 14.4004 L0 12.5996 L11.3262 12.5996 L3.31738 4.59082 L4.59082 3.31738 L12.5996 11.3262 L12.5996 0 L14.4004 0 L14.4004 11.3262 Z"
+    },
+    "props": {
+      "$p1": {
+        "size": "24"
+      }
+    },
+    "meta": {
+      "counts": {
+        "$c1": 3,
+        "$c2": 3,
+        "$c3": 16,
+        "$t2": 2,
+        "$c4": 4,
+        "$c5": 5,
+        "$t3": 3,
+        "$r2": 3,
+        "$c6": 7,
+        "$t4": 3,
+        "$t5": 3,
+        "$r3": 2,
+        "$l3": 2,
+        "$r4": 2
+      }
+    }
+  },
+  "nodes": {
+    "rectangle-11": {
+      "id": "395:1758",
+      "el": "rectangle-11",
+      "type": "rect",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "1-1-1-outfit-recommendation-detail.rectangle-11",
+      "pos": {
+        "x": 36,
+        "y": 40
+      },
+      "fill": "$c2",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector": {
+      "id": "I395:1759;3:2631",
+      "el": "vector",
+      "type": "vector",
+      "box": {
+        "w": 8,
+        "h": 14
+      },
+      "path": "1-1-1-outfit-recommendation-detail.chevron-left.vector",
+      "pos": {
+        "x": 8,
+        "y": 5
+      },
+      "fill": "$c3",
+      "iconHint": "Outfit Recommendation",
+      "vectorPath": "$v1",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-left": {
+      "id": "395:1759",
+      "el": "chevron-left",
+      "type": "instance",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "name": "chevron-left",
+      "path": "1-1-1-outfit-recommendation-detail.chevron-left",
+      "pos": {
+        "x": 44,
+        "y": 48
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector"
+      ]
+    },
+    "outfit-recommendation": {
+      "id": "395:1760",
+      "el": "outfit-recommendation",
+      "type": "text",
+      "box": {
+        "w": 256,
+        "h": 80
+      },
+      "name": "Outfit Recommendation",
+      "path": "1-1-1-outfit-recommendation-detail.outfit-recommendation",
+      "pos": {
+        "x": 84,
+        "y": 108
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": [
+        {
+          "t": "Outfit",
+          "s": "$t2",
+          "d": "underline"
+        },
+        {
+          "t": " Recommendation",
+          "s": "$t2"
+        }
+      ],
+      "textGrow": "h",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16": {
+      "id": "395:1762",
+      "el": "rectangle-16",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 27
+      },
+      "path": "1-1-1-outfit-recommendation-detail.union.rectangle-16",
+      "pos": {
+        "x": 13,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17": {
+      "id": "395:1763",
+      "el": "rectangle-17",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "1-1-1-outfit-recommendation-detail.union.rectangle-17",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 2578,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19": {
+      "id": "395:1764",
+      "el": "rectangle-19",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "1-1-1-outfit-recommendation-detail.union.rectangle-19",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 7735,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18": {
+      "id": "395:1765",
+      "el": "rectangle-18",
+      "type": "rect",
+      "box": {
+        "w": 27,
+        "h": 2
+      },
+      "path": "1-1-1-outfit-recommendation-detail.union.rectangle-18",
+      "pos": {
+        "x": 0,
+        "y": 13
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union": {
+      "id": "395:1761",
+      "el": "union",
+      "type": "bool",
+      "box": {
+        "w": 27,
+        "h": 27
+      },
+      "path": "1-1-1-outfit-recommendation-detail.union",
+      "pos": {
+        "x": 43,
+        "y": 112
+      },
+      "fill": "$c3",
+      "iconHint": "Outfit Recommendation",
+      "vectorPath": "$v2",
+      "children": [
+        "rectangle-16",
+        "rectangle-17",
+        "rectangle-19",
+        "rectangle-18"
+      ]
+    },
+    "from-wardrobe": {
+      "id": "395:1794",
+      "el": "from-wardrobe",
+      "type": "text",
+      "box": {
+        "w": 72,
+        "h": 14
+      },
+      "name": "From wardrobe",
+      "path": "1-1-1-outfit-recommendation-detail.group-46.from-wardrobe",
+      "pos": {
+        "x": 36,
+        "y": 151
+      },
+      "fill": "$c5",
+      "text": "$t3",
+      "chars": "From wardrobe",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-36": {
+      "id": "395:1795",
+      "el": "rectangle-36",
+      "type": "rect",
+      "box": {
+        "w": 143,
+        "h": 177
+      },
+      "path": "1-1-1-outfit-recommendation-detail.group-46.rectangle-36",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c5",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-1": {
+      "id": "395:1796",
+      "el": "image-removebg-preview-1",
+      "type": "rect",
+      "box": {
+        "w": 103,
+        "h": 97
+      },
+      "name": "image-removebg-preview 1",
+      "path": "1-1-1-outfit-recommendation-detail.group-46.image-removebg-preview-1",
+      "pos": {
+        "x": 20,
+        "y": 24
+      },
+      "assetId": "837079d7a4263daef60e6c2261fde3a6852552dd",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "837079d7a4263daef60e6c2261fde3a6852552dd",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.7313451170921326,
+              0.13030901551246643
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "blue-shirt": {
+      "id": "395:1799",
+      "el": "blue-shirt",
+      "type": "text",
+      "box": {
+        "w": 58,
+        "h": 18
+      },
+      "name": "Blue shirt",
+      "path": "1-1-1-outfit-recommendation-detail.group-46.blue-shirt",
+      "pos": {
+        "x": 43,
+        "y": 133
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "Blue shirt",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-46": {
+      "id": "395:1793",
+      "el": "group-46",
+      "type": "group",
+      "box": {
+        "w": 143,
+        "h": 177
+      },
+      "path": "1-1-1-outfit-recommendation-detail.group-46",
+      "pos": {
+        "x": 47,
+        "y": 707
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "from-wardrobe",
+        "rectangle-36",
+        "image-removebg-preview-1",
+        "blue-shirt"
+      ]
+    },
+    "ai-generated": {
+      "id": "395:1801",
+      "el": "ai-generated",
+      "type": "text",
+      "box": {
+        "w": 59,
+        "h": 14
+      },
+      "name": "ai generated",
+      "path": "1-1-1-outfit-recommendation-detail.group-47.ai-generated",
+      "pos": {
+        "x": 42,
+        "y": 151
+      },
+      "fill": "$c5",
+      "text": "$t3",
+      "chars": "ai generated",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-36-2": {
+      "id": "395:1802",
+      "el": "rectangle-36-2",
+      "type": "rect",
+      "box": {
+        "w": 143,
+        "h": 177
+      },
+      "path": "1-1-1-outfit-recommendation-detail.group-47.rectangle-36-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c5",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-7-1": {
+      "id": "395:1803",
+      "el": "image-removebg-preview-7-1",
+      "type": "rect",
+      "box": {
+        "w": 78,
+        "h": 100
+      },
+      "name": "image-removebg-preview (7) 1",
+      "path": "1-1-1-outfit-recommendation-detail.group-47.image-removebg-preview-7-1",
+      "pos": {
+        "x": 33,
+        "y": 28
+      },
+      "assetId": "e5420007b99f8c30cfc67be00af0ec3b2f376e2a",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "e5420007b99f8c30cfc67be00af0ec3b2f376e2a",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.8557214140892029,
+              0.07213930040597916
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "polkadot-skirt": {
+      "id": "395:1805",
+      "el": "polkadot-skirt",
+      "type": "text",
+      "box": {
+        "w": 83,
+        "h": 18
+      },
+      "name": "Polkadot skirt",
+      "path": "1-1-1-outfit-recommendation-detail.group-47.polkadot-skirt",
+      "pos": {
+        "x": 30,
+        "y": 133
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "Polkadot skirt",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-47": {
+      "id": "395:1800",
+      "el": "group-47",
+      "type": "group",
+      "box": {
+        "w": 143,
+        "h": 177
+      },
+      "path": "1-1-1-outfit-recommendation-detail.group-47",
+      "pos": {
+        "x": 212,
+        "y": 707
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "ai-generated",
+        "rectangle-36-2",
+        "image-removebg-preview-7-1",
+        "polkadot-skirt"
+      ]
+    },
+    "wardrobe-detail": {
+      "id": "395:1811",
+      "el": "wardrobe-detail",
+      "type": "text",
+      "box": {
+        "w": 116,
+        "h": 22
+      },
+      "name": "wardrobe detail",
+      "path": "1-1-1-outfit-recommendation-detail.group-49.group-36.group-35.wardrobe-detail",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t5",
+      "chars": "wardrobe detail",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-35": {
+      "id": "395:1810",
+      "el": "group-35",
+      "type": "group",
+      "box": {
+        "w": 116,
+        "h": 22
+      },
+      "path": "1-1-1-outfit-recommendation-detail.group-49.group-36.group-35",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "wardrobe-detail"
+      ]
+    },
+    "group-36": {
+      "id": "395:1809",
+      "el": "group-36",
+      "type": "group",
+      "box": {
+        "w": 116,
+        "h": 22
+      },
+      "path": "1-1-1-outfit-recommendation-detail.group-49.group-36",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-35"
+      ]
+    },
+    "group-49": {
+      "id": "395:1808",
+      "el": "group-49",
+      "type": "group",
+      "box": {
+        "w": 116,
+        "h": 22
+      },
+      "path": "1-1-1-outfit-recommendation-detail.group-49",
+      "pos": {
+        "x": 47,
+        "y": 673
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-36"
+      ]
+    },
+    "rectangle-36-3": {
+      "id": "395:1822",
+      "el": "rectangle-36-3",
+      "type": "rect",
+      "box": {
+        "w": 143,
+        "h": 177
+      },
+      "path": "1-1-1-outfit-recommendation-detail.group-107.rectangle-36-3",
+      "pos": {
+        "x": 0,
+        "y": 11
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c5",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "pink-pashmina": {
+      "id": "395:1823",
+      "el": "pink-pashmina",
+      "type": "text",
+      "box": {
+        "w": 91,
+        "h": 18
+      },
+      "name": "Pink Pashmina",
+      "path": "1-1-1-outfit-recommendation-detail.group-107.pink-pashmina",
+      "pos": {
+        "x": 26,
+        "y": 150
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "Pink Pashmina",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rp39-000": {
+      "id": "395:1827",
+      "el": "rp39-000",
+      "type": "text",
+      "box": {
+        "w": 35,
+        "h": 11
+      },
+      "name": "Rp39.000",
+      "path": "1-1-1-outfit-recommendation-detail.group-107.rp39-000",
+      "pos": {
+        "x": 34,
+        "y": 168
+      },
+      "fill": "$c3",
+      "text": "$t6",
+      "chars": "Rp39.000",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rp29-000": {
+      "id": "395:1828",
+      "el": "rp29-000",
+      "type": "text",
+      "box": {
+        "w": 38,
+        "h": 11
+      },
+      "name": "Rp29.000",
+      "path": "1-1-1-outfit-recommendation-detail.group-107.rp29-000",
+      "pos": {
+        "x": 74,
+        "y": 168
+      },
+      "fill": "$c3",
+      "text": "$t7",
+      "chars": "Rp29.000",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "line-5": {
+      "id": "395:1830",
+      "el": "line-5",
+      "type": "line",
+      "box": {
+        "w": 38,
+        "h": 0
+      },
+      "path": "1-1-1-outfit-recommendation-detail.group-107.line-5",
+      "pos": {
+        "x": 32,
+        "y": 174
+      },
+      "stroke": "$c3",
+      "strokeW": 1,
+      "strokeAlign": "center",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-4-1": {
+      "id": "395:1832",
+      "el": "image-removebg-preview-4-1",
+      "type": "rect",
+      "box": {
+        "w": 114,
+        "h": 114
+      },
+      "name": "image-removebg-preview (4) 1",
+      "path": "1-1-1-outfit-recommendation-detail.group-107.image-removebg-preview-4-1",
+      "pos": {
+        "x": 12,
+        "y": 28
+      },
+      "assetId": "b5383112df490c825aacd83035b1de7245c291b4",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "b5383112df490c825aacd83035b1de7245c291b4",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "1-trending": {
+      "id": "395:1835",
+      "el": "1-trending",
+      "type": "text",
+      "box": {
+        "w": 63,
+        "h": 16
+      },
+      "name": "#1 TRENDING",
+      "path": "1-1-1-outfit-recommendation-detail.group-107.frame-18.1-trending",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t8",
+      "chars": "#1 TRENDING",
+      "textGrow": "wh"
+    },
+    "frame-18": {
+      "id": "395:1834",
+      "el": "frame-18",
+      "type": "frame",
+      "box": {
+        "w": 95,
+        "h": 22
+      },
+      "path": "1-1-1-outfit-recommendation-detail.group-107.frame-18",
+      "pos": {
+        "x": 12,
+        "y": 0
+      },
+      "layout": "$l1",
+      "fill": "$c2",
+      "radius": "$r3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "1-trending"
+      ]
+    },
+    "group-107": {
+      "id": "395:1821",
+      "el": "group-107",
+      "type": "group",
+      "box": {
+        "w": 143,
+        "h": 188
+      },
+      "path": "1-1-1-outfit-recommendation-detail.group-107",
+      "pos": {
+        "x": 47,
+        "y": 903
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-36-3",
+        "pink-pashmina",
+        "rp39-000",
+        "rp29-000",
+        "line-5",
+        "image-removebg-preview-4-1",
+        "frame-18"
+      ]
+    },
+    "add-to-collection": {
+      "id": "395:1841",
+      "el": "add-to-collection",
+      "type": "text",
+      "box": {
+        "w": 135,
+        "h": 22
+      },
+      "name": "add to collection",
+      "path": "1-1-1-outfit-recommendation-detail.group-89.frame-30.group-76.frame-7.add-to-collection",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t5",
+      "chars": "add to collection",
+      "textGrow": "wh"
+    },
+    "frame-7": {
+      "id": "395:1840",
+      "el": "frame-7",
+      "type": "frame",
+      "box": {
+        "w": 154,
+        "h": 64
+      },
+      "path": "1-1-1-outfit-recommendation-detail.group-89.frame-30.group-76.frame-7",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "layout": "$l3",
+      "fill": "$c2",
+      "radius": "$r4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "add-to-collection"
+      ]
+    },
+    "group-76": {
+      "id": "395:1839",
+      "el": "group-76",
+      "type": "group",
+      "box": {
+        "w": 154,
+        "h": 64
+      },
+      "path": "1-1-1-outfit-recommendation-detail.group-89.frame-30.group-76",
+      "inheritedFill": "$c1",
+      "children": [
+        "frame-7"
+      ]
+    },
+    "add-to-calendar": {
+      "id": "395:1844",
+      "el": "add-to-calendar",
+      "type": "text",
+      "box": {
+        "w": 122,
+        "h": 22
+      },
+      "name": "add to calendar",
+      "path": "1-1-1-outfit-recommendation-detail.group-89.frame-30.group-75.frame-7-2.add-to-calendar",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c1",
+      "text": "$t5",
+      "chars": "add to calendar",
+      "textGrow": "wh"
+    },
+    "frame-7-2": {
+      "id": "395:1843",
+      "el": "frame-7-2",
+      "type": "frame",
+      "box": {
+        "w": 154,
+        "h": 64
+      },
+      "path": "1-1-1-outfit-recommendation-detail.group-89.frame-30.group-75.frame-7-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "layout": "$l3",
+      "fill": "$c3",
+      "radius": "$r4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "add-to-calendar"
+      ]
+    },
+    "group-75": {
+      "id": "395:1842",
+      "el": "group-75",
+      "type": "group",
+      "box": {
+        "w": 154,
+        "h": 64
+      },
+      "path": "1-1-1-outfit-recommendation-detail.group-89.frame-30.group-75",
+      "inheritedFill": "$c1",
+      "children": [
+        "frame-7-2"
+      ]
+    },
+    "frame-30": {
+      "id": "395:1838",
+      "el": "frame-30",
+      "type": "frame",
+      "box": {
+        "w": 321,
+        "h": 64
+      },
+      "path": "1-1-1-outfit-recommendation-detail.group-89.frame-30",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "group-76",
+        "group-75"
+      ]
+    },
+    "group-89": {
+      "id": "395:1837",
+      "el": "group-89",
+      "type": "group",
+      "box": {
+        "w": 321,
+        "h": 64
+      },
+      "path": "1-1-1-outfit-recommendation-detail.group-89",
+      "pos": {
+        "x": 40,
+        "y": 585
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "frame-30"
+      ]
+    },
+    "image-removebg-preview-7-1-2": {
+      "id": "395:1872",
+      "el": "image-removebg-preview-7-1-2",
+      "type": "rect",
+      "box": {
+        "w": 184,
+        "h": 236
+      },
+      "name": "image-removebg-preview (7) 1",
+      "path": "1-1-1-outfit-recommendation-detail.group-135.image-removebg-preview-7-1-2",
+      "pos": {
+        "x": 11,
+        "y": 94
+      },
+      "assetId": "e5420007b99f8c30cfc67be00af0ec3b2f376e2a",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "e5420007b99f8c30cfc67be00af0ec3b2f376e2a",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.8557214140892029,
+              0.07213930040597916
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-1-2": {
+      "id": "395:1873",
+      "el": "image-removebg-preview-1-2",
+      "type": "rect",
+      "box": {
+        "w": 161,
+        "h": 153
+      },
+      "name": "image-removebg-preview 1",
+      "path": "1-1-1-outfit-recommendation-detail.group-135.image-removebg-preview-1-2",
+      "pos": {
+        "x": 22,
+        "y": 15
+      },
+      "assetId": "837079d7a4263daef60e6c2261fde3a6852552dd",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "837079d7a4263daef60e6c2261fde3a6852552dd",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.7313451170921326,
+              0.13030901551246643
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-10-1": {
+      "id": "395:1874",
+      "el": "image-removebg-preview-10-1",
+      "type": "rect",
+      "box": {
+        "w": 71,
+        "h": 50
+      },
+      "name": "image-removebg-preview (10) 1",
+      "path": "1-1-1-outfit-recommendation-detail.group-135.image-removebg-preview-10-1",
+      "pos": {
+        "x": 103,
+        "y": 294
+      },
+      "assetId": "178406f88b315152b95287f3aeb79ee56c5d2443",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "178406f88b315152b95287f3aeb79ee56c5d2443",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.720081090927124,
+              0.12576064467430115
+            ]
+          ]
+        }
+      ],
+      "rotation": 10313,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-4-1-2": {
+      "id": "395:1875",
+      "el": "image-removebg-preview-4-1-2",
+      "type": "rect",
+      "box": {
+        "w": 103,
+        "h": 104
+      },
+      "name": "image-removebg-preview (4) 1",
+      "path": "1-1-1-outfit-recommendation-detail.group-135.image-removebg-preview-4-1-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "assetId": "b5383112df490c825aacd83035b1de7245c291b4",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "b5383112df490c825aacd83035b1de7245c291b4",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-135": {
+      "id": "395:1871",
+      "el": "group-135",
+      "type": "group",
+      "box": {
+        "w": 195,
+        "h": 344
+      },
+      "path": "1-1-1-outfit-recommendation-detail.group-135",
+      "pos": {
+        "x": 104,
+        "y": 201
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "image-removebg-preview-7-1-2",
+        "image-removebg-preview-1-2",
+        "image-removebg-preview-10-1",
+        "image-removebg-preview-4-1-2"
+      ]
+    },
+    "rp19-000": {
+      "id": "395:2104",
+      "el": "rp19-000",
+      "type": "text",
+      "box": {
+        "w": 37,
+        "h": 14
+      },
+      "name": "rp19.000",
+      "path": "1-1-1-outfit-recommendation-detail.frame-60.rp19-000",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "rp19.000",
+      "textGrow": "wh"
+    },
+    "frame-60": {
+      "id": "395:2106",
+      "el": "frame-60",
+      "type": "frame",
+      "box": {
+        "w": 49,
+        "h": 16
+      },
+      "path": "1-1-1-outfit-recommendation-detail.frame-60",
+      "pos": {
+        "x": 119,
+        "y": 253
+      },
+      "layout": "$l4",
+      "fill": "$c1",
+      "radius": "$r3",
+      "shadow": "$s1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "rp19-000"
+      ]
+    },
+    "1-1-1-outfit-recommendation-detail": {
+      "id": "395:1757",
+      "el": "1-1-1-outfit-recommendation-detail",
+      "type": "frame",
+      "box": {
+        "w": 402,
+        "h": 1131
+      },
+      "name": "1.1.1 Outfit Recommendation Detail",
+      "fill": "$c1",
+      "clip": true,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "rectangle-11",
+        "chevron-left",
+        "outfit-recommendation",
+        "union",
+        "group-46",
+        "group-47",
+        "group-49",
+        "group-107",
+        "group-89",
+        "group-135",
+        "frame-60"
+      ]
+    }
+  },
+  "meta": {
+    "nodeCount": 48,
+    "estTokens": 4166,
+    "depthUsed": 12
+  },
+  "next": "Read `tokens` for the design system, then build the UI from `nodes`. Tag each rendered element data-plumb-id=\"<el>\". A node with a `more` count has that many children not yet included — call plumb_node again on that node's `id` to expand them. This screen has 7 image asset(s) (nodes with `assetId`). Call plumb_assets with this screen's id to download them to disk BEFORE generating HTML — without the real files any <img> will be a placeholder and plumb_verify will flag every image node as asset.missing.",
+  "source": "plugin",
+  "node": "1.1.1 Outfit Recommendation Detail"
+}

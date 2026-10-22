@@ -1,0 +1,824 @@
+{
+  "file": {
+    "name": "Loomette.id",
+    "version": "plugin-1792667173607"
+  },
+  "root": "4-5-2-connected-account",
+  "tokens": {
+    "color": {
+      "$c1": "#fafaf7",
+      "$c2": "#f2ede5",
+      "$c3": "#444440",
+      "$c4": "#d9d9d9",
+      "$c5": "#c9c3b7",
+      "$c6": "image"
+    },
+    "text": {
+      "$t1": "400 32px Source Serif Pro",
+      "$t2": "400 12px Avenir Next",
+      "$t3": "400 16px Avenir Next"
+    },
+    "radius": {
+      "$r1": 8,
+      "$r2": 16
+    },
+    "shadow": {},
+    "layout": {
+      "$l1": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          20,
+          108,
+          20,
+          107
+        ]
+      },
+      "$l2": {
+        "align": "center",
+        "flow": "row",
+        "gap": 4,
+        "justify": "center",
+        "pad": [
+          19,
+          16,
+          18,
+          16
+        ]
+      }
+    },
+    "vector": {
+      "$v1": "M7.60355 0.292893 C7.99408 0.683418 7.99408 1.31658 7.60355 1.70711 L2.31066 7 L7.60355 12.2929 C7.99408 12.6834 7.99408 13.3166 7.60355 13.7071 C7.21303 14.0976 6.57986 14.0976 6.18934 13.7071 L0.366116 7.88388 C-0.12204 7.39573 -0.122038 6.60427 0.366117 6.11612 L6.18934 0.292893 C6.57986 -0.0976311 7.21303 -0.0976311 7.60355 0.292893 Z",
+      "$v2": "M14.4004 11.3262 L22.4092 3.31738 L23.6826 4.59082 L15.6738 12.5996 L27 12.5996 L27 14.4004 L15.6738 14.4004 L23.6826 22.4092 L22.4092 23.6826 L14.4004 15.6738 L14.4004 27 L12.5996 27 L12.5996 15.6738 L4.59082 23.6826 L3.31738 22.4092 L11.3262 14.4004 L0 14.4004 L0 12.5996 L11.3262 12.5996 L3.31738 4.59082 L4.59082 3.31738 L12.5996 11.3262 L12.5996 0 L14.4004 0 L14.4004 11.3262 Z",
+      "$v3": "M8 4 C8 6.20914 6.20914 8 4 8 C1.79086 8 0 6.20914 0 4 C0 1.79086 1.79086 0 4 0 C6.20914 0 8 1.79086 8 4 Z"
+    },
+    "props": {
+      "$p1": {
+        "size": "24"
+      }
+    },
+    "meta": {
+      "counts": {
+        "$c3": 14,
+        "$c4": 4,
+        "$t2": 7,
+        "$l1": 3,
+        "$c5": 6,
+        "$r2": 6,
+        "$c6": 3,
+        "$t3": 3,
+        "$l2": 3
+      }
+    }
+  },
+  "nodes": {
+    "rectangle-11": {
+      "id": "378:1098",
+      "el": "rectangle-11",
+      "type": "rect",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "4-5-2-connected-account.group-58.rectangle-11",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c2",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector": {
+      "id": "I378:1099;3:2631",
+      "el": "vector",
+      "type": "vector",
+      "box": {
+        "w": 8,
+        "h": 14
+      },
+      "path": "4-5-2-connected-account.group-58.chevron-left.vector",
+      "pos": {
+        "x": 8,
+        "y": 5
+      },
+      "fill": "$c3",
+      "iconHint": "chevron left",
+      "vectorPath": "$v1",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-left": {
+      "id": "378:1099",
+      "el": "chevron-left",
+      "type": "instance",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "name": "chevron-left",
+      "path": "4-5-2-connected-account.group-58.chevron-left",
+      "pos": {
+        "x": 8,
+        "y": 8
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector"
+      ]
+    },
+    "group-58": {
+      "id": "378:1097",
+      "el": "group-58",
+      "type": "group",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "4-5-2-connected-account.group-58",
+      "pos": {
+        "x": 40,
+        "y": 40
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-11",
+        "chevron-left"
+      ]
+    },
+    "connected-account": {
+      "id": "378:1100",
+      "el": "connected-account",
+      "type": "text",
+      "box": {
+        "w": 278,
+        "h": 40
+      },
+      "name": "Connected Account",
+      "path": "4-5-2-connected-account.connected-account",
+      "pos": {
+        "x": 84,
+        "y": 108
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "Connected Account",
+      "textGrow": "h",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16": {
+      "id": "378:1102",
+      "el": "rectangle-16",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 27
+      },
+      "path": "4-5-2-connected-account.union.rectangle-16",
+      "pos": {
+        "x": 13,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17": {
+      "id": "378:1103",
+      "el": "rectangle-17",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "4-5-2-connected-account.union.rectangle-17",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 2578,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19": {
+      "id": "378:1104",
+      "el": "rectangle-19",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "4-5-2-connected-account.union.rectangle-19",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 7735,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18": {
+      "id": "378:1105",
+      "el": "rectangle-18",
+      "type": "rect",
+      "box": {
+        "w": 27,
+        "h": 2
+      },
+      "path": "4-5-2-connected-account.union.rectangle-18",
+      "pos": {
+        "x": 0,
+        "y": 13
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union": {
+      "id": "378:1101",
+      "el": "union",
+      "type": "bool",
+      "box": {
+        "w": 27,
+        "h": 27
+      },
+      "path": "4-5-2-connected-account.union",
+      "pos": {
+        "x": 43,
+        "y": 112
+      },
+      "fill": "$c3",
+      "iconHint": "Connected Account",
+      "vectorPath": "$v2",
+      "children": [
+        "rectangle-16",
+        "rectangle-17",
+        "rectangle-19",
+        "rectangle-18"
+      ]
+    },
+    "link-your-accounts-to-log-in-faster-we-o": {
+      "id": "378:1120",
+      "el": "link-your-accounts-to-log-in-faster-we-o",
+      "type": "text",
+      "box": {
+        "w": 278,
+        "h": 32
+      },
+      "name": "Link your accounts to log in faster. We only use these to verify it's you — nothing else.",
+      "path": "4-5-2-connected-account.link-your-accounts-to-log-in-faster-we-o",
+      "pos": {
+        "x": 84,
+        "y": 148
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "Link your accounts to log in faster. We only use these to verify it's you — nothing else.",
+      "textGrow": "h",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-13": {
+      "id": "379:1404",
+      "el": "image-13",
+      "type": "rect",
+      "box": {
+        "w": 24,
+        "h": 25
+      },
+      "path": "4-5-2-connected-account.frame-11.image-13",
+      "assetId": "5c1893a80c50d8db19636c221e0367e2399a79df",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "5c1893a80c50d8db19636c221e0367e2399a79df",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              0.4885416626930237,
+              0,
+              0.2526041567325592
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "iconHint": "Connected Account"
+    },
+    "frame-11": {
+      "id": "379:1403",
+      "el": "frame-11",
+      "type": "frame",
+      "box": {
+        "w": 48,
+        "h": 48
+      },
+      "path": "4-5-2-connected-account.frame-11",
+      "pos": {
+        "x": 43,
+        "y": 220
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "stroke": "$c5",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "image-13"
+      ]
+    },
+    "facebook-logo-primary-1": {
+      "id": "379:1406",
+      "el": "facebook-logo-primary-1",
+      "type": "rect",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "name": "Facebook_Logo_Primary 1",
+      "path": "4-5-2-connected-account.frame-12.facebook-logo-primary-1",
+      "assetId": "af6f06778b34a6b7844168f257fff50611bc7dd9",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "af6f06778b34a6b7844168f257fff50611bc7dd9",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "iconHint": "Facebook Logo Primary 1"
+    },
+    "frame-12": {
+      "id": "379:1405",
+      "el": "frame-12",
+      "type": "frame",
+      "box": {
+        "w": 48,
+        "h": 48
+      },
+      "path": "4-5-2-connected-account.frame-12",
+      "pos": {
+        "x": 43,
+        "y": 292
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "stroke": "$c5",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "facebook-logo-primary-1"
+      ]
+    },
+    "image-14": {
+      "id": "379:1408",
+      "el": "image-14",
+      "type": "rect",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "path": "4-5-2-connected-account.frame-13.image-14",
+      "assetId": "e41481a40c87915036866e41b4eb971939abc042",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "e41481a40c87915036866e41b4eb971939abc042",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              0.6928572058677673,
+              0,
+              0.15732143819332123
+            ],
+            [
+              0,
+              0.6896551847457886,
+              0.13793103396892548
+            ]
+          ]
+        }
+      ],
+      "iconHint": "Connected Account"
+    },
+    "frame-13": {
+      "id": "379:1407",
+      "el": "frame-13",
+      "type": "frame",
+      "box": {
+        "w": 48,
+        "h": 48
+      },
+      "path": "4-5-2-connected-account.frame-13",
+      "pos": {
+        "x": 43,
+        "y": 364
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "stroke": "$c5",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "image-14"
+      ]
+    },
+    "google": {
+      "id": "379:1410",
+      "el": "google",
+      "type": "text",
+      "box": {
+        "w": 54,
+        "h": 22
+      },
+      "name": "Google",
+      "path": "4-5-2-connected-account.google",
+      "pos": {
+        "x": 107,
+        "y": 221
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "Google",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "hello-gmail-com": {
+      "id": "379:1416",
+      "el": "hello-gmail-com",
+      "type": "text",
+      "box": {
+        "w": 92,
+        "h": 16
+      },
+      "name": "hello@gmail.com",
+      "path": "4-5-2-connected-account.hello-gmail-com",
+      "pos": {
+        "x": 121,
+        "y": 247
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "hello@gmail.com",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "facebook": {
+      "id": "379:1432",
+      "el": "facebook",
+      "type": "text",
+      "box": {
+        "w": 70,
+        "h": 22
+      },
+      "name": "Facebook",
+      "path": "4-5-2-connected-account.facebook",
+      "pos": {
+        "x": 107,
+        "y": 295
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "Facebook",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "not-connected": {
+      "id": "379:1433",
+      "el": "not-connected",
+      "type": "text",
+      "box": {
+        "w": 79,
+        "h": 16
+      },
+      "name": "Not connected",
+      "path": "4-5-2-connected-account.not-connected",
+      "pos": {
+        "x": 107,
+        "y": 321
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "Not connected",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "x": {
+      "id": "379:1435",
+      "el": "x",
+      "type": "text",
+      "box": {
+        "w": 11,
+        "h": 22
+      },
+      "path": "4-5-2-connected-account.x",
+      "pos": {
+        "x": 107,
+        "y": 367
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "X",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "not-connected-2": {
+      "id": "379:1436",
+      "el": "not-connected-2",
+      "type": "text",
+      "box": {
+        "w": 79,
+        "h": 16
+      },
+      "name": "Not connected",
+      "path": "4-5-2-connected-account.not-connected-2",
+      "pos": {
+        "x": 107,
+        "y": 393
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "Not connected",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "disconnect": {
+      "id": "379:1419",
+      "el": "disconnect",
+      "type": "text",
+      "box": {
+        "w": 63,
+        "h": 16
+      },
+      "name": "DISCONNECT",
+      "path": "4-5-2-connected-account.frame-14.disconnect",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "DISCONNECT",
+      "textGrow": "wh"
+    },
+    "frame-14": {
+      "id": "379:1418",
+      "el": "frame-14",
+      "type": "frame",
+      "box": {
+        "w": 95,
+        "h": 40
+      },
+      "path": "4-5-2-connected-account.frame-14",
+      "pos": {
+        "x": 267,
+        "y": 224
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "stroke": "$c5",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "center"
+      },
+      "children": [
+        "disconnect"
+      ]
+    },
+    "connect": {
+      "id": "379:1425",
+      "el": "connect",
+      "type": "text",
+      "box": {
+        "w": 48,
+        "h": 16
+      },
+      "name": "connect",
+      "path": "4-5-2-connected-account.frame-15.connect",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "connect",
+      "textGrow": "wh"
+    },
+    "frame-15": {
+      "id": "379:1424",
+      "el": "frame-15",
+      "type": "frame",
+      "box": {
+        "w": 80,
+        "h": 40
+      },
+      "path": "4-5-2-connected-account.frame-15",
+      "pos": {
+        "x": 282,
+        "y": 296
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "stroke": "$c5",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "center"
+      },
+      "children": [
+        "connect"
+      ]
+    },
+    "connect-2": {
+      "id": "379:1428",
+      "el": "connect-2",
+      "type": "text",
+      "box": {
+        "w": 48,
+        "h": 16
+      },
+      "name": "connect",
+      "path": "4-5-2-connected-account.frame-16.connect-2",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "connect",
+      "textGrow": "wh"
+    },
+    "frame-16": {
+      "id": "379:1427",
+      "el": "frame-16",
+      "type": "frame",
+      "box": {
+        "w": 80,
+        "h": 40
+      },
+      "path": "4-5-2-connected-account.frame-16",
+      "pos": {
+        "x": 282,
+        "y": 368
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "stroke": "$c5",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "center"
+      },
+      "children": [
+        "connect-2"
+      ]
+    },
+    "ellipse-6": {
+      "id": "379:1423",
+      "el": "ellipse-6",
+      "type": "ellipse",
+      "box": {
+        "w": 8,
+        "h": 8
+      },
+      "path": "4-5-2-connected-account.ellipse-6",
+      "pos": {
+        "x": 107,
+        "y": 251
+      },
+      "fill": "$c3",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "4-5-2-connected-account": {
+      "id": "378:1096",
+      "el": "4-5-2-connected-account",
+      "type": "frame",
+      "box": {
+        "w": 402,
+        "h": 874
+      },
+      "name": "4.5.2 Connected Account",
+      "fill": "$c1",
+      "clip": true,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "group-58",
+        "connected-account",
+        "union",
+        "link-your-accounts-to-log-in-faster-we-o",
+        "frame-11",
+        "frame-12",
+        "frame-13",
+        "google",
+        "hello-gmail-com",
+        "facebook",
+        "not-connected",
+        "x",
+        "not-connected-2",
+        "frame-14",
+        "frame-15",
+        "frame-16",
+        "ellipse-6"
+      ]
+    }
+  },
+  "meta": {
+    "nodeCount": 31,
+    "estTokens": 2639,
+    "depthUsed": 12
+  },
+  "next": "Read `tokens` for the design system, then build the UI from `nodes`. Tag each rendered element data-plumb-id=\"<el>\". A node with a `more` count has that many children not yet included — call plumb_node again on that node's `id` to expand them. This screen has 3 image asset(s) (nodes with `assetId`). Call plumb_assets with this screen's id to download them to disk BEFORE generating HTML — without the real files any <img> will be a placeholder and plumb_verify will flag every image node as asset.missing.",
+  "source": "plugin",
+  "node": "4.5.2 Connected Account"
+}

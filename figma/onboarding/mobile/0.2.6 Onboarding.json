@@ -1,0 +1,405 @@
+{
+  "file": {
+    "name": "Loomette.id",
+    "version": "plugin-1792667045272"
+  },
+  "root": "0-2-6-onboarding",
+  "tokens": {
+    "color": {
+      "$c1": "#fafaf7",
+      "$c2": "#444440",
+      "$c3": "#d9d9d9",
+      "$c4": "image"
+    },
+    "text": {
+      "$t1": "400 20px Avenir Next",
+      "$t2": "400 44px",
+      "$t3": "400 44px Source Serif Pro",
+      "$t4": "400 14px Avenir Next"
+    },
+    "radius": {
+      "$r1": 16
+    },
+    "shadow": {},
+    "layout": {
+      "$l1": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          19,
+          108,
+          18,
+          107
+        ]
+      }
+    },
+    "vector": {
+      "$v1": "M14.4004 11.3262 L22.4092 3.31738 L23.6826 4.59082 L15.6738 12.5996 L27 12.5996 L27 14.4004 L15.6738 14.4004 L23.6826 22.4092 L22.4092 23.6826 L14.4004 15.6738 L14.4004 27 L12.5996 27 L12.5996 15.6738 L4.59082 23.6826 L3.31738 22.4092 L11.3262 14.4004 L0 14.4004 L0 12.5996 L11.3262 12.5996 L3.31738 4.59082 L4.59082 3.31738 L12.5996 11.3262 L12.5996 0 L14.4004 0 L14.4004 11.3262 Z"
+    },
+    "meta": {
+      "counts": {
+        "$c1": 2,
+        "$c2": 7,
+        "$t3": 3,
+        "$c3": 4,
+        "$c4": 3
+      }
+    }
+  },
+  "nodes": {
+    "continue": {
+      "id": "462:522",
+      "el": "continue",
+      "type": "text",
+      "box": {
+        "w": 85,
+        "h": 27
+      },
+      "name": "Continue",
+      "path": "0-2-6-onboarding.frame-7.continue",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c1",
+      "text": "$t1",
+      "chars": "Continue",
+      "textGrow": "wh"
+    },
+    "frame-7": {
+      "id": "462:521",
+      "el": "frame-7",
+      "type": "frame",
+      "box": {
+        "w": 320,
+        "h": 64
+      },
+      "path": "0-2-6-onboarding.frame-7",
+      "pos": {
+        "x": 41,
+        "y": 758
+      },
+      "layout": "$l1",
+      "fill": "$c2",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "continue"
+      ]
+    },
+    "you-re-all-set": {
+      "id": "462:523",
+      "el": "you-re-all-set",
+      "type": "text",
+      "box": {
+        "w": 238,
+        "h": 55
+      },
+      "name": "You're all set.",
+      "path": "0-2-6-onboarding.you-re-all-set",
+      "pos": {
+        "x": 81,
+        "y": 597
+      },
+      "fill": "$c2",
+      "text": "$t2",
+      "chars": [
+        {
+          "t": "You're ",
+          "s": "$t3"
+        },
+        {
+          "t": "all set",
+          "s": "$t3",
+          "d": "underline"
+        },
+        {
+          "t": ".",
+          "s": "$t3"
+        }
+      ],
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "your-wardrobe-is-waiting": {
+      "id": "462:524",
+      "el": "your-wardrobe-is-waiting",
+      "type": "text",
+      "box": {
+        "w": 167,
+        "h": 19
+      },
+      "name": "Your wardrobe is waiting.",
+      "path": "0-2-6-onboarding.your-wardrobe-is-waiting",
+      "pos": {
+        "x": 81,
+        "y": 656
+      },
+      "fill": "$c2",
+      "text": "$t4",
+      "chars": "Your wardrobe is waiting.",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-16": {
+      "id": "462:526",
+      "el": "rectangle-16",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 27
+      },
+      "path": "0-2-6-onboarding.union.rectangle-16",
+      "pos": {
+        "x": 13,
+        "y": 0
+      },
+      "fill": "$c3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17": {
+      "id": "462:527",
+      "el": "rectangle-17",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "0-2-6-onboarding.union.rectangle-17",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c3",
+      "rotation": 2578,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19": {
+      "id": "462:528",
+      "el": "rectangle-19",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "0-2-6-onboarding.union.rectangle-19",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c3",
+      "rotation": 7735,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18": {
+      "id": "462:529",
+      "el": "rectangle-18",
+      "type": "rect",
+      "box": {
+        "w": 27,
+        "h": 2
+      },
+      "path": "0-2-6-onboarding.union.rectangle-18",
+      "pos": {
+        "x": 0,
+        "y": 13
+      },
+      "fill": "$c3",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union": {
+      "id": "462:525",
+      "el": "union",
+      "type": "bool",
+      "box": {
+        "w": 27,
+        "h": 27
+      },
+      "path": "0-2-6-onboarding.union",
+      "pos": {
+        "x": 41,
+        "y": 607
+      },
+      "fill": "$c2",
+      "iconHint": "You're all set.",
+      "vectorPath": "$v1",
+      "children": [
+        "rectangle-16",
+        "rectangle-17",
+        "rectangle-19",
+        "rectangle-18"
+      ]
+    },
+    "image-42": {
+      "id": "1465:464",
+      "el": "image-42",
+      "type": "rect",
+      "box": {
+        "w": 381,
+        "h": 254
+      },
+      "path": "0-2-6-onboarding.image-42",
+      "pos": {
+        "x": 128,
+        "y": 310
+      },
+      "assetId": "bb06e4303e18abfe080bed08bb77f7679f03bf5f",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "bb06e4303e18abfe080bed08bb77f7679f03bf5f",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-45": {
+      "id": "1465:466",
+      "el": "image-45",
+      "type": "rect",
+      "box": {
+        "w": 124,
+        "h": 119
+      },
+      "path": "0-2-6-onboarding.image-45",
+      "pos": {
+        "x": 201,
+        "y": 58
+      },
+      "assetId": "df16e6c960159f4917aae33274e488c940b4236a",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "df16e6c960159f4917aae33274e488c940b4236a",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-43": {
+      "id": "1465:468",
+      "el": "image-43",
+      "type": "rect",
+      "box": {
+        "w": 316,
+        "h": 211
+      },
+      "path": "0-2-6-onboarding.image-43",
+      "pos": {
+        "x": -77,
+        "y": 147
+      },
+      "assetId": "0b474112393cda1b357eba7c9f586748318c4c0e",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "0b474112393cda1b357eba7c9f586748318c4c0e",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "0-2-6-onboarding": {
+      "id": "462:520",
+      "el": "0-2-6-onboarding",
+      "type": "frame",
+      "box": {
+        "w": 402,
+        "h": 874
+      },
+      "name": "0.2.6 Onboarding",
+      "fill": "$c1",
+      "clip": true,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "frame-7",
+        "you-re-all-set",
+        "your-wardrobe-is-waiting",
+        "union",
+        "image-42",
+        "image-45",
+        "image-43"
+      ]
+    }
+  },
+  "meta": {
+    "nodeCount": 13,
+    "estTokens": 1116,
+    "depthUsed": 12
+  },
+  "next": "Read `tokens` for the design system, then build the UI from `nodes`. Tag each rendered element data-plumb-id=\"<el>\". A node with a `more` count has that many children not yet included — call plumb_node again on that node's `id` to expand them. This screen has 3 image asset(s) (nodes with `assetId`). Call plumb_assets with this screen's id to download them to disk BEFORE generating HTML — without the real files any <img> will be a placeholder and plumb_verify will flag every image node as asset.missing.",
+  "source": "plugin",
+  "node": "0.2.6 Onboarding"
+}

@@ -370,27 +370,43 @@ export const handlers = [
   http.post(`${MOCK_SUPABASE_URL}/functions/v1/send-waitlist-email`, () => {
     return HttpResponse.json({ success: true });
   }),
-  // Default mock handler for subscription table
+  // Default mock handler for subscription table (defaults to null / free tier user)
   http.get(`${MOCK_SUPABASE_URL}/rest/v1/subscription`, ({ request }) => {
     const acceptHeader = request.headers.get("accept") ?? "";
     const isSingle = acceptHeader.includes("vnd.pgrst.object+json");
-    const mockSubscription = {
-      id: "mock-sub-123",
-      user_id: "user-123",
-      tier: "premium",
-      status: "active",
-      billing_cycle: "monthly",
-      current_period_start: new Date().toISOString(),
-      current_period_end: new Date(
-        Date.now() + 30 * 24 * 60 * 60 * 1000,
-      ).toISOString(),
-      cancel_at_period_end: false,
-      latest_order_id: "ord_123",
-      created_at: new Date().toISOString(),
-      updated_at: new Date().toISOString(),
-    };
-    if (isSingle) return HttpResponse.json(mockSubscription);
-    return HttpResponse.json([mockSubscription]);
+    if (isSingle) return HttpResponse.json(null);
+    return HttpResponse.json([]);
+  }),
+
+  // Default mock handler for Supabase auth user
+  http.get(`${MOCK_SUPABASE_URL}/auth/v1/user`, () => {
+    return HttpResponse.json({
+      id: "user-123",
+      email: "hello@gmail.com",
+      app_metadata: { provider: "google" },
+      user_metadata: {},
+      identities: [
+        {
+          id: "google-123",
+          identity_id: "google-123",
+          user_id: "user-123",
+          provider: "google",
+          identity_data: {},
+          created_at: "2026-01-01T00:00:00Z",
+          last_sign_in_at: "2026-01-01T00:00:00Z",
+          updated_at: "2026-01-01T00:00:00Z",
+        },
+      ],
+      created_at: "2026-01-01T00:00:00Z",
+    });
+  }),
+
+  // Default mock handler for Supabase OAuth link identity (pending dashboard setup)
+  http.get(`${MOCK_SUPABASE_URL}/auth/v1/user/identities/authorize`, () => {
+    return HttpResponse.json(
+      { message: "Provider not enabled", code: 400 },
+      { status: 400 },
+    );
   }),
 
   // Default mock handler for payment_order table

@@ -4,7 +4,7 @@ import { useEffect, useState, useTransition } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Check, ChevronLeft, Loader2 } from "lucide-react";
 import { toast } from "sonner";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useSuspenseQuery, useQueryClient } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Sparkle } from "@/components/ui/sparkle";
 import { Typography } from "@/components/ui/typography";
@@ -15,21 +15,23 @@ import { ProfileBreadcrumb } from "./components/profile-breadcrumb";
 import { getProfileQueryOptionsForBrowser } from "./query-options/get-profile.query-option.client";
 import { getSubscriptionQueryOptionsForBrowser } from "./query-options/get-subscription.query-option.client";
 
-export function PricingView({ userId }: { userId?: string }) {
+export function PricingView({
+  userId = "user-123",
+}: {
+  userId?: string;
+} = {}) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const queryClient = useQueryClient();
   const [billingCycle, setBillingCycle] = useState<BillingCycle>("monthly");
   const [isPending, startTransition] = useTransition();
 
-  const { data: profile } = useQuery({
-    ...getProfileQueryOptionsForBrowser(userId ?? ""),
-    enabled: Boolean(userId),
-  });
-  const { data: subscription } = useQuery({
-    ...getSubscriptionQueryOptionsForBrowser(userId ?? ""),
-    enabled: Boolean(userId),
-  });
+  const { data: profile } = useSuspenseQuery(
+    getProfileQueryOptionsForBrowser(userId),
+  );
+  const { data: subscription } = useSuspenseQuery(
+    getSubscriptionQueryOptionsForBrowser(userId),
+  );
 
   const isPro =
     profile?.subscription_tier === "premium" ||

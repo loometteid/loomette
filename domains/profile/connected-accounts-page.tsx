@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { ChevronLeft } from "lucide-react";
-import { useQuery } from "@tanstack/react-query";
+import { useSuspenseQuery } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Sparkle } from "@/components/ui/sparkle";
@@ -11,7 +11,7 @@ import { Typography } from "@/components/ui/typography";
 import { ProfileBreadcrumb } from "./components/profile-breadcrumb";
 import { getUserQueryOptions } from "./query-options/get-user.query-option";
 import { createBrowserSupabaseClient } from "@/lib/supabase/client";
-import type { UserIdentity } from "@supabase/supabase-js";
+import type { User, UserIdentity } from "@supabase/supabase-js";
 
 interface ProviderAccount {
   id: "google" | "facebook" | "x";
@@ -38,11 +38,10 @@ export function ConnectedAccountsView({
   initialUser?: ConnectedAccountsUser | null;
 } = {}) {
   const router = useRouter();
-  const queryResult = useQuery({
+  const { data: user } = useSuspenseQuery({
     ...getUserQueryOptions(),
-    enabled: !initialUser,
+    ...(initialUser ? { initialData: initialUser as unknown as User } : {}),
   });
-  const user = initialUser ?? queryResult.data;
   const [loadingProvider, setLoadingProvider] = useState<string | null>(null);
 
   // Check linked identities / providers from user metadata

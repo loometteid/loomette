@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { describe, expect, it, beforeEach, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
@@ -27,7 +28,9 @@ function renderWithClient(ui: React.ReactElement, client?: QueryClient) {
       },
     });
   return render(
-    <QueryClientProvider client={queryClient}>{ui}</QueryClientProvider>,
+    <QueryClientProvider client={queryClient}>
+      <Suspense fallback={<div>Loading pricing...</div>}>{ui}</Suspense>
+    </QueryClientProvider>,
   );
 }
 
@@ -36,10 +39,10 @@ describe("PricingView Component", () => {
     vi.clearAllMocks();
   });
 
-  it("renders Starter and Pro cards with monthly price selected by default", () => {
+  it("renders Starter and Pro cards with monthly price selected by default", async () => {
     renderWithClient(<PricingView />);
 
-    expect(screen.getByText("Starter")).toBeInTheDocument();
+    expect(await screen.findByText("Starter")).toBeInTheDocument();
     expect(screen.getByText("Free")).toBeInTheDocument();
     expect(screen.getByText("Pro")).toBeInTheDocument();
 
@@ -57,7 +60,7 @@ describe("PricingView Component", () => {
     const user = userEvent.setup();
     renderWithClient(<PricingView />);
 
-    const annualToggle = screen.getByTestId("billing-cycle-toggle-annual");
+    const annualToggle = await screen.findByTestId("billing-cycle-toggle-annual");
     await user.click(annualToggle);
 
     expect(annualToggle).toHaveAttribute("aria-checked", "true");
@@ -83,7 +86,7 @@ describe("PricingView Component", () => {
 
     renderWithClient(<PricingView />);
 
-    const upgradeBtn = screen.getByTestId("upgrade-pro-button");
+    const upgradeBtn = await screen.findByTestId("upgrade-pro-button");
     await user.click(upgradeBtn);
 
     expect(actionSpy).toHaveBeenCalledWith("monthly");
@@ -101,7 +104,7 @@ describe("PricingView Component", () => {
 
     renderWithClient(<PricingView />);
 
-    const annualToggle = screen.getByTestId("billing-cycle-toggle-annual");
+    const annualToggle = await screen.findByTestId("billing-cycle-toggle-annual");
     await user.click(annualToggle);
 
     const upgradeBtn = screen.getByTestId("upgrade-pro-button");
@@ -119,7 +122,7 @@ describe("PricingView Component", () => {
 
     renderWithClient(<PricingView />);
 
-    const upgradeBtn = screen.getByTestId("upgrade-pro-button");
+    const upgradeBtn = await screen.findByTestId("upgrade-pro-button");
     await user.click(upgradeBtn);
 
     expect(toast.error).toHaveBeenCalledWith("Payment service currently unavailable");
@@ -154,7 +157,7 @@ describe("PricingView Component", () => {
 
     renderWithClient(<PricingView userId={userId} />, queryClient);
 
-    expect(screen.getByTestId("current-plan-button")).toHaveTextContent("Active Plan (Pro)");
+    expect(await screen.findByTestId("current-plan-button")).toHaveTextContent("Active Plan (Pro)");
 
     const downgradeBtn = screen.getByText("Downgrade to Free (Mock)");
     await user.click(downgradeBtn);

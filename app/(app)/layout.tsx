@@ -1,13 +1,12 @@
 import { Suspense } from "react";
+import { redirect } from "next/navigation";
 import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
-import { BottomNav } from "@/components/layout/bottom-nav";
 import { DesktopNav, DesktopNavFallback } from "@/components/layout/desktop-nav";
 import { UploadJobsNotifier } from "@/components/layout/upload-jobs-notifier";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { getQueryClient } from "@/lib/tanstack-query";
 import { getUserQueryOptions } from "@/domains/profile/query-options/get-user.query-option";
 import { getProfileQueryOptionsForServer } from "@/domains/profile/query-options/get-profile.query-option.server";
-import { redirect } from "next/navigation";
 
 export default async function AppLayout({
   children,
@@ -35,10 +34,9 @@ export default async function AppLayout({
       <Suspense fallback={<DesktopNavFallback />}>
         <DesktopNav userId={user.id} />
       </Suspense>
-      <div className="flex min-h-full flex-1 flex-col pb-24 lg:pb-8">
+      <div className="flex min-h-full flex-1 flex-col">
         {children}
       </div>
-      <BottomNav />
     </HydrationBoundary>
   );
 }

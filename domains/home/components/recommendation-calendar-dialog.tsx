@@ -67,7 +67,7 @@ export function RecommendationCalendarDialog({
         onOpenChange(next);
       }}
     >
-      <DialogPopup showClose={false} className="max-w-sm w-[calc(100%-2rem)] rounded-3xl bg-[#FAFAF7] p-8 shadow-2xl border-none gap-6">
+      <DialogPopup showClose={false} className="max-w-sm w-[calc(100%-2rem)] rounded-3xl bg-background p-8 shadow-2xl border-none gap-6">
         <button
           type="button"
           onClick={() => onOpenChange(false)}

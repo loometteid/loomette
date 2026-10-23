@@ -127,7 +127,7 @@ export function PricingView({
           type="button"
           variant="secondary"
           size="icon"
-          className="size-10 rounded-xl bg-[#F2EDE5] text-[#383733] hover:bg-[#EAE4DC]"
+          className="size-10 rounded-xl bg-linen text-foreground hover:bg-linen-dark"
           onClick={() => router.back()}
           aria-label="Go back"
         >
@@ -137,16 +137,16 @@ export function PricingView({
 
       {/* Header title */}
       <div className="flex items-start gap-3.5 lg:gap-4">
-        <Sparkle className="size-6 lg:size-8 text-[#444440] shrink-0 mt-1 lg:mt-2" />
+        <Sparkle className="size-6 lg:size-8 text-foreground shrink-0 mt-1 lg:mt-2" />
         <div className="flex flex-col gap-1 lg:gap-2">
           <Typography
             variant="title"
             as="h1"
-            className="font-serif text-[32px] md:text-4xl lg:text-[48px] font-normal leading-tight text-[#444440]"
+            className="font-serif text-[32px] md:text-4xl lg:text-[48px] font-normal leading-tight text-foreground"
           >
             Pricing
           </Typography>
-          <p className="font-sans text-xs md:text-sm lg:text-xl font-normal text-[#444440] max-w-xl leading-snug">
+          <p className="font-sans text-xs md:text-sm lg:text-xl font-normal text-foreground max-w-xl leading-snug">
             see what you&apos;re on and what&apos;s waiting when you&apos;re ready to upgrade.
           </p>
         </div>
@@ -157,7 +157,7 @@ export function PricingView({
         <div
           role="radiogroup"
           aria-label="Billing cycle"
-          className="inline-flex items-center gap-1 bg-[#F2EDE5] p-1.5 rounded-full border border-[#EAE4DC]"
+          className="inline-flex items-center gap-1 bg-linen p-1.5 rounded-full border border-linen-dark"
         >
           <button
             type="button"
@@ -167,7 +167,7 @@ export function PricingView({
             onClick={() => setBillingCycle("monthly")}
             className={`px-4 py-1.5 rounded-full text-xs font-sans font-medium transition-all ${
               billingCycle === "monthly"
-                ? "bg-[#383733] text-white shadow-sm"
+                ? "bg-primary text-white shadow-sm"
                 : "text-[#666660] hover:text-[#2A2926]"
             }`}
           >
@@ -181,7 +181,7 @@ export function PricingView({
             onClick={() => setBillingCycle("annual")}
             className={`flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-sans font-medium transition-all ${
               billingCycle === "annual"
-                ? "bg-[#383733] text-white shadow-sm"
+                ? "bg-primary text-white shadow-sm"
                 : "text-[#666660] hover:text-[#2A2926]"
             }`}
           >
@@ -190,7 +190,7 @@ export function PricingView({
               className={`text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded-full ${
                 billingCycle === "annual"
                   ? "bg-white/20 text-white"
-                  : "bg-[#EAE4DC] text-[#383733]"
+                  : "bg-linen-dark text-foreground"
               }`}
             >
               Save 20%
@@ -202,13 +202,13 @@ export function PricingView({
       {/* Pricing Cards Grid (matches Figma 992px container, 480px card widths) */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start w-full max-w-[992px]">
         {/* Starter Plan */}
-        <div className="bg-[#FAF8F5]/80 border border-[#EAE4DC] rounded-3xl p-8 flex flex-col gap-6 w-full md:max-w-[480px]">
+        <div className="bg-background/80 border border-linen-dark rounded-3xl p-8 flex flex-col gap-6 w-full md:max-w-[480px]">
           <div className="flex items-center justify-between">
             <span className="font-sans text-xs font-normal tracking-wider uppercase text-muted-foreground">
               Starter
             </span>
             {!isPro && (
-              <span className="bg-[#F2EDE5] text-[#444440] font-sans text-[10px] font-normal tracking-wider uppercase px-3 py-1 rounded-full">
+              <span className="bg-linen text-foreground font-sans text-[10px] font-normal tracking-wider uppercase px-3 py-1 rounded-full">
                 Current plan
               </span>
             )}
@@ -223,7 +223,7 @@ export function PricingView({
             </span>
           </div>
 
-          <div className="h-px w-full bg-[#EAE4DC]" />
+          <div className="h-px w-full bg-linen-dark" />
 
           <ul className="flex flex-col gap-3.5 font-sans text-xs md:text-sm font-normal text-foreground/90">
             <li className="flex items-center gap-3">
@@ -246,12 +246,12 @@ export function PricingView({
         </div>
 
         {/* Pro Plan */}
-        <div className="bg-[#FAF8F5]/80 border border-[#EAE4DC] rounded-3xl p-8 flex flex-col gap-6 shadow-sm w-full md:max-w-[480px]">
+        <div className="bg-background/80 border border-linen-dark rounded-3xl p-8 flex flex-col gap-6 shadow-sm w-full md:max-w-[480px]">
           <div className="flex items-center justify-between">
             <span className="font-sans text-xs font-normal tracking-wider uppercase text-muted-foreground">
               Pro
             </span>
-            <span className="bg-[#383733] text-white font-sans text-[10px] font-normal tracking-wider uppercase px-3 py-1 rounded-full">
+            <span className="bg-primary text-white font-sans text-[10px] font-normal tracking-wider uppercase px-3 py-1 rounded-full">
               {isPro ? "Current plan" : "Most popular"}
             </span>
           </div>
@@ -275,7 +275,7 @@ export function PricingView({
             </span>
           </div>
 
-          <div className="h-px w-full bg-[#EAE4DC]" />
+          <div className="h-px w-full bg-linen-dark" />
 
           <ul className="flex flex-col gap-3.5 font-sans text-xs font-normal text-foreground/90">
             <li className="flex items-center gap-3 font-medium">
@@ -314,7 +314,7 @@ export function PricingView({
                 type="button"
                 disabled
                 data-testid="current-plan-button"
-                className="w-full bg-[#EAE4DC] text-[#444440] font-sans text-xs font-normal tracking-wider uppercase py-3.5 rounded-xl border-none shadow-none cursor-default"
+                className="w-full bg-linen-dark text-foreground font-sans text-xs font-normal tracking-wider uppercase py-3.5 rounded-xl border-none shadow-none cursor-default"
               >
                 Active Plan (Pro)
               </Button>
@@ -333,7 +333,7 @@ export function PricingView({
               disabled={isPending}
               data-testid="upgrade-pro-button"
               onClick={handleUpgrade}
-              className="w-full mt-2 bg-[#383733] hover:bg-[#2A2926] text-white font-sans text-xs font-normal tracking-wider uppercase py-3.5 rounded-xl border-none shadow-none cursor-pointer disabled:opacity-70"
+              className="w-full mt-2 bg-primary hover:bg-[#2A2926] text-white font-sans text-xs font-normal tracking-wider uppercase py-3.5 rounded-xl border-none shadow-none cursor-pointer disabled:opacity-70"
             >
               {isPending ? (
                 <span className="flex items-center gap-2">

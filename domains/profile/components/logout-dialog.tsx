@@ -44,7 +44,7 @@ export function LogoutDialog({
             data-testid="logout-dialog__confirm"
             disabled={isLoggingOut}
             onClick={onConfirmLogout}
-            className="w-full bg-[#F2EDE5] hover:bg-[#EAE4DC] text-[#444440] font-sans text-xs font-normal tracking-wider uppercase py-3.5 rounded-xl border-none shadow-none"
+            className="w-full bg-linen hover:bg-linen-dark text-foreground font-sans text-xs font-normal tracking-wider uppercase py-3.5 rounded-xl border-none shadow-none"
           >
             {isLoggingOut ? "Logging out…" : "Yes, log out"}
           </Button>
@@ -53,7 +53,7 @@ export function LogoutDialog({
             data-testid="logout-dialog__cancel"
             disabled={isLoggingOut}
             onClick={() => onOpenChange(false)}
-            className="w-full bg-[#383733] hover:bg-[#2A2926] text-white font-sans text-xs font-normal tracking-wider uppercase py-3.5 rounded-xl border-none shadow-none"
+            className="w-full bg-primary hover:bg-[#2A2926] text-white font-sans text-xs font-normal tracking-wider uppercase py-3.5 rounded-xl border-none shadow-none"
           >
             Stay in
           </Button>

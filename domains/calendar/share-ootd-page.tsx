@@ -66,12 +66,12 @@ export function ShareOotdView({ userId }: { userId: string }) {
 
       {/* Header */}
       <div className="flex items-start gap-2.5 lg:gap-3">
-        <Sparkle className="size-6 text-[#444440] shrink-0 mt-1" />
+        <Sparkle className="size-6 text-foreground shrink-0 mt-1" />
         <div className="flex flex-col gap-1">
-          <Typography variant="title" as="h1" className="text-2xl lg:text-3xl font-serif text-[#444440]">
+          <Typography variant="title" as="h1" className="text-2xl lg:text-3xl font-serif text-foreground">
             Share your #OOTD
           </Typography>
-          <p className="font-sans text-xs lg:text-sm font-normal text-[#444440]">
+          <p className="font-sans text-xs lg:text-sm font-normal text-foreground">
             Select your favorite template here.
           </p>
         </div>

@@ -112,7 +112,7 @@ describe("SettingsView - Notification Settings (Component & Integration Tier)", 
     const langBtn = await screen.findByTestId("settings__language-button");
     expect(langBtn).toBeInTheDocument();
     expect(langBtn).toHaveTextContent("EN");
-    expect(langBtn).toHaveClass("rounded-2xl", "border-[#C9C3B7]");
+    expect(langBtn).toHaveClass("rounded-2xl", "border-stone");
   });
 
   it("hides notification section and sidebar button via React 19 Activity boundary", async () => {

@@ -237,7 +237,7 @@ export function AddInitialItem({ userId }: { userId: string }) {
   return (
     <main
       data-testid="onboarding-step-seven"
-      className="relative flex min-h-dvh w-full flex-col justify-between bg-[#FAFAF7] overflow-x-hidden select-none"
+      className="relative flex min-h-dvh w-full flex-col justify-between bg-background overflow-x-hidden select-none"
     >
       {/* ============================================================== */}
       {/* DESKTOP BACKGROUND MASCOTS (Fixed in corners)                 */}
@@ -292,7 +292,7 @@ export function AddInitialItem({ userId }: { userId: string }) {
               type="button"
               variant="secondary"
               size="icon"
-              className="rounded-xl size-10 shrink-0 bg-[#F2EDE5] hover:bg-[#EAE4D9]"
+              className="rounded-xl size-10 shrink-0 bg-linen hover:bg-[#EAE4D9]"
               onClick={handleBack}
               aria-label="Go back"
               data-testid="onboarding-step-seven__back-button"
@@ -324,7 +324,7 @@ export function AddInitialItem({ userId }: { userId: string }) {
               <label
                 htmlFor="onboarding-photo-input"
                 data-testid="onboarding-step-seven__upload-button--desktop"
-                className="w-full h-11 flex items-center justify-center rounded-xl border border-border bg-[#F9F7F4] hover:bg-[#F2EDE5] text-xs font-semibold uppercase tracking-widest text-foreground cursor-pointer transition-colors shadow-sm"
+                className="w-full h-11 flex items-center justify-center rounded-xl border border-border bg-[#F9F7F4] hover:bg-linen text-xs font-semibold uppercase tracking-widest text-foreground cursor-pointer transition-colors shadow-sm"
               >
                 Upload Photos
               </label>
@@ -376,7 +376,7 @@ export function AddInitialItem({ userId }: { userId: string }) {
               type="button"
               variant="secondary"
               size="icon"
-              className="rounded-xl size-10 shrink-0 bg-[#F2EDE5] hover:bg-[#EAE4D9]"
+              className="rounded-xl size-10 shrink-0 bg-linen hover:bg-[#EAE4D9]"
               onClick={handleBack}
               disabled={isSavingPhotos}
               aria-label="Go back"
@@ -508,7 +508,7 @@ export function AddInitialItem({ userId }: { userId: string }) {
               type="button"
               variant="secondary"
               size="icon"
-              className="rounded-xl size-10 shrink-0 bg-[#F2EDE5] hover:bg-[#EAE4D9]"
+              className="rounded-xl size-10 shrink-0 bg-linen hover:bg-[#EAE4D9]"
               onClick={handleBack}
               disabled={isSavingLibrary}
               aria-label="Go back"
@@ -593,7 +593,7 @@ export function AddInitialItem({ userId }: { userId: string }) {
               data-testid="onboarding-step-seven__select-all-button"
               disabled={isSavingLibrary}
               onClick={handleToggleSelectAll}
-              className="flex-1 h-12 rounded-xl text-xs uppercase tracking-widest font-semibold bg-[#F2EDE5] hover:bg-[#EAE4D9]"
+              className="flex-1 h-12 rounded-xl text-xs uppercase tracking-widest font-semibold bg-linen hover:bg-[#EAE4D9]"
             >
               {isAllLibrarySelected ? "Deselect All" : "Select All"}
             </Button>

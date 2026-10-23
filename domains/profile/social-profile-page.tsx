@@ -135,7 +135,7 @@ export function SocialProfileView({ userId }: { userId: string }) {
             {outfits.map((entry, index) => (
               <div
                 key={entry.id}
-                className="group border border-[#EAE4DC] bg-[#FAF8F5] hover:border-foreground/30 hover:shadow-sm flex flex-col justify-between rounded-2xl p-4 transition-colors"
+                className="group border border-linen-dark bg-background hover:border-foreground/30 hover:shadow-sm flex flex-col justify-between rounded-2xl p-4 transition-colors"
               >
                 <div className="relative aspect-[3/4] w-full flex items-center justify-center mb-3">
                   {entry.image_url ? (
@@ -151,7 +151,7 @@ export function SocialProfileView({ userId }: { userId: string }) {
                   )}
                 </div>
 
-                <div className="flex items-center justify-between text-xs text-muted-foreground pt-2 border-t border-[#EAE4DC]/60">
+                <div className="flex items-center justify-between text-xs text-muted-foreground pt-2 border-t border-linen-dark/60">
                   <div className="flex items-center gap-1.5 font-normal text-foreground/80">
                     <Heart
                       className={cn(

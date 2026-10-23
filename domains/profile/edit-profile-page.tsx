@@ -632,7 +632,7 @@ export function EditProfileForm({ userId }: { userId: string }) {
             <Button
               type="submit"
               disabled={isBusy || isSubmitting}
-              className="w-full sm:w-[320px] h-14 md:h-16 bg-[#383733] hover:bg-[#2A2926] text-white rounded-2xl font-sans text-xs md:text-sm font-normal tracking-wider uppercase shadow-xs cursor-pointer"
+              className="w-full sm:w-[320px] h-14 md:h-16 bg-primary hover:bg-[#2A2926] text-white rounded-2xl font-sans text-xs md:text-sm font-normal tracking-wider uppercase shadow-xs cursor-pointer"
             >
               {updateProfileMutation.isPending ? "Saving…" : "Save"}
             </Button>

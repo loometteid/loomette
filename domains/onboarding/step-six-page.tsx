@@ -13,7 +13,7 @@ export function StepSixComplete() {
   return (
     <main
       data-testid="onboarding-step-six"
-      className="relative flex min-h-dvh w-full flex-col justify-between bg-[#FAFAF7] overflow-hidden select-none"
+      className="relative flex min-h-dvh w-full flex-col justify-between bg-background overflow-hidden select-none"
     >
       {/* ============================================================== */}
       {/* MOBILE VIEWPORT (<1024px)                                      */}

@@ -351,7 +351,7 @@ export function MixAndMatchCanvas({ userId }: { userId: string }) {
             onClick={handleDeleteSelected}
             disabled={!selectedId}
             aria-label="Delete selected item"
-            className="bg-[#F2EDE5] hover:bg-[#EAE4DC] text-[#444440] flex size-10 items-center justify-center rounded-xl transition-colors disabled:opacity-40"
+            className="bg-linen hover:bg-linen-dark text-foreground flex size-10 items-center justify-center rounded-xl transition-colors disabled:opacity-40"
           >
             <Trash2 className="size-4" />
           </button>
@@ -359,7 +359,7 @@ export function MixAndMatchCanvas({ userId }: { userId: string }) {
             type="button"
             onClick={handleShuffle}
             aria-label="Shuffle outfit"
-            className="bg-[#F2EDE5] hover:bg-[#EAE4DC] text-[#444440] flex size-10 items-center justify-center rounded-xl transition-colors"
+            className="bg-linen hover:bg-linen-dark text-foreground flex size-10 items-center justify-center rounded-xl transition-colors"
           >
             <Shuffle className="size-4" />
           </button>
@@ -377,7 +377,7 @@ export function MixAndMatchCanvas({ userId }: { userId: string }) {
               onClick={handleDeleteSelected}
               disabled={!selectedId}
               aria-label="Delete selected item"
-              className="bg-[#F2EDE5] text-[#444440] flex size-10 items-center justify-center rounded-xl disabled:opacity-40"
+              className="bg-linen text-foreground flex size-10 items-center justify-center rounded-xl disabled:opacity-40"
             >
               <Trash2 className="size-4" />
             </button>
@@ -385,7 +385,7 @@ export function MixAndMatchCanvas({ userId }: { userId: string }) {
               type="button"
               onClick={handleShuffle}
               aria-label="Shuffle outfit"
-              className="bg-[#F2EDE5] text-[#444440] flex size-10 items-center justify-center rounded-xl"
+              className="bg-linen text-foreground flex size-10 items-center justify-center rounded-xl"
             >
               <Shuffle className="size-4" />
             </button>
@@ -472,7 +472,7 @@ export function MixAndMatchCanvas({ userId }: { userId: string }) {
           type="button"
           onClick={handleSave}
           disabled={saveMutation.isPending}
-          className="bg-[#383733] hover:bg-[#2A2926] text-white absolute right-3.5 bottom-3.5 rounded-2xl px-8 py-3.5 text-xs font-normal tracking-wider uppercase shadow-md transition-colors disabled:opacity-60"
+          className="bg-primary hover:bg-[#2A2926] text-white absolute right-3.5 bottom-3.5 rounded-2xl px-8 py-3.5 text-xs font-normal tracking-wider uppercase shadow-md transition-colors disabled:opacity-60"
         >
           {saveMutation.isPending ? "Saving…" : "Save"}
         </button>
@@ -537,7 +537,7 @@ export function MixAndMatchCanvas({ userId }: { userId: string }) {
                       }
                       onPointerMove={handlePickerPointerMove}
                       onPointerUp={handlePickerPointerUp}
-                      className="border border-[#EAE4DC] bg-[#FAF8F5] relative aspect-square w-20 lg:w-full shrink-0 touch-none overflow-hidden rounded-2xl p-2 hover:border-foreground/30 transition-colors"
+                      className="border border-linen-dark bg-background relative aspect-square w-20 lg:w-full shrink-0 touch-none overflow-hidden rounded-2xl p-2 hover:border-foreground/30 transition-colors"
                     >
                       {option.image_url && (
                         <Image

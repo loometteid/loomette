@@ -26,6 +26,7 @@
      the semantic slots below. */
   --color-white: var(--white);
   --color-linen: var(--linen);
+  --color-linen-dark: var(--linen-dark);
   --color-stone: var(--stone);
   --color-slate: var(--slate);
   --color-black: var(--black);
@@ -81,8 +82,9 @@
      the untouched .dark block below). */
   --white: #fafaf7;
   --linen: #f2ede5;
-  --stone: #c7c3b8;
-  --slate: #44443f;
+  --linen-dark: #eae4dc;
+  --stone: #c9c3b7;
+  --slate: #444440;
   --black: #14140f;
   --primary-pink: #d4537e; /* NOT the same as the semantic --primary token below (that's Slate) */
   --secondary-pink: #e89bb0;

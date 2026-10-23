@@ -68,12 +68,12 @@ export function OutfitHistoryView({ userId }: { userId: string }) {
 
       {/* Header */}
       <div className="flex items-start gap-3 lg:gap-4">
-        <Sparkle className="size-6 lg:size-8 text-[#444440] shrink-0 mt-1" />
+        <Sparkle className="size-6 lg:size-8 text-foreground shrink-0 mt-1" />
         <div className="flex flex-col gap-1 lg:gap-2">
-          <Typography variant="title" as="h1" className="text-2xl lg:text-3xl font-serif text-[#444440]">
+          <Typography variant="title" as="h1" className="text-2xl lg:text-3xl font-serif text-foreground">
             Your looks, all of them.
           </Typography>
-          <p className="font-sans text-xs lg:text-xl font-normal text-[#444440]">
+          <p className="font-sans text-xs lg:text-xl font-normal text-foreground">
             {outfits.length} outfits collection so far.
           </p>
         </div>

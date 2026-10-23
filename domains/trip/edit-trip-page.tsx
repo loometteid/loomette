@@ -245,7 +245,7 @@ function TripFormContent({ userId, trip }: { userId: string; trip?: Trip }) {
                 type="date"
                 aria-invalid={!!errors.startDate}
                 data-testid="trip-form__start-date-input"
-                className="bg-[#F2EDE5] border-transparent"
+                className="bg-linen border-transparent"
                 {...register("startDate")}
               />
             </div>
@@ -258,7 +258,7 @@ function TripFormContent({ userId, trip }: { userId: string; trip?: Trip }) {
                 type="date"
                 aria-invalid={!!errors.endDate}
                 data-testid="trip-form__end-date-input"
-                className="bg-[#F2EDE5] border-transparent"
+                className="bg-linen border-transparent"
                 {...register("endDate")}
               />
             </div>
@@ -304,7 +304,7 @@ function TripFormContent({ userId, trip }: { userId: string; trip?: Trip }) {
             <Button
               type="submit"
               disabled={isPending}
-              className="w-full bg-[#383733] hover:bg-[#2A2926] text-white py-4 rounded-xl font-sans text-sm md:text-base font-normal uppercase tracking-wider shadow-sm"
+              className="w-full bg-primary hover:bg-[#2A2926] text-white py-4 rounded-xl font-sans text-sm md:text-base font-normal uppercase tracking-wider shadow-sm"
               data-testid="trip-form__submit-button"
             >
               {isPending ? "Saving..." : "Save"}

@@ -32,7 +32,7 @@ export function PlanOutfitDialog({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogPopup
         data-testid="plan-outfit-dialog"
-        className="max-w-md p-8 sm:p-10 flex flex-col items-center gap-6 text-center bg-[#FAF8F5] border border-[#EAE4DC] rounded-3xl"
+        className="max-w-md p-8 sm:p-10 flex flex-col items-center gap-6 text-center bg-background border border-linen-dark rounded-3xl"
       >
         <div className="flex flex-col items-center gap-3 pt-2">
           <DialogTitle
@@ -54,7 +54,7 @@ export function PlanOutfitDialog({
             href={mixAndMatchUrl as Route}
             onClick={() => onOpenChange(false)}
             data-testid="plan-outfit-dialog__mix-and-match"
-            className="w-full bg-[#F2EDE5] hover:bg-[#EAE4DC] text-[#444440] font-sans text-xs sm:text-sm font-normal tracking-wider uppercase py-4 rounded-2xl transition-colors text-center shadow-xs"
+            className="w-full bg-linen hover:bg-linen-dark text-foreground font-sans text-xs sm:text-sm font-normal tracking-wider uppercase py-4 rounded-2xl transition-colors text-center shadow-xs"
           >
             Mix & Match
           </Link>
@@ -66,7 +66,7 @@ export function PlanOutfitDialog({
               toast.info("Wardrobe collection selection coming soon!");
             }}
             data-testid="plan-outfit-dialog__pick-collection"
-            className="w-full bg-[#F2EDE5] hover:bg-[#EAE4DC] text-[#444440] font-sans text-xs sm:text-sm font-normal tracking-wider uppercase py-4 rounded-2xl transition-colors text-center shadow-xs"
+            className="w-full bg-linen hover:bg-linen-dark text-foreground font-sans text-xs sm:text-sm font-normal tracking-wider uppercase py-4 rounded-2xl transition-colors text-center shadow-xs"
           >
             Pick Collection
           </button>

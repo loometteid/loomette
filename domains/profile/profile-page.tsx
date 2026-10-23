@@ -176,7 +176,7 @@ export function ProfileView({ userId }: { userId: string }) {
             {displayName ?? username}
           </Typography>
           {sizeLine && (
-            <span className="font-sans text-xs font-normal tracking-wide text-[#444440] bg-[#F2EDE5] px-3 py-1 rounded-full uppercase mt-1">
+            <span className="font-sans text-xs font-normal tracking-wide text-foreground bg-linen px-3 py-1 rounded-full uppercase mt-1">
               {sizeLine}
             </span>
           )}
@@ -189,7 +189,7 @@ export function ProfileView({ userId }: { userId: string }) {
               href={"/profile/social" as Route}
               prefetch
               data-testid="profile-page__social-link"
-              className="w-full h-14 md:h-16 flex items-center justify-center gap-3 bg-[#444440] hover:bg-[#343430] text-white rounded-2xl font-sans text-xs lg:text-sm font-normal tracking-wider uppercase transition-colors shadow-xs"
+              className="w-full h-14 md:h-16 flex items-center justify-center gap-3 bg-primary hover:bg-[#343430] text-white rounded-2xl font-sans text-xs lg:text-sm font-normal tracking-wider uppercase transition-colors shadow-xs"
             >
               <Users className="size-5" />
               <span>Social Circle</span>
@@ -199,7 +199,7 @@ export function ProfileView({ userId }: { userId: string }) {
             href="/profile/settings"
             prefetch
             data-testid="profile-page__settings-link"
-            className="w-full h-14 md:h-16 flex items-center justify-center gap-3 bg-[#F2EDE5] hover:bg-[#EAE4DC] text-[#444440] rounded-2xl font-sans text-xs lg:text-sm font-normal tracking-wider uppercase transition-colors"
+            className="w-full h-14 md:h-16 flex items-center justify-center gap-3 bg-linen hover:bg-linen-dark text-foreground rounded-2xl font-sans text-xs lg:text-sm font-normal tracking-wider uppercase transition-colors"
           >
             <Settings className="size-5" />
             <span>Settings</span>
@@ -228,8 +228,8 @@ export function ProfileView({ userId }: { userId: string }) {
                 className={cn(
                   "px-5 py-2.5 rounded-xl font-sans text-xs lg:text-sm font-normal tracking-wider uppercase transition-colors",
                   isActive
-                    ? "bg-[#F2EDE5] text-foreground font-normal"
-                    : "text-muted-foreground hover:text-foreground hover:bg-[#F2EDE5]/40",
+                    ? "bg-linen text-foreground font-normal"
+                    : "text-muted-foreground hover:text-foreground hover:bg-linen/40",
                 )}
               >
                 {value === "travels" ? "Travel" : value}
@@ -296,7 +296,7 @@ export function ProfileView({ userId }: { userId: string }) {
                       key={entry.id}
                       data-testid="profile-page__favorite-item"
                       data-entity-id={entry.id}
-                      className="group border border-[#EAE4DC] bg-[#FAF8F5] hover:border-foreground/30 hover:shadow-sm flex flex-col rounded-2xl p-4 transition-colors"
+                      className="group border border-linen-dark bg-background hover:border-foreground/30 hover:shadow-sm flex flex-col rounded-2xl p-4 transition-colors"
                     >
                       <div className="relative aspect-square w-full rounded-xl flex items-center justify-center">
                         {entry.image_url ? (
@@ -431,7 +431,7 @@ export function ProfileView({ userId }: { userId: string }) {
                       data-testid="profile-page__wishlist-item"
                       data-entity-id={entry.id}
                       onClick={() => setSelectedWishlistItem(entry)}
-                      className="group border border-[#EAE4DC] bg-[#FAF8F5] hover:border-foreground/30 hover:shadow-sm flex flex-col text-left rounded-2xl p-4 transition-colors"
+                      className="group border border-linen-dark bg-background hover:border-foreground/30 hover:shadow-sm flex flex-col text-left rounded-2xl p-4 transition-colors"
                     >
                       <div className="relative aspect-square w-full rounded-xl flex items-center justify-center">
                         {entry.image_url ? (

@@ -68,10 +68,10 @@ export function DeleteAccountDialog({
         aria-describedby="delete-account-description"
       >
         {/* Progress Bar (3 segments) */}
-        <div className="flex w-36 h-1.5 rounded-full overflow-hidden bg-[#F2EDE5] mt-1">
+        <div className="flex w-36 h-1.5 rounded-full overflow-hidden bg-linen mt-1">
           <div
             className={cn(
-              "h-full transition-all duration-300 bg-[#383733]",
+              "h-full transition-all duration-300 bg-primary",
               step === 1 && "w-1/3",
               step === 2 && "w-2/3",
               step === 3 && "w-full",
@@ -115,7 +115,7 @@ export function DeleteAccountDialog({
                 type="button"
                 data-testid="delete-account-dialog__continue-step-1"
                 onClick={() => setStep(2)}
-                className="w-full bg-[#F2EDE5] hover:bg-[#EAE4DC] text-[#444440] font-sans text-xs font-normal tracking-wider uppercase py-3.5 rounded-xl border-none shadow-none"
+                className="w-full bg-linen hover:bg-linen-dark text-foreground font-sans text-xs font-normal tracking-wider uppercase py-3.5 rounded-xl border-none shadow-none"
               >
                 Continue to delete
               </Button>
@@ -123,7 +123,7 @@ export function DeleteAccountDialog({
                 type="button"
                 data-testid="delete-account-dialog__cancel-step-1"
                 onClick={() => handleOpenChange(false)}
-                className="w-full bg-[#383733] hover:bg-[#2A2926] text-white font-sans text-xs font-normal tracking-wider uppercase py-3.5 rounded-xl border-none shadow-none"
+                className="w-full bg-primary hover:bg-[#2A2926] text-white font-sans text-xs font-normal tracking-wider uppercase py-3.5 rounded-xl border-none shadow-none"
               >
                 Keep my account
               </Button>
@@ -167,7 +167,7 @@ export function DeleteAccountDialog({
               value={feedback}
               onChange={(e) => setFeedback(e.target.value)}
               placeholder="Tell us more (optional)"
-              className="bg-[#F2EDE5] border-transparent font-sans text-xs text-foreground placeholder:text-muted-foreground rounded-xl py-3"
+              className="bg-linen border-transparent font-sans text-xs text-foreground placeholder:text-muted-foreground rounded-xl py-3"
             />
 
             <div className="flex flex-col w-full gap-3 pt-2">
@@ -175,7 +175,7 @@ export function DeleteAccountDialog({
                 type="button"
                 data-testid="delete-account-dialog__continue-step-2"
                 onClick={() => setStep(3)}
-                className="w-full bg-[#383733] hover:bg-[#2A2926] text-white font-sans text-xs font-normal tracking-wider uppercase py-3.5 rounded-xl border-none shadow-none"
+                className="w-full bg-primary hover:bg-[#2A2926] text-white font-sans text-xs font-normal tracking-wider uppercase py-3.5 rounded-xl border-none shadow-none"
               >
                 Continue to delete
               </Button>
@@ -201,7 +201,7 @@ export function DeleteAccountDialog({
               value={confirmText}
               onChange={(e) => setConfirmText(e.target.value)}
               placeholder="Type DELETE here"
-              className="bg-[#F2EDE5] border-transparent text-xs text-center text-foreground placeholder:text-muted-foreground rounded-xl py-3 tracking-widest uppercase font-mono"
+              className="bg-linen border-transparent text-xs text-center text-foreground placeholder:text-muted-foreground rounded-xl py-3 tracking-widest uppercase font-mono"
             />
 
             <div className="flex flex-col w-full gap-3 pt-2">
@@ -210,7 +210,7 @@ export function DeleteAccountDialog({
                 data-testid="delete-account-dialog__cancel-step-3"
                 disabled={isDeleting}
                 onClick={() => handleOpenChange(false)}
-                className="w-full bg-[#383733] hover:bg-[#2A2926] text-white font-sans text-xs font-normal tracking-wider uppercase py-3.5 rounded-xl border-none shadow-none"
+                className="w-full bg-primary hover:bg-[#2A2926] text-white font-sans text-xs font-normal tracking-wider uppercase py-3.5 rounded-xl border-none shadow-none"
               >
                 Never mind
               </Button>
@@ -224,7 +224,7 @@ export function DeleteAccountDialog({
                     feedback: feedback.trim() || undefined,
                   })
                 }
-                className="w-full bg-[#F2EDE5] hover:bg-[#EAE4DC] text-[#444440] font-sans text-xs font-normal tracking-wider uppercase py-3.5 rounded-xl border-none shadow-none disabled:opacity-40"
+                className="w-full bg-linen hover:bg-linen-dark text-foreground font-sans text-xs font-normal tracking-wider uppercase py-3.5 rounded-xl border-none shadow-none disabled:opacity-40"
               >
                 {isDeleting ? "Deleting…" : "Delete my account"}
               </Button>

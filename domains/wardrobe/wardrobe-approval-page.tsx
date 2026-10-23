@@ -201,17 +201,17 @@ export function ApprovalQueue({ userId }: { userId: string }) {
 
         {/* Title Header */}
         <div className="mt-6 flex items-start gap-2.5 lg:gap-3.5">
-          <Sparkle className="size-6 lg:size-8 text-[#444440] shrink-0 mt-1" />
+          <Sparkle className="size-6 lg:size-8 text-foreground shrink-0 mt-1" />
           <div className="flex flex-col gap-1 lg:gap-2">
             <Typography
               variant="title"
               as="h1"
-              className="text-2xl md:text-3xl lg:text-4xl font-serif text-[#444440]"
+              className="text-2xl md:text-3xl lg:text-4xl font-serif text-foreground"
               data-testid="approval-queue__title"
             >
               We found these pieces.
             </Typography>
-            <p className="font-sans text-xs md:text-sm lg:text-xl font-normal text-[#444440]">
+            <p className="font-sans text-xs md:text-sm lg:text-xl font-normal text-foreground">
               Select what to add to your wardrobe.
             </p>
           </div>
@@ -289,10 +289,10 @@ export function ApprovalQueue({ userId }: { userId: string }) {
                   data-testid="approval-queue__item"
                   data-entity-id={row.id}
                   className={cn(
-                    "group relative flex flex-col justify-between rounded-3xl border bg-[#FAF8F5]/60 hover:bg-[#FAF8F5] p-3 text-center transition-all cursor-pointer hover:shadow-sm",
+                    "group relative flex flex-col justify-between rounded-3xl border bg-background/60 hover:bg-background p-3 text-center transition-all cursor-pointer hover:shadow-sm",
                     isChecked
                       ? "border-foreground ring-1 ring-foreground"
-                      : "border-[#EAE4DC]",
+                      : "border-linen-dark",
                     isInvalidSelected &&
                       "ring-2 ring-destructive border-destructive bg-destructive/5",
                   )}
@@ -322,7 +322,7 @@ export function ApprovalQueue({ userId }: { userId: string }) {
                         aria-label={`Select ${row.item?.name || "item"}`}
                         data-testid="approval-queue__item-checkbox"
                         data-entity-id={row.id}
-                        className="size-5 lg:size-7 rounded-md lg:rounded-lg border-[#C9C3B7] data-[checked]:bg-[#444440] data-[checked]:border-[#444440] text-white"
+                        className="size-5 lg:size-7 rounded-md lg:rounded-lg border-stone data-[checked]:bg-primary data-[checked]:border-primary text-white"
                       />
                     </div>
                   </div>
@@ -388,7 +388,7 @@ export function ApprovalQueue({ userId }: { userId: string }) {
                 onClick={handleApprove}
                 data-testid="approval-queue__approve-button"
                 className={cn(
-                  "bg-[#444440] hover:bg-[#333330] text-white flex-1 flex items-center justify-center rounded-2xl h-14 text-xs font-semibold uppercase tracking-wider shadow-lg transition-transform active:scale-95 disabled:opacity-40",
+                  "bg-primary hover:bg-[#333330] text-white flex-1 flex items-center justify-center rounded-2xl h-14 text-xs font-semibold uppercase tracking-wider shadow-lg transition-transform active:scale-95 disabled:opacity-40",
                   !canApprove &&
                     selected.size > 0 &&
                     "opacity-60 cursor-not-allowed",
@@ -403,7 +403,7 @@ export function ApprovalQueue({ userId }: { userId: string }) {
                 disabled={busy || selected.size === 0}
                 aria-label="Discard selected"
                 data-testid="approval-queue__discard-button"
-                className="bg-[#F2EDE5] hover:bg-[#EAE4DC] text-[#444440] flex size-14 shrink-0 items-center justify-center rounded-2xl transition-colors disabled:opacity-40"
+                className="bg-linen hover:bg-linen-dark text-foreground flex size-14 shrink-0 items-center justify-center rounded-2xl transition-colors disabled:opacity-40"
               >
                 <Trash2 className="size-5" />
               </button>
@@ -417,7 +417,7 @@ export function ApprovalQueue({ userId }: { userId: string }) {
                 onClick={handleApprove}
                 data-testid="approval-queue__approve-button-desktop"
                 className={cn(
-                  "bg-[#444440] hover:bg-[#333330] text-white px-12 h-14 rounded-2xl text-xs font-semibold uppercase tracking-wider shadow-md transition-colors disabled:opacity-40",
+                  "bg-primary hover:bg-[#333330] text-white px-12 h-14 rounded-2xl text-xs font-semibold uppercase tracking-wider shadow-md transition-colors disabled:opacity-40",
                   !canApprove &&
                     selected.size > 0 &&
                     "opacity-60 cursor-not-allowed",
@@ -431,7 +431,7 @@ export function ApprovalQueue({ userId }: { userId: string }) {
                 disabled={busy || selected.size === 0}
                 onClick={() => setDeleteConfirmOpen(true)}
                 data-testid="approval-queue__discard-button-desktop"
-                className="bg-[#F2EDE5] hover:bg-[#EAE4DC] text-[#444440] px-12 h-14 rounded-2xl text-xs font-semibold uppercase tracking-wider transition-colors disabled:opacity-40"
+                className="bg-linen hover:bg-linen-dark text-foreground px-12 h-14 rounded-2xl text-xs font-semibold uppercase tracking-wider transition-colors disabled:opacity-40"
               >
                 Delete
               </button>

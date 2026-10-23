@@ -26,13 +26,13 @@ export function OutfitEntryDialog({
     <Dialog open={!!entry} onOpenChange={onOpenChange}>
       <DialogPopup
         showClose={false}
-        className="fixed inset-0 m-auto h-fit max-w-[340px] lg:max-w-md w-[calc(100%-3rem)] p-6 lg:p-8 rounded-[24px] bg-[#FAFAF7] border-none text-center shadow-2xl relative"
+        className="fixed inset-0 m-auto h-fit max-w-[340px] lg:max-w-md w-[calc(100%-3rem)] p-6 lg:p-8 rounded-[24px] bg-background border-none text-center shadow-2xl relative"
       >
         <button
           type="button"
           onClick={() => onOpenChange(false)}
           aria-label="Close"
-          className="absolute top-4 right-4 size-10 rounded-xl bg-[#F2EDE5] hover:bg-[#EAE4DC] text-[#444440] flex items-center justify-center transition-colors"
+          className="absolute top-4 right-4 size-10 rounded-xl bg-linen hover:bg-linen-dark text-foreground flex items-center justify-center transition-colors"
         >
           <X className="size-4" />
         </button>
@@ -40,8 +40,8 @@ export function OutfitEntryDialog({
         {entry && (
           <div className="flex flex-col items-center gap-4 mt-2">
             <div className="flex items-center gap-2">
-              <Sparkle className="size-5 text-[#444440]" />
-              <DialogTitle className="font-serif text-2xl lg:text-3xl text-[#444440]">
+              <Sparkle className="size-5 text-foreground" />
+              <DialogTitle className="font-serif text-2xl lg:text-3xl text-foreground">
                 {formatEntryDate(entry.worn_on)}
               </DialogTitle>
             </div>
@@ -52,7 +52,7 @@ export function OutfitEntryDialog({
                   items={entry.outfit.items}
                   className="aspect-5/6 w-full max-w-[280px]"
                 />
-                <span className="font-serif text-lg text-[#444440]">
+                <span className="font-serif text-lg text-foreground">
                   {entry.outfit.name || "Chic Kinda Day"}
                 </span>
               </div>
@@ -67,7 +67,7 @@ export function OutfitEntryDialog({
                       className="object-contain"
                     />
                   </div>
-                  <span className="font-serif text-lg text-[#444440]">
+                  <span className="font-serif text-lg text-foreground">
                     {entry.outfit.name || "Chic Kinda Day"}
                   </span>
                 </div>

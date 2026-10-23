@@ -118,7 +118,7 @@ export function RecommendationDetailDialog({
       <Dialog open={open} onOpenChange={onOpenChange}>
         <DialogPopup
           showClose={false}
-          className="max-w-4xl w-[calc(100%-2rem)] sm:w-[calc(100%-4rem)] rounded-3xl bg-[#FAFAF7] p-6 sm:p-8 lg:p-10 shadow-2xl border-none max-h-[90vh] overflow-y-auto"
+          className="max-w-4xl w-[calc(100%-2rem)] sm:w-[calc(100%-4rem)] rounded-3xl bg-background p-6 sm:p-8 lg:p-10 shadow-2xl border-none max-h-[90vh] overflow-y-auto"
         >
           <button
             type="button"
@@ -152,7 +152,7 @@ export function RecommendationDetailDialog({
                   type="button"
                   onClick={handleAddToCollection}
                   disabled={saveOutfitMutation.isPending || addToCollectionMutation.isPending}
-                  className="flex-1 rounded-full bg-[#F2EDE5] py-3.5 text-xs font-semibold tracking-wider text-[#3B3A36] uppercase hover:bg-[#EAE4DC] transition-colors disabled:opacity-60"
+                  className="flex-1 rounded-full bg-linen py-3.5 text-xs font-semibold tracking-wider text-[#3B3A36] uppercase hover:bg-linen-dark transition-colors disabled:opacity-60"
                 >
                   Add to Collection
                 </button>
@@ -180,7 +180,7 @@ export function RecommendationDetailDialog({
                     className="relative flex items-center gap-4 rounded-2xl border border-border bg-white/70 p-4 transition-shadow hover:shadow-sm"
                   >
                     {piece.badgeText.includes("#1") && (
-                      <span className="absolute -top-2.5 left-4 rounded-full bg-[#F2EDE5] px-2.5 py-0.5 text-[0.6rem] font-semibold tracking-wider text-[#3B3A36] uppercase">
+                      <span className="absolute -top-2.5 left-4 rounded-full bg-linen px-2.5 py-0.5 text-[0.6rem] font-semibold tracking-wider text-[#3B3A36] uppercase">
                         {piece.badgeText}
                       </span>
                     )}

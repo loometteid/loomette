@@ -9,8 +9,7 @@ const typographyVariants = cva("text-foreground", {
       "mega-title": "font-serif text-mega-title",
       title: "font-serif text-title",
       h1: "font-serif text-h1",
-      subtitle:
-        "font-sans text-subtitle text-muted-foreground uppercase tracking-wide",
+      subtitle: "font-sans text-subtitle text-foreground",
     },
   },
   defaultVariants: {

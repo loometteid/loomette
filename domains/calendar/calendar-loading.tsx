@@ -194,7 +194,7 @@ export function CalendarFallback() {
 
       {/* Desktop Floating Actions (D.2 Calendar) */}
       <div className="hidden lg:flex fixed bottom-10 right-10 z-40 items-center gap-4 opacity-70">
-        <div className="bg-[#EAE4DC] text-foreground px-6 py-3.5 rounded-2xl text-xs font-semibold tracking-wider uppercase shadow-lg">
+        <div className="bg-linen-dark text-foreground px-6 py-3.5 rounded-2xl text-xs font-semibold tracking-wider uppercase shadow-lg">
           Mix &amp; Match
         </div>
         <div className="bg-[#393735] text-white px-7 py-3.5 rounded-2xl text-xs font-semibold tracking-wider uppercase shadow-lg">

@@ -96,19 +96,19 @@ export function WaitlistShell({
           {/* Content Area */}
           <div className="flex flex-1 flex-col my-auto py-6">
             <div className="flex items-start gap-3 lg:gap-4">
-              <Sparkle className="size-6 lg:size-8 text-[#444440] shrink-0 mt-1 lg:mt-1.5" />
+              <Sparkle className="size-6 lg:size-8 text-foreground shrink-0 mt-1 lg:mt-1.5" />
               <div className="flex flex-col gap-1 lg:gap-2">
                 <Typography
                   variant="title"
                   as="h1"
                   data-testid="waitlist-shell__title"
-                  className="text-2xl sm:text-3xl lg:text-4xl font-serif text-[#444440]"
+                  className="text-2xl sm:text-3xl lg:text-4xl font-serif text-foreground"
                 >
                   {title}
                 </Typography>
                 <p
                   data-testid="waitlist-shell__subtitle"
-                  className="font-sans text-xs sm:text-sm lg:text-base font-normal text-[#444440]"
+                  className="font-sans text-xs sm:text-sm lg:text-base font-normal text-foreground"
                 >
                   {subtitle}
                 </p>

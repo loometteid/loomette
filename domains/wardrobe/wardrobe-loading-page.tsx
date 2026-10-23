@@ -211,7 +211,7 @@ export function WardrobeLoadingView({ userId }: { userId: string }) {
                 We&apos;re <em className="italic underline">working</em> on your
                 look.
               </Typography>
-              <p className="text-[#444440] max-w-xs font-sans text-xs font-normal leading-relaxed">
+              <p className="text-foreground max-w-xs font-sans text-xs font-normal leading-relaxed">
                 This can take a few minutes. No need to wait. We&apos;ll notify
                 you once it&apos;s ready.
               </p>

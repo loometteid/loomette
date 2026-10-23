@@ -197,7 +197,7 @@ export function EditItemForm({ userId, id }: { userId: string; id: string }) {
             onClick={() => router.back()}
             aria-label="Go back"
             disabled={isBusy}
-            className="bg-[#F2EDE5] hover:bg-[#EAE4DC] text-foreground flex size-10 items-center justify-center rounded-xl transition-colors disabled:opacity-50"
+            className="bg-linen hover:bg-linen-dark text-foreground flex size-10 items-center justify-center rounded-xl transition-colors disabled:opacity-50"
           >
             <ChevronLeft className="size-5" />
           </button>
@@ -217,7 +217,7 @@ export function EditItemForm({ userId, id }: { userId: string; id: string }) {
               onClick={() => setDeleteConfirmOpen(true)}
               disabled={isBusy}
               aria-label="Delete item"
-              className="bg-[#F2EDE5] hover:bg-destructive/10 text-destructive flex size-10 items-center justify-center rounded-xl transition-colors disabled:opacity-50"
+              className="bg-linen hover:bg-destructive/10 text-destructive flex size-10 items-center justify-center rounded-xl transition-colors disabled:opacity-50"
             >
               <Trash2 className="size-4" />
             </button>
@@ -250,7 +250,7 @@ export function EditItemForm({ userId, id }: { userId: string; id: string }) {
                 <button
                   type="button"
                   onClick={() => setSourcePreviewOpen(true)}
-                  className="mt-3 mb-2 lg:hidden rounded-full border border-[#C9C3B7] bg-transparent px-6 py-2 text-[11px] font-semibold uppercase tracking-wider text-[#444440] hover:bg-[#F2EDE5] transition-colors"
+                  className="mt-3 mb-2 lg:hidden rounded-full border border-stone bg-transparent px-6 py-2 text-[11px] font-semibold uppercase tracking-wider text-foreground hover:bg-linen transition-colors"
                 >
                   See Original Photo
                 </button>
@@ -262,7 +262,7 @@ export function EditItemForm({ userId, id }: { userId: string; id: string }) {
                   <input
                     {...register("name")}
                     placeholder="Name this piece"
-                    className="w-full bg-transparent text-center font-serif text-3xl lg:text-4xl outline-none placeholder:text-muted-foreground font-medium text-[#444440]"
+                    className="w-full bg-transparent text-center font-serif text-3xl lg:text-4xl outline-none placeholder:text-muted-foreground font-medium text-foreground"
                   />
                   <Pencil className="size-4 text-foreground/50 pointer-events-none absolute right-4 lg:right-6" />
                 </div>
@@ -281,7 +281,7 @@ export function EditItemForm({ userId, id }: { userId: string; id: string }) {
                 <button
                   type="button"
                   onClick={() => setSourcePreviewOpen(true)}
-                  className="mt-6 hidden lg:inline-flex rounded-xl border border-[#C9C3B7] bg-transparent px-8 py-3 text-xs font-semibold uppercase tracking-wider text-[#444440] hover:bg-[#F2EDE5] transition-colors"
+                  className="mt-6 hidden lg:inline-flex rounded-xl border border-stone bg-transparent px-8 py-3 text-xs font-semibold uppercase tracking-wider text-foreground hover:bg-linen transition-colors"
                 >
                   See Original Photo
                 </button>
@@ -341,7 +341,7 @@ export function EditItemForm({ userId, id }: { userId: string; id: string }) {
                       <Label className="text-slate text-xs font-semibold tracking-widest uppercase">
                         Outfit Size
                       </Label>
-                      <Badge className="bg-[#F2EDE5] text-[#8C887B] text-[0.65rem] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full border-none">
+                      <Badge className="bg-linen text-[#8C887B] text-[0.65rem] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full border-none">
                         Optional
                       </Badge>
                     </div>
@@ -404,7 +404,7 @@ export function EditItemForm({ userId, id }: { userId: string; id: string }) {
                       inputMode="decimal"
                       placeholder="e.g. 150000"
                       {...register("price")}
-                      className="bg-[#F2EDE5] border-none rounded-xl text-foreground placeholder:text-[#8C887B] px-4 py-3 h-11"
+                      className="bg-linen border-none rounded-xl text-foreground placeholder:text-[#8C887B] px-4 py-3 h-11"
                     />
                   </div>
 
@@ -420,7 +420,7 @@ export function EditItemForm({ userId, id }: { userId: string; id: string }) {
                       id="edit-item-buy-from"
                       placeholder="e.g. Offline Store, Shopee"
                       {...register("purchaseLocation")}
-                      className="bg-[#F2EDE5] border-none rounded-xl text-foreground placeholder:text-[#8C887B] px-4 py-3 h-11"
+                      className="bg-linen border-none rounded-xl text-foreground placeholder:text-[#8C887B] px-4 py-3 h-11"
                     />
                   </div>
                 </div>
@@ -433,7 +433,7 @@ export function EditItemForm({ userId, id }: { userId: string; id: string }) {
                 </span>
                 <div className="flex gap-4 items-center">
                   {/* Card 1: Last outfit preview */}
-                  <div className="border border-[#EAE4DC] bg-[#FAF8F5] rounded-2xl p-4 flex items-center justify-center relative aspect-3/4 w-44 lg:w-48 overflow-hidden shrink-0 shadow-sm">
+                  <div className="border border-linen-dark bg-background rounded-2xl p-4 flex items-center justify-center relative aspect-3/4 w-44 lg:w-48 overflow-hidden shrink-0 shadow-sm">
                     {lastPairing?.items && lastPairing.items.length > 0 ? (
                       <OutfitComposition
                         items={lastPairing.items}
@@ -467,7 +467,7 @@ export function EditItemForm({ userId, id }: { userId: string; id: string }) {
                   <Link
                     href={`/mix-and-match?itemId=${item.id}`}
                     prefetch
-                    className="border border-[#EAE4DC] bg-[#FAF8F5] hover:bg-[#F2EDE5] rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-3/4 w-44 lg:w-48 shrink-0 transition-colors shadow-sm group"
+                    className="border border-linen-dark bg-background hover:bg-linen rounded-2xl p-4 flex flex-col items-center justify-center gap-3 aspect-3/4 w-44 lg:w-48 shrink-0 transition-colors shadow-sm group"
                   >
                     <div className="size-12 rounded-full border-2 border-dashed border-[#8C887B] flex items-center justify-center group-hover:border-foreground transition-colors">
                       <Plus className="size-5 text-[#8C887B] group-hover:text-foreground transition-colors" />
@@ -500,10 +500,10 @@ export function EditItemForm({ userId, id }: { userId: string; id: string }) {
                   key={matchItem.id}
                   href={`/wardrobe/${matchItem.id}`}
                   prefetch
-                  className="group border border-[#EAE4DC] bg-[#FAF8F5]/60 hover:bg-[#FAF8F5] rounded-2xl p-4 flex flex-col items-center justify-between text-center relative transition-all min-w-[150px] lg:min-w-0 shadow-sm hover:border-foreground/30"
+                  className="group border border-linen-dark bg-background/60 hover:bg-background rounded-2xl p-4 flex flex-col items-center justify-between text-center relative transition-all min-w-[150px] lg:min-w-0 shadow-sm hover:border-foreground/30"
                 >
                   {index === 0 && (
-                    <span className="absolute top-3 left-3 bg-[#F2EDE5] text-[#393735] text-[0.6rem] font-bold tracking-wider uppercase px-2 py-0.5 rounded-md shadow-xs">
+                    <span className="absolute top-3 left-3 bg-linen text-[#393735] text-[0.6rem] font-bold tracking-wider uppercase px-2 py-0.5 rounded-md shadow-xs">
                       #1 Trending
                     </span>
                   )}
@@ -551,21 +551,21 @@ export function EditItemForm({ userId, id }: { userId: string; id: string }) {
         <Dialog open={sourcePreviewOpen} onOpenChange={setSourcePreviewOpen}>
           <DialogPopup
             showClose={false}
-            className="h-fit max-w-[340px] lg:max-w-md w-[calc(100%-3rem)] p-6 lg:p-8 rounded-[24px] bg-[#FAFAF7] border-none text-center shadow-2xl"
+            className="h-fit max-w-[340px] lg:max-w-md w-[calc(100%-3rem)] p-6 lg:p-8 rounded-[24px] bg-background border-none text-center shadow-2xl"
           >
             <button
               type="button"
               onClick={() => setSourcePreviewOpen(false)}
               aria-label="Close"
-              className="absolute top-4 right-4 size-10 rounded-xl bg-[#F2EDE5] hover:bg-[#EAE4DC] text-[#444440] flex items-center justify-center transition-colors"
+              className="absolute top-4 right-4 size-10 rounded-xl bg-linen hover:bg-linen-dark text-foreground flex items-center justify-center transition-colors"
             >
               <X className="size-4" />
             </button>
 
             <div className="flex flex-col items-center gap-4 mt-2">
               <div className="flex items-center gap-2">
-                <Sparkle className="size-5 text-[#444440]" />
-                <DialogTitle className="font-serif text-2xl lg:text-3xl text-[#444440]">
+                <Sparkle className="size-5 text-foreground" />
+                <DialogTitle className="font-serif text-2xl lg:text-3xl text-foreground">
                   Source Preview
                 </DialogTitle>
               </div>
@@ -592,7 +592,7 @@ export function EditItemForm({ userId, id }: { userId: string; id: string }) {
               <button
                 type="button"
                 onClick={() => setSourcePreviewOpen(false)}
-                className="w-full bg-[#444440] hover:bg-[#333330] text-white py-3.5 rounded-2xl text-xs font-semibold uppercase tracking-wider transition-colors mt-2"
+                className="w-full bg-primary hover:bg-[#333330] text-white py-3.5 rounded-2xl text-xs font-semibold uppercase tracking-wider transition-colors mt-2"
               >
                 Okay
               </button>

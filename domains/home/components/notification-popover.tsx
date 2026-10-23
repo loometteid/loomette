@@ -55,7 +55,7 @@ export function NotificationPopover({ userId }: { userId: string }) {
       <PopoverContent
         align="end"
         sideOffset={12}
-        className="w-96 rounded-3xl bg-[#FAFAF7] p-6 shadow-2xl border border-border/40"
+        className="w-96 rounded-3xl bg-background p-6 shadow-2xl border border-border/40"
       >
         <NotificationList notifications={notifications} />
       </PopoverContent>

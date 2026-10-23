@@ -251,7 +251,7 @@ export function CalendarView({ userId }: { userId: string }) {
       </div>
 
       {/* Mobile Ingestion Card */}
-      <div className="border border-[#EAE4DC] bg-[#FAF8F5]/60 flex flex-col gap-4 rounded-3xl p-6 lg:hidden">
+      <div className="border border-linen-dark bg-background/60 flex flex-col gap-4 rounded-3xl p-6 lg:hidden">
         <Typography variant="h1" as="h2">
           Capture your looks
         </Typography>
@@ -277,7 +277,7 @@ export function CalendarView({ userId }: { userId: string }) {
         <Link
           href="/mix-and-match"
           prefetch
-          className="bg-[#EAE4DC] hover:bg-[#ded6cb] text-foreground flex w-full items-center justify-center rounded-2xl py-4 text-xs font-semibold tracking-wider uppercase shadow-sm transition-colors"
+          className="bg-linen-dark hover:bg-[#ded6cb] text-foreground flex w-full items-center justify-center rounded-2xl py-4 text-xs font-semibold tracking-wider uppercase shadow-sm transition-colors"
         >
           Mix &amp; Match
         </Link>
@@ -288,7 +288,7 @@ export function CalendarView({ userId }: { userId: string }) {
         <Link
           href="/mix-and-match"
           prefetch
-          className="bg-[#EAE4DC] hover:bg-[#dcd4c8] text-foreground px-6 py-3.5 rounded-2xl text-xs font-semibold tracking-wider uppercase shadow-lg transition-transform active:scale-95"
+          className="bg-linen-dark hover:bg-[#dcd4c8] text-foreground px-6 py-3.5 rounded-2xl text-xs font-semibold tracking-wider uppercase shadow-lg transition-transform active:scale-95"
         >
           Mix &amp; Match
         </Link>

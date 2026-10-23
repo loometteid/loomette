@@ -147,12 +147,12 @@ export function MixAndMatchResult({
         <div className="flex flex-col lg:w-1/2 lg:justify-between lg:self-stretch">
           <div>
             <div className="flex items-start gap-2.5 lg:gap-3.5">
-              <Sparkle className="text-[#444440] size-6 lg:size-8 shrink-0 mt-1" />
+              <Sparkle className="text-foreground size-6 lg:size-8 shrink-0 mt-1" />
               <div className="flex flex-col gap-1 lg:gap-2">
-                <Typography variant="title" as="h1" className="text-2xl lg:text-4xl font-serif text-[#444440]">
+                <Typography variant="title" as="h1" className="text-2xl lg:text-4xl font-serif text-foreground">
                   What a Match!
                 </Typography>
-                <p className="hidden lg:block font-sans text-xs lg:text-xl font-normal text-[#444440] leading-relaxed max-w-md">
+                <p className="hidden lg:block font-sans text-xs lg:text-xl font-normal text-foreground leading-relaxed max-w-md">
                   You put this together and honestly, it works. Save it before you forget.
                 </p>
               </div>
@@ -165,7 +165,7 @@ export function MixAndMatchResult({
               type="button"
               onClick={handleAddToCollection}
               disabled={isMutating}
-              className="bg-[#F2EDE5] text-[#444440] hover:bg-[#e6e0d5] flex-1 rounded-2xl h-14 lg:h-16 text-xs lg:text-sm font-semibold tracking-wider uppercase transition-colors disabled:opacity-60 cursor-pointer"
+              className="bg-linen text-foreground hover:bg-[#e6e0d5] flex-1 rounded-2xl h-14 lg:h-16 text-xs lg:text-sm font-semibold tracking-wider uppercase transition-colors disabled:opacity-60 cursor-pointer"
             >
               {addToCollectionMutation.isPending
                 ? "Adding…"
@@ -177,7 +177,7 @@ export function MixAndMatchResult({
               type="button"
               onClick={handleAddToCalendar}
               disabled={isMutating}
-              className="bg-[#383733] text-white hover:bg-[#2c2b28] flex-1 rounded-2xl h-14 lg:h-16 text-xs lg:text-sm font-semibold tracking-wider uppercase transition-colors disabled:opacity-60 cursor-pointer"
+              className="bg-primary text-white hover:bg-[#2c2b28] flex-1 rounded-2xl h-14 lg:h-16 text-xs lg:text-sm font-semibold tracking-wider uppercase transition-colors disabled:opacity-60 cursor-pointer"
             >
               {addToCalendarMutation.isPending
                 ? "Adding…"
@@ -225,7 +225,7 @@ export function MixAndMatchResult({
               type="button"
               onClick={handleAddToCollection}
               disabled={isMutating}
-              className="bg-[#F2EDE5] text-[#444440] hover:bg-[#e6e0d5] flex-1 rounded-2xl h-14 text-xs font-semibold tracking-wider uppercase transition-colors disabled:opacity-60"
+              className="bg-linen text-foreground hover:bg-[#e6e0d5] flex-1 rounded-2xl h-14 text-xs font-semibold tracking-wider uppercase transition-colors disabled:opacity-60"
             >
               {addToCollectionMutation.isPending
                 ? "Adding…"
@@ -237,7 +237,7 @@ export function MixAndMatchResult({
               type="button"
               onClick={handleAddToCalendar}
               disabled={isMutating}
-              className="bg-[#383733] text-white hover:bg-[#2c2b28] flex-1 rounded-2xl h-14 text-xs font-semibold tracking-wider uppercase transition-colors disabled:opacity-60"
+              className="bg-primary text-white hover:bg-[#2c2b28] flex-1 rounded-2xl h-14 text-xs font-semibold tracking-wider uppercase transition-colors disabled:opacity-60"
             >
               {addToCalendarMutation.isPending
                 ? "Adding…"
@@ -255,9 +255,9 @@ export function MixAndMatchResult({
             type="button"
             onClick={() => setShowSuccess(false)}
             aria-label="Close"
-            className="bg-[#F2EDE5] hover:bg-[#e6e0d5] absolute top-4 right-4 flex size-10 items-center justify-center rounded-xl transition-colors cursor-pointer"
+            className="bg-linen hover:bg-[#e6e0d5] absolute top-4 right-4 flex size-10 items-center justify-center rounded-xl transition-colors cursor-pointer"
           >
-            <X className="size-4 text-[#444440]" />
+            <X className="size-4 text-foreground" />
           </button>
 
           <div className="flex flex-col items-center gap-4 py-6 text-center">
@@ -269,7 +269,7 @@ export function MixAndMatchResult({
             <button
               type="button"
               onClick={() => setShowSuccess(false)}
-              className="bg-[#383733] text-white hover:bg-[#2c2b28] w-full rounded-2xl h-14 text-xs lg:text-sm font-semibold tracking-wider uppercase transition-colors mt-2 cursor-pointer"
+              className="bg-primary text-white hover:bg-[#2c2b28] w-full rounded-2xl h-14 text-xs lg:text-sm font-semibold tracking-wider uppercase transition-colors mt-2 cursor-pointer"
             >
               Stay In
             </button>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { Dialog, DialogPopup } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 import {
@@ -65,24 +65,43 @@ export function CalendarDateDialog({
         onOpenChange(next);
       }}
     >
-      <DialogPopup className="gap-6">
-        <div className="flex items-center justify-center gap-6">
+      <DialogPopup
+        showClose={false}
+        className="max-w-md p-6 lg:p-8 relative gap-6"
+        data-testid="calendar-date-dialog"
+      >
+        <button
+          type="button"
+          onClick={() => onOpenChange(false)}
+          aria-label="Close"
+          data-testid="calendar-date-dialog__close-button"
+          className="bg-linen hover:bg-linen-dark absolute top-4 right-4 flex size-10 items-center justify-center rounded-xl transition-colors cursor-pointer text-foreground"
+        >
+          <X className="size-4" />
+        </button>
+
+        <div className="flex items-center justify-center gap-6 pt-2">
           <button
             type="button"
             onClick={goToPreviousMonth}
             aria-label="Previous month"
-            className="text-muted-foreground hover:text-foreground flex size-8 items-center justify-center"
+            data-testid="calendar-date-dialog__prev-month"
+            className="text-muted-foreground hover:text-foreground flex size-8 items-center justify-center rounded-lg transition-colors cursor-pointer"
           >
             <ChevronLeft className="size-4" />
           </button>
-          <span className="text-sm font-medium tracking-wide">
+          <span
+            className="text-base font-medium tracking-wide text-foreground font-sans"
+            data-testid="calendar-date-dialog__month-year"
+          >
             {formatMonthYear(viewYear, viewMonth)}
           </span>
           <button
             type="button"
             onClick={goToNextMonth}
             aria-label="Next month"
-            className="text-muted-foreground hover:text-foreground flex size-8 items-center justify-center"
+            data-testid="calendar-date-dialog__next-month"
+            className="text-muted-foreground hover:text-foreground flex size-8 items-center justify-center rounded-lg transition-colors cursor-pointer"
           >
             <ChevronRight className="size-4" />
           </button>
@@ -93,7 +112,7 @@ export function CalendarDateDialog({
             {WEEKDAY_LABELS.map((label) => (
               <span
                 key={label}
-                className="text-muted-foreground text-center text-[0.65rem] font-medium tracking-wide"
+                className="text-muted-foreground text-center text-[0.7rem] font-medium tracking-wider uppercase font-sans"
               >
                 {label}
               </span>
@@ -112,11 +131,13 @@ export function CalendarDateDialog({
                     <button
                       type="button"
                       onClick={() => setSelectedKey(cell.key)}
+                      data-testid="calendar-date-dialog__day"
+                      data-entity-id={cell.key}
                       className={cn(
-                        "border-border flex size-9 items-center justify-center rounded-xl border text-xs font-medium transition-colors",
+                        "flex size-9 lg:size-10 items-center justify-center rounded-xl text-xs lg:text-sm font-medium transition-colors cursor-pointer",
                         isSelected
-                          ? "bg-foreground text-background border-foreground"
-                          : "bg-secondary text-secondary-foreground hover:bg-border",
+                          ? "bg-primary text-white font-semibold shadow-sm"
+                          : "text-foreground hover:bg-linen",
                       )}
                     >
                       {cell.day}
@@ -132,9 +153,10 @@ export function CalendarDateDialog({
           type="button"
           onClick={() => onConfirm(selectedKey)}
           disabled={saving}
-          className="bg-foreground text-background w-full rounded-full py-3 text-sm font-medium tracking-wide uppercase disabled:opacity-60"
+          data-testid="calendar-date-dialog__save-button"
+          className="bg-primary hover:bg-primary/90 text-white w-full rounded-2xl h-12 lg:h-14 text-xs lg:text-sm font-semibold tracking-wider uppercase transition-colors disabled:opacity-60 cursor-pointer shadow-sm mt-2"
         >
-          Save
+          {saving ? "Saving…" : "Save"}
         </button>
       </DialogPopup>
     </Dialog>

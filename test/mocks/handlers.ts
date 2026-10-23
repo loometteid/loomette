@@ -230,6 +230,12 @@ export const handlers = [
     return HttpResponse.json([mockOutfit]);
   }),
 
+  // Mock handler for outfit table update (patch)
+  http.patch(`${MOCK_SUPABASE_URL}/rest/v1/outfit`, async ({ request }) => {
+    const body = (await request.json()) as Record<string, unknown>;
+    return HttpResponse.json(body);
+  }),
+
   // Mock handler for outfit_item table insert
   http.post(`${MOCK_SUPABASE_URL}/rest/v1/outfit_item`, async ({ request }) => {
     const body = (await request.json()) as

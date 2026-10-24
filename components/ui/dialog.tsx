@@ -70,13 +70,13 @@ function DialogPopup({
           className={cn(
             variant === "bottom"
               ? "bg-background relative mx-auto flex max-h-[90vh] w-full max-w-sm flex-col gap-4 overflow-y-auto rounded-t-3xl p-6 shadow-lg transition-all duration-150 data-[ending-style]:translate-y-full data-[starting-style]:translate-y-full"
-              : "bg-[#FAFAF7] relative flex h-fit max-h-[90vh] w-[calc(100%-2rem)] max-w-md flex-col overflow-y-auto rounded-3xl p-6 shadow-2xl transition-all duration-150 data-[ending-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:scale-95 data-[starting-style]:opacity-0",
+              : "bg-background relative flex h-fit max-h-[90vh] w-[calc(100%-2rem)] max-w-md flex-col overflow-y-auto rounded-3xl p-6 shadow-2xl transition-all duration-150 data-[ending-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:scale-95 data-[starting-style]:opacity-0",
             className,
           )}
           {...props}
         >
           {showClose && (
-            <DialogPrimitive.Close className="bg-[#F2EDE5] hover:bg-[#EAE4DC] text-[#444440] absolute top-4 right-4 flex size-10 items-center justify-center rounded-xl transition-colors">
+            <DialogPrimitive.Close className="bg-linen hover:bg-linen-dark text-foreground absolute top-4 right-4 flex size-10 items-center justify-center rounded-xl transition-colors">
               <X className="size-4" />
             </DialogPrimitive.Close>
           )}
@@ -92,7 +92,7 @@ function DialogClose({ className, ...props }: DialogPrimitive.Close.Props) {
     <DialogPrimitive.Close
       data-slot="dialog-close"
       className={cn(
-        "bg-[#F2EDE5] hover:bg-[#EAE4DC] text-[#444440] flex size-10 items-center justify-center rounded-xl transition-colors",
+        "bg-linen hover:bg-linen-dark text-foreground flex size-10 items-center justify-center rounded-xl transition-colors",
         className,
       )}
       {...props}

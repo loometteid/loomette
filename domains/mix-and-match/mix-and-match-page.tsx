@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Image from "next/image";
 import {
@@ -24,19 +24,16 @@ import { getMixAndMatchOptionsQueryOptionsForBrowser } from "./query-options/get
 import { saveOutfitMutationOptions } from "./mutation-options/save-outfit.mutation-option.client";
 import { getTripsQueryOptionsForBrowser } from "@/domains/profile/query-options/get-trips.query-option.client";
 import { getTripDetailQueryOptionsForBrowser } from "@/domains/trip/query-options/get-trip-detail.query-option.client";
-import { CATEGORY_OPTIONS } from "@/domains/wardrobe/types";
+import { CATEGORY_OPTIONS, SUBCATEGORY_OPTIONS } from "@/domains/wardrobe/types";
+import { DEFAULT_SLOT_POSITIONS } from "@/domains/outfit/components/outfit-composition";
 import {
-  DEFAULT_SLOT_POSITIONS,
-  ITEM_SIZE_RATIO,
-} from "@/domains/outfit/components/outfit-composition";
+  KonvaCanvas,
+  type KonvaCanvasHandle,
+} from "./components/konva-canvas";
 import type { CanvasItem, WardrobeOption } from "./types";
 import type { Route } from "next";
 
 const DRAG_THRESHOLD_PX = 6;
-
-function clamp01(value: number) {
-  return Math.min(1, Math.max(0, value));
-}
 
 type GhostDrag = {
   option: WardrobeOption;
@@ -52,114 +49,97 @@ export function MixAndMatchCanvas({ userId }: { userId: string }) {
   const { data: wardrobeOptions } = useSuspenseQuery(
     getMixAndMatchOptionsQueryOptionsForBrowser(userId),
   );
-  // When arrived at from a Trip day's "Plan Outfit" button (see
-  // trip-detail-view.tsx), Save should attach the outfit to that day
-  // and return to the trip instead of going through the normal Result
-  // page -- the day is already known, so there's nothing left to
-  // confirm. The canvas/save mechanics themselves are unchanged either
-  // way, only the post-save destination branches.
+
   const tripId = searchParams.get("tripId");
   const tripDay = searchParams.get("day");
   const returnTo = searchParams.get("returnTo");
-  const canvasRef = useRef<HTMLDivElement>(null);
+
+  const konvaCanvasRef = useRef<KonvaCanvasHandle>(null);
+  const canvasContainerRef = useRef<HTMLDivElement>(null);
+
   const [canvasItems, setCanvasItems] = useState<CanvasItem[]>([]);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [activeCategory, setActiveCategory] = useState<string>(
     CATEGORY_OPTIONS[0].value,
   );
+
+  // Expanded subcategories per category
   const [expanded, setExpanded] = useState<Set<string>>(() => {
-    const first = wardrobeOptions.find(
-      (option) => option.category === CATEGORY_OPTIONS[0].value,
-    )?.subcategory;
-    return first ? new Set([first]) : new Set();
+    const defaultSubcats = SUBCATEGORY_OPTIONS[CATEGORY_OPTIONS[0].value];
+    if (defaultSubcats && defaultSubcats.length > 0) {
+      return new Set([defaultSubcats[0].value]);
+    }
+    const firstOption = wardrobeOptions.find(
+      (opt) => opt.category === CATEGORY_OPTIONS[0].value,
+    );
+    return firstOption ? new Set([firstOption.subcategory]) : new Set();
   });
+
   const [ghost, setGhost] = useState<GhostDrag | null>(null);
 
-  const dragRef = useRef<{
-    wardrobeItemId: string;
-    startClientX: number;
-    startClientY: number;
-    startX: number;
-    startY: number;
-  } | null>(null);
-
-  const categoriesGrouped = useMemo(() => {
-    const bySubcategory = new Map<string, WardrobeOption[]>();
-    for (const option of wardrobeOptions) {
-      if (option.category !== activeCategory) continue;
-      const list = bySubcategory.get(option.subcategory) ?? [];
-      list.push(option);
-      bySubcategory.set(option.subcategory, list);
-    }
-    return bySubcategory;
-  }, [wardrobeOptions, activeCategory]);
-
-  function addItemToCanvas(option: WardrobeOption, x: number, y: number) {
-    setCanvasItems((prev) => {
-      const nextLayer =
-        prev.length === 0 ? 0 : Math.max(...prev.map((i) => i.layerOrder)) + 1;
-      const withoutExisting = prev.filter(
-        (i) => i.wardrobeItemId !== option.wardrobeItemId,
-      );
-      return [
-        ...withoutExisting,
-        {
-          wardrobeItemId: option.wardrobeItemId,
-          itemId: option.itemId,
-          name: option.name,
-          image_url: option.image_url,
-          x: clamp01(x),
-          y: clamp01(y),
-          layerOrder: nextLayer,
-        },
-      ];
-    });
-    setSelectedId(option.wardrobeItemId);
-  }
-
-  // --- Reposition an item already on the canvas ---
-  function handleItemPointerDown(
-    event: React.PointerEvent<HTMLDivElement>,
-    item: CanvasItem,
-  ) {
-    event.stopPropagation();
-    event.currentTarget.setPointerCapture(event.pointerId);
-    setSelectedId(item.wardrobeItemId);
-    dragRef.current = {
-      wardrobeItemId: item.wardrobeItemId,
-      startClientX: event.clientX,
-      startClientY: event.clientY,
-      startX: item.x,
-      startY: item.y,
-    };
-  }
-
-  function handleItemPointerMove(event: React.PointerEvent<HTMLDivElement>) {
-    const drag = dragRef.current;
-    const canvas = canvasRef.current;
-    if (!drag || !canvas) return;
-    const rect = canvas.getBoundingClientRect();
-    const dx = (event.clientX - drag.startClientX) / rect.width;
-    const dy = (event.clientY - drag.startClientY) / rect.height;
-    setCanvasItems((prev) =>
-      prev.map((item) =>
-        item.wardrobeItemId === drag.wardrobeItemId
-          ? {
-            ...item,
-            x: clamp01(drag.startX + dx),
-            y: clamp01(drag.startY + dy),
-          }
-          : item,
-      ),
+  // Gather subcategories for active category: combine standard ones with any present in wardrobe
+  const subcategoryList = useMemo(() => {
+    const standard = (SUBCATEGORY_OPTIONS[activeCategory] ?? []).map(
+      (s) => s.value,
     );
-  }
+    const existing = new Set<string>(standard);
 
-  function handleItemPointerUp(event: React.PointerEvent<HTMLDivElement>) {
-    event.currentTarget.releasePointerCapture(event.pointerId);
-    dragRef.current = null;
-  }
+    for (const opt of wardrobeOptions) {
+      if (opt.category === activeCategory && opt.subcategory) {
+        existing.add(opt.subcategory);
+      }
+    }
 
-  // --- Drag a wardrobe item from the picker onto the canvas ---
+    return Array.from(existing);
+  }, [activeCategory, wardrobeOptions]);
+
+  // Group items by subcategory (normalized case-insensitively)
+  const itemsBySubcategory = useMemo(() => {
+    const map = new Map<string, WardrobeOption[]>();
+    for (const sub of subcategoryList) {
+      map.set(sub, []);
+    }
+
+    for (const opt of wardrobeOptions) {
+      if (opt.category !== activeCategory) continue;
+      const targetSub =
+        subcategoryList.find(
+          (s) => s.toLowerCase() === opt.subcategory.toLowerCase(),
+        ) ?? opt.subcategory;
+
+      const list = map.get(targetSub) ?? [];
+      list.push(opt);
+      map.set(targetSub, list);
+    }
+
+    return map;
+  }, [activeCategory, subcategoryList, wardrobeOptions]);
+
+  // Set of IDs currently on canvas for quick lookup
+  const canvasItemIds = useMemo(
+    () => new Set(canvasItems.map((item) => item.wardrobeItemId)),
+    [canvasItems],
+  );
+
+  // Keyboard shortcut: Delete or Backspace removes selected item
+  useEffect(() => {
+    function handleKeyDown(event: KeyboardEvent) {
+      if (!selectedId) return;
+      if (event.key === "Delete" || event.key === "Backspace") {
+        const target = event.target as HTMLElement | null;
+        if (target?.tagName === "INPUT" || target?.tagName === "TEXTAREA") {
+          return;
+        }
+        event.preventDefault();
+        konvaCanvasRef.current?.deleteSelected();
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selectedId]);
+
+  // Drag or tap a wardrobe item from the picker onto the canvas
   function handlePickerPointerDown(
     event: React.PointerEvent<HTMLButtonElement>,
     option: WardrobeOption,
@@ -193,26 +173,25 @@ export function MixAndMatchCanvas({ userId }: { userId: string }) {
 
   function handlePickerPointerUp(event: React.PointerEvent<HTMLButtonElement>) {
     event.currentTarget.releasePointerCapture(event.pointerId);
-    // Read from the render closure (fresh as of the last pointermove's
-    // state update) rather than deciding what to do inside a setGhost
-    // updater -- updaters can run more than once and shouldn't trigger
-    // other components' setState as a side effect.
     const current = ghost;
     setGhost(null);
     if (!current) return;
-    const canvas = canvasRef.current;
-    if (!canvas) return;
+
+    const container = canvasContainerRef.current;
+    if (!container) return;
 
     if (!current.dragging) {
+      // Tap action: place at default slot position
       const slot = DEFAULT_SLOT_POSITIONS[current.option.category] ?? {
         x: 0.5,
         y: 0.5,
       };
-      addItemToCanvas(current.option, slot.x, slot.y);
+      konvaCanvasRef.current?.addItem(current.option, slot.x, slot.y);
       return;
     }
 
-    const rect = canvas.getBoundingClientRect();
+    // Drag-and-drop action: check if dropped inside canvas bounding box
+    const rect = container.getBoundingClientRect();
     const insideCanvas =
       current.clientX >= rect.left &&
       current.clientX <= rect.right &&
@@ -222,64 +201,54 @@ export function MixAndMatchCanvas({ userId }: { userId: string }) {
     if (insideCanvas) {
       const x = (current.clientX - rect.left) / rect.width;
       const y = (current.clientY - rect.top) / rect.height;
-      addItemToCanvas(current.option, x, y);
+      konvaCanvasRef.current?.addItem(current.option, x, y);
     }
   }
 
   function handleDeleteSelected() {
-    if (!selectedId) return;
-    setCanvasItems((prev) =>
-      prev.filter((i) => i.wardrobeItemId !== selectedId),
-    );
-    setSelectedId(null);
+    konvaCanvasRef.current?.deleteSelected();
   }
 
-  function moveLayer(direction: "up" | "down") {
-    if (!selectedId) return;
-    setCanvasItems((prev) => {
-      const sorted = [...prev].sort((a, b) => a.layerOrder - b.layerOrder);
-      const idx = sorted.findIndex((i) => i.wardrobeItemId === selectedId);
-      const swapIdx = direction === "up" ? idx + 1 : idx - 1;
-      if (idx === -1 || swapIdx < 0 || swapIdx >= sorted.length) return prev;
-      const a = sorted[idx];
-      const b = sorted[swapIdx];
-      const aLayer = a.layerOrder;
-      const bLayer = b.layerOrder;
-      return prev.map((item) => {
-        if (item.wardrobeItemId === a.wardrobeItemId)
-          return { ...item, layerOrder: bLayer };
-        if (item.wardrobeItemId === b.wardrobeItemId)
-          return { ...item, layerOrder: aLayer };
-        return item;
-      });
-    });
+  function handleMoveLayer(direction: "up" | "down") {
+    konvaCanvasRef.current?.moveLayer(direction);
   }
 
   function handleShuffle() {
     const slotCategories = ["Tops", "Bottoms", "Shoes"] as const;
-    const next: CanvasItem[] = [];
-    let layer = 0;
+    const pieces: Array<{ option: WardrobeOption; x: number; y: number }> = [];
+
     for (const category of slotCategories) {
       const options = wardrobeOptions.filter((o) => o.category === category);
       if (options.length === 0) continue;
       const choice = options[Math.floor(Math.random() * options.length)];
       const slot = DEFAULT_SLOT_POSITIONS[category];
-      next.push({
-        wardrobeItemId: choice.wardrobeItemId,
-        itemId: choice.itemId,
-        name: choice.name,
-        image_url: choice.image_url,
-        x: clamp01(slot.x + (Math.random() - 0.5) * 0.08),
-        y: clamp01(slot.y + (Math.random() - 0.5) * 0.06),
-        layerOrder: layer++,
+      pieces.push({
+        option: choice,
+        x: Math.min(1, Math.max(0, slot.x + (Math.random() - 0.5) * 0.08)),
+        y: Math.min(1, Math.max(0, slot.y + (Math.random() - 0.5) * 0.06)),
       });
     }
-    if (next.length === 0) {
+
+    const accessoryOptions = wardrobeOptions.filter(
+      (o) => o.category === "Accessories",
+    );
+    if (accessoryOptions.length > 0 && Math.random() > 0.3) {
+      const choice =
+        accessoryOptions[Math.floor(Math.random() * accessoryOptions.length)];
+      const slot = DEFAULT_SLOT_POSITIONS.Accessories;
+      pieces.push({
+        option: choice,
+        x: Math.min(1, Math.max(0, slot.x + (Math.random() - 0.5) * 0.05)),
+        y: Math.min(1, Math.max(0, slot.y + (Math.random() - 0.5) * 0.05)),
+      });
+    }
+
+    if (pieces.length === 0) {
       toast.error("Add some wardrobe items first.");
       return;
     }
-    setCanvasItems(next);
-    setSelectedId(null);
+
+    konvaCanvasRef.current?.shuffle(pieces);
   }
 
   const saveMutation = useMutation({
@@ -290,8 +259,7 @@ export function MixAndMatchCanvas({ userId }: { userId: string }) {
           queryKey: getTripsQueryOptionsForBrowser(userId).queryKey,
         });
         void queryClient.invalidateQueries({
-          queryKey: getTripDetailQueryOptionsForBrowser(userId, tripId)
-            .queryKey,
+          queryKey: getTripDetailQueryOptionsForBrowser(userId, tripId).queryKey,
         });
         toast.success("Outfit added to your trip.");
         router.push((returnTo as Route) ?? `/trip/${tripId}`);
@@ -305,275 +273,251 @@ export function MixAndMatchCanvas({ userId }: { userId: string }) {
   });
 
   function handleSave() {
-    if (canvasItems.length === 0) {
+    const currentItems = konvaCanvasRef.current?.getItems() ?? canvasItems;
+    if (currentItems.length === 0) {
       toast.error("Add at least one item to your canvas first.");
       return;
     }
 
     saveMutation.mutate({
       userId,
-      items: canvasItems,
+      items: currentItems,
       tripId,
       tripDay,
     });
   }
 
-  const sortedCanvasItems = [...canvasItems].sort(
-    (a, b) => a.layerOrder - b.layerOrder,
-  );
-
   return (
-    <main className="mx-auto flex w-full max-w-sm lg:max-w-6xl xl:max-w-7xl flex-1 flex-col gap-6 lg:gap-8 px-6 lg:px-12 py-8 lg:py-12">
+    <main
+      className="mx-auto flex w-full max-w-sm lg:max-w-6xl xl:max-w-7xl flex-1 flex-col gap-6 lg:gap-8 px-4 sm:px-6 lg:px-12 py-6 lg:py-10"
+      data-testid="mix-and-match"
+    >
+      {/* Mobile Back Button */}
+      <Button
+        type="button"
+        variant="secondary"
+        size="icon"
+        className="size-10 rounded-xl bg-linen text-foreground hover:bg-linen-dark lg:hidden self-start cursor-pointer"
+        onClick={() => router.back()}
+        aria-label="Go back"
+        data-testid="mix-and-match__back-button"
+      >
+        <ChevronLeft className="size-4" />
+      </Button>
+
+      {/* Header Bar matching Figma 3.4.1 & D.3.4.1 */}
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-4">
-          <Button
-            type="button"
-            variant="secondary"
-            size="icon"
-            className="rounded-xl lg:hidden"
-            onClick={() => router.back()}
-            aria-label="Go back"
+        <div className="flex items-center gap-2.5 lg:gap-4">
+          <Sparkle className="size-6 lg:size-8 text-foreground shrink-0" />
+          <Typography
+            variant="title"
+            as="h1"
+            className="font-serif text-[32px] md:text-4xl lg:text-[48px] font-normal leading-tight text-foreground"
+            data-testid="mix-and-match__title"
           >
-            <ChevronLeft className="size-4" />
-          </Button>
-          <div className="flex items-center gap-2">
-            <Sparkle className="text-foreground size-6" />
-            <Typography variant="title" as="h1" className="font-serif text-[32px] md:text-4xl lg:text-[44px] font-normal leading-tight text-foreground">
-              Mix &amp; Match
-            </Typography>
-          </div>
+            Mix &amp; Match
+          </Typography>
         </div>
 
-        {/* Action buttons (desktop header view) */}
-        <div className="hidden lg:flex items-center gap-3">
+        {/* Action buttons (Trash & Shuffle) */}
+        <div className="flex items-center gap-2.5 lg:gap-3.5">
           <button
             type="button"
             onClick={handleDeleteSelected}
             disabled={!selectedId}
             aria-label="Delete selected item"
-            className="bg-[#F2EDE5] hover:bg-[#EAE4DC] text-[#444440] flex size-10 items-center justify-center rounded-xl transition-colors disabled:opacity-40"
+            data-testid="mix-and-match__trash-button"
+            className="bg-linen hover:bg-linen-dark text-foreground flex size-10 lg:size-14 items-center justify-center rounded-xl lg:rounded-2xl transition-colors disabled:opacity-40 cursor-pointer"
           >
-            <Trash2 className="size-4" />
+            <Trash2 className="size-4 lg:size-6" />
           </button>
           <button
             type="button"
             onClick={handleShuffle}
             aria-label="Shuffle outfit"
-            className="bg-[#F2EDE5] hover:bg-[#EAE4DC] text-[#444440] flex size-10 items-center justify-center rounded-xl transition-colors"
+            data-testid="mix-and-match__shuffle-button"
+            className="bg-linen hover:bg-linen-dark text-foreground flex size-10 lg:size-14 items-center justify-center rounded-xl lg:rounded-2xl transition-colors cursor-pointer"
           >
-            <Shuffle className="size-4" />
+            <Shuffle className="size-4 lg:size-6" />
           </button>
         </div>
       </div>
 
-      {/* Main Responsive 2-Column Grid on Desktop */}
-      <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 pt-2">
+      {/* Main Responsive 2-Column Grid */}
+      <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 xl:gap-16 pt-2">
         {/* Left Column: Canvas + Canvas Controls */}
-        <div className="w-full lg:w-[480px] xl:w-[540px] shrink-0 flex flex-col gap-4">
-          {/* Mobile action bar */}
-          <div className="flex lg:hidden items-center justify-end gap-2">
-            <button
-              type="button"
-              onClick={handleDeleteSelected}
-              disabled={!selectedId}
-              aria-label="Delete selected item"
-              className="bg-[#F2EDE5] text-[#444440] flex size-10 items-center justify-center rounded-xl disabled:opacity-40"
-            >
-              <Trash2 className="size-4" />
-            </button>
-            <button
-              type="button"
-              onClick={handleShuffle}
-              aria-label="Shuffle outfit"
-              className="bg-[#F2EDE5] text-[#444440] flex size-10 items-center justify-center rounded-xl"
-            >
-              <Shuffle className="size-4" />
-            </button>
-          </div>
+        <div className="w-full lg:w-[480px] xl:w-[560px] shrink-0 flex flex-col gap-4">
+          <div ref={canvasContainerRef} className="relative">
+            {/* Pure Konva Interactive Canvas with Transformer */}
+            <KonvaCanvas
+              ref={konvaCanvasRef}
+              onItemsChange={setCanvasItems}
+              onSelectionChange={setSelectedId}
+              className="border-border bg-background relative aspect-square w-full touch-none overflow-hidden rounded-2xl border"
+            />
 
-          <div className="relative">
-        <div
-          ref={canvasRef}
-          onPointerDown={() => setSelectedId(null)}
-          className="border-border relative aspect-5/6 w-full touch-none overflow-hidden rounded-2xl border"
-        >
-          {sortedCanvasItems.map((item) => (
-            <div
-              key={item.wardrobeItemId}
-              onPointerDown={(event) => handleItemPointerDown(event, item)}
-              onPointerMove={handleItemPointerMove}
-              onPointerUp={handleItemPointerUp}
-              style={{
-                left: `${item.x * 100}%`,
-                top: `${item.y * 100}%`,
-                zIndex: item.layerOrder,
-                width: `${ITEM_SIZE_RATIO * 100}%`,
-              }}
-              className="absolute aspect-square -translate-x-1/2 -translate-y-1/2 touch-none"
-            >
-              {item.wardrobeItemId === selectedId && (
-                <div className="border-foreground pointer-events-none absolute -inset-1 border">
-                  {[
-                    "-top-1 -left-1",
-                    "-top-1 -right-1",
-                    "-bottom-1 -left-1",
-                    "-bottom-1 -right-1",
-                  ].map((pos) => (
-                    <span
-                      key={pos}
-                      className={cn("bg-foreground absolute size-2", pos)}
-                    />
-                  ))}
-                </div>
-              )}
-              {item.image_url && (
-                <Image
-                  src={item.image_url}
-                  alt={item.name ?? ""}
-                  fill
-                  className="pointer-events-none object-contain"
-                  sizes="140px"
-                />
-              )}
-            </div>
-          ))}
-
-          {canvasItems.length === 0 && (
-            <div className="pointer-events-none absolute inset-0 flex items-center justify-center px-8 text-center">
-              <Typography variant="subtitle">
-                Tap or drag wardrobe items here to start your look.
-              </Typography>
-            </div>
-          )}
-        </div>
-
-        <div className="absolute bottom-3 left-3 flex gap-2">
-          <button
-            type="button"
-            onClick={() => moveLayer("up")}
-            disabled={!selectedId}
-            aria-label="Bring forward"
-            className="bg-secondary flex size-9 items-center justify-center rounded-lg shadow disabled:opacity-40"
-          >
-            <ChevronUp className="size-4" />
-          </button>
-          <button
-            type="button"
-            onClick={() => moveLayer("down")}
-            disabled={!selectedId}
-            aria-label="Send backward"
-            className="bg-secondary flex size-9 items-center justify-center rounded-lg shadow disabled:opacity-40"
-          >
-            <ChevronDown className="size-4" />
-          </button>
-        </div>
-
-        <button
-          type="button"
-          onClick={handleSave}
-          disabled={saveMutation.isPending}
-          className="bg-[#383733] hover:bg-[#2A2926] text-white absolute right-3.5 bottom-3.5 rounded-2xl px-8 py-3.5 text-xs font-normal tracking-wider uppercase shadow-md transition-colors disabled:opacity-60"
-        >
-          {saveMutation.isPending ? "Saving…" : "Save"}
-        </button>
-      </div>
-    </div>
-
-    {/* Right Column: Garment Picker & Categories */}
-    <div className="flex flex-1 flex-col gap-6">
-      <div className="flex gap-2 overflow-x-auto pb-1">
-        {CATEGORY_OPTIONS.map((category) => (
-          <button
-            key={category.value}
-            type="button"
-            onClick={() => setActiveCategory(category.value)}
-            className={cn(
-              "shrink-0 rounded-full border px-4 py-2 text-xs font-medium tracking-wide uppercase transition-colors",
-              activeCategory === category.value
-                ? "border-foreground text-foreground border-2"
-                : "border-border text-muted-foreground",
-            )}
-          >
-            {category.label}
-          </button>
-        ))}
-      </div>
-
-      <div className="flex flex-col">
-        {[...categoriesGrouped.entries()].map(([subcategory, options]) => {
-          const isExpanded = expanded.has(subcategory);
-          return (
-            <div key={subcategory} className="border-border border-b py-4">
+            {/* Bottom floating canvas action buttons */}
+            <div className="absolute bottom-3 left-3 flex gap-2 z-10 pointer-events-auto">
               <button
                 type="button"
-                onClick={() =>
-                  setExpanded((prev) => {
-                    const next = new Set(prev);
-                    if (next.has(subcategory)) next.delete(subcategory);
-                    else next.add(subcategory);
-                    return next;
-                  })
-                }
-                className="flex w-full items-center justify-between"
+                onClick={() => handleMoveLayer("up")}
+                disabled={!selectedId}
+                aria-label="Bring forward"
+                data-testid="mix-and-match__layer-up-button"
+                className="bg-linen hover:bg-linen-dark text-foreground flex size-9 lg:size-12 items-center justify-center rounded-xl lg:rounded-2xl shadow-sm transition-colors disabled:opacity-40 cursor-pointer"
               >
-                <span className="text-xs font-medium tracking-wide uppercase">
-                  {subcategory}
-                </span>
-                {isExpanded ? (
-                  <ChevronUp className="text-muted-foreground size-4" />
-                ) : (
-                  <ChevronDown className="text-muted-foreground size-4" />
-                )}
+                <ChevronUp className="size-4 lg:size-6" />
               </button>
-
-              {isExpanded && (
-                <div className="mt-4 flex gap-3 overflow-x-auto lg:grid lg:grid-cols-3 lg:gap-4">
-                  {options.map((option) => (
-                    <button
-                      key={option.wardrobeItemId}
-                      type="button"
-                      onPointerDown={(event) =>
-                        handlePickerPointerDown(event, option)
-                      }
-                      onPointerMove={handlePickerPointerMove}
-                      onPointerUp={handlePickerPointerUp}
-                      className="border border-[#EAE4DC] bg-[#FAF8F5] relative aspect-square w-20 lg:w-full shrink-0 touch-none overflow-hidden rounded-2xl p-2 hover:border-foreground/30 transition-colors"
-                    >
-                      {option.image_url && (
-                        <Image
-                          src={option.image_url}
-                          alt={option.name ?? ""}
-                          fill
-                          className="pointer-events-none object-contain p-1"
-                          sizes="80px"
-                        />
-                      )}
-                    </button>
-                  ))}
-                </div>
-              )}
+              <button
+                type="button"
+                onClick={() => handleMoveLayer("down")}
+                disabled={!selectedId}
+                aria-label="Send backward"
+                data-testid="mix-and-match__layer-down-button"
+                className="bg-linen hover:bg-linen-dark text-foreground flex size-9 lg:size-12 items-center justify-center rounded-xl lg:rounded-2xl shadow-sm transition-colors disabled:opacity-40 cursor-pointer"
+              >
+                <ChevronDown className="size-4 lg:size-6" />
+              </button>
             </div>
-          );
-        })}
 
-        {categoriesGrouped.size === 0 && (
-          <Typography variant="subtitle" className="py-6 text-center">
-            No {activeCategory.toLowerCase()} in your wardrobe yet.
-          </Typography>
-        )}
+            <button
+              type="button"
+              onClick={handleSave}
+              disabled={saveMutation.isPending}
+              data-testid="mix-and-match__save-button"
+              className="bg-primary hover:bg-primary/90 text-white absolute right-3.5 bottom-3.5 rounded-xl lg:rounded-2xl px-6 lg:px-10 h-10 lg:h-14 text-xs lg:text-sm font-semibold tracking-wider uppercase shadow-sm transition-colors disabled:opacity-60 cursor-pointer z-10 pointer-events-auto"
+            >
+              {saveMutation.isPending ? "Saving…" : "Save"}
+            </button>
+          </div>
+        </div>
+
+        {/* Right Column: Garment Picker & Categories */}
+        <div className="flex flex-1 flex-col gap-4 lg:gap-6 bg-linen lg:bg-transparent rounded-3xl p-4 sm:p-5 lg:p-0">
+          {/* Category Tabs */}
+          <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-none">
+            {CATEGORY_OPTIONS.map((category) => (
+              <button
+                key={category.value}
+                type="button"
+                onClick={() => setActiveCategory(category.value)}
+                data-testid="mix-and-match__category-tab"
+                data-entity-id={category.value}
+                className={cn(
+                  "shrink-0 rounded-2xl border px-4 lg:px-5 py-2 lg:py-2.5 text-xs lg:text-sm font-medium tracking-wide uppercase transition-colors cursor-pointer",
+                  activeCategory === category.value
+                    ? "border-foreground text-foreground border-2 bg-background/60 font-semibold"
+                    : "border-border text-foreground/70 hover:text-foreground",
+                )}
+              >
+                {category.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Subcategories Accordion */}
+          <div className="flex flex-col">
+            {subcategoryList.map((subcategory) => {
+              const options = itemsBySubcategory.get(subcategory) ?? [];
+              const isExpanded = expanded.has(subcategory);
+
+              return (
+                <div
+                  key={subcategory}
+                  className="border-border border-b py-3 lg:py-4"
+                >
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setExpanded((prev) => {
+                        const next = new Set(prev);
+                        if (next.has(subcategory)) next.delete(subcategory);
+                        else next.add(subcategory);
+                        return next;
+                      })
+                    }
+                    data-testid="mix-and-match__subcategory-toggle"
+                    data-entity-id={subcategory}
+                    className="flex w-full items-center justify-between text-left cursor-pointer group"
+                  >
+                    <span className="text-xs lg:text-sm font-semibold tracking-wider uppercase text-foreground">
+                      {subcategory}
+                    </span>
+                    {isExpanded ? (
+                      <ChevronUp className="text-muted-foreground group-hover:text-foreground size-4 lg:size-5 transition-colors" />
+                    ) : (
+                      <ChevronDown className="text-muted-foreground group-hover:text-foreground size-4 lg:size-5 transition-colors" />
+                    )}
+                  </button>
+
+                  {isExpanded && (
+                    <div className="mt-3 lg:mt-4 grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-3 gap-3 lg:gap-4">
+                      {options.map((option) => {
+                        const isOnCanvas = canvasItemIds.has(
+                          option.wardrobeItemId,
+                        );
+
+                        return (
+                          <button
+                            key={option.wardrobeItemId}
+                            type="button"
+                            onPointerDown={(event) =>
+                              handlePickerPointerDown(event, option)
+                            }
+                            onPointerMove={handlePickerPointerMove}
+                            onPointerUp={handlePickerPointerUp}
+                            data-testid="mix-and-match__picker-item"
+                            data-entity-id={option.wardrobeItemId}
+                            className={cn(
+                              "relative aspect-square w-full shrink-0 touch-none overflow-hidden rounded-2xl bg-background p-2 transition-all cursor-pointer flex items-center justify-center",
+                              isOnCanvas
+                                ? "border-2 border-foreground shadow-sm"
+                                : "border border-linen-dark hover:border-foreground/40",
+                            )}
+                          >
+                            {option.image_url && (
+                              <Image
+                                src={option.image_url}
+                                alt={option.name ?? ""}
+                                fill
+                                className="pointer-events-none object-contain p-1 select-none"
+                                sizes="120px"
+                              />
+                            )}
+                          </button>
+                        );
+                      })}
+
+                      {options.length === 0 && (
+                        <p className="col-span-full py-4 text-center font-sans text-xs text-muted-foreground">
+                          No {subcategory.toLowerCase()} items in wardrobe.
+                        </p>
+                      )}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+
+            {subcategoryList.length === 0 && (
+              <Typography variant="subtitle" className="py-6 text-center">
+                No items in this category yet.
+              </Typography>
+            )}
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
 
-  {ghost && ghost.dragging && (
+      {/* Floating Ghost Element during drag from picker onto canvas */}
+      {ghost && ghost.dragging && (
         <div
           style={{
             left: ghost.clientX,
             top: ghost.clientY,
-            width: 72,
-            height: 72,
+            width: 76,
+            height: 76,
           }}
-          className="pointer-events-none fixed z-50 -translate-x-1/2 -translate-y-1/2 opacity-80"
+          className="pointer-events-none fixed z-50 -translate-x-1/2 -translate-y-1/2 opacity-85 select-none"
         >
           {ghost.option.image_url && (
             <Image
@@ -581,7 +525,7 @@ export function MixAndMatchCanvas({ userId }: { userId: string }) {
               alt=""
               fill
               className="object-contain"
-              sizes="72px"
+              sizes="76px"
             />
           )}
         </div>

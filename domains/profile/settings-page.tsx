@@ -231,7 +231,7 @@ export function SettingsView({ userId }: { userId: string }) {
           type="button"
           variant="secondary"
           size="icon"
-          className="size-10 rounded-xl bg-[#F2EDE5] text-[#383733] hover:bg-[#EAE4DC]"
+          className="size-10 rounded-xl bg-linen text-foreground hover:bg-linen-dark"
           onClick={() => router.back()}
           aria-label="Go back"
         >
@@ -240,24 +240,24 @@ export function SettingsView({ userId }: { userId: string }) {
       </div>
 
       {/* Header title */}
-      <div className="flex flex-col gap-1.5">
-        <div className="flex items-center gap-2">
-          <Sparkle className="size-6 text-foreground" />
+      <div className="flex items-start gap-3.5 lg:gap-4">
+        <Sparkle className="size-6 lg:size-8 text-foreground shrink-0 mt-1 lg:mt-2" />
+        <div className="flex flex-col gap-1 lg:gap-2">
           <Typography variant="title" as="h1" className="font-serif text-[32px] md:text-4xl lg:text-[48px] font-normal text-foreground leading-tight">
             Settings
           </Typography>
+          <p className="font-sans text-xs md:text-sm lg:text-xl font-normal text-foreground leading-snug">
+            Manage how the app works for you.
+          </p>
         </div>
-        <Typography variant="subtitle" className="font-sans text-xs md:text-sm font-normal uppercase tracking-wider text-muted-foreground">
-          Manage how the app works for you.
-        </Typography>
       </div>
 
       {/* Main Responsive Grid Layout */}
       <div className="flex flex-col lg:flex-row lg:gap-14 pt-2">
-        {/* Left Sticky Navigation (desktop only, matches Figma 280px sidebar) */}
+        {/* Left Sticky Navigation (desktop only) */}
         <nav
           aria-label="Settings sections"
-          className="hidden lg:flex flex-col gap-2.5 w-[280px] shrink-0 sticky top-28 h-fit"
+          className="hidden lg:flex flex-col gap-2 w-64 shrink-0 sticky top-28 h-fit"
         >
           {SECTIONS.map(({ id, label }) => {
             const isActive = activeSection === id;
@@ -267,10 +267,10 @@ export function SettingsView({ userId }: { userId: string }) {
                 type="button"
                 onClick={() => scrollToSection(id)}
                 className={cn(
-                  "text-left px-6 py-4 rounded-2xl font-sans text-xs lg:text-sm font-normal tracking-wide uppercase transition-colors",
+                  "text-left px-5 py-3 rounded-2xl font-sans text-xs lg:text-sm font-normal tracking-wide uppercase transition-colors",
                   isActive
-                    ? "bg-[#444440] text-white shadow-xs font-medium"
-                    : "bg-[#F2EDE5] text-[#444440] hover:bg-[#EAE4DC]",
+                    ? "bg-linen text-foreground"
+                    : "text-muted-foreground hover:text-foreground hover:bg-linen/40",
                 )}
               >
                 {label}
@@ -334,10 +334,10 @@ export function SettingsView({ userId }: { userId: string }) {
                 onClick={notImplemented}
                 data-testid="settings__language-button"
                 aria-label="Select language"
-                className="inline-flex items-center justify-center gap-1.5 h-10 px-4 rounded-2xl border border-[#C9C3B7] dark:border-border bg-transparent text-xs font-sans font-normal text-[#444440] dark:text-foreground hover:bg-[#F2EDE5]/50 dark:hover:bg-muted/50 transition-colors cursor-pointer"
+                className="inline-flex items-center justify-center gap-1.5 h-10 px-4 rounded-2xl border border-stone dark:border-border bg-transparent text-xs font-sans font-normal text-foreground dark:text-foreground hover:bg-linen/50 dark:hover:bg-muted/50 transition-colors cursor-pointer"
               >
                 <span>EN</span>
-                <ChevronDown className="size-3 text-[#444440] dark:text-foreground" />
+                <ChevronDown className="size-3 text-foreground dark:text-foreground" />
               </button>
             </div>
           </SettingsSection>

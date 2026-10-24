@@ -31,16 +31,16 @@ export function SettingsFallback() {
       </div>
 
       {/* Header */}
-      <div className="flex flex-col gap-1.5">
-        <div className="flex items-center gap-2">
-          <Sparkle className="size-6 text-foreground" />
-          <Typography variant="title" as="h1" className="font-serif text-[32px] md:text-4xl font-normal text-foreground leading-tight">
+      <div className="flex items-start gap-3.5 lg:gap-4">
+        <Sparkle className="size-6 lg:size-8 text-foreground shrink-0 mt-1 lg:mt-2" />
+        <div className="flex flex-col gap-1 lg:gap-2">
+          <Typography variant="title" as="h1" className="font-serif text-[32px] md:text-4xl lg:text-[48px] font-normal text-foreground leading-tight">
             Settings
           </Typography>
+          <p className="font-sans text-xs md:text-sm lg:text-xl font-normal text-foreground leading-snug">
+            Manage how the app works for you.
+          </p>
         </div>
-        <Typography variant="subtitle" className="font-sans text-xs font-normal uppercase tracking-wider text-muted-foreground">
-          Manage how the app works for you.
-        </Typography>
       </div>
 
       {/* Main Responsive Grid Layout */}
@@ -55,7 +55,7 @@ export function SettingsFallback() {
               <div
                 key={item}
                 className={`px-5 py-3 rounded-2xl ${
-                  idx === 0 ? "bg-[#F2EDE5]" : "bg-muted/40"
+                  idx === 0 ? "bg-linen" : "bg-muted/40"
                 } h-11 w-full animate-pulse`}
               />
             );

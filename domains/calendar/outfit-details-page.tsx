@@ -126,7 +126,7 @@ export function OutfitDetailsView({
 
                 {/* Desktop Set Badge */}
                 <div className="hidden lg:flex items-center justify-center">
-                  <span className="rounded-full bg-[#F2EDE5] px-6 py-2 text-xs font-semibold uppercase tracking-wider text-[#444440]">
+                  <span className="rounded-full bg-linen px-6 py-2 text-xs font-semibold uppercase tracking-wider text-foreground">
                     SET {index + 1}
                   </span>
                 </div>

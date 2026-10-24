@@ -1,12 +1,16 @@
+import {
+  ITEM_SIZE_RATIO,
+  parseItemScale,
+} from "@/domains/outfit/components/outfit-composition";
 import type { DiaryEntry } from "./types";
 
 // Shared between the server-rendered initial load (app/(app)/calendar/
 // page.tsx) and the client-side month-switch fetch (calendar-view.tsx)
 // -- both need the exact same shape: not just a single representative
-// cover_image_url, but every outfit_item (position + layer_order) so
+// cover_image_url, but every outfit_item (position + layer_order + notes) so
 // the full saved composition can be redrawn, not a single garment.
 export const DIARY_ENTRY_SELECT =
-  "id, worn_on, outfit:outfit_id(id, name, is_saved, cover_image_url, outfit_item(layer_order, position_x, position_y, wardrobe_item:wardrobe_item_id(id, item:item_id(item_id, name, image_url))))";
+  "id, worn_on, outfit:outfit_id(id, name, is_saved, cover_image_url, outfit_item(layer_order, position_x, position_y, notes, wardrobe_item:wardrobe_item_id(id, item:item_id(item_id, name, image_url))))";
 
 export type RawDiaryRow = {
   id: string;
@@ -21,6 +25,7 @@ export type RawDiaryRow = {
           layer_order: number | null;
           position_x: number | null;
           position_y: number | null;
+          notes?: string | null;
           wardrobe_item: {
             id: string;
             item: {
@@ -51,14 +56,19 @@ export function toDiaryEntries(rows: RawDiaryRow[]): DiaryEntry[] {
       cover_image_url: row.outfit.cover_image_url,
       items: (row.outfit.outfit_item ?? [])
         .filter((outfitItem) => outfitItem.wardrobe_item?.item)
-        .map((outfitItem) => ({
-          id: outfitItem.wardrobe_item!.id,
-          image_url: outfitItem.wardrobe_item!.item!.image_url,
-          name: outfitItem.wardrobe_item!.item!.name,
-          x: outfitItem.position_x ?? 0.5,
-          y: outfitItem.position_y ?? 0.5,
-          layerOrder: outfitItem.layer_order ?? 0,
-        })),
+        .map((outfitItem) => {
+          const itemScale = parseItemScale(outfitItem.notes);
+          return {
+            id: outfitItem.wardrobe_item!.id,
+            image_url: outfitItem.wardrobe_item!.item!.image_url,
+            name: outfitItem.wardrobe_item!.item!.name,
+            x: outfitItem.position_x ?? 0.5,
+            y: outfitItem.position_y ?? 0.5,
+            layerOrder: outfitItem.layer_order ?? 0,
+            scale: itemScale,
+            sizeRatio: itemScale * ITEM_SIZE_RATIO,
+          };
+        }),
     },
   }));
 }

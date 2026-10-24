@@ -135,17 +135,17 @@ export function HomeView({ userId }: { userId: string }) {
       <div className="hidden lg:grid max-w-7xl mx-auto px-12 py-8 grid-cols-2 gap-12 items-start">
         {/* Left Column: Title, Subtitle, Outfit Hero with Chevrons */}
         <div className="flex flex-col gap-6">
-          <div className="flex flex-col gap-1.5">
-            <div className="flex items-start gap-3">
-              <Sparkle className="text-foreground mt-2 size-7 shrink-0" />
-              <Typography variant="title" as="h1" className="text-4xl font-serif">
+          <div className="flex items-start gap-3">
+            <Sparkle className="text-foreground mt-2 size-7 shrink-0" />
+            <div className="flex flex-col gap-2">
+              <Typography variant="title" as="h1" className="text-4xl font-serif text-foreground">
                 Ready to <span className="underline">style</span> in,{" "}
                 <em className="italic">{displayName ?? "there"}?</em>
               </Typography>
+              <p className="font-sans text-xl font-normal text-foreground">
+                Spring is coming, wear something sweet!
+              </p>
             </div>
-            <p className="text-xs font-semibold tracking-wider text-muted-foreground uppercase pl-10">
-              Spring is coming, wear something sweet!
-            </p>
           </div>
 
           <div className="relative flex items-center justify-center py-6">
@@ -318,7 +318,7 @@ export function HomeView({ userId }: { userId: string }) {
                   if (e.key === "Enter") handleGenerate();
                 }}
                 placeholder="Blue shirt with pink accessory..."
-                className="bg-[#F2EDE5]/60 text-foreground placeholder:text-muted-foreground/70 w-full rounded-2xl px-5 py-3.5 text-sm outline-none"
+                className="bg-linen/60 text-foreground placeholder:text-muted-foreground/70 w-full rounded-2xl px-5 py-3.5 text-sm outline-none"
               />
               <button
                 type="button"
@@ -359,18 +359,18 @@ export function HomeView({ userId }: { userId: string }) {
         </div>
 
         {/* Mobile Title */}
-        <div className="flex flex-col gap-1">
-          <div className="flex items-start gap-2.5">
-            <Sparkle className="text-foreground mt-1.5 size-6 shrink-0" />
-            <Typography variant="title" as="h1" className="text-3xl font-serif leading-tight">
+        <div className="flex items-start gap-2.5">
+          <Sparkle className="text-foreground mt-1.5 size-6 shrink-0" />
+          <div className="flex flex-col gap-1">
+            <Typography variant="title" as="h1" className="text-3xl font-serif leading-tight text-foreground">
               Ready to <span className="underline">style</span> in,
               <br />
               <em className="italic">{displayName ?? "there"}?</em>
             </Typography>
+            <p className="font-sans text-xs font-normal text-foreground">
+              Spring is coming, wear something sweet!
+            </p>
           </div>
-          <span className="text-[0.65rem] font-semibold tracking-wider text-muted-foreground uppercase pl-8.5">
-            SPRING IS COMING, WEAR SOMETHING SWEET!
-          </span>
         </div>
 
         {/* Mobile Outfit Hero: Wrapped in Link navigating to /home/recommendation */}
@@ -419,7 +419,7 @@ export function HomeView({ userId }: { userId: string }) {
                 if (e.key === "Enter") handleGenerate();
               }}
               placeholder="Blue shirt with pink accessory..."
-              className="bg-[#F2EDE5]/60 text-foreground placeholder:text-muted-foreground/70 w-full rounded-2xl px-4 py-3 text-xs outline-none"
+              className="bg-linen/60 text-foreground placeholder:text-muted-foreground/70 w-full rounded-2xl px-4 py-3 text-xs outline-none"
             />
             <button
               type="button"
@@ -538,7 +538,7 @@ function PreferenceCard({
         "relative flex flex-col justify-between gap-4 overflow-hidden rounded-3xl p-5 min-h-[100px]",
         tone === "dark"
           ? "bg-[#3B3A36] text-white"
-          : "bg-[#F2EDE5] text-[#3B3A36]",
+          : "bg-linen text-[#3B3A36]",
       )}
     >
       <div>

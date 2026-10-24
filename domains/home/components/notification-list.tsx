@@ -126,7 +126,7 @@ function NotificationItemRow({
             {item.title}
           </Typography>
         </div>
-        <span className="rounded-full bg-[#F2EDE5] px-2.5 py-1 text-[0.6rem] font-semibold tracking-wider text-muted-foreground whitespace-nowrap uppercase">
+        <span className="rounded-full bg-linen px-2.5 py-1 text-[0.6rem] font-semibold tracking-wider text-muted-foreground whitespace-nowrap uppercase">
           {formatNotificationTime(item.createdAt)}
         </span>
       </div>

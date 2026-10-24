@@ -7,7 +7,8 @@ export default defineConfig({
     tsconfigPaths: true,
   },
   test: {
-    pool: "threads",
+    maxWorkers: 4,
+    testTimeout: 15000,
     environment: "happy-dom",
     globals: true,
     setupFiles: ["./test/setup.ts"],

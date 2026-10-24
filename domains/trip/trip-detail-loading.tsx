@@ -50,7 +50,7 @@ export function TripDetailFallback() {
           />
         </div>
         <div className="flex flex-col items-center lg:items-start gap-2">
-          <div className="hidden lg:block bg-[#F2EDE5] h-7 w-28 animate-pulse rounded-full" />
+          <div className="hidden lg:block bg-linen h-7 w-28 animate-pulse rounded-full" />
           <div className="bg-muted h-9 w-44 animate-pulse rounded-md" />
           <div className="bg-muted h-4 w-28 animate-pulse rounded" />
         </div>
@@ -58,7 +58,7 @@ export function TripDetailFallback() {
 
       {/* Desktop Tabs Header (Pill Style) */}
       <div className="hidden lg:flex items-center justify-center gap-3">
-        <div className="bg-[#F2EDE5] h-10 w-32 animate-pulse rounded-xl" />
+        <div className="bg-linen h-10 w-32 animate-pulse rounded-xl" />
         <div className="bg-muted/50 h-10 w-32 animate-pulse rounded-xl" />
       </div>
 

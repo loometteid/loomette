@@ -73,12 +73,12 @@ export function WardrobeFilterDialog({
     >
       <DialogPopup
         showClose={false}
-        className="fixed inset-0 m-auto h-fit max-w-[340px] lg:max-w-3xl w-[calc(100%-2rem)] p-6 lg:p-8 rounded-[24px] bg-[#FAFAF7] border-none shadow-2xl overflow-y-auto max-h-[90vh]"
+        className="fixed inset-0 m-auto h-fit max-w-[340px] lg:max-w-3xl w-[calc(100%-2rem)] p-6 lg:p-8 rounded-[24px] bg-background border-none shadow-2xl overflow-y-auto max-h-[90vh]"
       >
         <div className="flex items-center gap-3">
           <DialogClose
             aria-label="Close"
-            className="size-10 rounded-xl bg-[#F2EDE5] hover:bg-[#EAE4DC] text-[#444440] flex items-center justify-center transition-colors"
+            className="size-10 rounded-xl bg-linen hover:bg-linen-dark text-foreground flex items-center justify-center transition-colors"
           >
             <X className="size-4" />
           </DialogClose>
@@ -214,7 +214,7 @@ export function WardrobeFilterDialog({
               </Button>
               <Button
                 type="button"
-                className="bg-[#444440] hover:bg-[#333330] text-white rounded-2xl py-3.5 px-10 text-xs font-semibold uppercase tracking-wider transition-colors shadow-md"
+                className="bg-primary hover:bg-[#333330] text-white rounded-2xl py-3.5 px-10 text-xs font-semibold uppercase tracking-wider transition-colors shadow-md"
                 onClick={() => {
                   onApply(draft);
                   onOpenChange(false);
@@ -238,7 +238,7 @@ export function WardrobeFilterDialog({
           </Button>
           <Button
             type="button"
-            className="flex-1 bg-[#444440] hover:bg-[#333330] text-white rounded-2xl py-3.5 text-xs font-semibold uppercase tracking-wider transition-colors shadow-md"
+            className="flex-1 bg-primary hover:bg-[#333330] text-white rounded-2xl py-3.5 text-xs font-semibold uppercase tracking-wider transition-colors shadow-md"
             onClick={() => {
               onApply(draft);
               onOpenChange(false);

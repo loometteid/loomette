@@ -162,21 +162,21 @@ export function OutfitApproval({ userId }: { userId: string }) {
         <div className="mt-6 lg:mt-0 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center flex-1">
           {/* Left Column: Title, Subtitle, Actions on desktop */}
           <div className="flex flex-col gap-4 lg:gap-6">
-            <div className="flex items-center gap-3">
-              <Sparkle className="size-6 lg:size-8 text-foreground" />
-              <Typography
-                variant="title"
-                as="h1"
-                className="text-3xl lg:text-4xl font-serif"
-              >
-                <em className="italic">Looking</em> Good?
-              </Typography>
+            <div className="flex items-start gap-3 lg:gap-4">
+              <Sparkle className="size-6 lg:size-8 text-foreground shrink-0 mt-1" />
+              <div className="flex flex-col gap-1 lg:gap-2">
+                <Typography
+                  variant="title"
+                  as="h1"
+                  className="text-3xl lg:text-4xl font-serif text-foreground"
+                >
+                  <em className="italic">Looking</em> Good?
+                </Typography>
+                <p className="font-sans text-xs lg:text-xl font-normal text-foreground max-w-sm leading-relaxed">
+                  Here&apos;s what we pulled from your look. Add the ones that are right.
+                </p>
+              </div>
             </div>
-
-            <p className="text-muted-foreground text-xs lg:text-sm uppercase tracking-widest max-w-sm leading-relaxed">
-              Here&apos;s what we pulled from your look. Add the ones that are
-              right.
-            </p>
 
             {/* Desktop Action Buttons (D.2.1.2) */}
             <div className="hidden lg:flex items-center gap-4 mt-8">
@@ -186,7 +186,7 @@ export function OutfitApproval({ userId }: { userId: string }) {
                   deleteOutfit({ paths: [result.originalPath] });
                 }}
                 disabled={isBusy}
-                className="bg-[#F2EDE5] hover:bg-[#EAE4DC] text-[#444440] px-10 py-3.5 rounded-2xl text-xs font-semibold tracking-wider uppercase transition-all active:scale-95 disabled:opacity-60"
+                className="bg-linen hover:bg-linen-dark text-foreground px-10 py-3.5 rounded-2xl text-xs font-semibold tracking-wider uppercase transition-all active:scale-95 disabled:opacity-60"
               >
                 {isDeletingOUtfit && (
                   <Loader2 className="size-4 animate-spin inline mr-2" />
@@ -205,7 +205,7 @@ export function OutfitApproval({ userId }: { userId: string }) {
                   })
                 }
                 disabled={isBusy}
-                className="bg-[#444440] hover:bg-[#333330] text-white px-10 py-3.5 rounded-2xl text-xs font-semibold tracking-wider uppercase transition-all active:scale-95 disabled:opacity-60 shadow-md"
+                className="bg-primary hover:bg-[#333330] text-white px-10 py-3.5 rounded-2xl text-xs font-semibold tracking-wider uppercase transition-all active:scale-95 disabled:opacity-60 shadow-md"
               >
                 {isSavingOutfit && (
                   <Loader2 className="size-4 animate-spin inline mr-2" />
@@ -239,7 +239,7 @@ export function OutfitApproval({ userId }: { userId: string }) {
             <button
               type="button"
               onClick={() => setShowOriginal(true)}
-              className="border-[#C9C3B7] bg-transparent rounded-full border px-6 py-2 text-xs font-medium tracking-wide uppercase transition-colors hover:bg-[#F2EDE5] text-[#444440]"
+              className="border-stone bg-transparent rounded-full border px-6 py-2 text-xs font-medium tracking-wide uppercase transition-colors hover:bg-linen text-foreground"
             >
               See Original Photo
             </button>
@@ -262,7 +262,7 @@ export function OutfitApproval({ userId }: { userId: string }) {
                       e.currentTarget.blur();
                     }
                   }}
-                  className="font-serif text-2xl text-[#444440] border-b border-[#444440]/30 bg-transparent text-center outline-none max-w-xs"
+                  className="font-serif text-2xl text-foreground border-b border-primary/30 bg-transparent text-center outline-none max-w-xs"
                   aria-label="Outfit name"
                 />
               ) : (
@@ -272,10 +272,10 @@ export function OutfitApproval({ userId }: { userId: string }) {
                   className="group flex items-center gap-1.5 hover:opacity-80 transition-opacity"
                   aria-label="Edit outfit name"
                 >
-                  <span className="font-serif text-2xl text-[#444440]">
+                  <span className="font-serif text-2xl text-foreground">
                     {outfitName}
                   </span>
-                  <Pencil className="size-3.5 text-[#444440]/70 group-hover:text-[#444440]" />
+                  <Pencil className="size-3.5 text-foreground/70 group-hover:text-foreground" />
                 </button>
               )}
             </div>
@@ -288,7 +288,7 @@ export function OutfitApproval({ userId }: { userId: string }) {
             type="button"
             onClick={() => router.push("/calendar/share")}
             disabled={isBusy}
-            className="bg-[#F2EDE5] hover:bg-[#EAE4DC] text-[#444440] flex flex-1 items-center justify-center gap-2 rounded-2xl py-4 text-xs font-semibold tracking-wider uppercase transition-colors disabled:pointer-events-none disabled:opacity-60"
+            className="bg-linen hover:bg-linen-dark text-foreground flex flex-1 items-center justify-center gap-2 rounded-2xl py-4 text-xs font-semibold tracking-wider uppercase transition-colors disabled:pointer-events-none disabled:opacity-60"
           >
             Share
           </button>
@@ -304,7 +304,7 @@ export function OutfitApproval({ userId }: { userId: string }) {
               })
             }
             disabled={isBusy}
-            className="bg-[#444440] hover:bg-[#333330] text-white flex flex-1 items-center justify-center gap-2 rounded-2xl py-4 text-xs font-semibold tracking-wider uppercase transition-colors shadow-md disabled:pointer-events-none disabled:opacity-60"
+            className="bg-primary hover:bg-[#333330] text-white flex flex-1 items-center justify-center gap-2 rounded-2xl py-4 text-xs font-semibold tracking-wider uppercase transition-colors shadow-md disabled:pointer-events-none disabled:opacity-60"
           >
             {isSavingOutfit && <Loader2 className="size-4 animate-spin" />}
             Save
@@ -314,20 +314,20 @@ export function OutfitApproval({ userId }: { userId: string }) {
         <Dialog open={showOriginal} onOpenChange={setShowOriginal}>
           <DialogPopup
             showClose={false}
-            className="h-fit max-w-[340px] lg:max-w-md w-[calc(100%-3rem)] p-6 lg:p-8 rounded-[24px] bg-[#FAFAF7] border-none text-center shadow-2xl"
+            className="h-fit max-w-[340px] lg:max-w-md w-[calc(100%-3rem)] p-6 lg:p-8 rounded-[24px] bg-background border-none text-center shadow-2xl"
           >
             <button
               type="button"
               onClick={() => setShowOriginal(false)}
               aria-label="Close"
-              className="absolute top-4 right-4 size-10 rounded-xl bg-[#F2EDE5] hover:bg-[#EAE4DC] text-[#444440] flex items-center justify-center transition-colors"
+              className="absolute top-4 right-4 size-10 rounded-xl bg-linen hover:bg-linen-dark text-foreground flex items-center justify-center transition-colors"
             >
               <X className="size-4" />
             </button>
             <div className="flex flex-col items-center gap-4 mt-2">
               <div className="flex items-center gap-2">
-                <Sparkle className="size-5 text-[#444440]" />
-                <DialogTitle className="font-serif text-2xl lg:text-3xl text-[#444440]">
+                <Sparkle className="size-5 text-foreground" />
+                <DialogTitle className="font-serif text-2xl lg:text-3xl text-foreground">
                   Source Preview
                 </DialogTitle>
               </div>
@@ -342,7 +342,7 @@ export function OutfitApproval({ userId }: { userId: string }) {
               <button
                 type="button"
                 onClick={() => setShowOriginal(false)}
-                className="w-full bg-[#444440] hover:bg-[#333330] text-white py-3.5 rounded-2xl text-xs font-semibold uppercase tracking-wider transition-colors mt-2"
+                className="w-full bg-primary hover:bg-[#333330] text-white py-3.5 rounded-2xl text-xs font-semibold uppercase tracking-wider transition-colors mt-2"
               >
                 Okay
               </button>

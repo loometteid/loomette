@@ -1,5 +1,9 @@
 import { queryOptions } from "@tanstack/react-query";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
+import {
+  ITEM_SIZE_RATIO,
+  parseItemScale,
+} from "@/domains/outfit/components/outfit-composition";
 import type { OutfitHistoryItem } from "./get-all-outfits.query-option.client";
 
 export const getAllOutfitsQueryOptionsForServer = (userId: string) =>
@@ -10,7 +14,7 @@ export const getAllOutfitsQueryOptionsForServer = (userId: string) =>
       const { data, error } = await supabase
         .from("outfit")
         .select(
-          "id, name, is_saved, added_at, cover_image_url, wear_count, outfit_item(layer_order, position_x, position_y, wardrobe_item:wardrobe_item_id(id, item:item_id(item_id, name, image_url)))",
+          "id, name, is_saved, added_at, cover_image_url, wear_count, outfit_item(layer_order, position_x, position_y, notes, wardrobe_item:wardrobe_item_id(id, item:item_id(item_id, name, image_url)))",
         )
         .eq("user_id", userId)
         .order("added_at", { ascending: false });
@@ -31,6 +35,7 @@ export const getAllOutfitsQueryOptionsForServer = (userId: string) =>
               layer_order: number | null;
               position_x: number | null;
               position_y: number | null;
+              notes?: string | null;
               wardrobe_item: {
                 id: string;
                 item: {
@@ -53,14 +58,20 @@ export const getAllOutfitsQueryOptionsForServer = (userId: string) =>
         coverImageUrl: row.cover_image_url,
         items: (row.outfit_item ?? [])
           .filter((oi) => oi.wardrobe_item?.item)
-          .map((oi) => ({
-            id: oi.wardrobe_item!.id,
-            image_url: oi.wardrobe_item!.item!.image_url,
-            name: oi.wardrobe_item!.item!.name,
-            x: oi.position_x ?? 0.5,
-            y: oi.position_y ?? 0.5,
-            layerOrder: oi.layer_order ?? 0,
-          })),
+          .map((oi) => {
+            const itemScale = parseItemScale(oi.notes);
+            return {
+              id: oi.wardrobe_item!.id,
+              image_url: oi.wardrobe_item!.item!.image_url,
+              name: oi.wardrobe_item!.item!.name,
+              x: oi.position_x ?? 0.5,
+              y: oi.position_y ?? 0.5,
+              layerOrder: oi.layer_order ?? 0,
+              scale: itemScale,
+              sizeRatio: itemScale * ITEM_SIZE_RATIO,
+            };
+          }),
       }));
     },
+    staleTime: 1000 * 60 * 5,
   });

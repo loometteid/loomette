@@ -186,7 +186,7 @@ export function ConnectedAccountsView({
           type="button"
           variant="secondary"
           size="icon"
-          className="size-10 rounded-xl bg-[#F2EDE5] text-[#383733] hover:bg-[#EAE4DC]"
+          className="size-10 rounded-xl bg-linen text-foreground hover:bg-linen-dark"
           onClick={() => router.back()}
           aria-label="Go back"
           data-testid="connected-accounts__back-button"
@@ -196,9 +196,9 @@ export function ConnectedAccountsView({
       </div>
 
       {/* Header title */}
-      <div className="flex flex-col gap-2">
-        <div className="flex items-center gap-2">
-          <Sparkle className="size-6 text-foreground" />
+      <div className="flex items-start gap-3.5 lg:gap-4">
+        <Sparkle className="size-6 lg:size-8 text-foreground shrink-0 mt-1 lg:mt-2" />
+        <div className="flex flex-col gap-1 lg:gap-2">
           <Typography
             variant="title"
             as="h1"
@@ -207,13 +207,10 @@ export function ConnectedAccountsView({
           >
             Connected Account
           </Typography>
+          <p className="font-sans text-xs md:text-sm lg:text-xl font-normal text-foreground max-w-xl leading-snug">
+            Link your accounts to log in faster. We only use these to verify it&apos;s you — nothing else.
+          </p>
         </div>
-        <Typography
-          variant="subtitle"
-          className="font-sans text-xs md:text-sm font-normal text-muted-foreground max-w-xl leading-relaxed"
-        >
-          Link your accounts to log in faster. We only use these to verify it&apos;s you — nothing else.
-        </Typography>
       </div>
 
       {/* Accounts List (matches Figma 692px width) */}
@@ -225,10 +222,10 @@ export function ConnectedAccountsView({
               key={provider.id}
               data-testid="connected-accounts__item"
               data-entity-id={provider.id}
-              className="flex items-center justify-between gap-4 py-3 md:py-4 border-b border-[#EAE4DC]/60 last:border-b-0"
+              className="flex items-center justify-between gap-4 py-3 md:py-4 border-b border-linen-dark/60 last:border-b-0"
             >
               <div className="flex items-center gap-3.5 md:gap-5">
-                <div className="size-12 md:size-20 rounded-2xl border border-[#EAE4DC] bg-white flex items-center justify-center shadow-2xs shrink-0">
+                <div className="size-12 md:size-20 rounded-2xl border border-linen-dark bg-white flex items-center justify-center shadow-2xs shrink-0">
                   {provider.icon}
                 </div>
                 <div className="flex flex-col gap-0.5 md:gap-1">
@@ -253,7 +250,7 @@ export function ConnectedAccountsView({
                 disabled={isPending}
                 onClick={() => void handleToggleAccount(provider)}
                 data-testid={`connected-accounts__${provider.id}-toggle`}
-                className="rounded-full border border-[#C9C3B7] px-5 md:px-8 py-2 md:py-3.5 font-sans text-xs md:text-sm font-normal uppercase tracking-wider text-[#444440] hover:bg-[#F2EDE5]/60 transition-colors disabled:opacity-50 shrink-0 min-w-24 md:min-w-36 text-center cursor-pointer"
+                className="rounded-full border border-stone px-5 md:px-8 py-2 md:py-3.5 font-sans text-xs md:text-sm font-normal uppercase tracking-wider text-foreground hover:bg-linen/60 transition-colors disabled:opacity-50 shrink-0 min-w-24 md:min-w-36 text-center cursor-pointer"
               >
                 {isPending
                   ? "…"

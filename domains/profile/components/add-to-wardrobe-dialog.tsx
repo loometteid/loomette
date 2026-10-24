@@ -54,7 +54,7 @@ export function AddToWardrobeDialog({
           data-testid="add-to-wardrobe-dialog__confirm"
           disabled={isPending}
           onClick={() => onAddToWardrobe(item)}
-          className="w-full max-w-xs bg-[#383733] hover:bg-[#2A2926] text-white font-sans text-xs font-normal tracking-wider uppercase py-3.5 rounded-xl border-none shadow-none"
+          className="w-full max-w-xs bg-primary hover:bg-[#2A2926] text-white font-sans text-xs font-normal tracking-wider uppercase py-3.5 rounded-xl border-none shadow-none"
         >
           {isPending ? "Adding…" : "Add to wardrobe"}
         </Button>

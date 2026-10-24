@@ -146,7 +146,7 @@ export function RecommendationPageView({ userId }: { userId: string }) {
           type="button"
           onClick={handleAddToCollection}
           disabled={saveOutfitMutation.isPending || addToCollectionMutation.isPending}
-          className="flex-1 rounded-full bg-[#F2EDE5] py-3.5 text-xs font-semibold tracking-wider text-[#3B3A36] uppercase hover:bg-[#EAE4DC] transition-colors disabled:opacity-60"
+          className="flex-1 rounded-full bg-linen py-3.5 text-xs font-semibold tracking-wider text-[#3B3A36] uppercase hover:bg-linen-dark transition-colors disabled:opacity-60"
         >
           Add to Collection
         </button>
@@ -173,7 +173,7 @@ export function RecommendationPageView({ userId }: { userId: string }) {
               className="relative flex flex-col items-center justify-between rounded-2xl border border-border bg-white/70 p-3.5 text-center min-h-[180px] h-full"
             >
               {piece.badgeText.includes("#1") && (
-                <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 rounded-full bg-[#F2EDE5] px-2.5 py-0.5 text-[0.55rem] font-semibold tracking-wider text-[#3B3A36] uppercase whitespace-nowrap">
+                <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 rounded-full bg-linen px-2.5 py-0.5 text-[0.55rem] font-semibold tracking-wider text-[#3B3A36] uppercase whitespace-nowrap">
                   {piece.badgeText}
                 </span>
               )}

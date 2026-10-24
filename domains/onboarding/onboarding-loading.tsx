@@ -103,10 +103,12 @@ export function OnboardingFallback({
 
           {/* Main Content Skeleton Area */}
           <div className="flex flex-1 flex-col">
-            <div className="mt-6 lg:mt-2 flex flex-col gap-2">
-              <Sparkle className="size-6 text-foreground/40 shrink-0" />
-              <div className="h-8 w-3/4 max-w-xs bg-muted animate-pulse rounded-lg" />
-              <div className="h-3.5 w-1/2 max-w-xs bg-muted/60 animate-pulse rounded" />
+            <div className="mt-6 lg:mt-2 flex items-start gap-3 lg:gap-4">
+              <Sparkle className="size-6 lg:size-8 text-foreground/40 shrink-0 mt-1" />
+              <div className="flex flex-col gap-2 w-full max-w-xs">
+                <div className="h-8 w-3/4 bg-muted animate-pulse rounded-lg" />
+                <div className="h-3.5 w-1/2 bg-muted/60 animate-pulse rounded" />
+              </div>
             </div>
 
             {/* Field Skeletons */}

@@ -18,7 +18,7 @@ describe("PrivacyPolicyView (D.4.5.1 and 4.5.1)", () => {
     expect(
       screen.getByRole("heading", { name: "Privacy & Policy" }),
     ).toBeInTheDocument();
-    expect(screen.getByText("LAST UPDATE: JUNE 2026")).toBeInTheDocument();
+    expect(screen.getByText(/last update: june 2026/i)).toBeInTheDocument();
 
     expect(screen.getByText("What we collect")).toBeInTheDocument();
     expect(screen.getByText("How we use it")).toBeInTheDocument();
@@ -47,11 +47,11 @@ describe("PrivacyPolicyView (D.4.5.1 and 4.5.1)", () => {
     expect(tocItem2).toBeInTheDocument();
 
     // Default active item has warm pill background
-    expect(tocItem1).toHaveClass("bg-[#F2EDE5]");
+    expect(tocItem1).toHaveClass("bg-linen");
 
     // Clicking item 2 switches active state
     await user.click(tocItem2);
-    expect(tocItem2).toHaveClass("bg-[#F2EDE5]");
+    expect(tocItem2).toHaveClass("bg-linen");
   });
 
   it("triggers router.back when clicking mobile back button", async () => {

@@ -107,7 +107,7 @@ export function ApprovalItemDialog({
     <Dialog open onOpenChange={onOpenChange}>
       <DialogPopup
         showClose={false}
-        className="fixed inset-0 m-auto h-fit max-w-[340px] lg:max-w-[820px] w-[calc(100%-3rem)] max-h-[90vh] p-6 lg:p-10 rounded-[24px] bg-[#FAFAF7] border-none shadow-2xl overflow-y-auto"
+        className="fixed inset-0 m-auto h-fit max-w-[340px] lg:max-w-[820px] w-[calc(100%-3rem)] max-h-[90vh] p-6 lg:p-10 rounded-[24px] bg-background border-none shadow-2xl overflow-y-auto"
         data-testid="approval-item-dialog"
       >
         <DialogTitle className="sr-only">Edit piece details</DialogTitle>
@@ -117,7 +117,7 @@ export function ApprovalItemDialog({
           type="button"
           onClick={() => onOpenChange(false)}
           aria-label="Close"
-          className="absolute top-5 right-5 lg:top-7 lg:right-7 size-10 lg:size-12 rounded-xl bg-[#F2EDE5] hover:bg-[#EAE4DC] flex items-center justify-center text-[#444440] transition-colors z-20"
+          className="absolute top-5 right-5 lg:top-7 lg:right-7 size-10 lg:size-12 rounded-xl bg-linen hover:bg-linen-dark flex items-center justify-center text-foreground transition-colors z-20"
           data-testid="approval-item-dialog__close-button"
         >
           <X className="size-4 lg:size-5" />
@@ -142,9 +142,9 @@ export function ApprovalItemDialog({
                 <input
                   {...register("name")}
                   placeholder="Name this piece"
-                  className="bg-transparent font-serif text-2xl lg:text-3xl text-[#444440] text-center lg:text-left outline-none placeholder:text-[#9E9A90] w-auto max-w-[280px] lg:max-w-md"
+                  className="bg-transparent font-serif text-2xl lg:text-3xl text-foreground text-center lg:text-left outline-none placeholder:text-[#9E9A90] w-auto max-w-[280px] lg:max-w-md"
                 />
-                <Pencil className="size-4 text-[#444440] shrink-0" />
+                <Pencil className="size-4 text-foreground shrink-0" />
               </div>
               <div className="flex items-center justify-center lg:justify-start gap-1.5 w-full">
                 <input
@@ -163,7 +163,7 @@ export function ApprovalItemDialog({
             <div className="flex flex-col gap-4 lg:gap-5">
               {/* Category */}
               <div className="flex flex-col gap-2">
-                <Label className="text-xs uppercase font-medium tracking-wider text-[#444440]">
+                <Label className="text-xs uppercase font-medium tracking-wider text-foreground">
                   Category
                 </Label>
                 <Controller
@@ -185,7 +185,7 @@ export function ApprovalItemDialog({
               {/* Sub Category */}
               {subcategoryOptions.length > 0 && (
                 <div className="flex flex-col gap-2">
-                  <Label className="text-xs uppercase font-medium tracking-wider text-[#444440]">
+                  <Label className="text-xs uppercase font-medium tracking-wider text-foreground">
                     Sub Category
                   </Label>
                   <Controller
@@ -205,10 +205,10 @@ export function ApprovalItemDialog({
               {/* Outfit Size */}
               <div className="flex flex-col gap-2">
                 <div className="flex items-center justify-between">
-                  <Label className="text-xs uppercase font-medium tracking-wider text-[#444440]">
+                  <Label className="text-xs uppercase font-medium tracking-wider text-foreground">
                     Outfit Size
                   </Label>
-                  <span className="bg-[#F2EDE5] text-[#78746D] px-2.5 py-0.5 rounded-full text-[10px] uppercase tracking-wider font-normal">
+                  <span className="bg-linen text-[#78746D] px-2.5 py-0.5 rounded-full text-[10px] uppercase tracking-wider font-normal">
                     Optional
                   </span>
                 </div>
@@ -232,12 +232,12 @@ export function ApprovalItemDialog({
               <button
                 type="button"
                 onClick={() => setDetailsOpen((prev) => !prev)}
-                className="flex lg:hidden w-full items-center justify-between text-xs font-medium uppercase tracking-wider text-[#444440] py-2 cursor-pointer border-t border-[#EAE4DC]/60 pt-3"
+                className="flex lg:hidden w-full items-center justify-between text-xs font-medium uppercase tracking-wider text-foreground py-2 cursor-pointer border-t border-linen-dark/60 pt-3"
               >
                 <span>Details</span>
                 <ChevronDown
                   className={cn(
-                    "size-4 text-[#444440] transition-transform duration-200",
+                    "size-4 text-foreground transition-transform duration-200",
                     detailsOpen && "rotate-180",
                   )}
                 />
@@ -252,7 +252,7 @@ export function ApprovalItemDialog({
               >
                 {/* Occasion */}
                 <div className="flex flex-col gap-2">
-                  <Label className="text-xs uppercase font-medium tracking-wider text-[#444440]">
+                  <Label className="text-xs uppercase font-medium tracking-wider text-foreground">
                     Occasion
                   </Label>
                   <Controller
@@ -281,7 +281,7 @@ export function ApprovalItemDialog({
                 <div className="flex flex-col gap-1.5">
                   <Label
                     htmlFor="approval-price"
-                    className="text-xs uppercase font-medium tracking-wider text-[#444440]"
+                    className="text-xs uppercase font-medium tracking-wider text-foreground"
                   >
                     Price (Rp)
                   </Label>
@@ -291,7 +291,7 @@ export function ApprovalItemDialog({
                     inputMode="decimal"
                     placeholder="e.g. 150000"
                     {...register("price")}
-                    className="bg-[#F2EDE5] border-none rounded-2xl h-12 px-4 text-sm text-[#444440] placeholder:text-[#9E9A90] focus-visible:ring-1 focus-visible:ring-[#444440]"
+                    className="bg-linen border-none rounded-2xl h-12 px-4 text-sm text-foreground placeholder:text-[#9E9A90] focus-visible:ring-1 focus-visible:ring-primary"
                   />
                 </div>
 
@@ -299,7 +299,7 @@ export function ApprovalItemDialog({
                 <div className="flex flex-col gap-1.5">
                   <Label
                     htmlFor="approval-buy-from"
-                    className="text-xs uppercase font-medium tracking-wider text-[#444440]"
+                    className="text-xs uppercase font-medium tracking-wider text-foreground"
                   >
                     Buy From
                   </Label>
@@ -307,7 +307,7 @@ export function ApprovalItemDialog({
                     id="approval-buy-from"
                     placeholder="e.g. Offline Store"
                     {...register("purchaseLocation")}
-                    className="bg-[#F2EDE5] border-none rounded-2xl h-12 px-4 text-sm text-[#444440] placeholder:text-[#9E9A90] focus-visible:ring-1 focus-visible:ring-[#444440]"
+                    className="bg-linen border-none rounded-2xl h-12 px-4 text-sm text-foreground placeholder:text-[#9E9A90] focus-visible:ring-1 focus-visible:ring-primary"
                   />
                 </div>
               </div>
@@ -317,7 +317,7 @@ export function ApprovalItemDialog({
                 <Button
                   type="submit"
                   disabled={isSaving}
-                  className="bg-[#444440] hover:bg-[#333330] text-white px-12 py-3.5 rounded-2xl text-xs font-semibold uppercase tracking-wider transition-colors shadow-md"
+                  className="bg-primary hover:bg-[#333330] text-white px-12 py-3.5 rounded-2xl text-xs font-semibold uppercase tracking-wider transition-colors shadow-md"
                   data-testid="approval-item-dialog__save-button"
                 >
                   {isSaving ? "Saving…" : "Save"}
@@ -331,7 +331,7 @@ export function ApprovalItemDialog({
             <Button
               type="submit"
               disabled={isSaving}
-              className="w-full bg-[#444440] hover:bg-[#333330] text-white py-3.5 rounded-2xl text-xs font-semibold uppercase tracking-wider transition-colors shadow-md"
+              className="w-full bg-primary hover:bg-[#333330] text-white py-3.5 rounded-2xl text-xs font-semibold uppercase tracking-wider transition-colors shadow-md"
               data-testid="approval-item-dialog__save-button"
             >
               {isSaving ? "Saving…" : "Save"}

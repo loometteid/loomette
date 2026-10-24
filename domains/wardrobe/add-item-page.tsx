@@ -94,27 +94,29 @@ export function AddItemView({ userId }: { userId: string }) {
           aria-label="Go back"
           disabled={isBusy}
           data-testid="add-item-page__back-button"
-          className="bg-[#F2EDE5] hover:bg-[#EAE4DC] text-foreground flex size-9 items-center justify-center rounded-xl transition-colors disabled:opacity-50"
+          className="bg-linen hover:bg-linen-dark text-foreground flex size-9 items-center justify-center rounded-xl transition-colors disabled:opacity-50"
         >
           <ChevronLeft className="size-4" />
         </button>
       </div>
 
       {/* Centered Intake Card */}
-      <main className="mx-auto flex w-full max-w-sm flex-1 flex-col items-center justify-center px-6 py-12 text-center">
-        <div className="flex flex-col items-center gap-3">
-          <Sparkle className="size-6 text-foreground" />
-          <Typography
-            variant="title"
-            as="h1"
-            className="text-3xl font-serif"
-            data-testid="add-item-page__title"
-          >
-            Add a new item.
-          </Typography>
-          <p className="text-[#8C887B] text-xs uppercase tracking-widest font-medium">
-            Snap it fresh or pull from your gallery.
-          </p>
+      <main className="mx-auto flex w-full max-w-sm lg:max-w-xl flex-1 flex-col items-center justify-center px-6 py-12 text-center">
+        <div className="flex items-start gap-3.5 lg:gap-4 text-left">
+          <Sparkle className="size-7 lg:size-10 text-foreground shrink-0 mt-1 lg:mt-2" />
+          <div className="flex flex-col gap-1 lg:gap-2">
+            <Typography
+              variant="title"
+              as="h1"
+              className="text-3xl md:text-4xl lg:text-[48px] font-serif text-foreground leading-tight"
+              data-testid="add-item-page__title"
+            >
+              Add a new item.
+            </Typography>
+            <p className="font-sans text-xs md:text-sm lg:text-xl font-normal text-foreground">
+              Snap it fresh or pull from your gallery.
+            </p>
+          </div>
         </div>
 
         <div className="mt-16 flex w-full flex-col gap-3">
@@ -123,7 +125,7 @@ export function AddItemView({ userId }: { userId: string }) {
             disabled={isBusy}
             onClick={handleTakePhotoClick}
             data-testid="add-item-page__take-photo-button"
-            className="border border-[#EAE4DC] bg-[#FAF8F5] hover:bg-[#F2EDE5] text-foreground flex w-full items-center justify-center rounded-2xl py-4 text-xs font-semibold uppercase tracking-wider shadow-sm transition-all active:scale-95 disabled:opacity-50"
+            className="border border-linen-dark bg-background hover:bg-linen text-foreground flex w-full items-center justify-center rounded-2xl py-4 text-xs font-semibold uppercase tracking-wider shadow-sm transition-all active:scale-95 disabled:opacity-50"
           >
             {isBusy ? <Loader2 className="mr-2 size-4 animate-spin" /> : null}
             Take a Photo
@@ -134,7 +136,7 @@ export function AddItemView({ userId }: { userId: string }) {
             disabled={isBusy}
             onClick={() => galleryInputRef.current?.click()}
             data-testid="add-item-page__upload-photo-button"
-            className="border border-[#EAE4DC] bg-[#FAF8F5] hover:bg-[#F2EDE5] text-foreground flex w-full items-center justify-center rounded-2xl py-4 text-xs font-semibold uppercase tracking-wider shadow-sm transition-all active:scale-95 disabled:opacity-50"
+            className="border border-linen-dark bg-background hover:bg-linen text-foreground flex w-full items-center justify-center rounded-2xl py-4 text-xs font-semibold uppercase tracking-wider shadow-sm transition-all active:scale-95 disabled:opacity-50"
           >
             {isBusy ? <Loader2 className="mr-2 size-4 animate-spin" /> : null}
             Upload a Photo

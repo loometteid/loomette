@@ -30,7 +30,7 @@ export function LoggedSuccessDialog({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogPopup
         showClose={false}
-        className="max-w-sm w-[calc(100%-2rem)] rounded-3xl bg-[#FAFAF7] p-8 text-center shadow-2xl border-none"
+        className="max-w-sm w-[calc(100%-2rem)] rounded-3xl bg-background p-8 text-center shadow-2xl border-none"
       >
         <button
           type="button"

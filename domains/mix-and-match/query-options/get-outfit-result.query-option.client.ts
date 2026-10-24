@@ -1,12 +1,17 @@
 import { queryOptions } from "@tanstack/react-query";
 import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 import { getLogger } from "@/lib/logging";
+import {
+  ITEM_SIZE_RATIO,
+  parseItemScale,
+} from "@/domains/outfit/components/outfit-composition";
 import type { OutfitResultData, ResultItem } from "../result-types";
 
 type OutfitItemRow = {
   layer_order: number | null;
   position_x: number | null;
   position_y: number | null;
+  notes: string | null;
   wardrobe_item: {
     id: string;
     item: {
@@ -49,7 +54,7 @@ export const getOutfitResultQueryOptionsForBrowser = (
       const { data: rows, error: itemsError } = await supabase
         .from("outfit_item")
         .select(
-          "layer_order, position_x, position_y, wardrobe_item:wardrobe_item_id(id, item:item_id(item_id, name, image_url))",
+          "layer_order, position_x, position_y, notes, wardrobe_item:wardrobe_item_id(id, item:item_id(item_id, name, image_url))",
         )
         .eq("outfit_id", outfitId)
         .returns<OutfitItemRow[]>();
@@ -70,14 +75,19 @@ export const getOutfitResultQueryOptionsForBrowser = (
 
       const items: ResultItem[] = (rows ?? [])
         .filter((row) => row.wardrobe_item)
-        .map((row) => ({
-          id: row.wardrobe_item!.id,
-          name: row.wardrobe_item!.item?.name ?? null,
-          image_url: row.wardrobe_item!.item?.image_url ?? null,
-          x: row.position_x ?? 0.5,
-          y: row.position_y ?? 0.5,
-          layerOrder: row.layer_order ?? 0,
-        }));
+        .map((row) => {
+          const itemScale = parseItemScale(row.notes);
+          return {
+            id: row.wardrobe_item!.id,
+            name: row.wardrobe_item!.item?.name ?? null,
+            image_url: row.wardrobe_item!.item?.image_url ?? null,
+            x: row.position_x ?? 0.5,
+            y: row.position_y ?? 0.5,
+            layerOrder: row.layer_order ?? 0,
+            scale: itemScale,
+            sizeRatio: itemScale * ITEM_SIZE_RATIO,
+          };
+        });
 
       return {
         outfit: {

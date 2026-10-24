@@ -130,7 +130,7 @@ export default function LandingPage() {
       data-testid="landing-page"
     >
       {/* Header — 100px desktop height, 64px mobile height with glassmorphism */}
-      <LandingHeader className="sticky top-0 z-50 flex h-16 md:h-24 lg:h-28 items-center justify-between bg-[#fafaf7]/85 px-6 md:px-12 lg:px-16 backdrop-blur-md">
+      <LandingHeader className="sticky top-0 z-50 flex h-16 md:h-24 lg:h-28 items-center justify-between bg-background/85 px-6 md:px-12 lg:px-16 backdrop-blur-md">
         <Link
           href="/"
           prefetch

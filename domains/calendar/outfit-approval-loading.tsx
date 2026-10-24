@@ -199,12 +199,9 @@ export function OutfitLoading({ userId }: { userId: string }) {
           <em className="italic">Generating</em> your gorgeous look.
         </Typography>
 
-        <Typography
-          variant="subtitle"
-          className="max-w-xs text-xs lg:text-sm uppercase tracking-wider text-muted-foreground"
-        >
+        <p className="max-w-xs font-sans text-xs lg:text-sm font-normal text-foreground">
           Hang on while we create this for your calendar.
-        </Typography>
+        </p>
 
         <span className="text-xl lg:text-2xl font-bold">{percent}%</span>
 

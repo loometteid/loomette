@@ -23,7 +23,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
   - Always verify authenticated user session before executing sensitive mutations or data access. Never expose service role keys to client bundles.
 - **Data Fetching**: TanStack Query strict server/client split under `domains/<domain>/query-options/`. See [tanstack-query-patterns](.agents/skills/tanstack-query-patterns/SKILL.md).
 - **Forms & Validation**: React Hook Form + Zod schemas under `domains/<domain>/schemas/`. See [react-hook-form-patterns](.agents/skills/react-hook-form-patterns/SKILL.md).
-- **UI & Styling**: Base UI (`@base-ui/react`), Tailwind CSS v4, and conditional class merging with `cn()` (`@/lib/utils` with `clsx` + `tailwind-merge`).
+- **UI & Styling**: Base UI (`@base-ui/react`), Tailwind CSS v4, zero arbitrary hexes, and conditional class merging with `cn()` (`@/lib/utils` with `clsx` + `tailwind-merge`). Adhere strictly to Figma tokens and design system classes. See [figma-ui-adjustment](.agents/skills/figma-ui-adjustment/SKILL.md).
 - **State Management**: Zustand stores for client-side ephemeral state.
 - **Logging & Code Hygiene**:
   - Structured application logging with `@logtape/logtape` via `getLogger([category, subcategory])` from `@/lib/logging`.

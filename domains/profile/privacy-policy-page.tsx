@@ -102,7 +102,7 @@ function SectionDivider() {
   return (
     <div
       role="separator"
-      className="hidden lg:block h-px w-full bg-[#EAE4DC] dark:bg-border my-8"
+      className="hidden lg:block h-px w-full bg-linen-dark dark:bg-border my-8"
     />
   );
 }
@@ -159,7 +159,7 @@ export function PrivacyPolicyView() {
           variant="secondary"
           size="icon"
           data-testid="privacy-policy__back-button"
-          className="size-10 rounded-xl bg-[#F2EDE5] text-[#383733] hover:bg-[#EAE4DC] dark:bg-muted dark:text-foreground"
+          className="size-10 rounded-xl bg-linen text-foreground hover:bg-linen-dark dark:bg-muted dark:text-foreground"
           onClick={() => router.back()}
           aria-label="Go back"
         >
@@ -168,9 +168,9 @@ export function PrivacyPolicyView() {
       </div>
 
       {/* Header title */}
-      <div className="flex flex-col gap-1.5">
-        <div className="flex items-center gap-2">
-          <Sparkle className="size-6 text-foreground" />
+      <div className="flex items-start gap-3.5 lg:gap-4">
+        <Sparkle className="size-6 lg:size-8 text-foreground shrink-0 mt-1 lg:mt-2" />
+        <div className="flex flex-col gap-1 lg:gap-2">
           <Typography
             variant="title"
             as="h1"
@@ -178,13 +178,10 @@ export function PrivacyPolicyView() {
           >
             Privacy & Policy
           </Typography>
+          <p className="font-sans text-xs md:text-sm lg:text-xl font-normal text-foreground leading-snug">
+            Last update: June 2026
+          </p>
         </div>
-        <Typography
-          variant="subtitle"
-          className="font-sans text-xs md:text-sm font-normal uppercase tracking-wider text-muted-foreground"
-        >
-          LAST UPDATE: JUNE 2026
-        </Typography>
       </div>
 
       {/* Main Responsive Layout */}
@@ -206,8 +203,8 @@ export function PrivacyPolicyView() {
                 className={cn(
                   "text-left px-5 py-3.5 rounded-2xl font-sans text-xs lg:text-sm font-normal uppercase tracking-wide transition-colors",
                   isActive
-                    ? "bg-[#F2EDE5] text-[#383733] font-medium dark:bg-muted dark:text-foreground"
-                    : "text-[#7A7870] hover:text-foreground hover:bg-[#F2EDE5]/40 dark:text-muted-foreground",
+                    ? "bg-linen text-foreground font-medium dark:bg-muted dark:text-foreground"
+                    : "text-[#7A7870] hover:text-foreground hover:bg-linen/40 dark:text-muted-foreground",
                 )}
               >
                 {navTitle}
@@ -275,7 +272,7 @@ export function PrivacyPolicyView() {
                 size, and wear history.
               </li>
             </ul>
-            <p className="border-l-2 border-[#383733] dark:border-foreground/80 pl-4 py-0.5 italic text-xs md:text-sm text-foreground/90 my-1">
+            <p className="border-l-2 border-primary dark:border-foreground/80 pl-4 py-0.5 italic text-xs md:text-sm text-foreground/90 my-1">
               We do not use your data to train AI models without your explicit
               consent. Your wardrobe is yours.
             </p>

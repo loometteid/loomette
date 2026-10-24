@@ -189,7 +189,7 @@ export function TripDetailView({
         <Link
           href={`/trip/${trip.id}/edit`}
           prefetch
-          className="hidden lg:inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F2EDE5] hover:bg-[#EAE4DC] text-[#444440] font-sans text-xs font-normal tracking-wider uppercase transition-colors"
+          className="hidden lg:inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-linen hover:bg-linen-dark text-foreground font-sans text-xs font-normal tracking-wider uppercase transition-colors"
         >
           <Pencil className="size-3" />
           <span>Edit Details</span>
@@ -236,8 +236,8 @@ export function TripDetailView({
                 className={cn(
                   "px-6 py-2.5 rounded-xl font-sans text-xs lg:text-sm font-normal tracking-wider uppercase transition-colors",
                   isActive
-                    ? "bg-[#F2EDE5] text-foreground font-normal"
-                    : "text-muted-foreground hover:text-foreground hover:bg-[#F2EDE5]/40",
+                    ? "bg-linen text-foreground font-normal"
+                    : "text-muted-foreground hover:text-foreground hover:bg-linen/40",
                 )}
               >
                 {TAB_LABEL[value]}
@@ -287,7 +287,7 @@ export function TripDetailView({
                 {!isLast && (
                   <span
                     aria-hidden
-                    className="border-[#C9C3B7] absolute top-7 bottom-0 left-2.5 border-l border-dashed"
+                    className="border-stone absolute top-7 bottom-0 left-2.5 border-l border-dashed"
                   />
                 )}
                 <Sparkle className="text-foreground mt-1 size-5 shrink-0" />
@@ -305,14 +305,14 @@ export function TripDetailView({
                     <OutfitComposition
                       key={outfit.wearLogId}
                       items={outfit.items}
-                      className="aspect-5/6 w-full max-w-sm rounded-2xl overflow-hidden border border-[#EAE4DC]"
+                      className="aspect-5/6 w-full max-w-sm rounded-2xl overflow-hidden border border-linen-dark"
                     />
                   ))}
 
                   <button
                     type="button"
                     onClick={() => setPlanOutfitDay(day)}
-                    className="w-full lg:w-auto text-center border border-[#C9C3B7] lg:border-none lg:bg-[#383733] lg:hover:bg-[#2A2926] lg:text-white text-[#444440] hover:bg-[#F2EDE5]/50 rounded-xl px-6 py-2.5 font-sans text-xs font-normal tracking-wider uppercase transition-colors shadow-xs"
+                    className="w-full lg:w-auto text-center border border-stone lg:border-none lg:bg-primary lg:hover:bg-[#2A2926] lg:text-white text-foreground hover:bg-linen/50 rounded-xl px-6 py-2.5 font-sans text-xs font-normal tracking-wider uppercase transition-colors shadow-xs"
                     data-testid="trip-detail__plan-outfit-button"
                   >
                     Plan Outfit
@@ -338,7 +338,7 @@ export function TripDetailView({
                   key={item.id}
                   data-testid="trip-detail__packing-item"
                   data-entity-id={item.id}
-                  className="flex items-center gap-3.5 p-3 rounded-2xl hover:bg-[#F2EDE5]/40 cursor-pointer select-none transition-colors"
+                  className="flex items-center gap-3.5 p-3 rounded-2xl hover:bg-linen/40 cursor-pointer select-none transition-colors"
                 >
                   <Checkbox
                     checked={item.isPacked}
@@ -363,7 +363,7 @@ export function TripDetailView({
                 onKeyDown={(e) => e.key === "Enter" && handleAddPackingItem()}
                 placeholder="Item name (e.g. Wool Scarf)"
                 data-testid="trip-detail__new-packing-input"
-                className="flex-1 bg-[#F2EDE5] text-xs uppercase px-4 py-3 rounded-xl outline-none placeholder:text-muted-foreground text-foreground"
+                className="flex-1 bg-linen text-xs uppercase px-4 py-3 rounded-xl outline-none placeholder:text-muted-foreground text-foreground"
                 autoFocus
               />
               <Button
@@ -371,7 +371,7 @@ export function TripDetailView({
                 disabled={addPackingItemMutation.isPending}
                 onClick={handleAddPackingItem}
                 data-testid="trip-detail__submit-packing-button"
-                className="bg-[#383733] hover:bg-[#2A2926] text-white text-xs uppercase py-3 rounded-xl px-5"
+                className="bg-primary hover:bg-[#2A2926] text-white text-xs uppercase py-3 rounded-xl px-5"
               >
                 {addPackingItemMutation.isPending ? "Adding…" : "Add"}
               </Button>
@@ -389,7 +389,7 @@ export function TripDetailView({
               type="button"
               onClick={() => setIsAddingItem(true)}
               data-testid="trip-detail__add-packing-button"
-              className="bg-[#383733] hover:bg-[#2A2926] text-white flex size-10 items-center justify-center rounded-xl transition-colors shadow-sm mt-2"
+              className="bg-primary hover:bg-[#2A2926] text-white flex size-10 items-center justify-center rounded-xl transition-colors shadow-sm mt-2"
               aria-label="Add packing item"
             >
               <Plus className="size-4" />

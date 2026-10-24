@@ -128,7 +128,7 @@ export function WardrobeView({ userId }: { userId: string }) {
       </div>
 
       <div className="mx-auto flex w-full max-w-2xl lg:max-w-3xl items-center gap-2 lg:gap-3">
-        <div className="bg-[#F2EDE5] flex flex-1 items-center gap-2 rounded-xl px-4 py-2.5 lg:py-3">
+        <div className="bg-linen flex flex-1 items-center gap-2 rounded-xl px-4 py-2.5 lg:py-3">
           <input
             value={search}
             onChange={(event) => setSearch(event.target.value)}
@@ -140,7 +140,7 @@ export function WardrobeView({ userId }: { userId: string }) {
         <button
           type="button"
           onClick={() => setFilterOpen(true)}
-          className="bg-[#F2EDE5] hover:bg-[#EAE4DC] flex size-10 lg:size-11 shrink-0 items-center justify-center rounded-xl transition-colors text-foreground"
+          className="bg-linen hover:bg-linen-dark flex size-10 lg:size-11 shrink-0 items-center justify-center rounded-xl transition-colors text-foreground"
           aria-label="Filter"
         >
           <SlidersHorizontal className="size-4 lg:size-5" />
@@ -148,12 +148,12 @@ export function WardrobeView({ userId }: { userId: string }) {
         <Link
           href="/wardrobe/approval"
           prefetch
-          className="bg-[#F2EDE5] hover:bg-[#EAE4DC] relative flex size-10 lg:size-11 shrink-0 items-center justify-center rounded-xl transition-colors text-foreground"
+          className="bg-linen hover:bg-linen-dark relative flex size-10 lg:size-11 shrink-0 items-center justify-center rounded-xl transition-colors text-foreground"
           aria-label="Approval queue"
         >
           <CheckCheck className="size-4 lg:size-5" />
           {!!pendingCount && (
-            <span className="bg-[#444440] text-white absolute -top-1.5 -right-1.5 flex size-4 lg:size-5 items-center justify-center rounded-full text-[0.6rem] lg:text-xs font-semibold">
+            <span className="bg-primary text-white absolute -top-1.5 -right-1.5 flex size-4 lg:size-5 items-center justify-center rounded-full text-[0.6rem] lg:text-xs font-semibold">
               {pendingCount}
             </span>
           )}
@@ -172,7 +172,7 @@ export function WardrobeView({ userId }: { userId: string }) {
                 key={row.id}
                 href={`/wardrobe/${row.id}`}
                 prefetch
-                className="group border border-[#EAE4DC] bg-[#FAF8F5]/50 hover:bg-[#FAF8F5] flex flex-col items-center justify-between rounded-2xl p-4 text-center transition-all hover:border-foreground/30 hover:shadow-sm"
+                className="group border border-linen-dark bg-background/50 hover:bg-background flex flex-col items-center justify-between rounded-2xl p-4 text-center transition-all hover:border-foreground/30 hover:shadow-sm"
               >
                 <div className="relative aspect-square w-full flex items-center justify-center overflow-hidden">
                   {row.item?.image_url && (
@@ -314,7 +314,7 @@ export function WardrobeView({ userId }: { userId: string }) {
           className={cn(
             "flex size-14 items-center justify-center rounded-2xl shadow-lg transition-all",
             addMenuOpen
-              ? "bg-[#FAFAF7] text-foreground border border-[#EAE4DC]"
+              ? "bg-background text-foreground border border-linen-dark"
               : "bg-[#393735] text-white hover:bg-[#2b2a27]",
           )}
         >

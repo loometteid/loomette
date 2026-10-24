@@ -174,12 +174,19 @@ describe("MixAndMatchCanvas (Component & Integration Tier)", () => {
     expect(canvasItems.length).toBeGreaterThanOrEqual(2);
   });
 
-  it("saves the outfit and routes to the result page", async () => {
+  it("saves the outfit with scale and routes to the result page", async () => {
     const user = userEvent.setup();
+    let capturedOutfitItems: Array<{ scale?: number; wardrobe_item_id?: string }> | null =
+      null;
 
     server.use(
       http.get(`${MOCK_SUPABASE_URL}/rest/v1/wardrobe_item`, () => {
         return HttpResponse.json(mockWardrobeRows);
+      }),
+      http.post(`${MOCK_SUPABASE_URL}/rest/v1/outfit_item`, async ({ request }) => {
+        capturedOutfitItems =
+          (await request.json()) as Array<{ scale?: number; wardrobe_item_id?: string }>;
+        return HttpResponse.json([{ id: "mock-outfit-item-1" }], { status: 201 });
       }),
     );
 
@@ -194,6 +201,15 @@ describe("MixAndMatchCanvas (Component & Integration Tier)", () => {
 
     const saveBtn = screen.getByTestId("mix-and-match__save-button");
     await user.click(saveBtn);
+
+    await waitFor(() => {
+      expect(capturedOutfitItems).toEqual([
+        expect.objectContaining({
+          wardrobe_item_id: "wardrobe-top-1",
+          scale: 1,
+        }),
+      ]);
+    });
 
     await waitFor(() => {
       expect(mockRouter.push).toHaveBeenCalledWith(

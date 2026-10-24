@@ -20,6 +20,7 @@ const mockOutfitItems = [
     layer_order: 1,
     position_x: 0.5,
     position_y: 0.3,
+    notes: JSON.stringify({ scale: 1.5 }),
     wardrobe_item: {
       id: "wardrobe-top-1",
       item: {
@@ -33,6 +34,7 @@ const mockOutfitItems = [
     layer_order: 2,
     position_x: 0.5,
     position_y: 0.6,
+    notes: null,
     wardrobe_item: {
       id: "wardrobe-bottom-1",
       item: {
@@ -45,7 +47,7 @@ const mockOutfitItems = [
 ];
 
 describe("MixAndMatchResult (Component & Integration Tier)", () => {
-  it("renders outfit result view with title, composition, and editable name", async () => {
+  it("renders outfit result view with title, composition with scaled size, and editable name", async () => {
     server.use(
       http.get(`${MOCK_SUPABASE_URL}/rest/v1/outfit`, ({ request }) => {
         const acceptHeader = request.headers.get("accept") ?? "";
@@ -73,6 +75,14 @@ describe("MixAndMatchResult (Component & Integration Tier)", () => {
       screen.getByTestId("mix-and-match-result__outfit-name"),
     ).toHaveTextContent("Chic Kinda Day");
 
+    // Verify composition item scale is carried over to the result view
+    const compositionItems = screen.getAllByTestId("outfit-composition__item");
+    expect(compositionItems).toHaveLength(2);
+    // 1.5 scale * 0.42 itemSizeRatio = 0.63 -> 63%
+    expect(compositionItems[0]).toHaveStyle({ width: "63%" });
+    // 1.0 scale * 0.42 itemSizeRatio = 0.42 -> 42%
+    expect(compositionItems[1]).toHaveStyle({ width: "42%" });
+
     expect(
       screen.getByTestId("mix-and-match-result__add-collection-button"),
     ).toBeInTheDocument();
@@ -94,6 +104,9 @@ describe("MixAndMatchResult (Component & Integration Tier)", () => {
       }),
       http.get(`${MOCK_SUPABASE_URL}/rest/v1/outfit_item`, () => {
         return HttpResponse.json(mockOutfitItems);
+      }),
+      http.patch(`${MOCK_SUPABASE_URL}/rest/v1/outfit`, () => {
+        return HttpResponse.json({ ...mockOutfitData, name: "Parisian Sunset" });
       }),
     );
 
@@ -129,6 +142,9 @@ describe("MixAndMatchResult (Component & Integration Tier)", () => {
       }),
       http.get(`${MOCK_SUPABASE_URL}/rest/v1/outfit_item`, () => {
         return HttpResponse.json(mockOutfitItems);
+      }),
+      http.patch(`${MOCK_SUPABASE_URL}/rest/v1/outfit`, () => {
+        return HttpResponse.json({ ...mockOutfitData, is_saved: true });
       }),
     );
 
@@ -176,6 +192,9 @@ describe("MixAndMatchResult (Component & Integration Tier)", () => {
       }),
       http.get(`${MOCK_SUPABASE_URL}/rest/v1/outfit_item`, () => {
         return HttpResponse.json(mockOutfitItems);
+      }),
+      http.post(`${MOCK_SUPABASE_URL}/rest/v1/wear_log`, () => {
+        return HttpResponse.json({ id: "mock-wear-log-1" }, { status: 201 });
       }),
     );
 

@@ -1,6 +1,7 @@
 import { mutationOptions } from "@tanstack/react-query";
 import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 import { generateOutfitName } from "@/lib/outfitNames";
+import { serializeItemNotes } from "@/domains/outfit/components/outfit-composition";
 import type { CanvasItem } from "../types";
 
 export type SaveOutfitInput = {
@@ -44,6 +45,8 @@ export const saveOutfitMutationOptions = () =>
           layer_order: item.layerOrder,
           position_x: item.x,
           position_y: item.y,
+          scale: item.scale ?? 1,
+          notes: serializeItemNotes(item.scale),
         })),
       );
 

@@ -42,7 +42,7 @@ export function MixAndMatchFallback() {
       <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 xl:gap-16 pt-2">
         {/* Canvas placeholder */}
         <div className="w-full lg:w-[480px] xl:w-[560px] shrink-0">
-          <div className="border-border bg-linen/30 relative flex aspect-[316/335] lg:aspect-square w-full items-center justify-center overflow-hidden rounded-2xl border">
+          <div className="border-border bg-linen/30 relative flex aspect-square w-full items-center justify-center overflow-hidden rounded-2xl border">
             <Sparkle className="text-foreground/20 size-20 lg:size-28 animate-pulse" />
           </div>
         </div>

@@ -215,6 +215,7 @@ export type Database = {
           outfit_id: string | null;
           position_x: number | null;
           position_y: number | null;
+          scale: number | null;
           wardrobe_item_id: string | null;
         };
         Insert: {
@@ -224,6 +225,7 @@ export type Database = {
           outfit_id?: string | null;
           position_x?: number | null;
           position_y?: number | null;
+          scale?: number | null;
           wardrobe_item_id?: string | null;
         };
         Update: {
@@ -233,6 +235,7 @@ export type Database = {
           outfit_id?: string | null;
           position_x?: number | null;
           position_y?: number | null;
+          scale?: number | null;
           wardrobe_item_id?: string | null;
         };
         Relationships: [

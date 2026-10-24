@@ -5,6 +5,8 @@ export type ResultItem = {
   x: number;
   y: number;
   layerOrder: number;
+  scale?: number;
+  sizeRatio?: number;
 };
 
 export type OutfitResultData = {

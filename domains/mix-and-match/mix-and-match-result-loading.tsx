@@ -40,7 +40,7 @@ export function MixAndMatchResultFallback() {
         </div>
 
         <div className="flex flex-col items-center gap-6 lg:w-1/2">
-          <div className="border border-linen-dark bg-background/50 aspect-[342/480] lg:aspect-square w-full max-w-[360px] lg:max-w-[480px] animate-pulse rounded-2xl" />
+          <div className="border border-linen-dark bg-background/50 aspect-square w-full max-w-[360px] lg:max-w-[480px] animate-pulse rounded-2xl" />
 
           <div className="bg-linen-dark/50 h-8 w-44 animate-pulse rounded-md" />
 

@@ -16,4 +16,6 @@ export type CanvasItem = {
   x: number;
   y: number;
   layerOrder: number;
+  /** Scale multiplier relative to base item size (1.0 = 100%). */
+  scale?: number;
 };

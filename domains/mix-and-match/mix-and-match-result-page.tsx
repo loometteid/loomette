@@ -203,7 +203,7 @@ export function MixAndMatchResult({
         <div className="flex flex-col items-center gap-6 lg:w-1/2">
           <OutfitComposition
             items={items}
-            className="aspect-[342/480] lg:aspect-square w-full max-w-[360px] lg:max-w-[480px] rounded-2xl border border-linen-dark bg-background/50 p-2"
+            className="aspect-square w-full max-w-[360px] lg:max-w-[480px] rounded-2xl border border-linen-dark bg-background/50"
           />
 
           <div className="flex items-center justify-center gap-2 text-center w-full">

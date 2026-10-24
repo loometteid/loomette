@@ -353,7 +353,7 @@ export function MixAndMatchCanvas({ userId }: { userId: string }) {
               ref={konvaCanvasRef}
               onItemsChange={setCanvasItems}
               onSelectionChange={setSelectedId}
-              className="border-border bg-background relative aspect-[316/335] lg:aspect-square w-full touch-none overflow-hidden rounded-2xl border"
+              className="border-border bg-background relative aspect-square w-full touch-none overflow-hidden rounded-2xl border"
             />
 
             {/* Bottom floating canvas action buttons */}

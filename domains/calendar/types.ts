@@ -5,6 +5,8 @@ export type DiaryOutfitItem = {
   x: number;
   y: number;
   layerOrder: number;
+  scale?: number;
+  sizeRatio?: number;
 };
 
 export type DiaryEntry = {

@@ -1,7 +1,9 @@
 import "@testing-library/jest-dom/vitest";
-import { cleanup } from "@testing-library/react";
+import { cleanup, configure } from "@testing-library/react";
 import { afterAll, afterEach, beforeAll, vi } from "vitest";
 import { server } from "./mocks/server";
+
+configure({ asyncUtilTimeout: 5000 });
 
 // Default test environment variables for isolated local & CI runs
 process.env.NEXT_PUBLIC_SUPABASE_URL = "https://mock.supabase.co";
@@ -17,6 +19,21 @@ if (typeof window !== "undefined") {
 
   // HTMLCanvasElement 2D context mock for Konva / Vitest happy-dom
   if (typeof HTMLCanvasElement !== "undefined") {
+    try {
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
+      const Konva = require("konva").default || require("konva");
+      if (Konva?.Util?.createCanvasElement) {
+        const origCreateCanvas = Konva.Util.createCanvasElement;
+        Konva.Util.createCanvasElement = function (...args: unknown[]) {
+          const canvas = origCreateCanvas.apply(this, args);
+          (canvas as unknown as { _isKonvaCanvas?: boolean })._isKonvaCanvas = true;
+          return canvas;
+        };
+      }
+    } catch {
+      // Ignore if konva cannot be resolved
+    }
+
     const createMockContext2D = (canvas: HTMLCanvasElement) => {
       const context: Record<string, unknown> = {
         canvas,
@@ -92,7 +109,10 @@ if (typeof window !== "undefined") {
       this: HTMLCanvasElement,
       contextType: string,
     ) {
-      if (contextType === "2d") {
+      if (
+        contextType === "2d" &&
+        (this as unknown as { _isKonvaCanvas?: boolean })._isKonvaCanvas
+      ) {
         const self = this as unknown as { __mock2dContext?: unknown };
         if (!self.__mock2dContext) {
           self.__mock2dContext = createMockContext2D(this);

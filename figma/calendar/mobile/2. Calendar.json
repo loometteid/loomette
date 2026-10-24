@@ -1,0 +1,1730 @@
+{
+  "file": {
+    "name": "Loomette.id",
+    "version": "plugin-1792667007812"
+  },
+  "root": "2-calendar",
+  "tokens": {
+    "color": {
+      "$c1": "#fafaf7",
+      "$c2": "#ffffff1a",
+      "$c3": "#444440",
+      "$c4": "#ffffff",
+      "$c5": "image",
+      "$c6": "#d9d9d9",
+      "$c7": "#c9c3b7",
+      "$c8": "#f2ede5"
+    },
+    "text": {
+      "$t1": "400 16px Avenir Next",
+      "$t2": "400 12px Avenir Next",
+      "$t3": "400 28px",
+      "$t4": "400 28px Source Serif Pro",
+      "$t5": "400 20px Avenir Next",
+      "$t6": "400 16px Source Serif Pro",
+      "$t7": "400 12px Avenir"
+    },
+    "radius": {
+      "$r1": 4,
+      "$r2": 12,
+      "$r3": 8
+    },
+    "shadow": {},
+    "layout": {
+      "$l1": {
+        "align": "center",
+        "flow": "row",
+        "gap": 34,
+        "pad": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l2": {
+        "flow": "row",
+        "gap": 32,
+        "pad": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l3": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          12,
+          110,
+          12,
+          109
+        ]
+      }
+    },
+    "vector": {
+      "$v1": "M4 2 C4 3.10457 3.10457 4 2 4 C0.895431 4 0 3.10457 0 2 C0 0.895431 0.895431 0 2 0 C3.10457 0 4 0.895431 4 2 Z",
+      "$v2": "M14.4004 11.3262 L22.4092 3.31738 L23.6826 4.59082 L15.6738 12.5996 L27 12.5996 L27 14.4004 L15.6738 14.4004 L23.6826 22.4092 L22.4092 23.6826 L14.4004 15.6738 L14.4004 27 L12.5996 27 L12.5996 15.6738 L4.59082 23.6826 L3.31738 22.4092 L11.3262 14.4004 L0 14.4004 L0 12.5996 L11.3262 12.5996 L3.31738 4.59082 L4.59082 3.31738 L12.5996 11.3262 L12.5996 0 L14.4004 0 L14.4004 11.3262 Z",
+      "$v3": "M0.244078 0.244078 C0.569515 -0.0813593 1.09715 -0.0813593 1.42259 0.244078 L5.83333 4.65482 L10.2441 0.244078 C10.5695 -0.0813593 11.0972 -0.0813593 11.4226 0.244078 C11.748 0.569515 11.748 1.09715 11.4226 1.42259 L6.5699 6.27528 C6.16311 6.68207 5.50356 6.68207 5.09676 6.27528 L0.244078 1.42259 C-0.0813593 1.09715 -0.0813593 0.569515 0.244078 0.244078 Z"
+    },
+    "props": {
+      "$p1": {
+        "size": "24"
+      }
+    },
+    "meta": {
+      "counts": {
+        "$c1": 2,
+        "$c3": 56,
+        "$t1": 4,
+        "$t2": 39,
+        "$c4": 2,
+        "$c5": 5,
+        "$t4": 3,
+        "$c6": 4,
+        "$l3": 2,
+        "$r3": 3,
+        "$t7": 2,
+        "$c8": 2
+      }
+    }
+  },
+  "nodes": {
+    "10": {
+      "id": "47:110",
+      "el": "10",
+      "type": "text",
+      "box": {
+        "w": 12,
+        "h": 16
+      },
+      "name": "10",
+      "path": "2-calendar.group-8.group-4.10",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "10",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "11": {
+      "id": "47:111",
+      "el": "11",
+      "type": "text",
+      "box": {
+        "w": 12,
+        "h": 16
+      },
+      "name": "11",
+      "path": "2-calendar.group-8.group-4.11",
+      "pos": {
+        "x": 54,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "11",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "12": {
+      "id": "47:112",
+      "el": "12",
+      "type": "text",
+      "box": {
+        "w": 12,
+        "h": 16
+      },
+      "name": "12",
+      "path": "2-calendar.group-8.group-4.12",
+      "pos": {
+        "x": 108,
+        "y": 0
+      },
+      "fill": "$c4",
+      "text": "$t2",
+      "chars": "12",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "13": {
+      "id": "47:113",
+      "el": "13",
+      "type": "text",
+      "box": {
+        "w": 12,
+        "h": 16
+      },
+      "name": "13",
+      "path": "2-calendar.group-8.group-4.13",
+      "pos": {
+        "x": 161,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "13",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "17": {
+      "id": "47:118",
+      "el": "17",
+      "type": "text",
+      "box": {
+        "w": 12,
+        "h": 16
+      },
+      "name": "17",
+      "path": "2-calendar.group-8.group-5.17",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "17",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "24": {
+      "id": "47:126",
+      "el": "24",
+      "type": "text",
+      "box": {
+        "w": 12,
+        "h": 16
+      },
+      "name": "24",
+      "path": "2-calendar.group-8.group-6.24",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "24",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "31": {
+      "id": "47:134",
+      "el": "31",
+      "type": "text",
+      "box": {
+        "w": 12,
+        "h": 16
+      },
+      "name": "31",
+      "path": "2-calendar.group-8.group-7.31",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "31",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-15": {
+      "id": "47:78",
+      "el": "rectangle-15",
+      "type": "rect",
+      "box": {
+        "w": 431,
+        "h": 100
+      },
+      "path": "2-calendar.rectangle-15",
+      "pos": {
+        "x": -15,
+        "y": 800
+      },
+      "fill": "$c2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "home": {
+      "id": "47:81",
+      "el": "home",
+      "type": "text",
+      "box": {
+        "w": 41,
+        "h": 22
+      },
+      "name": "HOME",
+      "path": "2-calendar.frame-3.group-1.home",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "HOME",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-1": {
+      "id": "47:80",
+      "el": "group-1",
+      "type": "group",
+      "box": {
+        "w": 41,
+        "h": 22
+      },
+      "path": "2-calendar.frame-3.group-1",
+      "inheritedFill": "$c1",
+      "children": [
+        "home"
+      ]
+    },
+    "calendar": {
+      "id": "47:83",
+      "el": "calendar",
+      "type": "text",
+      "box": {
+        "w": 69,
+        "h": 22
+      },
+      "name": "CALENDAR",
+      "path": "2-calendar.frame-3.group-11.calendar",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "CALENDAR",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-11": {
+      "id": "47:82",
+      "el": "group-11",
+      "type": "group",
+      "box": {
+        "w": 69,
+        "h": 22
+      },
+      "path": "2-calendar.frame-3.group-11",
+      "inheritedFill": "$c1",
+      "children": [
+        "calendar"
+      ]
+    },
+    "wardrobe": {
+      "id": "47:85",
+      "el": "wardrobe",
+      "type": "text",
+      "box": {
+        "w": 73,
+        "h": 22
+      },
+      "name": "Wardrobe",
+      "path": "2-calendar.frame-3.group-12.wardrobe",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "Wardrobe",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-12": {
+      "id": "47:84",
+      "el": "group-12",
+      "type": "group",
+      "box": {
+        "w": 73,
+        "h": 22
+      },
+      "path": "2-calendar.frame-3.group-12",
+      "inheritedFill": "$c1",
+      "children": [
+        "wardrobe"
+      ]
+    },
+    "profile": {
+      "id": "47:87",
+      "el": "profile",
+      "type": "text",
+      "box": {
+        "w": 53,
+        "h": 22
+      },
+      "name": "Profile",
+      "path": "2-calendar.frame-3.group-13.profile",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "Profile",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-13": {
+      "id": "47:86",
+      "el": "group-13",
+      "type": "group",
+      "box": {
+        "w": 53,
+        "h": 22
+      },
+      "path": "2-calendar.frame-3.group-13",
+      "inheritedFill": "$c1",
+      "children": [
+        "profile"
+      ]
+    },
+    "frame-3": {
+      "id": "47:79",
+      "el": "frame-3",
+      "type": "frame",
+      "box": {
+        "w": 338,
+        "h": 22
+      },
+      "path": "2-calendar.frame-3",
+      "pos": {
+        "x": 32,
+        "y": 818
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "group-1",
+        "group-11",
+        "group-12",
+        "group-13"
+      ]
+    },
+    "ellipse-1": {
+      "id": "47:88",
+      "el": "ellipse-1",
+      "type": "ellipse",
+      "box": {
+        "w": 4,
+        "h": 4
+      },
+      "path": "2-calendar.ellipse-1",
+      "pos": {
+        "x": 140,
+        "y": 840
+      },
+      "fill": "$c3",
+      "vectorPath": "$v1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-21": {
+      "id": "47:90",
+      "el": "rectangle-21",
+      "type": "rect",
+      "box": {
+        "w": 30,
+        "h": 49
+      },
+      "path": "2-calendar.group-8.rectangle-21",
+      "pos": {
+        "x": 107,
+        "y": 148
+      },
+      "fill": "$c3",
+      "stroke": "$c3",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "sun": {
+      "id": "47:92",
+      "el": "sun",
+      "type": "text",
+      "box": {
+        "w": 20,
+        "h": 16
+      },
+      "name": "SUN",
+      "path": "2-calendar.group-8.frame-1.sun",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "SUN",
+      "textGrow": "wh"
+    },
+    "mon": {
+      "id": "47:93",
+      "el": "mon",
+      "type": "text",
+      "box": {
+        "w": 25,
+        "h": 16
+      },
+      "name": "mon",
+      "path": "2-calendar.group-8.frame-1.mon",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "mon",
+      "textGrow": "wh"
+    },
+    "tue": {
+      "id": "47:94",
+      "el": "tue",
+      "type": "text",
+      "box": {
+        "w": 19,
+        "h": 16
+      },
+      "name": "TUE",
+      "path": "2-calendar.group-8.frame-1.tue",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "TUE",
+      "textGrow": "wh"
+    },
+    "wed": {
+      "id": "47:95",
+      "el": "wed",
+      "type": "text",
+      "box": {
+        "w": 23,
+        "h": 16
+      },
+      "name": "wed",
+      "path": "2-calendar.group-8.frame-1.wed",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "wed",
+      "textGrow": "wh"
+    },
+    "thu": {
+      "id": "47:96",
+      "el": "thu",
+      "type": "text",
+      "box": {
+        "w": 20,
+        "h": 16
+      },
+      "name": "thu",
+      "path": "2-calendar.group-8.frame-1.thu",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "thu",
+      "textGrow": "wh"
+    },
+    "fri": {
+      "id": "47:97",
+      "el": "fri",
+      "type": "text",
+      "box": {
+        "w": 15,
+        "h": 16
+      },
+      "name": "fRI",
+      "path": "2-calendar.group-8.frame-1.fri",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "fRI",
+      "textGrow": "wh"
+    },
+    "sat": {
+      "id": "47:98",
+      "el": "sat",
+      "type": "text",
+      "box": {
+        "w": 17,
+        "h": 16
+      },
+      "name": "SAT",
+      "path": "2-calendar.group-8.frame-1.sat",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "SAT",
+      "textGrow": "wh"
+    },
+    "frame-1": {
+      "id": "47:91",
+      "el": "frame-1",
+      "type": "frame",
+      "box": {
+        "w": 331,
+        "h": 16
+      },
+      "path": "2-calendar.group-8.frame-1",
+      "pos": {
+        "x": 4,
+        "y": 0
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "sun",
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat"
+      ]
+    },
+    "01": {
+      "id": "47:99",
+      "el": "01",
+      "type": "text",
+      "box": {
+        "w": 12,
+        "h": 16
+      },
+      "name": "01",
+      "path": "2-calendar.group-8.01",
+      "pos": {
+        "x": 273,
+        "y": 24
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "01",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "02": {
+      "id": "47:100",
+      "el": "02",
+      "type": "text",
+      "box": {
+        "w": 12,
+        "h": 16
+      },
+      "name": "02",
+      "path": "2-calendar.group-8.02",
+      "pos": {
+        "x": 321,
+        "y": 24
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "02",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "03": {
+      "id": "47:102",
+      "el": "03",
+      "type": "text",
+      "box": {
+        "w": 12,
+        "h": 16
+      },
+      "name": "03",
+      "path": "2-calendar.group-8.group-3.03",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "03",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-3": {
+      "id": "47:101",
+      "el": "group-3",
+      "type": "group",
+      "box": {
+        "w": 325,
+        "h": 16
+      },
+      "path": "2-calendar.group-8.group-3",
+      "pos": {
+        "x": 8,
+        "y": 86
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08",
+        "09"
+      ],
+      "repeat": {
+        "template": "03",
+        "data": {
+          "04": {
+            "03": {
+              "chars": "04"
+            }
+          },
+          "05": {
+            "03": {
+              "chars": "05"
+            }
+          },
+          "06": {
+            "03": {
+              "chars": "06"
+            }
+          },
+          "07": {
+            "03": {
+              "chars": "07"
+            }
+          },
+          "08": {
+            "03": {
+              "chars": "08"
+            }
+          },
+          "09": {
+            "03": {
+              "chars": "09"
+            }
+          }
+        }
+      }
+    },
+    "group-4": {
+      "id": "47:109",
+      "el": "group-4",
+      "type": "group",
+      "box": {
+        "w": 325,
+        "h": 16
+      },
+      "path": "2-calendar.group-8.group-4",
+      "pos": {
+        "x": 8,
+        "y": 148
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ],
+      "repeat": {
+        "template": "13",
+        "data": {
+          "14": {
+            "13": {
+              "chars": "14"
+            }
+          },
+          "15": {
+            "13": {
+              "chars": "15"
+            }
+          },
+          "16": {
+            "13": {
+              "chars": "16"
+            }
+          }
+        }
+      }
+    },
+    "group-5": {
+      "id": "47:117",
+      "el": "group-5",
+      "type": "group",
+      "box": {
+        "w": 325,
+        "h": 16
+      },
+      "path": "2-calendar.group-8.group-5",
+      "pos": {
+        "x": 8,
+        "y": 210
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23"
+      ],
+      "repeat": {
+        "template": "17",
+        "data": {
+          "18": {
+            "17": {
+              "chars": "18"
+            }
+          },
+          "19": {
+            "17": {
+              "chars": "19"
+            }
+          },
+          "20": {
+            "17": {
+              "chars": "20"
+            }
+          },
+          "21": {
+            "17": {
+              "chars": "21"
+            }
+          },
+          "22": {
+            "17": {
+              "chars": "22"
+            }
+          },
+          "23": {
+            "17": {
+              "chars": "23"
+            }
+          }
+        }
+      }
+    },
+    "group-6": {
+      "id": "47:125",
+      "el": "group-6",
+      "type": "group",
+      "box": {
+        "w": 325,
+        "h": 16
+      },
+      "path": "2-calendar.group-8.group-6",
+      "pos": {
+        "x": 7,
+        "y": 272
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "24",
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30"
+      ],
+      "repeat": {
+        "template": "24",
+        "data": {
+          "25": {
+            "24": {
+              "chars": "25"
+            }
+          },
+          "26": {
+            "24": {
+              "chars": "26"
+            }
+          },
+          "27": {
+            "24": {
+              "chars": "27"
+            }
+          },
+          "28": {
+            "24": {
+              "chars": "28"
+            }
+          },
+          "29": {
+            "24": {
+              "chars": "29"
+            }
+          },
+          "30": {
+            "24": {
+              "chars": "30"
+            }
+          }
+        }
+      }
+    },
+    "group-7": {
+      "id": "47:133",
+      "el": "group-7",
+      "type": "group",
+      "box": {
+        "w": 12,
+        "h": 16
+      },
+      "path": "2-calendar.group-8.group-7",
+      "pos": {
+        "x": 6,
+        "y": 334
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "31"
+      ]
+    },
+    "screenshot-2026-05-12-at-15-53-11-remove": {
+      "id": "47:135",
+      "el": "screenshot-2026-05-12-at-15-53-11-remove",
+      "type": "rect",
+      "box": {
+        "w": 18,
+        "h": 44
+      },
+      "name": "Screenshot_2026-05-12_at_15.53.11-removebg-preview 1",
+      "path": "2-calendar.group-8.screenshot-2026-05-12-at-15-53-11-remove",
+      "pos": {
+        "x": 318,
+        "y": 38
+      },
+      "assetId": "adcae1e6d970ef3b13a8cb0933e0ec24dfb3b65d",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "adcae1e6d970ef3b13a8cb0933e0ec24dfb3b65d",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "1-removebg-preview-1": {
+      "id": "47:136",
+      "el": "1-removebg-preview-1",
+      "type": "rect",
+      "box": {
+        "w": 30,
+        "h": 45
+      },
+      "name": "___1_-removebg-preview 1",
+      "path": "2-calendar.group-8.1-removebg-preview-1",
+      "pos": {
+        "x": 53,
+        "y": 100
+      },
+      "assetId": "8bf8b363cb3ab1da75efc052040325af8a76aee1",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "8bf8b363cb3ab1da75efc052040325af8a76aee1",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.8445945978164673,
+              0.08853083848953247
+            ]
+          ]
+        }
+      ],
+      "iconHint": "1 removebg preview 1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "3-removebg-preview-1": {
+      "id": "47:137",
+      "el": "3-removebg-preview-1",
+      "type": "rect",
+      "box": {
+        "w": 27,
+        "h": 46
+      },
+      "name": "___3_-removebg-preview 1",
+      "path": "2-calendar.group-8.3-removebg-preview-1",
+      "pos": {
+        "x": 0,
+        "y": 162
+      },
+      "assetId": "75678a8bfd83306524198a2152c0f9dda9ffe612",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "75678a8bfd83306524198a2152c0f9dda9ffe612",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              0.7235556840896606,
+              0,
+              0.13822223246097565
+            ],
+            [
+              0,
+              0.703703761100769,
+              0.14814814925193787
+            ]
+          ]
+        }
+      ],
+      "iconHint": "3 removebg preview 1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "2-removebg-preview-1": {
+      "id": "47:140",
+      "el": "2-removebg-preview-1",
+      "type": "rect",
+      "box": {
+        "w": 26,
+        "h": 45
+      },
+      "name": "___2_-removebg-preview 1",
+      "path": "2-calendar.group-8.group-8-2.2-removebg-preview-1",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "assetId": "d7079b5ecc4cd89e6c6d29ac2053404cea7301c2",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "d7079b5ecc4cd89e6c6d29ac2053404cea7301c2",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              0.806382417678833,
+              0,
+              0.09680882841348648
+            ],
+            [
+              0,
+              0.7941176295280457,
+              0.10294117778539658
+            ]
+          ]
+        }
+      ],
+      "iconHint": "2 removebg preview 1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-8-2": {
+      "id": "47:139",
+      "el": "group-8-2",
+      "type": "group",
+      "box": {
+        "w": 26,
+        "h": 45
+      },
+      "path": "2-calendar.group-8.group-8-2",
+      "pos": {
+        "x": 266,
+        "y": 100
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "2-removebg-preview-1"
+      ]
+    },
+    "group-8": {
+      "id": "47:89",
+      "el": "group-8",
+      "type": "group",
+      "box": {
+        "w": 336,
+        "h": 350
+      },
+      "path": "2-calendar.group-8",
+      "pos": {
+        "x": 33,
+        "y": 153
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-21",
+        "frame-1",
+        "01",
+        "02",
+        "group-3",
+        "group-4",
+        "group-5",
+        "group-6",
+        "group-7",
+        "screenshot-2026-05-12-at-15-53-11-remove",
+        "1-removebg-preview-1",
+        "3-removebg-preview-1",
+        "group-8-2"
+      ]
+    },
+    "your-outfit-diary": {
+      "id": "47:141",
+      "el": "your-outfit-diary",
+      "type": "text",
+      "box": {
+        "w": 213,
+        "h": 35
+      },
+      "name": "Your outfit diary",
+      "path": "2-calendar.your-outfit-diary",
+      "pos": {
+        "x": 76,
+        "y": 40
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": [
+        {
+          "t": "Your ",
+          "s": "$t4"
+        },
+        {
+          "t": "outfit",
+          "s": "$t4",
+          "d": "underline"
+        },
+        {
+          "t": " diary",
+          "s": "$t4"
+        }
+      ],
+      "textGrow": "h",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16": {
+      "id": "47:143",
+      "el": "rectangle-16",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 27
+      },
+      "path": "2-calendar.union.rectangle-16",
+      "pos": {
+        "x": 13,
+        "y": 0
+      },
+      "fill": "$c6",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17": {
+      "id": "47:144",
+      "el": "rectangle-17",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "2-calendar.union.rectangle-17",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c6",
+      "rotation": 2578,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19": {
+      "id": "47:145",
+      "el": "rectangle-19",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "2-calendar.union.rectangle-19",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c6",
+      "rotation": 7735,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18": {
+      "id": "47:146",
+      "el": "rectangle-18",
+      "type": "rect",
+      "box": {
+        "w": 27,
+        "h": 2
+      },
+      "path": "2-calendar.union.rectangle-18",
+      "pos": {
+        "x": 0,
+        "y": 13
+      },
+      "fill": "$c6",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union": {
+      "id": "47:142",
+      "el": "union",
+      "type": "bool",
+      "box": {
+        "w": 27,
+        "h": 27
+      },
+      "path": "2-calendar.union",
+      "pos": {
+        "x": 35,
+        "y": 44
+      },
+      "fill": "$c3",
+      "iconHint": "Your outfit diary",
+      "vectorPath": "$v2",
+      "children": [
+        "rectangle-16",
+        "rectangle-17",
+        "rectangle-19",
+        "rectangle-18"
+      ]
+    },
+    "may-2026": {
+      "id": "47:148",
+      "el": "may-2026",
+      "type": "text",
+      "box": {
+        "w": 78,
+        "h": 27
+      },
+      "name": "May 2026",
+      "path": "2-calendar.group-30.may-2026",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t5",
+      "chars": "May 2026",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "vector": {
+      "id": "I47:149;3:2664",
+      "el": "vector",
+      "type": "vector",
+      "box": {
+        "w": 12,
+        "h": 7
+      },
+      "path": "2-calendar.group-30.chevron-down.vector",
+      "pos": {
+        "x": 4,
+        "y": 7
+      },
+      "fill": "$c3",
+      "iconHint": "May 2026",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-down": {
+      "id": "47:149",
+      "el": "chevron-down",
+      "type": "instance",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "name": "chevron-down",
+      "path": "2-calendar.group-30.chevron-down",
+      "pos": {
+        "x": 85,
+        "y": 4
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector"
+      ]
+    },
+    "group-30": {
+      "id": "47:147",
+      "el": "group-30",
+      "type": "group",
+      "box": {
+        "w": 105,
+        "h": 27
+      },
+      "path": "2-calendar.group-30",
+      "pos": {
+        "x": 149,
+        "y": 108
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "may-2026",
+        "chevron-down"
+      ]
+    },
+    "rectangle-32": {
+      "id": "47:151",
+      "el": "rectangle-32",
+      "type": "rect",
+      "box": {
+        "w": 332,
+        "h": 199
+      },
+      "path": "2-calendar.group-31.rectangle-32",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "capture-your-looks": {
+      "id": "47:152",
+      "el": "capture-your-looks",
+      "type": "text",
+      "box": {
+        "w": 129,
+        "h": 20
+      },
+      "name": "Capture your looks",
+      "path": "2-calendar.group-31.capture-your-looks",
+      "pos": {
+        "x": 24,
+        "y": 16
+      },
+      "fill": "$c3",
+      "text": "$t6",
+      "chars": "Capture your looks",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "upload-photo": {
+      "id": "92:2207",
+      "el": "upload-photo",
+      "type": "text",
+      "box": {
+        "w": 93,
+        "h": 16
+      },
+      "name": "Upload photo",
+      "path": "2-calendar.group-31.frame-4.upload-photo",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c4",
+      "text": "$t7",
+      "chars": "Upload photo",
+      "textGrow": "wh"
+    },
+    "frame-4": {
+      "id": "92:2206",
+      "el": "frame-4",
+      "type": "frame",
+      "box": {
+        "w": 292,
+        "h": 48
+      },
+      "path": "2-calendar.group-31.frame-4",
+      "pos": {
+        "x": 21,
+        "y": 51
+      },
+      "layout": "$l3",
+      "fill": "$c3",
+      "radius": "$r3",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "upload-photo"
+      ]
+    },
+    "or": {
+      "id": "410:1152",
+      "el": "or",
+      "type": "text",
+      "box": {
+        "w": 15,
+        "h": 16
+      },
+      "name": "OR",
+      "path": "2-calendar.group-31.or",
+      "pos": {
+        "x": 163,
+        "y": 107
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "OR",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "mix-match": {
+      "id": "410:1150",
+      "el": "mix-match",
+      "type": "text",
+      "box": {
+        "w": 77,
+        "h": 16
+      },
+      "name": "mix & match",
+      "path": "2-calendar.group-31.frame-5.mix-match",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t7",
+      "chars": "mix & match",
+      "textGrow": "wh"
+    },
+    "frame-5": {
+      "id": "410:1149",
+      "el": "frame-5",
+      "type": "frame",
+      "box": {
+        "w": 292,
+        "h": 48
+      },
+      "path": "2-calendar.group-31.frame-5",
+      "pos": {
+        "x": 21,
+        "y": 131
+      },
+      "layout": "$l3",
+      "fill": "$c8",
+      "radius": "$r3",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "mix-match"
+      ]
+    },
+    "group-31": {
+      "id": "47:150",
+      "el": "group-31",
+      "type": "group",
+      "box": {
+        "w": 332,
+        "h": 199
+      },
+      "path": "2-calendar.group-31",
+      "pos": {
+        "x": 35,
+        "y": 547
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-32",
+        "capture-your-looks",
+        "frame-4",
+        "or",
+        "frame-5"
+      ]
+    },
+    "rectangle-11": {
+      "id": "150:304",
+      "el": "rectangle-11",
+      "type": "rect",
+      "box": {
+        "w": 36,
+        "h": 36
+      },
+      "path": "2-calendar.group-170.rectangle-11",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c8",
+      "radius": "$r3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "history-1": {
+      "id": "395:2098",
+      "el": "history-1",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "name": "history 1",
+      "path": "2-calendar.group-170.group-171.history-1",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "assetId": "6aa9556d28f3e4dc686516f0dd2d5edb6d78a120",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "6aa9556d28f3e4dc686516f0dd2d5edb6d78a120",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "iconHint": "history 1",
+      "isMask": true,
+      "maskMode": "alpha",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-55": {
+      "id": "395:2100",
+      "el": "rectangle-55",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "2-calendar.group-170.group-171.rectangle-55",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "masked": "history-1"
+    },
+    "group-171": {
+      "id": "395:2101",
+      "el": "group-171",
+      "type": "group",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "2-calendar.group-170.group-171",
+      "pos": {
+        "x": 8,
+        "y": 8
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "history-1",
+        "rectangle-55"
+      ]
+    },
+    "group-170": {
+      "id": "395:2099",
+      "el": "group-170",
+      "type": "group",
+      "box": {
+        "w": 36,
+        "h": 36
+      },
+      "path": "2-calendar.group-170",
+      "pos": {
+        "x": 334,
+        "y": 40
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-11",
+        "group-171"
+      ]
+    },
+    "2-calendar": {
+      "id": "47:77",
+      "el": "2-calendar",
+      "type": "frame",
+      "box": {
+        "w": 402,
+        "h": 874
+      },
+      "name": "2. Calendar",
+      "fill": "$c1",
+      "clip": true,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "rectangle-15",
+        "frame-3",
+        "ellipse-1",
+        "group-8",
+        "your-outfit-diary",
+        "union",
+        "group-30",
+        "group-31",
+        "group-170"
+      ]
+    }
+  },
+  "meta": {
+    "nodeCount": 65,
+    "estTokens": 4658,
+    "depthUsed": 12
+  },
+  "next": "Read `tokens` for the design system, then build the UI from `nodes`. Tag each rendered element data-plumb-id=\"<el>\". A node with a `more` count has that many children not yet included — call plumb_node again on that node's `id` to expand them. This screen has 5 image asset(s) (nodes with `assetId`). Call plumb_assets with this screen's id to download them to disk BEFORE generating HTML — without the real files any <img> will be a placeholder and plumb_verify will flag every image node as asset.missing.",
+  "source": "plugin",
+  "node": "2. Calendar"
+}

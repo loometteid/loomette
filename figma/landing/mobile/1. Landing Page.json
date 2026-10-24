@@ -1,0 +1,2784 @@
+{
+  "file": {
+    "name": "Loomette.id",
+    "version": "plugin-1792666939352"
+  },
+  "root": "1-landing-page",
+  "tokens": {
+    "color": {
+      "$c1": "#fafaf7",
+      "$c2": "#ffffff1a",
+      "$c3": "#444440",
+      "$c4": "#d9d9d9",
+      "$c5": "#000000",
+      "$c6": "#f2ede5",
+      "$c7": "image",
+      "$c8": "#c9c3b7"
+    },
+    "text": {
+      "$t1": "400 20px Avenir Next",
+      "$t2": "400 14px Avenir Next",
+      "$t3": "400 40px",
+      "$t4": "400 40px Source Serif Pro",
+      "$t5": "700 40px Source Serif Pro",
+      "$t6": "400 12px Avenir Next",
+      "$t7": "400 10px Avenir Next",
+      "$t8": "400 16px Avenir Next",
+      "$t9": "400 16px",
+      "$t10": "700 16px Source Serif Pro",
+      "$t11": "400 16px Source Serif Pro",
+      "$t12": "700 32px Source Serif Pro",
+      "$t13": "500 16px Avenir Next",
+      "$t14": "700 16px Avenir Next",
+      "$t15": "400 24px Avenir Next",
+      "$t16": "400 10px",
+      "$t17": "500 10px Avenir Next"
+    },
+    "radius": {
+      "$r1": "full",
+      "$r2": 8,
+      "$r3": 20,
+      "$r4": 16
+    },
+    "shadow": {},
+    "layout": {
+      "$l1": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          4,
+          16,
+          4,
+          16
+        ]
+      },
+      "$l2": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          8,
+          32,
+          8,
+          32
+        ]
+      }
+    },
+    "vector": {
+      "$v1": "M12.7998 10.0693 L19.9199 2.94922 L21.0518 4.08008 L13.9307 11.2002 L24 11.2002 L24 12.7998 L13.9307 12.7998 L21.0508 19.9199 L19.9189 21.0508 L12.7998 13.9307 L12.7998 24 L11.2002 24 L11.2002 13.9316 L4.08105 21.0508 L2.94922 19.9199 L10.0684 12.7998 L0 12.7998 L0 11.2002 L10.0684 11.2002 L2.94922 4.08008 L4.08008 2.94922 L11.2002 10.0693 L11.2002 0 L12.7998 0 L12.7998 10.0693 Z",
+      "$v2": "M17.0664 13.4248 L26.5596 3.93164 L28.0684 5.44043 L18.5752 14.9336 L32 14.9336 L32 17.0664 L18.5752 17.0664 L28.0684 26.5596 L26.5596 28.0684 L17.0664 18.5752 L17.0664 32 L14.9336 32 L14.9336 18.5752 L5.44043 28.0684 L3.93262 26.5596 L13.4248 17.0664 L0 17.0664 L0 14.9336 L13.4248 14.9336 L3.93164 5.44043 L5.44043 3.93164 L14.9336 13.4248 L14.9336 0 L17.0664 0 L17.0664 13.4248 Z",
+      "$v3": "M40 20 C40 31.0457 31.0457 40 20 40 C8.9543 40 0 31.0457 0 20 C0 8.9543 8.9543 0 20 0 C31.0457 0 40 8.9543 40 20 Z",
+      "$v4": "M12.7998 10.0693 L19.9199 2.94922 L21.0518 4.08105 L13.9316 11.2002 L24 11.2002 L24 12.7998 L13.9316 12.7998 L21.0508 19.9189 L19.9189 21.0508 L12.7998 13.9307 L12.7998 24 L11.2002 24 L11.2002 13.9316 L4.08105 21.0508 L2.94922 19.9199 L10.0684 12.7998 L0 12.7998 L0 11.2002 L10.0684 11.2002 L2.94922 4.08008 L4.08008 2.94824 L11.2002 10.0684 L11.2002 0 L12.7998 0 L12.7998 10.0693 Z"
+    },
+    "meta": {
+      "counts": {
+        "$c1": 3,
+        "$c3": 66,
+        "$c4": 29,
+        "$c5": 4,
+        "$t3": 4,
+        "$t4": 6,
+        "$t5": 6,
+        "$t6": 8,
+        "$t7": 13,
+        "$l2": 2,
+        "$r2": 2,
+        "$t8": 10,
+        "$c7": 7,
+        "$v2": 4,
+        "$c8": 15,
+        "$v3": 6,
+        "$t9": 3,
+        "$t10": 3,
+        "$t11": 3,
+        "$t12": 5,
+        "$r4": 3,
+        "$t13": 3,
+        "$t14": 3
+      }
+    }
+  },
+  "nodes": {
+    "98": {
+      "id": "814:656",
+      "el": "98",
+      "type": "text",
+      "box": {
+        "w": 63,
+        "h": 40
+      },
+      "name": "98%",
+      "path": "1-landing-page.group-236.group-234.98",
+      "pos": {
+        "x": 21,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t12",
+      "chars": "98%",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-15": {
+      "id": "773:525",
+      "el": "rectangle-15",
+      "type": "rect",
+      "box": {
+        "w": 431,
+        "h": 100
+      },
+      "path": "1-landing-page.group-96.rectangle-15",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c2",
+      "rotation": -10313,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16": {
+      "id": "773:538",
+      "el": "rectangle-16",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 24
+      },
+      "path": "1-landing-page.group-96.union.rectangle-16",
+      "pos": {
+        "x": 11,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17": {
+      "id": "773:539",
+      "el": "rectangle-17",
+      "type": "rect",
+      "box": {
+        "w": 18,
+        "h": 18
+      },
+      "path": "1-landing-page.group-96.union.rectangle-17",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 2578,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19": {
+      "id": "773:540",
+      "el": "rectangle-19",
+      "type": "rect",
+      "box": {
+        "w": 18,
+        "h": 18
+      },
+      "path": "1-landing-page.group-96.union.rectangle-19",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 7735,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18": {
+      "id": "773:541",
+      "el": "rectangle-18",
+      "type": "rect",
+      "box": {
+        "w": 24,
+        "h": 2
+      },
+      "path": "1-landing-page.group-96.union.rectangle-18",
+      "pos": {
+        "x": 0,
+        "y": 11
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union": {
+      "id": "773:537",
+      "el": "union",
+      "type": "bool",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "path": "1-landing-page.group-96.union",
+      "pos": {
+        "x": 55,
+        "y": 47
+      },
+      "fill": "$c3",
+      "iconHint": "loomette",
+      "vectorPath": "$v1",
+      "children": [
+        "rectangle-16",
+        "rectangle-17",
+        "rectangle-19",
+        "rectangle-18"
+      ]
+    },
+    "loomette": {
+      "id": "773:542",
+      "el": "loomette",
+      "type": "text",
+      "box": {
+        "w": 83,
+        "h": 27
+      },
+      "name": "loomette",
+      "path": "1-landing-page.group-96.loomette",
+      "pos": {
+        "x": 87,
+        "y": 46
+      },
+      "fill": "$c5",
+      "text": "$t1",
+      "chars": "loomette",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "sign-in-sign-up": {
+      "id": "778:557",
+      "el": "sign-in-sign-up",
+      "type": "text",
+      "box": {
+        "w": 99,
+        "h": 19
+      },
+      "name": "sign in | sign up",
+      "path": "1-landing-page.group-96.sign-in-sign-up",
+      "pos": {
+        "x": 278,
+        "y": 51
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "sign in | sign up",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-96": {
+      "id": "773:524",
+      "el": "group-96",
+      "type": "group",
+      "box": {
+        "w": 431,
+        "h": 100
+      },
+      "path": "1-landing-page.group-96",
+      "pos": {
+        "x": -15,
+        "y": -22
+      },
+      "inheritedFill": "$c1",
+      "rotation": -10313,
+      "children": [
+        "rectangle-15",
+        "union",
+        "loomette",
+        "sign-in-sign-up"
+      ]
+    },
+    "your-wardrobe-finally-organized": {
+      "id": "777:544",
+      "el": "your-wardrobe-finally-organized",
+      "type": "text",
+      "box": {
+        "w": 327,
+        "h": 100
+      },
+      "name": "Your Wardrobe, Finally Organized.",
+      "path": "1-landing-page.your-wardrobe-finally-organized",
+      "pos": {
+        "x": 37,
+        "y": 385
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": [
+        {
+          "t": "Your ",
+          "s": "$t4"
+        },
+        {
+          "t": "Wardrobe",
+          "s": "$t5"
+        },
+        {
+          "t": ", Finally Organized.",
+          "s": "$t4"
+        }
+      ],
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "now-available-free-to-start": {
+      "id": "777:547",
+      "el": "now-available-free-to-start",
+      "type": "text",
+      "box": {
+        "w": 159,
+        "h": 16
+      },
+      "name": "Now available ㆍ free to start",
+      "path": "1-landing-page.frame-18.now-available-free-to-start",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t6",
+      "chars": "Now available ㆍ free to start",
+      "textGrow": "wh"
+    },
+    "frame-18": {
+      "id": "777:546",
+      "el": "frame-18",
+      "type": "frame",
+      "box": {
+        "w": 191,
+        "h": 24
+      },
+      "path": "1-landing-page.frame-18",
+      "pos": {
+        "x": 104,
+        "y": 341
+      },
+      "layout": "$l1",
+      "fill": "$c6",
+      "radius": "$r1",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "now-available-free-to-start"
+      ]
+    },
+    "log-what-you-wear-track-what-you-own-and": {
+      "id": "777:549",
+      "el": "log-what-you-wear-track-what-you-own-and",
+      "type": "text",
+      "box": {
+        "w": 233,
+        "h": 28
+      },
+      "name": "Log what you wear, track what you own, and stop asking yourself \"what do I have?\"",
+      "path": "1-landing-page.log-what-you-wear-track-what-you-own-and",
+      "pos": {
+        "x": 83,
+        "y": 493
+      },
+      "fill": "$c3",
+      "text": "$t7",
+      "chars": "Log what you wear, track what you own, and stop asking yourself \"what do I have?\"",
+      "textGrow": "h",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "create-account": {
+      "id": "777:552",
+      "el": "create-account",
+      "type": "text",
+      "box": {
+        "w": 115,
+        "h": 22
+      },
+      "name": "create account",
+      "path": "1-landing-page.frame-7.create-account",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c1",
+      "text": "$t8",
+      "chars": "create account",
+      "textGrow": "wh"
+    },
+    "frame-7": {
+      "id": "777:551",
+      "el": "frame-7",
+      "type": "frame",
+      "box": {
+        "w": 179,
+        "h": 38
+      },
+      "path": "1-landing-page.frame-7",
+      "pos": {
+        "x": 111,
+        "y": 553
+      },
+      "layout": "$l2",
+      "fill": "$c3",
+      "radius": "$r2",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "create-account"
+      ]
+    },
+    "everything-in-one-place": {
+      "id": "812:582",
+      "el": "everything-in-one-place",
+      "type": "text",
+      "box": {
+        "w": 306,
+        "h": 100
+      },
+      "name": "Everything in one place.",
+      "path": "1-landing-page.group-238.everything-in-one-place",
+      "pos": {
+        "x": 10,
+        "y": 48
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": [
+        {
+          "t": "Everything in ",
+          "s": "$t4"
+        },
+        {
+          "t": "one place",
+          "s": "$t5"
+        },
+        {
+          "t": ".",
+          "s": "$t4"
+        }
+      ],
+      "textGrow": "h",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "upload-once-we-ll-identify-the-pieces-or": {
+      "id": "812:590",
+      "el": "upload-once-we-ll-identify-the-pieces-or",
+      "type": "text",
+      "box": {
+        "w": 252,
+        "h": 28
+      },
+      "name": "Upload once. We'll identify the pieces, organize them, and help you make sense of what you own.",
+      "path": "1-landing-page.group-238.upload-once-we-ll-identify-the-pieces-or",
+      "pos": {
+        "x": 37,
+        "y": 156
+      },
+      "fill": "$c3",
+      "text": "$t7",
+      "chars": "Upload once. We'll identify the pieces, organize them, and help you make sense of what you own.",
+      "textGrow": "h",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-98": {
+      "id": "812:592",
+      "el": "rectangle-98",
+      "type": "rect",
+      "box": {
+        "w": 326,
+        "h": 163
+      },
+      "path": "1-landing-page.group-238.rectangle-98",
+      "pos": {
+        "x": 0,
+        "y": 216
+      },
+      "fill": "$c4",
+      "radius": "$r3",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "image-43": {
+      "id": "1465:470",
+      "el": "image-43",
+      "type": "rect",
+      "box": {
+        "w": 72,
+        "h": 48
+      },
+      "path": "1-landing-page.group-238.image-43",
+      "pos": {
+        "x": 127,
+        "y": 0
+      },
+      "assetId": "0b474112393cda1b357eba7c9f586748318c4c0e",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "0b474112393cda1b357eba7c9f586748318c4c0e",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-238": {
+      "id": "814:664",
+      "el": "group-238",
+      "type": "group",
+      "box": {
+        "w": 326,
+        "h": 379
+      },
+      "path": "1-landing-page.group-238",
+      "pos": {
+        "x": 38,
+        "y": 952
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "everything-in-one-place",
+        "upload-once-we-ll-identify-the-pieces-or",
+        "rectangle-98",
+        "image-43"
+      ]
+    },
+    "three-steps-that-s-it": {
+      "id": "814:594",
+      "el": "three-steps-that-s-it",
+      "type": "text",
+      "box": {
+        "w": 306,
+        "h": 100
+      },
+      "name": "Three steps. That’s it.",
+      "path": "1-landing-page.group-237.three-steps-that-s-it",
+      "pos": {
+        "x": 0,
+        "y": 48
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": [
+        {
+          "t": "Three steps.",
+          "s": "$t5"
+        },
+        {
+          "t": " That’s it.",
+          "s": "$t4"
+        }
+      ],
+      "textGrow": "h",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-16-2": {
+      "id": "814:596",
+      "el": "rectangle-16-2",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 32
+      },
+      "path": "1-landing-page.group-237.union-2.rectangle-16-2",
+      "pos": {
+        "x": 15,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17-2": {
+      "id": "814:597",
+      "el": "rectangle-17-2",
+      "type": "rect",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "path": "1-landing-page.group-237.union-2.rectangle-17-2",
+      "pos": {
+        "x": 4,
+        "y": 4
+      },
+      "fill": "$c4",
+      "rotation": 2578,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19-2": {
+      "id": "814:598",
+      "el": "rectangle-19-2",
+      "type": "rect",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "path": "1-landing-page.group-237.union-2.rectangle-19-2",
+      "pos": {
+        "x": 4,
+        "y": 4
+      },
+      "fill": "$c4",
+      "rotation": 7735,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18-2": {
+      "id": "814:599",
+      "el": "rectangle-18-2",
+      "type": "rect",
+      "box": {
+        "w": 32,
+        "h": 2
+      },
+      "path": "1-landing-page.group-237.union-2.rectangle-18-2",
+      "pos": {
+        "x": 0,
+        "y": 15
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union-2": {
+      "id": "814:595",
+      "el": "union-2",
+      "type": "bool",
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "path": "1-landing-page.group-237.union-2",
+      "pos": {
+        "x": 137,
+        "y": 0
+      },
+      "fill": "$c3",
+      "iconHint": "Three steps. That’s it.",
+      "vectorPath": "$v2",
+      "children": [
+        "rectangle-16-2",
+        "rectangle-17-2",
+        "rectangle-19-2",
+        "rectangle-18-2"
+      ]
+    },
+    "no-manual-tagging-no-spreadsheets-just-y": {
+      "id": "814:600",
+      "el": "no-manual-tagging-no-spreadsheets-just-y",
+      "type": "text",
+      "box": {
+        "w": 252,
+        "h": 28
+      },
+      "name": "No manual tagging. No spreadsheets. Just your wardrobe, organized.",
+      "path": "1-landing-page.group-237.no-manual-tagging-no-spreadsheets-just-y",
+      "pos": {
+        "x": 27,
+        "y": 156
+      },
+      "fill": "$c3",
+      "text": "$t7",
+      "chars": "No manual tagging. No spreadsheets. Just your wardrobe, organized.",
+      "textGrow": "h",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "ellipse-8": {
+      "id": "814:617",
+      "el": "ellipse-8",
+      "type": "ellipse",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "1-landing-page.group-237.group-229.group-184.ellipse-8",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "stroke": "$c8",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "01": {
+      "id": "814:618",
+      "el": "01",
+      "type": "text",
+      "box": {
+        "w": 12,
+        "h": 16
+      },
+      "name": "01",
+      "path": "1-landing-page.group-237.group-229.group-184.01",
+      "pos": {
+        "x": 14,
+        "y": 12
+      },
+      "fill": "$c5",
+      "text": "$t6",
+      "chars": "01",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      }
+    },
+    "group-184": {
+      "id": "814:616",
+      "el": "group-184",
+      "type": "group",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "1-landing-page.group-237.group-229.group-184",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "ellipse-8",
+        "01"
+      ]
+    },
+    "upload-a-photo-of-your-outfit": {
+      "id": "814:621",
+      "el": "upload-a-photo-of-your-outfit",
+      "type": "text",
+      "box": {
+        "w": 205,
+        "h": 20
+      },
+      "name": "Upload a photo of your outfit",
+      "path": "1-landing-page.group-237.group-229.group-185.upload-a-photo-of-your-outfit",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t9",
+      "chars": [
+        {
+          "t": "Upload a photo",
+          "s": "$t10"
+        },
+        {
+          "t": " of your outfit",
+          "s": "$t11"
+        }
+      ],
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "snap-it-fresh-or-pull-from-your-gallery": {
+      "id": "814:622",
+      "el": "snap-it-fresh-or-pull-from-your-gallery",
+      "type": "text",
+      "box": {
+        "w": 212,
+        "h": 28
+      },
+      "name": "Snap it fresh or pull from your gallery. Full outfit works best.",
+      "path": "1-landing-page.group-237.group-229.group-185.snap-it-fresh-or-pull-from-your-gallery",
+      "pos": {
+        "x": 0,
+        "y": 24
+      },
+      "fill": "$c3",
+      "text": "$t7",
+      "chars": "Snap it fresh or pull from your gallery. Full outfit works best.",
+      "textGrow": "h",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-185": {
+      "id": "814:620",
+      "el": "group-185",
+      "type": "group",
+      "box": {
+        "w": 212,
+        "h": 52
+      },
+      "path": "1-landing-page.group-237.group-229.group-185",
+      "pos": {
+        "x": 56,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "upload-a-photo-of-your-outfit",
+        "snap-it-fresh-or-pull-from-your-gallery"
+      ]
+    },
+    "group-229": {
+      "id": "814:624",
+      "el": "group-229",
+      "type": "group",
+      "box": {
+        "w": 268,
+        "h": 52
+      },
+      "path": "1-landing-page.group-237.group-229",
+      "pos": {
+        "x": 19,
+        "y": 216
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-184",
+        "group-185"
+      ]
+    },
+    "group-237": {
+      "id": "814:663",
+      "el": "group-237",
+      "type": "group",
+      "box": {
+        "w": 306,
+        "h": 420
+      },
+      "path": "1-landing-page.group-237",
+      "pos": {
+        "x": 48,
+        "y": 1395
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "three-steps-that-s-it",
+        "union-2",
+        "no-manual-tagging-no-spreadsheets-just-y",
+        "group-229",
+        "group-230",
+        "group-231"
+      ],
+      "repeat": {
+        "template": "group-229",
+        "data": {
+          "group-230": {
+            "upload-a-photo-of-your-outfit": {
+              "chars": [
+                {
+                  "t": "Upload a photo",
+                  "s": "$t10"
+                },
+                {
+                  "t": " of your outfit",
+                  "s": "$t11"
+                }
+              ]
+            }
+          },
+          "group-231": {
+            "upload-a-photo-of-your-outfit": {
+              "chars": [
+                {
+                  "t": "Upload a photo",
+                  "s": "$t10"
+                },
+                {
+                  "t": " of your outfit",
+                  "s": "$t11"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "by-the-numbers": {
+      "id": "814:641",
+      "el": "by-the-numbers",
+      "type": "text",
+      "box": {
+        "w": 252,
+        "h": 22
+      },
+      "name": "BY THE NUMBERS",
+      "path": "1-landing-page.group-236.by-the-numbers",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t8",
+      "chars": "BY THE NUMBERS",
+      "textGrow": "h",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "12k": {
+      "id": "814:644",
+      "el": "12k",
+      "type": "text",
+      "box": {
+        "w": 70,
+        "h": 40
+      },
+      "name": "12k+",
+      "path": "1-landing-page.group-236.group-190.12k",
+      "pos": {
+        "x": 16,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t12",
+      "chars": "12k+",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "wardrobes-organized": {
+      "id": "814:645",
+      "el": "wardrobes-organized",
+      "type": "text",
+      "box": {
+        "w": 101,
+        "h": 14
+      },
+      "name": "Wardrobes organized",
+      "path": "1-landing-page.group-236.group-190.wardrobes-organized",
+      "pos": {
+        "x": 0,
+        "y": 44
+      },
+      "fill": "$c3",
+      "text": "$t7",
+      "chars": "Wardrobes organized",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-190": {
+      "id": "814:643",
+      "el": "group-190",
+      "type": "group",
+      "box": {
+        "w": 101,
+        "h": 58
+      },
+      "path": "1-landing-page.group-236.group-190",
+      "pos": {
+        "x": 8,
+        "y": 59
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "12k",
+        "wardrobes-organized"
+      ]
+    },
+    "12k-2": {
+      "id": "814:648",
+      "el": "12k-2",
+      "type": "text",
+      "box": {
+        "w": 70,
+        "h": 40
+      },
+      "name": "12k+",
+      "path": "1-landing-page.group-236.group-232.12k-2",
+      "pos": {
+        "x": 16,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t12",
+      "chars": "12k+",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "wardrobes-organized-2": {
+      "id": "814:649",
+      "el": "wardrobes-organized-2",
+      "type": "text",
+      "box": {
+        "w": 101,
+        "h": 14
+      },
+      "name": "Wardrobes organized",
+      "path": "1-landing-page.group-236.group-232.wardrobes-organized-2",
+      "pos": {
+        "x": 0,
+        "y": 44
+      },
+      "fill": "$c3",
+      "text": "$t7",
+      "chars": "Wardrobes organized",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-232": {
+      "id": "814:647",
+      "el": "group-232",
+      "type": "group",
+      "box": {
+        "w": 101,
+        "h": 58
+      },
+      "path": "1-landing-page.group-236.group-232",
+      "pos": {
+        "x": 8,
+        "y": 59
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "12k-2",
+        "wardrobes-organized-2"
+      ]
+    },
+    "340k": {
+      "id": "814:652",
+      "el": "340k",
+      "type": "text",
+      "box": {
+        "w": 87,
+        "h": 40
+      },
+      "name": "340k+",
+      "path": "1-landing-page.group-236.group-233.340k",
+      "pos": {
+        "x": 5,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t12",
+      "chars": "340k+",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "outfit-looks-logged": {
+      "id": "814:653",
+      "el": "outfit-looks-logged",
+      "type": "text",
+      "box": {
+        "w": 95,
+        "h": 14
+      },
+      "name": "outfit looks logged",
+      "path": "1-landing-page.group-236.group-233.outfit-looks-logged",
+      "pos": {
+        "x": 0,
+        "y": 44
+      },
+      "fill": "$c3",
+      "text": "$t7",
+      "chars": "outfit looks logged",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-233": {
+      "id": "814:651",
+      "el": "group-233",
+      "type": "group",
+      "box": {
+        "w": 95,
+        "h": 58
+      },
+      "path": "1-landing-page.group-236.group-233",
+      "pos": {
+        "x": 156,
+        "y": 59
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "340k",
+        "outfit-looks-logged"
+      ]
+    },
+    "ai-detection-accuracy": {
+      "id": "814:657",
+      "el": "ai-detection-accuracy",
+      "type": "text",
+      "box": {
+        "w": 102,
+        "h": 14
+      },
+      "name": "ai detection accuracy",
+      "path": "1-landing-page.group-236.group-234.ai-detection-accuracy",
+      "pos": {
+        "x": 0,
+        "y": 44
+      },
+      "fill": "$c3",
+      "text": "$t7",
+      "chars": "ai detection accuracy",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-234": {
+      "id": "814:655",
+      "el": "group-234",
+      "type": "group",
+      "box": {
+        "w": 102,
+        "h": 58
+      },
+      "path": "1-landing-page.group-236.group-234",
+      "pos": {
+        "x": 7,
+        "y": 149
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "98",
+        "ai-detection-accuracy"
+      ]
+    },
+    "4-8": {
+      "id": "814:659",
+      "el": "4-8",
+      "type": "text",
+      "box": {
+        "w": 45,
+        "h": 40
+      },
+      "name": "4.8",
+      "path": "1-landing-page.group-236.group-235.4-8",
+      "pos": {
+        "x": 13,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t12",
+      "chars": "4.8",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "average-rating": {
+      "id": "814:660",
+      "el": "average-rating",
+      "type": "text",
+      "box": {
+        "w": 69,
+        "h": 14
+      },
+      "name": "average rating",
+      "path": "1-landing-page.group-236.group-235.average-rating",
+      "pos": {
+        "x": 0,
+        "y": 44
+      },
+      "fill": "$c3",
+      "text": "$t7",
+      "chars": "average rating",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-235": {
+      "id": "814:658",
+      "el": "group-235",
+      "type": "group",
+      "box": {
+        "w": 69,
+        "h": 58
+      },
+      "path": "1-landing-page.group-236.group-235",
+      "pos": {
+        "x": 169,
+        "y": 149
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "4-8",
+        "average-rating"
+      ]
+    },
+    "group-236": {
+      "id": "814:662",
+      "el": "group-236",
+      "type": "group",
+      "box": {
+        "w": 252,
+        "h": 207
+      },
+      "path": "1-landing-page.group-236",
+      "pos": {
+        "x": 75,
+        "y": 1879
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "by-the-numbers",
+        "group-190",
+        "group-232",
+        "group-233",
+        "group-234",
+        "group-235"
+      ]
+    },
+    "honest-review-from-real-users": {
+      "id": "814:665",
+      "el": "honest-review-from-real-users",
+      "type": "text",
+      "box": {
+        "w": 306,
+        "h": 100
+      },
+      "name": "Honest Review from real users.",
+      "path": "1-landing-page.group-242.group-239.honest-review-from-real-users",
+      "pos": {
+        "x": 0,
+        "y": 48
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": [
+        {
+          "t": "Honest Review ",
+          "s": "$t5"
+        },
+        {
+          "t": "from real users.",
+          "s": "$t4"
+        }
+      ],
+      "textGrow": "h",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-16-3": {
+      "id": "814:667",
+      "el": "rectangle-16-3",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 32
+      },
+      "path": "1-landing-page.group-242.group-239.union-3.rectangle-16-3",
+      "pos": {
+        "x": 15,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17-3": {
+      "id": "814:668",
+      "el": "rectangle-17-3",
+      "type": "rect",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "path": "1-landing-page.group-242.group-239.union-3.rectangle-17-3",
+      "pos": {
+        "x": 4,
+        "y": 4
+      },
+      "fill": "$c4",
+      "rotation": 2578,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19-3": {
+      "id": "814:669",
+      "el": "rectangle-19-3",
+      "type": "rect",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "path": "1-landing-page.group-242.group-239.union-3.rectangle-19-3",
+      "pos": {
+        "x": 4,
+        "y": 4
+      },
+      "fill": "$c4",
+      "rotation": 7735,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18-3": {
+      "id": "814:670",
+      "el": "rectangle-18-3",
+      "type": "rect",
+      "box": {
+        "w": 32,
+        "h": 2
+      },
+      "path": "1-landing-page.group-242.group-239.union-3.rectangle-18-3",
+      "pos": {
+        "x": 0,
+        "y": 15
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union-3": {
+      "id": "814:666",
+      "el": "union-3",
+      "type": "bool",
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "path": "1-landing-page.group-242.group-239.union-3",
+      "pos": {
+        "x": 137,
+        "y": 0
+      },
+      "fill": "$c3",
+      "iconHint": "Honest Review from real users.",
+      "vectorPath": "$v2",
+      "children": [
+        "rectangle-16-3",
+        "rectangle-17-3",
+        "rectangle-19-3",
+        "rectangle-18-3"
+      ]
+    },
+    "group-239": {
+      "id": "814:679",
+      "el": "group-239",
+      "type": "group",
+      "box": {
+        "w": 306,
+        "h": 148
+      },
+      "path": "1-landing-page.group-242.group-239",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "honest-review-from-real-users",
+        "union-3"
+      ]
+    },
+    "rectangle-99": {
+      "id": "814:673",
+      "el": "rectangle-99",
+      "type": "rect",
+      "box": {
+        "w": 280,
+        "h": 162
+      },
+      "path": "1-landing-page.group-242.group-194.rectangle-99",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c8",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "i-finally-stopped-buying-the-same-white": {
+      "id": "814:674",
+      "el": "i-finally-stopped-buying-the-same-white",
+      "type": "text",
+      "box": {
+        "w": 240,
+        "h": 66
+      },
+      "name": "\"I finally stopped buying the same white shirt I already own three of.\"",
+      "path": "1-landing-page.group-242.group-194.i-finally-stopped-buying-the-same-white",
+      "pos": {
+        "x": 20,
+        "y": 20
+      },
+      "fill": "$c3",
+      "text": "$t8",
+      "chars": "\"I finally stopped buying the same white shirt I already own three of.\"",
+      "textGrow": "h",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "ellipse-9": {
+      "id": "814:675",
+      "el": "ellipse-9",
+      "type": "ellipse",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "1-landing-page.group-242.group-194.group-240.ellipse-9",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c4",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "koral-26": {
+      "id": "814:676",
+      "el": "koral-26",
+      "type": "text",
+      "box": {
+        "w": 64,
+        "h": 22
+      },
+      "name": "Koral, 26",
+      "path": "1-landing-page.group-242.group-194.group-240.koral-26",
+      "pos": {
+        "x": 56,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t8",
+      "chars": "Koral, 26",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "designer-jakarta": {
+      "id": "814:677",
+      "el": "designer-jakarta",
+      "type": "text",
+      "box": {
+        "w": 99,
+        "h": 16
+      },
+      "name": "Designer · Jakarta",
+      "path": "1-landing-page.group-242.group-194.group-240.designer-jakarta",
+      "pos": {
+        "x": 56,
+        "y": 22
+      },
+      "fill": "$c8",
+      "text": "$t6",
+      "chars": "Designer · Jakarta",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-240": {
+      "id": "814:680",
+      "el": "group-240",
+      "type": "group",
+      "box": {
+        "w": 155,
+        "h": 40
+      },
+      "path": "1-landing-page.group-242.group-194.group-240",
+      "pos": {
+        "x": 20,
+        "y": 102
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "ellipse-9",
+        "koral-26",
+        "designer-jakarta"
+      ]
+    },
+    "group-194": {
+      "id": "814:672",
+      "el": "group-194",
+      "type": "group",
+      "box": {
+        "w": 280,
+        "h": 162
+      },
+      "path": "1-landing-page.group-242.group-194",
+      "pos": {
+        "x": 13,
+        "y": 180
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-99",
+        "i-finally-stopped-buying-the-same-white",
+        "group-240"
+      ]
+    },
+    "group-242": {
+      "id": "814:697",
+      "el": "group-242",
+      "type": "group",
+      "box": {
+        "w": 306,
+        "h": 714
+      },
+      "path": "1-landing-page.group-242",
+      "pos": {
+        "x": 48,
+        "y": 2168
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-239",
+        "group-194",
+        "group-240-2",
+        "group-241"
+      ],
+      "repeat": {
+        "template": "group-194",
+        "data": {
+          "group-240-2": {
+            "i-finally-stopped-buying-the-same-white": {
+              "chars": "\"The AI detection is actually good. It got my whole outfit right on the first try.\""
+            }
+          },
+          "group-241": {
+            "i-finally-stopped-buying-the-same-white": {
+              "chars": "\"Didn't think I'd use it every day. But here I am, logging my third look this week.\""
+            }
+          }
+        }
+      }
+    },
+    "faq": {
+      "id": "814:699",
+      "el": "faq",
+      "type": "text",
+      "box": {
+        "w": 306,
+        "h": 50
+      },
+      "name": "FAQ",
+      "path": "1-landing-page.group-243.group-239-2.faq",
+      "pos": {
+        "x": 0,
+        "y": 48
+      },
+      "fill": "$c3",
+      "text": "$t5",
+      "chars": "FAQ",
+      "textGrow": "h",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-16-4": {
+      "id": "814:701",
+      "el": "rectangle-16-4",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 32
+      },
+      "path": "1-landing-page.group-243.group-239-2.union-4.rectangle-16-4",
+      "pos": {
+        "x": 15,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17-4": {
+      "id": "814:702",
+      "el": "rectangle-17-4",
+      "type": "rect",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "path": "1-landing-page.group-243.group-239-2.union-4.rectangle-17-4",
+      "pos": {
+        "x": 4,
+        "y": 4
+      },
+      "fill": "$c4",
+      "rotation": 2578,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19-4": {
+      "id": "814:703",
+      "el": "rectangle-19-4",
+      "type": "rect",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "path": "1-landing-page.group-243.group-239-2.union-4.rectangle-19-4",
+      "pos": {
+        "x": 4,
+        "y": 4
+      },
+      "fill": "$c4",
+      "rotation": 7735,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18-4": {
+      "id": "814:704",
+      "el": "rectangle-18-4",
+      "type": "rect",
+      "box": {
+        "w": 32,
+        "h": 2
+      },
+      "path": "1-landing-page.group-243.group-239-2.union-4.rectangle-18-4",
+      "pos": {
+        "x": 0,
+        "y": 15
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union-4": {
+      "id": "814:700",
+      "el": "union-4",
+      "type": "bool",
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "path": "1-landing-page.group-243.group-239-2.union-4",
+      "pos": {
+        "x": 137,
+        "y": 0
+      },
+      "fill": "$c3",
+      "iconHint": "FAQ",
+      "vectorPath": "$v2",
+      "children": [
+        "rectangle-16-4",
+        "rectangle-17-4",
+        "rectangle-19-4",
+        "rectangle-18-4"
+      ]
+    },
+    "group-239-2": {
+      "id": "814:698",
+      "el": "group-239-2",
+      "type": "group",
+      "box": {
+        "w": 306,
+        "h": 98
+      },
+      "path": "1-landing-page.group-243.group-239-2",
+      "pos": {
+        "x": 8,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "faq",
+        "union-4"
+      ]
+    },
+    "does-it-work-for-any-style-of-clothing": {
+      "id": "814:706",
+      "el": "does-it-work-for-any-style-of-clothing",
+      "type": "text",
+      "box": {
+        "w": 197,
+        "h": 44
+      },
+      "name": "Does it work for any style of clothing?",
+      "path": "1-landing-page.group-243.does-it-work-for-any-style-of-clothing",
+      "pos": {
+        "x": 0,
+        "y": 138
+      },
+      "fill": "$c3",
+      "text": "$t13",
+      "chars": "Does it work for any style of clothing?",
+      "textGrow": "h",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "line-14": {
+      "id": "814:707",
+      "el": "line-14",
+      "type": "line",
+      "box": {
+        "w": 322,
+        "h": 0
+      },
+      "path": "1-landing-page.group-243.line-14",
+      "pos": {
+        "x": 0,
+        "y": 198
+      },
+      "stroke": "$c8",
+      "strokeW": 0.5,
+      "strokeAlign": "center",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "line-15": {
+      "id": "814:716",
+      "el": "line-15",
+      "type": "line",
+      "box": {
+        "w": 322,
+        "h": 0
+      },
+      "path": "1-landing-page.group-243.line-15",
+      "pos": {
+        "x": 0,
+        "y": 356
+      },
+      "stroke": "$c8",
+      "strokeW": 0.5,
+      "strokeAlign": "center",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "text": {
+      "id": "814:709",
+      "el": "text",
+      "type": "text",
+      "box": {
+        "w": 11,
+        "h": 22
+      },
+      "path": "1-landing-page.group-243.text",
+      "pos": {
+        "x": 291,
+        "y": 149
+      },
+      "fill": "$c8",
+      "text": "$t14",
+      "chars": "+",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "is-my-data-private-can-other-people-see": {
+      "id": "814:718",
+      "el": "is-my-data-private-can-other-people-see",
+      "type": "text",
+      "box": {
+        "w": 224,
+        "h": 44
+      },
+      "name": "Is my data private? Can other people see my wardrobe?",
+      "path": "1-landing-page.group-243.is-my-data-private-can-other-people-see",
+      "pos": {
+        "x": 0,
+        "y": 372
+      },
+      "fill": "$c3",
+      "text": "$t13",
+      "chars": "Is my data private? Can other people see my wardrobe?",
+      "textGrow": "h",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "text-2": {
+      "id": "814:719",
+      "el": "text-2",
+      "type": "text",
+      "box": {
+        "w": 11,
+        "h": 22
+      },
+      "path": "1-landing-page.group-243.text-2",
+      "pos": {
+        "x": 291,
+        "y": 383
+      },
+      "fill": "$c8",
+      "text": "$t14",
+      "chars": "+",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "how-accurate-is-the-ai-detection": {
+      "id": "814:712",
+      "el": "how-accurate-is-the-ai-detection",
+      "type": "text",
+      "box": {
+        "w": 245,
+        "h": 22
+      },
+      "name": "How accurate is the AI detection?",
+      "path": "1-landing-page.group-243.how-accurate-is-the-ai-detection",
+      "pos": {
+        "x": 0,
+        "y": 214
+      },
+      "fill": "$c3",
+      "text": "$t13",
+      "chars": "How accurate is the AI detection?",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "text-3": {
+      "id": "814:713",
+      "el": "text-3",
+      "type": "text",
+      "box": {
+        "w": 6,
+        "h": 22
+      },
+      "path": "1-landing-page.group-243.text-3",
+      "pos": {
+        "x": 294,
+        "y": 214
+      },
+      "fill": "$c8",
+      "text": "$t14",
+      "chars": "-",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "very-we-re-at-98-accuracy-across-tops-bo": {
+      "id": "814:714",
+      "el": "very-we-re-at-98-accuracy-across-tops-bo",
+      "type": "text",
+      "box": {
+        "w": 302,
+        "h": 88
+      },
+      "name": "Very. We're at 98% accuracy across tops, bottoms, shoes, and accessories. And you always get to review before anything is saved.",
+      "path": "1-landing-page.group-243.very-we-re-at-98-accuracy-across-tops-bo",
+      "pos": {
+        "x": 0,
+        "y": 252
+      },
+      "fill": "$c3",
+      "text": "$t8",
+      "chars": "Very. We're at 98% accuracy across tops, bottoms, shoes, and accessories. And you always get to review before anything is saved.",
+      "textGrow": "h",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-243": {
+      "id": "814:721",
+      "el": "group-243",
+      "type": "group",
+      "box": {
+        "w": 322,
+        "h": 416
+      },
+      "path": "1-landing-page.group-243",
+      "pos": {
+        "x": 40,
+        "y": 2946
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-239-2",
+        "does-it-work-for-any-style-of-clothing",
+        "line-14",
+        "line-15",
+        "text",
+        "is-my-data-private-can-other-people-see",
+        "text-2",
+        "how-accurate-is-the-ai-detection",
+        "text-3",
+        "very-we-re-at-98-accuracy-across-tops-bo"
+      ]
+    },
+    "rectangle-35": {
+      "id": "814:736",
+      "el": "rectangle-35",
+      "type": "rect",
+      "box": {
+        "w": 402,
+        "h": 156
+      },
+      "path": "1-landing-page.group-33.rectangle-35",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c4",
+      "isMask": true,
+      "maskMode": "alpha",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "image-11": {
+      "id": "814:737",
+      "el": "image-11",
+      "type": "rect",
+      "box": {
+        "w": 402,
+        "h": 156
+      },
+      "path": "1-landing-page.group-33.image-11",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "assetId": "7dbffdcc18b74e31b2d0e62c32dfcb142a3c4873",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "7dbffdcc18b74e31b2d0e62c32dfcb142a3c4873",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              0.27897289395332336,
+              0,
+              0.017349060624837875
+            ],
+            [
+              0,
+              0.0609608069062233,
+              0.3076866865158081
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "masked": "rectangle-35"
+    },
+    "rectangle-16-5": {
+      "id": "814:740",
+      "el": "rectangle-16-5",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 24
+      },
+      "path": "1-landing-page.group-33.union-5.rectangle-16-5",
+      "pos": {
+        "x": 11,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17-5": {
+      "id": "814:741",
+      "el": "rectangle-17-5",
+      "type": "rect",
+      "box": {
+        "w": 18,
+        "h": 18
+      },
+      "path": "1-landing-page.group-33.union-5.rectangle-17-5",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 2578,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19-5": {
+      "id": "814:742",
+      "el": "rectangle-19-5",
+      "type": "rect",
+      "box": {
+        "w": 18,
+        "h": 18
+      },
+      "path": "1-landing-page.group-33.union-5.rectangle-19-5",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 7735,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18-5": {
+      "id": "814:743",
+      "el": "rectangle-18-5",
+      "type": "rect",
+      "box": {
+        "w": 24,
+        "h": 2
+      },
+      "path": "1-landing-page.group-33.union-5.rectangle-18-5",
+      "pos": {
+        "x": 0,
+        "y": 11
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union-5": {
+      "id": "814:739",
+      "el": "union-5",
+      "type": "bool",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "path": "1-landing-page.group-33.union-5",
+      "pos": {
+        "x": 32,
+        "y": 24
+      },
+      "fill": "$c3",
+      "iconHint": "loomette",
+      "vectorPath": "$v4",
+      "children": [
+        "rectangle-16-5",
+        "rectangle-17-5",
+        "rectangle-19-5",
+        "rectangle-18-5"
+      ],
+      "masked": "rectangle-35"
+    },
+    "loomette-2": {
+      "id": "814:744",
+      "el": "loomette-2",
+      "type": "text",
+      "box": {
+        "w": 99,
+        "h": 33
+      },
+      "name": "loomette",
+      "path": "1-landing-page.group-33.loomette-2",
+      "pos": {
+        "x": 69,
+        "y": 19
+      },
+      "fill": "$c3",
+      "text": "$t15",
+      "chars": "loomette",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "masked": "rectangle-35"
+    },
+    "2026-closet-all-rights-reserved": {
+      "id": "814:745",
+      "el": "2026-closet-all-rights-reserved",
+      "type": "text",
+      "box": {
+        "w": 190,
+        "h": 16
+      },
+      "name": "© 2026 Closet. All rights reserved.",
+      "path": "1-landing-page.group-33.2026-closet-all-rights-reserved",
+      "pos": {
+        "x": 32,
+        "y": 108
+      },
+      "fill": "$c3",
+      "text": "$t6",
+      "chars": "© 2026 Closet. All rights reserved.",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "masked": "rectangle-35"
+    },
+    "untitled-1-512x512-2-1": {
+      "id": "814:738",
+      "el": "untitled-1-512x512-2-1",
+      "type": "rect",
+      "box": {
+        "w": 167,
+        "h": 167
+      },
+      "name": "Untitled@1-512x512 (2) 1",
+      "path": "1-landing-page.group-33.untitled-1-512x512-2-1",
+      "pos": {
+        "x": 264,
+        "y": -40
+      },
+      "assetId": "021b9485b61ff53143ec42d2776de603a0f30170",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "021b9485b61ff53143ec42d2776de603a0f30170",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "rotation": 10313,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "masked": "rectangle-35"
+    },
+    "group-33": {
+      "id": "814:735",
+      "el": "group-33",
+      "type": "group",
+      "box": {
+        "w": 402,
+        "h": 156
+      },
+      "path": "1-landing-page.group-33",
+      "pos": {
+        "x": 0,
+        "y": 3776
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-35",
+        "image-11",
+        "union-5",
+        "loomette-2",
+        "2026-closet-all-rights-reserved",
+        "untitled-1-512x512-2-1"
+      ]
+    },
+    "create-account-2": {
+      "id": "814:731",
+      "el": "create-account-2",
+      "type": "text",
+      "box": {
+        "w": 115,
+        "h": 22
+      },
+      "name": "create account",
+      "path": "1-landing-page.group-245.group-244.frame-19.create-account-2",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c1",
+      "text": "$t8",
+      "chars": "create account",
+      "textGrow": "wh"
+    },
+    "frame-19": {
+      "id": "814:730",
+      "el": "frame-19",
+      "type": "frame",
+      "box": {
+        "w": 179,
+        "h": 38
+      },
+      "path": "1-landing-page.group-245.group-244.frame-19",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "layout": "$l2",
+      "fill": "$c3",
+      "radius": "$r2",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "create-account-2"
+      ]
+    },
+    "group-244": {
+      "id": "814:748",
+      "el": "group-244",
+      "type": "group",
+      "box": {
+        "w": 179,
+        "h": 38
+      },
+      "path": "1-landing-page.group-245.group-244",
+      "pos": {
+        "x": 63,
+        "y": 226
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "frame-19"
+      ]
+    },
+    "your-wardrobe-is-waiting": {
+      "id": "814:722",
+      "el": "your-wardrobe-is-waiting",
+      "type": "text",
+      "box": {
+        "w": 306,
+        "h": 100
+      },
+      "name": "Your wardrobe is waiting.",
+      "path": "1-landing-page.group-245.group-244-2.your-wardrobe-is-waiting",
+      "pos": {
+        "x": 0,
+        "y": 48
+      },
+      "fill": "$c3",
+      "text": "$t5",
+      "chars": "Your wardrobe is waiting.",
+      "textGrow": "h",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-16-6": {
+      "id": "814:724",
+      "el": "rectangle-16-6",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 32
+      },
+      "path": "1-landing-page.group-245.group-244-2.union-6.rectangle-16-6",
+      "pos": {
+        "x": 15,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17-6": {
+      "id": "814:725",
+      "el": "rectangle-17-6",
+      "type": "rect",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "path": "1-landing-page.group-245.group-244-2.union-6.rectangle-17-6",
+      "pos": {
+        "x": 4,
+        "y": 4
+      },
+      "fill": "$c4",
+      "rotation": 2578,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19-6": {
+      "id": "814:726",
+      "el": "rectangle-19-6",
+      "type": "rect",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "path": "1-landing-page.group-245.group-244-2.union-6.rectangle-19-6",
+      "pos": {
+        "x": 4,
+        "y": 4
+      },
+      "fill": "$c4",
+      "rotation": 7735,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18-6": {
+      "id": "814:727",
+      "el": "rectangle-18-6",
+      "type": "rect",
+      "box": {
+        "w": 32,
+        "h": 2
+      },
+      "path": "1-landing-page.group-245.group-244-2.union-6.rectangle-18-6",
+      "pos": {
+        "x": 0,
+        "y": 15
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union-6": {
+      "id": "814:723",
+      "el": "union-6",
+      "type": "bool",
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "path": "1-landing-page.group-245.group-244-2.union-6",
+      "pos": {
+        "x": 137,
+        "y": 0
+      },
+      "fill": "$c3",
+      "iconHint": "Your wardrobe is waiting.",
+      "vectorPath": "$v2",
+      "children": [
+        "rectangle-16-6",
+        "rectangle-17-6",
+        "rectangle-19-6",
+        "rectangle-18-6"
+      ]
+    },
+    "start-for-free-no-credit-card-no-setup": {
+      "id": "814:728",
+      "el": "start-for-free-no-credit-card-no-setup",
+      "type": "text",
+      "box": {
+        "w": 252,
+        "h": 14
+      },
+      "name": "Start for free. No credit card. No setup.",
+      "path": "1-landing-page.group-245.group-244-2.start-for-free-no-credit-card-no-setup",
+      "pos": {
+        "x": 27,
+        "y": 156
+      },
+      "fill": "$c3",
+      "text": "$t7",
+      "chars": "Start for free. No credit card. No setup.",
+      "textGrow": "h",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "already-have-an-account-sign-in": {
+      "id": "814:733",
+      "el": "already-have-an-account-sign-in",
+      "type": "text",
+      "box": {
+        "w": 153,
+        "h": 14
+      },
+      "name": "Already have an account? Sign in",
+      "path": "1-landing-page.group-245.group-244-2.already-have-an-account-sign-in",
+      "pos": {
+        "x": 69,
+        "y": 272
+      },
+      "text": "$t16",
+      "chars": [
+        {
+          "t": "Already have an account? ",
+          "s": "$t7",
+          "c": "$c8"
+        },
+        {
+          "t": "Sign in",
+          "s": "$t17",
+          "c": "$c3",
+          "d": "underline"
+        }
+      ],
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-244-2": {
+      "id": "814:749",
+      "el": "group-244-2",
+      "type": "group",
+      "box": {
+        "w": 306,
+        "h": 286
+      },
+      "path": "1-landing-page.group-245.group-244-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "your-wardrobe-is-waiting",
+        "union-6",
+        "start-for-free-no-credit-card-no-setup",
+        "already-have-an-account-sign-in"
+      ]
+    },
+    "group-245": {
+      "id": "814:750",
+      "el": "group-245",
+      "type": "group",
+      "box": {
+        "w": 306,
+        "h": 286
+      },
+      "path": "1-landing-page.group-245",
+      "pos": {
+        "x": 48,
+        "y": 3426
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-244",
+        "group-244-2"
+      ]
+    },
+    "image-43-2": {
+      "id": "1465:445",
+      "el": "image-43-2",
+      "type": "rect",
+      "box": {
+        "w": 288,
+        "h": 192
+      },
+      "path": "1-landing-page.image-43-2",
+      "pos": {
+        "x": -72,
+        "y": 99
+      },
+      "assetId": "0b474112393cda1b357eba7c9f586748318c4c0e",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "0b474112393cda1b357eba7c9f586748318c4c0e",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-42": {
+      "id": "1465:452",
+      "el": "image-42",
+      "type": "rect",
+      "box": {
+        "w": 231,
+        "h": 154
+      },
+      "path": "1-landing-page.image-42",
+      "pos": {
+        "x": 212,
+        "y": 685
+      },
+      "assetId": "bb06e4303e18abfe080bed08bb77f7679f03bf5f",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "bb06e4303e18abfe080bed08bb77f7679f03bf5f",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-44": {
+      "id": "1465:454",
+      "el": "image-44",
+      "type": "rect",
+      "box": {
+        "w": 84,
+        "h": 82
+      },
+      "path": "1-landing-page.image-44",
+      "pos": {
+        "x": 48,
+        "y": 641
+      },
+      "assetId": "20bcd246de2d238bc1544536fab4b365ecdf33bf",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "20bcd246de2d238bc1544536fab4b365ecdf33bf",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-45": {
+      "id": "1465:456",
+      "el": "image-45",
+      "type": "rect",
+      "box": {
+        "w": 68,
+        "h": 65
+      },
+      "path": "1-landing-page.image-45",
+      "pos": {
+        "x": 312,
+        "y": 270
+      },
+      "assetId": "df16e6c960159f4917aae33274e488c940b4236a",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "df16e6c960159f4917aae33274e488c940b4236a",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "1-landing-page": {
+      "id": "773:512",
+      "el": "1-landing-page",
+      "type": "frame",
+      "box": {
+        "w": 402,
+        "h": 3932
+      },
+      "name": "-1. Landing Page",
+      "fill": "$c1",
+      "clip": true,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "group-96",
+        "your-wardrobe-finally-organized",
+        "frame-18",
+        "log-what-you-wear-track-what-you-own-and",
+        "frame-7",
+        "group-238",
+        "group-237",
+        "group-236",
+        "group-242",
+        "group-243",
+        "group-33",
+        "group-245",
+        "image-43-2",
+        "image-42",
+        "image-44",
+        "image-45"
+      ]
+    }
+  },
+  "meta": {
+    "nodeCount": 113,
+    "estTokens": 9111,
+    "depthUsed": 12
+  },
+  "next": "Read `tokens` for the design system, then build the UI from `nodes`. Tag each rendered element data-plumb-id=\"<el>\". A node with a `more` count has that many children not yet included — call plumb_node again on that node's `id` to expand them. This screen has 7 image asset(s) (nodes with `assetId`). Call plumb_assets with this screen's id to download them to disk BEFORE generating HTML — without the real files any <img> will be a placeholder and plumb_verify will flag every image node as asset.missing.",
+  "source": "plugin",
+  "node": "-1. Landing Page"
+}

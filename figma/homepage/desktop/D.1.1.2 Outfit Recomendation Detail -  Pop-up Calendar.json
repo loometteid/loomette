@@ -1,0 +1,5385 @@
+{
+  "file": {
+    "name": "Loomette.id",
+    "version": "plugin-1792666966639"
+  },
+  "root": "d-1-1-2-outfit-recomendation-detail-pop",
+  "tokens": {
+    "color": {
+      "$c1": "#fafaf7",
+      "$c2": "#ffffff1a",
+      "$c3": "#444440",
+      "$c4": "#d9d9d9",
+      "$c5": "#000000",
+      "$c6": "image",
+      "$c7": "#c9c3b7",
+      "$c8": "#f2ede5",
+      "$c9": "#f598b0",
+      "$c10": "#ffffff",
+      "$c11": "#c9c3b733",
+      "$c12": "#e5487e"
+    },
+    "text": {
+      "$t1": "400 24px Avenir Next",
+      "$t2": "400 48px",
+      "$t3": "400 48px Source Serif Pro",
+      "$t4": "400 20px Avenir Next",
+      "$t5": "400 32px",
+      "$t6": "400 32px Source Serif Pro",
+      "$t7": "400 14px Avenir",
+      "$t8": "400 16px Avenir Next",
+      "$t9": "400 20px Source Serif Pro",
+      "$t10": "400 8px Avenir Next",
+      "$t11": "400 24px Source Serif Pro",
+      "$t12": "400 12px Avenir Next",
+      "$t13": "400 20px Figtree",
+      "$t14": "400 40px Figtree"
+    },
+    "radius": {
+      "$r1": 16,
+      "$r2": 8,
+      "$r3": 20
+    },
+    "shadow": {},
+    "layout": {
+      "$l1": {
+        "align": "center",
+        "flow": "row",
+        "gap": 8,
+        "justify": "center",
+        "pad": [
+          10,
+          16,
+          10,
+          16
+        ]
+      },
+      "$l2": {
+        "align": "center",
+        "flow": "row",
+        "gap": 9,
+        "justify": "space-between",
+        "pad": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l3": {
+        "flow": "row",
+        "gap": 64,
+        "pad": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l4": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          19,
+          64,
+          18,
+          64
+        ]
+      }
+    },
+    "vector": {
+      "$v1": "M12.7998 10.0693 L19.9199 2.94922 L21.0518 4.08008 L13.9307 11.2002 L24 11.2002 L24 12.7998 L13.9307 12.7998 L21.0508 19.9199 L19.9189 21.0508 L12.7998 13.9307 L12.7998 24 L11.2002 24 L11.2002 13.9316 L4.08105 21.0508 L2.94922 19.9199 L10.0684 12.7998 L0 12.7998 L0 11.2002 L10.0684 11.2002 L2.94922 4.08008 L4.08008 2.94922 L11.2002 10.0693 L11.2002 0 L12.7998 0 L12.7998 10.0693 Z",
+      "$v2": "M25.0664 20.1367 L39.0088 5.89844 L41.2246 8.16113 L27.2803 22.4004 L47 22.4004 L47 25.6006 L27.2832 25.6006 L41.2256 39.8389 L39.0098 42.1016 L25.0664 27.8613 L25.0664 48 L21.9326 48 L21.9326 27.8623 L7.99023 42.1016 L5.77441 39.8389 L19.7148 25.6006 L0 25.6006 L0 22.4004 L19.7178 22.4004 L5.77539 8.16113 L7.99121 5.89844 L21.9326 20.1357 L21.9326 0 L25.0664 0 L25.0664 20.1367 Z",
+      "$v3": "M0.390524 0.390524 C0.911223 -0.130175 1.75544 -0.130175 2.27614 0.390524 L10.0404 8.15482 C10.6913 8.80569 10.6913 9.86097 10.0404 10.5118 L2.27614 18.2761 C1.75544 18.7968 0.911223 18.7968 0.390524 18.2761 C-0.130175 17.7554 -0.130175 16.9112 0.390524 16.3905 L7.44772 9.33333 L0.390524 2.27614 C-0.130175 1.75544 -0.130175 0.911223 0.390524 0.390524 Z",
+      "$v4": "M64 47.1045 L99.5977 13.7969 L105.255 19.0898 L69.6562 52.3975 L120 52.3975 L120 59.8828 L69.6562 59.8828 L105.255 93.1914 L99.5977 98.4844 L64 65.1758 L64 112.28 L56 112.28 L56 65.1758 L20.4023 98.4844 L14.7451 93.1914 L50.3428 59.8828 L0 59.8828 L0 52.3975 L50.3428 52.3975 L14.7451 19.0898 L20.4023 13.7969 L56 47.1045 L56 0 L64 0 L64 47.1045 Z",
+      "$v5": "M15.0508 11.0752 L23.4209 3.24414 L24.751 4.48926 L16.3779 12.3213 L28.2178 12.3213 L28.2178 14.0811 L16.3799 14.0811 L24.751 21.9131 L23.4209 23.1582 L15.0508 15.3262 L15.0508 26.4023 L13.1699 26.4023 L13.1699 15.3242 L4.79785 23.1582 L3.46777 21.9141 L11.8369 14.0811 L0 14.0811 L0 12.3213 L11.8389 12.3213 L3.46777 4.48926 L4.79785 3.24414 L13.1699 11.0771 L13.1699 0 L15.0508 0 L15.0508 11.0752 Z",
+      "$v6": "M15.0508 11.0762 L23.4209 3.24512 L24.751 4.48926 L16.3779 12.3213 L28.2178 12.3213 L28.2178 14.082 L16.3809 14.082 L24.751 21.9141 L23.4209 23.1582 L15.0508 15.3262 L15.0508 26.4023 L13.1699 26.4023 L13.1699 15.3242 L4.79785 23.1582 L3.46777 21.9141 L11.8369 14.082 L0 14.082 L0 12.3213 L11.8379 12.3213 L3.46777 4.48926 L4.79785 3.24414 L13.1699 11.0771 L13.1699 0 L15.0508 0 L15.0508 11.0762 Z",
+      "$v7": "M15.0508 11.0742 L23.4199 3.24414 L24.75 4.48828 L16.3779 12.3213 L28.2178 12.3213 L28.2178 14.0811 L16.3799 14.0811 L24.75 21.9131 L23.4199 23.1582 L15.0508 15.3262 L15.0508 26.4023 L13.1689 26.4023 L13.1689 15.3242 L4.79785 23.1582 L3.46777 21.9131 L11.8369 14.0811 L0 14.0811 L0 12.3213 L11.8389 12.3213 L3.46777 4.48828 L4.79785 3.24414 L13.1689 11.0762 L13.1689 0 L15.0508 0 L15.0508 11.0742 Z",
+      "$v8": "M0.390524 0.390524 C0.911223 -0.130175 1.75544 -0.130175 2.27614 0.390524 L9.33333 7.44772 L16.3905 0.390524 C16.9112 -0.130175 17.7554 -0.130175 18.2761 0.390524 C18.7968 0.911223 18.7968 1.75544 18.2761 2.27614 L11.219 9.33333 L18.2761 16.3905 C18.7968 16.9112 18.7968 17.7554 18.2761 18.2761 C17.7554 18.7968 16.9112 18.7968 16.3905 18.2761 L9.33333 11.219 L2.27614 18.2761 C1.75544 18.7968 0.911223 18.7968 0.390524 18.2761 C-0.130175 17.7554 -0.130175 16.9112 0.390524 16.3905 L7.44772 9.33333 L0.390524 2.27614 C-0.130175 1.75544 -0.130175 0.911223 0.390524 0.390524 Z",
+      "$v9": "M10.3536 0.43934 C10.9393 1.02513 10.9393 1.97487 10.3536 2.56066 L3.41421 9.5 L10.3536 16.4393 C10.9393 17.0251 10.9393 17.9749 10.3536 18.5607 C9.76777 19.1464 8.81802 19.1464 8.23223 18.5607 L0.585786 10.9142 C-0.195264 10.1332 -0.19526 8.86683 0.585787 8.08579 L8.23223 0.43934 C8.81802 -0.146447 9.76777 -0.146447 10.3536 0.43934 Z",
+      "$v10": "M0.43934 0.43934 C1.02513 -0.146447 1.97487 -0.146447 2.56066 0.43934 L10.2071 8.08579 C10.9882 8.86683 10.9882 10.1332 10.2071 10.9142 L2.56066 18.5607 C1.97487 19.1464 1.02513 19.1464 0.43934 18.5607 C-0.146447 17.9749 -0.146447 17.0251 0.43934 16.4393 L7.37868 9.5 L0.43934 2.56066 C-0.146447 1.97487 -0.146447 1.02513 0.43934 0.43934 Z"
+    },
+    "props": {
+      "$p1": {
+        "size": "24"
+      },
+      "$p2": {
+        "size": "16"
+      }
+    },
+    "meta": {
+      "counts": {
+        "$c1": 13,
+        "$c3": 74,
+        "$c4": 28,
+        "$t1": 6,
+        "$p1": 4,
+        "$c6": 9,
+        "$t3": 4,
+        "$c7": 37,
+        "$r1": 4,
+        "$t5": 2,
+        "$t6": 7,
+        "$r2": 44,
+        "$c8": 3,
+        "$l1": 2,
+        "$t8": 2,
+        "$v3": 2,
+        "$c9": 5,
+        "$c10": 4,
+        "$v4": 2,
+        "$t9": 3,
+        "$t10": 3,
+        "$r3": 2,
+        "$c12": 2,
+        "$t13": 38,
+        "$p2": 2
+      }
+    }
+  },
+  "nodes": {
+    "10": {
+      "id": "979:362",
+      "el": "10",
+      "type": "text",
+      "box": {
+        "w": 22,
+        "h": 24
+      },
+      "name": "10",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-150.10",
+      "pos": {
+        "x": 21,
+        "y": 20
+      },
+      "fill": "$c3",
+      "text": "$t13",
+      "chars": "10",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      }
+    },
+    "11": {
+      "id": "979:365",
+      "el": "11",
+      "type": "text",
+      "box": {
+        "w": 17,
+        "h": 24
+      },
+      "name": "11",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-151.11",
+      "pos": {
+        "x": 24,
+        "y": 20
+      },
+      "fill": "$c3",
+      "text": "$t13",
+      "chars": "11",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      }
+    },
+    "12": {
+      "id": "979:368",
+      "el": "12",
+      "type": "text",
+      "box": {
+        "w": 20,
+        "h": 24
+      },
+      "name": "12",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-152.12",
+      "pos": {
+        "x": 22,
+        "y": 20
+      },
+      "fill": "$c1",
+      "text": "$t13",
+      "chars": "12",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      }
+    },
+    "13": {
+      "id": "979:371",
+      "el": "13",
+      "type": "text",
+      "box": {
+        "w": 20,
+        "h": 24
+      },
+      "name": "13",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-153.13",
+      "pos": {
+        "x": 22,
+        "y": 20
+      },
+      "fill": "$c3",
+      "text": "$t13",
+      "chars": "13",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      }
+    },
+    "14": {
+      "id": "979:374",
+      "el": "14",
+      "type": "text",
+      "box": {
+        "w": 21,
+        "h": 24
+      },
+      "name": "14",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-154.14",
+      "pos": {
+        "x": 22,
+        "y": 20
+      },
+      "fill": "$c3",
+      "text": "$t13",
+      "chars": "14",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      }
+    },
+    "15": {
+      "id": "979:356",
+      "el": "15",
+      "type": "text",
+      "box": {
+        "w": 20,
+        "h": 24
+      },
+      "name": "15",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-148.15",
+      "pos": {
+        "x": 22,
+        "y": 20
+      },
+      "fill": "$c3",
+      "text": "$t13",
+      "chars": "15",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      }
+    },
+    "16": {
+      "id": "979:359",
+      "el": "16",
+      "type": "text",
+      "box": {
+        "w": 20,
+        "h": 24
+      },
+      "name": "16",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-149.16",
+      "pos": {
+        "x": 22,
+        "y": 20
+      },
+      "fill": "$c3",
+      "text": "$t13",
+      "chars": "16",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      }
+    },
+    "17": {
+      "id": "979:384",
+      "el": "17",
+      "type": "text",
+      "box": {
+        "w": 20,
+        "h": 24
+      },
+      "name": "17",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-157.17",
+      "pos": {
+        "x": 22,
+        "y": 20
+      },
+      "fill": "$c3",
+      "text": "$t13",
+      "chars": "17",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      }
+    },
+    "18": {
+      "id": "979:387",
+      "el": "18",
+      "type": "text",
+      "box": {
+        "w": 21,
+        "h": 24
+      },
+      "name": "18",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-158.18",
+      "pos": {
+        "x": 22,
+        "y": 20
+      },
+      "fill": "$c3",
+      "text": "$t13",
+      "chars": "18",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      }
+    },
+    "19": {
+      "id": "979:390",
+      "el": "19",
+      "type": "text",
+      "box": {
+        "w": 20,
+        "h": 24
+      },
+      "name": "19",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-159.19",
+      "pos": {
+        "x": 22,
+        "y": 20
+      },
+      "fill": "$c3",
+      "text": "$t13",
+      "chars": "19",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      }
+    },
+    "20": {
+      "id": "979:393",
+      "el": "20",
+      "type": "text",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "name": "20",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-160.20",
+      "pos": {
+        "x": 20,
+        "y": 20
+      },
+      "fill": "$c3",
+      "text": "$t13",
+      "chars": "20",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      }
+    },
+    "21": {
+      "id": "979:396",
+      "el": "21",
+      "type": "text",
+      "box": {
+        "w": 20,
+        "h": 24
+      },
+      "name": "21",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-161.21",
+      "pos": {
+        "x": 22,
+        "y": 20
+      },
+      "fill": "$c3",
+      "text": "$t13",
+      "chars": "21",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      }
+    },
+    "22": {
+      "id": "979:378",
+      "el": "22",
+      "type": "text",
+      "box": {
+        "w": 23,
+        "h": 24
+      },
+      "name": "22",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-155.22",
+      "pos": {
+        "x": 21,
+        "y": 20
+      },
+      "fill": "$c3",
+      "text": "$t13",
+      "chars": "22",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      }
+    },
+    "23": {
+      "id": "979:381",
+      "el": "23",
+      "type": "text",
+      "box": {
+        "w": 23,
+        "h": 24
+      },
+      "name": "23",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-156.23",
+      "pos": {
+        "x": 21,
+        "y": 20
+      },
+      "fill": "$c3",
+      "text": "$t13",
+      "chars": "23",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      }
+    },
+    "24": {
+      "id": "979:406",
+      "el": "24",
+      "type": "text",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "name": "24",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-164.24",
+      "pos": {
+        "x": 20,
+        "y": 20
+      },
+      "fill": "$c3",
+      "text": "$t13",
+      "chars": "24",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      }
+    },
+    "25": {
+      "id": "979:409",
+      "el": "25",
+      "type": "text",
+      "box": {
+        "w": 23,
+        "h": 24
+      },
+      "name": "25",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-165.25",
+      "pos": {
+        "x": 21,
+        "y": 20
+      },
+      "fill": "$c3",
+      "text": "$t13",
+      "chars": "25",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      }
+    },
+    "26": {
+      "id": "979:412",
+      "el": "26",
+      "type": "text",
+      "box": {
+        "w": 23,
+        "h": 24
+      },
+      "name": "26",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-166.26",
+      "pos": {
+        "x": 21,
+        "y": 20
+      },
+      "fill": "$c3",
+      "text": "$t13",
+      "chars": "26",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      }
+    },
+    "27": {
+      "id": "979:415",
+      "el": "27",
+      "type": "text",
+      "box": {
+        "w": 22,
+        "h": 24
+      },
+      "name": "27",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-167.27",
+      "pos": {
+        "x": 21,
+        "y": 20
+      },
+      "fill": "$c3",
+      "text": "$t13",
+      "chars": "27",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      }
+    },
+    "28": {
+      "id": "979:418",
+      "el": "28",
+      "type": "text",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "name": "28",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-168.28",
+      "pos": {
+        "x": 20,
+        "y": 20
+      },
+      "fill": "$c3",
+      "text": "$t13",
+      "chars": "28",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      }
+    },
+    "29": {
+      "id": "979:400",
+      "el": "29",
+      "type": "text",
+      "box": {
+        "w": 23,
+        "h": 24
+      },
+      "name": "29",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-162.29",
+      "pos": {
+        "x": 21,
+        "y": 20
+      },
+      "fill": "$c3",
+      "text": "$t13",
+      "chars": "29",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      }
+    },
+    "30": {
+      "id": "979:403",
+      "el": "30",
+      "type": "text",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "name": "30",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-163.30",
+      "pos": {
+        "x": 20,
+        "y": 20
+      },
+      "fill": "$c3",
+      "text": "$t13",
+      "chars": "30",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      }
+    },
+    "31": {
+      "id": "979:422",
+      "el": "31",
+      "type": "text",
+      "box": {
+        "w": 20,
+        "h": 24
+      },
+      "name": "31",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-169.31",
+      "pos": {
+        "x": 22,
+        "y": 20
+      },
+      "fill": "$c3",
+      "text": "$t13",
+      "chars": "31",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      }
+    },
+    "123": {
+      "id": "966:619",
+      "el": "123",
+      "type": "text",
+      "box": {
+        "w": 30,
+        "h": 25
+      },
+      "name": "123",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.group-11.group-10-5.123",
+      "pos": {
+        "x": 0,
+        "y": 9
+      },
+      "fill": "$c1",
+      "text": "$t9",
+      "chars": "123",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-15": {
+      "id": "966:518",
+      "el": "rectangle-15",
+      "type": "rect",
+      "box": {
+        "w": 1440,
+        "h": 120
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-96.rectangle-15",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16": {
+      "id": "966:520",
+      "el": "rectangle-16",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 24
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-96.union.rectangle-16",
+      "pos": {
+        "x": 11,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17": {
+      "id": "966:521",
+      "el": "rectangle-17",
+      "type": "rect",
+      "box": {
+        "w": 18,
+        "h": 18
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-96.union.rectangle-17",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 2578,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19": {
+      "id": "966:522",
+      "el": "rectangle-19",
+      "type": "rect",
+      "box": {
+        "w": 18,
+        "h": 18
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-96.union.rectangle-19",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 7735,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18": {
+      "id": "966:523",
+      "el": "rectangle-18",
+      "type": "rect",
+      "box": {
+        "w": 24,
+        "h": 2
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-96.union.rectangle-18",
+      "pos": {
+        "x": 0,
+        "y": 11
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union": {
+      "id": "966:519",
+      "el": "union",
+      "type": "bool",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-96.union",
+      "pos": {
+        "x": 64,
+        "y": 48
+      },
+      "fill": "$c3",
+      "iconHint": "loomette",
+      "vectorPath": "$v1",
+      "children": [
+        "rectangle-16",
+        "rectangle-17",
+        "rectangle-19",
+        "rectangle-18"
+      ]
+    },
+    "loomette": {
+      "id": "966:524",
+      "el": "loomette",
+      "type": "text",
+      "box": {
+        "w": 99,
+        "h": 33
+      },
+      "name": "loomette",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-96.loomette",
+      "pos": {
+        "x": 104,
+        "y": 44
+      },
+      "fill": "$c5",
+      "text": "$t1",
+      "chars": "loomette",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "home": {
+      "id": "966:525",
+      "el": "home",
+      "type": "text",
+      "box": {
+        "w": 61,
+        "h": 33
+      },
+      "name": "Home",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-96.home",
+      "pos": {
+        "x": 572,
+        "y": 44
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "Home",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "calendar": {
+      "id": "966:526",
+      "el": "calendar",
+      "type": "text",
+      "box": {
+        "w": 103,
+        "h": 33
+      },
+      "name": "calendar",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-96.calendar",
+      "pos": {
+        "x": 669,
+        "y": 44
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "calendar",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "wardrobe": {
+      "id": "966:527",
+      "el": "wardrobe",
+      "type": "text",
+      "box": {
+        "w": 110,
+        "h": 33
+      },
+      "name": "wardrobe",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-96.wardrobe",
+      "pos": {
+        "x": 808,
+        "y": 44
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "wardrobe",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "gevyndo": {
+      "id": "966:529",
+      "el": "gevyndo",
+      "type": "text",
+      "box": {
+        "w": 96,
+        "h": 33
+      },
+      "name": "gevyndo",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-96.group-254.gevyndo",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "gevyndo",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector": {
+      "id": "I966:530;3:3637",
+      "el": "vector",
+      "type": "vector",
+      "box": {
+        "w": 16,
+        "h": 19
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-96.group-254.user.vector",
+      "pos": {
+        "x": 4,
+        "y": 3
+      },
+      "fill": "$c3",
+      "iconHint": "gevyndo",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "user": {
+      "id": "966:530",
+      "el": "user",
+      "type": "instance",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "name": "user",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-96.group-254.user",
+      "pos": {
+        "x": 112,
+        "y": 4
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector"
+      ]
+    },
+    "group-254": {
+      "id": "966:528",
+      "el": "group-254",
+      "type": "group",
+      "box": {
+        "w": 136,
+        "h": 33
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-96.group-254",
+      "pos": {
+        "x": 1240,
+        "y": 44
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "gevyndo",
+        "user"
+      ]
+    },
+    "group-96": {
+      "id": "966:517",
+      "el": "group-96",
+      "type": "group",
+      "box": {
+        "w": 1440,
+        "h": 120
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-96",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-15",
+        "union",
+        "loomette",
+        "home",
+        "calendar",
+        "wardrobe",
+        "group-254"
+      ]
+    },
+    "image-removebg-preview-7-1": {
+      "id": "966:532",
+      "el": "image-removebg-preview-7-1",
+      "type": "rect",
+      "box": {
+        "w": 300,
+        "h": 385
+      },
+      "name": "image-removebg-preview (7) 1",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-135.image-removebg-preview-7-1",
+      "pos": {
+        "x": 18,
+        "y": 153
+      },
+      "assetId": "e5420007b99f8c30cfc67be00af0ec3b2f376e2a",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "e5420007b99f8c30cfc67be00af0ec3b2f376e2a",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.8557214140892029,
+              0.07213930040597916
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-1": {
+      "id": "966:533",
+      "el": "image-removebg-preview-1",
+      "type": "rect",
+      "box": {
+        "w": 263,
+        "h": 249
+      },
+      "name": "image-removebg-preview 1",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-135.image-removebg-preview-1",
+      "pos": {
+        "x": 36,
+        "y": 24
+      },
+      "assetId": "837079d7a4263daef60e6c2261fde3a6852552dd",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "837079d7a4263daef60e6c2261fde3a6852552dd",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.7313451170921326,
+              0.13030901551246643
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-10-1": {
+      "id": "966:534",
+      "el": "image-removebg-preview-10-1",
+      "type": "rect",
+      "box": {
+        "w": 116,
+        "h": 81
+      },
+      "name": "image-removebg-preview (10) 1",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-135.image-removebg-preview-10-1",
+      "pos": {
+        "x": 168,
+        "y": 480
+      },
+      "assetId": "178406f88b315152b95287f3aeb79ee56c5d2443",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "178406f88b315152b95287f3aeb79ee56c5d2443",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.720081090927124,
+              0.12576064467430115
+            ]
+          ]
+        }
+      ],
+      "rotation": 10313,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-4-1": {
+      "id": "966:535",
+      "el": "image-removebg-preview-4-1",
+      "type": "rect",
+      "box": {
+        "w": 169,
+        "h": 169
+      },
+      "name": "image-removebg-preview (4) 1",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-135.image-removebg-preview-4-1",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "assetId": "b5383112df490c825aacd83035b1de7245c291b4",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "b5383112df490c825aacd83035b1de7245c291b4",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-135": {
+      "id": "966:531",
+      "el": "group-135",
+      "type": "group",
+      "box": {
+        "w": 318,
+        "h": 561
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-135",
+      "pos": {
+        "x": 235,
+        "y": 308
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "image-removebg-preview-7-1",
+        "image-removebg-preview-1",
+        "image-removebg-preview-10-1",
+        "image-removebg-preview-4-1"
+      ]
+    },
+    "ready-to-style-in-gev": {
+      "id": "966:537",
+      "el": "ready-to-style-in-gev",
+      "type": "text",
+      "box": {
+        "w": 449,
+        "h": 60
+      },
+      "name": "Ready to style in, Gev?",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-255.ready-to-style-in-gev",
+      "pos": {
+        "x": 71,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": [
+        {
+          "t": "Ready to ",
+          "s": "$t3"
+        },
+        {
+          "t": "style",
+          "s": "$t3",
+          "d": "underline"
+        },
+        {
+          "t": " in, ",
+          "s": "$t3"
+        },
+        {
+          "t": "Gev?",
+          "s": "$t3"
+        }
+      ],
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16-2": {
+      "id": "966:539",
+      "el": "rectangle-16-2",
+      "type": "rect",
+      "box": {
+        "w": 3,
+        "h": 48
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-255.union-2.rectangle-16-2",
+      "pos": {
+        "x": 22,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17-2": {
+      "id": "966:540",
+      "el": "rectangle-17-2",
+      "type": "rect",
+      "box": {
+        "w": 35,
+        "h": 36
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-255.union-2.rectangle-17-2",
+      "pos": {
+        "x": 6,
+        "y": 6
+      },
+      "fill": "$c4",
+      "rotation": 2613,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19-2": {
+      "id": "966:541",
+      "el": "rectangle-19-2",
+      "type": "rect",
+      "box": {
+        "w": 35,
+        "h": 36
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-255.union-2.rectangle-19-2",
+      "pos": {
+        "x": 6,
+        "y": 6
+      },
+      "fill": "$c4",
+      "rotation": 7700,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18-2": {
+      "id": "966:542",
+      "el": "rectangle-18-2",
+      "type": "rect",
+      "box": {
+        "w": 47,
+        "h": 3
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-255.union-2.rectangle-18-2",
+      "pos": {
+        "x": 0,
+        "y": 22
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union-2": {
+      "id": "966:538",
+      "el": "union-2",
+      "type": "bool",
+      "box": {
+        "w": 47,
+        "h": 48
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-255.union-2",
+      "pos": {
+        "x": 0,
+        "y": 3
+      },
+      "fill": "$c3",
+      "iconHint": "Ready to style in, Gev?",
+      "vectorPath": "$v2",
+      "children": [
+        "rectangle-16-2",
+        "rectangle-17-2",
+        "rectangle-19-2",
+        "rectangle-18-2"
+      ]
+    },
+    "group-255": {
+      "id": "966:536",
+      "el": "group-255",
+      "type": "group",
+      "box": {
+        "w": 520,
+        "h": 60
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-255",
+      "pos": {
+        "x": 128,
+        "y": 182
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "ready-to-style-in-gev",
+        "union-2"
+      ]
+    },
+    "spring-is-coming-wear-something-sweet": {
+      "id": "966:543",
+      "el": "spring-is-coming-wear-something-sweet",
+      "type": "text",
+      "box": {
+        "w": 373,
+        "h": 27
+      },
+      "name": "Spring is coming, wear something sweet!",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.spring-is-coming-wear-something-sweet",
+      "pos": {
+        "x": 199,
+        "y": 254
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "Spring is coming, wear something sweet!",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-32": {
+      "id": "966:545",
+      "el": "rectangle-32",
+      "type": "rect",
+      "box": {
+        "w": 524,
+        "h": 217
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-256.rectangle-32",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "i-want-to-wear": {
+      "id": "966:546",
+      "el": "i-want-to-wear",
+      "type": "text",
+      "box": {
+        "w": 217,
+        "h": 40
+      },
+      "name": "I want to wear...",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-256.i-want-to-wear",
+      "pos": {
+        "x": 36,
+        "y": 32
+      },
+      "fill": "$c3",
+      "text": "$t5",
+      "chars": [
+        {
+          "t": "I want to ",
+          "s": "$t6"
+        },
+        {
+          "t": "wear",
+          "s": "$t6",
+          "d": "underline"
+        },
+        {
+          "t": "...",
+          "s": "$t6"
+        }
+      ],
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16-3": {
+      "id": "966:548",
+      "el": "rectangle-16-3",
+      "type": "rect",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-256.group-97.rectangle-16-3",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "stars-1": {
+      "id": "966:550",
+      "el": "stars-1",
+      "type": "rect",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "name": "stars 1",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-256.group-97.group-100.stars-1",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "assetId": "611a7ed438c17eedd10d16c6293254281a4d7b0e",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "611a7ed438c17eedd10d16c6293254281a4d7b0e",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "iconHint": "stars 1",
+      "isMask": true,
+      "maskMode": "alpha",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-42": {
+      "id": "966:551",
+      "el": "rectangle-42",
+      "type": "rect",
+      "box": {
+        "w": 29,
+        "h": 60
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-256.group-97.group-100.rectangle-42",
+      "pos": {
+        "x": -1,
+        "y": -11
+      },
+      "fill": "$c1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "masked": "stars-1"
+    },
+    "group-100": {
+      "id": "966:549",
+      "el": "group-100",
+      "type": "group",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-256.group-97.group-100",
+      "pos": {
+        "x": 8,
+        "y": 8
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "stars-1",
+        "rectangle-42"
+      ]
+    },
+    "group-97": {
+      "id": "966:547",
+      "el": "group-97",
+      "type": "group",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-256.group-97",
+      "pos": {
+        "x": 448,
+        "y": 143
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-16-3",
+        "group-100"
+      ]
+    },
+    "rectangle-25": {
+      "id": "966:553",
+      "el": "rectangle-25",
+      "type": "rect",
+      "box": {
+        "w": 400,
+        "h": 44
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-256.group-98.rectangle-25",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c8",
+      "radius": "$r2",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "blue-shirt-with-pink-accessory": {
+      "id": "966:554",
+      "el": "blue-shirt-with-pink-accessory",
+      "type": "text",
+      "box": {
+        "w": 202,
+        "h": 19
+      },
+      "name": "Blue shirt with pink accessory...",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-256.group-98.blue-shirt-with-pink-accessory",
+      "pos": {
+        "x": 17,
+        "y": 11
+      },
+      "fill": "$c7",
+      "text": "$t7",
+      "chars": "Blue shirt with pink accessory... ",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-98": {
+      "id": "966:552",
+      "el": "group-98",
+      "type": "group",
+      "box": {
+        "w": 400,
+        "h": 44
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-256.group-98",
+      "pos": {
+        "x": 36,
+        "y": 141
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-25",
+        "blue-shirt-with-pink-accessory"
+      ]
+    },
+    "trend-1": {
+      "id": "966:557",
+      "el": "trend-1",
+      "type": "rect",
+      "box": {
+        "w": 16,
+        "h": 16
+      },
+      "name": "trend 1",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-256.frame-11.group-99.trend-1",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "assetId": "86d74154f6ac017cd1c67d6fba25b05e9dbe7741",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "86d74154f6ac017cd1c67d6fba25b05e9dbe7741",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "iconHint": "trend 1",
+      "isMask": true,
+      "maskMode": "alpha",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-41": {
+      "id": "966:558",
+      "el": "rectangle-41",
+      "type": "rect",
+      "box": {
+        "w": 16,
+        "h": 50
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-256.frame-11.group-99.rectangle-41",
+      "pos": {
+        "x": 0,
+        "y": -13
+      },
+      "fill": "$c3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "masked": "trend-1"
+    },
+    "group-99": {
+      "id": "966:556",
+      "el": "group-99",
+      "type": "group",
+      "box": {
+        "w": 16,
+        "h": 16
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-256.frame-11.group-99",
+      "inheritedFill": "$c1",
+      "children": [
+        "trend-1",
+        "rectangle-41"
+      ]
+    },
+    "clean-minimal": {
+      "id": "966:559",
+      "el": "clean-minimal",
+      "type": "text",
+      "box": {
+        "w": 116,
+        "h": 22
+      },
+      "name": "Clean & minimal",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-256.frame-11.clean-minimal",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t8",
+      "chars": "Clean & minimal",
+      "textGrow": "wh"
+    },
+    "frame-11": {
+      "id": "966:555",
+      "el": "frame-11",
+      "type": "frame",
+      "box": {
+        "w": 172,
+        "h": 34
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-256.frame-11",
+      "pos": {
+        "x": 36,
+        "y": 84
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "group-99",
+        "clean-minimal"
+      ]
+    },
+    "trend-1-2": {
+      "id": "966:562",
+      "el": "trend-1-2",
+      "type": "rect",
+      "box": {
+        "w": 16,
+        "h": 16
+      },
+      "name": "trend 1",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-256.frame-12.group-99-2.trend-1-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "assetId": "86d74154f6ac017cd1c67d6fba25b05e9dbe7741",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "86d74154f6ac017cd1c67d6fba25b05e9dbe7741",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "iconHint": "trend 1",
+      "isMask": true,
+      "maskMode": "alpha",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-41-2": {
+      "id": "966:563",
+      "el": "rectangle-41-2",
+      "type": "rect",
+      "box": {
+        "w": 16,
+        "h": 50
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-256.frame-12.group-99-2.rectangle-41-2",
+      "pos": {
+        "x": 0,
+        "y": -13
+      },
+      "fill": "$c3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "masked": "trend-1-2"
+    },
+    "group-99-2": {
+      "id": "966:561",
+      "el": "group-99-2",
+      "type": "group",
+      "box": {
+        "w": 16,
+        "h": 16
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-256.frame-12.group-99-2",
+      "inheritedFill": "$c1",
+      "children": [
+        "trend-1-2",
+        "rectangle-41-2"
+      ]
+    },
+    "disney": {
+      "id": "966:564",
+      "el": "disney",
+      "type": "text",
+      "box": {
+        "w": 47,
+        "h": 22
+      },
+      "name": "disney",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-256.frame-12.disney",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t8",
+      "chars": "disney",
+      "textGrow": "wh"
+    },
+    "frame-12": {
+      "id": "966:560",
+      "el": "frame-12",
+      "type": "frame",
+      "box": {
+        "w": 103,
+        "h": 34
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-256.frame-12",
+      "pos": {
+        "x": 224,
+        "y": 84
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "group-99-2",
+        "disney"
+      ]
+    },
+    "group-256": {
+      "id": "966:544",
+      "el": "group-256",
+      "type": "group",
+      "box": {
+        "w": 524,
+        "h": 217
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-256",
+      "pos": {
+        "x": 764,
+        "y": 670
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-32",
+        "i-want-to-wear",
+        "group-97",
+        "group-98",
+        "frame-11",
+        "frame-12"
+      ]
+    },
+    "vector-2": {
+      "id": "I966:565;3:2644",
+      "el": "vector-2",
+      "type": "vector",
+      "box": {
+        "w": 11,
+        "h": 19
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.chevron-right.vector-2",
+      "pos": {
+        "x": 11,
+        "y": 7
+      },
+      "fill": "$c3",
+      "iconHint": "Spring is coming, wear something sweet!",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-right": {
+      "id": "966:565",
+      "el": "chevron-right",
+      "type": "instance",
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "name": "chevron-right",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.chevron-right",
+      "pos": {
+        "x": 589,
+        "y": 534
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector-2"
+      ]
+    },
+    "vector-3": {
+      "id": "I966:566;3:2644",
+      "el": "vector-3",
+      "type": "vector",
+      "box": {
+        "w": 11,
+        "h": 19
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.chevron-right-2.vector-3",
+      "pos": {
+        "x": 11,
+        "y": 7
+      },
+      "fill": "$c3",
+      "iconHint": "Spring is coming, wear something sweet!",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-right-2": {
+      "id": "966:566",
+      "el": "chevron-right-2",
+      "type": "instance",
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "name": "chevron-right",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.chevron-right-2",
+      "pos": {
+        "x": 167,
+        "y": 534
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "rotation": 10313,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector-3"
+      ]
+    },
+    "your-preferences": {
+      "id": "966:568",
+      "el": "your-preferences",
+      "type": "text",
+      "box": {
+        "w": 235,
+        "h": 40
+      },
+      "name": "Your preferences",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.your-preferences",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t6",
+      "chars": "Your preferences",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-14": {
+      "id": "966:571",
+      "el": "rectangle-14",
+      "type": "rect",
+      "box": {
+        "w": 280,
+        "h": 160
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.group-2.rectangle-14",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c9",
+      "radius": "$r2",
+      "isMask": true,
+      "maskMode": "alpha",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16-4": {
+      "id": "966:572",
+      "el": "rectangle-16-4",
+      "type": "rect",
+      "box": {
+        "w": 280,
+        "h": 160
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.group-2.rectangle-16-4",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "masked": "rectangle-14"
+    },
+    "you-are-so-casual-chic-coded": {
+      "id": "966:573",
+      "el": "you-are-so-casual-chic-coded",
+      "type": "text",
+      "box": {
+        "w": 147,
+        "h": 120
+      },
+      "name": "You are so casual-chic coded",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.group-2.you-are-so-casual-chic-coded",
+      "pos": {
+        "x": 16,
+        "y": 15
+      },
+      "fill": "$c10",
+      "text": "$t5",
+      "chars": [
+        {
+          "t": "You are so \n",
+          "s": "$t6"
+        },
+        {
+          "t": "casual-chic\n",
+          "s": "$t6",
+          "d": "underline"
+        },
+        {
+          "t": "coded",
+          "s": "$t6"
+        }
+      ],
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "masked": "rectangle-14"
+    },
+    "rectangle-16-5": {
+      "id": "966:575",
+      "el": "rectangle-16-5",
+      "type": "rect",
+      "box": {
+        "w": 8,
+        "h": 112
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.group-2.union-3.rectangle-16-5",
+      "pos": {
+        "x": 56,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17-3": {
+      "id": "966:576",
+      "el": "rectangle-17-3",
+      "type": "rect",
+      "box": {
+        "w": 91,
+        "h": 85
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.group-2.union-3.rectangle-17-3",
+      "pos": {
+        "x": 15,
+        "y": 14
+      },
+      "fill": "$c4",
+      "rotation": 2469,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19-3": {
+      "id": "966:577",
+      "el": "rectangle-19-3",
+      "type": "rect",
+      "box": {
+        "w": 91,
+        "h": 85
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.group-2.union-3.rectangle-19-3",
+      "pos": {
+        "x": 15,
+        "y": 14
+      },
+      "fill": "$c4",
+      "rotation": 7844,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18-3": {
+      "id": "966:578",
+      "el": "rectangle-18-3",
+      "type": "rect",
+      "box": {
+        "w": 120,
+        "h": 7
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.group-2.union-3.rectangle-18-3",
+      "pos": {
+        "x": 0,
+        "y": 52
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union-3": {
+      "id": "966:574",
+      "el": "union-3",
+      "type": "bool",
+      "box": {
+        "w": 120,
+        "h": 112
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.group-2.union-3",
+      "pos": {
+        "x": 166,
+        "y": 74
+      },
+      "fill": "$c1",
+      "vectorPath": "$v4",
+      "children": [
+        "rectangle-16-5",
+        "rectangle-17-3",
+        "rectangle-19-3",
+        "rectangle-18-3"
+      ],
+      "masked": "rectangle-14"
+    },
+    "group-2": {
+      "id": "966:570",
+      "el": "group-2",
+      "type": "group",
+      "box": {
+        "w": 280,
+        "h": 160
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.group-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-14",
+        "rectangle-16-4",
+        "you-are-so-casual-chic-coded",
+        "union-3"
+      ]
+    },
+    "rectangle-14-2": {
+      "id": "966:580",
+      "el": "rectangle-14-2",
+      "type": "rect",
+      "box": {
+        "w": 200,
+        "h": 88
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.group-9.rectangle-14-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c9",
+      "radius": "$r2",
+      "isMask": true,
+      "maskMode": "alpha",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16-6": {
+      "id": "966:581",
+      "el": "rectangle-16-6",
+      "type": "rect",
+      "box": {
+        "w": 200,
+        "h": 88
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.group-9.rectangle-16-6",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c8",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "masked": "rectangle-14-2"
+    },
+    "screenshot-2026-05-12-at-15-53-11-remove": {
+      "id": "966:582",
+      "el": "screenshot-2026-05-12-at-15-53-11-remove",
+      "type": "rect",
+      "box": {
+        "w": 80,
+        "h": 193
+      },
+      "name": "Screenshot_2026-05-12_at_15.53.11-removebg-preview 1",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.group-9.screenshot-2026-05-12-at-15-53-11-remove",
+      "pos": {
+        "x": 105,
+        "y": 9
+      },
+      "assetId": "adcae1e6d970ef3b13a8cb0933e0ec24dfb3b65d",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "adcae1e6d970ef3b13a8cb0933e0ec24dfb3b65d",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "masked": "rectangle-14-2"
+    },
+    "1-top": {
+      "id": "966:584",
+      "el": "1-top",
+      "type": "text",
+      "box": {
+        "w": 56,
+        "h": 25
+      },
+      "name": "#1 Top",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.group-9.group-10.1-top",
+      "pos": {
+        "x": 0,
+        "y": 9
+      },
+      "fill": "$c3",
+      "text": "$t9",
+      "chars": "#1 Top",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "your-favorite": {
+      "id": "966:585",
+      "el": "your-favorite",
+      "type": "text",
+      "box": {
+        "w": 50,
+        "h": 11
+      },
+      "name": "Your favorite",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.group-9.group-10.your-favorite",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t10",
+      "chars": "Your favorite",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-10": {
+      "id": "966:583",
+      "el": "group-10",
+      "type": "group",
+      "box": {
+        "w": 56,
+        "h": 34
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.group-9.group-10",
+      "pos": {
+        "x": 24,
+        "y": 27
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "1-top",
+        "your-favorite"
+      ],
+      "masked": "rectangle-14-2"
+    },
+    "group-9": {
+      "id": "966:579",
+      "el": "group-9",
+      "type": "group",
+      "box": {
+        "w": 200,
+        "h": 88
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.group-9",
+      "pos": {
+        "x": 304,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-14-2",
+        "rectangle-16-6",
+        "screenshot-2026-05-12-at-15-53-11-remove",
+        "group-10"
+      ]
+    },
+    "rectangle-14-3": {
+      "id": "966:587",
+      "el": "rectangle-14-3",
+      "type": "rect",
+      "box": {
+        "w": 200,
+        "h": 88
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.group-10-2.rectangle-14-3",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c9",
+      "radius": "$r2",
+      "isMask": true,
+      "maskMode": "alpha",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16-7": {
+      "id": "966:588",
+      "el": "rectangle-16-7",
+      "type": "rect",
+      "box": {
+        "w": 200,
+        "h": 88
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.group-10-2.rectangle-16-7",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "masked": "rectangle-14-3"
+    },
+    "1-bottom": {
+      "id": "966:590",
+      "el": "1-bottom",
+      "type": "text",
+      "box": {
+        "w": 88,
+        "h": 25
+      },
+      "name": "#1 Bottom",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.group-10-2.group-10-3.1-bottom",
+      "pos": {
+        "x": 0,
+        "y": 9
+      },
+      "fill": "$c1",
+      "text": "$t9",
+      "chars": "#1 Bottom",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "your-favorite-2": {
+      "id": "966:591",
+      "el": "your-favorite-2",
+      "type": "text",
+      "box": {
+        "w": 50,
+        "h": 11
+      },
+      "name": "Your favorite",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.group-10-2.group-10-3.your-favorite-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c1",
+      "text": "$t10",
+      "chars": "Your favorite",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-10-3": {
+      "id": "966:589",
+      "el": "group-10-3",
+      "type": "group",
+      "box": {
+        "w": 88,
+        "h": 34
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.group-10-2.group-10-3",
+      "pos": {
+        "x": 24,
+        "y": 27
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "1-bottom",
+        "your-favorite-2"
+      ],
+      "masked": "rectangle-14-3"
+    },
+    "3-removebg-preview-1": {
+      "id": "966:592",
+      "el": "3-removebg-preview-1",
+      "type": "rect",
+      "box": {
+        "w": 90,
+        "h": 113
+      },
+      "name": "___3_-removebg-preview 1",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.group-10-2.3-removebg-preview-1",
+      "pos": {
+        "x": 115,
+        "y": -27
+      },
+      "assetId": "75678a8bfd83306524198a2152c0f9dda9ffe612",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "75678a8bfd83306524198a2152c0f9dda9ffe612",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              0.7235556840896606,
+              0,
+              0.13822223246097565
+            ],
+            [
+              0,
+              0.5201289057731628,
+              0.33172303438186646
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "masked": "rectangle-14-3"
+    },
+    "group-10-2": {
+      "id": "966:586",
+      "el": "group-10-2",
+      "type": "group",
+      "box": {
+        "w": 200,
+        "h": 88
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.group-10-2",
+      "pos": {
+        "x": 304,
+        "y": 104
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-14-3",
+        "rectangle-16-7",
+        "group-10-3",
+        "3-removebg-preview-1"
+      ]
+    },
+    "rectangle-14-4": {
+      "id": "966:595",
+      "el": "rectangle-14-4",
+      "type": "rect",
+      "box": {
+        "w": 280,
+        "h": 120
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.frame-61.group-12.rectangle-14-4",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c9",
+      "radius": "$r2",
+      "isMask": true,
+      "maskMode": "alpha",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16-8": {
+      "id": "966:596",
+      "el": "rectangle-16-8",
+      "type": "rect",
+      "box": {
+        "w": 280,
+        "h": 120
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.frame-61.group-12.rectangle-16-8",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "masked": "rectangle-14-4"
+    },
+    "1-top-2": {
+      "id": "966:598",
+      "el": "1-top-2",
+      "type": "text",
+      "box": {
+        "w": 68,
+        "h": 30
+      },
+      "name": "#1 Top",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.frame-61.group-12.group-10-4.1-top-2",
+      "pos": {
+        "x": 0,
+        "y": 16
+      },
+      "fill": "$c3",
+      "text": "$t11",
+      "chars": "#1 Top",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "number-of-wardrobe": {
+      "id": "966:599",
+      "el": "number-of-wardrobe",
+      "type": "text",
+      "box": {
+        "w": 116,
+        "h": 16
+      },
+      "name": "number of wardrobe",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.frame-61.group-12.group-10-4.number-of-wardrobe",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t12",
+      "chars": "number of wardrobe",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-10-4": {
+      "id": "966:597",
+      "el": "group-10-4",
+      "type": "group",
+      "box": {
+        "w": 116,
+        "h": 46
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.frame-61.group-12.group-10-4",
+      "pos": {
+        "x": 106,
+        "y": 37
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "1-top-2",
+        "number-of-wardrobe"
+      ],
+      "masked": "rectangle-14-4"
+    },
+    "rectangle-16-9": {
+      "id": "966:601",
+      "el": "rectangle-16-9",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 26
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.frame-61.group-12.union-4.rectangle-16-9",
+      "pos": {
+        "x": 13,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17-4": {
+      "id": "966:602",
+      "el": "rectangle-17-4",
+      "type": "rect",
+      "box": {
+        "w": 21,
+        "h": 20
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.frame-61.group-12.union-4.rectangle-17-4",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 2469,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19-4": {
+      "id": "966:603",
+      "el": "rectangle-19-4",
+      "type": "rect",
+      "box": {
+        "w": 21,
+        "h": 20
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.frame-61.group-12.union-4.rectangle-19-4",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 7844,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18-4": {
+      "id": "966:604",
+      "el": "rectangle-18-4",
+      "type": "rect",
+      "box": {
+        "w": 28,
+        "h": 2
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.frame-61.group-12.union-4.rectangle-18-4",
+      "pos": {
+        "x": 0,
+        "y": 12
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union-4": {
+      "id": "966:600",
+      "el": "union-4",
+      "type": "bool",
+      "box": {
+        "w": 28,
+        "h": 26
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.frame-61.group-12.union-4",
+      "pos": {
+        "x": 24,
+        "y": 24
+      },
+      "fill": "$c3",
+      "vectorPath": "$v5",
+      "children": [
+        "rectangle-16-9",
+        "rectangle-17-4",
+        "rectangle-19-4",
+        "rectangle-18-4"
+      ],
+      "masked": "rectangle-14-4"
+    },
+    "rectangle-16-10": {
+      "id": "966:606",
+      "el": "rectangle-16-10",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 26
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.frame-61.group-12.union-5.rectangle-16-10",
+      "pos": {
+        "x": 13,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17-5": {
+      "id": "966:607",
+      "el": "rectangle-17-5",
+      "type": "rect",
+      "box": {
+        "w": 21,
+        "h": 20
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.frame-61.group-12.union-5.rectangle-17-5",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 2469,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19-5": {
+      "id": "966:608",
+      "el": "rectangle-19-5",
+      "type": "rect",
+      "box": {
+        "w": 21,
+        "h": 20
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.frame-61.group-12.union-5.rectangle-19-5",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 7844,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18-5": {
+      "id": "966:609",
+      "el": "rectangle-18-5",
+      "type": "rect",
+      "box": {
+        "w": 28,
+        "h": 2
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.frame-61.group-12.union-5.rectangle-18-5",
+      "pos": {
+        "x": 0,
+        "y": 12
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union-5": {
+      "id": "966:605",
+      "el": "union-5",
+      "type": "bool",
+      "box": {
+        "w": 28,
+        "h": 26
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.frame-61.group-12.union-5",
+      "pos": {
+        "x": 54,
+        "y": 45
+      },
+      "fill": "$c3",
+      "vectorPath": "$v6",
+      "children": [
+        "rectangle-16-10",
+        "rectangle-17-5",
+        "rectangle-19-5",
+        "rectangle-18-5"
+      ],
+      "masked": "rectangle-14-4"
+    },
+    "rectangle-16-11": {
+      "id": "966:611",
+      "el": "rectangle-16-11",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 26
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.frame-61.group-12.union-6.rectangle-16-11",
+      "pos": {
+        "x": 13,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17-6": {
+      "id": "966:612",
+      "el": "rectangle-17-6",
+      "type": "rect",
+      "box": {
+        "w": 21,
+        "h": 20
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.frame-61.group-12.union-6.rectangle-17-6",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 2469,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19-6": {
+      "id": "966:613",
+      "el": "rectangle-19-6",
+      "type": "rect",
+      "box": {
+        "w": 21,
+        "h": 20
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.frame-61.group-12.union-6.rectangle-19-6",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 7844,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18-6": {
+      "id": "966:614",
+      "el": "rectangle-18-6",
+      "type": "rect",
+      "box": {
+        "w": 28,
+        "h": 2
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.frame-61.group-12.union-6.rectangle-18-6",
+      "pos": {
+        "x": 0,
+        "y": 12
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union-6": {
+      "id": "966:610",
+      "el": "union-6",
+      "type": "bool",
+      "box": {
+        "w": 28,
+        "h": 26
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.frame-61.group-12.union-6",
+      "pos": {
+        "x": 23,
+        "y": 69
+      },
+      "fill": "$c3",
+      "vectorPath": "$v7",
+      "children": [
+        "rectangle-16-11",
+        "rectangle-17-6",
+        "rectangle-19-6",
+        "rectangle-18-6"
+      ],
+      "masked": "rectangle-14-4"
+    },
+    "group-12": {
+      "id": "966:594",
+      "el": "group-12",
+      "type": "group",
+      "box": {
+        "w": 280,
+        "h": 120
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.frame-61.group-12",
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-14-4",
+        "rectangle-16-8",
+        "group-10-4",
+        "union-4",
+        "union-5",
+        "union-6"
+      ]
+    },
+    "frame-61": {
+      "id": "966:593",
+      "el": "frame-61",
+      "type": "frame",
+      "box": {
+        "w": 280,
+        "h": 120
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.frame-61",
+      "pos": {
+        "x": 0,
+        "y": 176
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "group-12"
+      ]
+    },
+    "rectangle-14-5": {
+      "id": "966:616",
+      "el": "rectangle-14-5",
+      "type": "rect",
+      "box": {
+        "w": 200,
+        "h": 88
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.group-11.rectangle-14-5",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c9",
+      "radius": "$r2",
+      "isMask": true,
+      "maskMode": "alpha",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16-12": {
+      "id": "966:617",
+      "el": "rectangle-16-12",
+      "type": "rect",
+      "box": {
+        "w": 200,
+        "h": 88
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.group-11.rectangle-16-12",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "masked": "rectangle-14-5"
+    },
+    "number-of-looks": {
+      "id": "966:620",
+      "el": "number-of-looks",
+      "type": "text",
+      "box": {
+        "w": 63,
+        "h": 11
+      },
+      "name": "number of looks",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.group-11.group-10-5.number-of-looks",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c1",
+      "text": "$t10",
+      "chars": "number of looks",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-10-5": {
+      "id": "966:618",
+      "el": "group-10-5",
+      "type": "group",
+      "box": {
+        "w": 63,
+        "h": 34
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.group-11.group-10-5",
+      "pos": {
+        "x": 24,
+        "y": 27
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "123",
+        "number-of-looks"
+      ],
+      "masked": "rectangle-14-5"
+    },
+    "rectangle-16-13": {
+      "id": "966:622",
+      "el": "rectangle-16-13",
+      "type": "rect",
+      "box": {
+        "w": 8,
+        "h": 112
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.group-11.union-7.rectangle-16-13",
+      "pos": {
+        "x": 56,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17-7": {
+      "id": "966:623",
+      "el": "rectangle-17-7",
+      "type": "rect",
+      "box": {
+        "w": 91,
+        "h": 85
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.group-11.union-7.rectangle-17-7",
+      "pos": {
+        "x": 15,
+        "y": 14
+      },
+      "fill": "$c4",
+      "rotation": 2469,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19-7": {
+      "id": "966:624",
+      "el": "rectangle-19-7",
+      "type": "rect",
+      "box": {
+        "w": 91,
+        "h": 85
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.group-11.union-7.rectangle-19-7",
+      "pos": {
+        "x": 15,
+        "y": 14
+      },
+      "fill": "$c4",
+      "rotation": 7844,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18-7": {
+      "id": "966:625",
+      "el": "rectangle-18-7",
+      "type": "rect",
+      "box": {
+        "w": 120,
+        "h": 7
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.group-11.union-7.rectangle-18-7",
+      "pos": {
+        "x": 0,
+        "y": 52
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union-7": {
+      "id": "966:621",
+      "el": "union-7",
+      "type": "bool",
+      "box": {
+        "w": 120,
+        "h": 112
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.group-11.union-7",
+      "pos": {
+        "x": 100,
+        "y": -4
+      },
+      "fill": "$c1",
+      "vectorPath": "$v4",
+      "children": [
+        "rectangle-16-13",
+        "rectangle-17-7",
+        "rectangle-19-7",
+        "rectangle-18-7"
+      ],
+      "masked": "rectangle-14-5"
+    },
+    "group-11": {
+      "id": "966:615",
+      "el": "group-11",
+      "type": "group",
+      "box": {
+        "w": 200,
+        "h": 88
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25.group-11",
+      "pos": {
+        "x": 304,
+        "y": 208
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-14-5",
+        "rectangle-16-12",
+        "group-10-5",
+        "union-7"
+      ]
+    },
+    "group-25": {
+      "id": "966:569",
+      "el": "group-25",
+      "type": "group",
+      "box": {
+        "w": 504,
+        "h": 296
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3.group-25",
+      "pos": {
+        "x": 0,
+        "y": 60
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-2",
+        "group-9",
+        "group-10-2",
+        "frame-61",
+        "group-11"
+      ]
+    },
+    "group-99-3": {
+      "id": "966:567",
+      "el": "group-99-3",
+      "type": "group",
+      "box": {
+        "w": 504,
+        "h": 356
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257.group-99-3",
+      "pos": {
+        "x": 764,
+        "y": 274
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "your-preferences",
+        "group-25"
+      ]
+    },
+    "group-257": {
+      "id": "966:516",
+      "el": "group-257",
+      "type": "group",
+      "box": {
+        "w": 1440,
+        "h": 887
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-257",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-96",
+        "group-135",
+        "group-255",
+        "spring-is-coming-wear-something-sweet",
+        "group-256",
+        "chevron-right",
+        "chevron-right-2",
+        "group-99-3"
+      ]
+    },
+    "rectangle-45": {
+      "id": "966:626",
+      "el": "rectangle-45",
+      "type": "rect",
+      "box": {
+        "w": 1440,
+        "h": 1024
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.rectangle-45",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c11",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-46": {
+      "id": "966:628",
+      "el": "rectangle-46",
+      "type": "rect",
+      "box": {
+        "w": 818,
+        "h": 853
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.rectangle-46",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c1",
+      "radius": "$r3",
+      "isMask": true,
+      "maskMode": "alpha",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      }
+    },
+    "rectangle-47": {
+      "id": "966:629",
+      "el": "rectangle-47",
+      "type": "rect",
+      "box": {
+        "w": 818,
+        "h": 850
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.rectangle-47",
+      "pos": {
+        "x": 0,
+        "y": -2
+      },
+      "fill": "$c1",
+      "radius": "$r3",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      },
+      "masked": "rectangle-46"
+    },
+    "rectangle-11": {
+      "id": "966:632",
+      "el": "rectangle-11",
+      "type": "rect",
+      "box": {
+        "w": 56,
+        "h": 56
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-58.group-258.rectangle-11",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c8",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-4": {
+      "id": "I966:633;3:2684",
+      "el": "vector-4",
+      "type": "vector",
+      "box": {
+        "w": 19,
+        "h": 19
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-58.group-258.close-x.vector-4",
+      "pos": {
+        "x": 7,
+        "y": 7
+      },
+      "fill": "$c3",
+      "iconHint": "close x",
+      "vectorPath": "$v8",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "close-x": {
+      "id": "966:633",
+      "el": "close-x",
+      "type": "instance",
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "name": "close-x",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-58.group-258.close-x",
+      "pos": {
+        "x": 12,
+        "y": 12
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      },
+      "children": [
+        "vector-4"
+      ]
+    },
+    "group-258": {
+      "id": "966:631",
+      "el": "group-258",
+      "type": "group",
+      "box": {
+        "w": 56,
+        "h": 56
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-58.group-258",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-11",
+        "close-x"
+      ]
+    },
+    "group-58": {
+      "id": "966:630",
+      "el": "group-58",
+      "type": "group",
+      "box": {
+        "w": 56,
+        "h": 56
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-58",
+      "pos": {
+        "x": 706,
+        "y": 54
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-258"
+      ],
+      "masked": "rectangle-46"
+    },
+    "sun": {
+      "id": "968:199",
+      "el": "sun",
+      "type": "text",
+      "box": {
+        "w": 42,
+        "h": 24
+      },
+      "name": "SUN",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.frame-1.sun",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c12",
+      "text": "$t13",
+      "chars": "SUN",
+      "textGrow": "wh"
+    },
+    "mon": {
+      "id": "968:200",
+      "el": "mon",
+      "type": "text",
+      "box": {
+        "w": 48,
+        "h": 24
+      },
+      "name": "mon",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.frame-1.mon",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t13",
+      "chars": "mon",
+      "textGrow": "wh"
+    },
+    "tue": {
+      "id": "968:201",
+      "el": "tue",
+      "type": "text",
+      "box": {
+        "w": 38,
+        "h": 24
+      },
+      "name": "TUE",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.frame-1.tue",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t13",
+      "chars": "TUE",
+      "textGrow": "wh"
+    },
+    "wed": {
+      "id": "968:202",
+      "el": "wed",
+      "type": "text",
+      "box": {
+        "w": 45,
+        "h": 24
+      },
+      "name": "wed",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.frame-1.wed",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t13",
+      "chars": "wed",
+      "textGrow": "wh"
+    },
+    "thu": {
+      "id": "968:203",
+      "el": "thu",
+      "type": "text",
+      "box": {
+        "w": 41,
+        "h": 24
+      },
+      "name": "thu",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.frame-1.thu",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t13",
+      "chars": "thu",
+      "textGrow": "wh"
+    },
+    "fri": {
+      "id": "968:204",
+      "el": "fri",
+      "type": "text",
+      "box": {
+        "w": 29,
+        "h": 24
+      },
+      "name": "fRI",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.frame-1.fri",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t13",
+      "chars": "fRI",
+      "textGrow": "wh"
+    },
+    "sat": {
+      "id": "968:205",
+      "el": "sat",
+      "type": "text",
+      "box": {
+        "w": 37,
+        "h": 24
+      },
+      "name": "SAT",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.frame-1.sat",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c12",
+      "text": "$t13",
+      "chars": "SAT",
+      "textGrow": "wh"
+    },
+    "frame-1": {
+      "id": "968:198",
+      "el": "frame-1",
+      "type": "frame",
+      "box": {
+        "w": 664,
+        "h": 24
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.frame-1",
+      "pos": {
+        "x": 86,
+        "y": 154
+      },
+      "layout": "$l3",
+      "inheritedFill": "$c1",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "sun",
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat"
+      ],
+      "masked": "rectangle-46"
+    },
+    "may-2026": {
+      "id": "968:197",
+      "el": "may-2026",
+      "type": "text",
+      "box": {
+        "w": 188,
+        "h": 48
+      },
+      "name": "May 2026",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-261.may-2026",
+      "pos": {
+        "x": 56,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t14",
+      "chars": "May 2026",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "vector-5": {
+      "id": "I968:300;3:2638",
+      "el": "vector-5",
+      "type": "vector",
+      "box": {
+        "w": 11,
+        "h": 19
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-261.chevron-left.vector-5",
+      "pos": {
+        "x": 11,
+        "y": 7
+      },
+      "fill": "$c7",
+      "iconHint": "May 2026",
+      "vectorPath": "$v9",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-left": {
+      "id": "968:300",
+      "el": "chevron-left",
+      "type": "instance",
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "name": "chevron-left",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-261.chevron-left",
+      "pos": {
+        "x": 0,
+        "y": 7
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector-5"
+      ]
+    },
+    "vector-6": {
+      "id": "I968:301;3:2650",
+      "el": "vector-6",
+      "type": "vector",
+      "box": {
+        "w": 11,
+        "h": 19
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-261.chevron-right-3.vector-6",
+      "pos": {
+        "x": 11,
+        "y": 7
+      },
+      "fill": "$c7",
+      "iconHint": "May 2026",
+      "vectorPath": "$v10",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-right-3": {
+      "id": "968:301",
+      "el": "chevron-right-3",
+      "type": "instance",
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "name": "chevron-right",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-261.chevron-right-3",
+      "pos": {
+        "x": 268,
+        "y": 7
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector-6"
+      ]
+    },
+    "group-261": {
+      "id": "979:426",
+      "el": "group-261",
+      "type": "group",
+      "box": {
+        "w": 300,
+        "h": 48
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-261",
+      "pos": {
+        "x": 64,
+        "y": 59
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "may-2026",
+        "chevron-left",
+        "chevron-right-3"
+      ],
+      "masked": "rectangle-46"
+    },
+    "01": {
+      "id": "979:314",
+      "el": "01",
+      "type": "text",
+      "box": {
+        "w": 22,
+        "h": 24
+      },
+      "name": "01",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-139.01",
+      "pos": {
+        "x": 21,
+        "y": 20
+      },
+      "fill": "$c3",
+      "text": "$t13",
+      "chars": "01",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      }
+    },
+    "rectangle-53": {
+      "id": "979:315",
+      "el": "rectangle-53",
+      "type": "rect",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-139.rectangle-53",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-139": {
+      "id": "979:313",
+      "el": "group-139",
+      "type": "group",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-139",
+      "pos": {
+        "x": 523,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "01",
+        "rectangle-53"
+      ]
+    },
+    "08": {
+      "id": "979:348",
+      "el": "08",
+      "type": "text",
+      "box": {
+        "w": 26,
+        "h": 24
+      },
+      "name": "08",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-146.08",
+      "pos": {
+        "x": 19,
+        "y": 20
+      },
+      "fill": "$c3",
+      "text": "$t13",
+      "chars": "08",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      }
+    },
+    "rectangle-53-2": {
+      "id": "979:349",
+      "el": "rectangle-53-2",
+      "type": "rect",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-146.rectangle-53-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-146": {
+      "id": "979:347",
+      "el": "group-146",
+      "type": "group",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-146",
+      "pos": {
+        "x": 523,
+        "y": 89
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "08",
+        "rectangle-53-2"
+      ]
+    },
+    "09": {
+      "id": "979:352",
+      "el": "09",
+      "type": "text",
+      "box": {
+        "w": 25,
+        "h": 24
+      },
+      "name": "09",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-147.09",
+      "pos": {
+        "x": 20,
+        "y": 20
+      },
+      "fill": "$c3",
+      "text": "$t13",
+      "chars": "09",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      }
+    },
+    "rectangle-53-3": {
+      "id": "979:353",
+      "el": "rectangle-53-3",
+      "type": "rect",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-147.rectangle-53-3",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-147": {
+      "id": "979:351",
+      "el": "group-147",
+      "type": "group",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-147",
+      "pos": {
+        "x": 620,
+        "y": 89
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "09",
+        "rectangle-53-3"
+      ]
+    },
+    "02": {
+      "id": "979:325",
+      "el": "02",
+      "type": "text",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "name": "02",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-140.02",
+      "pos": {
+        "x": 20,
+        "y": 20
+      },
+      "fill": "$c3",
+      "text": "$t13",
+      "chars": "02",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      }
+    },
+    "rectangle-53-4": {
+      "id": "979:326",
+      "el": "rectangle-53-4",
+      "type": "rect",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-140.rectangle-53-4",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-140": {
+      "id": "979:324",
+      "el": "group-140",
+      "type": "group",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-140",
+      "pos": {
+        "x": 620,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "02",
+        "rectangle-53-4"
+      ]
+    },
+    "03": {
+      "id": "979:329",
+      "el": "03",
+      "type": "text",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "name": "03",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-141.03",
+      "pos": {
+        "x": 20,
+        "y": 20
+      },
+      "fill": "$c3",
+      "text": "$t13",
+      "chars": "03",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      }
+    },
+    "rectangle-53-5": {
+      "id": "979:330",
+      "el": "rectangle-53-5",
+      "type": "rect",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-141.rectangle-53-5",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-141": {
+      "id": "979:328",
+      "el": "group-141",
+      "type": "group",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-141",
+      "pos": {
+        "x": 0,
+        "y": 89
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "03",
+        "rectangle-53-5"
+      ]
+    },
+    "04": {
+      "id": "979:332",
+      "el": "04",
+      "type": "text",
+      "box": {
+        "w": 26,
+        "h": 24
+      },
+      "name": "04",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-142.04",
+      "pos": {
+        "x": 19,
+        "y": 20
+      },
+      "fill": "$c3",
+      "text": "$t13",
+      "chars": "04",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      }
+    },
+    "rectangle-53-6": {
+      "id": "979:333",
+      "el": "rectangle-53-6",
+      "type": "rect",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-142.rectangle-53-6",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-142": {
+      "id": "979:331",
+      "el": "group-142",
+      "type": "group",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-142",
+      "pos": {
+        "x": 108,
+        "y": 89
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "04",
+        "rectangle-53-6"
+      ]
+    },
+    "05": {
+      "id": "979:336",
+      "el": "05",
+      "type": "text",
+      "box": {
+        "w": 25,
+        "h": 24
+      },
+      "name": "05",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-143.05",
+      "pos": {
+        "x": 20,
+        "y": 20
+      },
+      "fill": "$c3",
+      "text": "$t13",
+      "chars": "05",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      }
+    },
+    "rectangle-53-7": {
+      "id": "979:337",
+      "el": "rectangle-53-7",
+      "type": "rect",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-143.rectangle-53-7",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-143": {
+      "id": "979:335",
+      "el": "group-143",
+      "type": "group",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-143",
+      "pos": {
+        "x": 212,
+        "y": 89
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "05",
+        "rectangle-53-7"
+      ]
+    },
+    "06": {
+      "id": "979:340",
+      "el": "06",
+      "type": "text",
+      "box": {
+        "w": 25,
+        "h": 24
+      },
+      "name": "06",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-144.06",
+      "pos": {
+        "x": 20,
+        "y": 20
+      },
+      "fill": "$c3",
+      "text": "$t13",
+      "chars": "06",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      }
+    },
+    "rectangle-53-8": {
+      "id": "979:341",
+      "el": "rectangle-53-8",
+      "type": "rect",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-144.rectangle-53-8",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-144": {
+      "id": "979:339",
+      "el": "group-144",
+      "type": "group",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-144",
+      "pos": {
+        "x": 319,
+        "y": 89
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "06",
+        "rectangle-53-8"
+      ]
+    },
+    "07": {
+      "id": "979:344",
+      "el": "07",
+      "type": "text",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "name": "07",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-145.07",
+      "pos": {
+        "x": 20,
+        "y": 20
+      },
+      "fill": "$c3",
+      "text": "$t13",
+      "chars": "07",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      }
+    },
+    "rectangle-53-9": {
+      "id": "979:345",
+      "el": "rectangle-53-9",
+      "type": "rect",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-145.rectangle-53-9",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-145": {
+      "id": "979:343",
+      "el": "group-145",
+      "type": "group",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-145",
+      "pos": {
+        "x": 425,
+        "y": 88
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "07",
+        "rectangle-53-9"
+      ]
+    },
+    "rectangle-53-10": {
+      "id": "979:357",
+      "el": "rectangle-53-10",
+      "type": "rect",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-148.rectangle-53-10",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-148": {
+      "id": "979:355",
+      "el": "group-148",
+      "type": "group",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-148",
+      "pos": {
+        "x": 523,
+        "y": 178
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "15",
+        "rectangle-53-10"
+      ]
+    },
+    "rectangle-53-11": {
+      "id": "979:360",
+      "el": "rectangle-53-11",
+      "type": "rect",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-149.rectangle-53-11",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-149": {
+      "id": "979:358",
+      "el": "group-149",
+      "type": "group",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-149",
+      "pos": {
+        "x": 620,
+        "y": 178
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "16",
+        "rectangle-53-11"
+      ]
+    },
+    "rectangle-53-12": {
+      "id": "979:363",
+      "el": "rectangle-53-12",
+      "type": "rect",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-150.rectangle-53-12",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-150": {
+      "id": "979:361",
+      "el": "group-150",
+      "type": "group",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-150",
+      "pos": {
+        "x": 0,
+        "y": 178
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "10",
+        "rectangle-53-12"
+      ]
+    },
+    "rectangle-53-13": {
+      "id": "979:366",
+      "el": "rectangle-53-13",
+      "type": "rect",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-151.rectangle-53-13",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-151": {
+      "id": "979:364",
+      "el": "group-151",
+      "type": "group",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-151",
+      "pos": {
+        "x": 108,
+        "y": 178
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "11",
+        "rectangle-53-13"
+      ]
+    },
+    "rectangle-53-14": {
+      "id": "979:369",
+      "el": "rectangle-53-14",
+      "type": "rect",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-152.rectangle-53-14",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-152": {
+      "id": "979:367",
+      "el": "group-152",
+      "type": "group",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-152",
+      "pos": {
+        "x": 212,
+        "y": 178
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-53-14",
+        "12"
+      ]
+    },
+    "rectangle-53-15": {
+      "id": "979:372",
+      "el": "rectangle-53-15",
+      "type": "rect",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-153.rectangle-53-15",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-153": {
+      "id": "979:370",
+      "el": "group-153",
+      "type": "group",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-153",
+      "pos": {
+        "x": 319,
+        "y": 178
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "13",
+        "rectangle-53-15"
+      ]
+    },
+    "rectangle-53-16": {
+      "id": "979:375",
+      "el": "rectangle-53-16",
+      "type": "rect",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-154.rectangle-53-16",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-154": {
+      "id": "979:373",
+      "el": "group-154",
+      "type": "group",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-154",
+      "pos": {
+        "x": 425,
+        "y": 177
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "14",
+        "rectangle-53-16"
+      ]
+    },
+    "rectangle-53-17": {
+      "id": "979:379",
+      "el": "rectangle-53-17",
+      "type": "rect",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-155.rectangle-53-17",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-155": {
+      "id": "979:377",
+      "el": "group-155",
+      "type": "group",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-155",
+      "pos": {
+        "x": 524,
+        "y": 267
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "22",
+        "rectangle-53-17"
+      ]
+    },
+    "rectangle-53-18": {
+      "id": "979:382",
+      "el": "rectangle-53-18",
+      "type": "rect",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-156.rectangle-53-18",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-156": {
+      "id": "979:380",
+      "el": "group-156",
+      "type": "group",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-156",
+      "pos": {
+        "x": 621,
+        "y": 267
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "23",
+        "rectangle-53-18"
+      ]
+    },
+    "rectangle-53-19": {
+      "id": "979:385",
+      "el": "rectangle-53-19",
+      "type": "rect",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-157.rectangle-53-19",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-157": {
+      "id": "979:383",
+      "el": "group-157",
+      "type": "group",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-157",
+      "pos": {
+        "x": 1,
+        "y": 267
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "17",
+        "rectangle-53-19"
+      ]
+    },
+    "rectangle-53-20": {
+      "id": "979:388",
+      "el": "rectangle-53-20",
+      "type": "rect",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-158.rectangle-53-20",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-158": {
+      "id": "979:386",
+      "el": "group-158",
+      "type": "group",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-158",
+      "pos": {
+        "x": 109,
+        "y": 267
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "18",
+        "rectangle-53-20"
+      ]
+    },
+    "rectangle-53-21": {
+      "id": "979:391",
+      "el": "rectangle-53-21",
+      "type": "rect",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-159.rectangle-53-21",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-159": {
+      "id": "979:389",
+      "el": "group-159",
+      "type": "group",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-159",
+      "pos": {
+        "x": 213,
+        "y": 267
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "19",
+        "rectangle-53-21"
+      ]
+    },
+    "rectangle-53-22": {
+      "id": "979:394",
+      "el": "rectangle-53-22",
+      "type": "rect",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-160.rectangle-53-22",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-160": {
+      "id": "979:392",
+      "el": "group-160",
+      "type": "group",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-160",
+      "pos": {
+        "x": 320,
+        "y": 267
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "20",
+        "rectangle-53-22"
+      ]
+    },
+    "rectangle-53-23": {
+      "id": "979:397",
+      "el": "rectangle-53-23",
+      "type": "rect",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-161.rectangle-53-23",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-161": {
+      "id": "979:395",
+      "el": "group-161",
+      "type": "group",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-161",
+      "pos": {
+        "x": 426,
+        "y": 266
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "21",
+        "rectangle-53-23"
+      ]
+    },
+    "rectangle-53-24": {
+      "id": "979:401",
+      "el": "rectangle-53-24",
+      "type": "rect",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-162.rectangle-53-24",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-162": {
+      "id": "979:399",
+      "el": "group-162",
+      "type": "group",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-162",
+      "pos": {
+        "x": 524,
+        "y": 356
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "29",
+        "rectangle-53-24"
+      ]
+    },
+    "rectangle-53-25": {
+      "id": "979:404",
+      "el": "rectangle-53-25",
+      "type": "rect",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-163.rectangle-53-25",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-163": {
+      "id": "979:402",
+      "el": "group-163",
+      "type": "group",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-163",
+      "pos": {
+        "x": 621,
+        "y": 356
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "30",
+        "rectangle-53-25"
+      ]
+    },
+    "rectangle-53-26": {
+      "id": "979:407",
+      "el": "rectangle-53-26",
+      "type": "rect",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-164.rectangle-53-26",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-164": {
+      "id": "979:405",
+      "el": "group-164",
+      "type": "group",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-164",
+      "pos": {
+        "x": 1,
+        "y": 356
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "24",
+        "rectangle-53-26"
+      ]
+    },
+    "rectangle-53-27": {
+      "id": "979:423",
+      "el": "rectangle-53-27",
+      "type": "rect",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-169.rectangle-53-27",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-169": {
+      "id": "979:421",
+      "el": "group-169",
+      "type": "group",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-169",
+      "pos": {
+        "x": 1,
+        "y": 445
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "31",
+        "rectangle-53-27"
+      ]
+    },
+    "rectangle-53-28": {
+      "id": "979:410",
+      "el": "rectangle-53-28",
+      "type": "rect",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-165.rectangle-53-28",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-165": {
+      "id": "979:408",
+      "el": "group-165",
+      "type": "group",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-165",
+      "pos": {
+        "x": 109,
+        "y": 356
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "25",
+        "rectangle-53-28"
+      ]
+    },
+    "rectangle-53-29": {
+      "id": "979:413",
+      "el": "rectangle-53-29",
+      "type": "rect",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-166.rectangle-53-29",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-166": {
+      "id": "979:411",
+      "el": "group-166",
+      "type": "group",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-166",
+      "pos": {
+        "x": 213,
+        "y": 356
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "26",
+        "rectangle-53-29"
+      ]
+    },
+    "rectangle-53-30": {
+      "id": "979:416",
+      "el": "rectangle-53-30",
+      "type": "rect",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-167.rectangle-53-30",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-167": {
+      "id": "979:414",
+      "el": "group-167",
+      "type": "group",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-167",
+      "pos": {
+        "x": 320,
+        "y": 356
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "27",
+        "rectangle-53-30"
+      ]
+    },
+    "rectangle-53-31": {
+      "id": "979:419",
+      "el": "rectangle-53-31",
+      "type": "rect",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-168.rectangle-53-31",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-168": {
+      "id": "979:417",
+      "el": "group-168",
+      "type": "group",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260.group-168",
+      "pos": {
+        "x": 426,
+        "y": 355
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "28",
+        "rectangle-53-31"
+      ]
+    },
+    "group-260": {
+      "id": "979:425",
+      "el": "group-260",
+      "type": "group",
+      "box": {
+        "w": 685,
+        "h": 509
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.group-260",
+      "pos": {
+        "x": 76,
+        "y": 210
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-139",
+        "group-146",
+        "group-147",
+        "group-140",
+        "group-141",
+        "group-142",
+        "group-143",
+        "group-144",
+        "group-145",
+        "group-148",
+        "group-149",
+        "group-150",
+        "group-151",
+        "group-152",
+        "group-153",
+        "group-154",
+        "group-155",
+        "group-156",
+        "group-157",
+        "group-158",
+        "group-159",
+        "group-160",
+        "group-161",
+        "group-162",
+        "group-163",
+        "group-164",
+        "group-169",
+        "group-165",
+        "group-166",
+        "group-167",
+        "group-168"
+      ],
+      "masked": "rectangle-46"
+    },
+    "save": {
+      "id": "979:428",
+      "el": "save",
+      "type": "text",
+      "box": {
+        "w": 48,
+        "h": 33
+      },
+      "name": "Save",
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.frame-8.save",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c1",
+      "text": "$t1",
+      "chars": "Save",
+      "textGrow": "wh"
+    },
+    "frame-8": {
+      "id": "979:427",
+      "el": "frame-8",
+      "type": "frame",
+      "box": {
+        "w": 176,
+        "h": 64
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138.frame-8",
+      "pos": {
+        "x": 586,
+        "y": 740
+      },
+      "layout": "$l4",
+      "fill": "$c3",
+      "radius": "$r1",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "save"
+      ],
+      "masked": "rectangle-46"
+    },
+    "group-138": {
+      "id": "966:627",
+      "el": "group-138",
+      "type": "group",
+      "box": {
+        "w": 818,
+        "h": 853
+      },
+      "path": "d-1-1-2-outfit-recomendation-detail-pop.group-138",
+      "pos": {
+        "x": 311,
+        "y": 85
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-46",
+        "rectangle-47",
+        "group-58",
+        "frame-1",
+        "group-261",
+        "group-260",
+        "frame-8"
+      ]
+    },
+    "d-1-1-2-outfit-recomendation-detail-pop": {
+      "id": "966:515",
+      "el": "d-1-1-2-outfit-recomendation-detail-pop",
+      "type": "frame",
+      "box": {
+        "w": 1440,
+        "h": 1024
+      },
+      "name": "D.1.1.2 Outfit Recomendation Detail -  Pop-up Calendar",
+      "fill": "$c1",
+      "clip": true,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "group-257",
+        "rectangle-45",
+        "group-138"
+      ]
+    }
+  },
+  "meta": {
+    "nodeCount": 233,
+    "estTokens": 19015,
+    "depthUsed": 12
+  },
+  "next": "Read `tokens` for the design system, then build the UI from `nodes`. Tag each rendered element data-plumb-id=\"<el>\". A node with a `more` count has that many children not yet included — call plumb_node again on that node's `id` to expand them. This screen has 9 image asset(s) (nodes with `assetId`). Call plumb_assets with this screen's id to download them to disk BEFORE generating HTML — without the real files any <img> will be a placeholder and plumb_verify will flag every image node as asset.missing.",
+  "source": "plugin",
+  "node": "D.1.1.2 Outfit Recomendation Detail -  Pop-up Calendar"
+}

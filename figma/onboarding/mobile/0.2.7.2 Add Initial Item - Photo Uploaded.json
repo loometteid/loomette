@@ -1,0 +1,424 @@
+{
+  "file": {
+    "name": "Loomette.id",
+    "version": "plugin-1792667045457"
+  },
+  "root": "0-2-7-2-add-initial-item-photo-uploaded",
+  "tokens": {
+    "color": {
+      "$c1": "#fafaf7",
+      "$c2": "#444440",
+      "$c3": "#d9d9d9",
+      "$c4": "#f2ede5"
+    },
+    "text": {
+      "$t1": "400 32px Source Serif Pro",
+      "$t2": "400 12px Avenir Next",
+      "$t3": "400 20px Avenir Next",
+      "$t4": "400 32px Avenir Next"
+    },
+    "radius": {
+      "$r1": 8,
+      "$r2": 16
+    },
+    "shadow": {},
+    "layout": {
+      "$l1": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          19,
+          108,
+          18,
+          107
+        ]
+      }
+    },
+    "vector": {
+      "$v1": "M14.4004 11.3262 L22.4092 3.31738 L23.6826 4.59082 L15.6738 12.5996 L27 12.5996 L27 14.4004 L15.6738 14.4004 L23.6826 22.4092 L22.4092 23.6826 L14.4004 15.6738 L14.4004 27 L12.5996 27 L12.5996 15.6738 L4.59082 23.6826 L3.31738 22.4092 L11.3262 14.4004 L0 14.4004 L0 12.5996 L11.3262 12.5996 L3.31738 4.59082 L4.59082 3.31738 L12.5996 11.3262 L12.5996 0 L14.4004 0 L14.4004 11.3262 Z",
+      "$v2": "M7.60355 0.292893 C7.99408 0.683418 7.99408 1.31658 7.60355 1.70711 L2.31066 7 L7.60355 12.2929 C7.99408 12.6834 7.99408 13.3166 7.60355 13.7071 C7.21303 14.0976 6.57986 14.0976 6.18934 13.7071 L0.366116 7.88388 C-0.12204 7.39573 -0.122038 6.60427 0.366117 6.11612 L6.18934 0.292893 C6.57986 -0.0976311 7.21303 -0.0976311 7.60355 0.292893 Z"
+    },
+    "props": {
+      "$p1": {
+        "size": "24"
+      }
+    },
+    "meta": {
+      "counts": {
+        "$c1": 3,
+        "$c2": 5,
+        "$c3": 10
+      }
+    }
+  },
+  "nodes": {
+    "5": {
+      "id": "391:1740",
+      "el": "5",
+      "type": "text",
+      "box": {
+        "w": 37,
+        "h": 44
+      },
+      "name": "+5",
+      "path": "0-2-7-2-add-initial-item-photo-uploaded.5",
+      "pos": {
+        "x": 291,
+        "y": 547
+      },
+      "fill": "$c1",
+      "text": "$t4",
+      "chars": "+5",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "now-let-s-fill-your-wardrobe": {
+      "id": "389:1716",
+      "el": "now-let-s-fill-your-wardrobe",
+      "type": "text",
+      "box": {
+        "w": 249,
+        "h": 80
+      },
+      "name": "Now, let's fill your wardrobe.",
+      "path": "0-2-7-2-add-initial-item-photo-uploaded.group-43.now-let-s-fill-your-wardrobe",
+      "pos": {
+        "x": 0,
+        "y": 39
+      },
+      "fill": "$c2",
+      "text": "$t1",
+      "chars": "Now, let's fill your wardrobe.",
+      "textGrow": "h",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16": {
+      "id": "389:1718",
+      "el": "rectangle-16",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 27
+      },
+      "path": "0-2-7-2-add-initial-item-photo-uploaded.group-43.union.rectangle-16",
+      "pos": {
+        "x": 13,
+        "y": 0
+      },
+      "fill": "$c3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17": {
+      "id": "389:1719",
+      "el": "rectangle-17",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "0-2-7-2-add-initial-item-photo-uploaded.group-43.union.rectangle-17",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c3",
+      "rotation": 2578,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19": {
+      "id": "389:1720",
+      "el": "rectangle-19",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "0-2-7-2-add-initial-item-photo-uploaded.group-43.union.rectangle-19",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c3",
+      "rotation": 7735,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18": {
+      "id": "389:1721",
+      "el": "rectangle-18",
+      "type": "rect",
+      "box": {
+        "w": 27,
+        "h": 2
+      },
+      "path": "0-2-7-2-add-initial-item-photo-uploaded.group-43.union.rectangle-18",
+      "pos": {
+        "x": 0,
+        "y": 13
+      },
+      "fill": "$c3",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union": {
+      "id": "389:1717",
+      "el": "union",
+      "type": "bool",
+      "box": {
+        "w": 27,
+        "h": 27
+      },
+      "path": "0-2-7-2-add-initial-item-photo-uploaded.group-43.union",
+      "pos": {
+        "x": 111,
+        "y": 0
+      },
+      "fill": "$c2",
+      "iconHint": "Now, let's fill your wardrobe.",
+      "vectorPath": "$v1",
+      "children": [
+        "rectangle-16",
+        "rectangle-17",
+        "rectangle-19",
+        "rectangle-18"
+      ]
+    },
+    "group-43": {
+      "id": "389:1715",
+      "el": "group-43",
+      "type": "group",
+      "box": {
+        "w": 249,
+        "h": 119
+      },
+      "path": "0-2-7-2-add-initial-item-photo-uploaded.group-43",
+      "pos": {
+        "x": 77,
+        "y": 228
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "now-let-s-fill-your-wardrobe",
+        "union"
+      ]
+    },
+    "add-5-10-of-your-go-to-pieces-the-ones-y": {
+      "id": "389:1722",
+      "el": "add-5-10-of-your-go-to-pieces-the-ones-y",
+      "type": "text",
+      "box": {
+        "w": 241,
+        "h": 32
+      },
+      "name": "Add 5–10 of your go-to pieces. The ones you actually reach for.",
+      "path": "0-2-7-2-add-initial-item-photo-uploaded.add-5-10-of-your-go-to-pieces-the-ones-y",
+      "pos": {
+        "x": 81,
+        "y": 355
+      },
+      "fill": "$c2",
+      "text": "$t2",
+      "chars": "Add 5–10 of your go-to pieces. The ones you actually reach for.",
+      "textGrow": "h",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-11": {
+      "id": "389:1723",
+      "el": "rectangle-11",
+      "type": "rect",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "0-2-7-2-add-initial-item-photo-uploaded.rectangle-11",
+      "pos": {
+        "x": 36,
+        "y": 40
+      },
+      "fill": "$c4",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector": {
+      "id": "I389:1724;3:2631",
+      "el": "vector",
+      "type": "vector",
+      "box": {
+        "w": 8,
+        "h": 14
+      },
+      "path": "0-2-7-2-add-initial-item-photo-uploaded.chevron-left.vector",
+      "pos": {
+        "x": 8,
+        "y": 5
+      },
+      "fill": "$c2",
+      "iconHint": "Add 5–10 of your go-to pieces. The ones you actually reach for.",
+      "vectorPath": "$v2",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-left": {
+      "id": "389:1724",
+      "el": "chevron-left",
+      "type": "instance",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "name": "chevron-left",
+      "path": "0-2-7-2-add-initial-item-photo-uploaded.chevron-left",
+      "pos": {
+        "x": 44,
+        "y": 48
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector"
+      ]
+    },
+    "save": {
+      "id": "389:1728",
+      "el": "save",
+      "type": "text",
+      "box": {
+        "w": 40,
+        "h": 27
+      },
+      "name": "SAVE",
+      "path": "0-2-7-2-add-initial-item-photo-uploaded.frame-9.save",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c1",
+      "text": "$t3",
+      "chars": "SAVE",
+      "textGrow": "wh"
+    },
+    "frame-9": {
+      "id": "389:1727",
+      "el": "frame-9",
+      "type": "frame",
+      "box": {
+        "w": 320,
+        "h": 64
+      },
+      "path": "0-2-7-2-add-initial-item-photo-uploaded.frame-9",
+      "pos": {
+        "x": 41,
+        "y": 758
+      },
+      "layout": "$l1",
+      "fill": "$c2",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "save"
+      ]
+    },
+    "rectangle-47": {
+      "id": "389:1731",
+      "el": "rectangle-47",
+      "type": "rect",
+      "box": {
+        "w": 100,
+        "h": 100
+      },
+      "path": "0-2-7-2-add-initial-item-photo-uploaded.rectangle-47",
+      "pos": {
+        "x": 43,
+        "y": 411
+      },
+      "fill": "$c3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "0-2-7-2-add-initial-item-photo-uploaded": {
+      "id": "389:1714",
+      "el": "0-2-7-2-add-initial-item-photo-uploaded",
+      "type": "frame",
+      "box": {
+        "w": 402,
+        "h": 874
+      },
+      "name": "0.2.7.2 Add Initial Item - Photo Uploaded",
+      "fill": "$c1",
+      "clip": true,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "group-43",
+        "add-5-10-of-your-go-to-pieces-the-ones-y",
+        "rectangle-11",
+        "chevron-left",
+        "frame-9",
+        "rectangle-47",
+        "rectangle-48",
+        "rectangle-49",
+        "rectangle-50",
+        "rectangle-51",
+        "rectangle-52",
+        "5"
+      ],
+      "repeat": {
+        "template": "rectangle-47",
+        "data": {
+          "rectangle-48": {},
+          "rectangle-49": {},
+          "rectangle-50": {},
+          "rectangle-51": {},
+          "rectangle-52": {}
+        }
+      }
+    }
+  },
+  "meta": {
+    "nodeCount": 16,
+    "estTokens": 1511,
+    "depthUsed": 12
+  },
+  "next": "Read `tokens` for the design system, then build the UI from `nodes`. Tag each rendered element data-plumb-id=\"<el>\". A node with a `more` count has that many children not yet included — call plumb_node again on that node's `id` to expand them.",
+  "source": "plugin",
+  "node": "0.2.7.2 Add Initial Item - Photo Uploaded"
+}

@@ -1,0 +1,1054 @@
+{
+  "file": {
+    "name": "Loomette.id",
+    "version": "plugin-1792667111168"
+  },
+  "root": "3-0-2-wardrobe-search-result",
+  "tokens": {
+    "color": {
+      "$c1": "#fafaf7",
+      "$c2": "#c9c3b7",
+      "$c3": "image",
+      "$c4": "#444440",
+      "$c5": "#d9d9d9",
+      "$c6": "#f2ede5",
+      "$c7": "#ffffff"
+    },
+    "text": {
+      "$t1": "400 10px Avenir Next",
+      "$t2": "400 14px Source Serif Pro",
+      "$t3": "400 28px Source Serif Pro",
+      "$t4": "400 14px Avenir Next",
+      "$t5": "400 14px Avenir"
+    },
+    "radius": {
+      "$r1": 12,
+      "$r2": 8
+    },
+    "shadow": {},
+    "vector": {
+      "$v1": "M14.4004 11.3262 L22.4092 3.31738 L23.6826 4.59082 L15.6738 12.5996 L27 12.5996 L27 14.4004 L15.6738 14.4004 L23.6826 22.4092 L22.4092 23.6826 L14.4004 15.6738 L14.4004 27 L12.5996 27 L12.5996 15.6738 L4.59082 23.6826 L3.31738 22.4092 L11.3262 14.4004 L0 14.4004 L0 12.5996 L11.3262 12.5996 L3.31738 4.59082 L4.59082 3.31738 L12.5996 11.3262 L12.5996 0 L14.4004 0 L14.4004 11.3262 Z",
+      "$v2": "M6.66667 1.66667 C3.90524 1.66667 1.66667 3.90524 1.66667 6.66667 C1.66667 9.42809 3.90524 11.6667 6.66667 11.6667 C9.42809 11.6667 11.6667 9.42809 11.6667 6.66667 C11.6667 3.90524 9.42809 1.66667 6.66667 1.66667 Z M0 6.66667 C0 2.98477 2.98477 0 6.66667 0 C10.3486 0 13.3333 2.98477 13.3333 6.66667 C13.3333 8.20726 12.8108 9.6258 11.9332 10.7547 L14.7559 13.5774 C15.0814 13.9028 15.0814 14.4305 14.7559 14.7559 C14.4305 15.0814 13.9028 15.0814 13.5774 14.7559 L10.7547 11.9332 C9.6258 12.8108 8.20726 13.3333 6.66667 13.3333 C2.98477 13.3333 0 10.3486 0 6.66667 Z",
+      "$v3": "M20 10 C20 15.5228 15.5228 20 10 20 C4.47715 20 0 15.5228 0 10 C0 4.47715 4.47715 0 10 0 C15.5228 0 20 4.47715 20 10 Z"
+    },
+    "props": {
+      "$p1": {
+        "size": "24"
+      }
+    },
+    "meta": {
+      "counts": {
+        "$c2": 8,
+        "$t1": 4,
+        "$r1": 4,
+        "$c3": 4,
+        "$c4": 11,
+        "$t2": 4,
+        "$c5": 4,
+        "$c6": 3,
+        "$r2": 3,
+        "$p1": 3
+      }
+    }
+  },
+  "nodes": {
+    "2": {
+      "id": "176:556",
+      "el": "2",
+      "type": "text",
+      "box": {
+        "w": 7,
+        "h": 19
+      },
+      "path": "3-0-2-wardrobe-search-result.group-75.2",
+      "pos": {
+        "x": 33,
+        "y": 0
+      },
+      "fill": "$c7",
+      "text": "$t4",
+      "chars": "2",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "polo": {
+      "id": "176:520",
+      "el": "polo",
+      "type": "text",
+      "box": {
+        "w": 23,
+        "h": 14
+      },
+      "name": "Polo",
+      "path": "3-0-2-wardrobe-search-result.group-46.polo",
+      "pos": {
+        "x": 60,
+        "y": 151
+      },
+      "fill": "$c2",
+      "text": "$t1",
+      "chars": "Polo",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-36": {
+      "id": "176:521",
+      "el": "rectangle-36",
+      "type": "rect",
+      "box": {
+        "w": 143,
+        "h": 177
+      },
+      "path": "3-0-2-wardrobe-search-result.group-46.rectangle-36",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c2",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-1": {
+      "id": "176:522",
+      "el": "image-removebg-preview-1",
+      "type": "rect",
+      "box": {
+        "w": 103,
+        "h": 97
+      },
+      "name": "image-removebg-preview 1",
+      "path": "3-0-2-wardrobe-search-result.group-46.image-removebg-preview-1",
+      "pos": {
+        "x": 20,
+        "y": 24
+      },
+      "assetId": "837079d7a4263daef60e6c2261fde3a6852552dd",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "837079d7a4263daef60e6c2261fde3a6852552dd",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.7313451170921326,
+              0.13030901551246643
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "blue-shirt": {
+      "id": "176:525",
+      "el": "blue-shirt",
+      "type": "text",
+      "box": {
+        "w": 58,
+        "h": 18
+      },
+      "name": "Blue shirt",
+      "path": "3-0-2-wardrobe-search-result.group-46.blue-shirt",
+      "pos": {
+        "x": 43,
+        "y": 133
+      },
+      "fill": "$c4",
+      "text": "$t2",
+      "chars": "Blue shirt",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-46": {
+      "id": "176:519",
+      "el": "group-46",
+      "type": "group",
+      "box": {
+        "w": 143,
+        "h": 177
+      },
+      "path": "3-0-2-wardrobe-search-result.group-46",
+      "pos": {
+        "x": 47,
+        "y": 151
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "polo",
+        "rectangle-36",
+        "image-removebg-preview-1",
+        "blue-shirt"
+      ]
+    },
+    "channel": {
+      "id": "176:527",
+      "el": "channel",
+      "type": "text",
+      "box": {
+        "w": 39,
+        "h": 14
+      },
+      "name": "CHANNEL",
+      "path": "3-0-2-wardrobe-search-result.group-47.channel",
+      "pos": {
+        "x": 52,
+        "y": 151
+      },
+      "fill": "$c2",
+      "text": "$t1",
+      "chars": "CHANNEL",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-36-2": {
+      "id": "176:528",
+      "el": "rectangle-36-2",
+      "type": "rect",
+      "box": {
+        "w": 143,
+        "h": 177
+      },
+      "path": "3-0-2-wardrobe-search-result.group-47.rectangle-36-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c2",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-7-1": {
+      "id": "176:529",
+      "el": "image-removebg-preview-7-1",
+      "type": "rect",
+      "box": {
+        "w": 78,
+        "h": 100
+      },
+      "name": "image-removebg-preview (7) 1",
+      "path": "3-0-2-wardrobe-search-result.group-47.image-removebg-preview-7-1",
+      "pos": {
+        "x": 33,
+        "y": 28
+      },
+      "assetId": "e5420007b99f8c30cfc67be00af0ec3b2f376e2a",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "e5420007b99f8c30cfc67be00af0ec3b2f376e2a",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.8557214140892029,
+              0.07213930040597916
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "polkadot-skirt": {
+      "id": "176:531",
+      "el": "polkadot-skirt",
+      "type": "text",
+      "box": {
+        "w": 83,
+        "h": 18
+      },
+      "name": "Polkadot skirt",
+      "path": "3-0-2-wardrobe-search-result.group-47.polkadot-skirt",
+      "pos": {
+        "x": 30,
+        "y": 133
+      },
+      "fill": "$c4",
+      "text": "$t2",
+      "chars": "Polkadot skirt",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-47": {
+      "id": "176:526",
+      "el": "group-47",
+      "type": "group",
+      "box": {
+        "w": 143,
+        "h": 177
+      },
+      "path": "3-0-2-wardrobe-search-result.group-47",
+      "pos": {
+        "x": 212,
+        "y": 151
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "channel",
+        "rectangle-36-2",
+        "image-removebg-preview-7-1",
+        "polkadot-skirt"
+      ]
+    },
+    "h-m": {
+      "id": "295:82",
+      "el": "h-m",
+      "type": "text",
+      "box": {
+        "w": 19,
+        "h": 14
+      },
+      "name": "H&m",
+      "path": "3-0-2-wardrobe-search-result.group-76.h-m",
+      "pos": {
+        "x": 62,
+        "y": 151
+      },
+      "fill": "$c2",
+      "text": "$t1",
+      "chars": "H&m",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-36-3": {
+      "id": "295:83",
+      "el": "rectangle-36-3",
+      "type": "rect",
+      "box": {
+        "w": 143,
+        "h": 177
+      },
+      "path": "3-0-2-wardrobe-search-result.group-76.rectangle-36-3",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c2",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-1-2": {
+      "id": "295:84",
+      "el": "image-removebg-preview-1-2",
+      "type": "rect",
+      "box": {
+        "w": 103,
+        "h": 97
+      },
+      "name": "image-removebg-preview 1",
+      "path": "3-0-2-wardrobe-search-result.group-76.image-removebg-preview-1-2",
+      "pos": {
+        "x": 20,
+        "y": 24
+      },
+      "assetId": "837079d7a4263daef60e6c2261fde3a6852552dd",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "837079d7a4263daef60e6c2261fde3a6852552dd",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.7313451170921326,
+              0.13030901551246643
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "blue-shirt-2": {
+      "id": "295:85",
+      "el": "blue-shirt-2",
+      "type": "text",
+      "box": {
+        "w": 58,
+        "h": 18
+      },
+      "name": "Blue shirt",
+      "path": "3-0-2-wardrobe-search-result.group-76.blue-shirt-2",
+      "pos": {
+        "x": 43,
+        "y": 133
+      },
+      "fill": "$c4",
+      "text": "$t2",
+      "chars": "Blue shirt",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-76": {
+      "id": "295:81",
+      "el": "group-76",
+      "type": "group",
+      "box": {
+        "w": 143,
+        "h": 177
+      },
+      "path": "3-0-2-wardrobe-search-result.group-76",
+      "pos": {
+        "x": 47,
+        "y": 344
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "h-m",
+        "rectangle-36-3",
+        "image-removebg-preview-1-2",
+        "blue-shirt-2"
+      ]
+    },
+    "elle": {
+      "id": "295:87",
+      "el": "elle",
+      "type": "text",
+      "box": {
+        "w": 19,
+        "h": 14
+      },
+      "name": "ELLE",
+      "path": "3-0-2-wardrobe-search-result.group-77.elle",
+      "pos": {
+        "x": 62,
+        "y": 151
+      },
+      "fill": "$c2",
+      "text": "$t1",
+      "chars": "ELLE",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-36-4": {
+      "id": "295:88",
+      "el": "rectangle-36-4",
+      "type": "rect",
+      "box": {
+        "w": 143,
+        "h": 177
+      },
+      "path": "3-0-2-wardrobe-search-result.group-77.rectangle-36-4",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c2",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-7-1-2": {
+      "id": "295:89",
+      "el": "image-removebg-preview-7-1-2",
+      "type": "rect",
+      "box": {
+        "w": 78,
+        "h": 100
+      },
+      "name": "image-removebg-preview (7) 1",
+      "path": "3-0-2-wardrobe-search-result.group-77.image-removebg-preview-7-1-2",
+      "pos": {
+        "x": 33,
+        "y": 28
+      },
+      "assetId": "e5420007b99f8c30cfc67be00af0ec3b2f376e2a",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "e5420007b99f8c30cfc67be00af0ec3b2f376e2a",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.8557214140892029,
+              0.07213930040597916
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "polkadot-skirt-2": {
+      "id": "295:90",
+      "el": "polkadot-skirt-2",
+      "type": "text",
+      "box": {
+        "w": 83,
+        "h": 18
+      },
+      "name": "Polkadot skirt",
+      "path": "3-0-2-wardrobe-search-result.group-77.polkadot-skirt-2",
+      "pos": {
+        "x": 30,
+        "y": 133
+      },
+      "fill": "$c4",
+      "text": "$t2",
+      "chars": "Polkadot skirt",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-77": {
+      "id": "295:86",
+      "el": "group-77",
+      "type": "group",
+      "box": {
+        "w": 143,
+        "h": 177
+      },
+      "path": "3-0-2-wardrobe-search-result.group-77",
+      "pos": {
+        "x": 212,
+        "y": 344
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "elle",
+        "rectangle-36-4",
+        "image-removebg-preview-7-1-2",
+        "polkadot-skirt-2"
+      ]
+    },
+    "wardrobe": {
+      "id": "176:541",
+      "el": "wardrobe",
+      "type": "text",
+      "box": {
+        "w": 120,
+        "h": 35
+      },
+      "name": "Wardrobe",
+      "path": "3-0-2-wardrobe-search-result.group-11.wardrobe",
+      "pos": {
+        "x": 41,
+        "y": 0
+      },
+      "fill": "$c4",
+      "text": "$t3",
+      "chars": "Wardrobe",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16": {
+      "id": "176:543",
+      "el": "rectangle-16",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 27
+      },
+      "path": "3-0-2-wardrobe-search-result.group-11.union.rectangle-16",
+      "pos": {
+        "x": 13,
+        "y": 0
+      },
+      "fill": "$c5",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17": {
+      "id": "176:544",
+      "el": "rectangle-17",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "3-0-2-wardrobe-search-result.group-11.union.rectangle-17",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c5",
+      "rotation": 2578,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19": {
+      "id": "176:545",
+      "el": "rectangle-19",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "3-0-2-wardrobe-search-result.group-11.union.rectangle-19",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c5",
+      "rotation": 7735,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18": {
+      "id": "176:546",
+      "el": "rectangle-18",
+      "type": "rect",
+      "box": {
+        "w": 27,
+        "h": 2
+      },
+      "path": "3-0-2-wardrobe-search-result.group-11.union.rectangle-18",
+      "pos": {
+        "x": 0,
+        "y": 13
+      },
+      "fill": "$c5",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union": {
+      "id": "176:542",
+      "el": "union",
+      "type": "bool",
+      "box": {
+        "w": 27,
+        "h": 27
+      },
+      "path": "3-0-2-wardrobe-search-result.group-11.union",
+      "pos": {
+        "x": 0,
+        "y": 4
+      },
+      "fill": "$c4",
+      "iconHint": "Wardrobe",
+      "vectorPath": "$v1",
+      "children": [
+        "rectangle-16",
+        "rectangle-17",
+        "rectangle-19",
+        "rectangle-18"
+      ]
+    },
+    "group-11": {
+      "id": "176:540",
+      "el": "group-11",
+      "type": "group",
+      "box": {
+        "w": 161,
+        "h": 35
+      },
+      "path": "3-0-2-wardrobe-search-result.group-11",
+      "pos": {
+        "x": 121,
+        "y": 36
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "wardrobe",
+        "union"
+      ]
+    },
+    "rectangle-25": {
+      "id": "176:547",
+      "el": "rectangle-25",
+      "type": "rect",
+      "box": {
+        "w": 226,
+        "h": 40
+      },
+      "path": "3-0-2-wardrobe-search-result.rectangle-25",
+      "pos": {
+        "x": 40,
+        "y": 87
+      },
+      "fill": "$c6",
+      "radius": "$r2",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-11": {
+      "id": "176:549",
+      "el": "rectangle-11",
+      "type": "rect",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "3-0-2-wardrobe-search-result.group-74.rectangle-11",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c6",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector": {
+      "id": "I176:550;4:164",
+      "el": "vector",
+      "type": "vector",
+      "box": {
+        "w": 15,
+        "h": 13
+      },
+      "path": "3-0-2-wardrobe-search-result.group-74.filter-edit.vector",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "iconHint": "filter edit",
+      "smooth": 0.6100000143051147,
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "filter-edit": {
+      "id": "176:550",
+      "el": "filter-edit",
+      "type": "instance",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "name": "filter-edit",
+      "path": "3-0-2-wardrobe-search-result.group-74.filter-edit",
+      "pos": {
+        "x": 10,
+        "y": 10
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector"
+      ]
+    },
+    "group-74": {
+      "id": "176:548",
+      "el": "group-74",
+      "type": "group",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "3-0-2-wardrobe-search-result.group-74",
+      "pos": {
+        "x": 274,
+        "y": 87
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-11",
+        "filter-edit"
+      ]
+    },
+    "vector-2": {
+      "id": "I176:551;3:3199",
+      "el": "vector-2",
+      "type": "vector",
+      "box": {
+        "w": 15,
+        "h": 15
+      },
+      "path": "3-0-2-wardrobe-search-result.search.vector-2",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "iconHint": "Shirt",
+      "vectorPath": "$v2",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "search": {
+      "id": "176:551",
+      "el": "search",
+      "type": "instance",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "name": "search",
+      "path": "3-0-2-wardrobe-search-result.search",
+      "pos": {
+        "x": 234,
+        "y": 97
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector-2"
+      ]
+    },
+    "rectangle-27": {
+      "id": "176:553",
+      "el": "rectangle-27",
+      "type": "rect",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "3-0-2-wardrobe-search-result.group-75.rectangle-27",
+      "pos": {
+        "x": 0,
+        "y": 5
+      },
+      "fill": "$c6",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-3": {
+      "id": "I176:554;3:2718",
+      "el": "vector-3",
+      "type": "vector",
+      "box": {
+        "w": 17,
+        "h": 9
+      },
+      "path": "3-0-2-wardrobe-search-result.group-75.checks-double-v.vector-3",
+      "pos": {
+        "x": 2,
+        "y": 6
+      },
+      "fill": "$c4",
+      "iconHint": "2",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "checks-double-v": {
+      "id": "176:554",
+      "el": "checks-double-v",
+      "type": "instance",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "name": "checks-double-v",
+      "path": "3-0-2-wardrobe-search-result.group-75.checks-double-v",
+      "pos": {
+        "x": 10,
+        "y": 15
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector-3"
+      ]
+    },
+    "ellipse-2": {
+      "id": "176:555",
+      "el": "ellipse-2",
+      "type": "ellipse",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "3-0-2-wardrobe-search-result.group-75.ellipse-2",
+      "pos": {
+        "x": 26,
+        "y": 0
+      },
+      "fill": "$c4",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-75": {
+      "id": "176:552",
+      "el": "group-75",
+      "type": "group",
+      "box": {
+        "w": 46,
+        "h": 45
+      },
+      "path": "3-0-2-wardrobe-search-result.group-75",
+      "pos": {
+        "x": 322,
+        "y": 82
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-27",
+        "checks-double-v",
+        "ellipse-2",
+        "2"
+      ]
+    },
+    "shirt": {
+      "id": "176:561",
+      "el": "shirt",
+      "type": "text",
+      "box": {
+        "w": 30,
+        "h": 19
+      },
+      "name": "Shirt",
+      "path": "3-0-2-wardrobe-search-result.shirt",
+      "pos": {
+        "x": 56,
+        "y": 98
+      },
+      "fill": "$c4",
+      "text": "$t5",
+      "chars": "Shirt",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "3-0-2-wardrobe-search-result": {
+      "id": "176:509",
+      "el": "3-0-2-wardrobe-search-result",
+      "type": "frame",
+      "box": {
+        "w": 402,
+        "h": 874
+      },
+      "name": "3.0.2 Wardrobe Search Result",
+      "fill": "$c1",
+      "clip": true,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "group-46",
+        "group-47",
+        "group-76",
+        "group-77",
+        "group-11",
+        "rectangle-25",
+        "group-74",
+        "search",
+        "group-75",
+        "shirt"
+      ]
+    }
+  },
+  "meta": {
+    "nodeCount": 42,
+    "estTokens": 3399,
+    "depthUsed": 12
+  },
+  "next": "Read `tokens` for the design system, then build the UI from `nodes`. Tag each rendered element data-plumb-id=\"<el>\". A node with a `more` count has that many children not yet included — call plumb_node again on that node's `id` to expand them. This screen has 4 image asset(s) (nodes with `assetId`). Call plumb_assets with this screen's id to download them to disk BEFORE generating HTML — without the real files any <img> will be a placeholder and plumb_verify will flag every image node as asset.missing.",
+  "source": "plugin",
+  "node": "3.0.2 Wardrobe Search Result"
+}

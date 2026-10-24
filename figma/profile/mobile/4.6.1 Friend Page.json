@@ -1,0 +1,1193 @@
+{
+  "file": {
+    "name": "Loomette.id",
+    "version": "plugin-1792667175709"
+  },
+  "root": "phase-2-4-6-1-friend-page",
+  "tokens": {
+    "color": {
+      "$c1": "#fafaf7",
+      "$c2": "#f2ede5",
+      "$c3": "#444440",
+      "$c4": "image",
+      "$c5": "#c9c3b7",
+      "$c6": "#e5487e"
+    },
+    "text": {
+      "$t1": "400 24px Source Serif Pro",
+      "$t2": "400 16px Avenir Next",
+      "$t3": "500 16px Avenir Next",
+      "$t4": "400 12px Avenir Next",
+      "$t5": "400 20px Avenir Next",
+      "$t6": "500 12px Avenir Next"
+    },
+    "radius": {
+      "$r1": 8,
+      "$r2": 20,
+      "$r3": 12
+    },
+    "shadow": {},
+    "vector": {
+      "$v1": "M7.60355 0.292893 C7.99408 0.683418 7.99408 1.31658 7.60355 1.70711 L2.31066 7 L7.60355 12.2929 C7.99408 12.6834 7.99408 13.3166 7.60355 13.7071 C7.21303 14.0976 6.57986 14.0976 6.18934 13.7071 L0.366116 7.88388 C-0.12204 7.39573 -0.122038 6.60427 0.366117 6.11612 L6.18934 0.292893 C6.57986 -0.0976311 7.21303 -0.0976311 7.60355 0.292893 Z",
+      "$v2": "M9.24219 0 C11.3508 0 12.9998 1.87962 13 4.10352 C13 5.2603 12.8193 6.21351 12.1465 7.21582 C11.5045 8.17212 10.4367 9.13695 8.78027 10.4102 L6.5 12 L4.21973 10.4102 C2.56337 9.13699 1.49552 8.17209 0.853516 7.21582 C0.180668 6.21351 0 5.2603 0 4.10352 C0.000221069 1.87962 1.64918 0 3.75781 0 C4.81589 6.64193e-08 5.73183 0.442172 6.5 1.24219 C7.26817 0.442172 8.18411 0 9.24219 0 Z",
+      "$v3": "M11.7 2.66677 C11.7 5.61229 9.08086 10.3333 5.85 10.3333 C2.61913 10.3333 0 7.27885 0 4.33333 C0 1.38781 0.0191341 0 3.25 0 C5.85 2.33333 11.7 -0.803375 11.7 2.66677 Z",
+      "$v4": "M9.24219 0 C11.3508 0 12.9998 1.87962 13 4.10352 C13 5.2603 12.8193 6.21351 12.1465 7.21582 C11.5045 8.17212 10.4367 9.13694 8.78027 10.4102 L6.5 12 L4.21973 10.4102 C2.56337 9.13699 1.49552 8.17209 0.853516 7.21582 C0.180668 6.21351 0 5.2603 0 4.10352 C0.000221129 1.87962 1.64918 0 3.75781 0 C4.81589 3.83986e-08 5.73183 0.442172 6.5 1.24219 C7.26817 0.442172 8.18411 7.82491e-08 9.24219 0 Z"
+    },
+    "props": {
+      "$p1": {
+        "size": "24"
+      }
+    },
+    "meta": {
+      "counts": {
+        "$c1": 3,
+        "$p1": 3,
+        "$c3": 16,
+        "$c4": 6,
+        "$c5": 3,
+        "$t3": 3,
+        "$t4": 3,
+        "$t5": 2,
+        "$r3": 2,
+        "$c6": 5,
+        "$v3": 2,
+        "$t6": 2
+      }
+    }
+  },
+  "nodes": {
+    "100": {
+      "id": "783:567",
+      "el": "100",
+      "type": "text",
+      "box": {
+        "w": 29,
+        "h": 22
+      },
+      "name": "100",
+      "path": "phase-2-4-6-1-friend-page.group-227.100",
+      "pos": {
+        "x": 11,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "100",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "123": {
+      "id": "751:819",
+      "el": "123",
+      "type": "text",
+      "box": {
+        "w": 22,
+        "h": 16
+      },
+      "name": "123",
+      "path": "phase-2-4-6-1-friend-page.group-225.123",
+      "pos": {
+        "x": 33,
+        "y": 195
+      },
+      "fill": "$c3",
+      "text": "$t6",
+      "chars": "123",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-11": {
+      "id": "751:685",
+      "el": "rectangle-11",
+      "type": "rect",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "phase-2-4-6-1-friend-page.group-58.rectangle-11",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c2",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector": {
+      "id": "I751:686;3:2631",
+      "el": "vector",
+      "type": "vector",
+      "box": {
+        "w": 8,
+        "h": 14
+      },
+      "path": "phase-2-4-6-1-friend-page.group-58.chevron-left.vector",
+      "pos": {
+        "x": 8,
+        "y": 5
+      },
+      "fill": "$c3",
+      "iconHint": "chevron left",
+      "vectorPath": "$v1",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-left": {
+      "id": "751:686",
+      "el": "chevron-left",
+      "type": "instance",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "name": "chevron-left",
+      "path": "phase-2-4-6-1-friend-page.group-58.chevron-left",
+      "pos": {
+        "x": 8,
+        "y": 8
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector"
+      ]
+    },
+    "group-58": {
+      "id": "751:684",
+      "el": "group-58",
+      "type": "group",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "phase-2-4-6-1-friend-page.group-58",
+      "pos": {
+        "x": 40,
+        "y": 40
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-11",
+        "chevron-left"
+      ]
+    },
+    "image-12": {
+      "id": "751:727",
+      "el": "image-12",
+      "type": "rect",
+      "box": {
+        "w": 100,
+        "h": 100
+      },
+      "path": "phase-2-4-6-1-friend-page.image-12",
+      "pos": {
+        "x": 40,
+        "y": 115
+      },
+      "assetId": "5a1f68886abf772a8ff5086a8e9b98947a628c7b",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "5a1f68886abf772a8ff5086a8e9b98947a628c7b",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "radius": "$r2",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "graciella-valeska": {
+      "id": "751:729",
+      "el": "graciella-valeska",
+      "type": "text",
+      "box": {
+        "w": 182,
+        "h": 30
+      },
+      "name": "Graciella Valeska",
+      "path": "phase-2-4-6-1-friend-page.graciella-valeska",
+      "pos": {
+        "x": 168,
+        "y": 140
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "Graciella Valeska",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "graciellavl": {
+      "id": "751:730",
+      "el": "graciellavl",
+      "type": "text",
+      "box": {
+        "w": 87,
+        "h": 22
+      },
+      "name": "@graciellavl",
+      "path": "phase-2-4-6-1-friend-page.graciellavl",
+      "pos": {
+        "x": 168,
+        "y": 115
+      },
+      "fill": "$c5",
+      "text": "$t2",
+      "chars": "@graciellavl",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "following": {
+      "id": "783:569",
+      "el": "following",
+      "type": "text",
+      "box": {
+        "w": 51,
+        "h": 16
+      },
+      "name": "following",
+      "path": "phase-2-4-6-1-friend-page.group-227.following",
+      "pos": {
+        "x": 0,
+        "y": 22
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "following",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-227": {
+      "id": "812:580",
+      "el": "group-227",
+      "type": "group",
+      "box": {
+        "w": 51,
+        "h": 38
+      },
+      "path": "phase-2-4-6-1-friend-page.group-227",
+      "pos": {
+        "x": 176,
+        "y": 177
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "100",
+        "following"
+      ]
+    },
+    "14k": {
+      "id": "783:574",
+      "el": "14k",
+      "type": "text",
+      "box": {
+        "w": 28,
+        "h": 22
+      },
+      "name": "14k",
+      "path": "phase-2-4-6-1-friend-page.group-226.14k",
+      "pos": {
+        "x": 11,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "14k",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "followers": {
+      "id": "783:575",
+      "el": "followers",
+      "type": "text",
+      "box": {
+        "w": 50,
+        "h": 16
+      },
+      "name": "followers",
+      "path": "phase-2-4-6-1-friend-page.group-226.followers",
+      "pos": {
+        "x": 0,
+        "y": 22
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "followers",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-226": {
+      "id": "812:579",
+      "el": "group-226",
+      "type": "group",
+      "box": {
+        "w": 50,
+        "h": 38
+      },
+      "path": "phase-2-4-6-1-friend-page.group-226",
+      "pos": {
+        "x": 247,
+        "y": 177
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "14k",
+        "followers"
+      ]
+    },
+    "2m": {
+      "id": "783:571",
+      "el": "2m",
+      "type": "text",
+      "box": {
+        "w": 24,
+        "h": 22
+      },
+      "name": "2m",
+      "path": "phase-2-4-6-1-friend-page.group-228.2m",
+      "pos": {
+        "x": 1,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "2m",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "likes": {
+      "id": "783:572",
+      "el": "likes",
+      "type": "text",
+      "box": {
+        "w": 25,
+        "h": 16
+      },
+      "name": "likes",
+      "path": "phase-2-4-6-1-friend-page.group-228.likes",
+      "pos": {
+        "x": 0,
+        "y": 22
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "likes",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-228": {
+      "id": "812:581",
+      "el": "group-228",
+      "type": "group",
+      "box": {
+        "w": 25,
+        "h": 38
+      },
+      "path": "phase-2-4-6-1-friend-page.group-228",
+      "pos": {
+        "x": 317,
+        "y": 177
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "2m",
+        "likes"
+      ]
+    },
+    "outfit": {
+      "id": "751:748",
+      "el": "outfit",
+      "type": "text",
+      "box": {
+        "w": 57,
+        "h": 27
+      },
+      "name": "outfit",
+      "path": "phase-2-4-6-1-friend-page.group-2.outfit",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t5",
+      "chars": "outfit",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "repost": {
+      "id": "751:749",
+      "el": "repost",
+      "type": "text",
+      "box": {
+        "w": 61,
+        "h": 27
+      },
+      "name": "repost",
+      "path": "phase-2-4-6-1-friend-page.group-2.repost",
+      "pos": {
+        "x": 167,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t5",
+      "chars": "repost",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-2": {
+      "id": "751:747",
+      "el": "group-2",
+      "type": "group",
+      "box": {
+        "w": 228,
+        "h": 27
+      },
+      "path": "phase-2-4-6-1-friend-page.group-2",
+      "pos": {
+        "x": 92,
+        "y": 256
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "outfit",
+        "repost"
+      ]
+    },
+    "line-1": {
+      "id": "751:752",
+      "el": "line-1",
+      "type": "line",
+      "box": {
+        "w": 76,
+        "h": 0
+      },
+      "path": "phase-2-4-6-1-friend-page.line-1",
+      "pos": {
+        "x": 83,
+        "y": 291
+      },
+      "stroke": "$c3",
+      "strokeW": 1,
+      "strokeAlign": "center",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-32": {
+      "id": "751:756",
+      "el": "rectangle-32",
+      "type": "rect",
+      "box": {
+        "w": 156,
+        "h": 227
+      },
+      "path": "phase-2-4-6-1-friend-page.group-224.group-50.group-31.rectangle-32",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c1",
+      "stroke": "$c5",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r3",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-31": {
+      "id": "751:755",
+      "el": "group-31",
+      "type": "group",
+      "box": {
+        "w": 156,
+        "h": 227
+      },
+      "path": "phase-2-4-6-1-friend-page.group-224.group-50.group-31",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-32"
+      ]
+    },
+    "image-removebg-preview-7-1": {
+      "id": "751:758",
+      "el": "image-removebg-preview-7-1",
+      "type": "rect",
+      "box": {
+        "w": 94,
+        "h": 121
+      },
+      "name": "image-removebg-preview (7) 1",
+      "path": "phase-2-4-6-1-friend-page.group-224.group-50.group-55.image-removebg-preview-7-1",
+      "pos": {
+        "x": 7,
+        "y": 48
+      },
+      "assetId": "e5420007b99f8c30cfc67be00af0ec3b2f376e2a",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "e5420007b99f8c30cfc67be00af0ec3b2f376e2a",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.8557214140892029,
+              0.07213930040597916
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-1": {
+      "id": "751:759",
+      "el": "image-removebg-preview-1",
+      "type": "rect",
+      "box": {
+        "w": 85,
+        "h": 80
+      },
+      "name": "image-removebg-preview 1",
+      "path": "phase-2-4-6-1-friend-page.group-224.group-50.group-55.image-removebg-preview-1",
+      "pos": {
+        "x": 11,
+        "y": 8
+      },
+      "assetId": "837079d7a4263daef60e6c2261fde3a6852552dd",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "837079d7a4263daef60e6c2261fde3a6852552dd",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.7313451170921326,
+              0.13030901551246643
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-10-1": {
+      "id": "751:760",
+      "el": "image-removebg-preview-10-1",
+      "type": "rect",
+      "box": {
+        "w": 36,
+        "h": 25
+      },
+      "name": "image-removebg-preview (10) 1",
+      "path": "phase-2-4-6-1-friend-page.group-224.group-50.group-55.image-removebg-preview-10-1",
+      "pos": {
+        "x": 54,
+        "y": 153
+      },
+      "assetId": "178406f88b315152b95287f3aeb79ee56c5d2443",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "178406f88b315152b95287f3aeb79ee56c5d2443",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.720081090927124,
+              0.12576064467430115
+            ]
+          ]
+        }
+      ],
+      "iconHint": "image removebg preview (10) 1",
+      "rotation": 10313,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-4-1": {
+      "id": "751:761",
+      "el": "image-removebg-preview-4-1",
+      "type": "rect",
+      "box": {
+        "w": 53,
+        "h": 53
+      },
+      "name": "image-removebg-preview (4) 1",
+      "path": "phase-2-4-6-1-friend-page.group-224.group-50.group-55.image-removebg-preview-4-1",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "assetId": "b5383112df490c825aacd83035b1de7245c291b4",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "b5383112df490c825aacd83035b1de7245c291b4",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "iconHint": "image removebg preview (4) 1",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-55": {
+      "id": "751:757",
+      "el": "group-55",
+      "type": "group",
+      "box": {
+        "w": 101,
+        "h": 178
+      },
+      "path": "phase-2-4-6-1-friend-page.group-224.group-50.group-55",
+      "pos": {
+        "x": 28,
+        "y": 11
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "image-removebg-preview-7-1",
+        "image-removebg-preview-1",
+        "image-removebg-preview-10-1",
+        "image-removebg-preview-4-1"
+      ]
+    },
+    "group-50": {
+      "id": "751:754",
+      "el": "group-50",
+      "type": "group",
+      "box": {
+        "w": 156,
+        "h": 227
+      },
+      "path": "phase-2-4-6-1-friend-page.group-224.group-50",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-31",
+        "group-55"
+      ]
+    },
+    "ellipse-5": {
+      "id": "751:783",
+      "el": "ellipse-5",
+      "type": "vector",
+      "box": {
+        "w": 12,
+        "h": 10
+      },
+      "path": "phase-2-4-6-1-friend-page.group-224.union.ellipse-5",
+      "pos": {
+        "x": 1,
+        "y": 0
+      },
+      "fill": "$c6",
+      "iconHint": "11.3 K",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-2": {
+      "id": "751:784",
+      "el": "vector-2",
+      "type": "vector",
+      "box": {
+        "w": 13,
+        "h": 12
+      },
+      "path": "phase-2-4-6-1-friend-page.group-224.union.vector-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c6",
+      "iconHint": "11.3 K",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "union": {
+      "id": "751:782",
+      "el": "union",
+      "type": "bool",
+      "box": {
+        "w": 13,
+        "h": 12
+      },
+      "path": "phase-2-4-6-1-friend-page.group-224.union",
+      "pos": {
+        "x": 16,
+        "y": 197
+      },
+      "iconHint": "11.3 K",
+      "stroke": "$c3",
+      "strokeW": 1.2,
+      "strokeAlign": "center",
+      "vectorPath": "$v2",
+      "children": [
+        "ellipse-5",
+        "vector-2"
+      ]
+    },
+    "11-3-k": {
+      "id": "751:786",
+      "el": "11-3-k",
+      "type": "text",
+      "box": {
+        "w": 36,
+        "h": 16
+      },
+      "name": "11.3 K",
+      "path": "phase-2-4-6-1-friend-page.group-224.11-3-k",
+      "pos": {
+        "x": 33,
+        "y": 195
+      },
+      "fill": "$c3",
+      "text": "$t6",
+      "chars": "11.3 K",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-3": {
+      "id": "I751:799;3:2786",
+      "el": "vector-3",
+      "type": "vector",
+      "box": {
+        "w": 10,
+        "h": 9
+      },
+      "path": "phase-2-4-6-1-friend-page.group-224.repeat.vector-3",
+      "pos": {
+        "x": 1,
+        "y": 2
+      },
+      "fill": "$c3",
+      "iconHint": "11.3 K",
+      "smooth": 0.6000000238418579,
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "repeat": {
+      "id": "751:799",
+      "el": "repeat",
+      "type": "instance",
+      "box": {
+        "w": 12,
+        "h": 12
+      },
+      "name": "repeat",
+      "path": "phase-2-4-6-1-friend-page.group-224.repeat",
+      "pos": {
+        "x": 129,
+        "y": 197
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector-3"
+      ]
+    },
+    "group-224": {
+      "id": "751:806",
+      "el": "group-224",
+      "type": "group",
+      "box": {
+        "w": 156,
+        "h": 227
+      },
+      "path": "phase-2-4-6-1-friend-page.group-224",
+      "pos": {
+        "x": 40,
+        "y": 311
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-50",
+        "union",
+        "11-3-k",
+        "repeat"
+      ]
+    },
+    "rectangle-32-2": {
+      "id": "751:810",
+      "el": "rectangle-32-2",
+      "type": "rect",
+      "box": {
+        "w": 156,
+        "h": 227
+      },
+      "path": "phase-2-4-6-1-friend-page.group-225.group-50-2.group-31-2.rectangle-32-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c1",
+      "stroke": "$c5",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r3",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-31-2": {
+      "id": "751:809",
+      "el": "group-31-2",
+      "type": "group",
+      "box": {
+        "w": 156,
+        "h": 227
+      },
+      "path": "phase-2-4-6-1-friend-page.group-225.group-50-2.group-31-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-32-2"
+      ]
+    },
+    "group-50-2": {
+      "id": "751:808",
+      "el": "group-50-2",
+      "type": "group",
+      "box": {
+        "w": 156,
+        "h": 227
+      },
+      "path": "phase-2-4-6-1-friend-page.group-225.group-50-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-31-2"
+      ]
+    },
+    "ellipse-5-2": {
+      "id": "751:817",
+      "el": "ellipse-5-2",
+      "type": "vector",
+      "box": {
+        "w": 12,
+        "h": 10
+      },
+      "path": "phase-2-4-6-1-friend-page.group-225.union-2.ellipse-5-2",
+      "pos": {
+        "x": 1,
+        "y": 0
+      },
+      "fill": "$c6",
+      "iconHint": "123",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-4": {
+      "id": "751:818",
+      "el": "vector-4",
+      "type": "vector",
+      "box": {
+        "w": 13,
+        "h": 12
+      },
+      "path": "phase-2-4-6-1-friend-page.group-225.union-2.vector-4",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c6",
+      "iconHint": "123",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "union-2": {
+      "id": "751:816",
+      "el": "union-2",
+      "type": "bool",
+      "box": {
+        "w": 13,
+        "h": 12
+      },
+      "path": "phase-2-4-6-1-friend-page.group-225.union-2",
+      "pos": {
+        "x": 16,
+        "y": 197
+      },
+      "fill": "$c6",
+      "iconHint": "123",
+      "vectorPath": "$v4",
+      "children": [
+        "ellipse-5-2",
+        "vector-4"
+      ]
+    },
+    "vector-5": {
+      "id": "I751:820;3:2786",
+      "el": "vector-5",
+      "type": "vector",
+      "box": {
+        "w": 10,
+        "h": 9
+      },
+      "path": "phase-2-4-6-1-friend-page.group-225.repeat-2.vector-5",
+      "pos": {
+        "x": 1,
+        "y": 2
+      },
+      "fill": "$c3",
+      "iconHint": "123",
+      "smooth": 0.6000000238418579,
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "repeat-2": {
+      "id": "751:820",
+      "el": "repeat-2",
+      "type": "instance",
+      "box": {
+        "w": 12,
+        "h": 12
+      },
+      "name": "repeat",
+      "path": "phase-2-4-6-1-friend-page.group-225.repeat-2",
+      "pos": {
+        "x": 129,
+        "y": 197
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector-5"
+      ]
+    },
+    "1-removebg-preview-1": {
+      "id": "751:823",
+      "el": "1-removebg-preview-1",
+      "type": "rect",
+      "box": {
+        "w": 100,
+        "h": 150
+      },
+      "name": "___1_-removebg-preview 1",
+      "path": "phase-2-4-6-1-friend-page.group-225.1-removebg-preview-1",
+      "pos": {
+        "x": 28,
+        "y": 24
+      },
+      "assetId": "8bf8b363cb3ab1da75efc052040325af8a76aee1",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "8bf8b363cb3ab1da75efc052040325af8a76aee1",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.8445945978164673,
+              0.08853083848953247
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-225": {
+      "id": "751:807",
+      "el": "group-225",
+      "type": "group",
+      "box": {
+        "w": 156,
+        "h": 227
+      },
+      "path": "phase-2-4-6-1-friend-page.group-225",
+      "pos": {
+        "x": 206,
+        "y": 311
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-50-2",
+        "union-2",
+        "123",
+        "repeat-2",
+        "1-removebg-preview-1"
+      ]
+    },
+    "phase-2-4-6-1-friend-page": {
+      "id": "751:683",
+      "el": "phase-2-4-6-1-friend-page",
+      "type": "frame",
+      "box": {
+        "w": 402,
+        "h": 874
+      },
+      "name": "[Phase 2] 4.6.1 Friend Page",
+      "fill": "$c1",
+      "clip": true,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "group-58",
+        "image-12",
+        "graciella-valeska",
+        "graciellavl",
+        "group-227",
+        "group-226",
+        "group-228",
+        "group-2",
+        "line-1",
+        "group-224",
+        "group-225"
+      ]
+    }
+  },
+  "meta": {
+    "nodeCount": 47,
+    "estTokens": 3821,
+    "depthUsed": 12
+  },
+  "next": "Read `tokens` for the design system, then build the UI from `nodes`. Tag each rendered element data-plumb-id=\"<el>\". A node with a `more` count has that many children not yet included — call plumb_node again on that node's `id` to expand them. This screen has 6 image asset(s) (nodes with `assetId`). Call plumb_assets with this screen's id to download them to disk BEFORE generating HTML — without the real files any <img> will be a placeholder and plumb_verify will flag every image node as asset.missing.",
+  "source": "plugin",
+  "node": "[Phase 2] 4.6.1 Friend Page"
+}

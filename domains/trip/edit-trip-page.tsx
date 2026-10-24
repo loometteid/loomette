@@ -21,6 +21,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Typography } from "@/components/ui/typography";
+import { ProfileBreadcrumb } from "@/domains/profile/components/profile-breadcrumb";
 import {
   SEASON_OPTIONS,
   TRAVEL_COMPANION_OPTIONS,
@@ -164,32 +165,44 @@ function TripFormContent({ userId, trip }: { userId: string; trip?: Trip }) {
   }
 
   return (
-    <main className="mx-auto flex w-full max-w-sm flex-1 flex-col gap-6 px-6 py-8">
-      <Button
-        type="button"
-        variant="secondary"
-        size="icon"
-        className="rounded-xl"
-        onClick={() => router.back()}
-        aria-label="Go back"
-        data-testid="trip-form__back-button"
-      >
-        <ChevronLeft className="size-4" />
-      </Button>
+    <main className="mx-auto flex w-full max-w-sm lg:max-w-5xl xl:max-w-6xl flex-1 flex-col gap-8 px-6 lg:px-12 py-8 lg:py-12">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-4">
+          <Button
+            type="button"
+            variant="secondary"
+            size="icon"
+            className="rounded-xl lg:hidden"
+            onClick={() => router.back()}
+            aria-label="Go back"
+            data-testid="trip-form__back-button"
+          >
+            <ChevronLeft className="size-4" />
+          </Button>
+          <ProfileBreadcrumb
+            items={[
+              { label: "PROFILE", href: "/profile" },
+              { label: "TRAVEL DETAIL", href: trip ? `/trip/${trip.id}` : undefined },
+              { label: isEdit ? "EDIT TRAVEL" : "NEW TRAVEL" },
+            ]}
+          />
+        </div>
+      </div>
 
       <form
         onSubmit={handleSubmit(onSubmit, onInvalid)}
-        className="flex flex-col gap-6"
+        className="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-16 pt-2"
         data-testid="trip-form"
         data-entity-id={trip?.id}
       >
-        <div className="flex flex-col items-center gap-3 text-center">
-          <div className="relative h-40 w-40">
+        {/* Left Column: Suitcase and Trip Name */}
+        <div className="flex flex-col items-center gap-4 text-center w-full lg:w-72 shrink-0">
+          <div className="relative h-44 w-44 lg:h-64 lg:w-64">
             <Image
               src="/profile/koper.png"
               alt=""
               fill
-              className="object-contain"
+              className="object-contain drop-shadow-md"
             />
           </div>
 
@@ -202,17 +215,17 @@ function TripFormContent({ userId, trip }: { userId: string; trip?: Trip }) {
                 if (event.key === "Enter") event.currentTarget.blur();
               }}
               placeholder="Trip to..."
-              className="font-serif text-title border-border w-full border-b bg-transparent text-center outline-none"
+              className="font-serif text-[32px] lg:text-[44px] border-border w-full border-b bg-transparent text-center outline-none text-foreground py-1 leading-tight"
               data-testid="trip-form__name-input"
             />
           ) : (
             <button
               type="button"
               onClick={() => setEditingName(true)}
-              className="inline-flex items-center gap-2"
+              className="inline-flex items-center gap-2 hover:opacity-80 transition-opacity"
               data-testid="trip-form__name-display"
             >
-              <Typography variant="title" as="h1">
+              <Typography variant="title" as="h1" className="font-serif text-[32px] lg:text-[44px] font-normal text-foreground leading-tight">
                 {name && name.trim().length > 0 ? name : "Trip to..."}
               </Typography>
               <Pencil className="text-muted-foreground size-4 shrink-0" />
@@ -220,32 +233,39 @@ function TripFormContent({ userId, trip }: { userId: string; trip?: Trip }) {
           )}
         </div>
 
-        <div className="flex flex-col gap-6">
-          <div className="grid grid-cols-2 gap-3">
-            <div className="flex flex-col gap-2">
-              <Label htmlFor="trip-start-date">Start date</Label>
+        {/* Right Column: Form Fields */}
+        <div className="flex flex-1 flex-col gap-6 w-full max-w-xl">
+          <div className="grid grid-cols-2 gap-4">
+            <div className="flex flex-col gap-1.5">
+              <Label htmlFor="trip-start-date" className="font-sans text-[11px] font-medium uppercase tracking-wider text-slate">
+                Start date
+              </Label>
               <Input
                 id="trip-start-date"
                 type="date"
                 aria-invalid={!!errors.startDate}
                 data-testid="trip-form__start-date-input"
+                className="bg-[#F2EDE5] border-transparent"
                 {...register("startDate")}
               />
             </div>
-            <div className="flex flex-col gap-2">
-              <Label htmlFor="trip-end-date">End date</Label>
+            <div className="flex flex-col gap-1.5">
+              <Label htmlFor="trip-end-date" className="font-sans text-[11px] font-medium uppercase tracking-wider text-slate">
+                End date
+              </Label>
               <Input
                 id="trip-end-date"
                 type="date"
                 aria-invalid={!!errors.endDate}
                 data-testid="trip-form__end-date-input"
+                className="bg-[#F2EDE5] border-transparent"
                 {...register("endDate")}
               />
             </div>
           </div>
 
           <div className="flex flex-col gap-2">
-            <Label>Season</Label>
+            <Label className="font-sans text-[11px] font-medium uppercase tracking-wider text-slate">Season</Label>
             <Controller
               control={control}
               name="season"
@@ -263,7 +283,7 @@ function TripFormContent({ userId, trip }: { userId: string; trip?: Trip }) {
           </div>
 
           <div className="flex flex-col gap-2">
-            <Label>Travel companion</Label>
+            <Label className="font-sans text-[11px] font-medium uppercase tracking-wider text-slate">Travel companion</Label>
             <Controller
               control={control}
               name="companion"
@@ -279,16 +299,18 @@ function TripFormContent({ userId, trip }: { userId: string; trip?: Trip }) {
               )}
             />
           </div>
-        </div>
 
-        <Button
-          type="submit"
-          disabled={isPending}
-          className="w-full"
-          data-testid="trip-form__submit-button"
-        >
-          {isPending ? "Saving..." : "Save"}
-        </Button>
+          <div className="pt-4">
+            <Button
+              type="submit"
+              disabled={isPending}
+              className="w-full bg-[#383733] hover:bg-[#2A2926] text-white py-4 rounded-xl font-sans text-sm md:text-base font-normal uppercase tracking-wider shadow-sm"
+              data-testid="trip-form__submit-button"
+            >
+              {isPending ? "Saving..." : "Save"}
+            </Button>
+          </div>
+        </div>
       </form>
     </main>
   );

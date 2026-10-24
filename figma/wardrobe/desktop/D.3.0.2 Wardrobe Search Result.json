@@ -1,0 +1,1624 @@
+{
+  "file": {
+    "name": "Loomette.id",
+    "version": "plugin-1792667099041"
+  },
+  "root": "d-3-0-2-wardrobe-search-result",
+  "tokens": {
+    "color": {
+      "$c1": "#fafaf7",
+      "$c2": "#ffffff1a",
+      "$c3": "#444440",
+      "$c4": "#d9d9d9",
+      "$c5": "#000000",
+      "$c6": "gradient",
+      "$c7": "image",
+      "$c8": "#f2ede5",
+      "$c9": "#ffffff",
+      "$c10": "#c9c3b7"
+    },
+    "text": {
+      "$t1": "400 24px Avenir Next",
+      "$t2": "400 20px Figtree",
+      "$t3": "400 48px Source Serif Pro",
+      "$t4": "400 16px Avenir Next",
+      "$t5": "400 20px Avenir Next",
+      "$t6": "400 24px Source Serif Pro"
+    },
+    "radius": {
+      "$r1": 8,
+      "$r2": 12
+    },
+    "shadow": {},
+    "layout": {
+      "$l1": {
+        "align": "center",
+        "flow": "row",
+        "gap": 24,
+        "pad": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "fills": {
+      "$f1": [
+        {
+          "angle": 270,
+          "stops": [
+            {
+              "at": 0,
+              "color": "#c9c3b7"
+            },
+            {
+              "at": 1,
+              "color": "#fafaf700"
+            }
+          ],
+          "type": "linear-gradient"
+        }
+      ],
+      "$f2": [
+        {
+          "angle": 90,
+          "stops": [
+            {
+              "at": 0,
+              "color": "#c9c3b7"
+            },
+            {
+              "at": 1,
+              "color": "#fafaf700"
+            }
+          ],
+          "type": "linear-gradient"
+        }
+      ]
+    },
+    "vector": {
+      "$v1": "M12.7988 11.4121 L19.9199 3.3418 L21.0518 4.62402 L13.9307 12.6934 L24 12.6934 L24 14.5068 L13.9316 14.5068 L21.0508 22.5752 L19.9189 23.8574 L12.7988 15.7871 L12.7988 27.2002 L11.1992 27.2002 L11.1992 15.79 L4.08105 23.8574 L2.94922 22.5752 L10.0674 14.5068 L0 14.5068 L0 12.6934 L10.0693 12.6934 L2.94922 4.62402 L4.08008 3.3418 L11.1992 11.4092 L11.1992 0 L12.7988 0 L12.7988 11.4121 Z",
+      "$v2": "M28 14 C28 21.732 21.732 28 14 28 C6.26801 28 0 21.732 0 14 C0 6.26801 6.26801 0 14 0 C21.732 0 28 6.26801 28 14 Z",
+      "$v3": "M10.6667 2.66667 C6.24839 2.66667 2.66667 6.24839 2.66667 10.6667 C2.66667 15.0849 6.24839 18.6667 10.6667 18.6667 C15.0849 18.6667 18.6667 15.0849 18.6667 10.6667 C18.6667 6.24839 15.0849 2.66667 10.6667 2.66667 Z M0 10.6667 C0 4.77563 4.77563 0 10.6667 0 C16.5577 0 21.3333 4.77563 21.3333 10.6667 C21.3333 13.1316 20.4972 15.4013 19.0931 17.2075 L23.6095 21.7239 C24.1302 22.2446 24.1302 23.0888 23.6095 23.6095 C23.0888 24.1302 22.2446 24.1302 21.7239 23.6095 L17.2075 19.0931 C15.4013 20.4972 13.1316 21.3333 10.6667 21.3333 C4.77563 21.3333 0 16.5577 0 10.6667 Z"
+    },
+    "props": {
+      "$p1": {
+        "size": "24"
+      }
+    },
+    "meta": {
+      "counts": {
+        "$c3": 18,
+        "$c4": 4,
+        "$t1": 5,
+        "$p1": 4,
+        "$t2": 2,
+        "$t3": 3,
+        "$c6": 2,
+        "$c7": 14,
+        "$c8": 3,
+        "$r1": 3,
+        "$c10": 8,
+        "$t5": 4,
+        "$t6": 4,
+        "$r2": 4
+      }
+    }
+  },
+  "nodes": {
+    "2": {
+      "id": "1109:1034",
+      "el": "2",
+      "type": "text",
+      "box": {
+        "w": 8,
+        "h": 22
+      },
+      "path": "d-3-0-2-wardrobe-search-result.group-98.group-290.2",
+      "pos": {
+        "x": 59,
+        "y": 2
+      },
+      "fill": "$c9",
+      "text": "$t4",
+      "chars": "2",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-15": {
+      "id": "1109:948",
+      "el": "rectangle-15",
+      "type": "rect",
+      "box": {
+        "w": 1465,
+        "h": 136
+      },
+      "path": "d-3-0-2-wardrobe-search-result.group-96.rectangle-15",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16": {
+      "id": "1109:950",
+      "el": "rectangle-16",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 27
+      },
+      "path": "d-3-0-2-wardrobe-search-result.group-96.union.rectangle-16",
+      "pos": {
+        "x": 11,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17": {
+      "id": "1109:951",
+      "el": "rectangle-17",
+      "type": "rect",
+      "box": {
+        "w": 18,
+        "h": 21
+      },
+      "path": "d-3-0-2-wardrobe-search-result.group-96.union.rectangle-17",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 2783,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19": {
+      "id": "1109:952",
+      "el": "rectangle-19",
+      "type": "rect",
+      "box": {
+        "w": 18,
+        "h": 21
+      },
+      "path": "d-3-0-2-wardrobe-search-result.group-96.union.rectangle-19",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 7530,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18": {
+      "id": "1109:953",
+      "el": "rectangle-18",
+      "type": "rect",
+      "box": {
+        "w": 24,
+        "h": 2
+      },
+      "path": "d-3-0-2-wardrobe-search-result.group-96.union.rectangle-18",
+      "pos": {
+        "x": 0,
+        "y": 13
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union": {
+      "id": "1109:949",
+      "el": "union",
+      "type": "bool",
+      "box": {
+        "w": 24,
+        "h": 27
+      },
+      "path": "d-3-0-2-wardrobe-search-result.group-96.union",
+      "pos": {
+        "x": 75,
+        "y": 54
+      },
+      "fill": "$c3",
+      "iconHint": "loomette",
+      "vectorPath": "$v1",
+      "children": [
+        "rectangle-16",
+        "rectangle-17",
+        "rectangle-19",
+        "rectangle-18"
+      ]
+    },
+    "loomette": {
+      "id": "1109:954",
+      "el": "loomette",
+      "type": "text",
+      "box": {
+        "w": 99,
+        "h": 37
+      },
+      "name": "loomette",
+      "path": "d-3-0-2-wardrobe-search-result.group-96.loomette",
+      "pos": {
+        "x": 115,
+        "y": 50
+      },
+      "fill": "$c5",
+      "text": "$t1",
+      "chars": "loomette",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "line-17": {
+      "id": "1109:955",
+      "el": "line-17",
+      "type": "line",
+      "box": {
+        "w": 103,
+        "h": 0
+      },
+      "path": "d-3-0-2-wardrobe-search-result.group-96.line-17",
+      "pos": {
+        "x": 822,
+        "y": 91
+      },
+      "stroke": "$c3",
+      "strokeW": 1,
+      "strokeAlign": "center",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "home": {
+      "id": "1109:956",
+      "el": "home",
+      "type": "text",
+      "box": {
+        "w": 61,
+        "h": 37
+      },
+      "name": "Home",
+      "path": "d-3-0-2-wardrobe-search-result.group-96.home",
+      "pos": {
+        "x": 583,
+        "y": 50
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "Home",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "calendar": {
+      "id": "1109:957",
+      "el": "calendar",
+      "type": "text",
+      "box": {
+        "w": 103,
+        "h": 37
+      },
+      "name": "calendar",
+      "path": "d-3-0-2-wardrobe-search-result.group-96.calendar",
+      "pos": {
+        "x": 680,
+        "y": 50
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "calendar",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "wardrobe": {
+      "id": "1109:958",
+      "el": "wardrobe",
+      "type": "text",
+      "box": {
+        "w": 110,
+        "h": 37
+      },
+      "name": "wardrobe",
+      "path": "d-3-0-2-wardrobe-search-result.group-96.wardrobe",
+      "pos": {
+        "x": 819,
+        "y": 50
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "wardrobe",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "gevyndo": {
+      "id": "1109:960",
+      "el": "gevyndo",
+      "type": "text",
+      "box": {
+        "w": 96,
+        "h": 37
+      },
+      "name": "gevyndo",
+      "path": "d-3-0-2-wardrobe-search-result.group-96.group-254.gevyndo",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "gevyndo",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector": {
+      "id": "I1109:961;3:3637",
+      "el": "vector",
+      "type": "vector",
+      "box": {
+        "w": 16,
+        "h": 22
+      },
+      "path": "d-3-0-2-wardrobe-search-result.group-96.group-254.user.vector",
+      "pos": {
+        "x": 4,
+        "y": 3
+      },
+      "fill": "$c3",
+      "iconHint": "gevyndo",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "user": {
+      "id": "1109:961",
+      "el": "user",
+      "type": "instance",
+      "box": {
+        "w": 24,
+        "h": 27
+      },
+      "name": "user",
+      "path": "d-3-0-2-wardrobe-search-result.group-96.group-254.user",
+      "pos": {
+        "x": 112,
+        "y": 5
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector"
+      ]
+    },
+    "group-254": {
+      "id": "1109:959",
+      "el": "group-254",
+      "type": "group",
+      "box": {
+        "w": 136,
+        "h": 37
+      },
+      "path": "d-3-0-2-wardrobe-search-result.group-96.group-254",
+      "pos": {
+        "x": 1251,
+        "y": 50
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "gevyndo",
+        "user"
+      ]
+    },
+    "group-96": {
+      "id": "1109:947",
+      "el": "group-96",
+      "type": "group",
+      "box": {
+        "w": 1465,
+        "h": 136
+      },
+      "path": "d-3-0-2-wardrobe-search-result.group-96",
+      "pos": {
+        "x": -11,
+        "y": -16
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-15",
+        "union",
+        "loomette",
+        "line-17",
+        "home",
+        "calendar",
+        "wardrobe",
+        "group-254"
+      ]
+    },
+    "shoes": {
+      "id": "1109:981",
+      "el": "shoes",
+      "type": "text",
+      "box": {
+        "w": 67,
+        "h": 24
+      },
+      "name": "SHOES",
+      "path": "d-3-0-2-wardrobe-search-result.group-288.shoes",
+      "pos": {
+        "x": 207,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "SHOES",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "sneakers": {
+      "id": "1109:983",
+      "el": "sneakers",
+      "type": "text",
+      "box": {
+        "w": 193,
+        "h": 60
+      },
+      "name": "Sneakers",
+      "path": "d-3-0-2-wardrobe-search-result.group-288.group-283.sneakers",
+      "pos": {
+        "x": 144,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "Sneakers",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "heels": {
+      "id": "1109:984",
+      "el": "heels",
+      "type": "text",
+      "box": {
+        "w": 117,
+        "h": 60
+      },
+      "name": "Heels",
+      "path": "d-3-0-2-wardrobe-search-result.group-288.group-283.heels",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fills": "$f1",
+      "text": "$t3",
+      "chars": "Heels",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "sandals": {
+      "id": "1109:985",
+      "el": "sandals",
+      "type": "text",
+      "box": {
+        "w": 159,
+        "h": 60
+      },
+      "name": "Sandals",
+      "path": "d-3-0-2-wardrobe-search-result.group-288.group-283.sandals",
+      "pos": {
+        "x": 369,
+        "y": 0
+      },
+      "fills": "$f2",
+      "text": "$t3",
+      "chars": "Sandals",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-283": {
+      "id": "1109:982",
+      "el": "group-283",
+      "type": "group",
+      "box": {
+        "w": 528,
+        "h": 60
+      },
+      "path": "d-3-0-2-wardrobe-search-result.group-288.group-283",
+      "pos": {
+        "x": 0,
+        "y": 40
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "sneakers",
+        "heels",
+        "sandals"
+      ]
+    },
+    "group-288": {
+      "id": "1109:980",
+      "el": "group-288",
+      "type": "group",
+      "box": {
+        "w": 528,
+        "h": 100
+      },
+      "path": "d-3-0-2-wardrobe-search-result.group-288",
+      "pos": {
+        "x": 481,
+        "y": 1172
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "shoes",
+        "group-283"
+      ]
+    },
+    "image-removebg-preview-8-6": {
+      "id": "1109:1010",
+      "el": "image-removebg-preview-8-6",
+      "type": "rect",
+      "box": {
+        "w": 110,
+        "h": 160
+      },
+      "name": "image-removebg-preview (8) 6",
+      "path": "d-3-0-2-wardrobe-search-result.image-removebg-preview-8-6",
+      "pos": {
+        "x": -81,
+        "y": 993
+      },
+      "assetId": "c6ff31d8a14d65a23be1759b2a95a0c039f2a5a7",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "c6ff31d8a14d65a23be1759b2a95a0c039f2a5a7",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-9-1": {
+      "id": "1109:1016",
+      "el": "image-removebg-preview-9-1",
+      "type": "rect",
+      "box": {
+        "w": 201,
+        "h": 136
+      },
+      "name": "image-removebg-preview (9) 1",
+      "path": "d-3-0-2-wardrobe-search-result.image-removebg-preview-9-1",
+      "pos": {
+        "x": 619,
+        "y": 1288
+      },
+      "assetId": "3065b6e54af07277b4f5afb1d93f2210fb8e8b30",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "3065b6e54af07277b4f5afb1d93f2210fb8e8b30",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              0.7799999713897705,
+              0,
+              0.11999999731779099
+            ],
+            [
+              0,
+              0.5299999713897705,
+              0.23999999463558197
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-9-2": {
+      "id": "1109:1017",
+      "el": "image-removebg-preview-9-2",
+      "type": "rect",
+      "box": {
+        "w": 200,
+        "h": 136
+      },
+      "name": "image-removebg-preview (9) 2",
+      "path": "d-3-0-2-wardrobe-search-result.image-removebg-preview-9-2",
+      "pos": {
+        "x": 225,
+        "y": 1289
+      },
+      "assetId": "3065b6e54af07277b4f5afb1d93f2210fb8e8b30",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "3065b6e54af07277b4f5afb1d93f2210fb8e8b30",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              0.7799999713897705,
+              0,
+              0.11999999731779099
+            ],
+            [
+              0,
+              0.5299999713897705,
+              0.23999999463558197
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-10-1": {
+      "id": "1109:1018",
+      "el": "image-removebg-preview-10-1",
+      "type": "rect",
+      "box": {
+        "w": 194,
+        "h": 136
+      },
+      "name": "image-removebg-preview (10) 1",
+      "path": "d-3-0-2-wardrobe-search-result.image-removebg-preview-10-1",
+      "pos": {
+        "x": 425,
+        "y": 1289
+      },
+      "assetId": "178406f88b315152b95287f3aeb79ee56c5d2443",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "178406f88b315152b95287f3aeb79ee56c5d2443",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.720081090927124,
+              0.12576064467430115
+            ]
+          ]
+        }
+      ],
+      "rotation": 10313,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-10-4": {
+      "id": "1109:1019",
+      "el": "image-removebg-preview-10-4",
+      "type": "rect",
+      "box": {
+        "w": 194,
+        "h": 136
+      },
+      "name": "image-removebg-preview (10) 4",
+      "path": "d-3-0-2-wardrobe-search-result.image-removebg-preview-10-4",
+      "pos": {
+        "x": 31,
+        "y": 1289
+      },
+      "assetId": "178406f88b315152b95287f3aeb79ee56c5d2443",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "178406f88b315152b95287f3aeb79ee56c5d2443",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.720081090927124,
+              0.12576064467430115
+            ]
+          ]
+        }
+      ],
+      "rotation": 10313,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-9-3": {
+      "id": "1109:1020",
+      "el": "image-removebg-preview-9-3",
+      "type": "rect",
+      "box": {
+        "w": 200,
+        "h": 136
+      },
+      "name": "image-removebg-preview (9) 3",
+      "path": "d-3-0-2-wardrobe-search-result.image-removebg-preview-9-3",
+      "pos": {
+        "x": 1014,
+        "y": 1288
+      },
+      "assetId": "3065b6e54af07277b4f5afb1d93f2210fb8e8b30",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "3065b6e54af07277b4f5afb1d93f2210fb8e8b30",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              0.7799999713897705,
+              0,
+              0.11999999731779099
+            ],
+            [
+              0,
+              0.5299999713897705,
+              0.23999999463558197
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-10-2": {
+      "id": "1109:1021",
+      "el": "image-removebg-preview-10-2",
+      "type": "rect",
+      "box": {
+        "w": 194,
+        "h": 136
+      },
+      "name": "image-removebg-preview (10) 2",
+      "path": "d-3-0-2-wardrobe-search-result.image-removebg-preview-10-2",
+      "pos": {
+        "x": 820,
+        "y": 1288
+      },
+      "assetId": "178406f88b315152b95287f3aeb79ee56c5d2443",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "178406f88b315152b95287f3aeb79ee56c5d2443",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.720081090927124,
+              0.12576064467430115
+            ]
+          ]
+        }
+      ],
+      "rotation": 10313,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-10-3": {
+      "id": "1109:1022",
+      "el": "image-removebg-preview-10-3",
+      "type": "rect",
+      "box": {
+        "w": 194,
+        "h": 136
+      },
+      "name": "image-removebg-preview (10) 3",
+      "path": "d-3-0-2-wardrobe-search-result.image-removebg-preview-10-3",
+      "pos": {
+        "x": 1214,
+        "y": 1288
+      },
+      "assetId": "178406f88b315152b95287f3aeb79ee56c5d2443",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "178406f88b315152b95287f3aeb79ee56c5d2443",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.720081090927124,
+              0.12576064467430115
+            ]
+          ]
+        }
+      ],
+      "rotation": 10313,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-9-4": {
+      "id": "1109:1023",
+      "el": "image-removebg-preview-9-4",
+      "type": "rect",
+      "box": {
+        "w": 200,
+        "h": 136
+      },
+      "name": "image-removebg-preview (9) 4",
+      "path": "d-3-0-2-wardrobe-search-result.image-removebg-preview-9-4",
+      "pos": {
+        "x": 1408,
+        "y": 1288
+      },
+      "assetId": "3065b6e54af07277b4f5afb1d93f2210fb8e8b30",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "3065b6e54af07277b4f5afb1d93f2210fb8e8b30",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              0.7799999713897705,
+              0,
+              0.11999999731779099
+            ],
+            [
+              0,
+              0.5299999713897705,
+              0.23999999463558197
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-9-5": {
+      "id": "1109:1024",
+      "el": "image-removebg-preview-9-5",
+      "type": "rect",
+      "box": {
+        "w": 200,
+        "h": 136
+      },
+      "name": "image-removebg-preview (9) 5",
+      "path": "d-3-0-2-wardrobe-search-result.image-removebg-preview-9-5",
+      "pos": {
+        "x": -169,
+        "y": 1289
+      },
+      "assetId": "3065b6e54af07277b4f5afb1d93f2210fb8e8b30",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "3065b6e54af07277b4f5afb1d93f2210fb8e8b30",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              0.7799999713897705,
+              0,
+              0.11999999731779099
+            ],
+            [
+              0,
+              0.5299999713897705,
+              0.23999999463558197
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-25": {
+      "id": "1109:1026",
+      "el": "rectangle-25",
+      "type": "rect",
+      "box": {
+        "w": 872,
+        "h": 64
+      },
+      "path": "d-3-0-2-wardrobe-search-result.group-98.rectangle-25",
+      "pos": {
+        "x": 0,
+        "y": 9
+      },
+      "fill": "$c8",
+      "radius": "$r1",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-26": {
+      "id": "1109:1028",
+      "el": "rectangle-26",
+      "type": "rect",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-3-0-2-wardrobe-search-result.group-98.group-289.rectangle-26",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c8",
+      "radius": "$r1",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "vector-2": {
+      "id": "I1109:1029;4:164",
+      "el": "vector-2",
+      "type": "vector",
+      "box": {
+        "w": 24,
+        "h": 21
+      },
+      "path": "d-3-0-2-wardrobe-search-result.group-98.group-289.filter-edit.vector-2",
+      "pos": {
+        "x": 5,
+        "y": 5
+      },
+      "fill": "$c3",
+      "iconHint": "filter edit",
+      "smooth": 0.6100000143051147,
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "filter-edit": {
+      "id": "1109:1029",
+      "el": "filter-edit",
+      "type": "instance",
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "name": "filter-edit",
+      "path": "d-3-0-2-wardrobe-search-result.group-98.group-289.filter-edit",
+      "pos": {
+        "x": 16,
+        "y": 16
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector-2"
+      ]
+    },
+    "group-289": {
+      "id": "1109:1027",
+      "el": "group-289",
+      "type": "group",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-3-0-2-wardrobe-search-result.group-98.group-289",
+      "pos": {
+        "x": 892,
+        "y": 9
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-26",
+        "filter-edit"
+      ]
+    },
+    "rectangle-27": {
+      "id": "1109:1031",
+      "el": "rectangle-27",
+      "type": "rect",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "d-3-0-2-wardrobe-search-result.group-98.group-290.rectangle-27",
+      "pos": {
+        "x": 0,
+        "y": 9
+      },
+      "fill": "$c8",
+      "radius": "$r1",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "vector-3": {
+      "id": "I1109:1032;3:2718",
+      "el": "vector-3",
+      "type": "vector",
+      "box": {
+        "w": 27,
+        "h": 15
+      },
+      "path": "d-3-0-2-wardrobe-search-result.group-98.group-290.checks-double-v.vector-3",
+      "pos": {
+        "x": 3,
+        "y": 9
+      },
+      "fill": "$c3",
+      "iconHint": "2",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "checks-double-v": {
+      "id": "1109:1032",
+      "el": "checks-double-v",
+      "type": "instance",
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "name": "checks-double-v",
+      "path": "d-3-0-2-wardrobe-search-result.group-98.group-290.checks-double-v",
+      "pos": {
+        "x": 16,
+        "y": 25
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector-3"
+      ]
+    },
+    "ellipse-2": {
+      "id": "1109:1033",
+      "el": "ellipse-2",
+      "type": "ellipse",
+      "box": {
+        "w": 28,
+        "h": 28
+      },
+      "path": "d-3-0-2-wardrobe-search-result.group-98.group-290.ellipse-2",
+      "pos": {
+        "x": 49,
+        "y": 0
+      },
+      "fill": "$c3",
+      "vectorPath": "$v2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-290": {
+      "id": "1109:1030",
+      "el": "group-290",
+      "type": "group",
+      "box": {
+        "w": 77,
+        "h": 73
+      },
+      "path": "d-3-0-2-wardrobe-search-result.group-98.group-290",
+      "pos": {
+        "x": 976,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-27",
+        "checks-double-v",
+        "ellipse-2",
+        "2"
+      ]
+    },
+    "shirt": {
+      "id": "1109:1035",
+      "el": "shirt",
+      "type": "text",
+      "box": {
+        "w": 43,
+        "h": 24
+      },
+      "name": "Shirt",
+      "path": "d-3-0-2-wardrobe-search-result.group-98.shirt",
+      "pos": {
+        "x": 32,
+        "y": 29
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "Shirt",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-4": {
+      "id": "I1109:1036;3:3199",
+      "el": "vector-4",
+      "type": "vector",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "path": "d-3-0-2-wardrobe-search-result.group-98.search.vector-4",
+      "pos": {
+        "x": 4,
+        "y": 4
+      },
+      "fill": "$c3",
+      "iconHint": "Shirt",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "search": {
+      "id": "1109:1036",
+      "el": "search",
+      "type": "instance",
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "name": "search",
+      "path": "d-3-0-2-wardrobe-search-result.group-98.search",
+      "pos": {
+        "x": 808,
+        "y": 25
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector-4"
+      ]
+    },
+    "group-98": {
+      "id": "1109:1025",
+      "el": "group-98",
+      "type": "group",
+      "box": {
+        "w": 1053,
+        "h": 73
+      },
+      "path": "d-3-0-2-wardrobe-search-result.group-98",
+      "pos": {
+        "x": 200,
+        "y": 155
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-25",
+        "group-289",
+        "group-290",
+        "shirt",
+        "search"
+      ]
+    },
+    "polo": {
+      "id": "1114:241",
+      "el": "polo",
+      "type": "text",
+      "box": {
+        "w": 45,
+        "h": 27
+      },
+      "name": "POLO",
+      "path": "d-3-0-2-wardrobe-search-result.frame-32.group-46.polo",
+      "pos": {
+        "x": 112,
+        "y": 281
+      },
+      "fill": "$c10",
+      "text": "$t5",
+      "chars": "POLO",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "blue-shirt": {
+      "id": "1114:259",
+      "el": "blue-shirt",
+      "type": "text",
+      "box": {
+        "w": 106,
+        "h": 30
+      },
+      "name": "Blue Shirt",
+      "path": "d-3-0-2-wardrobe-search-result.frame-32.group-46.blue-shirt",
+      "pos": {
+        "x": 82,
+        "y": 251
+      },
+      "fill": "$c3",
+      "text": "$t6",
+      "chars": "Blue Shirt",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-36": {
+      "id": "1114:242",
+      "el": "rectangle-36",
+      "type": "rect",
+      "box": {
+        "w": 269,
+        "h": 333
+      },
+      "path": "d-3-0-2-wardrobe-search-result.frame-32.group-46.rectangle-36",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c10",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-1": {
+      "id": "1114:257",
+      "el": "image-removebg-preview-1",
+      "type": "rect",
+      "box": {
+        "w": 169,
+        "h": 160
+      },
+      "name": "image-removebg-preview 1",
+      "path": "d-3-0-2-wardrobe-search-result.frame-32.group-46.image-removebg-preview-1",
+      "pos": {
+        "x": 50,
+        "y": 64
+      },
+      "assetId": "837079d7a4263daef60e6c2261fde3a6852552dd",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "837079d7a4263daef60e6c2261fde3a6852552dd",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.7313451170921326,
+              0.13030901551246643
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-46": {
+      "id": "1114:240",
+      "el": "group-46",
+      "type": "group",
+      "box": {
+        "w": 269,
+        "h": 333
+      },
+      "path": "d-3-0-2-wardrobe-search-result.frame-32.group-46",
+      "inheritedFill": "$c1",
+      "children": [
+        "polo",
+        "blue-shirt",
+        "rectangle-36",
+        "image-removebg-preview-1"
+      ]
+    },
+    "rectangle-36-2": {
+      "id": "1114:246",
+      "el": "rectangle-36-2",
+      "type": "rect",
+      "box": {
+        "w": 269,
+        "h": 333
+      },
+      "path": "d-3-0-2-wardrobe-search-result.frame-32.group-46-2.rectangle-36-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c10",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "polo-2": {
+      "id": "1115:265",
+      "el": "polo-2",
+      "type": "text",
+      "box": {
+        "w": 45,
+        "h": 27
+      },
+      "name": "POLO",
+      "path": "d-3-0-2-wardrobe-search-result.frame-32.group-46-2.polo-2",
+      "pos": {
+        "x": 112,
+        "y": 281
+      },
+      "fill": "$c10",
+      "text": "$t5",
+      "chars": "POLO",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "blue-shirt-2": {
+      "id": "1115:266",
+      "el": "blue-shirt-2",
+      "type": "text",
+      "box": {
+        "w": 106,
+        "h": 30
+      },
+      "name": "Blue Shirt",
+      "path": "d-3-0-2-wardrobe-search-result.frame-32.group-46-2.blue-shirt-2",
+      "pos": {
+        "x": 82,
+        "y": 251
+      },
+      "fill": "$c3",
+      "text": "$t6",
+      "chars": "Blue Shirt",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-1-2": {
+      "id": "1115:267",
+      "el": "image-removebg-preview-1-2",
+      "type": "rect",
+      "box": {
+        "w": 169,
+        "h": 160
+      },
+      "name": "image-removebg-preview 1",
+      "path": "d-3-0-2-wardrobe-search-result.frame-32.group-46-2.image-removebg-preview-1-2",
+      "pos": {
+        "x": 50,
+        "y": 64
+      },
+      "assetId": "837079d7a4263daef60e6c2261fde3a6852552dd",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "837079d7a4263daef60e6c2261fde3a6852552dd",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.7313451170921326,
+              0.13030901551246643
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-46-2": {
+      "id": "1114:244",
+      "el": "group-46-2",
+      "type": "group",
+      "box": {
+        "w": 269,
+        "h": 333
+      },
+      "path": "d-3-0-2-wardrobe-search-result.frame-32.group-46-2",
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-36-2",
+        "polo-2",
+        "blue-shirt-2",
+        "image-removebg-preview-1-2"
+      ]
+    },
+    "frame-32": {
+      "id": "1114:239",
+      "el": "frame-32",
+      "type": "frame",
+      "box": {
+        "w": 1148,
+        "h": 333
+      },
+      "path": "d-3-0-2-wardrobe-search-result.frame-32",
+      "pos": {
+        "x": 146,
+        "y": 276
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "group-46",
+        "group-46-2",
+        "group-47",
+        "group-48"
+      ],
+      "repeat": {
+        "template": "group-46-2",
+        "data": {
+          "group-47": {},
+          "group-48": {}
+        }
+      }
+    },
+    "d-3-0-2-wardrobe-search-result": {
+      "id": "1109:946",
+      "el": "d-3-0-2-wardrobe-search-result",
+      "type": "frame",
+      "box": {
+        "w": 1440,
+        "h": 1024
+      },
+      "name": "D.3.0.2 Wardrobe Search Result",
+      "fill": "$c1",
+      "clip": true,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "group-96",
+        "group-288",
+        "image-removebg-preview-8-6",
+        "image-removebg-preview-9-1",
+        "image-removebg-preview-9-2",
+        "image-removebg-preview-10-1",
+        "image-removebg-preview-10-4",
+        "image-removebg-preview-9-3",
+        "image-removebg-preview-10-2",
+        "image-removebg-preview-10-3",
+        "image-removebg-preview-9-4",
+        "image-removebg-preview-9-5",
+        "group-98",
+        "frame-32"
+      ]
+    }
+  },
+  "meta": {
+    "nodeCount": 59,
+    "estTokens": 5257,
+    "depthUsed": 12
+  },
+  "next": "Read `tokens` for the design system, then build the UI from `nodes`. Tag each rendered element data-plumb-id=\"<el>\". A node with a `more` count has that many children not yet included — call plumb_node again on that node's `id` to expand them. This screen has 12 image asset(s) (nodes with `assetId`). Call plumb_assets with this screen's id to download them to disk BEFORE generating HTML — without the real files any <img> will be a placeholder and plumb_verify will flag every image node as asset.missing.",
+  "source": "plugin",
+  "node": "D.3.0.2 Wardrobe Search Result"
+}

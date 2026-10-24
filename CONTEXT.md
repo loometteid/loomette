@@ -43,3 +43,17 @@ _Avoid_: Calendar photo copy, diary sync
 **Duplicate Flag**:
 A non-blocking advisory status shown in the Approval Queue when a newly extracted garment visually or taxonomically resembles an existing piece in the user's wardrobe, informing the user without prohibiting approval.
 _Avoid_: Duplicate blocker, duplicate error
+
+### Profile & Travel Hub
+
+**Social Circle**:
+The authenticated user's own public social profile at `/profile/social` displaying their public handle, bio, follower metrics, and published outfit or repost collections.
+_Avoid_: Friend page, friends feed, user search
+
+**Trip Packing List**:
+The checklist for planned journeys at `/trip/[id]`, enabling travelers to manage packing items across travel dates.
+_Avoid_: Luggage items, suitcase checklist
+
+**Account Deletion Flow**:
+The 3-stage user offboarding process requiring data-loss acknowledgement, reason feedback, and confirmation text typing before permanent account removal.
+_Avoid_: Immediate unsubscribe, quick delete

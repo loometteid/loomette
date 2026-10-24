@@ -1,0 +1,425 @@
+{
+  "file": {
+    "name": "Loomette.id",
+    "version": "plugin-1792667113311"
+  },
+  "root": "3-5-entry-affiliate-link",
+  "tokens": {
+    "color": {
+      "$c1": "#fafaf7",
+      "$c2": "#c9c3b733",
+      "$c3": "#f2ede5",
+      "$c4": "#444440",
+      "$c5": "image"
+    },
+    "text": {
+      "$t1": "400 16px Avenir Next",
+      "$t2": "400 24px Source Serif Pro",
+      "$t3": "700 16px Avenir Next",
+      "$t4": "400 12px Avenir Next"
+    },
+    "radius": {
+      "$r1": 20,
+      "$r2": 8
+    },
+    "shadow": {},
+    "layout": {
+      "$l1": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          19,
+          108,
+          18,
+          107
+        ]
+      }
+    },
+    "vector": {
+      "$v1": "M0.244078 0.244078 C0.569515 -0.0813593 1.09715 -0.0813593 1.42259 0.244078 L5.83333 4.65482 L10.2441 0.244078 C10.5695 -0.0813593 11.0972 -0.0813593 11.4226 0.244078 C11.748 0.569515 11.748 1.09715 11.4226 1.42259 L7.01184 5.83333 L11.4226 10.2441 C11.748 10.5695 11.748 11.0972 11.4226 11.4226 C11.0972 11.748 10.5695 11.748 10.2441 11.4226 L5.83333 7.01184 L1.42259 11.4226 C1.09715 11.748 0.569515 11.748 0.244078 11.4226 C-0.0813593 11.0972 -0.0813593 10.5695 0.244078 10.2441 L4.65482 5.83333 L0.244078 1.42259 C-0.0813593 1.09715 -0.0813593 0.569515 0.244078 0.244078 Z"
+    },
+    "props": {
+      "$p1": {
+        "size": "24"
+      }
+    },
+    "meta": {
+      "counts": {
+        "$c1": 3,
+        "$r2": 2,
+        "$c4": 6
+      }
+    }
+  },
+  "nodes": {
+    "rectangle-45": {
+      "id": "518:219",
+      "el": "rectangle-45",
+      "type": "rect",
+      "box": {
+        "w": 402,
+        "h": 874
+      },
+      "path": "3-5-entry-affiliate-link.rectangle-45",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-46": {
+      "id": "518:221",
+      "el": "rectangle-46",
+      "type": "rect",
+      "box": {
+        "w": 314,
+        "h": 436
+      },
+      "path": "3-5-entry-affiliate-link.group-131.rectangle-46",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c1",
+      "radius": "$r1",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      }
+    },
+    "rectangle-11": {
+      "id": "518:223",
+      "el": "rectangle-11",
+      "type": "rect",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "3-5-entry-affiliate-link.group-131.group-58.rectangle-11",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector": {
+      "id": "I518:224;3:2684",
+      "el": "vector",
+      "type": "vector",
+      "box": {
+        "w": 12,
+        "h": 12
+      },
+      "path": "3-5-entry-affiliate-link.group-131.group-58.close-x.vector",
+      "pos": {
+        "x": 4,
+        "y": 4
+      },
+      "fill": "$c4",
+      "iconHint": "close x",
+      "vectorPath": "$v1",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "close-x": {
+      "id": "518:224",
+      "el": "close-x",
+      "type": "instance",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "name": "close-x",
+      "path": "3-5-entry-affiliate-link.group-131.group-58.close-x",
+      "pos": {
+        "x": 10,
+        "y": 10
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector"
+      ]
+    },
+    "group-58": {
+      "id": "518:222",
+      "el": "group-58",
+      "type": "group",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "3-5-entry-affiliate-link.group-131.group-58",
+      "pos": {
+        "x": 250,
+        "y": 24
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-11",
+        "close-x"
+      ]
+    },
+    "open-link": {
+      "id": "518:226",
+      "el": "open-link",
+      "type": "text",
+      "box": {
+        "w": 70,
+        "h": 22
+      },
+      "name": "Open Link",
+      "path": "3-5-entry-affiliate-link.group-131.frame-8.open-link",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c1",
+      "text": "$t1",
+      "chars": "Open Link",
+      "textGrow": "wh"
+    },
+    "frame-8": {
+      "id": "518:225",
+      "el": "frame-8",
+      "type": "frame",
+      "box": {
+        "w": 200,
+        "h": 48
+      },
+      "path": "3-5-entry-affiliate-link.group-131.frame-8",
+      "pos": {
+        "x": 57,
+        "y": 356
+      },
+      "layout": "$l1",
+      "fill": "$c4",
+      "radius": "$r2",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "open-link"
+      ]
+    },
+    "polkadot-skirt": {
+      "id": "518:237",
+      "el": "polkadot-skirt",
+      "type": "text",
+      "box": {
+        "w": 144,
+        "h": 30
+      },
+      "name": "Polkadot Skirt",
+      "path": "3-5-entry-affiliate-link.group-131.polkadot-skirt",
+      "pos": {
+        "x": 85,
+        "y": 266
+      },
+      "fill": "$c4",
+      "text": "$t2",
+      "chars": "Polkadot Skirt",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rp29-000": {
+      "id": "518:239",
+      "el": "rp29-000",
+      "type": "text",
+      "box": {
+        "w": 76,
+        "h": 22
+      },
+      "name": "Rp29.000",
+      "path": "3-5-entry-affiliate-link.group-131.rp29-000",
+      "pos": {
+        "x": 119,
+        "y": 320
+      },
+      "fill": "$c4",
+      "text": "$t3",
+      "chars": "Rp29.000",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-7-1": {
+      "id": "518:240",
+      "el": "image-removebg-preview-7-1",
+      "type": "rect",
+      "box": {
+        "w": 140,
+        "h": 179
+      },
+      "name": "image-removebg-preview (7) 1",
+      "path": "3-5-entry-affiliate-link.group-131.image-removebg-preview-7-1",
+      "pos": {
+        "x": 87,
+        "y": 75
+      },
+      "assetId": "e5420007b99f8c30cfc67be00af0ec3b2f376e2a",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "e5420007b99f8c30cfc67be00af0ec3b2f376e2a",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.8557214140892029,
+              0.07213930040597916
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rp39-000": {
+      "id": "518:238",
+      "el": "rp39-000",
+      "type": "text",
+      "box": {
+        "w": 52,
+        "h": 16
+      },
+      "name": "Rp39.000",
+      "path": "3-5-entry-affiliate-link.group-131.group-178.rp39-000",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c4",
+      "text": "$t4",
+      "chars": "Rp39.000",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "line-5": {
+      "id": "518:241",
+      "el": "line-5",
+      "type": "line",
+      "box": {
+        "w": 52,
+        "h": 0
+      },
+      "path": "3-5-entry-affiliate-link.group-131.group-178.line-5",
+      "pos": {
+        "x": 0,
+        "y": 8
+      },
+      "stroke": "$c4",
+      "strokeW": 1,
+      "strokeAlign": "center",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-178": {
+      "id": "518:243",
+      "el": "group-178",
+      "type": "group",
+      "box": {
+        "w": 52,
+        "h": 16
+      },
+      "path": "3-5-entry-affiliate-link.group-131.group-178",
+      "pos": {
+        "x": 131,
+        "y": 304
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rp39-000",
+        "line-5"
+      ]
+    },
+    "group-131": {
+      "id": "518:220",
+      "el": "group-131",
+      "type": "group",
+      "box": {
+        "w": 314,
+        "h": 436
+      },
+      "path": "3-5-entry-affiliate-link.group-131",
+      "pos": {
+        "x": 44,
+        "y": 219
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-46",
+        "group-58",
+        "frame-8",
+        "polkadot-skirt",
+        "rp29-000",
+        "image-removebg-preview-7-1",
+        "group-178"
+      ]
+    },
+    "3-5-entry-affiliate-link": {
+      "id": "518:147",
+      "el": "3-5-entry-affiliate-link",
+      "type": "frame",
+      "box": {
+        "w": 402,
+        "h": 874
+      },
+      "name": "3.5 Entry Affiliate Link",
+      "fill": "$c1",
+      "clip": true,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "rectangle-45",
+        "group-131"
+      ]
+    }
+  },
+  "meta": {
+    "nodeCount": 16,
+    "estTokens": 1347,
+    "depthUsed": 12
+  },
+  "next": "Read `tokens` for the design system, then build the UI from `nodes`. Tag each rendered element data-plumb-id=\"<el>\". A node with a `more` count has that many children not yet included — call plumb_node again on that node's `id` to expand them. This screen has 1 image asset(s) (nodes with `assetId`). Call plumb_assets with this screen's id to download them to disk BEFORE generating HTML — without the real files any <img> will be a placeholder and plumb_verify will flag every image node as asset.missing.",
+  "source": "plugin",
+  "node": "3.5 Entry Affiliate Link"
+}

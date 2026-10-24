@@ -323,33 +323,35 @@ export function MixAndMatchCanvas({ userId }: { userId: string }) {
   );
 
   return (
-    <main className="mx-auto flex w-full max-w-sm flex-1 flex-col gap-4 px-6 py-8">
-      <Button
-        type="button"
-        variant="secondary"
-        size="icon"
-        className="rounded-xl"
-        onClick={() => router.back()}
-        aria-label="Go back"
-      >
-        <ChevronLeft className="size-4" />
-      </Button>
-
+    <main className="mx-auto flex w-full max-w-sm lg:max-w-6xl xl:max-w-7xl flex-1 flex-col gap-6 lg:gap-8 px-6 lg:px-12 py-8 lg:py-12">
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <Sparkle className="text-foreground size-5" />
-          <Typography variant="title" as="h1">
-            Mix &amp; Match
-          </Typography>
+        <div className="flex items-center gap-4">
+          <Button
+            type="button"
+            variant="secondary"
+            size="icon"
+            className="rounded-xl lg:hidden"
+            onClick={() => router.back()}
+            aria-label="Go back"
+          >
+            <ChevronLeft className="size-4" />
+          </Button>
+          <div className="flex items-center gap-2">
+            <Sparkle className="text-foreground size-6" />
+            <Typography variant="title" as="h1" className="font-serif text-[32px] md:text-4xl lg:text-[44px] font-normal leading-tight text-foreground">
+              Mix &amp; Match
+            </Typography>
+          </div>
         </div>
 
-        <div className="flex items-center gap-2">
+        {/* Action buttons (desktop header view) */}
+        <div className="hidden lg:flex items-center gap-3">
           <button
             type="button"
             onClick={handleDeleteSelected}
             disabled={!selectedId}
             aria-label="Delete selected item"
-            className="bg-secondary flex size-10 items-center justify-center rounded-xl disabled:opacity-40"
+            className="bg-[#F2EDE5] hover:bg-[#EAE4DC] text-[#444440] flex size-10 items-center justify-center rounded-xl transition-colors disabled:opacity-40"
           >
             <Trash2 className="size-4" />
           </button>
@@ -357,14 +359,39 @@ export function MixAndMatchCanvas({ userId }: { userId: string }) {
             type="button"
             onClick={handleShuffle}
             aria-label="Shuffle outfit"
-            className="bg-secondary flex size-10 items-center justify-center rounded-xl"
+            className="bg-[#F2EDE5] hover:bg-[#EAE4DC] text-[#444440] flex size-10 items-center justify-center rounded-xl transition-colors"
           >
             <Shuffle className="size-4" />
           </button>
         </div>
       </div>
 
-      <div className="relative">
+      {/* Main Responsive 2-Column Grid on Desktop */}
+      <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 pt-2">
+        {/* Left Column: Canvas + Canvas Controls */}
+        <div className="w-full lg:w-[480px] xl:w-[540px] shrink-0 flex flex-col gap-4">
+          {/* Mobile action bar */}
+          <div className="flex lg:hidden items-center justify-end gap-2">
+            <button
+              type="button"
+              onClick={handleDeleteSelected}
+              disabled={!selectedId}
+              aria-label="Delete selected item"
+              className="bg-[#F2EDE5] text-[#444440] flex size-10 items-center justify-center rounded-xl disabled:opacity-40"
+            >
+              <Trash2 className="size-4" />
+            </button>
+            <button
+              type="button"
+              onClick={handleShuffle}
+              aria-label="Shuffle outfit"
+              className="bg-[#F2EDE5] text-[#444440] flex size-10 items-center justify-center rounded-xl"
+            >
+              <Shuffle className="size-4" />
+            </button>
+          </div>
+
+          <div className="relative">
         <div
           ref={canvasRef}
           onPointerDown={() => setSelectedId(null)}
@@ -445,13 +472,16 @@ export function MixAndMatchCanvas({ userId }: { userId: string }) {
           type="button"
           onClick={handleSave}
           disabled={saveMutation.isPending}
-          className="bg-foreground text-background absolute right-3 bottom-3 rounded-full px-6 py-2.5 text-sm font-medium tracking-wide uppercase shadow-lg disabled:opacity-60"
+          className="bg-[#383733] hover:bg-[#2A2926] text-white absolute right-3.5 bottom-3.5 rounded-2xl px-8 py-3.5 text-xs font-normal tracking-wider uppercase shadow-md transition-colors disabled:opacity-60"
         >
           {saveMutation.isPending ? "Saving…" : "Save"}
         </button>
       </div>
+    </div>
 
-      <div className="flex gap-2 overflow-x-auto">
+    {/* Right Column: Garment Picker & Categories */}
+    <div className="flex flex-1 flex-col gap-6">
+      <div className="flex gap-2 overflow-x-auto pb-1">
         {CATEGORY_OPTIONS.map((category) => (
           <button
             key={category.value}
@@ -497,7 +527,7 @@ export function MixAndMatchCanvas({ userId }: { userId: string }) {
               </button>
 
               {isExpanded && (
-                <div className="mt-3 flex gap-3 overflow-x-auto">
+                <div className="mt-4 flex gap-3 overflow-x-auto lg:grid lg:grid-cols-3 lg:gap-4">
                   {options.map((option) => (
                     <button
                       key={option.wardrobeItemId}
@@ -507,7 +537,7 @@ export function MixAndMatchCanvas({ userId }: { userId: string }) {
                       }
                       onPointerMove={handlePickerPointerMove}
                       onPointerUp={handlePickerPointerUp}
-                      className="bg-secondary relative aspect-square w-20 shrink-0 touch-none overflow-hidden rounded-xl"
+                      className="border border-[#EAE4DC] bg-[#FAF8F5] relative aspect-square w-20 lg:w-full shrink-0 touch-none overflow-hidden rounded-2xl p-2 hover:border-foreground/30 transition-colors"
                     >
                       {option.image_url && (
                         <Image
@@ -532,8 +562,10 @@ export function MixAndMatchCanvas({ userId }: { userId: string }) {
           </Typography>
         )}
       </div>
+    </div>
+  </div>
 
-      {ghost && ghost.dragging && (
+  {ghost && ghost.dragging && (
         <div
           style={{
             left: ghost.clientX,

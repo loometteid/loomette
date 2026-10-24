@@ -1,0 +1,365 @@
+{
+  "file": {
+    "name": "Loomette.id",
+    "version": "plugin-1792667112241"
+  },
+  "root": "frame",
+  "tokens": {
+    "color": {
+      "$c1": "#fafaf7",
+      "$c2": "#c9c3b733",
+      "$c3": "#f2ede5",
+      "$c4": "#444440"
+    },
+    "text": {
+      "$t1": "400 16px Avenir Next",
+      "$t2": "400 14px Avenir Next",
+      "$t3": "400 32px Source Serif Pro"
+    },
+    "radius": {
+      "$r1": 20,
+      "$r2": 8
+    },
+    "shadow": {},
+    "layout": {
+      "$l1": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          19,
+          108,
+          18,
+          107
+        ]
+      }
+    },
+    "vector": {
+      "$v1": "M0.244078 0.244078 C0.569515 -0.0813593 1.09715 -0.0813593 1.42259 0.244078 L5.83333 4.65482 L10.2441 0.244078 C10.5695 -0.0813593 11.0972 -0.0813593 11.4226 0.244078 C11.748 0.569515 11.748 1.09715 11.4226 1.42259 L7.01184 5.83333 L11.4226 10.2441 C11.748 10.5695 11.748 11.0972 11.4226 11.4226 C11.0972 11.748 10.5695 11.748 10.2441 11.4226 L5.83333 7.01184 L1.42259 11.4226 C1.09715 11.748 0.569515 11.748 0.244078 11.4226 C-0.0813593 11.0972 -0.0813593 10.5695 0.244078 10.2441 L4.65482 5.83333 L0.244078 1.42259 C-0.0813593 1.09715 -0.0813593 0.569515 0.244078 0.244078 Z"
+    },
+    "props": {
+      "$p1": {
+        "size": "24"
+      }
+    },
+    "meta": {
+      "counts": {
+        "$c1": 3,
+        "$l1": 2,
+        "$c3": 2,
+        "$r2": 3,
+        "$c4": 5,
+        "$t1": 2
+      }
+    }
+  },
+  "nodes": {
+    "rectangle-45": {
+      "id": "1583:615",
+      "el": "rectangle-45",
+      "type": "rect",
+      "box": {
+        "w": 402,
+        "h": 874
+      },
+      "path": "frame.rectangle-45",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-46": {
+      "id": "1583:617",
+      "el": "rectangle-46",
+      "type": "rect",
+      "box": {
+        "w": 260,
+        "h": 380
+      },
+      "path": "frame.group-131.rectangle-46",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c1",
+      "radius": "$r1",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      }
+    },
+    "delete-item": {
+      "id": "1583:619",
+      "el": "delete-item",
+      "type": "text",
+      "box": {
+        "w": 83,
+        "h": 22
+      },
+      "name": "delete item",
+      "path": "frame.group-131.frame-7.delete-item",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c4",
+      "text": "$t1",
+      "chars": "delete item",
+      "textGrow": "wh"
+    },
+    "frame-7": {
+      "id": "1583:618",
+      "el": "frame-7",
+      "type": "frame",
+      "box": {
+        "w": 200,
+        "h": 48
+      },
+      "path": "frame.group-131.frame-7",
+      "pos": {
+        "x": 30,
+        "y": 228
+      },
+      "layout": "$l1",
+      "fill": "$c3",
+      "radius": "$r2",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "delete-item"
+      ]
+    },
+    "keep-item": {
+      "id": "1583:621",
+      "el": "keep-item",
+      "type": "text",
+      "box": {
+        "w": 67,
+        "h": 22
+      },
+      "name": "keep item",
+      "path": "frame.group-131.frame-8.keep-item",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c1",
+      "text": "$t1",
+      "chars": "keep item",
+      "textGrow": "wh"
+    },
+    "frame-8": {
+      "id": "1583:620",
+      "el": "frame-8",
+      "type": "frame",
+      "box": {
+        "w": 200,
+        "h": 48
+      },
+      "path": "frame.group-131.frame-8",
+      "pos": {
+        "x": 30,
+        "y": 292
+      },
+      "layout": "$l1",
+      "fill": "$c4",
+      "radius": "$r2",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "keep-item"
+      ]
+    },
+    "you-will-need-to-upload-it-again-if-you": {
+      "id": "1583:622",
+      "el": "you-will-need-to-upload-it-again-if-you",
+      "type": "text",
+      "box": {
+        "w": 196,
+        "h": 38
+      },
+      "name": "You will need to upload it again if you change your mind.",
+      "path": "frame.group-131.you-will-need-to-upload-it-again-if-you",
+      "pos": {
+        "x": 32,
+        "y": 136
+      },
+      "fill": "$c4",
+      "text": "$t2",
+      "chars": "You will need to upload it again if you change your mind.",
+      "textGrow": "h",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-11": {
+      "id": "1583:624",
+      "el": "rectangle-11",
+      "type": "rect",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "frame.group-131.group-58.rectangle-11",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector": {
+      "id": "I1583:625;3:2684",
+      "el": "vector",
+      "type": "vector",
+      "box": {
+        "w": 12,
+        "h": 12
+      },
+      "path": "frame.group-131.group-58.close-x.vector",
+      "pos": {
+        "x": 4,
+        "y": 4
+      },
+      "fill": "$c4",
+      "iconHint": "close x",
+      "vectorPath": "$v1",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "close-x": {
+      "id": "1583:625",
+      "el": "close-x",
+      "type": "instance",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "name": "close-x",
+      "path": "frame.group-131.group-58.close-x",
+      "pos": {
+        "x": 10,
+        "y": 10
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector"
+      ]
+    },
+    "group-58": {
+      "id": "1583:623",
+      "el": "group-58",
+      "type": "group",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "frame.group-131.group-58",
+      "pos": {
+        "x": 196,
+        "y": 24
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-11",
+        "close-x"
+      ]
+    },
+    "delete-item-2": {
+      "id": "1583:626",
+      "el": "delete-item-2",
+      "type": "text",
+      "box": {
+        "w": 171,
+        "h": 40
+      },
+      "name": "Delete item?",
+      "path": "frame.group-131.delete-item-2",
+      "pos": {
+        "x": 38,
+        "y": 88
+      },
+      "fill": "$c4",
+      "text": "$t3",
+      "chars": "Delete item?",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-131": {
+      "id": "1583:616",
+      "el": "group-131",
+      "type": "group",
+      "box": {
+        "w": 260,
+        "h": 380
+      },
+      "path": "frame.group-131",
+      "pos": {
+        "x": 71,
+        "y": 247
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-46",
+        "frame-7",
+        "frame-8",
+        "you-will-need-to-upload-it-again-if-you",
+        "group-58",
+        "delete-item-2"
+      ]
+    },
+    "frame": {
+      "id": "1583:540",
+      "el": "frame",
+      "type": "frame",
+      "box": {
+        "w": 402,
+        "h": 874
+      },
+      "fill": "$c1",
+      "clip": true,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "rectangle-45",
+        "group-131"
+      ]
+    }
+  },
+  "meta": {
+    "nodeCount": 14,
+    "estTokens": 1134,
+    "depthUsed": 12
+  },
+  "next": "Read `tokens` for the design system, then build the UI from `nodes`. Tag each rendered element data-plumb-id=\"<el>\". A node with a `more` count has that many children not yet included — call plumb_node again on that node's `id` to expand them.",
+  "source": "plugin",
+  "node": "Frame"
+}

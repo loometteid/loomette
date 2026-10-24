@@ -1,0 +1,1404 @@
+{
+  "file": {
+    "name": "Loomette.id",
+    "version": "plugin-1792667148304"
+  },
+  "root": "d-4-2-1-edit-trip",
+  "tokens": {
+    "color": {
+      "$c1": "#fafaf7",
+      "$c2": "#ffffff1a",
+      "$c3": "#444440",
+      "$c4": "#d9d9d9",
+      "$c5": "#000000",
+      "$c6": "image",
+      "$c7": "#f2ede5",
+      "$c8": "#c9c3b7"
+    },
+    "text": {
+      "$t1": "400 24px Avenir Next",
+      "$t2": "400 64px Source Serif Pro",
+      "$t3": "400 20px Figtree",
+      "$t4": "400 16px Avenir Next",
+      "$t5": "400 12px Avenir"
+    },
+    "radius": {
+      "$r1": 8,
+      "$r2": 16
+    },
+    "shadow": {},
+    "layout": {
+      "$l1": {
+        "flow": "col",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          12,
+          212,
+          12,
+          16
+        ]
+      },
+      "$l2": {
+        "align": "center",
+        "flow": "row",
+        "gap": 8,
+        "pad": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l3": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          19,
+          108,
+          18,
+          107
+        ]
+      }
+    },
+    "vector": {
+      "$v1": "M12.7988 11.4121 L19.9199 3.3418 L21.0518 4.62402 L13.9307 12.6934 L24 12.6934 L24 14.5068 L13.9316 14.5068 L21.0508 22.5752 L19.9189 23.8574 L12.7988 15.7871 L12.7988 27.2002 L11.1992 27.2002 L11.1992 15.79 L4.08105 23.8574 L2.94922 22.5752 L10.0674 14.5068 L0 14.5068 L0 12.6934 L10.0693 12.6934 L2.94922 4.62402 L4.08008 3.3418 L11.1992 11.4092 L11.1992 0 L12.7988 0 L12.7988 11.4121 Z"
+    },
+    "props": {
+      "$p1": {
+        "size": "24"
+      }
+    },
+    "meta": {
+      "counts": {
+        "$c3": 27,
+        "$c4": 4,
+        "$t1": 5,
+        "$p1": 2,
+        "$t3": 5,
+        "$t4": 12,
+        "$l1": 2,
+        "$c7": 2,
+        "$r1": 2,
+        "$l2": 2,
+        "$c8": 8,
+        "$t5": 2,
+        "$l3": 8,
+        "$r2": 8
+      }
+    }
+  },
+  "nodes": {
+    "rectangle-15": {
+      "id": "1240:3446",
+      "el": "rectangle-15",
+      "type": "rect",
+      "box": {
+        "w": 1465,
+        "h": 136
+      },
+      "path": "d-4-2-1-edit-trip.group-96.rectangle-15",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16": {
+      "id": "1240:3448",
+      "el": "rectangle-16",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 27
+      },
+      "path": "d-4-2-1-edit-trip.group-96.union.rectangle-16",
+      "pos": {
+        "x": 11,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17": {
+      "id": "1240:3449",
+      "el": "rectangle-17",
+      "type": "rect",
+      "box": {
+        "w": 18,
+        "h": 21
+      },
+      "path": "d-4-2-1-edit-trip.group-96.union.rectangle-17",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 2783,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19": {
+      "id": "1240:3450",
+      "el": "rectangle-19",
+      "type": "rect",
+      "box": {
+        "w": 18,
+        "h": 21
+      },
+      "path": "d-4-2-1-edit-trip.group-96.union.rectangle-19",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 7530,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18": {
+      "id": "1240:3451",
+      "el": "rectangle-18",
+      "type": "rect",
+      "box": {
+        "w": 24,
+        "h": 2
+      },
+      "path": "d-4-2-1-edit-trip.group-96.union.rectangle-18",
+      "pos": {
+        "x": 0,
+        "y": 13
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union": {
+      "id": "1240:3447",
+      "el": "union",
+      "type": "bool",
+      "box": {
+        "w": 24,
+        "h": 27
+      },
+      "path": "d-4-2-1-edit-trip.group-96.union",
+      "pos": {
+        "x": 75,
+        "y": 54
+      },
+      "fill": "$c3",
+      "iconHint": "loomette",
+      "vectorPath": "$v1",
+      "children": [
+        "rectangle-16",
+        "rectangle-17",
+        "rectangle-19",
+        "rectangle-18"
+      ]
+    },
+    "loomette": {
+      "id": "1240:3452",
+      "el": "loomette",
+      "type": "text",
+      "box": {
+        "w": 99,
+        "h": 37
+      },
+      "name": "loomette",
+      "path": "d-4-2-1-edit-trip.group-96.loomette",
+      "pos": {
+        "x": 115,
+        "y": 50
+      },
+      "fill": "$c5",
+      "text": "$t1",
+      "chars": "loomette",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "home": {
+      "id": "1240:3453",
+      "el": "home",
+      "type": "text",
+      "box": {
+        "w": 61,
+        "h": 37
+      },
+      "name": "Home",
+      "path": "d-4-2-1-edit-trip.group-96.home",
+      "pos": {
+        "x": 583,
+        "y": 50
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "Home",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "calendar": {
+      "id": "1240:3454",
+      "el": "calendar",
+      "type": "text",
+      "box": {
+        "w": 103,
+        "h": 37
+      },
+      "name": "calendar",
+      "path": "d-4-2-1-edit-trip.group-96.calendar",
+      "pos": {
+        "x": 680,
+        "y": 50
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "calendar",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "wardrobe": {
+      "id": "1240:3455",
+      "el": "wardrobe",
+      "type": "text",
+      "box": {
+        "w": 110,
+        "h": 37
+      },
+      "name": "wardrobe",
+      "path": "d-4-2-1-edit-trip.group-96.wardrobe",
+      "pos": {
+        "x": 819,
+        "y": 50
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "wardrobe",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "gevyndo": {
+      "id": "1240:3457",
+      "el": "gevyndo",
+      "type": "text",
+      "box": {
+        "w": 96,
+        "h": 37
+      },
+      "name": "gevyndo",
+      "path": "d-4-2-1-edit-trip.group-96.group-254.gevyndo",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "gevyndo",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector": {
+      "id": "I1240:3458;3:3637",
+      "el": "vector",
+      "type": "vector",
+      "box": {
+        "w": 16,
+        "h": 22
+      },
+      "path": "d-4-2-1-edit-trip.group-96.group-254.user.vector",
+      "pos": {
+        "x": 4,
+        "y": 3
+      },
+      "fill": "$c3",
+      "iconHint": "gevyndo",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "user": {
+      "id": "1240:3458",
+      "el": "user",
+      "type": "instance",
+      "box": {
+        "w": 24,
+        "h": 27
+      },
+      "name": "user",
+      "path": "d-4-2-1-edit-trip.group-96.group-254.user",
+      "pos": {
+        "x": 112,
+        "y": 5
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector"
+      ]
+    },
+    "group-254": {
+      "id": "1240:3456",
+      "el": "group-254",
+      "type": "group",
+      "box": {
+        "w": 136,
+        "h": 37
+      },
+      "path": "d-4-2-1-edit-trip.group-96.group-254",
+      "pos": {
+        "x": 1251,
+        "y": 50
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "gevyndo",
+        "user"
+      ]
+    },
+    "group-96": {
+      "id": "1240:3445",
+      "el": "group-96",
+      "type": "group",
+      "box": {
+        "w": 1465,
+        "h": 136
+      },
+      "path": "d-4-2-1-edit-trip.group-96",
+      "pos": {
+        "x": -11,
+        "y": -16
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-15",
+        "union",
+        "loomette",
+        "home",
+        "calendar",
+        "wardrobe",
+        "group-254"
+      ]
+    },
+    "image-removebg-preview-11-1": {
+      "id": "1240:3461",
+      "el": "image-removebg-preview-11-1",
+      "type": "rect",
+      "box": {
+        "w": 257,
+        "h": 361
+      },
+      "name": "image-removebg-preview (11) 1",
+      "path": "d-4-2-1-edit-trip.group-339.group-20.image-removebg-preview-11-1",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "assetId": "bb071ae72883175e0f5994471c5c9538d27b0caa",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "bb071ae72883175e0f5994471c5c9538d27b0caa",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-20": {
+      "id": "1240:3460",
+      "el": "group-20",
+      "type": "group",
+      "box": {
+        "w": 257,
+        "h": 361
+      },
+      "path": "d-4-2-1-edit-trip.group-339.group-20",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "image-removebg-preview-11-1"
+      ]
+    },
+    "japan": {
+      "id": "1240:3464",
+      "el": "japan",
+      "type": "text",
+      "box": {
+        "w": 157,
+        "h": 80
+      },
+      "name": "Japan",
+      "path": "d-4-2-1-edit-trip.group-339.group-338.japan",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "Japan",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-2": {
+      "id": "I1240:3496;4:174",
+      "el": "vector-2",
+      "type": "vector",
+      "box": {
+        "w": 15,
+        "h": 16
+      },
+      "path": "d-4-2-1-edit-trip.group-339.group-338.edit.vector-2",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c3",
+      "iconHint": "Japan",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "edit": {
+      "id": "1240:3496",
+      "el": "edit",
+      "type": "instance",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "name": "edit",
+      "path": "d-4-2-1-edit-trip.group-339.group-338.edit",
+      "pos": {
+        "x": 177,
+        "y": 30
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector-2"
+      ]
+    },
+    "group-338": {
+      "id": "1240:3462",
+      "el": "group-338",
+      "type": "group",
+      "box": {
+        "w": 197,
+        "h": 80
+      },
+      "path": "d-4-2-1-edit-trip.group-339.group-338",
+      "pos": {
+        "x": 30,
+        "y": 373
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "japan",
+        "edit"
+      ]
+    },
+    "group-339": {
+      "id": "1240:3459",
+      "el": "group-339",
+      "type": "group",
+      "box": {
+        "w": 257,
+        "h": 453
+      },
+      "path": "d-4-2-1-edit-trip.group-339",
+      "pos": {
+        "x": 334,
+        "y": 306
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-20",
+        "group-338"
+      ]
+    },
+    "profile-travel-detail-edit-travel": {
+      "id": "1240:3488",
+      "el": "profile-travel-detail-edit-travel",
+      "type": "text",
+      "box": {
+        "w": 385,
+        "h": 24
+      },
+      "name": "profile > travel detail > edit travel",
+      "path": "d-4-2-1-edit-trip.profile-travel-detail-edit-travel",
+      "pos": {
+        "x": 104,
+        "y": 170
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": [
+        {
+          "t": "profile",
+          "d": "underline"
+        },
+        {
+          "t": " > "
+        },
+        {
+          "t": "travel detail",
+          "d": "underline"
+        },
+        {
+          "t": " > edit travel"
+        }
+      ],
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "start": {
+      "id": "1240:3513",
+      "el": "start",
+      "type": "text",
+      "box": {
+        "w": 36,
+        "h": 22
+      },
+      "name": "start",
+      "path": "d-4-2-1-edit-trip.group-40.group-38.group-34.start",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "start",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "dd-mm-yyyy": {
+      "id": "1240:3516",
+      "el": "dd-mm-yyyy",
+      "type": "text",
+      "box": {
+        "w": 93,
+        "h": 16
+      },
+      "name": "DD / MM / YYYY",
+      "path": "d-4-2-1-edit-trip.group-40.group-38.group-34.frame-6.frame-5.dd-mm-yyyy",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c8",
+      "text": "$t5",
+      "chars": "DD / MM / YYYY",
+      "textGrow": "wh"
+    },
+    "frame-5": {
+      "id": "1240:3515",
+      "el": "frame-5",
+      "type": "frame",
+      "box": {
+        "w": 93,
+        "h": 16
+      },
+      "path": "d-4-2-1-edit-trip.group-40.group-38.group-34.frame-6.frame-5",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c7",
+      "children": [
+        "dd-mm-yyyy"
+      ]
+    },
+    "frame-6": {
+      "id": "1240:3514",
+      "el": "frame-6",
+      "type": "frame",
+      "box": {
+        "w": 144,
+        "h": 48
+      },
+      "path": "d-4-2-1-edit-trip.group-40.group-38.group-34.frame-6",
+      "pos": {
+        "x": 0,
+        "y": 30
+      },
+      "layout": "$l1",
+      "fill": "$c7",
+      "radius": "$r1",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "frame-5"
+      ]
+    },
+    "group-34": {
+      "id": "1240:3512",
+      "el": "group-34",
+      "type": "group",
+      "box": {
+        "w": 144,
+        "h": 78
+      },
+      "path": "d-4-2-1-edit-trip.group-40.group-38.group-34",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "start",
+        "frame-6"
+      ]
+    },
+    "group-38": {
+      "id": "1240:3511",
+      "el": "group-38",
+      "type": "group",
+      "box": {
+        "w": 144,
+        "h": 78
+      },
+      "path": "d-4-2-1-edit-trip.group-40.group-38",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-34"
+      ]
+    },
+    "end": {
+      "id": "1240:3519",
+      "el": "end",
+      "type": "text",
+      "box": {
+        "w": 27,
+        "h": 22
+      },
+      "name": "end",
+      "path": "d-4-2-1-edit-trip.group-40.group-39.group-34-2.end",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "end",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "dd-mm-yyyy-2": {
+      "id": "1240:3522",
+      "el": "dd-mm-yyyy-2",
+      "type": "text",
+      "box": {
+        "w": 93,
+        "h": 16
+      },
+      "name": "DD / MM / YYYY",
+      "path": "d-4-2-1-edit-trip.group-40.group-39.group-34-2.frame-6-2.frame-5-2.dd-mm-yyyy-2",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c8",
+      "text": "$t5",
+      "chars": "DD / MM / YYYY",
+      "textGrow": "wh"
+    },
+    "frame-5-2": {
+      "id": "1240:3521",
+      "el": "frame-5-2",
+      "type": "frame",
+      "box": {
+        "w": 93,
+        "h": 16
+      },
+      "path": "d-4-2-1-edit-trip.group-40.group-39.group-34-2.frame-6-2.frame-5-2",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c7",
+      "children": [
+        "dd-mm-yyyy-2"
+      ]
+    },
+    "frame-6-2": {
+      "id": "1240:3520",
+      "el": "frame-6-2",
+      "type": "frame",
+      "box": {
+        "w": 144,
+        "h": 48
+      },
+      "path": "d-4-2-1-edit-trip.group-40.group-39.group-34-2.frame-6-2",
+      "pos": {
+        "x": 0,
+        "y": 30
+      },
+      "layout": "$l1",
+      "fill": "$c7",
+      "radius": "$r1",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "frame-5-2"
+      ]
+    },
+    "group-34-2": {
+      "id": "1240:3518",
+      "el": "group-34-2",
+      "type": "group",
+      "box": {
+        "w": 144,
+        "h": 78
+      },
+      "path": "d-4-2-1-edit-trip.group-40.group-39.group-34-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "end",
+        "frame-6-2"
+      ]
+    },
+    "group-39": {
+      "id": "1240:3517",
+      "el": "group-39",
+      "type": "group",
+      "box": {
+        "w": 144,
+        "h": 78
+      },
+      "path": "d-4-2-1-edit-trip.group-40.group-39",
+      "pos": {
+        "x": 168,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-34-2"
+      ]
+    },
+    "group-40": {
+      "id": "1240:3510",
+      "el": "group-40",
+      "type": "group",
+      "box": {
+        "w": 312,
+        "h": 78
+      },
+      "path": "d-4-2-1-edit-trip.group-40",
+      "pos": {
+        "x": 721,
+        "y": 414
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-38",
+        "group-39"
+      ]
+    },
+    "season": {
+      "id": "1240:3525",
+      "el": "season",
+      "type": "text",
+      "box": {
+        "w": 50,
+        "h": 22
+      },
+      "name": "Season",
+      "path": "d-4-2-1-edit-trip.group-60.group-35.season",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "Season",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-35": {
+      "id": "1240:3524",
+      "el": "group-35",
+      "type": "group",
+      "box": {
+        "w": 50,
+        "h": 22
+      },
+      "path": "d-4-2-1-edit-trip.group-60.group-35",
+      "pos": {
+        "x": 3,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "season"
+      ]
+    },
+    "winter": {
+      "id": "1240:3527",
+      "el": "winter",
+      "type": "text",
+      "box": {
+        "w": 50,
+        "h": 22
+      },
+      "name": "winter",
+      "path": "d-4-2-1-edit-trip.group-60.frame-8.winter",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "winter",
+      "textGrow": "wh"
+    },
+    "frame-8": {
+      "id": "1240:3526",
+      "el": "frame-8",
+      "type": "frame",
+      "box": {
+        "w": 88,
+        "h": 40
+      },
+      "path": "d-4-2-1-edit-trip.group-60.frame-8",
+      "pos": {
+        "x": 0,
+        "y": 34
+      },
+      "layout": "$l3",
+      "inheritedFill": "$c1",
+      "stroke": "$c3",
+      "strokeW": 1.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "winter"
+      ]
+    },
+    "spring": {
+      "id": "1240:3529",
+      "el": "spring",
+      "type": "text",
+      "box": {
+        "w": 47,
+        "h": 22
+      },
+      "name": "spring",
+      "path": "d-4-2-1-edit-trip.group-60.frame-9.spring",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "spring",
+      "textGrow": "wh"
+    },
+    "frame-9": {
+      "id": "1240:3528",
+      "el": "frame-9",
+      "type": "frame",
+      "box": {
+        "w": 88,
+        "h": 40
+      },
+      "path": "d-4-2-1-edit-trip.group-60.frame-9",
+      "pos": {
+        "x": 100,
+        "y": 34
+      },
+      "layout": "$l3",
+      "inheritedFill": "$c1",
+      "stroke": "$c8",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "spring"
+      ]
+    },
+    "summer": {
+      "id": "1240:3531",
+      "el": "summer",
+      "type": "text",
+      "box": {
+        "w": 56,
+        "h": 22
+      },
+      "name": "summer",
+      "path": "d-4-2-1-edit-trip.group-60.frame-12.summer",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "summer",
+      "textGrow": "wh"
+    },
+    "frame-12": {
+      "id": "1240:3530",
+      "el": "frame-12",
+      "type": "frame",
+      "box": {
+        "w": 88,
+        "h": 40
+      },
+      "path": "d-4-2-1-edit-trip.group-60.frame-12",
+      "pos": {
+        "x": 200,
+        "y": 34
+      },
+      "layout": "$l3",
+      "inheritedFill": "$c1",
+      "stroke": "$c8",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "summer"
+      ]
+    },
+    "autumn": {
+      "id": "1240:3533",
+      "el": "autumn",
+      "type": "text",
+      "box": {
+        "w": 56,
+        "h": 22
+      },
+      "name": "autumn",
+      "path": "d-4-2-1-edit-trip.group-60.frame-13.autumn",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "autumn",
+      "textGrow": "wh"
+    },
+    "frame-13": {
+      "id": "1240:3532",
+      "el": "frame-13",
+      "type": "frame",
+      "box": {
+        "w": 88,
+        "h": 40
+      },
+      "path": "d-4-2-1-edit-trip.group-60.frame-13",
+      "pos": {
+        "x": 300,
+        "y": 35
+      },
+      "layout": "$l3",
+      "inheritedFill": "$c1",
+      "stroke": "$c8",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "autumn"
+      ]
+    },
+    "group-60": {
+      "id": "1240:3523",
+      "el": "group-60",
+      "type": "group",
+      "box": {
+        "w": 388,
+        "h": 75
+      },
+      "path": "d-4-2-1-edit-trip.group-60",
+      "pos": {
+        "x": 721,
+        "y": 524
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-35",
+        "frame-8",
+        "frame-9",
+        "frame-12",
+        "frame-13"
+      ]
+    },
+    "travel-companion": {
+      "id": "1240:3536",
+      "el": "travel-companion",
+      "type": "text",
+      "box": {
+        "w": 127,
+        "h": 22
+      },
+      "name": "TRAVEL COMPANION",
+      "path": "d-4-2-1-edit-trip.group-61.group-35-2.travel-companion",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "TRAVEL COMPANION",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-35-2": {
+      "id": "1240:3535",
+      "el": "group-35-2",
+      "type": "group",
+      "box": {
+        "w": 127,
+        "h": 22
+      },
+      "path": "d-4-2-1-edit-trip.group-61.group-35-2",
+      "pos": {
+        "x": 3,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "travel-companion"
+      ]
+    },
+    "solo-trip": {
+      "id": "1240:3538",
+      "el": "solo-trip",
+      "type": "text",
+      "box": {
+        "w": 66,
+        "h": 22
+      },
+      "name": "SOLO TRIP",
+      "path": "d-4-2-1-edit-trip.group-61.frame-8-2.solo-trip",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "SOLO TRIP",
+      "textGrow": "wh"
+    },
+    "frame-8-2": {
+      "id": "1240:3537",
+      "el": "frame-8-2",
+      "type": "frame",
+      "box": {
+        "w": 88,
+        "h": 40
+      },
+      "path": "d-4-2-1-edit-trip.group-61.frame-8-2",
+      "pos": {
+        "x": 0,
+        "y": 34
+      },
+      "layout": "$l3",
+      "inheritedFill": "$c1",
+      "stroke": "$c3",
+      "strokeW": 1.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "solo-trip"
+      ]
+    },
+    "couple": {
+      "id": "1240:3540",
+      "el": "couple",
+      "type": "text",
+      "box": {
+        "w": 52,
+        "h": 22
+      },
+      "name": "COUPLE",
+      "path": "d-4-2-1-edit-trip.group-61.frame-9-2.couple",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "COUPLE",
+      "textGrow": "wh"
+    },
+    "frame-9-2": {
+      "id": "1240:3539",
+      "el": "frame-9-2",
+      "type": "frame",
+      "box": {
+        "w": 88,
+        "h": 40
+      },
+      "path": "d-4-2-1-edit-trip.group-61.frame-9-2",
+      "pos": {
+        "x": 101,
+        "y": 34
+      },
+      "layout": "$l3",
+      "inheritedFill": "$c1",
+      "stroke": "$c8",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "couple"
+      ]
+    },
+    "family": {
+      "id": "1240:3542",
+      "el": "family",
+      "type": "text",
+      "box": {
+        "w": 45,
+        "h": 22
+      },
+      "name": "FAMILY",
+      "path": "d-4-2-1-edit-trip.group-61.frame-12-2.family",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "FAMILY",
+      "textGrow": "wh"
+    },
+    "frame-12-2": {
+      "id": "1240:3541",
+      "el": "frame-12-2",
+      "type": "frame",
+      "box": {
+        "w": 88,
+        "h": 40
+      },
+      "path": "d-4-2-1-edit-trip.group-61.frame-12-2",
+      "pos": {
+        "x": 201,
+        "y": 34
+      },
+      "layout": "$l3",
+      "inheritedFill": "$c1",
+      "stroke": "$c8",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "family"
+      ]
+    },
+    "business": {
+      "id": "1240:3544",
+      "el": "business",
+      "type": "text",
+      "box": {
+        "w": 61,
+        "h": 22
+      },
+      "name": "BUSINESS",
+      "path": "d-4-2-1-edit-trip.group-61.frame-13-2.business",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "BUSINESS",
+      "textGrow": "wh"
+    },
+    "frame-13-2": {
+      "id": "1240:3543",
+      "el": "frame-13-2",
+      "type": "frame",
+      "box": {
+        "w": 88,
+        "h": 40
+      },
+      "path": "d-4-2-1-edit-trip.group-61.frame-13-2",
+      "pos": {
+        "x": 301,
+        "y": 34
+      },
+      "layout": "$l3",
+      "inheritedFill": "$c1",
+      "stroke": "$c8",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "business"
+      ]
+    },
+    "group-61": {
+      "id": "1240:3534",
+      "el": "group-61",
+      "type": "group",
+      "box": {
+        "w": 389,
+        "h": 74
+      },
+      "path": "d-4-2-1-edit-trip.group-61",
+      "pos": {
+        "x": 721,
+        "y": 631
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-35-2",
+        "frame-8-2",
+        "frame-9-2",
+        "frame-12-2",
+        "frame-13-2"
+      ]
+    },
+    "d-4-2-1-edit-trip": {
+      "id": "1240:3444",
+      "el": "d-4-2-1-edit-trip",
+      "type": "frame",
+      "box": {
+        "w": 1440,
+        "h": 1024
+      },
+      "name": "D.4.2.1 Edit Trip",
+      "fill": "$c1",
+      "clip": true,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "group-96",
+        "group-339",
+        "profile-travel-detail-edit-travel",
+        "group-40",
+        "group-60",
+        "group-61"
+      ]
+    }
+  },
+  "meta": {
+    "nodeCount": 59,
+    "estTokens": 4115,
+    "depthUsed": 12
+  },
+  "next": "Read `tokens` for the design system, then build the UI from `nodes`. Tag each rendered element data-plumb-id=\"<el>\". A node with a `more` count has that many children not yet included — call plumb_node again on that node's `id` to expand them. This screen has 1 image asset(s) (nodes with `assetId`). Call plumb_assets with this screen's id to download them to disk BEFORE generating HTML — without the real files any <img> will be a placeholder and plumb_verify will flag every image node as asset.missing.",
+  "source": "plugin",
+  "node": "D.4.2.1 Edit Trip"
+}

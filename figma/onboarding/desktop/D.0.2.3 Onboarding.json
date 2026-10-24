@@ -1,0 +1,1002 @@
+{
+  "file": {
+    "name": "Loomette.id",
+    "version": "plugin-1792667037178"
+  },
+  "root": "d-0-2-3-onboarding",
+  "tokens": {
+    "color": {
+      "$c1": "#fafaf7",
+      "$c2": "#d9d9d9",
+      "$c3": "image",
+      "$c4": "#444440",
+      "$c5": "#f2ede5",
+      "$c6": "#c9c3b7"
+    },
+    "text": {
+      "$t1": "400 48px Source Serif Pro",
+      "$t2": "400 16px Avenir Next",
+      "$t3": "400 20px Avenir Next",
+      "$t4": "400 12px Avenir"
+    },
+    "radius": {
+      "$r1": 8,
+      "$r2": "full",
+      "$r3": 16
+    },
+    "shadow": {},
+    "layout": {
+      "$l1": {
+        "flow": "col",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          12,
+          212,
+          12,
+          16
+        ]
+      },
+      "$l2": {
+        "align": "center",
+        "flow": "row",
+        "gap": 8,
+        "pad": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l3": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          19,
+          108,
+          18,
+          107
+        ]
+      },
+      "$l4": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          13,
+          26,
+          13,
+          26
+        ]
+      }
+    },
+    "vector": {
+      "$v1": "M25.0664 20.1367 L39.0088 5.89844 L41.2246 8.16113 L27.2803 22.4004 L47 22.4004 L47 25.6006 L27.2832 25.6006 L41.2256 39.8389 L39.0098 42.1016 L25.0664 27.8613 L25.0664 48 L21.9326 48 L21.9326 27.8623 L7.99023 42.1016 L5.77441 39.8389 L19.7148 25.6006 L0 25.6006 L0 22.4004 L19.7178 22.4004 L5.77539 8.16113 L7.99121 5.89844 L21.9326 20.1357 L21.9326 0 L25.0664 0 L25.0664 20.1367 Z",
+      "$v2": "M10.1381 0.390524 C10.6588 0.911223 10.6588 1.75544 10.1381 2.27614 L3.08088 9.33333 L10.1381 16.3905 C10.6588 16.9112 10.6588 17.7554 10.1381 18.2761 C9.61737 18.7968 8.77315 18.7968 8.25245 18.2761 L0.488155 10.5118 C-0.16272 9.86097 -0.162717 8.80569 0.488156 8.15482 L8.25245 0.390524 C8.77315 -0.130175 9.61737 -0.130175 10.1381 0.390524 Z"
+    },
+    "props": {
+      "$p1": {
+        "size": "24"
+      }
+    },
+    "meta": {
+      "counts": {
+        "$c1": 2,
+        "$c2": 5,
+        "$c3": 3,
+        "$c4": 13,
+        "$t2": 6,
+        "$c5": 3,
+        "$r1": 3,
+        "$r2": 2,
+        "$t3": 2,
+        "$c6": 4,
+        "$l3": 4,
+        "$r3": 4
+      }
+    }
+  },
+  "nodes": {
+    "rectangle-35": {
+      "id": "840:315",
+      "el": "rectangle-35",
+      "type": "rect",
+      "box": {
+        "w": 825,
+        "h": 1024
+      },
+      "path": "d-0-2-3-onboarding.group-33.rectangle-35",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c2",
+      "isMask": true,
+      "maskMode": "alpha",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "image-11": {
+      "id": "840:316",
+      "el": "image-11",
+      "type": "rect",
+      "box": {
+        "w": 1497,
+        "h": 1103
+      },
+      "path": "d-0-2-3-onboarding.group-33.image-11",
+      "pos": {
+        "x": 0,
+        "y": -40
+      },
+      "assetId": "7dbffdcc18b74e31b2d0e62c32dfcb142a3c4873",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "7dbffdcc18b74e31b2d0e62c32dfcb142a3c4873",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1.8169935941696167,
+              0,
+              0.0003471141681075096
+            ],
+            [
+              0,
+              0.7520545125007629,
+              0.18999600410461426
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "masked": "rectangle-35"
+    },
+    "image-42": {
+      "id": "1493:369",
+      "el": "image-42",
+      "type": "rect",
+      "box": {
+        "w": 506,
+        "h": 337
+      },
+      "path": "d-0-2-3-onboarding.group-33.image-42",
+      "pos": {
+        "x": 494,
+        "y": 163
+      },
+      "assetId": "bb06e4303e18abfe080bed08bb77f7679f03bf5f",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "bb06e4303e18abfe080bed08bb77f7679f03bf5f",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "masked": "rectangle-35"
+    },
+    "image-43": {
+      "id": "1493:370",
+      "el": "image-43",
+      "type": "rect",
+      "box": {
+        "w": 540,
+        "h": 360
+      },
+      "path": "d-0-2-3-onboarding.group-33.image-43",
+      "pos": {
+        "x": -102,
+        "y": 575
+      },
+      "assetId": "0b474112393cda1b357eba7c9f586748318c4c0e",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "0b474112393cda1b357eba7c9f586748318c4c0e",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "masked": "rectangle-35"
+    },
+    "group-33": {
+      "id": "840:314",
+      "el": "group-33",
+      "type": "group",
+      "box": {
+        "w": 825,
+        "h": 1024
+      },
+      "path": "d-0-2-3-onboarding.group-33",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-35",
+        "image-11",
+        "image-42",
+        "image-43"
+      ]
+    },
+    "what-does-your-day-to-day-look-like": {
+      "id": "840:320",
+      "el": "what-does-your-day-to-day-look-like",
+      "type": "text",
+      "box": {
+        "w": 359,
+        "h": 180
+      },
+      "name": "What does your day-to-day look like?",
+      "path": "d-0-2-3-onboarding.group-248.what-does-your-day-to-day-look-like",
+      "pos": {
+        "x": 71,
+        "y": 72
+      },
+      "fill": "$c4",
+      "text": "$t1",
+      "chars": "What does your \nday-to-day look like?",
+      "textGrow": "h",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16": {
+      "id": "840:322",
+      "el": "rectangle-16",
+      "type": "rect",
+      "box": {
+        "w": 3,
+        "h": 48
+      },
+      "path": "d-0-2-3-onboarding.group-248.union.rectangle-16",
+      "pos": {
+        "x": 22,
+        "y": 0
+      },
+      "fill": "$c2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17": {
+      "id": "840:323",
+      "el": "rectangle-17",
+      "type": "rect",
+      "box": {
+        "w": 35,
+        "h": 36
+      },
+      "path": "d-0-2-3-onboarding.group-248.union.rectangle-17",
+      "pos": {
+        "x": 6,
+        "y": 6
+      },
+      "fill": "$c2",
+      "rotation": 2613,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19": {
+      "id": "840:324",
+      "el": "rectangle-19",
+      "type": "rect",
+      "box": {
+        "w": 35,
+        "h": 36
+      },
+      "path": "d-0-2-3-onboarding.group-248.union.rectangle-19",
+      "pos": {
+        "x": 6,
+        "y": 6
+      },
+      "fill": "$c2",
+      "rotation": 7700,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18": {
+      "id": "840:325",
+      "el": "rectangle-18",
+      "type": "rect",
+      "box": {
+        "w": 47,
+        "h": 3
+      },
+      "path": "d-0-2-3-onboarding.group-248.union.rectangle-18",
+      "pos": {
+        "x": 0,
+        "y": 22
+      },
+      "fill": "$c2",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union": {
+      "id": "840:321",
+      "el": "union",
+      "type": "bool",
+      "box": {
+        "w": 47,
+        "h": 48
+      },
+      "path": "d-0-2-3-onboarding.group-248.union",
+      "pos": {
+        "x": 0,
+        "y": 75
+      },
+      "fill": "$c4",
+      "iconHint": "What does your \nday-to-day look like?",
+      "vectorPath": "$v1",
+      "children": [
+        "rectangle-16",
+        "rectangle-17",
+        "rectangle-19",
+        "rectangle-18"
+      ]
+    },
+    "we-ll-help-you-dress-for-where-you-actua": {
+      "id": "840:326",
+      "el": "we-ll-help-you-dress-for-where-you-actua",
+      "type": "text",
+      "box": {
+        "w": 355,
+        "h": 22
+      },
+      "name": "We'll help you dress for where you actually go.",
+      "path": "d-0-2-3-onboarding.group-248.we-ll-help-you-dress-for-where-you-actua",
+      "pos": {
+        "x": 71,
+        "y": 256
+      },
+      "fill": "$c4",
+      "text": "$t2",
+      "chars": "We'll help you dress for where you actually go.",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-11": {
+      "id": "840:328",
+      "el": "rectangle-11",
+      "type": "rect",
+      "box": {
+        "w": 48,
+        "h": 48
+      },
+      "path": "d-0-2-3-onboarding.group-248.group-246.rectangle-11",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c5",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector": {
+      "id": "I840:329;3:2631",
+      "el": "vector",
+      "type": "vector",
+      "box": {
+        "w": 11,
+        "h": 19
+      },
+      "path": "d-0-2-3-onboarding.group-248.group-246.chevron-left.vector",
+      "pos": {
+        "x": 11,
+        "y": 7
+      },
+      "fill": "$c4",
+      "iconHint": "chevron left",
+      "vectorPath": "$v2",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-left": {
+      "id": "840:329",
+      "el": "chevron-left",
+      "type": "instance",
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "name": "chevron-left",
+      "path": "d-0-2-3-onboarding.group-248.group-246.chevron-left",
+      "pos": {
+        "x": 8,
+        "y": 8
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector"
+      ]
+    },
+    "group-246": {
+      "id": "840:327",
+      "el": "group-246",
+      "type": "group",
+      "box": {
+        "w": 48,
+        "h": 48
+      },
+      "path": "d-0-2-3-onboarding.group-248.group-246",
+      "pos": {
+        "x": 71,
+        "y": 615
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-11",
+        "chevron-left"
+      ]
+    },
+    "rectangle-100": {
+      "id": "840:334",
+      "el": "rectangle-100",
+      "type": "rect",
+      "box": {
+        "w": 160,
+        "h": 8
+      },
+      "path": "d-0-2-3-onboarding.group-248.group-197.rectangle-100",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c5",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-101": {
+      "id": "840:335",
+      "el": "rectangle-101",
+      "type": "rect",
+      "box": {
+        "w": 96,
+        "h": 8
+      },
+      "path": "d-0-2-3-onboarding.group-248.group-197.rectangle-101",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c4",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-197": {
+      "id": "840:333",
+      "el": "group-197",
+      "type": "group",
+      "box": {
+        "w": 160,
+        "h": 8
+      },
+      "path": "d-0-2-3-onboarding.group-248.group-197",
+      "pos": {
+        "x": 147,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-100",
+        "rectangle-101"
+      ]
+    },
+    "your-profession": {
+      "id": "840:357",
+      "el": "your-profession",
+      "type": "text",
+      "box": {
+        "w": 144,
+        "h": 27
+      },
+      "name": "Your profession",
+      "path": "d-0-2-3-onboarding.group-248.group-34.your-profession",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c4",
+      "text": "$t3",
+      "chars": "Your profession",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "e-g-product-manager-teacher-freelancer": {
+      "id": "840:360",
+      "el": "e-g-product-manager-teacher-freelancer",
+      "type": "text",
+      "box": {
+        "w": 240,
+        "h": 16
+      },
+      "name": "e.g. Product manager, teacher, freelancer...",
+      "path": "d-0-2-3-onboarding.group-248.group-34.frame-6.frame-5.e-g-product-manager-teacher-freelancer",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c6",
+      "text": "$t4",
+      "chars": "e.g. Product manager, teacher, freelancer...",
+      "textGrow": "wh"
+    },
+    "frame-5": {
+      "id": "840:359",
+      "el": "frame-5",
+      "type": "frame",
+      "box": {
+        "w": 240,
+        "h": 16
+      },
+      "path": "d-0-2-3-onboarding.group-248.group-34.frame-6.frame-5",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c5",
+      "children": [
+        "e-g-product-manager-teacher-freelancer"
+      ]
+    },
+    "frame-6": {
+      "id": "840:358",
+      "el": "frame-6",
+      "type": "frame",
+      "box": {
+        "w": 312,
+        "h": 48
+      },
+      "path": "d-0-2-3-onboarding.group-248.group-34.frame-6",
+      "pos": {
+        "x": 0,
+        "y": 35
+      },
+      "layout": "$l1",
+      "fill": "$c5",
+      "radius": "$r1",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "frame-5"
+      ]
+    },
+    "group-34": {
+      "id": "840:356",
+      "el": "group-34",
+      "type": "group",
+      "box": {
+        "w": 312,
+        "h": 83
+      },
+      "path": "d-0-2-3-onboarding.group-248.group-34",
+      "pos": {
+        "x": 71,
+        "y": 298
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "your-profession",
+        "frame-6"
+      ]
+    },
+    "your-work-setting": {
+      "id": "840:363",
+      "el": "your-work-setting",
+      "type": "text",
+      "box": {
+        "w": 163,
+        "h": 27
+      },
+      "name": "Your work setting",
+      "path": "d-0-2-3-onboarding.group-248.group-61.group-35.your-work-setting",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c4",
+      "text": "$t3",
+      "chars": "Your work setting",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-35": {
+      "id": "840:362",
+      "el": "group-35",
+      "type": "group",
+      "box": {
+        "w": 163,
+        "h": 27
+      },
+      "path": "d-0-2-3-onboarding.group-248.group-61.group-35",
+      "pos": {
+        "x": 3,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "your-work-setting"
+      ]
+    },
+    "in-office": {
+      "id": "840:365",
+      "el": "in-office",
+      "type": "text",
+      "box": {
+        "w": 66,
+        "h": 22
+      },
+      "name": "In-office",
+      "path": "d-0-2-3-onboarding.group-248.group-61.frame-8.in-office",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c4",
+      "text": "$t2",
+      "chars": "In-office",
+      "textGrow": "wh"
+    },
+    "frame-8": {
+      "id": "840:364",
+      "el": "frame-8",
+      "type": "frame",
+      "box": {
+        "w": 88,
+        "h": 40
+      },
+      "path": "d-0-2-3-onboarding.group-248.group-61.frame-8",
+      "pos": {
+        "x": 0,
+        "y": 35
+      },
+      "layout": "$l3",
+      "inheritedFill": "$c1",
+      "stroke": "$c6",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "in-office"
+      ]
+    },
+    "remote": {
+      "id": "840:367",
+      "el": "remote",
+      "type": "text",
+      "box": {
+        "w": 53,
+        "h": 22
+      },
+      "name": "Remote",
+      "path": "d-0-2-3-onboarding.group-248.group-61.frame-9.remote",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c4",
+      "text": "$t2",
+      "chars": "Remote",
+      "textGrow": "wh"
+    },
+    "frame-9": {
+      "id": "840:366",
+      "el": "frame-9",
+      "type": "frame",
+      "box": {
+        "w": 88,
+        "h": 40
+      },
+      "path": "d-0-2-3-onboarding.group-248.group-61.frame-9",
+      "pos": {
+        "x": 101,
+        "y": 35
+      },
+      "layout": "$l3",
+      "inheritedFill": "$c1",
+      "stroke": "$c4",
+      "strokeW": 1.5,
+      "strokeAlign": "inside",
+      "radius": "$r3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "remote"
+      ]
+    },
+    "hybrid": {
+      "id": "840:369",
+      "el": "hybrid",
+      "type": "text",
+      "box": {
+        "w": 48,
+        "h": 22
+      },
+      "name": "Hybrid",
+      "path": "d-0-2-3-onboarding.group-248.group-61.frame-10.hybrid",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c4",
+      "text": "$t2",
+      "chars": "Hybrid",
+      "textGrow": "wh"
+    },
+    "frame-10": {
+      "id": "840:368",
+      "el": "frame-10",
+      "type": "frame",
+      "box": {
+        "w": 88,
+        "h": 40
+      },
+      "path": "d-0-2-3-onboarding.group-248.group-61.frame-10",
+      "pos": {
+        "x": 202,
+        "y": 35
+      },
+      "layout": "$l3",
+      "inheritedFill": "$c1",
+      "stroke": "$c6",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "hybrid"
+      ]
+    },
+    "on-the-go": {
+      "id": "840:371",
+      "el": "on-the-go",
+      "type": "text",
+      "box": {
+        "w": 75,
+        "h": 22
+      },
+      "name": "On the go",
+      "path": "d-0-2-3-onboarding.group-248.group-61.frame-11.on-the-go",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c4",
+      "text": "$t2",
+      "chars": "On the go",
+      "textGrow": "wh"
+    },
+    "frame-11": {
+      "id": "840:370",
+      "el": "frame-11",
+      "type": "frame",
+      "box": {
+        "w": 120,
+        "h": 40
+      },
+      "path": "d-0-2-3-onboarding.group-248.group-61.frame-11",
+      "pos": {
+        "x": 0,
+        "y": 87
+      },
+      "layout": "$l3",
+      "inheritedFill": "$c1",
+      "stroke": "$c6",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "on-the-go"
+      ]
+    },
+    "group-61": {
+      "id": "840:361",
+      "el": "group-61",
+      "type": "group",
+      "box": {
+        "w": 290,
+        "h": 127
+      },
+      "path": "d-0-2-3-onboarding.group-248.group-61",
+      "pos": {
+        "x": 71,
+        "y": 405
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-35",
+        "frame-8",
+        "frame-9",
+        "frame-10",
+        "frame-11"
+      ]
+    },
+    "continue": {
+      "id": "1583:532",
+      "el": "continue",
+      "type": "text",
+      "box": {
+        "w": 68,
+        "h": 22
+      },
+      "name": "continue",
+      "path": "d-0-2-3-onboarding.group-248.frame-67.continue",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c1",
+      "text": "$t2",
+      "chars": "continue",
+      "textGrow": "wh"
+    },
+    "frame-67": {
+      "id": "1583:531",
+      "el": "frame-67",
+      "type": "frame",
+      "box": {
+        "w": 120,
+        "h": 48
+      },
+      "path": "d-0-2-3-onboarding.group-248.frame-67",
+      "pos": {
+        "x": 310,
+        "y": 615
+      },
+      "layout": "$l4",
+      "fill": "$c4",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "continue"
+      ]
+    },
+    "group-248": {
+      "id": "840:319",
+      "el": "group-248",
+      "type": "group",
+      "box": {
+        "w": 430,
+        "h": 663
+      },
+      "path": "d-0-2-3-onboarding.group-248",
+      "pos": {
+        "x": 905,
+        "y": 180
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "what-does-your-day-to-day-look-like",
+        "union",
+        "we-ll-help-you-dress-for-where-you-actua",
+        "group-246",
+        "group-197",
+        "group-34",
+        "group-61",
+        "frame-67"
+      ]
+    },
+    "d-0-2-3-onboarding": {
+      "id": "840:313",
+      "el": "d-0-2-3-onboarding",
+      "type": "frame",
+      "box": {
+        "w": 1440,
+        "h": 1024
+      },
+      "name": "D.0.2.3 Onboarding",
+      "fill": "$c1",
+      "clip": true,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "group-33",
+        "group-248"
+      ]
+    }
+  },
+  "meta": {
+    "nodeCount": 39,
+    "estTokens": 3156,
+    "depthUsed": 12
+  },
+  "next": "Read `tokens` for the design system, then build the UI from `nodes`. Tag each rendered element data-plumb-id=\"<el>\". A node with a `more` count has that many children not yet included — call plumb_node again on that node's `id` to expand them. This screen has 3 image asset(s) (nodes with `assetId`). Call plumb_assets with this screen's id to download them to disk BEFORE generating HTML — without the real files any <img> will be a placeholder and plumb_verify will flag every image node as asset.missing.",
+  "source": "plugin",
+  "node": "D.0.2.3 Onboarding"
+}

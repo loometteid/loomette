@@ -1,0 +1,503 @@
+{
+  "file": {
+    "name": "Loomette.id",
+    "version": "plugin-1792667008707"
+  },
+  "root": "2-4-share-ootd",
+  "tokens": {
+    "color": {
+      "$c1": "#fafaf7",
+      "$c2": "#f2ede5",
+      "$c3": "#444440",
+      "$c4": "#d9d9d9",
+      "$c5": "image"
+    },
+    "text": {
+      "$t1": "400 20px Avenir Next",
+      "$t2": "400 32px Source Serif Pro",
+      "$t3": "400 12px Avenir Next"
+    },
+    "radius": {
+      "$r1": 8,
+      "$r2": 16
+    },
+    "shadow": {},
+    "layout": {
+      "$l1": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          19,
+          108,
+          18,
+          107
+        ]
+      }
+    },
+    "vector": {
+      "$v1": "M0.292893 0.292893 C0.683417 -0.0976311 1.31658 -0.0976311 1.70711 0.292893 L7 5.58579 L12.2929 0.292893 C12.6834 -0.0976311 13.3166 -0.0976311 13.7071 0.292893 C14.0976 0.683417 14.0976 1.31658 13.7071 1.70711 L8.41421 7 L13.7071 12.2929 C14.0976 12.6834 14.0976 13.3166 13.7071 13.7071 C13.3166 14.0976 12.6834 14.0976 12.2929 13.7071 L7 8.41421 L1.70711 13.7071 C1.31658 14.0976 0.683417 14.0976 0.292893 13.7071 C-0.0976311 13.3166 -0.0976311 12.6834 0.292893 12.2929 L5.58579 7 L0.292893 1.70711 C-0.0976311 1.31658 -0.0976311 0.683417 0.292893 0.292893 Z",
+      "$v2": "M14.4004 11.3262 L22.4092 3.31738 L23.6826 4.59082 L15.6738 12.5996 L27 12.5996 L27 14.4004 L15.6738 14.4004 L23.6826 22.4092 L22.4092 23.6826 L14.4004 15.6738 L14.4004 27 L12.5996 27 L12.5996 15.6738 L4.59082 23.6826 L3.31738 22.4092 L11.3262 14.4004 L0 14.4004 L0 12.5996 L11.3262 12.5996 L3.31738 4.59082 L4.59082 3.31738 L12.5996 11.3262 L12.5996 0 L14.4004 0 L14.4004 11.3262 Z",
+      "$v3": "M0.390524 0.390524 C0.911223 -0.130175 1.75544 -0.130175 2.27614 0.390524 L10.0404 8.15482 C10.6913 8.80569 10.6913 9.86097 10.0404 10.5118 L2.27614 18.2761 C1.75544 18.7968 0.911223 18.7968 0.390524 18.2761 C-0.130175 17.7554 -0.130175 16.9112 0.390524 16.3905 L7.44772 9.33333 L0.390524 2.27614 C-0.130175 1.75544 -0.130175 0.911223 0.390524 0.390524 Z"
+    },
+    "props": {
+      "$p1": {
+        "size": "24"
+      }
+    },
+    "meta": {
+      "counts": {
+        "$c1": 2,
+        "$p1": 3,
+        "$c3": 7,
+        "$c4": 4,
+        "$v3": 2
+      }
+    }
+  },
+  "nodes": {
+    "rectangle-11": {
+      "id": "1445:346",
+      "el": "rectangle-11",
+      "type": "rect",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "2-4-share-ootd.x-button.rectangle-11",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c2",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector": {
+      "id": "I1445:347;3:2684",
+      "el": "vector",
+      "type": "vector",
+      "box": {
+        "w": 14,
+        "h": 14
+      },
+      "path": "2-4-share-ootd.x-button.close-x.vector",
+      "pos": {
+        "x": 5,
+        "y": 5
+      },
+      "fill": "$c3",
+      "iconHint": "close x",
+      "vectorPath": "$v1",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "close-x": {
+      "id": "1445:347",
+      "el": "close-x",
+      "type": "instance",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "name": "close-x",
+      "path": "2-4-share-ootd.x-button.close-x",
+      "pos": {
+        "x": 8,
+        "y": 8
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector"
+      ]
+    },
+    "x-button": {
+      "id": "1445:345",
+      "el": "x-button",
+      "type": "group",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "2-4-share-ootd.x-button",
+      "pos": {
+        "x": 36,
+        "y": 40
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-11",
+        "close-x"
+      ]
+    },
+    "share-to-story": {
+      "id": "1445:349",
+      "el": "share-to-story",
+      "type": "text",
+      "box": {
+        "w": 134,
+        "h": 27
+      },
+      "name": "share to story",
+      "path": "2-4-share-ootd.save-button.share-to-story",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c1",
+      "text": "$t1",
+      "chars": "share to story",
+      "textGrow": "wh"
+    },
+    "save-button": {
+      "id": "1445:348",
+      "el": "save-button",
+      "type": "frame",
+      "box": {
+        "w": 320,
+        "h": 64
+      },
+      "name": "save button",
+      "path": "2-4-share-ootd.save-button",
+      "pos": {
+        "x": 41,
+        "y": 778
+      },
+      "layout": "$l1",
+      "fill": "$c3",
+      "radius": "$r2",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "share-to-story"
+      ]
+    },
+    "share-your-ootd": {
+      "id": "1445:386",
+      "el": "share-your-ootd",
+      "type": "text",
+      "box": {
+        "w": 241,
+        "h": 80
+      },
+      "name": "Share your #OOTD",
+      "path": "2-4-share-ootd.share-your-ootd",
+      "pos": {
+        "x": 84,
+        "y": 108
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "Share your #OOTD",
+      "textGrow": "h",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16": {
+      "id": "1445:388",
+      "el": "rectangle-16",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 27
+      },
+      "path": "2-4-share-ootd.union.rectangle-16",
+      "pos": {
+        "x": 13,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17": {
+      "id": "1445:389",
+      "el": "rectangle-17",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "2-4-share-ootd.union.rectangle-17",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 2578,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19": {
+      "id": "1445:390",
+      "el": "rectangle-19",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "2-4-share-ootd.union.rectangle-19",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 7735,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18": {
+      "id": "1445:391",
+      "el": "rectangle-18",
+      "type": "rect",
+      "box": {
+        "w": 27,
+        "h": 2
+      },
+      "path": "2-4-share-ootd.union.rectangle-18",
+      "pos": {
+        "x": 0,
+        "y": 13
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union": {
+      "id": "1445:387",
+      "el": "union",
+      "type": "bool",
+      "box": {
+        "w": 27,
+        "h": 27
+      },
+      "path": "2-4-share-ootd.union",
+      "pos": {
+        "x": 43,
+        "y": 112
+      },
+      "fill": "$c3",
+      "iconHint": "Share your #OOTD",
+      "vectorPath": "$v2",
+      "children": [
+        "rectangle-16",
+        "rectangle-17",
+        "rectangle-19",
+        "rectangle-18"
+      ]
+    },
+    "select-your-favorite-template-here": {
+      "id": "1445:392",
+      "el": "select-your-favorite-template-here",
+      "type": "text",
+      "box": {
+        "w": 279,
+        "h": 16
+      },
+      "name": "select your favorite template here.",
+      "path": "2-4-share-ootd.select-your-favorite-template-here",
+      "pos": {
+        "x": 84,
+        "y": 192
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "select your favorite template here.",
+      "textGrow": "h",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "image-47": {
+      "id": "1445:405",
+      "el": "image-47",
+      "type": "rect",
+      "box": {
+        "w": 254,
+        "h": 452
+      },
+      "path": "2-4-share-ootd.image-47",
+      "pos": {
+        "x": 74,
+        "y": 239
+      },
+      "assetId": "90eeca141c9f900672ac128e689b8987f374cab9",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "90eeca141c9f900672ac128e689b8987f374cab9",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "vector-2": {
+      "id": "I1445:407;3:2644",
+      "el": "vector-2",
+      "type": "vector",
+      "box": {
+        "w": 11,
+        "h": 19
+      },
+      "path": "2-4-share-ootd.chevron-right.vector-2",
+      "pos": {
+        "x": 11,
+        "y": 7
+      },
+      "fill": "$c3",
+      "iconHint": "Share your #OOTD",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-right": {
+      "id": "1445:407",
+      "el": "chevron-right",
+      "type": "instance",
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "name": "chevron-right",
+      "path": "2-4-share-ootd.chevron-right",
+      "pos": {
+        "x": 344,
+        "y": 449
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector-2"
+      ]
+    },
+    "vector-3": {
+      "id": "I1445:408;3:2644",
+      "el": "vector-3",
+      "type": "vector",
+      "box": {
+        "w": 11,
+        "h": 19
+      },
+      "path": "2-4-share-ootd.chevron-right-2.vector-3",
+      "pos": {
+        "x": 11,
+        "y": 7
+      },
+      "fill": "$c3",
+      "iconHint": "Share your #OOTD",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-right-2": {
+      "id": "1445:408",
+      "el": "chevron-right-2",
+      "type": "instance",
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "name": "chevron-right",
+      "path": "2-4-share-ootd.chevron-right-2",
+      "pos": {
+        "x": 26,
+        "y": 449
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "rotation": 10313,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector-3"
+      ]
+    },
+    "2-4-share-ootd": {
+      "id": "1445:344",
+      "el": "2-4-share-ootd",
+      "type": "frame",
+      "box": {
+        "w": 402,
+        "h": 874
+      },
+      "name": "2.4 Share OOTD",
+      "fill": "$c1",
+      "clip": true,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "x-button",
+        "save-button",
+        "share-your-ootd",
+        "union",
+        "select-your-favorite-template-here",
+        "image-47",
+        "chevron-right",
+        "chevron-right-2"
+      ]
+    }
+  },
+  "meta": {
+    "nodeCount": 19,
+    "estTokens": 1715,
+    "depthUsed": 12
+  },
+  "next": "Read `tokens` for the design system, then build the UI from `nodes`. Tag each rendered element data-plumb-id=\"<el>\". A node with a `more` count has that many children not yet included — call plumb_node again on that node's `id` to expand them. This screen has 1 image asset(s) (nodes with `assetId`). Call plumb_assets with this screen's id to download them to disk BEFORE generating HTML — without the real files any <img> will be a placeholder and plumb_verify will flag every image node as asset.missing.",
+  "source": "plugin",
+  "node": "2.4 Share OOTD"
+}

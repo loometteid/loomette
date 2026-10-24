@@ -1,0 +1,1331 @@
+{
+  "file": {
+    "name": "Loomette.id",
+    "version": "plugin-1792667045747"
+  },
+  "root": "0-2-7-3-add-initial-item-generate-basics",
+  "tokens": {
+    "color": {
+      "$c1": "#fafaf7",
+      "$c2": "#f2ede5",
+      "$c3": "#444440",
+      "$c4": "#14140d",
+      "$c5": "#d9d9d9",
+      "$c6": "#c9c3b7"
+    },
+    "text": {
+      "$t1": "400 32px Source Serif Pro",
+      "$t2": "400 12px Avenir Next",
+      "$t3": "400 20px Avenir Next"
+    },
+    "radius": {
+      "$r1": 8,
+      "$r2": 4,
+      "$r3": 16
+    },
+    "shadow": {},
+    "layout": {
+      "$l1": {
+        "align": "center",
+        "flow": "row",
+        "gap": 13,
+        "justify": "space-between",
+        "pad": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l2": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          19,
+          108,
+          18,
+          107
+        ]
+      }
+    },
+    "vector": {
+      "$v1": "M7.60355 0.292893 C7.99408 0.683418 7.99408 1.31658 7.60355 1.70711 L2.31066 7 L7.60355 12.2929 C7.99408 12.6834 7.99408 13.3166 7.60355 13.7071 C7.21303 14.0976 6.57986 14.0976 6.18934 13.7071 L0.366116 7.88388 C-0.12204 7.39573 -0.122038 6.60427 0.366117 6.11612 L6.18934 0.292893 C6.57986 -0.0976311 7.21303 -0.0976311 7.60355 0.292893 Z",
+      "$v2": "M14.4004 11.3262 L22.4092 3.31738 L23.6826 4.59082 L15.6738 12.5996 L27 12.5996 L27 14.4004 L15.6738 14.4004 L23.6826 22.4092 L22.4092 23.6826 L14.4004 15.6738 L14.4004 27 L12.5996 27 L12.5996 15.6738 L4.59082 23.6826 L3.31738 22.4092 L11.3262 14.4004 L0 14.4004 L0 12.5996 L11.3262 12.5996 L3.31738 4.59082 L4.59082 3.31738 L12.5996 11.3262 L12.5996 0 L14.4004 0 L14.4004 11.3262 Z",
+      "$v3": "M8.35355 0.146447 C8.54882 0.341709 8.54882 0.658291 8.35355 0.853553 L3.70711 5.5 C3.31658 5.89053 2.68342 5.89052 2.29289 5.5 L0.146447 3.35355 C-0.0488155 3.15829 -0.0488155 2.84171 0.146447 2.64645 C0.341709 2.45118 0.658291 2.45118 0.853553 2.64645 L3 4.79289 L7.64645 0.146447 C7.84171 -0.0488155 8.15829 -0.0488155 8.35355 0.146447 Z"
+    },
+    "props": {
+      "$p1": {
+        "size": "24"
+      }
+    },
+    "meta": {
+      "counts": {
+        "$c1": 12,
+        "$c2": 2,
+        "$p1": 11,
+        "$c3": 15,
+        "$c5": 19,
+        "$r2": 15,
+        "$v3": 10,
+        "$c6": 5,
+        "$l2": 2,
+        "$r3": 2,
+        "$t3": 2
+      }
+    }
+  },
+  "nodes": {
+    "rectangle-11": {
+      "id": "678:332",
+      "el": "rectangle-11",
+      "type": "rect",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-199.rectangle-11",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c2",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector": {
+      "id": "I678:333;3:2631",
+      "el": "vector",
+      "type": "vector",
+      "box": {
+        "w": 8,
+        "h": 14
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-199.chevron-left.vector",
+      "pos": {
+        "x": 8,
+        "y": 5
+      },
+      "fill": "$c3",
+      "iconHint": "chevron left",
+      "vectorPath": "$v1",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-left": {
+      "id": "678:333",
+      "el": "chevron-left",
+      "type": "instance",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "name": "chevron-left",
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-199.chevron-left",
+      "pos": {
+        "x": 8,
+        "y": 8
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector"
+      ]
+    },
+    "group-199": {
+      "id": "678:357",
+      "el": "group-199",
+      "type": "group",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-199",
+      "pos": {
+        "x": 36,
+        "y": 40
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-11",
+        "chevron-left"
+      ]
+    },
+    "pick-from-library": {
+      "id": "678:358",
+      "el": "pick-from-library",
+      "type": "text",
+      "box": {
+        "w": 234,
+        "h": 40
+      },
+      "name": "Pick from library",
+      "path": "0-2-7-3-add-initial-item-generate-basics.pick-from-library",
+      "pos": {
+        "x": 84,
+        "y": 108
+      },
+      "fill": "$c4",
+      "text": "$t1",
+      "chars": "Pick from library",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16": {
+      "id": "678:360",
+      "el": "rectangle-16",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 27
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.union.rectangle-16",
+      "pos": {
+        "x": 13,
+        "y": 0
+      },
+      "fill": "$c5",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17": {
+      "id": "678:361",
+      "el": "rectangle-17",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.union.rectangle-17",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c5",
+      "rotation": 2578,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19": {
+      "id": "678:362",
+      "el": "rectangle-19",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.union.rectangle-19",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c5",
+      "rotation": 7735,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18": {
+      "id": "678:363",
+      "el": "rectangle-18",
+      "type": "rect",
+      "box": {
+        "w": 27,
+        "h": 2
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.union.rectangle-18",
+      "pos": {
+        "x": 0,
+        "y": 13
+      },
+      "fill": "$c5",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union": {
+      "id": "678:359",
+      "el": "union",
+      "type": "bool",
+      "box": {
+        "w": 27,
+        "h": 27
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.union",
+      "pos": {
+        "x": 43,
+        "y": 112
+      },
+      "fill": "$c3",
+      "iconHint": "Pick from library",
+      "vectorPath": "$v2",
+      "children": [
+        "rectangle-16",
+        "rectangle-17",
+        "rectangle-19",
+        "rectangle-18"
+      ]
+    },
+    "to-help-you-with-styling-choose-the-item": {
+      "id": "678:365",
+      "el": "to-help-you-with-styling-choose-the-item",
+      "type": "text",
+      "box": {
+        "w": 263,
+        "h": 32
+      },
+      "name": "To help you with styling, choose the items that match your wardrobe.",
+      "path": "0-2-7-3-add-initial-item-generate-basics.to-help-you-with-styling-choose-the-item",
+      "pos": {
+        "x": 84,
+        "y": 148
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "To help you with styling, choose the items that match your wardrobe.",
+      "textGrow": "h",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-49": {
+      "id": "708:138",
+      "el": "rectangle-49",
+      "type": "rect",
+      "box": {
+        "w": 100,
+        "h": 100
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-202.rectangle-49",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c5",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-38": {
+      "id": "708:184",
+      "el": "rectangle-38",
+      "type": "rect",
+      "box": {
+        "w": 16,
+        "h": 16
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-202.group-110.rectangle-38",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-2": {
+      "id": "I708:185;3:2694",
+      "el": "vector-2",
+      "type": "vector",
+      "box": {
+        "w": 9,
+        "h": 6
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-202.group-110.done-v.vector-2",
+      "pos": {
+        "x": 2,
+        "y": 3
+      },
+      "fill": "$c1",
+      "iconHint": "done v",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "done-v": {
+      "id": "708:185",
+      "el": "done-v",
+      "type": "instance",
+      "box": {
+        "w": 12,
+        "h": 12
+      },
+      "name": "done-v",
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-202.group-110.done-v",
+      "pos": {
+        "x": 2,
+        "y": 2
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector-2"
+      ]
+    },
+    "group-110": {
+      "id": "708:183",
+      "el": "group-110",
+      "type": "group",
+      "box": {
+        "w": 16,
+        "h": 16
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-202.group-110",
+      "pos": {
+        "x": 76,
+        "y": 8
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-38",
+        "done-v"
+      ]
+    },
+    "group-202": {
+      "id": "708:182",
+      "el": "group-202",
+      "type": "group",
+      "box": {
+        "w": 100,
+        "h": 100
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-202",
+      "pos": {
+        "x": 259,
+        "y": 200
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-49",
+        "group-110"
+      ]
+    },
+    "rectangle-54": {
+      "id": "708:154",
+      "el": "rectangle-54",
+      "type": "rect",
+      "box": {
+        "w": 100,
+        "h": 100
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-207.rectangle-54",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c5",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-37": {
+      "id": "708:213",
+      "el": "rectangle-37",
+      "type": "rect",
+      "box": {
+        "w": 16,
+        "h": 16
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-207.rectangle-37",
+      "pos": {
+        "x": 76,
+        "y": 8
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c6",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-207": {
+      "id": "708:212",
+      "el": "group-207",
+      "type": "group",
+      "box": {
+        "w": 100,
+        "h": 100
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-207",
+      "pos": {
+        "x": 151,
+        "y": 416
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-54",
+        "rectangle-37"
+      ]
+    },
+    "rectangle-55": {
+      "id": "708:155",
+      "el": "rectangle-55",
+      "type": "rect",
+      "box": {
+        "w": 100,
+        "h": 100
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-208.rectangle-55",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c5",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-37-2": {
+      "id": "708:216",
+      "el": "rectangle-37-2",
+      "type": "rect",
+      "box": {
+        "w": 16,
+        "h": 16
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-208.rectangle-37-2",
+      "pos": {
+        "x": 76,
+        "y": 8
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c6",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-208": {
+      "id": "708:215",
+      "el": "group-208",
+      "type": "group",
+      "box": {
+        "w": 100,
+        "h": 100
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-208",
+      "pos": {
+        "x": 259,
+        "y": 416
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-55",
+        "rectangle-37-2"
+      ]
+    },
+    "rectangle-56": {
+      "id": "708:156",
+      "el": "rectangle-56",
+      "type": "rect",
+      "box": {
+        "w": 100,
+        "h": 100
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-209.rectangle-56",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c5",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-38-6": {
+      "id": "708:220",
+      "el": "rectangle-38-6",
+      "type": "rect",
+      "box": {
+        "w": 16,
+        "h": 16
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-209.group-110-6.rectangle-38-6",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-7": {
+      "id": "I708:221;3:2694",
+      "el": "vector-7",
+      "type": "vector",
+      "box": {
+        "w": 9,
+        "h": 6
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-209.group-110-6.done-v-6.vector-7",
+      "pos": {
+        "x": 2,
+        "y": 3
+      },
+      "fill": "$c1",
+      "iconHint": "done v",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "done-v-6": {
+      "id": "708:221",
+      "el": "done-v-6",
+      "type": "instance",
+      "box": {
+        "w": 12,
+        "h": 12
+      },
+      "name": "done-v",
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-209.group-110-6.done-v-6",
+      "pos": {
+        "x": 2,
+        "y": 2
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector-7"
+      ]
+    },
+    "group-110-6": {
+      "id": "708:219",
+      "el": "group-110-6",
+      "type": "group",
+      "box": {
+        "w": 16,
+        "h": 16
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-209.group-110-6",
+      "pos": {
+        "x": 76,
+        "y": 8
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-38-6",
+        "done-v-6"
+      ]
+    },
+    "group-209": {
+      "id": "708:218",
+      "el": "group-209",
+      "type": "group",
+      "box": {
+        "w": 100,
+        "h": 100
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-209",
+      "pos": {
+        "x": 43,
+        "y": 524
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-56",
+        "group-110-6"
+      ]
+    },
+    "rectangle-57": {
+      "id": "708:157",
+      "el": "rectangle-57",
+      "type": "rect",
+      "box": {
+        "w": 100,
+        "h": 100
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-210.rectangle-57",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c5",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-37-3": {
+      "id": "708:225",
+      "el": "rectangle-37-3",
+      "type": "rect",
+      "box": {
+        "w": 16,
+        "h": 16
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-210.rectangle-37-3",
+      "pos": {
+        "x": 76,
+        "y": 8
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c6",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-210": {
+      "id": "708:224",
+      "el": "group-210",
+      "type": "group",
+      "box": {
+        "w": 100,
+        "h": 100
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-210",
+      "pos": {
+        "x": 151,
+        "y": 524
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-57",
+        "rectangle-37-3"
+      ]
+    },
+    "rectangle-58": {
+      "id": "708:158",
+      "el": "rectangle-58",
+      "type": "rect",
+      "box": {
+        "w": 100,
+        "h": 100
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-211.rectangle-58",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c5",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-38-7": {
+      "id": "708:229",
+      "el": "rectangle-38-7",
+      "type": "rect",
+      "box": {
+        "w": 16,
+        "h": 16
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-211.group-110-7.rectangle-38-7",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-8": {
+      "id": "I708:230;3:2694",
+      "el": "vector-8",
+      "type": "vector",
+      "box": {
+        "w": 9,
+        "h": 6
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-211.group-110-7.done-v-7.vector-8",
+      "pos": {
+        "x": 2,
+        "y": 3
+      },
+      "fill": "$c1",
+      "iconHint": "done v",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "done-v-7": {
+      "id": "708:230",
+      "el": "done-v-7",
+      "type": "instance",
+      "box": {
+        "w": 12,
+        "h": 12
+      },
+      "name": "done-v",
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-211.group-110-7.done-v-7",
+      "pos": {
+        "x": 2,
+        "y": 2
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector-8"
+      ]
+    },
+    "group-110-7": {
+      "id": "708:228",
+      "el": "group-110-7",
+      "type": "group",
+      "box": {
+        "w": 16,
+        "h": 16
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-211.group-110-7",
+      "pos": {
+        "x": 76,
+        "y": 8
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-38-7",
+        "done-v-7"
+      ]
+    },
+    "group-211": {
+      "id": "708:227",
+      "el": "group-211",
+      "type": "group",
+      "box": {
+        "w": 100,
+        "h": 100
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-211",
+      "pos": {
+        "x": 259,
+        "y": 524
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-58",
+        "group-110-7"
+      ]
+    },
+    "rectangle-61": {
+      "id": "708:162",
+      "el": "rectangle-61",
+      "type": "rect",
+      "box": {
+        "w": 100,
+        "h": 100
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-214.rectangle-61",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c5",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-37-4": {
+      "id": "708:248",
+      "el": "rectangle-37-4",
+      "type": "rect",
+      "box": {
+        "w": 16,
+        "h": 16
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-214.rectangle-37-4",
+      "pos": {
+        "x": 76,
+        "y": 8
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c6",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-214": {
+      "id": "708:247",
+      "el": "group-214",
+      "type": "group",
+      "box": {
+        "w": 100,
+        "h": 100
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-214",
+      "pos": {
+        "x": 259,
+        "y": 632
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-61",
+        "rectangle-37-4"
+      ]
+    },
+    "select-all": {
+      "id": "708:146",
+      "el": "select-all",
+      "type": "text",
+      "box": {
+        "w": 90,
+        "h": 27
+      },
+      "name": "select all",
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-89.frame-30.group-76.frame-7.select-all",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "select all",
+      "textGrow": "wh"
+    },
+    "frame-7": {
+      "id": "708:145",
+      "el": "frame-7",
+      "type": "frame",
+      "box": {
+        "w": 154,
+        "h": 64
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-89.frame-30.group-76.frame-7",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "layout": "$l2",
+      "fill": "$c2",
+      "radius": "$r3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "select-all"
+      ]
+    },
+    "group-76": {
+      "id": "708:144",
+      "el": "group-76",
+      "type": "group",
+      "box": {
+        "w": 154,
+        "h": 64
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-89.frame-30.group-76",
+      "inheritedFill": "$c1",
+      "children": [
+        "frame-7"
+      ]
+    },
+    "save": {
+      "id": "708:149",
+      "el": "save",
+      "type": "text",
+      "box": {
+        "w": 40,
+        "h": 27
+      },
+      "name": "save",
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-89.frame-30.group-75.frame-7-2.save",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c1",
+      "text": "$t3",
+      "chars": "save",
+      "textGrow": "wh"
+    },
+    "frame-7-2": {
+      "id": "708:148",
+      "el": "frame-7-2",
+      "type": "frame",
+      "box": {
+        "w": 154,
+        "h": 64
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-89.frame-30.group-75.frame-7-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "layout": "$l2",
+      "fill": "$c3",
+      "radius": "$r3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "save"
+      ]
+    },
+    "group-75": {
+      "id": "708:147",
+      "el": "group-75",
+      "type": "group",
+      "box": {
+        "w": 154,
+        "h": 64
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-89.frame-30.group-75",
+      "inheritedFill": "$c1",
+      "children": [
+        "frame-7-2"
+      ]
+    },
+    "frame-30": {
+      "id": "708:143",
+      "el": "frame-30",
+      "type": "frame",
+      "box": {
+        "w": 321,
+        "h": 64
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-89.frame-30",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "group-76",
+        "group-75"
+      ]
+    },
+    "group-89": {
+      "id": "708:142",
+      "el": "group-89",
+      "type": "group",
+      "box": {
+        "w": 321,
+        "h": 64
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-89",
+      "pos": {
+        "x": 41,
+        "y": 770
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "frame-30"
+      ]
+    },
+    "rectangle-48": {
+      "id": "708:137",
+      "el": "rectangle-48",
+      "type": "rect",
+      "box": {
+        "w": 100,
+        "h": 100
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-201.rectangle-48",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c5",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-38-10": {
+      "id": "708:165",
+      "el": "rectangle-38-10",
+      "type": "rect",
+      "box": {
+        "w": 16,
+        "h": 16
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-201.group-110-10.rectangle-38-10",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-11": {
+      "id": "I708:166;3:2694",
+      "el": "vector-11",
+      "type": "vector",
+      "box": {
+        "w": 9,
+        "h": 6
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-201.group-110-10.done-v-10.vector-11",
+      "pos": {
+        "x": 2,
+        "y": 3
+      },
+      "fill": "$c1",
+      "iconHint": "done v",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "done-v-10": {
+      "id": "708:166",
+      "el": "done-v-10",
+      "type": "instance",
+      "box": {
+        "w": 12,
+        "h": 12
+      },
+      "name": "done-v",
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-201.group-110-10.done-v-10",
+      "pos": {
+        "x": 2,
+        "y": 2
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector-11"
+      ]
+    },
+    "group-110-10": {
+      "id": "708:164",
+      "el": "group-110-10",
+      "type": "group",
+      "box": {
+        "w": 16,
+        "h": 16
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-201.group-110-10",
+      "pos": {
+        "x": 76,
+        "y": 8
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-38-10",
+        "done-v-10"
+      ]
+    },
+    "group-201": {
+      "id": "708:176",
+      "el": "group-201",
+      "type": "group",
+      "box": {
+        "w": 100,
+        "h": 100
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-201",
+      "pos": {
+        "x": 151,
+        "y": 200
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-48",
+        "group-110-10"
+      ]
+    },
+    "rectangle-47": {
+      "id": "708:136",
+      "el": "rectangle-47",
+      "type": "rect",
+      "box": {
+        "w": 100,
+        "h": 100
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-200.rectangle-47",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c5",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-37-5": {
+      "id": "708:167",
+      "el": "rectangle-37-5",
+      "type": "rect",
+      "box": {
+        "w": 16,
+        "h": 16
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-200.rectangle-37-5",
+      "pos": {
+        "x": 76,
+        "y": 8
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c6",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-200": {
+      "id": "708:175",
+      "el": "group-200",
+      "type": "group",
+      "box": {
+        "w": 100,
+        "h": 100
+      },
+      "path": "0-2-7-3-add-initial-item-generate-basics.group-200",
+      "pos": {
+        "x": 43,
+        "y": 200
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-47",
+        "rectangle-37-5"
+      ]
+    },
+    "0-2-7-3-add-initial-item-generate-basics": {
+      "id": "678:323",
+      "el": "0-2-7-3-add-initial-item-generate-basics",
+      "type": "frame",
+      "box": {
+        "w": 402,
+        "h": 874
+      },
+      "name": "0.2.7.3 Add Initial Item - generate basics",
+      "fill": "$c1",
+      "clip": true,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "group-199",
+        "pick-from-library",
+        "union",
+        "to-help-you-with-styling-choose-the-item",
+        "group-202",
+        "group-203",
+        "group-204",
+        "group-205",
+        "group-206",
+        "group-207",
+        "group-208",
+        "group-209",
+        "group-210",
+        "group-211",
+        "group-212",
+        "group-213",
+        "group-214",
+        "group-89",
+        "group-201",
+        "group-200"
+      ],
+      "repeat": [
+        {
+          "template": "group-202",
+          "data": {
+            "group-203": {},
+            "group-204": {},
+            "group-205": {},
+            "group-206": {}
+          }
+        },
+        {
+          "template": "group-211",
+          "data": {
+            "group-212": {},
+            "group-213": {}
+          }
+        }
+      ]
+    }
+  },
+  "meta": {
+    "nodeCount": 59,
+    "estTokens": 4448,
+    "depthUsed": 12
+  },
+  "next": "Read `tokens` for the design system, then build the UI from `nodes`. Tag each rendered element data-plumb-id=\"<el>\". A node with a `more` count has that many children not yet included — call plumb_node again on that node's `id` to expand them.",
+  "source": "plugin",
+  "node": "0.2.7.3 Add Initial Item - generate basics"
+}

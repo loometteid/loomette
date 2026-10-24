@@ -34,6 +34,50 @@ export const handlers = [
     return HttpResponse.json([]);
   }),
 
+  // Default mock handler for trip_packing_item table queries
+  http.get(`${MOCK_SUPABASE_URL}/rest/v1/trip_packing_item`, () => {
+    return HttpResponse.json([
+      {
+        id: "pack-1",
+        trip_id: "mock-trip-123",
+        user_id: "user-123",
+        name: "Red Cardigan",
+        is_packed: false,
+        created_at: "2026-10-01T00:00:00Z",
+      },
+      {
+        id: "pack-2",
+        trip_id: "mock-trip-123",
+        user_id: "user-123",
+        name: "Stripes Blue Blouse",
+        is_packed: true,
+        created_at: "2026-10-01T00:01:00Z",
+      },
+    ]);
+  }),
+
+  http.post(`${MOCK_SUPABASE_URL}/rest/v1/trip_packing_item`, async ({ request }) => {
+    const body = (await request.json()) as {
+      trip_id: string;
+      user_id: string;
+      name: string;
+      is_packed?: boolean;
+    };
+    const newItem = {
+      id: "pack-new-1",
+      trip_id: body.trip_id,
+      user_id: body.user_id,
+      name: body.name,
+      is_packed: body.is_packed ?? false,
+      created_at: new Date().toISOString(),
+    };
+    return HttpResponse.json(newItem, { status: 201 });
+  }),
+
+  http.patch(`${MOCK_SUPABASE_URL}/rest/v1/trip_packing_item`, () => {
+    return HttpResponse.json({}, { status: 200 });
+  }),
+
   // Default mock handler for user table (e.g. gender profile or full onboarding profile)
   http.get(`${MOCK_SUPABASE_URL}/rest/v1/user`, ({ request }) => {
     const url = new URL(request.url);
@@ -325,5 +369,72 @@ export const handlers = [
   // Default mock handler for send-waitlist-email Edge Function
   http.post(`${MOCK_SUPABASE_URL}/functions/v1/send-waitlist-email`, () => {
     return HttpResponse.json({ success: true });
+  }),
+  // Default mock handler for subscription table (defaults to null / free tier user)
+  http.get(`${MOCK_SUPABASE_URL}/rest/v1/subscription`, ({ request }) => {
+    const acceptHeader = request.headers.get("accept") ?? "";
+    const isSingle = acceptHeader.includes("vnd.pgrst.object+json");
+    if (isSingle) return HttpResponse.json(null);
+    return HttpResponse.json([]);
+  }),
+
+  // Default mock handler for Supabase auth user
+  http.get(`${MOCK_SUPABASE_URL}/auth/v1/user`, () => {
+    return HttpResponse.json({
+      id: "user-123",
+      email: "hello@gmail.com",
+      app_metadata: { provider: "google" },
+      user_metadata: {},
+      identities: [
+        {
+          id: "google-123",
+          identity_id: "google-123",
+          user_id: "user-123",
+          provider: "google",
+          identity_data: {},
+          created_at: "2026-01-01T00:00:00Z",
+          last_sign_in_at: "2026-01-01T00:00:00Z",
+          updated_at: "2026-01-01T00:00:00Z",
+        },
+      ],
+      created_at: "2026-01-01T00:00:00Z",
+    });
+  }),
+
+  // Default mock handler for Supabase OAuth link identity (pending dashboard setup)
+  http.get(`${MOCK_SUPABASE_URL}/auth/v1/user/identities/authorize`, () => {
+    return HttpResponse.json(
+      { message: "Provider not enabled", code: 400 },
+      { status: 400 },
+    );
+  }),
+
+  // Default mock handler for payment_order table
+  http.get(`${MOCK_SUPABASE_URL}/rest/v1/payment_order`, ({ request }) => {
+    const acceptHeader = request.headers.get("accept") ?? "";
+    const isSingle = acceptHeader.includes("vnd.pgrst.object+json");
+    const mockOrder = {
+      id: "mock-order-uuid",
+      order_id: "ord_123",
+      user_id: "user-123",
+      provider: "mock",
+      plan: "monthly",
+      amount: 49000,
+      currency: "IDR",
+      status: "paid",
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+    };
+    if (isSingle) return HttpResponse.json(mockOrder);
+    return HttpResponse.json([mockOrder]);
+  }),
+  // Default mock handler for mock payment webhook
+  http.post("*/api/webhooks/payment/mock", async ({ request }) => {
+    const body = (await request.json()) as { orderId?: string; status?: string };
+    return HttpResponse.json({
+      received: true,
+      orderId: body.orderId ?? "mock_order_123",
+      status: body.status ?? "paid",
+    });
   }),
 ];

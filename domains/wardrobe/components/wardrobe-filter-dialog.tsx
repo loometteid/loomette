@@ -93,7 +93,7 @@ export function WardrobeFilterDialog({
           {/* Left Column */}
           <div className="flex flex-col gap-5">
             <div className="flex flex-col gap-2">
-              <Label className="text-muted-foreground text-xs tracking-wide uppercase">
+              <Label className="text-slate text-xs font-medium tracking-wide uppercase">
                 Category
               </Label>
               <PillToggleGroup
@@ -111,7 +111,7 @@ export function WardrobeFilterDialog({
 
             {subcategoryOptions.length > 0 && (
               <div className="flex flex-col gap-2">
-                <Label className="text-muted-foreground text-xs tracking-wide uppercase">
+                <Label className="text-slate text-xs font-medium tracking-wide uppercase">
                   Sub Category
                 </Label>
                 <PillToggleGroup
@@ -128,7 +128,7 @@ export function WardrobeFilterDialog({
             )}
 
             <div className="flex flex-col gap-2">
-              <Label className="text-muted-foreground text-xs tracking-wide uppercase">
+              <Label className="text-slate text-xs font-medium tracking-wide uppercase">
                 Colors
               </Label>
               <div className="flex flex-wrap gap-2">
@@ -151,7 +151,7 @@ export function WardrobeFilterDialog({
             </div>
 
             <div className="flex flex-col gap-2">
-              <Label className="text-muted-foreground text-xs tracking-wide uppercase">
+              <Label className="text-slate text-xs font-medium tracking-wide uppercase">
                 Occasion
               </Label>
               <PillToggleGroup
@@ -168,7 +168,7 @@ export function WardrobeFilterDialog({
           <div className="flex flex-col gap-5 justify-between">
             <div className="flex flex-col gap-5">
               <div className="flex flex-col gap-2">
-                <Label className="text-muted-foreground text-xs tracking-wide uppercase">
+                <Label className="text-slate text-xs font-medium tracking-wide uppercase">
                   Times Worn
                 </Label>
                 <PillToggleGroup
@@ -185,7 +185,7 @@ export function WardrobeFilterDialog({
               </div>
 
               <div className="flex flex-col gap-2">
-                <Label className="text-muted-foreground text-xs tracking-wide uppercase">
+                <Label className="text-slate text-xs font-medium tracking-wide uppercase">
                   Date Added
                 </Label>
                 <PillToggleGroup

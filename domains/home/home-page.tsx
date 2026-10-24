@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { Activity, useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Bell, ChevronLeft, ChevronRight, Sparkles, TrendingUp } from "lucide-react";
@@ -185,9 +185,11 @@ export function HomeView({ userId }: { userId: string }) {
         {/* Right Column: Bell Popover, Your Preferences, I want to wear... */}
         <div className="flex flex-col gap-8">
           {/* Bell Icon in Top Right */}
-          <div className="flex justify-end">
-            <NotificationPopover userId={userId} />
-          </div>
+          <Activity mode="hidden">
+            <div className="flex justify-end">
+              <NotificationPopover userId={userId} />
+            </div>
+          </Activity>
 
           {/* Preferences Section */}
           <div className="flex flex-col gap-4">
@@ -341,17 +343,19 @@ export function HomeView({ userId }: { userId: string }) {
             <AvatarImage src={profilePhoto ?? undefined} alt="" />
             <AvatarFallback className="rounded-2xl">{initials}</AvatarFallback>
           </Avatar>
-          <Link
-            href="/home/notifications"
-            prefetch
-            aria-label="Notifications"
-            className="relative bg-secondary/80 flex size-11 items-center justify-center rounded-2xl"
-          >
-            <Bell className="size-4.5 text-foreground" />
-            {unreadNotificationsCount > 0 && (
-              <span className="absolute top-2.5 right-2.5 size-2 rounded-full bg-rose-400 ring-2 ring-background" />
-            )}
-          </Link>
+          <Activity mode="hidden">
+            <Link
+              href="/home/notifications"
+              prefetch
+              aria-label="Notifications"
+              className="relative bg-secondary/80 flex size-11 items-center justify-center rounded-2xl"
+            >
+              <Bell className="size-4.5 text-foreground" />
+              {unreadNotificationsCount > 0 && (
+                <span className="absolute top-2.5 right-2.5 size-2 rounded-full bg-rose-400 ring-2 ring-background" />
+              )}
+            </Link>
+          </Activity>
         </div>
 
         {/* Mobile Title */}

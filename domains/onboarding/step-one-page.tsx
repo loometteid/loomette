@@ -111,7 +111,7 @@ export function StepOneForm({
       <div className="flex flex-col gap-2">
         <Label
           htmlFor="onboarding-name"
-          className="text-muted-foreground text-xs font-semibold tracking-wider uppercase"
+          className="text-slate text-xs font-semibold tracking-wider uppercase"
         >
           What do we call you?
         </Label>
@@ -135,7 +135,7 @@ export function StepOneForm({
       <div className="flex flex-col gap-2">
         <Label
           htmlFor="onboarding-email"
-          className="text-muted-foreground text-xs font-semibold tracking-wider uppercase"
+          className="text-slate text-xs font-semibold tracking-wider uppercase"
         >
           Your email
         </Label>

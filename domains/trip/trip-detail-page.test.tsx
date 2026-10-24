@@ -91,4 +91,50 @@ describe("TripDetailView (Component with TanStack Query + MSW)", () => {
 
     expect(mockRouter.back).toHaveBeenCalledTimes(1);
   });
+
+  it("renders packing list tab and allows toggling items and adding new item", async () => {
+    const user = userEvent.setup();
+
+    renderWithQueryClient(
+      <Suspense fallback={<div>Loading trip...</div>}>
+        <TripDetailView userId="user-123" tripId="mock-trip-123" />
+      </Suspense>,
+    );
+
+    await screen.findByTestId("trip-detail__title");
+
+    // Switch to Packing List tab
+    const packingTabs = screen.getAllByTestId("trip-detail__tab");
+    const packingTab = packingTabs.find((tab) =>
+      tab.textContent?.includes("Packing List"),
+    );
+    expect(packingTab).toBeDefined();
+    await user.click(packingTab!);
+
+    // Verify packing items rendered from Supabase / MSW
+    const packingItems = await screen.findAllByTestId(
+      "trip-detail__packing-item",
+    );
+    expect(packingItems).toHaveLength(2);
+    expect(screen.getByText("Red Cardigan")).toBeInTheDocument();
+    expect(screen.getByText("Stripes Blue Blouse")).toBeInTheDocument();
+
+    // Toggle first packing item
+    const firstCheckbox = screen.getAllByRole("checkbox")[0];
+    await user.click(firstCheckbox);
+
+    // Open add item form and submit new packing item
+    const addBtn = screen.getByTestId("trip-detail__add-packing-button");
+    await user.click(addBtn);
+
+    const input = screen.getByTestId("trip-detail__new-packing-input");
+    await user.type(input, "Silk Pajamas");
+
+    const submitBtn = screen.getByTestId("trip-detail__submit-packing-button");
+    await user.click(submitBtn);
+
+    expect(
+      screen.queryByTestId("trip-detail__new-packing-input"),
+    ).not.toBeInTheDocument();
+  });
 });

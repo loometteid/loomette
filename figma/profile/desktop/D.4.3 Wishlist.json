@@ -1,0 +1,2331 @@
+{
+  "file": {
+    "name": "Loomette.id",
+    "version": "plugin-1792667149193"
+  },
+  "root": "d-4-3-wishlist",
+  "tokens": {
+    "color": {
+      "$c1": "#fafaf7",
+      "$c2": "#444440",
+      "$c3": "#f2ede5",
+      "$c4": "#ffffff1a",
+      "$c5": "#d9d9d9",
+      "$c6": "#000000",
+      "$c7": "gradient",
+      "$c8": "image",
+      "$c9": "#c9c3b7",
+      "$c10": "#e5487e"
+    },
+    "text": {
+      "$t1": "400 24px Avenir Next",
+      "$t2": "400 20px Figtree",
+      "$t3": "400 48px Source Serif Pro",
+      "$t4": "400 32px Source Serif Pro",
+      "$t5": "400 20px Avenir Next",
+      "$t6": "400 16px Avenir Next",
+      "$t7": "400 16px Figtree",
+      "$t8": "400 24px Source Serif Pro",
+      "$t9": "400 12px Avenir Next",
+      "$t10": "700 12px Avenir Next"
+    },
+    "radius": {
+      "$r1": 16,
+      "$r2": 20,
+      "$r3": 8,
+      "$r4": 12,
+      "$r5": "full"
+    },
+    "shadow": {},
+    "layout": {
+      "$l1": {
+        "align": "center",
+        "flow": "row",
+        "gap": 48,
+        "pad": [
+          19,
+          64,
+          18,
+          20
+        ]
+      },
+      "$l2": {
+        "align": "center",
+        "contentMain": 186,
+        "flow": "row",
+        "gap": 72,
+        "justify": "center",
+        "pad": [
+          19,
+          64,
+          18,
+          20
+        ]
+      },
+      "$l3": {
+        "align": "flex-end",
+        "flow": "row",
+        "gap": 24,
+        "pad": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l4": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          4,
+          16,
+          4,
+          16
+        ]
+      },
+      "$l5": {
+        "align": "center",
+        "flow": "row",
+        "gap": 20,
+        "justify": "center",
+        "pad": [
+          19,
+          16,
+          18,
+          16
+        ]
+      }
+    },
+    "fills": {
+      "$f1": [
+        {
+          "angle": 270,
+          "stops": [
+            {
+              "at": 0,
+              "color": "#c9c3b7"
+            },
+            {
+              "at": 1,
+              "color": "#fafaf700"
+            }
+          ],
+          "type": "linear-gradient"
+        }
+      ],
+      "$f2": [
+        {
+          "angle": 90,
+          "stops": [
+            {
+              "at": 0,
+              "color": "#c9c3b7"
+            },
+            {
+              "at": 1,
+              "color": "#fafaf700"
+            }
+          ],
+          "type": "linear-gradient"
+        }
+      ]
+    },
+    "vector": {
+      "$v1": "M12.7988 11.4121 L19.9199 3.3418 L21.0518 4.62402 L13.9307 12.6934 L24 12.6934 L24 14.5068 L13.9316 14.5068 L21.0508 22.5752 L19.9189 23.8574 L12.7988 15.7871 L12.7988 27.2002 L11.1992 27.2002 L11.1992 15.79 L4.08105 23.8574 L2.94922 22.5752 L10.0674 14.5068 L0 14.5068 L0 12.6934 L10.0693 12.6934 L2.94922 4.62402 L4.08008 3.3418 L11.1992 11.4092 L11.1992 0 L12.7988 0 L12.7988 11.4121 Z",
+      "$v2": "M22.75 0 C27.9407 0 31.9998 4.85616 32 10.6016 C32 13.5899 31.5557 16.0513 29.8994 18.6406 C28.3191 21.1112 25.6909 23.6042 21.6133 26.8936 L16 31 L10.3857 26.8936 C6.30846 23.6045 3.68086 21.1111 2.10059 18.6406 C0.444346 16.0513 0 13.5899 0 10.6016 C0.000160878 4.85615 4.05929 8.5968e-08 9.25 0 C11.8545 0 14.1091 1.14228 16 3.20898 C17.8909 1.14228 20.1455 5.45221e-07 22.75 0 Z",
+      "$v3": "M28.8 6.88915 C28.8 14.4984 22.3529 26.6944 14.4 26.6944 C6.4471 26.6944 0 18.8037 0 11.1944 C0 3.58519 0.0470993 0 8 0 C14.4 6.02778 28.8 -2.07538 28.8 6.88915 Z"
+    },
+    "props": {
+      "$p1": {
+        "size": "24"
+      }
+    },
+    "meta": {
+      "counts": {
+        "$c1": 3,
+        "$c2": 30,
+        "$r1": 5,
+        "$p1": 4,
+        "$t1": 7,
+        "$c3": 5,
+        "$c5": 4,
+        "$t3": 3,
+        "$c7": 2,
+        "$c8": 14,
+        "$t5": 2,
+        "$r3": 2,
+        "$t7": 6,
+        "$c9": 6,
+        "$r4": 3,
+        "$c10": 9,
+        "$v2": 3,
+        "$v3": 3,
+        "$t8": 3,
+        "$t9": 3,
+        "$l5": 3
+      }
+    }
+  },
+  "nodes": {
+    "vector": {
+      "id": "I1240:2917;3:3649",
+      "el": "vector",
+      "type": "vector",
+      "box": {
+        "w": 19,
+        "h": 19
+      },
+      "path": "d-4-3-wishlist.frame-8.2users.vector",
+      "pos": {
+        "x": 4,
+        "y": 3
+      },
+      "fill": "$c1",
+      "iconHint": "social circle",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "2users": {
+      "id": "1240:2917",
+      "el": "2users",
+      "type": "instance",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "name": "2users",
+      "path": "d-4-3-wishlist.frame-8.2users",
+      "inheritedFill": "$c2",
+      "clip": true,
+      "props": "$p1",
+      "children": [
+        "vector"
+      ]
+    },
+    "social-circle": {
+      "id": "1240:2918",
+      "el": "social-circle",
+      "type": "text",
+      "box": {
+        "w": 142,
+        "h": 33
+      },
+      "name": "social circle",
+      "path": "d-4-3-wishlist.frame-8.social-circle",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c1",
+      "text": "$t1",
+      "chars": "social circle",
+      "textGrow": "wh"
+    },
+    "frame-8": {
+      "id": "1240:2916",
+      "el": "frame-8",
+      "type": "frame",
+      "box": {
+        "w": 280,
+        "h": 64
+      },
+      "path": "d-4-3-wishlist.frame-8",
+      "pos": {
+        "x": 65,
+        "y": 805
+      },
+      "layout": "$l1",
+      "fill": "$c2",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "2users",
+        "social-circle"
+      ]
+    },
+    "vector-2": {
+      "id": "I1240:2920;3:3077",
+      "el": "vector-2",
+      "type": "vector",
+      "box": {
+        "w": 21,
+        "h": 22
+      },
+      "path": "d-4-3-wishlist.frame-33.gear-settings.vector-2",
+      "pos": {
+        "x": 1,
+        "y": 1
+      },
+      "fill": "$c2",
+      "iconHint": "settings",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "gear-settings": {
+      "id": "1240:2920",
+      "el": "gear-settings",
+      "type": "instance",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "name": "gear-settings",
+      "path": "d-4-3-wishlist.frame-33.gear-settings",
+      "inheritedFill": "$c3",
+      "clip": true,
+      "props": "$p1",
+      "children": [
+        "vector-2"
+      ]
+    },
+    "settings": {
+      "id": "1240:2921",
+      "el": "settings",
+      "type": "text",
+      "box": {
+        "w": 90,
+        "h": 33
+      },
+      "name": "settings",
+      "path": "d-4-3-wishlist.frame-33.settings",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c2",
+      "text": "$t1",
+      "chars": "settings",
+      "textGrow": "wh"
+    },
+    "frame-33": {
+      "id": "1240:2919",
+      "el": "frame-33",
+      "type": "frame",
+      "box": {
+        "w": 280,
+        "h": 64
+      },
+      "path": "d-4-3-wishlist.frame-33",
+      "pos": {
+        "x": 65,
+        "y": 890
+      },
+      "layout": "$l2",
+      "fill": "$c3",
+      "radius": "$r1",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "gear-settings",
+        "settings"
+      ]
+    },
+    "rectangle-15": {
+      "id": "1240:2923",
+      "el": "rectangle-15",
+      "type": "rect",
+      "box": {
+        "w": 1465,
+        "h": 136
+      },
+      "path": "d-4-3-wishlist.group-96.rectangle-15",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16": {
+      "id": "1240:2925",
+      "el": "rectangle-16",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 27
+      },
+      "path": "d-4-3-wishlist.group-96.union.rectangle-16",
+      "pos": {
+        "x": 11,
+        "y": 0
+      },
+      "fill": "$c5",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17": {
+      "id": "1240:2926",
+      "el": "rectangle-17",
+      "type": "rect",
+      "box": {
+        "w": 18,
+        "h": 21
+      },
+      "path": "d-4-3-wishlist.group-96.union.rectangle-17",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c5",
+      "rotation": 2783,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19": {
+      "id": "1240:2927",
+      "el": "rectangle-19",
+      "type": "rect",
+      "box": {
+        "w": 18,
+        "h": 21
+      },
+      "path": "d-4-3-wishlist.group-96.union.rectangle-19",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c5",
+      "rotation": 7530,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18": {
+      "id": "1240:2928",
+      "el": "rectangle-18",
+      "type": "rect",
+      "box": {
+        "w": 24,
+        "h": 2
+      },
+      "path": "d-4-3-wishlist.group-96.union.rectangle-18",
+      "pos": {
+        "x": 0,
+        "y": 13
+      },
+      "fill": "$c5",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union": {
+      "id": "1240:2924",
+      "el": "union",
+      "type": "bool",
+      "box": {
+        "w": 24,
+        "h": 27
+      },
+      "path": "d-4-3-wishlist.group-96.union",
+      "pos": {
+        "x": 75,
+        "y": 54
+      },
+      "fill": "$c2",
+      "iconHint": "loomette",
+      "vectorPath": "$v1",
+      "children": [
+        "rectangle-16",
+        "rectangle-17",
+        "rectangle-19",
+        "rectangle-18"
+      ]
+    },
+    "loomette": {
+      "id": "1240:2929",
+      "el": "loomette",
+      "type": "text",
+      "box": {
+        "w": 99,
+        "h": 37
+      },
+      "name": "loomette",
+      "path": "d-4-3-wishlist.group-96.loomette",
+      "pos": {
+        "x": 115,
+        "y": 50
+      },
+      "fill": "$c6",
+      "text": "$t1",
+      "chars": "loomette",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "home": {
+      "id": "1240:2930",
+      "el": "home",
+      "type": "text",
+      "box": {
+        "w": 61,
+        "h": 37
+      },
+      "name": "Home",
+      "path": "d-4-3-wishlist.group-96.home",
+      "pos": {
+        "x": 583,
+        "y": 50
+      },
+      "fill": "$c2",
+      "text": "$t1",
+      "chars": "Home",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "calendar": {
+      "id": "1240:2931",
+      "el": "calendar",
+      "type": "text",
+      "box": {
+        "w": 103,
+        "h": 37
+      },
+      "name": "calendar",
+      "path": "d-4-3-wishlist.group-96.calendar",
+      "pos": {
+        "x": 680,
+        "y": 50
+      },
+      "fill": "$c2",
+      "text": "$t1",
+      "chars": "calendar",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "wardrobe": {
+      "id": "1240:2932",
+      "el": "wardrobe",
+      "type": "text",
+      "box": {
+        "w": 110,
+        "h": 37
+      },
+      "name": "wardrobe",
+      "path": "d-4-3-wishlist.group-96.wardrobe",
+      "pos": {
+        "x": 819,
+        "y": 50
+      },
+      "fill": "$c2",
+      "text": "$t1",
+      "chars": "wardrobe",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "gevyndo": {
+      "id": "1240:2934",
+      "el": "gevyndo",
+      "type": "text",
+      "box": {
+        "w": 96,
+        "h": 37
+      },
+      "name": "gevyndo",
+      "path": "d-4-3-wishlist.group-96.group-254.gevyndo",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c2",
+      "text": "$t1",
+      "chars": "gevyndo",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-3": {
+      "id": "I1240:2935;3:3637",
+      "el": "vector-3",
+      "type": "vector",
+      "box": {
+        "w": 16,
+        "h": 22
+      },
+      "path": "d-4-3-wishlist.group-96.group-254.user.vector-3",
+      "pos": {
+        "x": 4,
+        "y": 3
+      },
+      "fill": "$c2",
+      "iconHint": "gevyndo",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "user": {
+      "id": "1240:2935",
+      "el": "user",
+      "type": "instance",
+      "box": {
+        "w": 24,
+        "h": 27
+      },
+      "name": "user",
+      "path": "d-4-3-wishlist.group-96.group-254.user",
+      "pos": {
+        "x": 112,
+        "y": 5
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector-3"
+      ]
+    },
+    "group-254": {
+      "id": "1240:2933",
+      "el": "group-254",
+      "type": "group",
+      "box": {
+        "w": 136,
+        "h": 37
+      },
+      "path": "d-4-3-wishlist.group-96.group-254",
+      "pos": {
+        "x": 1251,
+        "y": 50
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "gevyndo",
+        "user"
+      ]
+    },
+    "group-96": {
+      "id": "1240:2922",
+      "el": "group-96",
+      "type": "group",
+      "box": {
+        "w": 1465,
+        "h": 136
+      },
+      "path": "d-4-3-wishlist.group-96",
+      "pos": {
+        "x": -11,
+        "y": -16
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-15",
+        "union",
+        "loomette",
+        "home",
+        "calendar",
+        "wardrobe",
+        "group-254"
+      ]
+    },
+    "shoes": {
+      "id": "1240:2937",
+      "el": "shoes",
+      "type": "text",
+      "box": {
+        "w": 67,
+        "h": 24
+      },
+      "name": "SHOES",
+      "path": "d-4-3-wishlist.group-288.shoes",
+      "pos": {
+        "x": 207,
+        "y": 0
+      },
+      "fill": "$c2",
+      "text": "$t2",
+      "chars": "SHOES",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "sneakers": {
+      "id": "1240:2939",
+      "el": "sneakers",
+      "type": "text",
+      "box": {
+        "w": 193,
+        "h": 60
+      },
+      "name": "Sneakers",
+      "path": "d-4-3-wishlist.group-288.group-283.sneakers",
+      "pos": {
+        "x": 144,
+        "y": 0
+      },
+      "fill": "$c2",
+      "text": "$t3",
+      "chars": "Sneakers",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "heels": {
+      "id": "1240:2940",
+      "el": "heels",
+      "type": "text",
+      "box": {
+        "w": 117,
+        "h": 60
+      },
+      "name": "Heels",
+      "path": "d-4-3-wishlist.group-288.group-283.heels",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fills": "$f1",
+      "text": "$t3",
+      "chars": "Heels",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "sandals": {
+      "id": "1240:2941",
+      "el": "sandals",
+      "type": "text",
+      "box": {
+        "w": 159,
+        "h": 60
+      },
+      "name": "Sandals",
+      "path": "d-4-3-wishlist.group-288.group-283.sandals",
+      "pos": {
+        "x": 369,
+        "y": 0
+      },
+      "fills": "$f2",
+      "text": "$t3",
+      "chars": "Sandals",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-283": {
+      "id": "1240:2938",
+      "el": "group-283",
+      "type": "group",
+      "box": {
+        "w": 528,
+        "h": 60
+      },
+      "path": "d-4-3-wishlist.group-288.group-283",
+      "pos": {
+        "x": 0,
+        "y": 40
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "sneakers",
+        "heels",
+        "sandals"
+      ]
+    },
+    "group-288": {
+      "id": "1240:2936",
+      "el": "group-288",
+      "type": "group",
+      "box": {
+        "w": 528,
+        "h": 100
+      },
+      "path": "d-4-3-wishlist.group-288",
+      "pos": {
+        "x": 481,
+        "y": 1172
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "shoes",
+        "group-283"
+      ]
+    },
+    "image-removebg-preview-8-6": {
+      "id": "1240:2942",
+      "el": "image-removebg-preview-8-6",
+      "type": "rect",
+      "box": {
+        "w": 110,
+        "h": 160
+      },
+      "name": "image-removebg-preview (8) 6",
+      "path": "d-4-3-wishlist.image-removebg-preview-8-6",
+      "pos": {
+        "x": -81,
+        "y": 993
+      },
+      "assetId": "c6ff31d8a14d65a23be1759b2a95a0c039f2a5a7",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "c6ff31d8a14d65a23be1759b2a95a0c039f2a5a7",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-9-1": {
+      "id": "1240:2943",
+      "el": "image-removebg-preview-9-1",
+      "type": "rect",
+      "box": {
+        "w": 201,
+        "h": 136
+      },
+      "name": "image-removebg-preview (9) 1",
+      "path": "d-4-3-wishlist.image-removebg-preview-9-1",
+      "pos": {
+        "x": 619,
+        "y": 1288
+      },
+      "assetId": "3065b6e54af07277b4f5afb1d93f2210fb8e8b30",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "3065b6e54af07277b4f5afb1d93f2210fb8e8b30",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              0.7799999713897705,
+              0,
+              0.11999999731779099
+            ],
+            [
+              0,
+              0.5299999713897705,
+              0.23999999463558197
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-9-2": {
+      "id": "1240:2944",
+      "el": "image-removebg-preview-9-2",
+      "type": "rect",
+      "box": {
+        "w": 200,
+        "h": 136
+      },
+      "name": "image-removebg-preview (9) 2",
+      "path": "d-4-3-wishlist.image-removebg-preview-9-2",
+      "pos": {
+        "x": 225,
+        "y": 1289
+      },
+      "assetId": "3065b6e54af07277b4f5afb1d93f2210fb8e8b30",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "3065b6e54af07277b4f5afb1d93f2210fb8e8b30",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              0.7799999713897705,
+              0,
+              0.11999999731779099
+            ],
+            [
+              0,
+              0.5299999713897705,
+              0.23999999463558197
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-10-1": {
+      "id": "1240:2945",
+      "el": "image-removebg-preview-10-1",
+      "type": "rect",
+      "box": {
+        "w": 194,
+        "h": 136
+      },
+      "name": "image-removebg-preview (10) 1",
+      "path": "d-4-3-wishlist.image-removebg-preview-10-1",
+      "pos": {
+        "x": 425,
+        "y": 1289
+      },
+      "assetId": "178406f88b315152b95287f3aeb79ee56c5d2443",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "178406f88b315152b95287f3aeb79ee56c5d2443",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.720081090927124,
+              0.12576064467430115
+            ]
+          ]
+        }
+      ],
+      "rotation": 10313,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-10-4": {
+      "id": "1240:2946",
+      "el": "image-removebg-preview-10-4",
+      "type": "rect",
+      "box": {
+        "w": 194,
+        "h": 136
+      },
+      "name": "image-removebg-preview (10) 4",
+      "path": "d-4-3-wishlist.image-removebg-preview-10-4",
+      "pos": {
+        "x": 31,
+        "y": 1289
+      },
+      "assetId": "178406f88b315152b95287f3aeb79ee56c5d2443",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "178406f88b315152b95287f3aeb79ee56c5d2443",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.720081090927124,
+              0.12576064467430115
+            ]
+          ]
+        }
+      ],
+      "rotation": 10313,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-9-3": {
+      "id": "1240:2947",
+      "el": "image-removebg-preview-9-3",
+      "type": "rect",
+      "box": {
+        "w": 200,
+        "h": 136
+      },
+      "name": "image-removebg-preview (9) 3",
+      "path": "d-4-3-wishlist.image-removebg-preview-9-3",
+      "pos": {
+        "x": 1014,
+        "y": 1288
+      },
+      "assetId": "3065b6e54af07277b4f5afb1d93f2210fb8e8b30",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "3065b6e54af07277b4f5afb1d93f2210fb8e8b30",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              0.7799999713897705,
+              0,
+              0.11999999731779099
+            ],
+            [
+              0,
+              0.5299999713897705,
+              0.23999999463558197
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-10-2": {
+      "id": "1240:2948",
+      "el": "image-removebg-preview-10-2",
+      "type": "rect",
+      "box": {
+        "w": 194,
+        "h": 136
+      },
+      "name": "image-removebg-preview (10) 2",
+      "path": "d-4-3-wishlist.image-removebg-preview-10-2",
+      "pos": {
+        "x": 820,
+        "y": 1288
+      },
+      "assetId": "178406f88b315152b95287f3aeb79ee56c5d2443",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "178406f88b315152b95287f3aeb79ee56c5d2443",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.720081090927124,
+              0.12576064467430115
+            ]
+          ]
+        }
+      ],
+      "rotation": 10313,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-10-3": {
+      "id": "1240:2949",
+      "el": "image-removebg-preview-10-3",
+      "type": "rect",
+      "box": {
+        "w": 194,
+        "h": 136
+      },
+      "name": "image-removebg-preview (10) 3",
+      "path": "d-4-3-wishlist.image-removebg-preview-10-3",
+      "pos": {
+        "x": 1214,
+        "y": 1288
+      },
+      "assetId": "178406f88b315152b95287f3aeb79ee56c5d2443",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "178406f88b315152b95287f3aeb79ee56c5d2443",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.720081090927124,
+              0.12576064467430115
+            ]
+          ]
+        }
+      ],
+      "rotation": 10313,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-9-4": {
+      "id": "1240:2950",
+      "el": "image-removebg-preview-9-4",
+      "type": "rect",
+      "box": {
+        "w": 200,
+        "h": 136
+      },
+      "name": "image-removebg-preview (9) 4",
+      "path": "d-4-3-wishlist.image-removebg-preview-9-4",
+      "pos": {
+        "x": 1408,
+        "y": 1288
+      },
+      "assetId": "3065b6e54af07277b4f5afb1d93f2210fb8e8b30",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "3065b6e54af07277b4f5afb1d93f2210fb8e8b30",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              0.7799999713897705,
+              0,
+              0.11999999731779099
+            ],
+            [
+              0,
+              0.5299999713897705,
+              0.23999999463558197
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-9-5": {
+      "id": "1240:2951",
+      "el": "image-removebg-preview-9-5",
+      "type": "rect",
+      "box": {
+        "w": 200,
+        "h": 136
+      },
+      "name": "image-removebg-preview (9) 5",
+      "path": "d-4-3-wishlist.image-removebg-preview-9-5",
+      "pos": {
+        "x": -169,
+        "y": 1289
+      },
+      "assetId": "3065b6e54af07277b4f5afb1d93f2210fb8e8b30",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "3065b6e54af07277b4f5afb1d93f2210fb8e8b30",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              0.7799999713897705,
+              0,
+              0.11999999731779099
+            ],
+            [
+              0,
+              0.5299999713897705,
+              0.23999999463558197
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-12": {
+      "id": "1240:2952",
+      "el": "image-12",
+      "type": "rect",
+      "box": {
+        "w": 200,
+        "h": 200
+      },
+      "path": "d-4-3-wishlist.image-12",
+      "pos": {
+        "x": 100,
+        "y": 184
+      },
+      "assetId": "5a1f68886abf772a8ff5086a8e9b98947a628c7b",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "5a1f68886abf772a8ff5086a8e9b98947a628c7b",
+          "scaleMode": "fill",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ]
+        }
+      ],
+      "radius": "$r2",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "tanara-karin": {
+      "id": "1240:2953",
+      "el": "tanara-karin",
+      "type": "text",
+      "box": {
+        "w": 180,
+        "h": 40
+      },
+      "name": "Tanara Karin",
+      "path": "d-4-3-wishlist.tanara-karin",
+      "pos": {
+        "x": 110,
+        "y": 445
+      },
+      "fill": "$c2",
+      "text": "$t4",
+      "chars": "Tanara Karin",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "karina": {
+      "id": "1240:2954",
+      "el": "karina",
+      "type": "text",
+      "box": {
+        "w": 75,
+        "h": 27
+      },
+      "name": "@karina",
+      "path": "d-4-3-wishlist.karina",
+      "pos": {
+        "x": 162,
+        "y": 414
+      },
+      "fill": "$c2",
+      "text": "$t5",
+      "chars": "@karina",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-118": {
+      "id": "1240:2955",
+      "el": "rectangle-118",
+      "type": "rect",
+      "box": {
+        "w": 127,
+        "h": 47
+      },
+      "path": "d-4-3-wishlist.rectangle-118",
+      "pos": {
+        "x": 1010,
+        "y": 183
+      },
+      "fill": "$c3",
+      "radius": "$r3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "xs-36": {
+      "id": "1240:2956",
+      "el": "xs-36",
+      "type": "text",
+      "box": {
+        "w": 51,
+        "h": 22
+      },
+      "name": "XS ・36",
+      "path": "d-4-3-wishlist.xs-36",
+      "pos": {
+        "x": 174,
+        "y": 497
+      },
+      "fill": "$c2",
+      "text": "$t6",
+      "chars": "XS ・36",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "favorite": {
+      "id": "1240:2957",
+      "el": "favorite",
+      "type": "text",
+      "box": {
+        "w": 75,
+        "h": 19
+      },
+      "name": "Favorite",
+      "path": "d-4-3-wishlist.favorite",
+      "pos": {
+        "x": 750,
+        "y": 198
+      },
+      "fill": "$c2",
+      "text": "$t7",
+      "chars": "Favorite",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "travel": {
+      "id": "1240:2958",
+      "el": "travel",
+      "type": "text",
+      "box": {
+        "w": 58,
+        "h": 19
+      },
+      "name": "travel",
+      "path": "d-4-3-wishlist.travel",
+      "pos": {
+        "x": 902,
+        "y": 198
+      },
+      "fill": "$c2",
+      "text": "$t7",
+      "chars": "travel",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "wishlist": {
+      "id": "1240:2959",
+      "el": "wishlist",
+      "type": "text",
+      "box": {
+        "w": 73,
+        "h": 19
+      },
+      "name": "wishlist",
+      "path": "d-4-3-wishlist.wishlist",
+      "pos": {
+        "x": 1037,
+        "y": 197
+      },
+      "fill": "$c2",
+      "text": "$t7",
+      "chars": "wishlist",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "line-33": {
+      "id": "1240:2960",
+      "el": "line-33",
+      "type": "line",
+      "box": {
+        "w": 0,
+        "h": 812
+      },
+      "path": "d-4-3-wishlist.line-33",
+      "pos": {
+        "x": 393,
+        "y": 164
+      },
+      "stroke": "$c9",
+      "strokeW": 0.5,
+      "strokeAlign": "center",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-31": {
+      "id": "1240:2962",
+      "el": "rectangle-31",
+      "type": "rect",
+      "box": {
+        "w": 52,
+        "h": 52
+      },
+      "path": "d-4-3-wishlist.group-19.rectangle-31",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "radius": "$r3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-4": {
+      "id": "I1240:2963;4:174",
+      "el": "vector-4",
+      "type": "vector",
+      "box": {
+        "w": 22,
+        "h": 23
+      },
+      "path": "d-4-3-wishlist.group-19.edit.vector-4",
+      "pos": {
+        "x": 4,
+        "y": 4
+      },
+      "fill": "$c2",
+      "iconHint": "edit",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "edit": {
+      "id": "1240:2963",
+      "el": "edit",
+      "type": "instance",
+      "box": {
+        "w": 30,
+        "h": 30
+      },
+      "name": "edit",
+      "path": "d-4-3-wishlist.group-19.edit",
+      "pos": {
+        "x": 11,
+        "y": 11
+      },
+      "fill": "$c3",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector-4"
+      ]
+    },
+    "group-19": {
+      "id": "1240:2961",
+      "el": "group-19",
+      "type": "group",
+      "box": {
+        "w": 52,
+        "h": 52
+      },
+      "path": "d-4-3-wishlist.group-19",
+      "pos": {
+        "x": 270,
+        "y": 353
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-31",
+        "edit"
+      ]
+    },
+    "rectangle-36": {
+      "id": "1186:605",
+      "el": "rectangle-36",
+      "type": "rect",
+      "box": {
+        "w": 269,
+        "h": 333
+      },
+      "path": "d-4-3-wishlist.frame-32.group-46.rectangle-36",
+      "pos": {
+        "x": 0,
+        "y": 13
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c9",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "ellipse-5": {
+      "id": "1186:608",
+      "el": "ellipse-5",
+      "type": "vector",
+      "box": {
+        "w": 29,
+        "h": 27
+      },
+      "path": "d-4-3-wishlist.frame-32.group-46.union-2.ellipse-5",
+      "pos": {
+        "x": 2,
+        "y": 1
+      },
+      "fill": "$c10",
+      "iconHint": "Polkadot Skirt",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-5": {
+      "id": "1186:609",
+      "el": "vector-5",
+      "type": "vector",
+      "box": {
+        "w": 32,
+        "h": 31
+      },
+      "path": "d-4-3-wishlist.frame-32.group-46.union-2.vector-5",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c10",
+      "iconHint": "Polkadot Skirt",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "union-2": {
+      "id": "1186:607",
+      "el": "union-2",
+      "type": "bool",
+      "box": {
+        "w": 32,
+        "h": 31
+      },
+      "path": "d-4-3-wishlist.frame-32.group-46.union-2",
+      "pos": {
+        "x": 213,
+        "y": 37
+      },
+      "fill": "$c10",
+      "iconHint": "Polkadot Skirt",
+      "vectorPath": "$v2",
+      "children": [
+        "ellipse-5",
+        "vector-5"
+      ]
+    },
+    "polkadot-skirt": {
+      "id": "1186:633",
+      "el": "polkadot-skirt",
+      "type": "text",
+      "box": {
+        "w": 144,
+        "h": 30
+      },
+      "name": "Polkadot Skirt",
+      "path": "d-4-3-wishlist.frame-32.group-46.polkadot-skirt",
+      "pos": {
+        "x": 63,
+        "y": 272
+      },
+      "fill": "$c2",
+      "text": "$t8",
+      "chars": "Polkadot Skirt",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "from-tiktok-you-shared": {
+      "id": "1186:634",
+      "el": "from-tiktok-you-shared",
+      "type": "text",
+      "box": {
+        "w": 124,
+        "h": 16
+      },
+      "name": "From Tiktok You Shared",
+      "path": "d-4-3-wishlist.frame-32.group-46.from-tiktok-you-shared",
+      "pos": {
+        "x": 73,
+        "y": 306
+      },
+      "fill": "$c2",
+      "text": "$t9",
+      "chars": "From Tiktok You Shared",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-7-1": {
+      "id": "1186:635",
+      "el": "image-removebg-preview-7-1",
+      "type": "rect",
+      "box": {
+        "w": 161,
+        "h": 206
+      },
+      "name": "image-removebg-preview (7) 1",
+      "path": "d-4-3-wishlist.frame-32.group-46.image-removebg-preview-7-1",
+      "pos": {
+        "x": 54,
+        "y": 58
+      },
+      "assetId": "e5420007b99f8c30cfc67be00af0ec3b2f376e2a",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "e5420007b99f8c30cfc67be00af0ec3b2f376e2a",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.8557214140892029,
+              0.07213930040597916
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "new": {
+      "id": "1186:638",
+      "el": "new",
+      "type": "text",
+      "box": {
+        "w": 37,
+        "h": 27
+      },
+      "name": "NEW",
+      "path": "d-4-3-wishlist.frame-32.group-46.frame-18.new",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c2",
+      "text": "$t5",
+      "chars": "NEW",
+      "textGrow": "wh"
+    },
+    "frame-18": {
+      "id": "1186:637",
+      "el": "frame-18",
+      "type": "frame",
+      "box": {
+        "w": 69,
+        "h": 35
+      },
+      "path": "d-4-3-wishlist.frame-32.group-46.frame-18",
+      "pos": {
+        "x": 20,
+        "y": 0
+      },
+      "layout": "$l4",
+      "fill": "$c3",
+      "radius": "$r5",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "new"
+      ]
+    },
+    "group-46": {
+      "id": "1186:602",
+      "el": "group-46",
+      "type": "group",
+      "box": {
+        "w": 269,
+        "h": 346
+      },
+      "path": "d-4-3-wishlist.frame-32.group-46",
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-36",
+        "union-2",
+        "polkadot-skirt",
+        "from-tiktok-you-shared",
+        "image-removebg-preview-7-1",
+        "frame-18"
+      ]
+    },
+    "rectangle-36-2": {
+      "id": "1186:611",
+      "el": "rectangle-36-2",
+      "type": "rect",
+      "box": {
+        "w": 269,
+        "h": 333
+      },
+      "path": "d-4-3-wishlist.frame-32.group-46-2.rectangle-36-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c9",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-1": {
+      "id": "1186:614",
+      "el": "image-removebg-preview-1",
+      "type": "rect",
+      "box": {
+        "w": 169,
+        "h": 160
+      },
+      "name": "image-removebg-preview 1",
+      "path": "d-4-3-wishlist.frame-32.group-46-2.image-removebg-preview-1",
+      "pos": {
+        "x": 50,
+        "y": 64
+      },
+      "assetId": "837079d7a4263daef60e6c2261fde3a6852552dd",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "837079d7a4263daef60e6c2261fde3a6852552dd",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.7313451170921326,
+              0.13030901551246643
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "ellipse-5-2": {
+      "id": "1186:616",
+      "el": "ellipse-5-2",
+      "type": "vector",
+      "box": {
+        "w": 29,
+        "h": 27
+      },
+      "path": "d-4-3-wishlist.frame-32.group-46-2.union-3.ellipse-5-2",
+      "pos": {
+        "x": 2,
+        "y": 1
+      },
+      "fill": "$c10",
+      "iconHint": "Blue Shirt",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-6": {
+      "id": "1186:617",
+      "el": "vector-6",
+      "type": "vector",
+      "box": {
+        "w": 32,
+        "h": 31
+      },
+      "path": "d-4-3-wishlist.frame-32.group-46-2.union-3.vector-6",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c10",
+      "iconHint": "Blue Shirt",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "union-3": {
+      "id": "1186:615",
+      "el": "union-3",
+      "type": "bool",
+      "box": {
+        "w": 32,
+        "h": 31
+      },
+      "path": "d-4-3-wishlist.frame-32.group-46-2.union-3",
+      "pos": {
+        "x": 213,
+        "y": 24
+      },
+      "fill": "$c10",
+      "iconHint": "Blue Shirt",
+      "vectorPath": "$v2",
+      "children": [
+        "ellipse-5-2",
+        "vector-6"
+      ]
+    },
+    "blue-shirt": {
+      "id": "1187:640",
+      "el": "blue-shirt",
+      "type": "text",
+      "box": {
+        "w": 102,
+        "h": 30
+      },
+      "name": "Blue Shirt",
+      "path": "d-4-3-wishlist.frame-32.group-46-2.blue-shirt",
+      "pos": {
+        "x": 84,
+        "y": 259
+      },
+      "fill": "$c2",
+      "text": "$t8",
+      "chars": "Blue Shirt",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rp39-000": {
+      "id": "1187:641",
+      "el": "rp39-000",
+      "type": "text",
+      "box": {
+        "w": 52,
+        "h": 16
+      },
+      "name": "Rp39.000",
+      "path": "d-4-3-wishlist.frame-32.group-46-2.rp39-000",
+      "pos": {
+        "x": 109,
+        "y": 293
+      },
+      "fill": "$c2",
+      "text": "$t9",
+      "chars": "Rp39.000",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-46-2": {
+      "id": "1186:610",
+      "el": "group-46-2",
+      "type": "group",
+      "box": {
+        "w": 269,
+        "h": 333
+      },
+      "path": "d-4-3-wishlist.frame-32.group-46-2",
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-36-2",
+        "image-removebg-preview-1",
+        "union-3",
+        "blue-shirt",
+        "rp39-000"
+      ]
+    },
+    "rectangle-36-3": {
+      "id": "1186:619",
+      "el": "rectangle-36-3",
+      "type": "rect",
+      "box": {
+        "w": 269,
+        "h": 333
+      },
+      "path": "d-4-3-wishlist.frame-32.group-47.rectangle-36-3",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c9",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-1-2": {
+      "id": "1186:622",
+      "el": "image-removebg-preview-1-2",
+      "type": "rect",
+      "box": {
+        "w": 169,
+        "h": 160
+      },
+      "name": "image-removebg-preview 1",
+      "path": "d-4-3-wishlist.frame-32.group-47.image-removebg-preview-1-2",
+      "pos": {
+        "x": 50,
+        "y": 64
+      },
+      "assetId": "837079d7a4263daef60e6c2261fde3a6852552dd",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "837079d7a4263daef60e6c2261fde3a6852552dd",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.7313451170921326,
+              0.13030901551246643
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "ellipse-5-3": {
+      "id": "1186:624",
+      "el": "ellipse-5-3",
+      "type": "vector",
+      "box": {
+        "w": 29,
+        "h": 27
+      },
+      "path": "d-4-3-wishlist.frame-32.group-47.union-4.ellipse-5-3",
+      "pos": {
+        "x": 2,
+        "y": 1
+      },
+      "fill": "$c10",
+      "iconHint": "Blue Shirt",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-7": {
+      "id": "1186:625",
+      "el": "vector-7",
+      "type": "vector",
+      "box": {
+        "w": 32,
+        "h": 31
+      },
+      "path": "d-4-3-wishlist.frame-32.group-47.union-4.vector-7",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c10",
+      "iconHint": "Blue Shirt",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "union-4": {
+      "id": "1186:623",
+      "el": "union-4",
+      "type": "bool",
+      "box": {
+        "w": 32,
+        "h": 31
+      },
+      "path": "d-4-3-wishlist.frame-32.group-47.union-4",
+      "pos": {
+        "x": 213,
+        "y": 24
+      },
+      "fill": "$c10",
+      "iconHint": "Blue Shirt",
+      "vectorPath": "$v2",
+      "children": [
+        "ellipse-5-3",
+        "vector-7"
+      ]
+    },
+    "blue-shirt-2": {
+      "id": "1187:643",
+      "el": "blue-shirt-2",
+      "type": "text",
+      "box": {
+        "w": 102,
+        "h": 30
+      },
+      "name": "Blue Shirt",
+      "path": "d-4-3-wishlist.frame-32.group-47.blue-shirt-2",
+      "pos": {
+        "x": 84,
+        "y": 259
+      },
+      "fill": "$c2",
+      "text": "$t8",
+      "chars": "Blue Shirt",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rp29-000": {
+      "id": "1187:644",
+      "el": "rp29-000",
+      "type": "text",
+      "box": {
+        "w": 57,
+        "h": 16
+      },
+      "name": "Rp29.000",
+      "path": "d-4-3-wishlist.frame-32.group-47.rp29-000",
+      "pos": {
+        "x": 135,
+        "y": 293
+      },
+      "fill": "$c2",
+      "text": "$t10",
+      "chars": "Rp29.000",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rp39-000-2": {
+      "id": "1187:646",
+      "el": "rp39-000-2",
+      "type": "text",
+      "box": {
+        "w": 52,
+        "h": 16
+      },
+      "name": "Rp39.000",
+      "path": "d-4-3-wishlist.frame-32.group-47.rp39-000-2",
+      "pos": {
+        "x": 77,
+        "y": 293
+      },
+      "fill": "$c2",
+      "text": "$t9",
+      "chars": "Rp39.000",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-47": {
+      "id": "1186:618",
+      "el": "group-47",
+      "type": "group",
+      "box": {
+        "w": 269,
+        "h": 333
+      },
+      "path": "d-4-3-wishlist.frame-32.group-47",
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-36-3",
+        "image-removebg-preview-1-2",
+        "union-4",
+        "blue-shirt-2",
+        "rp29-000",
+        "rp39-000-2"
+      ]
+    },
+    "frame-32": {
+      "id": "1186:601",
+      "el": "frame-32",
+      "type": "frame",
+      "box": {
+        "w": 855,
+        "h": 346
+      },
+      "path": "d-4-3-wishlist.frame-32",
+      "pos": {
+        "x": 501,
+        "y": 347
+      },
+      "layout": "$l3",
+      "inheritedFill": "$c1",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "group-46",
+        "group-46-2",
+        "group-47"
+      ]
+    },
+    "all": {
+      "id": "1240:2986",
+      "el": "all",
+      "type": "text",
+      "box": {
+        "w": 28,
+        "h": 19
+      },
+      "name": "all",
+      "path": "d-4-3-wishlist.frame-34.all",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c2",
+      "text": "$t7",
+      "chars": "all",
+      "textGrow": "wh"
+    },
+    "frame-34": {
+      "id": "1240:2985",
+      "el": "frame-34",
+      "type": "frame",
+      "box": {
+        "w": 60,
+        "h": 40
+      },
+      "path": "d-4-3-wishlist.frame-34",
+      "pos": {
+        "x": 501,
+        "y": 271
+      },
+      "layout": "$l5",
+      "inheritedFill": "$c1",
+      "stroke": "$c2",
+      "strokeW": 1.5,
+      "strokeAlign": "inside",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "all"
+      ]
+    },
+    "from-video": {
+      "id": "1240:2988",
+      "el": "from-video",
+      "type": "text",
+      "box": {
+        "w": 97,
+        "h": 19
+      },
+      "name": "from video",
+      "path": "d-4-3-wishlist.frame-9.from-video",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c2",
+      "text": "$t7",
+      "chars": "from video",
+      "textGrow": "wh"
+    },
+    "frame-9": {
+      "id": "1240:2987",
+      "el": "frame-9",
+      "type": "frame",
+      "box": {
+        "w": 129,
+        "h": 40
+      },
+      "path": "d-4-3-wishlist.frame-9",
+      "pos": {
+        "x": 581,
+        "y": 271
+      },
+      "layout": "$l5",
+      "inheritedFill": "$c1",
+      "stroke": "$c9",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "from-video"
+      ]
+    },
+    "shop": {
+      "id": "1240:2990",
+      "el": "shop",
+      "type": "text",
+      "box": {
+        "w": 44,
+        "h": 19
+      },
+      "name": "shop",
+      "path": "d-4-3-wishlist.frame-14.shop",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c2",
+      "text": "$t7",
+      "chars": "shop",
+      "textGrow": "wh"
+    },
+    "frame-14": {
+      "id": "1240:2989",
+      "el": "frame-14",
+      "type": "frame",
+      "box": {
+        "w": 76,
+        "h": 40
+      },
+      "path": "d-4-3-wishlist.frame-14",
+      "pos": {
+        "x": 730,
+        "y": 271
+      },
+      "layout": "$l5",
+      "inheritedFill": "$c1",
+      "stroke": "$c9",
+      "strokeW": 1,
+      "strokeAlign": "inside",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "shop"
+      ]
+    },
+    "d-4-3-wishlist": {
+      "id": "1240:2915",
+      "el": "d-4-3-wishlist",
+      "type": "frame",
+      "box": {
+        "w": 1440,
+        "h": 1024
+      },
+      "name": "D.4.3 Wishlist",
+      "fill": "$c1",
+      "clip": true,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "frame-8",
+        "frame-33",
+        "group-96",
+        "group-288",
+        "image-removebg-preview-8-6",
+        "image-removebg-preview-9-1",
+        "image-removebg-preview-9-2",
+        "image-removebg-preview-10-1",
+        "image-removebg-preview-10-4",
+        "image-removebg-preview-9-3",
+        "image-removebg-preview-10-2",
+        "image-removebg-preview-10-3",
+        "image-removebg-preview-9-4",
+        "image-removebg-preview-9-5",
+        "image-12",
+        "tanara-karin",
+        "karina",
+        "rectangle-118",
+        "xs-36",
+        "favorite",
+        "travel",
+        "wishlist",
+        "line-33",
+        "group-19",
+        "frame-32",
+        "frame-34",
+        "frame-9",
+        "frame-14"
+      ]
+    }
+  },
+  "meta": {
+    "nodeCount": 87,
+    "estTokens": 7038,
+    "depthUsed": 12
+  },
+  "next": "Read `tokens` for the design system, then build the UI from `nodes`. Tag each rendered element data-plumb-id=\"<el>\". A node with a `more` count has that many children not yet included — call plumb_node again on that node's `id` to expand them. This screen has 14 image asset(s) (nodes with `assetId`). Call plumb_assets with this screen's id to download them to disk BEFORE generating HTML — without the real files any <img> will be a placeholder and plumb_verify will flag every image node as asset.missing.",
+  "source": "plugin",
+  "node": "D.4.3 Wishlist"
+}

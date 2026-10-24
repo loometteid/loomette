@@ -31,6 +31,14 @@ export const instant = false;
 export const metadata: Metadata = {
   title: "Loomette",
   description: "Loomette — fashion, made for Indonesia.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.png", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/icon.png",
+  },
 };
 
 export default function RootLayout({

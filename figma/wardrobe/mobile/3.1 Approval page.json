@@ -1,0 +1,777 @@
+{
+  "file": {
+    "name": "Loomette.id",
+    "version": "plugin-1792667111282"
+  },
+  "root": "3-1-approval-page",
+  "tokens": {
+    "color": {
+      "$c1": "#fafaf7",
+      "$c2": "#f2ede5",
+      "$c3": "#444440",
+      "$c4": "#d9d9d9",
+      "$c5": "#c9c3b7",
+      "$c6": "image"
+    },
+    "text": {
+      "$t1": "400 32px Source Serif Pro",
+      "$t2": "400 12px Avenir Next",
+      "$t3": "400 10px Avenir Next",
+      "$t4": "400 14px Source Serif Pro",
+      "$t5": "400 20px Avenir Next"
+    },
+    "radius": {
+      "$r1": 8,
+      "$r2": 12,
+      "$r3": 4,
+      "$r4": 16
+    },
+    "shadow": {},
+    "layout": {
+      "$l1": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          19,
+          108,
+          18,
+          107
+        ]
+      }
+    },
+    "vector": {
+      "$v1": "M7.60355 0.292893 C7.99408 0.683418 7.99408 1.31658 7.60355 1.70711 L2.31066 7 L7.60355 12.2929 C7.99408 12.6834 7.99408 13.3166 7.60355 13.7071 C7.21303 14.0976 6.57986 14.0976 6.18934 13.7071 L0.366116 7.88388 C-0.12204 7.39573 -0.122038 6.60427 0.366117 6.11612 L6.18934 0.292893 C6.57986 -0.0976311 7.21303 -0.0976311 7.60355 0.292893 Z",
+      "$v2": "M14.4004 11.3262 L22.4092 3.31738 L23.6826 4.59082 L15.6738 12.5996 L27 12.5996 L27 14.4004 L15.6738 14.4004 L23.6826 22.4092 L22.4092 23.6826 L14.4004 15.6738 L14.4004 27 L12.5996 27 L12.5996 15.6738 L4.59082 23.6826 L3.31738 22.4092 L11.3262 14.4004 L0 14.4004 L0 12.5996 L11.3262 12.5996 L3.31738 4.59082 L4.59082 3.31738 L12.5996 11.3262 L12.5996 0 L14.4004 0 L14.4004 11.3262 Z",
+      "$v3": "M8.35355 0.146447 C8.54882 0.341709 8.54882 0.658291 8.35355 0.853553 L3.70711 5.5 C3.31658 5.89053 2.68342 5.89052 2.29289 5.5 L0.146447 3.35355 C-0.0488155 3.15829 -0.0488155 2.84171 0.146447 2.64645 C0.341709 2.45118 0.658291 2.45118 0.853553 2.64645 L3 4.79289 L7.64645 0.146447 C7.84171 -0.0488155 8.15829 -0.0488155 8.35355 0.146447 Z"
+    },
+    "props": {
+      "$p1": {
+        "size": "24"
+      }
+    },
+    "meta": {
+      "counts": {
+        "$c1": 3,
+        "$c2": 2,
+        "$p1": 3,
+        "$c3": 9,
+        "$c4": 4,
+        "$c5": 5,
+        "$t3": 2,
+        "$r2": 2,
+        "$c6": 2,
+        "$r3": 2,
+        "$t4": 2,
+        "$l1": 2,
+        "$r4": 2
+      }
+    }
+  },
+  "nodes": {
+    "rectangle-11": {
+      "id": "65:744",
+      "el": "rectangle-11",
+      "type": "rect",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "3-1-approval-page.rectangle-11",
+      "pos": {
+        "x": 40,
+        "y": 40
+      },
+      "fill": "$c2",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector": {
+      "id": "I65:745;3:2631",
+      "el": "vector",
+      "type": "vector",
+      "box": {
+        "w": 8,
+        "h": 14
+      },
+      "path": "3-1-approval-page.chevron-left.vector",
+      "pos": {
+        "x": 8,
+        "y": 5
+      },
+      "fill": "$c3",
+      "iconHint": "We found these pieces.",
+      "vectorPath": "$v1",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "chevron-left": {
+      "id": "65:745",
+      "el": "chevron-left",
+      "type": "instance",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "name": "chevron-left",
+      "path": "3-1-approval-page.chevron-left",
+      "pos": {
+        "x": 48,
+        "y": 48
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector"
+      ]
+    },
+    "we-found-these-pieces": {
+      "id": "65:780",
+      "el": "we-found-these-pieces",
+      "type": "text",
+      "box": {
+        "w": 241,
+        "h": 80
+      },
+      "name": "We found these pieces.",
+      "path": "3-1-approval-page.we-found-these-pieces",
+      "pos": {
+        "x": 84,
+        "y": 108
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "We found these pieces.",
+      "textGrow": "h",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16": {
+      "id": "65:782",
+      "el": "rectangle-16",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 27
+      },
+      "path": "3-1-approval-page.union.rectangle-16",
+      "pos": {
+        "x": 13,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17": {
+      "id": "65:783",
+      "el": "rectangle-17",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "3-1-approval-page.union.rectangle-17",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 2578,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19": {
+      "id": "65:784",
+      "el": "rectangle-19",
+      "type": "rect",
+      "box": {
+        "w": 20,
+        "h": 20
+      },
+      "path": "3-1-approval-page.union.rectangle-19",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 7735,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18": {
+      "id": "65:785",
+      "el": "rectangle-18",
+      "type": "rect",
+      "box": {
+        "w": 27,
+        "h": 2
+      },
+      "path": "3-1-approval-page.union.rectangle-18",
+      "pos": {
+        "x": 0,
+        "y": 13
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union": {
+      "id": "65:781",
+      "el": "union",
+      "type": "bool",
+      "box": {
+        "w": 27,
+        "h": 27
+      },
+      "path": "3-1-approval-page.union",
+      "pos": {
+        "x": 43,
+        "y": 112
+      },
+      "fill": "$c3",
+      "iconHint": "We found these pieces.",
+      "vectorPath": "$v2",
+      "children": [
+        "rectangle-16",
+        "rectangle-17",
+        "rectangle-19",
+        "rectangle-18"
+      ]
+    },
+    "select-what-to-add-to-your-wardrobe": {
+      "id": "65:786",
+      "el": "select-what-to-add-to-your-wardrobe",
+      "type": "text",
+      "box": {
+        "w": 279,
+        "h": 16
+      },
+      "name": "Select what to add to your wardrobe.",
+      "path": "3-1-approval-page.select-what-to-add-to-your-wardrobe",
+      "pos": {
+        "x": 84,
+        "y": 192
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "Select what to add to your wardrobe. ",
+      "textGrow": "h",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "19-05-26-18-00": {
+      "id": "65:794",
+      "el": "19-05-26-18-00",
+      "type": "text",
+      "box": {
+        "w": 61,
+        "h": 14
+      },
+      "name": "19/05/26 18.00",
+      "path": "3-1-approval-page.group-46.19-05-26-18-00",
+      "pos": {
+        "x": 41,
+        "y": 151
+      },
+      "fill": "$c5",
+      "text": "$t3",
+      "chars": "19/05/26 18.00",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-36": {
+      "id": "65:788",
+      "el": "rectangle-36",
+      "type": "rect",
+      "box": {
+        "w": 143,
+        "h": 177
+      },
+      "path": "3-1-approval-page.group-46.rectangle-36",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c5",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-1": {
+      "id": "65:789",
+      "el": "image-removebg-preview-1",
+      "type": "rect",
+      "box": {
+        "w": 103,
+        "h": 97
+      },
+      "name": "image-removebg-preview 1",
+      "path": "3-1-approval-page.group-46.image-removebg-preview-1",
+      "pos": {
+        "x": 20,
+        "y": 24
+      },
+      "assetId": "837079d7a4263daef60e6c2261fde3a6852552dd",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "837079d7a4263daef60e6c2261fde3a6852552dd",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.7313451170921326,
+              0.13030901551246643
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-37": {
+      "id": "65:791",
+      "el": "rectangle-37",
+      "type": "rect",
+      "box": {
+        "w": 16,
+        "h": 16
+      },
+      "path": "3-1-approval-page.group-46.rectangle-37",
+      "pos": {
+        "x": 115,
+        "y": 12
+      },
+      "fill": "$c3",
+      "radius": "$r3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-2": {
+      "id": "I65:837;3:2694",
+      "el": "vector-2",
+      "type": "vector",
+      "box": {
+        "w": 9,
+        "h": 6
+      },
+      "path": "3-1-approval-page.group-46.done-v.vector-2",
+      "pos": {
+        "x": 2,
+        "y": 3
+      },
+      "fill": "$c1",
+      "iconHint": "19/05/26 18.00",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "done-v": {
+      "id": "65:837",
+      "el": "done-v",
+      "type": "instance",
+      "box": {
+        "w": 12,
+        "h": 12
+      },
+      "name": "done-v",
+      "path": "3-1-approval-page.group-46.done-v",
+      "pos": {
+        "x": 117,
+        "y": 14
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector-2"
+      ]
+    },
+    "blue-shirt": {
+      "id": "65:792",
+      "el": "blue-shirt",
+      "type": "text",
+      "box": {
+        "w": 58,
+        "h": 18
+      },
+      "name": "Blue shirt",
+      "path": "3-1-approval-page.group-46.blue-shirt",
+      "pos": {
+        "x": 43,
+        "y": 133
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "Blue shirt",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-46": {
+      "id": "65:796",
+      "el": "group-46",
+      "type": "group",
+      "box": {
+        "w": 143,
+        "h": 177
+      },
+      "path": "3-1-approval-page.group-46",
+      "pos": {
+        "x": 47,
+        "y": 236
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "19-05-26-18-00",
+        "rectangle-36",
+        "image-removebg-preview-1",
+        "rectangle-37",
+        "done-v",
+        "blue-shirt"
+      ]
+    },
+    "19-05-26-18-00-2": {
+      "id": "65:798",
+      "el": "19-05-26-18-00-2",
+      "type": "text",
+      "box": {
+        "w": 61,
+        "h": 14
+      },
+      "name": "19/05/26 18.00",
+      "path": "3-1-approval-page.group-47.19-05-26-18-00-2",
+      "pos": {
+        "x": 41,
+        "y": 151
+      },
+      "fill": "$c5",
+      "text": "$t3",
+      "chars": "19/05/26 18.00",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-36-2": {
+      "id": "65:799",
+      "el": "rectangle-36-2",
+      "type": "rect",
+      "box": {
+        "w": 143,
+        "h": 177
+      },
+      "path": "3-1-approval-page.group-47.rectangle-36-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c5",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "image-removebg-preview-7-1": {
+      "id": "65:804",
+      "el": "image-removebg-preview-7-1",
+      "type": "rect",
+      "box": {
+        "w": 78,
+        "h": 100
+      },
+      "name": "image-removebg-preview (7) 1",
+      "path": "3-1-approval-page.group-47.image-removebg-preview-7-1",
+      "pos": {
+        "x": 33,
+        "y": 28
+      },
+      "assetId": "e5420007b99f8c30cfc67be00af0ec3b2f376e2a",
+      "fills": [
+        {
+          "type": "image",
+          "assetId": "e5420007b99f8c30cfc67be00af0ec3b2f376e2a",
+          "scaleMode": "crop",
+          "crop": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0.8557214140892029,
+              0.07213930040597916
+            ]
+          ]
+        }
+      ],
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-37-2": {
+      "id": "65:801",
+      "el": "rectangle-37-2",
+      "type": "rect",
+      "box": {
+        "w": 16,
+        "h": 16
+      },
+      "path": "3-1-approval-page.group-47.rectangle-37-2",
+      "pos": {
+        "x": 115,
+        "y": 12
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c5",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r3",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "polkadot-skirt": {
+      "id": "65:802",
+      "el": "polkadot-skirt",
+      "type": "text",
+      "box": {
+        "w": 83,
+        "h": 18
+      },
+      "name": "Polkadot skirt",
+      "path": "3-1-approval-page.group-47.polkadot-skirt",
+      "pos": {
+        "x": 30,
+        "y": 133
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "Polkadot skirt",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "group-47": {
+      "id": "65:797",
+      "el": "group-47",
+      "type": "group",
+      "box": {
+        "w": 143,
+        "h": 177
+      },
+      "path": "3-1-approval-page.group-47",
+      "pos": {
+        "x": 212,
+        "y": 236
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "19-05-26-18-00-2",
+        "rectangle-36-2",
+        "image-removebg-preview-7-1",
+        "rectangle-37-2",
+        "polkadot-skirt"
+      ]
+    },
+    "approve": {
+      "id": "65:807",
+      "el": "approve",
+      "type": "text",
+      "box": {
+        "w": 74,
+        "h": 27
+      },
+      "name": "APPROVE",
+      "path": "3-1-approval-page.frame-7.approve",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c1",
+      "text": "$t5",
+      "chars": "APPROVE",
+      "textGrow": "wh"
+    },
+    "frame-7": {
+      "id": "65:806",
+      "el": "frame-7",
+      "type": "frame",
+      "box": {
+        "w": 253,
+        "h": 64
+      },
+      "path": "3-1-approval-page.frame-7",
+      "pos": {
+        "x": 34,
+        "y": 758
+      },
+      "layout": "$l1",
+      "fill": "$c3",
+      "radius": "$r4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "approve"
+      ]
+    },
+    "vector-3": {
+      "id": "I65:823;3:3305",
+      "el": "vector-3",
+      "type": "vector",
+      "box": {
+        "w": 20,
+        "h": 22
+      },
+      "path": "3-1-approval-page.frame-8.trash-delete.vector-3",
+      "pos": {
+        "x": 2,
+        "y": 1
+      },
+      "fill": "$c3",
+      "iconHint": "trash delete",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "trash-delete": {
+      "id": "65:823",
+      "el": "trash-delete",
+      "type": "instance",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "name": "trash-delete",
+      "path": "3-1-approval-page.frame-8.trash-delete",
+      "inheritedFill": "$c2",
+      "clip": true,
+      "props": "$p1",
+      "children": [
+        "vector-3"
+      ]
+    },
+    "frame-8": {
+      "id": "65:809",
+      "el": "frame-8",
+      "type": "frame",
+      "box": {
+        "w": 64,
+        "h": 64
+      },
+      "path": "3-1-approval-page.frame-8",
+      "pos": {
+        "x": 303,
+        "y": 758
+      },
+      "layout": "$l1",
+      "fill": "$c2",
+      "radius": "$r4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "trash-delete"
+      ]
+    },
+    "3-1-approval-page": {
+      "id": "65:740",
+      "el": "3-1-approval-page",
+      "type": "frame",
+      "box": {
+        "w": 402,
+        "h": 874
+      },
+      "name": "3.1 Approval page",
+      "fill": "$c1",
+      "clip": true,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "rectangle-11",
+        "chevron-left",
+        "we-found-these-pieces",
+        "union",
+        "select-what-to-add-to-your-wardrobe",
+        "group-46",
+        "group-47",
+        "frame-7",
+        "frame-8"
+      ]
+    }
+  },
+  "meta": {
+    "nodeCount": 30,
+    "estTokens": 2534,
+    "depthUsed": 12
+  },
+  "next": "Read `tokens` for the design system, then build the UI from `nodes`. Tag each rendered element data-plumb-id=\"<el>\". A node with a `more` count has that many children not yet included — call plumb_node again on that node's `id` to expand them. This screen has 2 image asset(s) (nodes with `assetId`). Call plumb_assets with this screen's id to download them to disk BEFORE generating HTML — without the real files any <img> will be a placeholder and plumb_verify will flag every image node as asset.missing.",
+  "source": "plugin",
+  "node": "3.1 Approval page"
+}

@@ -1,0 +1,3242 @@
+{
+  "file": {
+    "name": "Loomette.id",
+    "version": "plugin-1792667161119"
+  },
+  "root": "d-4-5-4-2-pop-up-delete-account",
+  "tokens": {
+    "color": {
+      "$c1": "#fafaf7",
+      "$c2": "#ffffff1a",
+      "$c3": "#444440",
+      "$c4": "#d9d9d9",
+      "$c5": "#000000",
+      "$c6": "#f2ede5",
+      "$c7": "#c9c3b7",
+      "$c8": "#f0ece5",
+      "$c9": "#c9c3b733"
+    },
+    "text": {
+      "$t1": "400 24px Avenir Next",
+      "$t2": "400 48px Source Serif Pro",
+      "$t3": "400 20px Figtree",
+      "$t4": "600 24px/1.25 Source Serif Pro -0.4px",
+      "$t5": "400 16px/1.5 Inter -0.32px",
+      "$t6": "400 16px/1.5 Figtree -0.32px",
+      "$t7": "400 16px/1.88 Figtree",
+      "$t8": "400 12px/1.5 Inter -0.24px",
+      "$t9": "400 64px Source Serif Pro",
+      "$t10": "400 20px/1.4 Figtree",
+      "$t11": "400 20px Avenir Next",
+      "$t12": "300 16px Figtree"
+    },
+    "radius": {
+      "$r1": 16,
+      "$r2": "full",
+      "$r3": 20,
+      "$r4": 8,
+      "$r5": 4
+    },
+    "shadow": {},
+    "layout": {
+      "$l1": {
+        "flow": "col",
+        "gap": 40,
+        "pad": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l2": {
+        "flow": "col",
+        "pad": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l3": {
+        "align": "center",
+        "contentMain": 98,
+        "flow": "row",
+        "justify": "space-between",
+        "pad": [
+          24,
+          0,
+          16,
+          0
+        ]
+      },
+      "$l4": {
+        "flow": "col",
+        "pad": [
+          8,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l5": {
+        "align": "center",
+        "contentMain": 188,
+        "flow": "row",
+        "justify": "space-between",
+        "pad": [
+          16,
+          0,
+          16,
+          0
+        ]
+      },
+      "$l6": {
+        "align": "center",
+        "contentMain": 174,
+        "flow": "row",
+        "justify": "space-between",
+        "pad": [
+          16,
+          0,
+          16,
+          0
+        ]
+      },
+      "$l7": {
+        "align": "center",
+        "contentMain": 162,
+        "flow": "row",
+        "justify": "space-between",
+        "pad": [
+          16,
+          0,
+          16,
+          0
+        ]
+      },
+      "$l8": {
+        "align": "center",
+        "contentMain": 162,
+        "flow": "row",
+        "justify": "space-between",
+        "pad": [
+          24,
+          0,
+          16,
+          0
+        ]
+      },
+      "$l9": {
+        "align": "center",
+        "flow": "row",
+        "gap": 4,
+        "pad": [
+          12,
+          20,
+          12,
+          20
+        ]
+      },
+      "$l10": {
+        "align": "center",
+        "flow": "col",
+        "pad": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l11": {
+        "align": "center",
+        "contentMain": 185,
+        "flow": "row",
+        "justify": "space-between",
+        "pad": [
+          16,
+          0,
+          16,
+          0
+        ]
+      },
+      "$l12": {
+        "align": "center",
+        "contentMain": 143,
+        "flow": "row",
+        "justify": "space-between",
+        "pad": [
+          16,
+          0,
+          16,
+          0
+        ]
+      },
+      "$l13": {
+        "align": "center",
+        "contentMain": 78,
+        "flow": "row",
+        "justify": "space-between",
+        "pad": [
+          16,
+          0,
+          16,
+          0
+        ]
+      },
+      "$l14": {
+        "align": "center",
+        "contentMain": 148,
+        "flow": "row",
+        "justify": "space-between",
+        "pad": [
+          16,
+          0,
+          16,
+          0
+        ]
+      },
+      "$l15": {
+        "align": "center",
+        "flow": "col",
+        "pad": [
+          16,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l16": {
+        "align": "center",
+        "flow": "row",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          19,
+          108,
+          18,
+          107
+        ]
+      },
+      "$l17": {
+        "flow": "col",
+        "gap": 12,
+        "pad": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "$l18": {
+        "flow": "col",
+        "gap": 10,
+        "justify": "center",
+        "pad": [
+          12,
+          212,
+          12,
+          24
+        ]
+      },
+      "$l19": {
+        "align": "center",
+        "flow": "row",
+        "gap": 8,
+        "pad": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "vector": {
+      "$v1": "M12.7988 11.4121 L19.9199 3.3418 L21.0518 4.62402 L13.9307 12.6934 L24 12.6934 L24 14.5068 L13.9316 14.5068 L21.0508 22.5752 L19.9189 23.8574 L12.7988 15.7871 L12.7988 27.2002 L11.1992 27.2002 L11.1992 15.79 L4.08105 23.8574 L2.94922 22.5752 L10.0674 14.5068 L0 14.5068 L0 12.6934 L10.0693 12.6934 L2.94922 4.62402 L4.08008 3.3418 L11.1992 11.4092 L11.1992 0 L12.7988 0 L12.7988 11.4121 Z",
+      "$v2": "M21.333 16.7812 L33.1992 4.91504 L35.085 6.80078 L23.2197 18.666 L40 18.666 L40 21.333 L23.2188 21.333 L35.084 33.1982 L33.1982 35.084 L21.333 23.2188 L21.333 40 L18.666 40 L18.666 23.2197 L6.80078 35.085 L4.91504 33.1992 L16.7812 21.333 L0 21.333 L0 18.666 L16.7803 18.666 L4.91406 6.7998 L6.7998 4.91406 L18.666 16.7803 L18.666 0 L21.333 0 L21.333 16.7812 Z",
+      "$v3": "M0.29277 0.29277 C0.683132 -0.0975901 1.31603 -0.0975901 1.70639 0.29277 L7.52717 6.11356 C8.01512 6.6015 8.01513 7.39263 7.52717 7.88058 L1.70639 13.7014 C1.31603 14.0917 0.683132 14.0917 0.29277 13.7014 C-0.0975901 13.311 -0.0975901 12.6781 0.29277 12.2877 L5.58345 6.99707 L0.29277 1.70639 C-0.0975901 1.31603 -0.0975901 0.683132 0.29277 0.29277 Z",
+      "$v4": "M0.170709 0.170709 C0.398321 -0.0569029 0.767353 -0.0569029 0.994965 0.170709 L4.07985 3.25561 L7.16475 0.170709 C7.39236 -0.0569029 7.7614 -0.0569029 7.989 0.170709 C8.21662 0.398321 8.21662 0.767354 7.989 0.994965 L4.59502 4.38895 C4.31051 4.67347 3.84921 4.67347 3.5647 4.38895 L0.170709 0.994965 C-0.0569029 0.767354 -0.0569029 0.398321 0.170709 0.170709 Z",
+      "$v5": "M0.390524 0.390524 C0.911223 -0.130175 1.75544 -0.130175 2.27614 0.390524 L9.33333 7.44772 L16.3905 0.390524 C16.9112 -0.130175 17.7554 -0.130175 18.2761 0.390524 C18.7968 0.911223 18.7968 1.75544 18.2761 2.27614 L11.219 9.33333 L18.2761 16.3905 C18.7968 16.9112 18.7968 17.7554 18.2761 18.2761 C17.7554 18.7968 16.9112 18.7968 16.3905 18.2761 L9.33333 11.219 L2.27614 18.2761 C1.75544 18.7968 0.911223 18.7968 0.390524 18.2761 C-0.130175 17.7554 -0.130175 16.9112 0.390524 16.3905 L7.44772 9.33333 L0.390524 2.27614 C-0.130175 1.75544 -0.130175 0.911223 0.390524 0.390524 Z"
+    },
+    "props": {
+      "$p1": {
+        "size": "24"
+      }
+    },
+    "meta": {
+      "counts": {
+        "$c1": 8,
+        "$c3": 52,
+        "$c4": 8,
+        "$t1": 6,
+        "$p1": 2,
+        "$c6": 4,
+        "$r1": 3,
+        "$t3": 9,
+        "$c7": 10,
+        "$l2": 20,
+        "$t4": 5,
+        "$t5": 6,
+        "$v3": 5,
+        "$l4": 3,
+        "$c8": 5,
+        "$t6": 4,
+        "$r2": 10,
+        "$l11": 2,
+        "$r3": 2,
+        "$r4": 2,
+        "$t11": 5,
+        "$r5": 5
+      }
+    }
+  },
+  "nodes": {
+    "rectangle-15": {
+      "id": "1235:1727",
+      "el": "rectangle-15",
+      "type": "rect",
+      "box": {
+        "w": 1465,
+        "h": 136
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.group-96.rectangle-15",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16": {
+      "id": "1235:1729",
+      "el": "rectangle-16",
+      "type": "rect",
+      "box": {
+        "w": 2,
+        "h": 27
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.group-96.union.rectangle-16",
+      "pos": {
+        "x": 11,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17": {
+      "id": "1235:1730",
+      "el": "rectangle-17",
+      "type": "rect",
+      "box": {
+        "w": 18,
+        "h": 21
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.group-96.union.rectangle-17",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 2783,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19": {
+      "id": "1235:1731",
+      "el": "rectangle-19",
+      "type": "rect",
+      "box": {
+        "w": 18,
+        "h": 21
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.group-96.union.rectangle-19",
+      "pos": {
+        "x": 3,
+        "y": 3
+      },
+      "fill": "$c4",
+      "rotation": 7530,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18": {
+      "id": "1235:1732",
+      "el": "rectangle-18",
+      "type": "rect",
+      "box": {
+        "w": 24,
+        "h": 2
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.group-96.union.rectangle-18",
+      "pos": {
+        "x": 0,
+        "y": 13
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union": {
+      "id": "1235:1728",
+      "el": "union",
+      "type": "bool",
+      "box": {
+        "w": 24,
+        "h": 27
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.group-96.union",
+      "pos": {
+        "x": 75,
+        "y": 54
+      },
+      "fill": "$c3",
+      "iconHint": "loomette",
+      "vectorPath": "$v1",
+      "children": [
+        "rectangle-16",
+        "rectangle-17",
+        "rectangle-19",
+        "rectangle-18"
+      ]
+    },
+    "loomette": {
+      "id": "1235:1733",
+      "el": "loomette",
+      "type": "text",
+      "box": {
+        "w": 99,
+        "h": 37
+      },
+      "name": "loomette",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.group-96.loomette",
+      "pos": {
+        "x": 115,
+        "y": 50
+      },
+      "fill": "$c5",
+      "text": "$t1",
+      "chars": "loomette",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "home": {
+      "id": "1235:1734",
+      "el": "home",
+      "type": "text",
+      "box": {
+        "w": 61,
+        "h": 37
+      },
+      "name": "Home",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.group-96.home",
+      "pos": {
+        "x": 583,
+        "y": 50
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "Home",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "calendar": {
+      "id": "1235:1735",
+      "el": "calendar",
+      "type": "text",
+      "box": {
+        "w": 103,
+        "h": 37
+      },
+      "name": "calendar",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.group-96.calendar",
+      "pos": {
+        "x": 680,
+        "y": 50
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "calendar",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "wardrobe": {
+      "id": "1235:1736",
+      "el": "wardrobe",
+      "type": "text",
+      "box": {
+        "w": 110,
+        "h": 37
+      },
+      "name": "wardrobe",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.group-96.wardrobe",
+      "pos": {
+        "x": 819,
+        "y": 50
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "wardrobe",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "gevyndo": {
+      "id": "1235:1738",
+      "el": "gevyndo",
+      "type": "text",
+      "box": {
+        "w": 96,
+        "h": 37
+      },
+      "name": "gevyndo",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.group-96.group-254.gevyndo",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t1",
+      "chars": "gevyndo",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector": {
+      "id": "I1235:1739;3:3637",
+      "el": "vector",
+      "type": "vector",
+      "box": {
+        "w": 16,
+        "h": 22
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.group-96.group-254.user.vector",
+      "pos": {
+        "x": 4,
+        "y": 3
+      },
+      "fill": "$c3",
+      "iconHint": "gevyndo",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "user": {
+      "id": "1235:1739",
+      "el": "user",
+      "type": "instance",
+      "box": {
+        "w": 24,
+        "h": 27
+      },
+      "name": "user",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.group-96.group-254.user",
+      "pos": {
+        "x": 112,
+        "y": 5
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "vector"
+      ]
+    },
+    "group-254": {
+      "id": "1235:1737",
+      "el": "group-254",
+      "type": "group",
+      "box": {
+        "w": 136,
+        "h": 37
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.group-96.group-254",
+      "pos": {
+        "x": 1251,
+        "y": 50
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "gevyndo",
+        "user"
+      ]
+    },
+    "group-96": {
+      "id": "1235:1726",
+      "el": "group-96",
+      "type": "group",
+      "box": {
+        "w": 1465,
+        "h": 136
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.group-96",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-15",
+        "union",
+        "loomette",
+        "home",
+        "calendar",
+        "wardrobe",
+        "group-254"
+      ]
+    },
+    "settings": {
+      "id": "1235:1740",
+      "el": "settings",
+      "type": "text",
+      "box": {
+        "w": 241,
+        "h": 60
+      },
+      "name": "Settings",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.settings",
+      "pos": {
+        "x": 188,
+        "y": 250
+      },
+      "fill": "$c3",
+      "text": "$t2",
+      "chars": "Settings",
+      "textGrow": "h",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-117": {
+      "id": "1235:1741",
+      "el": "rectangle-117",
+      "type": "rect",
+      "box": {
+        "w": 280,
+        "h": 64
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.rectangle-117",
+      "pos": {
+        "x": 115,
+        "y": 390
+      },
+      "fill": "$c6",
+      "radius": "$r1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "pricing": {
+      "id": "1235:1742",
+      "el": "pricing",
+      "type": "text",
+      "box": {
+        "w": 59,
+        "h": 24
+      },
+      "name": "Pricing",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.pricing",
+      "pos": {
+        "x": 153,
+        "y": 410
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "Pricing",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "notification": {
+      "id": "1235:1743",
+      "el": "notification",
+      "type": "text",
+      "box": {
+        "w": 103,
+        "h": 24
+      },
+      "name": "Notification",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.notification",
+      "pos": {
+        "x": 153,
+        "y": 482
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "Notification",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "apprearance": {
+      "id": "1235:1744",
+      "el": "apprearance",
+      "type": "text",
+      "box": {
+        "w": 111,
+        "h": 24
+      },
+      "name": "apprearance",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.apprearance",
+      "pos": {
+        "x": 153,
+        "y": 554
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "apprearance",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "privacy-data": {
+      "id": "1235:1745",
+      "el": "privacy-data",
+      "type": "text",
+      "box": {
+        "w": 124,
+        "h": 24
+      },
+      "name": "privacy & data",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.privacy-data",
+      "pos": {
+        "x": 153,
+        "y": 626
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "privacy & data",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "account": {
+      "id": "1235:1746",
+      "el": "account",
+      "type": "text",
+      "box": {
+        "w": 75,
+        "h": 24
+      },
+      "name": "account",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.account",
+      "pos": {
+        "x": 153,
+        "y": 698
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "account",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-16-2": {
+      "id": "1235:1748",
+      "el": "rectangle-16-2",
+      "type": "rect",
+      "box": {
+        "w": 3,
+        "h": 40
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.union-2.rectangle-16-2",
+      "pos": {
+        "x": 19,
+        "y": 0
+      },
+      "fill": "$c4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-17-2": {
+      "id": "1235:1749",
+      "el": "rectangle-17-2",
+      "type": "rect",
+      "box": {
+        "w": 30,
+        "h": 30
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.union-2.rectangle-17-2",
+      "pos": {
+        "x": 5,
+        "y": 5
+      },
+      "fill": "$c4",
+      "rotation": 2578,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-19-2": {
+      "id": "1235:1750",
+      "el": "rectangle-19-2",
+      "type": "rect",
+      "box": {
+        "w": 30,
+        "h": 30
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.union-2.rectangle-19-2",
+      "pos": {
+        "x": 5,
+        "y": 5
+      },
+      "fill": "$c4",
+      "rotation": 7735,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-18-2": {
+      "id": "1235:1751",
+      "el": "rectangle-18-2",
+      "type": "rect",
+      "box": {
+        "w": 40,
+        "h": 3
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.union-2.rectangle-18-2",
+      "pos": {
+        "x": 0,
+        "y": 19
+      },
+      "fill": "$c4",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "union-2": {
+      "id": "1235:1747",
+      "el": "union-2",
+      "type": "bool",
+      "box": {
+        "w": 40,
+        "h": 40
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.union-2",
+      "pos": {
+        "x": 122,
+        "y": 260
+      },
+      "fill": "$c3",
+      "iconHint": "Settings",
+      "vectorPath": "$v2",
+      "children": [
+        "rectangle-16-2",
+        "rectangle-17-2",
+        "rectangle-19-2",
+        "rectangle-18-2"
+      ]
+    },
+    "manage-how-the-app-works-for-you": {
+      "id": "1235:1752",
+      "el": "manage-how-the-app-works-for-you",
+      "type": "text",
+      "box": {
+        "w": 397,
+        "h": 24
+      },
+      "name": "Manage how the app works for you.",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.manage-how-the-app-works-for-you",
+      "pos": {
+        "x": 188,
+        "y": 318
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": "Manage how the app works for you.",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "profile-settings": {
+      "id": "1235:1753",
+      "el": "profile-settings",
+      "type": "text",
+      "box": {
+        "w": 255,
+        "h": 24
+      },
+      "name": "profile > settings",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.profile-settings",
+      "pos": {
+        "x": 115,
+        "y": 186
+      },
+      "fill": "$c3",
+      "text": "$t3",
+      "chars": [
+        {
+          "t": "profile",
+          "d": "underline"
+        },
+        {
+          "t": " > settings"
+        }
+      ],
+      "textGrow": "h",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "line-33": {
+      "id": "1235:1754",
+      "el": "line-33",
+      "type": "line",
+      "box": {
+        "w": 0,
+        "h": 1029
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.line-33",
+      "pos": {
+        "x": 475,
+        "y": 390
+      },
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "center",
+      "rotation": 5157,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "pricing-2": {
+      "id": "1235:1758",
+      "el": "pricing-2",
+      "type": "text",
+      "box": {
+        "w": 77,
+        "h": 30
+      },
+      "name": "Pricing",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard.heading-2.pricing-2",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "Pricing",
+      "textGrow": "wh"
+    },
+    "heading-2": {
+      "id": "1235:1757",
+      "el": "heading-2",
+      "type": "frame",
+      "box": {
+        "w": 723,
+        "h": 30
+      },
+      "name": "Heading 2",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard.heading-2",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill",
+        "h": "hug"
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "children": [
+        "pricing-2"
+      ]
+    },
+    "your-plan": {
+      "id": "1235:1761",
+      "el": "your-plan",
+      "type": "text",
+      "box": {
+        "w": 90,
+        "h": 24
+      },
+      "name": "your plan",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard.linkrow.text.your-plan",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t5",
+      "chars": "your plan",
+      "textGrow": "wh"
+    },
+    "text": {
+      "id": "1235:1760",
+      "el": "text",
+      "type": "frame",
+      "box": {
+        "w": 90,
+        "h": 24
+      },
+      "name": "Text",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard.linkrow.text",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "children": [
+        "your-plan"
+      ]
+    },
+    "vector-2": {
+      "id": "1235:1763",
+      "el": "vector-2",
+      "type": "vector",
+      "box": {
+        "w": 8,
+        "h": 14
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard.linkrow.icon.vector-2",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "iconHint": "Link Row",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "icon": {
+      "id": "1235:1762",
+      "el": "icon",
+      "type": "frame",
+      "box": {
+        "w": 8,
+        "h": 14
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard.linkrow.icon",
+      "inheritedFill": "$c1",
+      "clip": true,
+      "children": [
+        "vector-2"
+      ]
+    },
+    "linkrow": {
+      "id": "1235:1759",
+      "el": "linkrow",
+      "type": "frame",
+      "box": {
+        "w": 723,
+        "h": 64
+      },
+      "name": "LinkRow",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard.linkrow",
+      "layout": "$l3",
+      "inheritedFill": "$c1",
+      "children": [
+        "text",
+        "icon"
+      ]
+    },
+    "sectioncard": {
+      "id": "1235:1756",
+      "el": "sectioncard",
+      "type": "frame",
+      "box": {
+        "w": 723,
+        "h": 94
+      },
+      "name": "SectionCard",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "children": [
+        "heading-2",
+        "linkrow"
+      ]
+    },
+    "notification-2": {
+      "id": "1235:1766",
+      "el": "notification-2",
+      "type": "text",
+      "box": {
+        "w": 125,
+        "h": 30
+      },
+      "name": "Notification",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-2.heading-2-2.notification-2",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "Notification",
+      "textGrow": "wh"
+    },
+    "heading-2-2": {
+      "id": "1235:1765",
+      "el": "heading-2-2",
+      "type": "frame",
+      "box": {
+        "w": 723,
+        "h": 30
+      },
+      "name": "Heading 2",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-2.heading-2-2",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill",
+        "h": "hug"
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "children": [
+        "notification-2"
+      ]
+    },
+    "outfit-reminders": {
+      "id": "1235:1770",
+      "el": "outfit-reminders",
+      "type": "text",
+      "box": {
+        "w": 144,
+        "h": 24
+      },
+      "name": "Outfit reminders",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-2.container.togglerow.text-2.outfit-reminders",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t6",
+      "chars": "Outfit reminders",
+      "textGrow": "wh"
+    },
+    "text-2": {
+      "id": "1235:1769",
+      "el": "text-2",
+      "type": "frame",
+      "box": {
+        "w": 144,
+        "h": 24
+      },
+      "name": "Text",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-2.container.togglerow.text-2",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "children": [
+        "outfit-reminders"
+      ]
+    },
+    "container-2": {
+      "id": "1235:1772",
+      "el": "container-2",
+      "type": "frame",
+      "box": {
+        "w": 19,
+        "h": 19
+      },
+      "name": "Container",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-2.container.togglerow.toggle.container-2",
+      "pos": {
+        "x": 22,
+        "y": 2
+      },
+      "fill": "$c1",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "toggle": {
+      "id": "1235:1771",
+      "el": "toggle",
+      "type": "frame",
+      "box": {
+        "w": 44,
+        "h": 24
+      },
+      "name": "Toggle",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-2.container.togglerow.toggle",
+      "fill": "$c3",
+      "radius": "$r2",
+      "children": [
+        "container-2"
+      ]
+    },
+    "togglerow": {
+      "id": "1235:1768",
+      "el": "togglerow",
+      "type": "frame",
+      "box": {
+        "w": 723,
+        "h": 57
+      },
+      "name": "ToggleRow",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-2.container.togglerow",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill",
+        "h": "hug"
+      },
+      "layout": "$l5",
+      "inheritedFill": "$c1",
+      "stroke": "$c8",
+      "strokeAlign": "inside",
+      "strokeSides": {
+        "t": 0,
+        "r": 0,
+        "b": 0.76,
+        "l": 0
+      },
+      "children": [
+        "text-2",
+        "toggle"
+      ]
+    },
+    "analysis-ready": {
+      "id": "1235:1775",
+      "el": "analysis-ready",
+      "type": "text",
+      "box": {
+        "w": 130,
+        "h": 24
+      },
+      "name": "analysis ready",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-2.container.togglerow-2.text-3.analysis-ready",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t5",
+      "chars": "analysis ready",
+      "textGrow": "wh"
+    },
+    "text-3": {
+      "id": "1235:1774",
+      "el": "text-3",
+      "type": "frame",
+      "box": {
+        "w": 130,
+        "h": 24
+      },
+      "name": "Text",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-2.container.togglerow-2.text-3",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "children": [
+        "analysis-ready"
+      ]
+    },
+    "container-3": {
+      "id": "1235:1777",
+      "el": "container-3",
+      "type": "frame",
+      "box": {
+        "w": 19,
+        "h": 19
+      },
+      "name": "Container",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-2.container.togglerow-2.toggle-2.container-3",
+      "pos": {
+        "x": 22,
+        "y": 2
+      },
+      "fill": "$c1",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "toggle-2": {
+      "id": "1235:1776",
+      "el": "toggle-2",
+      "type": "frame",
+      "box": {
+        "w": 44,
+        "h": 24
+      },
+      "name": "Toggle",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-2.container.togglerow-2.toggle-2",
+      "fill": "$c3",
+      "radius": "$r2",
+      "children": [
+        "container-3"
+      ]
+    },
+    "togglerow-2": {
+      "id": "1235:1773",
+      "el": "togglerow-2",
+      "type": "frame",
+      "box": {
+        "w": 723,
+        "h": 57
+      },
+      "name": "ToggleRow",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-2.container.togglerow-2",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill",
+        "h": "hug"
+      },
+      "layout": "$l6",
+      "inheritedFill": "$c1",
+      "stroke": "$c8",
+      "strokeAlign": "inside",
+      "strokeSides": {
+        "t": 0,
+        "r": 0,
+        "b": 0.76,
+        "l": 0
+      },
+      "children": [
+        "text-3",
+        "toggle-2"
+      ]
+    },
+    "weekly-recap": {
+      "id": "1235:1780",
+      "el": "weekly-recap",
+      "type": "text",
+      "box": {
+        "w": 118,
+        "h": 24
+      },
+      "name": "weekly recap",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-2.container.togglerow-3.text-4.weekly-recap",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t5",
+      "chars": "weekly recap",
+      "textGrow": "wh"
+    },
+    "text-4": {
+      "id": "1235:1779",
+      "el": "text-4",
+      "type": "frame",
+      "box": {
+        "w": 118,
+        "h": 24
+      },
+      "name": "Text",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-2.container.togglerow-3.text-4",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "children": [
+        "weekly-recap"
+      ]
+    },
+    "container-4": {
+      "id": "1235:1782",
+      "el": "container-4",
+      "type": "frame",
+      "box": {
+        "w": 19,
+        "h": 19
+      },
+      "name": "Container",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-2.container.togglerow-3.toggle-3.container-4",
+      "pos": {
+        "x": 3,
+        "y": 2
+      },
+      "fill": "$c1",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "toggle-3": {
+      "id": "1235:1781",
+      "el": "toggle-3",
+      "type": "frame",
+      "box": {
+        "w": 44,
+        "h": 24
+      },
+      "name": "Toggle",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-2.container.togglerow-3.toggle-3",
+      "fill": "$c7",
+      "radius": "$r2",
+      "children": [
+        "container-4"
+      ]
+    },
+    "togglerow-3": {
+      "id": "1235:1778",
+      "el": "togglerow-3",
+      "type": "frame",
+      "box": {
+        "w": 723,
+        "h": 56
+      },
+      "name": "ToggleRow",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-2.container.togglerow-3",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill",
+        "h": "hug"
+      },
+      "layout": "$l7",
+      "inheritedFill": "$c1",
+      "children": [
+        "text-4",
+        "toggle-3"
+      ]
+    },
+    "container": {
+      "id": "1235:1767",
+      "el": "container",
+      "type": "frame",
+      "box": {
+        "w": 723,
+        "h": 178
+      },
+      "name": "Container",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-2.container",
+      "layout": "$l4",
+      "inheritedFill": "$c1",
+      "children": [
+        "togglerow",
+        "togglerow-2",
+        "togglerow-3"
+      ]
+    },
+    "sectioncard-2": {
+      "id": "1235:1764",
+      "el": "sectioncard-2",
+      "type": "frame",
+      "box": {
+        "w": 723,
+        "h": 208
+      },
+      "name": "SectionCard",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-2",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill",
+        "h": "hug"
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "children": [
+        "heading-2-2",
+        "container"
+      ]
+    },
+    "appearance": {
+      "id": "1235:1785",
+      "el": "appearance",
+      "type": "text",
+      "box": {
+        "w": 127,
+        "h": 30
+      },
+      "name": "Appearance",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-3.heading-2-3.appearance",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "Appearance",
+      "textGrow": "wh"
+    },
+    "heading-2-3": {
+      "id": "1235:1784",
+      "el": "heading-2-3",
+      "type": "frame",
+      "box": {
+        "w": 723,
+        "h": 30
+      },
+      "name": "Heading 2",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-3.heading-2-3",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill",
+        "h": "hug"
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "children": [
+        "appearance"
+      ]
+    },
+    "language": {
+      "id": "1235:1788",
+      "el": "language",
+      "type": "text",
+      "box": {
+        "w": 86,
+        "h": 24
+      },
+      "name": "Language",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-3.app.text-5.language",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t5",
+      "chars": "Language",
+      "textGrow": "wh"
+    },
+    "text-5": {
+      "id": "1235:1787",
+      "el": "text-5",
+      "type": "frame",
+      "box": {
+        "w": 86,
+        "h": 24
+      },
+      "name": "Text",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-3.app.text-5",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "children": [
+        "language"
+      ]
+    },
+    "en": {
+      "id": "1235:1791",
+      "el": "en",
+      "type": "text",
+      "box": {
+        "w": 22,
+        "h": 30
+      },
+      "name": "EN",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-3.app.button.text-6.en",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t7",
+      "chars": "EN",
+      "textGrow": "wh"
+    },
+    "text-6": {
+      "id": "1235:1790",
+      "el": "text-6",
+      "type": "frame",
+      "box": {
+        "w": 22,
+        "h": 30
+      },
+      "name": "Text",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-3.app.button.text-6",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l10",
+      "inheritedFill": "$c1",
+      "children": [
+        "en"
+      ]
+    },
+    "vector-3": {
+      "id": "1235:1793",
+      "el": "vector-3",
+      "type": "vector",
+      "box": {
+        "w": 8,
+        "h": 5
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-3.app.button.icon-2.vector-3",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "iconHint": "App",
+      "vectorPath": "$v4",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "icon-2": {
+      "id": "1235:1792",
+      "el": "icon-2",
+      "type": "frame",
+      "box": {
+        "w": 8,
+        "h": 5
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-3.app.button.icon-2",
+      "inheritedFill": "$c1",
+      "clip": true,
+      "children": [
+        "vector-3"
+      ]
+    },
+    "button": {
+      "id": "1235:1789",
+      "el": "button",
+      "type": "frame",
+      "box": {
+        "w": 76,
+        "h": 56
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-3.app.button",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l9",
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.76,
+      "strokeAlign": "inside",
+      "radius": "$r1",
+      "children": [
+        "text-6",
+        "icon-2"
+      ]
+    },
+    "app": {
+      "id": "1235:1786",
+      "el": "app",
+      "type": "frame",
+      "box": {
+        "w": 723,
+        "h": 88
+      },
+      "name": "App",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-3.app",
+      "layout": "$l8",
+      "inheritedFill": "$c1",
+      "children": [
+        "text-5",
+        "button"
+      ]
+    },
+    "sectioncard-3": {
+      "id": "1235:1783",
+      "el": "sectioncard-3",
+      "type": "frame",
+      "box": {
+        "w": 723,
+        "h": 118
+      },
+      "name": "SectionCard",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-3",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill",
+        "h": "hug"
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "children": [
+        "heading-2-3",
+        "app"
+      ]
+    },
+    "privacy-data-2": {
+      "id": "1235:1796",
+      "el": "privacy-data-2",
+      "type": "text",
+      "box": {
+        "w": 154,
+        "h": 30
+      },
+      "name": "Privacy & Data",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-4.heading-2-4.privacy-data-2",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "Privacy & Data",
+      "textGrow": "wh"
+    },
+    "heading-2-4": {
+      "id": "1235:1795",
+      "el": "heading-2-4",
+      "type": "frame",
+      "box": {
+        "w": 723,
+        "h": 30
+      },
+      "name": "Heading 2",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-4.heading-2-4",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill",
+        "h": "hug"
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "children": [
+        "privacy-data-2"
+      ]
+    },
+    "private-account": {
+      "id": "1235:1800",
+      "el": "private-account",
+      "type": "text",
+      "box": {
+        "w": 141,
+        "h": 24
+      },
+      "name": "Private Account",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-4.container-5.togglerow-4.text-7.private-account",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t6",
+      "chars": "Private Account",
+      "textGrow": "wh"
+    },
+    "text-7": {
+      "id": "1235:1799",
+      "el": "text-7",
+      "type": "frame",
+      "box": {
+        "w": 141,
+        "h": 24
+      },
+      "name": "Text",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-4.container-5.togglerow-4.text-7",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "children": [
+        "private-account"
+      ]
+    },
+    "container-6": {
+      "id": "1235:1802",
+      "el": "container-6",
+      "type": "frame",
+      "box": {
+        "w": 19,
+        "h": 19
+      },
+      "name": "Container",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-4.container-5.togglerow-4.toggle-4.container-6",
+      "pos": {
+        "x": 22,
+        "y": 2
+      },
+      "fill": "$c1",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "toggle-4": {
+      "id": "1235:1801",
+      "el": "toggle-4",
+      "type": "frame",
+      "box": {
+        "w": 44,
+        "h": 24
+      },
+      "name": "Toggle",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-4.container-5.togglerow-4.toggle-4",
+      "fill": "$c3",
+      "radius": "$r2",
+      "children": [
+        "container-6"
+      ]
+    },
+    "togglerow-4": {
+      "id": "1235:1798",
+      "el": "togglerow-4",
+      "type": "frame",
+      "box": {
+        "w": 723,
+        "h": 57
+      },
+      "name": "ToggleRow",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-4.container-5.togglerow-4",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill",
+        "h": "hug"
+      },
+      "layout": "$l11",
+      "inheritedFill": "$c1",
+      "stroke": "$c8",
+      "strokeAlign": "inside",
+      "strokeSides": {
+        "t": 0,
+        "r": 0,
+        "b": 0.76,
+        "l": 0
+      },
+      "children": [
+        "text-7",
+        "toggle-4"
+      ]
+    },
+    "privacy-policy": {
+      "id": "1235:1805",
+      "el": "privacy-policy",
+      "type": "text",
+      "box": {
+        "w": 135,
+        "h": 24
+      },
+      "name": "privacy & policy",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-4.container-5.linkrow-2.text-8.privacy-policy",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t6",
+      "chars": "privacy & policy",
+      "textGrow": "wh"
+    },
+    "text-8": {
+      "id": "1235:1804",
+      "el": "text-8",
+      "type": "frame",
+      "box": {
+        "w": 135,
+        "h": 24
+      },
+      "name": "Text",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-4.container-5.linkrow-2.text-8",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "children": [
+        "privacy-policy"
+      ]
+    },
+    "vector-4": {
+      "id": "1235:1807",
+      "el": "vector-4",
+      "type": "vector",
+      "box": {
+        "w": 8,
+        "h": 14
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-4.container-5.linkrow-2.icon-3.vector-4",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "iconHint": "Link Row",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "icon-3": {
+      "id": "1235:1806",
+      "el": "icon-3",
+      "type": "frame",
+      "box": {
+        "w": 8,
+        "h": 14
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-4.container-5.linkrow-2.icon-3",
+      "inheritedFill": "$c1",
+      "clip": true,
+      "children": [
+        "vector-4"
+      ]
+    },
+    "linkrow-2": {
+      "id": "1235:1803",
+      "el": "linkrow-2",
+      "type": "frame",
+      "box": {
+        "w": 723,
+        "h": 56
+      },
+      "name": "LinkRow",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-4.container-5.linkrow-2",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill",
+        "h": "hug"
+      },
+      "layout": "$l12",
+      "inheritedFill": "$c1",
+      "children": [
+        "text-8",
+        "icon-3"
+      ]
+    },
+    "container-5": {
+      "id": "1235:1797",
+      "el": "container-5",
+      "type": "frame",
+      "box": {
+        "w": 723,
+        "h": 121
+      },
+      "name": "Container",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-4.container-5",
+      "layout": "$l4",
+      "inheritedFill": "$c1",
+      "children": [
+        "togglerow-4",
+        "linkrow-2"
+      ]
+    },
+    "sectioncard-4": {
+      "id": "1235:1794",
+      "el": "sectioncard-4",
+      "type": "frame",
+      "box": {
+        "w": 723,
+        "h": 151
+      },
+      "name": "SectionCard",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-4",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill",
+        "h": "hug"
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "children": [
+        "heading-2-4",
+        "container-5"
+      ]
+    },
+    "account-2": {
+      "id": "1235:1810",
+      "el": "account-2",
+      "type": "text",
+      "box": {
+        "w": 88,
+        "h": 30
+      },
+      "name": "Account",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-5.heading-2-5.account-2",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t4",
+      "chars": "Account",
+      "textGrow": "wh"
+    },
+    "heading-2-5": {
+      "id": "1235:1809",
+      "el": "heading-2-5",
+      "type": "frame",
+      "box": {
+        "w": 723,
+        "h": 30
+      },
+      "name": "Heading 2",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-5.heading-2-5",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill",
+        "h": "hug"
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "children": [
+        "account-2"
+      ]
+    },
+    "connected-account": {
+      "id": "1235:1814",
+      "el": "connected-account",
+      "type": "text",
+      "box": {
+        "w": 177,
+        "h": 24
+      },
+      "name": "CONNECTED ACCOUNT",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-5.container-7.linkrow-3.text-9.connected-account",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t6",
+      "chars": "CONNECTED ACCOUNT",
+      "textGrow": "wh"
+    },
+    "text-9": {
+      "id": "1235:1813",
+      "el": "text-9",
+      "type": "frame",
+      "box": {
+        "w": 177,
+        "h": 24
+      },
+      "name": "Text",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-5.container-7.linkrow-3.text-9",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "children": [
+        "connected-account"
+      ]
+    },
+    "vector-5": {
+      "id": "1235:1816",
+      "el": "vector-5",
+      "type": "vector",
+      "box": {
+        "w": 8,
+        "h": 14
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-5.container-7.linkrow-3.icon-4.vector-5",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "iconHint": "Link Row",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "icon-4": {
+      "id": "1235:1815",
+      "el": "icon-4",
+      "type": "frame",
+      "box": {
+        "w": 8,
+        "h": 14
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-5.container-7.linkrow-3.icon-4",
+      "inheritedFill": "$c1",
+      "clip": true,
+      "children": [
+        "vector-5"
+      ]
+    },
+    "linkrow-3": {
+      "id": "1235:1812",
+      "el": "linkrow-3",
+      "type": "frame",
+      "box": {
+        "w": 723,
+        "h": 57
+      },
+      "name": "LinkRow",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-5.container-7.linkrow-3",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill",
+        "h": "hug"
+      },
+      "layout": "$l11",
+      "inheritedFill": "$c1",
+      "stroke": "$c8",
+      "strokeAlign": "inside",
+      "strokeSides": {
+        "t": 0,
+        "r": 0,
+        "b": 0.76,
+        "l": 0
+      },
+      "children": [
+        "text-9",
+        "icon-4"
+      ]
+    },
+    "log-out": {
+      "id": "1235:1819",
+      "el": "log-out",
+      "type": "text",
+      "box": {
+        "w": 70,
+        "h": 24
+      },
+      "name": "log out",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-5.container-7.linkrow-4.text-10.log-out",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t5",
+      "chars": "log out",
+      "textGrow": "wh"
+    },
+    "text-10": {
+      "id": "1235:1818",
+      "el": "text-10",
+      "type": "frame",
+      "box": {
+        "w": 70,
+        "h": 24
+      },
+      "name": "Text",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-5.container-7.linkrow-4.text-10",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "children": [
+        "log-out"
+      ]
+    },
+    "vector-6": {
+      "id": "1235:1821",
+      "el": "vector-6",
+      "type": "vector",
+      "box": {
+        "w": 8,
+        "h": 14
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-5.container-7.linkrow-4.icon-5.vector-6",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "iconHint": "Link Row",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "icon-5": {
+      "id": "1235:1820",
+      "el": "icon-5",
+      "type": "frame",
+      "box": {
+        "w": 8,
+        "h": 14
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-5.container-7.linkrow-4.icon-5",
+      "inheritedFill": "$c1",
+      "clip": true,
+      "children": [
+        "vector-6"
+      ]
+    },
+    "linkrow-4": {
+      "id": "1235:1817",
+      "el": "linkrow-4",
+      "type": "frame",
+      "box": {
+        "w": 723,
+        "h": 57
+      },
+      "name": "LinkRow",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-5.container-7.linkrow-4",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill",
+        "h": "hug"
+      },
+      "layout": "$l13",
+      "inheritedFill": "$c1",
+      "stroke": "$c8",
+      "strokeAlign": "inside",
+      "strokeSides": {
+        "t": 0,
+        "r": 0,
+        "b": 0.76,
+        "l": 0
+      },
+      "children": [
+        "text-10",
+        "icon-5"
+      ]
+    },
+    "delete-account": {
+      "id": "1235:1824",
+      "el": "delete-account",
+      "type": "text",
+      "box": {
+        "w": 140,
+        "h": 24
+      },
+      "name": "delete account",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-5.container-7.linkrow-5.text-11.delete-account",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c3",
+      "text": "$t5",
+      "chars": "delete account",
+      "textGrow": "wh"
+    },
+    "text-11": {
+      "id": "1235:1823",
+      "el": "text-11",
+      "type": "frame",
+      "box": {
+        "w": 140,
+        "h": 24
+      },
+      "name": "Text",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-5.container-7.linkrow-5.text-11",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "children": [
+        "delete-account"
+      ]
+    },
+    "vector-7": {
+      "id": "1235:1826",
+      "el": "vector-7",
+      "type": "vector",
+      "box": {
+        "w": 8,
+        "h": 14
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-5.container-7.linkrow-5.icon-6.vector-7",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "iconHint": "Link Row",
+      "vectorPath": "$v3",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "icon-6": {
+      "id": "1235:1825",
+      "el": "icon-6",
+      "type": "frame",
+      "box": {
+        "w": 8,
+        "h": 14
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-5.container-7.linkrow-5.icon-6",
+      "inheritedFill": "$c1",
+      "clip": true,
+      "children": [
+        "vector-7"
+      ]
+    },
+    "linkrow-5": {
+      "id": "1235:1822",
+      "el": "linkrow-5",
+      "type": "frame",
+      "box": {
+        "w": 723,
+        "h": 56
+      },
+      "name": "LinkRow",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-5.container-7.linkrow-5",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill",
+        "h": "hug"
+      },
+      "layout": "$l14",
+      "inheritedFill": "$c1",
+      "children": [
+        "text-11",
+        "icon-6"
+      ]
+    },
+    "container-7": {
+      "id": "1235:1811",
+      "el": "container-7",
+      "type": "frame",
+      "box": {
+        "w": 723,
+        "h": 178
+      },
+      "name": "Container",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-5.container-7",
+      "layout": "$l4",
+      "inheritedFill": "$c1",
+      "children": [
+        "linkrow-3",
+        "linkrow-4",
+        "linkrow-5"
+      ]
+    },
+    "sectioncard-5": {
+      "id": "1235:1808",
+      "el": "sectioncard-5",
+      "type": "frame",
+      "box": {
+        "w": 723,
+        "h": 208
+      },
+      "name": "SectionCard",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.sectioncard-5",
+      "selfAlign": "stretch",
+      "sizing": {
+        "w": "fill",
+        "h": "hug"
+      },
+      "layout": "$l2",
+      "inheritedFill": "$c1",
+      "children": [
+        "heading-2-5",
+        "container-7"
+      ]
+    },
+    "loomette-version-0-0-1": {
+      "id": "1235:1828",
+      "el": "loomette-version-0-0-1",
+      "type": "text",
+      "box": {
+        "w": 125,
+        "h": 18
+      },
+      "name": "loomette · version 0.0.1",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.paragraph.loomette-version-0-0-1",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c7",
+      "text": "$t8",
+      "chars": "loomette · version 0.0.1",
+      "textGrow": "wh"
+    },
+    "paragraph": {
+      "id": "1235:1827",
+      "el": "paragraph",
+      "type": "frame",
+      "box": {
+        "w": 723,
+        "h": 34
+      },
+      "name": "Paragraph",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content.paragraph",
+      "layout": "$l15",
+      "inheritedFill": "$c1",
+      "children": [
+        "loomette-version-0-0-1"
+      ]
+    },
+    "main-content": {
+      "id": "1235:1755",
+      "el": "main-content",
+      "type": "frame",
+      "box": {
+        "w": 723,
+        "h": 1011
+      },
+      "name": "Main Content",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337.main-content",
+      "pos": {
+        "x": 571,
+        "y": 390
+      },
+      "layout": "$l1",
+      "inheritedFill": "$c1",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "sectioncard",
+        "sectioncard-2",
+        "sectioncard-3",
+        "sectioncard-4",
+        "sectioncard-5",
+        "paragraph"
+      ]
+    },
+    "group-337": {
+      "id": "1235:1725",
+      "el": "group-337",
+      "type": "group",
+      "box": {
+        "w": 1465,
+        "h": 1419
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-337",
+      "pos": {
+        "x": -11,
+        "y": -16
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-96",
+        "settings",
+        "rectangle-117",
+        "pricing",
+        "notification",
+        "apprearance",
+        "privacy-data",
+        "account",
+        "union-2",
+        "manage-how-the-app-works-for-you",
+        "profile-settings",
+        "line-33",
+        "main-content"
+      ]
+    },
+    "rectangle-45": {
+      "id": "1235:1829",
+      "el": "rectangle-45",
+      "type": "rect",
+      "box": {
+        "w": 1440,
+        "h": 1024
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.rectangle-45",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c9",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-46": {
+      "id": "1235:1831",
+      "el": "rectangle-46",
+      "type": "rect",
+      "box": {
+        "w": 818,
+        "h": 853
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-138.rectangle-46",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c1",
+      "radius": "$r3",
+      "isMask": true,
+      "maskMode": "alpha",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      }
+    },
+    "rectangle-47": {
+      "id": "1235:1832",
+      "el": "rectangle-47",
+      "type": "rect",
+      "box": {
+        "w": 818,
+        "h": 850
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-138.rectangle-47",
+      "pos": {
+        "x": 0,
+        "y": -2
+      },
+      "fill": "$c1",
+      "radius": "$r3",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      },
+      "masked": "rectangle-46"
+    },
+    "rectangle-100": {
+      "id": "1235:1834",
+      "el": "rectangle-100",
+      "type": "rect",
+      "box": {
+        "w": 240,
+        "h": 16
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-138.group-197.rectangle-100",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c6",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "rectangle-101": {
+      "id": "1235:1835",
+      "el": "rectangle-101",
+      "type": "rect",
+      "box": {
+        "w": 160,
+        "h": 16
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-138.group-197.rectangle-101",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c3",
+      "radius": "$r2",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-197": {
+      "id": "1235:1833",
+      "el": "group-197",
+      "type": "group",
+      "box": {
+        "w": 240,
+        "h": 16
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-138.group-197",
+      "pos": {
+        "x": 289,
+        "y": 74
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-100",
+        "rectangle-101"
+      ],
+      "masked": "rectangle-46"
+    },
+    "rectangle-11": {
+      "id": "1235:1838",
+      "el": "rectangle-11",
+      "type": "rect",
+      "box": {
+        "w": 56,
+        "h": 56
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-138.group-58.group-258.rectangle-11",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "fill": "$c6",
+      "radius": "$r4",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "vector-8": {
+      "id": "I1235:1839;3:2684",
+      "el": "vector-8",
+      "type": "vector",
+      "box": {
+        "w": 19,
+        "h": 19
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-138.group-58.group-258.close-x.vector-8",
+      "pos": {
+        "x": 7,
+        "y": 7
+      },
+      "fill": "$c3",
+      "iconHint": "close x",
+      "vectorPath": "$v5",
+      "constraints": {
+        "h": "scale",
+        "v": "scale"
+      }
+    },
+    "close-x": {
+      "id": "1235:1839",
+      "el": "close-x",
+      "type": "instance",
+      "box": {
+        "w": 32,
+        "h": 32
+      },
+      "name": "close-x",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-138.group-58.group-258.close-x",
+      "pos": {
+        "x": 12,
+        "y": 12
+      },
+      "inheritedFill": "$c1",
+      "clip": true,
+      "props": "$p1",
+      "constraints": {
+        "h": "center",
+        "v": "center"
+      },
+      "children": [
+        "vector-8"
+      ]
+    },
+    "group-258": {
+      "id": "1235:1837",
+      "el": "group-258",
+      "type": "group",
+      "box": {
+        "w": 56,
+        "h": 56
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-138.group-58.group-258",
+      "pos": {
+        "x": 0,
+        "y": 0
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-11",
+        "close-x"
+      ]
+    },
+    "group-58": {
+      "id": "1235:1836",
+      "el": "group-58",
+      "type": "group",
+      "box": {
+        "w": 56,
+        "h": 56
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-138.group-58",
+      "pos": {
+        "x": 706,
+        "y": 54
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "group-258"
+      ],
+      "masked": "rectangle-46"
+    },
+    "what-s-not-working": {
+      "id": "1235:1840",
+      "el": "what-s-not-working",
+      "type": "text",
+      "box": {
+        "w": 554,
+        "h": 80
+      },
+      "name": "What’s not working?",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-138.what-s-not-working",
+      "pos": {
+        "x": 132,
+        "y": 158
+      },
+      "fill": "$c3",
+      "text": "$t9",
+      "chars": "What’s not working?",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "masked": "rectangle-46"
+    },
+    "your-answer-helps-us-make-loomette-bette": {
+      "id": "1235:1841",
+      "el": "your-answer-helps-us-make-loomette-bette",
+      "type": "text",
+      "box": {
+        "w": 409,
+        "h": 56
+      },
+      "name": "your answer helps us make loomette. better.",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-138.your-answer-helps-us-make-loomette-bette",
+      "pos": {
+        "x": 205,
+        "y": 262
+      },
+      "fill": "$c3",
+      "text": "$t10",
+      "chars": "your answer helps us make loomette. better.",
+      "textGrow": "h",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "masked": "rectangle-46"
+    },
+    "continue-to-delete": {
+      "id": "1235:1845",
+      "el": "continue-to-delete",
+      "type": "text",
+      "box": {
+        "w": 211,
+        "h": 33
+      },
+      "name": "continue to delete",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-138.frame-8.continue-to-delete",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c1",
+      "text": "$t1",
+      "chars": "continue to delete",
+      "textGrow": "wh"
+    },
+    "frame-8": {
+      "id": "1235:1844",
+      "el": "frame-8",
+      "type": "frame",
+      "box": {
+        "w": 320,
+        "h": 64
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-138.frame-8",
+      "pos": {
+        "x": 249,
+        "y": 674
+      },
+      "layout": "$l16",
+      "fill": "$c3",
+      "radius": "$r1",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "continue-to-delete"
+      ],
+      "masked": "rectangle-46"
+    },
+    "i-don-t-use-it-enough": {
+      "id": "1235:1851",
+      "el": "i-don-t-use-it-enough",
+      "type": "text",
+      "box": {
+        "w": 188,
+        "h": 27
+      },
+      "name": "I don't use it enough",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-138.frame-62.group-116.i-don-t-use-it-enough",
+      "pos": {
+        "x": 40,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t11",
+      "chars": "I don't use it enough",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-37": {
+      "id": "1235:1852",
+      "el": "rectangle-37",
+      "type": "rect",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-138.frame-62.group-116.rectangle-37",
+      "pos": {
+        "x": 0,
+        "y": 1
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r5",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-116": {
+      "id": "1235:1850",
+      "el": "group-116",
+      "type": "group",
+      "box": {
+        "w": 228,
+        "h": 27
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-138.frame-62.group-116",
+      "inheritedFill": "$c1",
+      "children": [
+        "i-don-t-use-it-enough",
+        "rectangle-37"
+      ]
+    },
+    "it-s-missing-features-i-need": {
+      "id": "1235:1854",
+      "el": "it-s-missing-features-i-need",
+      "type": "text",
+      "box": {
+        "w": 241,
+        "h": 27
+      },
+      "name": "It's missing features I need",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-138.frame-62.group-117.it-s-missing-features-i-need",
+      "pos": {
+        "x": 40,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t11",
+      "chars": "It's missing features I need",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-37-2": {
+      "id": "1235:1855",
+      "el": "rectangle-37-2",
+      "type": "rect",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-138.frame-62.group-117.rectangle-37-2",
+      "pos": {
+        "x": 0,
+        "y": 1
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r5",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-117": {
+      "id": "1235:1853",
+      "el": "group-117",
+      "type": "group",
+      "box": {
+        "w": 281,
+        "h": 27
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-138.frame-62.group-117",
+      "inheritedFill": "$c1",
+      "children": [
+        "it-s-missing-features-i-need",
+        "rectangle-37-2"
+      ]
+    },
+    "it-s-too-complicated": {
+      "id": "1235:1857",
+      "el": "it-s-too-complicated",
+      "type": "text",
+      "box": {
+        "w": 181,
+        "h": 27
+      },
+      "name": "It's too complicated",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-138.frame-62.group-118.it-s-too-complicated",
+      "pos": {
+        "x": 40,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t11",
+      "chars": "It's too complicated",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-37-3": {
+      "id": "1235:1858",
+      "el": "rectangle-37-3",
+      "type": "rect",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-138.frame-62.group-118.rectangle-37-3",
+      "pos": {
+        "x": 0,
+        "y": 1
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r5",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-118": {
+      "id": "1235:1856",
+      "el": "group-118",
+      "type": "group",
+      "box": {
+        "w": 221,
+        "h": 27
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-138.frame-62.group-118",
+      "inheritedFill": "$c1",
+      "children": [
+        "it-s-too-complicated",
+        "rectangle-37-3"
+      ]
+    },
+    "i-have-privacy-concerns": {
+      "id": "1235:1860",
+      "el": "i-have-privacy-concerns",
+      "type": "text",
+      "box": {
+        "w": 212,
+        "h": 27
+      },
+      "name": "I have privacy concerns",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-138.frame-62.group-119.i-have-privacy-concerns",
+      "pos": {
+        "x": 40,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t11",
+      "chars": "I have privacy concerns",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-37-4": {
+      "id": "1235:1861",
+      "el": "rectangle-37-4",
+      "type": "rect",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-138.frame-62.group-119.rectangle-37-4",
+      "pos": {
+        "x": 0,
+        "y": 1
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r5",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-119": {
+      "id": "1235:1859",
+      "el": "group-119",
+      "type": "group",
+      "box": {
+        "w": 252,
+        "h": 27
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-138.frame-62.group-119",
+      "inheritedFill": "$c1",
+      "children": [
+        "i-have-privacy-concerns",
+        "rectangle-37-4"
+      ]
+    },
+    "i-found-something-better": {
+      "id": "1235:1863",
+      "el": "i-found-something-better",
+      "type": "text",
+      "box": {
+        "w": 228,
+        "h": 27
+      },
+      "name": "I found something better",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-138.frame-62.group-120.i-found-something-better",
+      "pos": {
+        "x": 40,
+        "y": 0
+      },
+      "fill": "$c3",
+      "text": "$t11",
+      "chars": "I found something better",
+      "textGrow": "wh",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      }
+    },
+    "rectangle-37-5": {
+      "id": "1235:1864",
+      "el": "rectangle-37-5",
+      "type": "rect",
+      "box": {
+        "w": 24,
+        "h": 24
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-138.frame-62.group-120.rectangle-37-5",
+      "pos": {
+        "x": 0,
+        "y": 1
+      },
+      "inheritedFill": "$c1",
+      "stroke": "$c7",
+      "strokeW": 0.5,
+      "strokeAlign": "inside",
+      "radius": "$r5",
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      }
+    },
+    "group-120": {
+      "id": "1235:1862",
+      "el": "group-120",
+      "type": "group",
+      "box": {
+        "w": 268,
+        "h": 27
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-138.frame-62.group-120",
+      "inheritedFill": "$c1",
+      "children": [
+        "i-found-something-better",
+        "rectangle-37-5"
+      ]
+    },
+    "frame-62": {
+      "id": "1235:1849",
+      "el": "frame-62",
+      "type": "frame",
+      "box": {
+        "w": 281,
+        "h": 183
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-138.frame-62",
+      "pos": {
+        "x": 269,
+        "y": 351
+      },
+      "layout": "$l17",
+      "inheritedFill": "$c1",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "group-116",
+        "group-117",
+        "group-118",
+        "group-119",
+        "group-120"
+      ],
+      "masked": "rectangle-46"
+    },
+    "tell-us-more-optional": {
+      "id": "1235:1868",
+      "el": "tell-us-more-optional",
+      "type": "text",
+      "box": {
+        "w": 164,
+        "h": 19
+      },
+      "name": "Tell us more (optional)",
+      "path": "d-4-5-4-2-pop-up-delete-account.group-138.frame-6.frame-5.tell-us-more-optional",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "fill": "$c7",
+      "text": "$t12",
+      "chars": "Tell us more (optional)",
+      "textGrow": "wh"
+    },
+    "frame-5": {
+      "id": "1235:1867",
+      "el": "frame-5",
+      "type": "frame",
+      "box": {
+        "w": 164,
+        "h": 19
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-138.frame-6.frame-5",
+      "sizing": {
+        "w": "hug",
+        "h": "hug"
+      },
+      "layout": "$l19",
+      "inheritedFill": "$c6",
+      "children": [
+        "tell-us-more-optional"
+      ]
+    },
+    "frame-6": {
+      "id": "1235:1866",
+      "el": "frame-6",
+      "type": "frame",
+      "box": {
+        "w": 320,
+        "h": 64
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-138.frame-6",
+      "pos": {
+        "x": 249,
+        "y": 574
+      },
+      "layout": "$l18",
+      "fill": "$c6",
+      "radius": "$r4",
+      "constraints": {
+        "h": "center",
+        "v": "top"
+      },
+      "children": [
+        "frame-5"
+      ],
+      "masked": "rectangle-46"
+    },
+    "group-138": {
+      "id": "1235:1830",
+      "el": "group-138",
+      "type": "group",
+      "box": {
+        "w": 818,
+        "h": 853
+      },
+      "path": "d-4-5-4-2-pop-up-delete-account.group-138",
+      "pos": {
+        "x": 311,
+        "y": 85
+      },
+      "inheritedFill": "$c1",
+      "children": [
+        "rectangle-46",
+        "rectangle-47",
+        "group-197",
+        "group-58",
+        "what-s-not-working",
+        "your-answer-helps-us-make-loomette-bette",
+        "frame-8",
+        "frame-62",
+        "frame-6"
+      ]
+    },
+    "d-4-5-4-2-pop-up-delete-account": {
+      "id": "1235:1724",
+      "el": "d-4-5-4-2-pop-up-delete-account",
+      "type": "frame",
+      "box": {
+        "w": 1440,
+        "h": 1024
+      },
+      "name": "D.4.5.4.2 Pop-up Delete Account",
+      "fill": "$c1",
+      "clip": true,
+      "constraints": {
+        "h": "left",
+        "v": "top"
+      },
+      "children": [
+        "group-337",
+        "rectangle-45",
+        "group-138"
+      ]
+    }
+  },
+  "meta": {
+    "nodeCount": 141,
+    "estTokens": 11674,
+    "depthUsed": 12
+  },
+  "next": "Read `tokens` for the design system, then build the UI from `nodes`. Tag each rendered element data-plumb-id=\"<el>\". A node with a `more` count has that many children not yet included — call plumb_node again on that node's `id` to expand them.",
+  "source": "plugin",
+  "node": "D.4.5.4.2 Pop-up Delete Account"
+}

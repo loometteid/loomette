@@ -119,7 +119,7 @@ export function StepTwoForm({
         <div className="flex items-center justify-between">
           <Label
             htmlFor="onboarding-birthday"
-            className="text-muted-foreground text-xs font-semibold tracking-wider uppercase"
+            className="text-slate text-xs font-semibold tracking-wider uppercase"
           >
             When&apos;s your birthday?
           </Label>
@@ -151,7 +151,7 @@ export function StepTwoForm({
       </div>
 
       <div className="flex flex-col gap-2.5">
-        <Label className="text-muted-foreground text-xs font-semibold tracking-wider uppercase">
+        <Label className="text-slate text-xs font-semibold tracking-wider uppercase">
           How do you identify?
         </Label>
         <Controller
